@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ohsjoin</title>
 
-    <link rel="stylesheet" href="resources/css/join.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/join.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&family=Moirai+One&display=swap" rel="stylesheet">
@@ -23,7 +23,7 @@
 
         <header>
             <selection>
-                <img src="resources/images/humanmadelogo.svg" id="img1"> <a> <- 로고 바꾸기</a>
+                <img src="${contextPath}/resources/images/humanmadelogo.svg" id="img1"> <a> <- 로고 바꾸기</a>
                 
             </selection>
         </header>
@@ -34,21 +34,21 @@
 
         <selection class="content1" id = "sel1">
             
-            <img src="resources/images/id.png" id="img2">
+            <img src="${contextPath}/resources/images/id.png" id="img2">
              <input type="text" size ="50" maxlength="14" placeholder="아이디" id = "idInput">
         
         </selection>
         
         <selection class="content1" id = "sel2dot1">
         
-            <img src="resources/images/password2.png" id="img3">
+            <img src="${contextPath}/resources/images/password2.png" id="img3">
             <input type="password" size = "50" maxlength="10" placeholder="비밀번호" id = "pwInput1" >
         
         </selection>
 
         <selection class="content1" id = "sel2dot2">
         
-            <img src="resources/images/password.jpg" id="img4" >
+            <img src="${contextPath}/resources/images/password.jpg" id="img4" >
             <input type="password" size = "50" maxlength="10" placeholder="비밀번호 확인" id = "pwInput2">
         
         </selection>
@@ -61,7 +61,7 @@
         <selection class="content1" id="sel4">
             
             <div>
-                <img src="resources/images/name.png" style="width:30px; height:30px;">
+                <img src="${contextPath}/resources/images/name.png" style="width:30px; height:30px;">
             </div>
            
             <input type="text" size ="50" maxlength="10" 
@@ -72,7 +72,7 @@
         <selection class="content1" id="sel5">
 
             <div>
-            <img src="resources/images/birth.png" style="width:28px; height:28px;">
+            <img src="${contextPath}/resources/images/birth.png" style="width:28px; height:28px;">
             </div>
 
             <input type="text" size ="50" maxlength="10" 
@@ -83,7 +83,7 @@
         <selection class="content1" id="sel3">
 
             <div>
-            <img src="resources/images/birth.png" style="width:32px; height:35px;">
+            <img src="${contextPath}/resources/images/birth.png" style="width:32px; height:35px;">
             </div>
             
             <input type = "email" size = "50" 
@@ -94,7 +94,7 @@
         <selection class="content1" id="sel6" >
             
             <div>
-                <img src="resources/images/gender.jpg" style="width:35px; height:35px;">
+                <img src="${contextPath}/resources/images/gender.jpg" style="width:35px; height:35px;">
             </div>
 
             <div1 >
@@ -116,7 +116,7 @@
         <selection class="content1" id="sel7">
             
                 <div>
-                <img src="resources/images/foreign.jpg" style="width:40px; height:40px;">
+                <img src="${contextPath}/resources/images/foreign.jpg" style="width:40px; height:40px;">
                 </div>
 
                 <label for="korean">
@@ -141,7 +141,7 @@
         <selection class="content1" id="sel8">
             
             <div>
-            <img src="resources/images/phone.png" style="width:30px; height:30px;">
+            <img src="${contextPath}/resources/images/phone.png" style="width:30px; height:30px;">
             </div>
             
             <input type="text" size="50" placeholder="전화번호 (-포함)" id="phoneInput">

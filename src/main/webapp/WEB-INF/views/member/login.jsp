@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login</title>
 
-    <link rel="stylesheet" href="resources/css/login.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/login.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&family=Moirai+One&display=swap" rel="stylesheet">
@@ -23,7 +23,10 @@
 
         <header>
             <selection>
-                <img src="resources/images/humanmadelogo.svg" id="img1"> <a> <- 로고 바꾸기</a>
+            
+            <a href="${contextPath}/">
+                <img src="${contextPath}/resources/images/humanmadelogo.svg" id="img1"> <a> <- 로고 바꾸기</a>
+            </a>    
                 
             </selection>
         </header>
@@ -35,7 +38,7 @@
 
         <selection class="content1">
              
-            <img src="resources/images/id.png" id="img2">
+            <img src="${contextPath}/resources/images/id.png" id="img2">
              <input type="text" size ="50" maxlength="10" placeholder="아이디" id="idInput">
         
         </selection>
@@ -43,7 +46,7 @@
 
         <selection class="content1">
             
-            <img src="resources/images/password.jpg" id="img3">
+            <img src="${contextPath}/resources/images/password.jpg" id="img3">
             <input type="password" size = "50" maxlength="10" placeholder="비밀번호">
             
         </selection>
@@ -81,9 +84,11 @@
             
             <span>|</span>
             
+            
             <div class="find">
                 <a href="join.jsp">회원가입</a>
             </div>
+
 
         </selection>
 
