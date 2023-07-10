@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>회원 관리 페이지</title>
 
-<link rel="stylesheet" href="resources/css/memberManagement.css">
+<link rel="stylesheet" href="../resources/css/memberManagement.css">
 <script src="https://kit.fontawesome.com/16679b9adf.js"
 	crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -334,6 +334,6 @@
 
 		</div>
 
-		<script src="/resources/js/memberMAnagement.js"></script>
+		<script src="/resources/js/memberManagement.js"></script>
 </body>
 </html>
