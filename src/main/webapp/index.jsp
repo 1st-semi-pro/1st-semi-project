@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,27 +45,61 @@
         </header>
         
         <div class="content">
-            <div > <!-- 배너 + 로그인 칸 -->
-                <div class="banner">
-                    <div ><</div>
-                    <div></div>
-                    <div>></div>
-                </div>
-                <div class="login">
-                	<div>
-					<button type="button" id="loginBtn">로그인</button>
-                	</div>
-                	
-                	
-						<article id="signup-find-area">
-                            <a href="#">내 정보찾기</a>
-                            <span>/</span> 
-                            <a href="#">회원가입</a>
-                        </article>
-                	
-                	
-                </div>
-            </div>
+        
+        	<c:choose>
+        	
+        		<c:when test="${empty sessionScope.loginMember }">
+		            <div > <!-- 배너 + 로그인 칸 -->
+		                <div class="banner">
+		                    <div ><</div>
+		                    <div></div>
+		                    <div>></div>
+		                </div>
+		                <div class="login">
+		                	<div>
+							<button type="button" id="loginBtn">로그인</button>
+		                	</div>
+		                	
+		                	
+								<article id="signup-find-area">
+		                            <a href="#">내 정보찾기</a>
+		                            <span>/</span> 
+		                            <a href="#">회원가입</a>
+		                        </article>
+		                	
+		                	
+		                </div>
+		            </div>
+        		
+        		</c:when>
+        		
+        		<c:otherwise>
+        			<article class="login-area">
+            			
+            				<!-- 회원 프로필 이미지 -->
+            				<a href="#">
+            					<img src="" id="member-profile">
+            				</a>
+            				
+            				<!-- 회원 정보 + 로그아웃 버튼 -->
+            				<div class="my-info">
+            					<div>
+            						<a href="#" id="nickname">유저 닉네임</a>
+            						
+            						<a href="#" id="logout-btn">로그아웃</a>
+            					</div>
+            					
+            					<p>
+            						유저 이메일
+            					</p>
+            				</div>
+            				
+            			</article>
+        		</c:otherwise>
+        	
+        	</c:choose>
+        	
+        	
             <div class="content-1"> <!-- 한반도 + 게시판 -->
 				<div class="korea"> <!-- 한반도 -->
 					<img src="resources/images/korea.png">
