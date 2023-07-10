@@ -10,6 +10,12 @@ body{font-family:'Montserrat','pretendard';}
 	width: 100%;
 	height: 100%;
 }
+.container{
+	border: none !important;
+}
+.copyright{
+	border: none !important;
+}
 
 .footer .quick_menu_list {
 	width: 100%;

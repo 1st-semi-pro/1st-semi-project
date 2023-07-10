@@ -11,7 +11,7 @@
 	<meta charset="UTF-8">
 	<title>프로젝트 푸터</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="$(contextPath)/resources/css/footer.css">
+	<link rel="stylesheet" href="${contextPath}/resources/css/footer.css">
 </head>
 
 <body>
@@ -19,22 +19,22 @@
 		<footer class="footer">
 			<ul class="quick_menu_list">
 				<li>
-					<a href="#"><img src="$(contextPath)/resources/images/footer/footer_menu01.png" alt="휴대폰 구매">
+					<a href="#"><img src="${contextPath}/resources/images/footer/footer_menu01.png" alt="우리가최고조">
 						<p>우리가 최고조</p>
 					</a>
 				</li>
 				<li>
-					<a href="#"><img src="$(contextPath)/resources/images/footer/footer_menu02.png" alt="인터넷/IPTV">
+					<a href="#"><img src="${contextPath}/resources/images/footer/footer_menu02.png" alt="우리가최고조">
 						<p>우리가 최고조</p>
 					</a>
 				</li>
 				<li>
-					<a href="#"><img src="$(contextPath)/resources/images/footer/footer_menu03.png" alt="이벤트">
+					<a href="#"><img src="${contextPath}/resources/images/footer/footer_menu03.png" alt="우리가최고조">
 						<p>우리가 최고조</p>
 					</a>
 				</li>
 				<li>
-					<a href="#"><img src="$(contextPath)/resources/images/footer/footer_menu04.png" alt="내 가입정보">
+					<a href="#"><img src="${contextPath}/resources/images/footer/footer_menu04.png" alt="우리가최고조">
 						<p>우리가 최고조</p>
 					</a>
 				</li>
@@ -42,13 +42,13 @@
 			<div class="footer_wrap">
 				<div class="container">
 					<ul class="footer_sns_icon">
-						<li><a href="#"><img src="$(contextPath)/resources/images/footer/footer_sns_icon_01.png" alt=""></a></li>
-						<li><a href="#"><img src="$(contextPath)/resources/images/footer/footer_sns_icon_03.png" alt=""></a></li>
-						<li><a href="#"><img src="$(contextPath)/resources/images/footer/footer_sns_icon_05.png" alt=""></a></li>
-						<li><a href="#"><img src="$(contextPath)/resources/images/footer/footer_sns_icon_07.png" alt=""></a></li>
-						<li><a href="#"><img src="$(contextPath)/resources/images/footer/footer_sns_icon_09.png" alt=""></a></li>
-						<li><a href="#"><img src="$(contextPath)/resources/images/footer/footer_sns_icon_11.png" alt=""></a></li>
-						<li><a href="#"><img src="$(contextPath)/resources/images/footer/footer_sns_icon_13.png" alt=""></a></li>
+						<li><a href="#"><img src="${contextPath}/resources/images/footer/footer_sns_icon_01.png" alt=""></a></li>
+						<li><a href="#"><img src="${contextPath}/resources/images/footer/footer_sns_icon_03.png" alt=""></a></li>
+						<li><a href="#"><img src="${contextPath}/resources/images/footer/footer_sns_icon_05.png" alt=""></a></li>
+						<li><a href="#"><img src="${contextPath}/resources/images/footer/footer_sns_icon_07.png" alt=""></a></li>
+						<li><a href="#"><img src="${contextPath}/resources/images/footer/footer_sns_icon_09.png" alt=""></a></li>
+						<li><a href="#"><img src="${contextPath}/resources/images/footer/footer_sns_icon_11.png" alt=""></a></li>
+						<li><a href="#"><img src="${contextPath}/resources/images/footer/footer_sns_icon_13.png" alt=""></a></li>
 					</ul>
 
 					<ul class="footer_bottom_list">
