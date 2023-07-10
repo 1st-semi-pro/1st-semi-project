@@ -45,21 +45,27 @@
             <div > <!-- 배너 + 로그인 칸 -->
                 <div class="banner">
                     <div ><</div>
-                    <div>그림</div>
+                    <div></div>
                     <div>></div>
                 </div>
                 <div class="login">
+                	<div>
 					<button type="button" id="loginBtn">로그인</button>
-					 <article id="signup-find-area">
+                	</div>
+                	
+                	
+						<article id="signup-find-area">
                             <a href="#">내 정보찾기</a>
                             <span>/</span> 
                             <a href="#">회원가입</a>
                         </article>
+                	
+                	
                 </div>
             </div>
             <div class="content-1"> <!-- 한반도 + 게시판 -->
-				<div> <!-- 한반도 -->
-					
+				<div class="korea"> <!-- 한반도 -->
+					<img src="resources/images/korea.png">
 				</div>
 				<div> <!-- 게시판 모음1 -->
 					<div class="board1">

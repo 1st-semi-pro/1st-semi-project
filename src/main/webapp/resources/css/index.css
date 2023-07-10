@@ -101,17 +101,23 @@ div{
     height: 100%;
     display: flex;
     flex-direction: row;
+    text-align: center;
+   
+    
 
 }
 
 .banner > div:nth-child(1){
     width: 15%; 
+     margin-top: 100px;
 }
 .banner > div:nth-child(2){
     width: 70%;
+    margin: auto;
 }
 .banner > div:nth-child(3){
     width: 15%;
+     margin-top: 100px;
 }
 
 
@@ -124,6 +130,15 @@ div{
     border: none;
 
 }
+
+#signup-find-area{
+	display: flex;
+	justify-content: center;
+}
+
+#signup-find-area span{
+	margin: 0px 20px;
+}	
 
 #loginBtn{
 	width: 150px;
@@ -149,6 +164,11 @@ div{
 .content-1 > div:nth-child(3){
 	width: 30%;
 	height: 700px;
+}
+
+.korea{
+	display: flex;
+	align-content: center;
 }
 
 .board1{
