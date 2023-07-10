@@ -67,7 +67,7 @@
             <div class="member_list">
                 <div class="top">
                     <div class="num">NO.</div>
-                    <div class="check"><input type="checkbox"></div>
+                    <div class="check"><input type="checkbox" id="all"></div>
                     <div class="memberId">아이디</div>
                     <div class="memberName">이름</div>
                     <div class="memberEmail">이메일</div>
@@ -77,7 +77,7 @@
                 </div>
                 <div>
                     <div class="num">1</div>
-                    <div class="check"><input type="checkbox"></div>
+                    <div class="check"><input type="checkbox" id="check"></div>
                     <div class="memberId">user01</div>
                     <div class="memberName">유저일</div>
                     <div class="memberEmail">user01@gmail.com</div>
@@ -87,7 +87,7 @@
                 </div>
                 <div>
                     <div class="num">2</div>
-                    <div class="check"><input type="checkbox"></div>
+                    <div class="check"><input type="checkbox" id="check"></div>
                     <div class="memberId">user01</div>
                     <div class="memberName">유저일</div>
                     <div class="memberEmail">user01@gmail.com</div>
@@ -97,7 +97,7 @@
                 </div>
                 <div>
                     <div class="num">3</div>
-                    <div class="check"><input type="checkbox"></div>
+                    <div class="check"><input type="checkbox" id="check"></div>
                     <div class="memberId">user01</div>
                     <div class="memberName">유저일</div>
                     <div class="memberEmail">user01@gmail.com</div>
@@ -117,7 +117,7 @@
                 </div>
                 <div>
                     <div class="num">5</div>
-                    <div class="check"><input type="checkbox"></div>
+                    <div class="check"><input type="checkbox" id="check"></div>
                     <div class="memberId">user01</div>
                     <div class="memberName">유저일</div>
                     <div class="memberEmail">user01@gmail.com</div>
@@ -127,7 +127,7 @@
                 </div>
                 <div>
                     <div class="num">6</div>
-                    <div class="check"><input type="checkbox"></div>
+                    <div class="check"><input type="checkbox" id="check"></div>
                     <div class="memberId">user01</div>
                     <div class="memberName">유저일</div>
                     <div class="memberEmail">user01@gmail.com</div>
@@ -137,7 +137,7 @@
                 </div>
                 <div>
                     <div class="num">7</div>
-                    <div class="check"><input type="checkbox"></div>
+                    <div class="check"><input type="checkbox" id="check"></div>
                     <div class="memberId">user01</div>
                     <div class="memberName">유저일</div>
                     <div class="memberEmail">user01@gmail.com</div>
@@ -147,7 +147,7 @@
                 </div>
                 <div>
                     <div class="num">8</div>
-                    <div class="check"><input type="checkbox"></div>
+                    <div class="check"><input type="checkbox" id="check"></div>
                     <div class="memberId">user01</div>
                     <div class="memberName">유저일</div>
                     <div class="memberEmail">user01@gmail.com</div>
@@ -157,7 +157,7 @@
                 </div>
                 <div>
                     <div class="num">9</div>
-                    <div class="check"><input type="checkbox"></div>
+                    <div class="check"><input type="checkbox" id="check"></div>
                     <div class="memberId">user01</div>
                     <div class="memberName">유저일</div>
                     <div class="memberEmail">user01@gmail.com</div>
@@ -167,7 +167,7 @@
                 </div>
                 <div>
                     <div class="num">10</div>
-                    <div class="check"><input type="checkbox"></div>
+                    <div class="check"><input type="checkbox" id="check"></div>
                     <div class="memberId">user01</div>
                     <div class="memberName">유저일</div>
                     <div class="memberEmail">user01@gmail.com</div>
@@ -186,6 +186,123 @@
 	                <a href="#" class="bt next">></a>
 	                <a href="#" class="bt last">>></a>
             	</div>
+            	
+            	<div>
+            		<table border="1">
+        <tr class="s1">
+            <th class="no">NO.</th>
+            <td class="ck"><input type="checkbox"></td>
+            <th class="id">아이디</th>
+            <th class="nm">이름</th>
+            <th class="em">이메일</th>
+            <th class="pn">전화번호</th>
+            <th class="dt">회원가입일</th>
+            <th>탈퇴여부</th>
+        </tr>
+        <tr class="s2">
+            <td>1</td>
+            <td><input type="checkbox"></td>
+            <td>user01</td>
+            <td>유저일</td>
+            <td>user01@gmail.com</td>
+            <td>010-3270-2918</td>
+            <td>2023.07.06</td>
+            <td>N</td>
+        </tr>
+        <tr class="s2">
+            <td>2</td>
+            <td><input type="checkbox"></td>
+            <td>user01</td>
+            <td>유저일</td>
+            <td>user01@gmail.com</td>
+            <td>010-3270-2918</td>
+            <td>2023.07.06</td>
+            <td>N</td>
+        </tr>
+        <tr class="s2">
+            <td>3</td>
+            <td><input type="checkbox"></td>
+            <td>user01</td>
+            <td>유저일</td>
+            <td>user01@gmail.com</td>
+            <td>010-3270-2918</td>
+            <td>2023.07.06</td>
+            <td>N</td>
+        </tr>
+        <tr class="s2">
+            <td>4</td>
+            <td><input type="checkbox"></td>
+            <td>user01</td>
+            <td>유저일</td>
+            <td>user01@gmail.com</td>
+            <td>010-3270-2918</td>
+            <td>2023.07.06</td>
+            <td>N</td>
+        </tr>
+        <tr class="s2">
+            <td>5</td>
+            <td><input type="checkbox"></td>
+            <td>user01</td>
+            <td>유저일</td>
+            <td>user01@gmail.com</td>
+            <td>010-3270-2918</td>
+            <td>2023.07.06</td>
+            <td>N</td>
+        </tr>
+        <tr class="s2">
+            <td>6</td>
+            <td><input type="checkbox"></td>
+            <td>user01</td>
+            <td>유저일</td>
+            <td>user01@gmail.com</td>
+            <td>010-3270-2918</td>
+            <td>2023.07.06</td>
+            <td>N</td>
+        </tr>
+        <tr class="s2">
+            <td>7</td>
+            <td><input type="checkbox"></td>
+            <td>user01</td>
+            <td>유저일</td>
+            <td>user01@gmail.com</td>
+            <td>010-3270-2918</td>
+            <td>2023.07.06</td>
+            <td>N</td>
+        </tr>
+        <tr class="s2">
+            <td>8</td>
+            <td><input type="checkbox"></td>
+            <td>user01</td>
+            <td>유저일</td>
+            <td>user01@gmail.com</td>
+            <td>010-3270-2918</td>
+            <td>2023.07.06</td>
+            <td>N</td>
+        </tr>
+        <tr class="s2">
+            <td>9</td>
+            <td><input type="checkbox"></td>
+            <td>user01</td>
+            <td>유저일</td>
+            <td>user01@gmail.com</td>
+            <td>010-3270-2918</td>
+            <td>2023.07.06</td>
+            <td>N</td>
+        </tr>
+        <tr class="s2">
+            <td>10</td>
+            <td><input type="checkbox"></td>
+            <td>user01</td>
+            <td>유저일</td>
+            <td>user01@gmail.com</td>
+            <td>010-3270-2918</td>
+            <td>2023.07.06</td>
+            <td>N</td>
+        </tr>
+       
+
+    </table>
+            	</div>
             </div>
           
         </div>
@@ -195,6 +312,8 @@
         </div>
 
     </div>
+    
+    <script src="resources/js/"></script>
     
 </body>
 </html>

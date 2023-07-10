@@ -147,9 +147,43 @@ header section:nth-of-type(2) input{
 }
 
 .board_page{
-	text-align: center;
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
 }
 
+a:hover {
+	font-weight: bold;
+}
+
+
+.no{
+	width: 70px;
+}
+
+.ck{
+	width: 30px;
+}
+.id{
+	width: 140px;
+}
+.nm{
+	width: 110px;
+}
+.em{
+	width: 220px;
+}
+.pn{
+	width: 220px;
+}
+.dt{
+	width:180px;
+}
+
+table, td, th {
+  border : 1px solid black;
+  border-collapse : collapse;
+};
 
 
 
