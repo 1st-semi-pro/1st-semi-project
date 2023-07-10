@@ -1,0 +1,147 @@
+*{box-sizing:border-box;     
+font-family: 'Hi Melody', cursive; font-size: 16px;}
+
+html{
+    height:1200px;
+    display:flex;
+    justify-content: center;
+    align-content:center;
+
+}
+
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:150px;
+
+}
+
+#divKing{
+    
+    display:flex;
+    width:800px;
+    height:1100px;
+    flex-direction: column;
+    background-color: rgb(245, 245, 245);
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.divs{
+    display:flex;
+        flex-direction: column;
+}
+
+#firstDiv{
+    justify-content: center;
+    align-items: center;
+    height:12%;
+}
+
+#secondDiv{
+    height:12%;
+    flex-direction: row;
+}
+
+#thirdDiv{
+    display:flex;
+    height:26%;
+
+}
+
+#forthDiv{
+    display:flex;
+    height:26%;
+}
+
+#fifthDiv{
+    display:flex;
+    height:26%;
+}
+
+#sixthDiv{
+    display:flex;
+    height:6%;
+    justify-content: center;
+    align-items: center;
+}
+
+#bold{
+    font-size:20px;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+}
+
+.spans{
+    font-size:18px;
+    font-weight: bold;
+}
+
+article{
+    display:flex;
+    flex-direction:row;
+
+}
+
+.labels{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+}
+
+textarea{
+    height:180px;
+    margin-top:20px; 
+    border:0.5px solid lightgray;
+    width:90%;
+    margin-top: 10px;
+    resize:none;
+/*     background-color: rgb(235, 235, 245); */
+}
+
+.boxs{
+    margin-left:40px;
+}
+
+#btn{
+    width:90%;
+    height:50px;
+    border:0;
+    background-color: black;
+    color:white;
+    font-size: 25px;
+    border-radius:10px;
+
+}
+
+.textareaArticle{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.necessary{
+    color:red;
+}
+
+#notNecessary{
+    color:blue;
+}
+
+test{
+    width:96%;
+    height:85%;
+    background-color: white;
+    border-radius:15px;
+}
+
+#d{
+
+    font-size:50px;
+    font-weight:bolder;
+
+}
