@@ -24,8 +24,8 @@
         <header>
             <selection>
             
-            <a href="${contextPath}/">
-                <img src="${contextPath}/resources/images/humanmadelogo.svg" id="img1"> <a> <- 로고 바꾸기</a>
+            <a href="${contextPath}">
+                <img src="${contextPath}/resources/images/humanmadelogo.svg" id="img1"> <a> 로고 바꾸기</a>
             </a>    
                 
             </selection>
@@ -39,7 +39,7 @@
         <selection class="content1">
              
             <img src="${contextPath}/resources/images/id.png" id="img2">
-             <input type="text" size ="50" maxlength="10" placeholder="아이디" id="idInput">
+             <input type="text" size ="50" maxlength="10" placeholder="아이디" id="idInput" name="inputId">
         
         </selection>
 
@@ -47,7 +47,7 @@
         <selection class="content1">
             
             <img src="${contextPath}/resources/images/password.jpg" id="img3">
-            <input type="password" size = "50" maxlength="10" placeholder="비밀번호">
+            <input type="password" size = "50" maxlength="10" placeholder="비밀번호" id="inputPw">
             
         </selection>
         
@@ -84,11 +84,17 @@
             
             <span>|</span>
             
-            
+
             <div class="find">
-                <a href="join.jsp">회원가입</a>
+                <a href="${contextPath}/member/agree">회원가입</a>
             </div>
 
+					<!-- 
+                      <form action="member/join" method="post">
+                         <div>
+                     <button id="loginBtn">회원가입</button>
+                         </div>
+                      </form> -->
 
         </selection>
 
@@ -116,15 +122,9 @@
          
         </selection>
     </footer>
-   
-
-
-
-
-
 
     </main>
 
-    <script src="resources/js/login.js"></script>
+    <script src= "${contextPath}/resources/js/login.js"> </script>
 </body>
 </html>

@@ -1,10 +1,15 @@
 package edu.kh.festival.member.model.vo;
 
+import java.sql.Date;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+
+
+
 
 @Getter
 @Setter
@@ -24,14 +29,36 @@ import lombok.ToString;
 
 public class Member {
 
-	private int memberNo;
-	private String memberEmail;
-	private String memberPw;
-	private String memberNickname;
-	private String memberTel;
-	private String memberAddress;
-	private String profileImage;
-	private String enrollDate;
-	private String secessionFlag;
+	private int memberNo; // 회원번호
+	
+	private String memberId; // 회원 아이디
+	
+	private String memberPw; // 회원 비밀번호
+	
+	private String memberEmail; // 회원 이메일
+	
+	private String memberNickname; // 회원 닉네임
+	
+	private String memberName; // 회원 이름
+
+	private int memberBirth; // 회원 생년월일
+	
+	private String memberRegion; // 회원 주 활동지역
+	
+	private String memberTc; // 회원 통신사
+	
+	private int memberPhone; // 회원 전화번호
+	
+	private String memberGender; // 회원 성별 << 라디오로해놈
+	
+	private String memberNationality; // 회원 국적 << 라디오로 해놈
+	
+	public String memberProfileImage; // 회원 프로필 이미지 
+	
+	private Date enrollDate; // 가입 날짜
+	
+	private String secessionFl; // 탈퇴 여부
 	
 }
+
+
