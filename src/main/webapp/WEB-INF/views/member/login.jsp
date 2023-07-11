@@ -36,41 +36,37 @@
 
         <selectionmargin></selectionmargin>
 
-        <selection class="content1">
-             
-            <img src="${contextPath}/resources/images/id.png" id="img2">
-             <input type="text" size ="50" maxlength="10" placeholder="아이디" id="idInput" name="inputId">
-        
-        </selection>
+		<form action="${contextPath}/member/login" method="post">
+
+			<selection class="content1"> 
+			<img src="${contextPath}/resources/images/id.png" id="img2"> 
+			<input type="text" size="50" maxlength="10" placeholder="아이디" id="idInput"
+				name="inputId"> </selection>
 
 
-        <selection class="content1">
-            
-            <img src="${contextPath}/resources/images/password.jpg" id="img3">
-            <input type="password" size = "50" maxlength="10" placeholder="비밀번호" id="inputPw">
-            
-        </selection>
-        
-        <selection class="content1" id="sel1">
-           
-            <div id="widthdiv">
-                <input type="radio">
-            </div>
+			<selection class="content1"> 
+			<img src="${contextPath}/resources/images/password.jpg" id="img3">
+			<input type="password" size="50" maxlength="10" placeholder="비밀번호"
+				id="inputPw" name="inputPw"> </selection>
 
-            <input type = "email" size = "50" placeholder="로그인 상태 유지"> 
-       
-        </selection>
+			<selection class="content1" id="sel1">
 
-        
-        <selection class="content1">
-            
-            <button id="btn1">
-                <a href="#" id="a1">로그인</a>
-            </button>    
-        
-        </selection>
+			<div id="widthdiv">
+				<input type="radio">
+			</div>
 
-        <selection class="content1"  id="sel2">
+			<input type="email" size="50" placeholder="로그인 상태 유지"> </selection>
+
+
+			<selection class="content1">
+
+			<button id="btn1">로그인</button>
+
+			</selection>
+
+		</form>
+
+		<selection class="content1"  id="sel2">
            
             <div class="find">
                 <a href="#">아이디 찾기</a>
