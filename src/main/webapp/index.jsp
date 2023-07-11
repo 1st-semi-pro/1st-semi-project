@@ -37,11 +37,11 @@
               <c:when test="${empty sessionScope.loginMember }">
 
                       <div class="login">
-                      <form action="member/login" method="post">
+                      
                          <div>
-                     <button id="loginBtn">로그인</button>
+                     <a href="${contextPath}/member/login"><button id="loginBtn">로그인</button></a>
                          </div>
-                      </form>
+                   
                          
                         <article id="signup-find-area">
                                   <a href="#">내 정보찾기</a>

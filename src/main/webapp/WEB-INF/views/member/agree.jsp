@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>agree</title>
 
-    <link rel="stylesheet" href="resources/css/agree.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/agree.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&family=Moirai+One&display=swap" rel="stylesheet">
@@ -155,11 +155,11 @@
         </article>    
 
     </div>
-
+		<form>
         <div class="divs" id="sixthDiv">
-            <button id="btn">동의</button>
+            <button id="btn">동의 스크립트 하나도안넣음 일단 누르면 넘어감</button>
         </div>
-        
+        </form>
     
     
 
