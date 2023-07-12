@@ -62,7 +62,7 @@
 
 					<div class="copyright">
 						<h4>&#40;주&#41;축제축제</h4>
-						<h5>대표이사 문광민 사업자등록번호 220-81-18745<br>
+						<h5>대표이사 문광민. 사업자등록번호 220-81-18745<br>
 							저작권신고 제2023-서울강남-00481호 사업자정보확인</h5>
 						<p>Copyright &copy; D-Festival Corp. All Rights Reserved.</p>
 					</div>
