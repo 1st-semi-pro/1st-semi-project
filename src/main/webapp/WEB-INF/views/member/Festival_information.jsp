@@ -14,26 +14,8 @@
 </head>
 <body>
     <main>
-    <header>
-        <section>
-            <a href="#"><img src="resources/images/faadfgasefawcs.jpg" id="home-logo"></a>
-        </section>
-        <nav>
-            <ul>
-                <li>축제정보</li>
-                <li>공지게시판</li>
-                <li>자유게시판</li>
-                <li>축제후기</li>
-                <li>동행자구하기</li>
-            </ul>
-        </nav>
-        <section>
-            <article>
-            <input type="search" size="35" placeholder=" 여행지를 찾아보세요." autocomplete="off">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            </article>
-        </section>
-    </header>
+        <jsp:include page="/WEB-INF/views/common/header.jsp"/>
+        
     <!-- 이미지슬라이드  -->
     <section> 
         이미지슬라이드
@@ -42,10 +24,7 @@
     <article class="title-box"> 전국 축제검색 게시판</article>
     </main>
 
-    <footer>
-        
-    </footer>
-
+    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     
     
 
