@@ -18,16 +18,16 @@
 
 <body>
 
-    <form action="#">
+    <form action="${contextPath}/member/join" method ="get" onsubmit="return test()">
 
     <div id="divKing">
 
         <div class="divs" id="firstDiv">
-            <span id="d">축제축제 로고 이미지</span>
+            <img src="${contextPath}/resources/images/foreign.jpg">
         </div>
 
 
-        <test>
+        <section>
 
         <div class="divs" id="secondDiv">
           
@@ -155,11 +155,11 @@
         </article>    
 
     </div>
-		<form>
+	
         <div class="divs" id="sixthDiv">
-            <button id="btn">동의 스크립트 하나도안넣음 일단 누르면 넘어감</button>
+            <button id = "btn">다음</button>
         </div>
-        </form>
+
     
     
 
@@ -171,18 +171,13 @@
 
 
 
-</test>
+    </section>
 
     </form>
     
 
-   <!--  <script src="resources/js/agree.js"></script> -->
+    <script src="${contextPath}/resources/js/agree.js"></script> 
 
-    <script>
-
-        
-
-    </script>
 
 </body>
 </html>

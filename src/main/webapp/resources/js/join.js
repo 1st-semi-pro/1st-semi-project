@@ -3,6 +3,11 @@
 
             const idInput = document.getElementById("idInput");
 
+            idInput.addEventListener("focus",function(){
+
+                
+            })
+
             idInput.addEventListener("keyup", function(){
               
                 const regExp = /^([a-z]|[0-9]){6,14}$/;
