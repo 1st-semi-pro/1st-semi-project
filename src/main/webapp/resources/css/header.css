@@ -9,6 +9,7 @@ header{
     display: flex;
     position: sticky;
     top: 0;
+    z-index: 888;
 }
 
 header section:nth-of-type(1){
