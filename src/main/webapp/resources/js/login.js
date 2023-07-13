@@ -47,6 +47,8 @@ document.getElementById("idSave").addEventListener("change",function(){
 
 })
 
+
+// 효과주기
 inputId.addEventListener("focus",function(){
 
 	sec1.style.border = "2px solid lightcoral";
