@@ -2,7 +2,7 @@
 font-family: 'Hi Melody', cursive; font-size: 16px;}
 
 html{
-    height:1200px;
+    height:950px;
     display:flex;
     justify-content: center;
     align-content:center;
@@ -13,17 +13,25 @@ body{
     display:flex;
     justify-content: center;
     align-items: center;
-    margin-top:150px;
+    width:50%;
+    height:95%;
 
+}
+
+form{
+    display:flex;
+    width:100%;
+    height:100%;
 }
 
 #divKing{
     
     display:flex;
-    width:800px;
-    height:1100px;
+    width:100%;
+    height:100%;
     flex-direction: column;
-    background-color: rgb(245, 245, 245);
+/*     background-color: lightcoral; */
+/*     border: 10px solid lightgray; */
     border-radius: 15px;
     justify-content: center;
     align-items: center;
@@ -38,33 +46,35 @@ body{
 #firstDiv{
     justify-content: center;
     align-items: center;
-    height:12%;
+    height:10%;
+    margin: 30px 0;
 }
 
 #secondDiv{
-    height:12%;
+    height:10%;
     flex-direction: row;
+    margin-top:10px;
 }
 
 #thirdDiv{
     display:flex;
-    height:26%;
+    height:25%;
 
 }
 
 #forthDiv{
     display:flex;
-    height:26%;
+    height:25%;
 }
 
 #fifthDiv{
     display:flex;
-    height:26%;
+    height:25%;
 }
 
 #sixthDiv{
     display:flex;
-    height:6%;
+    height:10%;
     justify-content: center;
     align-items: center;
 }
@@ -78,6 +88,7 @@ body{
 .spans{
     font-size:18px;
     font-weight: bold;
+    margin-left:5px;
 }
 
 article{
@@ -94,17 +105,16 @@ article{
 }
 
 textarea{
-    height:180px;
-    margin-top:20px; 
-    border:0.5px solid lightgray;
+    height:120px;
+    margin-top:3px; 
+    border:2px solid lightgray;
     width:90%;
-    margin-top: 10px;
     resize:none;
 /*     background-color: rgb(235, 235, 245); */
 }
 
 .boxs{
-    margin-left:40px;
+    margin-left:42px;
 }
 
 #btn{
@@ -116,6 +126,10 @@ textarea{
     font-size: 25px;
     border-radius:10px;
 
+}
+
+article{
+    margin-top:3px;
 }
 
 .textareaArticle{
@@ -132,10 +146,12 @@ textarea{
     color:blue;
 }
 
-test{
-    width:96%;
-    height:85%;
+section{
+    width:90%;
+    height:95%;
     background-color: white;
+    /* border: 1px solid lightcoral; */
+    border:10px solid lightgray;
     border-radius:15px;
 }
 
@@ -144,4 +160,32 @@ test{
     font-size:50px;
     font-weight:bolder;
 
+}
+
+#btn{
+    display:flex;
+    width:90%;
+    height:60px;
+    background-color:lightcoral;
+    /* border:1px solid rgb(227 31 25); */
+    border:1px solid lightcoral;
+    color:lightgray;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Hi Melody', cursive;
+    font-size:25px;
+    font-weight:bold;
+    cursor:pointer;
+}   
+
+#btn:hover{
+    color:black;
+    border:2px solid lightgray;
+    transition-duration: 1s;
+
+}
+
+img{
+    width:120px;
 }

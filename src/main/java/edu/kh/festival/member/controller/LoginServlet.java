@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -49,11 +50,35 @@ public class LoginServlet extends HttpServlet {
 				// 이메일, 비번 일치하는 회원 있는지 조회하고 결과 반환받으러 가기
 				Member loginMember = service.login(mem);
 			
+				// Session에 set할려고 객체 얻어온다
+				HttpSession session = req.getSession();
+				
 				if(loginMember != null) {
-					System.out.println("성공");
+					System.out.println("성공"); // 테스트
+					
+					// DB에서 일치해서 모든 정보 loginMember(Member VO 객체)로 가져오면 그 정보들을 SessionScope 범위로 설정하겠다.
+					session.setAttribute("loginMember", loginMember);
+					
+					session.setAttribute("message", loginMember.getMemberId() + "님 환영합니다.");
+					
+					// 30분동안 요청이 아무것도 없으면 세션 만료 -> 로그아웃?????
+					session.setMaxInactiveInterval(1800);
+					
+					//Cookie cookie = new Cookie("Idsave", inputId);
+					
+					// 아이디 비번 DB에 있으면 메인페이지로 가겠다.
+					resp.sendRedirect(req.getContextPath());
 					
 				}else {
-					System.out.println("실패");
+					System.out.println("실패"); // 테스트
+					
+					
+					session.setAttribute("message", "아이디 또는 비밀번호가 일치하지 않습니다.");
+					// footer 없어서 jsp에 jstl로 message 출력?
+			
+					// 아이디 비번이 DB에 없으면 다시 같은화면으로 가겠다.
+					resp.sendRedirect(req.getContextPath() + "/member/login");
+					
 				}
 			
 		}catch(Exception e) {

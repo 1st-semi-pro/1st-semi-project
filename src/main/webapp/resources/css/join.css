@@ -156,6 +156,12 @@ selection.content1:hover{
     border:3px solid red;
 }
 
+#idInput:focus{
+    border:2px solid red;
+}
+
+addeve
+
 select{
     border:0;
 }

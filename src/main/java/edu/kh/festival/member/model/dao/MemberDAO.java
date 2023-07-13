@@ -58,7 +58,10 @@ public class MemberDAO {
 			
 			rs = pstmt.executeQuery();
 			
+			//System.out.println("rs.next() 는 : " + rs.next());
+			
 			//System.out.println("rs.next():::" + rs.next());
+			
 			
 			if(rs.next()) {
 				loginMember = new Member();
@@ -79,6 +82,7 @@ public class MemberDAO {
 			close(pstmt);
 		}
 		
+		System.out.println("loginMember rs22:: " + loginMember);
 		return loginMember;
 		
 	}
