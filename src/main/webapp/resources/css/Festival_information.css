@@ -26,16 +26,6 @@ i{
   background-size: 30px;
   cursor: pointer;
 }
-
-.selectBox2:before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%); 
-  right: 5px; 
-  z-index: -1;
-}
-
 .selectBox2:after {
   content: '';
   display: block; 
