@@ -12,12 +12,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&family=Moirai+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
 </head>
 <body>
     <main>
     <header>
         <section>
-            <a href="#"><img src="resources/images/faadfgasefawcs.jpg" id="home-logo"></a>
+            <a href="#"><img src="../resources/images/logo.png" id="home-logo"></a>
         </section>
         <nav>
             <ul>
@@ -36,11 +38,30 @@
         </section>
     </header>
     <!-- 이미지슬라이드  -->
-    <section id="slide"> 
-        <section class="slide-1">1</section>
-        <section class="slide-2">2</section>
-        <section class="slide-3">3</section>
-    </section>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="https://oldmidi.cdn3.cafe24.com/p/0358.jpg"></div>
+            <div class="swiper-slide"><img src="https://oldmidi.cdn3.cafe24.com/p/0262.jpg"></div>
+            <div class="swiper-slide"><img src="https://ktsmemo.cdn3.cafe24.com/p/0386.jpg"></div>
+            <div class="swiper-slide"><img src="https://oldmidi.cdn3.cafe24.com/p/0784.jpg"></div>
+            <div class="swiper-slide"><img src="https://superkts.cafe24.com/p/0518.jpg"></div>
+            <div class="swiper-slide"><img src="https://oldmidi.cdn3.cafe24.com/p/0762.jpg"></div>
+            <div class="swiper-slide"><img src="https://oldmidi.cdn3.cafe24.com/p/0148.jpg"></div>
+            <div class="swiper-slide"><img src="https://oldmidi.cafe24.com/p/0671.jpg"></div>
+            <div class="swiper-slide"><img src="https://oldmidi.cafe24.com/p/0352.jpg"></div>
+            <div class="swiper-slide"><img src="https://ktsmemo.cdn3.cafe24.com/p/0464.jpg"></div>
+            <div class="swiper-slide"><img src="https://oldmidi.cdn3.cafe24.com/p/0152.jpg"></div>
+            <div class="swiper-slide"><img src="https://oldmidi.cdn3.cafe24.com/p/0122.jpg"></div>
+            <div class="swiper-slide"><img src="https://ktsmemo.cdn3.cafe24.com/p/0241.jpg"></div>
+            <div class="swiper-slide"><img src="https://superkts.cafe24.com/p/0605.jpg"></div>
+            <div class="swiper-slide"><img src="https://oldmidi.cafe24.com/p/0538.jpg"></div>
+        </div>
+        <!-- 네비게이션 -->
+        <div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
+        <div class="swiper-button-prev"></div><!-- 이전 버튼 -->
+        <!-- 페이징 -->
+        <div class="swiper-pagination"></div>
+    </div>
 
     <!-- 검색게시판 타이틀 -->
     <section class="title-box"> 전국 축제검색 게시판</section>
@@ -51,64 +72,132 @@
             <!-- selectBox1 -->
             <div class="box">
                 <div class="selectBox2 ">
-                <button class="label"><i class="fa-regular fa-calendar-check"></i> 시기별 :</button>
-                <ul class="optionList">
-                    <li class="optionItem">2023년</li>
-                    <li class="optionItem">2022년</li>
-                    <li class="optionItem">2021년</li>
-                    <li class="optionItem">2020년</li>
-                </ul>
+                    <div class="label">
+                        <i class="fa-regular fa-calendar-check"></i>
+                        <span> 시기별 :</span>
+                        <span id="sp1"></span>
+                    </div>
+                    <ul class="optionList">
+                        <li class="optionItem">2023년</li>
+                        <li class="optionItem">2022년</li>
+                        <li class="optionItem">2021년</li>
+                        <li class="optionItem">2020년</li>
+                    </ul>
                 </div>
             </div>
             <!-- selectBox2 -->
             <div class="box">
-                <div class="selectBox2  ">
-                <button class="label"><i class="fa-solid fa-map-location-dot"></i> 지역별 :</button>
-                <ul class="optionList">
-                    <li class="optionItem">서울</li>
-                    <li class="optionItem">경기도</li>
-                    <li class="optionItem">부산</li>
-                    <li class="optionItem">시발</li>
-                </ul>
+                <div class="selectBox2">
+                    <div class="label">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        <span> 지역별 :</span>
+                        <span id="sp2"></span>
+                    </div>
+                    <ul class="optionList">
+                        <li class="optionItem">서울</li>
+                        <li class="optionItem">경기도</li>
+                        <li class="optionItem">부산</li>
+                        <li class="optionItem">시발</li>
+                    </ul>
                 </div>
             </div>
             <!-- selectBox3 -->
             <div class="box">
                 <div class="selectBox2  ">
-                <button class="label"><i class="fa-solid fa-tag"></i> 카테고리 :</button>
-                <ul class="optionList">
-                    <li class="optionItem">카</li>
-                    <li class="optionItem">테</li>
-                    <li class="optionItem">고</li>
-                    <li class="optionItem">리</li>
-                </ul>
+                    <button class="label"><i class="fa-solid fa-tag"></i> 카테고리 :</button>
+                    <ul class="optionList">
+                        <li class="optionItem">카</li>
+                        <li class="optionItem">테</li>
+                        <li class="optionItem">고</li>
+                        <li class="optionItem">리</li>
+                    </ul>
                 </div>
             </div>
             <button type="reset"><i class="fa-solid fa-repeat"></i></button>
             <button type="button">검색</button>
+            </div>
+    </section>
+
+    <section class="content2">
+        <div id="span-box">
+        <span class="festival-date">축제일순</span><span class="popularity">인기순</span>
         </div>
+        <section class="content-box content-box1">
+            <article>
+                <div class="img-box"></div>
+                <div class="text-box"></div>
+            </article>
+            <article>
+                <div class="img-box"></div>
+                <div class="text-box"></div>
+            </article>
+            <article>
+                <div class="img-box"></div>
+                <div class="text-box"></div>
+            </article>
+        </section>
+
+        <section class="content-box content-box2">
+            <article>
+                <div class="img-box"></div>
+                <div class="text-box"></div>
+            </article>
+            <article>
+                <div class="img-box"></div>
+                <div class="text-box"></div>
+            </article>
+            <article>
+                <div class="img-box"></div>
+                <div class="text-box"></div>
+            </article>
+        </section>
+
+        <section class="content-box content-box3">
+            <article>
+                <div class="img-box"></div>
+                <div class="text-box"></div>
+            </article>
+            <article>
+                <div class="img-box"></div>
+                <div class="text-box"></div>
+            </article>
+            <article>
+                <div class="img-box"></div>
+                <div class="text-box"></div>
+            </article>
+        </section>
+        <section id="button-box">
+        <button><</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+        <button>></button>
+        </section>
+        
     </section>
     
         <footer class="footer">
 			<ul class="quick_menu_list">
 				<li>
 					<a href="#"><img src="../resources/images/footer/footer_menu01.png" alt="휴대폰 구매">
-						<p>우리가 최고조</p>
+						<p>학원좀 나와조</p>
 					</a>
 				</li>
 				<li>
 					<a href="#"><img src="../resources/images/footer/footer_menu02.png" alt="인터넷/IPTV">
-						<p>우리가 최고조</p>
+						<p>학원좀 나와조</p>
 					</a>
 				</li>
 				<li>
 					<a href="#"><img src="../resources/images/footer/footer_menu03.png" alt="이벤트">
-						<p>우리가 최고조</p>
+						<p>학원좀 나와조</p>
 					</a>
 				</li>
 				<li>
 					<a href="#"><img src="../resources/images/footer/footer_menu04.png" alt="내 가입정보">
-						<p>우리가 최고조</p>
+						<p>학원좀 나와조</p>
 					</a>
 				</li>
 			</ul>
