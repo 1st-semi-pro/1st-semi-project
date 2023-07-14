@@ -17,7 +17,7 @@
 <body>
     <header>
         <section>
-            <a href="#"><img src="${contextPath}/resources/images/birth.png" id="home-logo"></a>
+            <a href="#"><img src="${contextPath}/resources/images/logo.png" id="home-logo"></a>
         </section>
         <nav>
             <ul>
