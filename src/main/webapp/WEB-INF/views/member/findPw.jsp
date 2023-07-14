@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>비밀번호 찾기</title>
 
-    <link rel="stylesheet" src="${contextPath}/resources/css/findPw.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/findPw.css">
 </head>
 <body>
     <div class="container1">

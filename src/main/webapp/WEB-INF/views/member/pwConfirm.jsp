@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원정보확인</title>
 
-    <link rel="stylesheet" src="${contextPath}/resources/css/pwConfirm.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/pwConfirm.css">
 </head>
 <body>
 
