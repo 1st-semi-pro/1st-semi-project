@@ -45,6 +45,7 @@ div{
     flex-basis: 25%;
     display: flex;
     align-items: center;
+    margin: 0px 50px;
 }
 
 .divide4 input{
