@@ -20,22 +20,22 @@
 			<ul class="quick_menu_list">
 				<li>
 					<a href="#"><img src="${contextPath}/resources/images/footer/footer_menu01.png" alt="우리가최고조">
-						<p>우리가 최고조</p>
+						<p>학원좀 나와조</p>
 					</a>
 				</li>
 				<li>
 					<a href="#"><img src="${contextPath}/resources/images/footer/footer_menu02.png" alt="우리가최고조">
-						<p>우리가 최고조</p>
+						<p>학원좀 나와조</p>
 					</a>
 				</li>
 				<li>
 					<a href="#"><img src="${contextPath}/resources/images/footer/footer_menu03.png" alt="우리가최고조">
-						<p>우리가 최고조</p>
+						<p>학원좀 나와조</p>
 					</a>
 				</li>
 				<li>
 					<a href="#"><img src="${contextPath}/resources/images/footer/footer_menu04.png" alt="우리가최고조">
-						<p>우리가 최고조</p>
+						<p>학원좀 나와조</p>
 					</a>
 				</li>
 			</ul>
