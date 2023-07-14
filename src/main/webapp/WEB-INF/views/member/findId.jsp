@@ -1,4 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>아이디 찾기</title>
 
-    <link rel="stylesheet" src="${contextPath}/resources/css/findId.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/findId.css">
 </head>
 <body>
+
+	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
     <div class="container">
         
         <div class="divide1">
@@ -29,6 +34,8 @@
 
 
     </div>
+    
+    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
 
 
