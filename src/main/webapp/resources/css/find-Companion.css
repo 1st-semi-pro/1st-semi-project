@@ -33,6 +33,16 @@ li{list-style: none; cursor: pointer;}
 .list-title a:nth-child(3){flex-basis: 100%;}
 .list-title a:nth-child(4){flex-basis: 100%;}
 
+.main-title{
+    height: 70px;
+    line-height: 70px;
+    color: white;
+    text-align: center;
+    background-color: #222;
+    color: green;
+    font-weight: bold;
+    font-size: 24px;
+}
 /* 목록 버튼 */
 #button-box{
     display: flex;
