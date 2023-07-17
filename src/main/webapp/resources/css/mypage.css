@@ -77,7 +77,14 @@ header section:nth-of-type(2) input{
     padding-left: 10px;
 }
 
-/*  메인 컨탠츠 부분 */
+/*  마이페이지 컨탠츠 부분 */
+
+.title{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
 main{
     display: flex;
     flex-direction: column;
@@ -85,31 +92,92 @@ main{
     align-items: center;
 }
 
-main > main{
-    width: 70%;
+#content{
     display: flex;
     flex-direction: column;
+    width: 70%;
+}
+
+#info-box{
+    display: flex;
     justify-content: center;
     align-items: center;
+    margin: 30px 0;
 }
 
-main > main > section{
-    display: flex;
-    width: 70%;
-    flex-wrap: wrap;
-}
-
-#profile{
+/* 이미지첨부 영역 */
+#profile-img-box{
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
-#intro > textarea, #info > textarea{
+
+#profile-img{
+    height: 400px;
+    width: 400px;
+    margin-right: 30px;
+    background-image: url("../resources/images/faadfgasefawcs.jpg");
+}
+
+#file{
+    width: 400px;
+}
+
+/* 프로필 메세지, 동행후기 영역*/
+#intro{
+    margin-bottom: 20px;
+}
+
+#history > textarea{
+    margin-bottom: 20px;
+}
+
+#history > table{
     width: 100%;
 }
-#history{
+#history > table td{
+    width: 20%;
+}
+
+/* 관심목록 영역 */
+
+.sub-title{
+    width: 100px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    background-color: black;
+}
+
+#festival-box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#festival-box > article{
     display: flex;
     flex-direction: column;
+    width: 30%;
+    height: 300px;
+    margin: 10px 30px;
 }
-#history > table{
-    margin: 0 50px;
+
+#profile-img-box> article{
+    width: 100%;
+    height: 100%;
+    background-image : url("../resources/images/faadfgasefawcs.jpg");
+}
+article img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+article a{
+    display: block;
+    width: 100%;
+    height: 100%;
 }

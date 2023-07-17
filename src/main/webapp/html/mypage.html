@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/51fc103959.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="resources/css/mypage.css">
+    <link rel="stylesheet" href="../resources/css/mypage.css">
+    <link rel="stylesheet" href="../resources/css/header.css">
+    <link rel="stylesheet" href="../resources/css/footer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&family=Moirai+One&display=swap" rel="stylesheet">
@@ -14,7 +16,7 @@
     <main>
         <header>
             <section>
-                <a href="#"><img src="resources/images/faadfgasefawcs.jpg" id="home-logo"></a>
+                <a href="#"><img src="../resources/images/faadfgasefawcs.jpg" id="home-logo" alt="로고이미지"></a>
             </section>
             <nav>
                 <ul>
@@ -33,54 +35,116 @@
             </section>
         </header>
 
-        <main>
+        <section id="content">
+        
+            <div class="title">마이페이지</div>
             <section>
-                <section id="profile">
-                    <img src="resources/images/faadfgasefawcs.jpg" alt="프로필사진">
-                    <input type="file">
+                <section id="info-box">
+                    <section id="profile-img-box">
+                        <article id="profile-img"></article>
+                        <input type="file" id="file">
+                    </section>
+                    <section>
+                        <article id="intro">
+                            <textarea name="" id="" cols="80" rows="10"></textarea>
+                        </article>
+                        <article id="history">
+                            <textarea name="" id="" cols="80" rows="10"></textarea>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <img src="" alt="">
+                                        <span>칭찬횟수</span>
+                                    </td>
+                                    <td>
+                                        <span>신고횟수</span>
+                                    </td>
+                                    <td></td>
+                                    <td><button type="button" id="update-btn">회원정보 수정</button></td>
+                                    <td><button type="submit" id="save-btn">저장</button></td>
+                                </tr>
+                            </table>
+                        </article>
+                    </section>
                 </section>
                 <section>
-                    <article id="intro">
-                        <textarea name="" id="" cols="120" rows="10"></textarea>
+                    <article class="sub-title">관심목록</article>
+                </section>
+                <section id="festival-box">
+                    <article>
+                        <h1>축제이름</h1>
+                        <a href="#"><img src="../resources/images/faadfgasefawcs.jpg" alt="축제사진"></a>
                     </article>
-                    <article id="history">
-                        <textarea name="" id="" cols="120" rows="10"></textarea>
-                        <table>
-                            <tr>
-                                <td>칭찬횟수</td>
-                                <td>신고횟수</td>
-                                <td><button type="button">회원정보 수정</button></td>
-                                <td><button type="submit">저장</button></td>
-                            </tr>
-                        </table>
+                    <article>
+                        <h1>축제이름</h1>
+                        <a href="#"><img src="../resources/images/faadfgasefawcs.jpg" alt="축제사진"></a>
+                    </article>
+                    <article>
+                        <h1>축제이름</h1>
+                        <a href="#"><img src="../resources/images/faadfgasefawcs.jpg" alt="축제사진"></a>
+                    </article>
+                    <article>
+                        <h1>축제이름</h1>
+                        <a href="#"><img src="../resources/images/faadfgasefawcs.jpg" alt="축제사진"></a>
                     </article>
                 </section>
             </section>
-            <section>
-                <article>관심목록</article>
-            </section>
-            <section>
-                <article>
-                    <h1>축제이름</h1>
-                    <a href="#"><img src="resources/images/faadfgasefawcs.jpg" alt="축제사진"></a>
-                </article>
-                <article>
-                    <h1>축제이름</h1>
-                    <a href="#"><img src="resources/images/faadfgasefawcs.jpg" alt="축제사진"></a>
-                </article>
-                <article>
-                    <h1>축제이름</h1>
-                    <a href="#"><img src="resources/images/faadfgasefawcs.jpg" alt="축제사진"></a>
-                </article>
-                <article>
-                    <h1>축제이름</h1>
-                    <a href="#"><img src="resources/images/faadfgasefawcs.jpg" alt="축제사진"></a>
-                </article>
-            </section>
-        </main>
+        </section>
     </main>
-    <footer>
-        <!-- 푸터 -->
+
+    <footer class="footer">
+        <ul class="quick_menu_list">
+            <li>
+                <a href="#"><img src="../resources/images/footer/footer_menu01.png" alt="우리가최고조">
+                    <p>우리가 최고조</p>
+                </a>
+            </li>
+            <li>
+                <a href="#"><img src="../resources/images/footer/footer_menu02.png" alt="우리가최고조">
+                    <p>우리가 최고조</p>
+                </a>
+            </li>
+            <li>
+                <a href="#"><img src="../resources/images/footer/footer_menu03.png" alt="우리가최고조">
+                    <p>우리가 최고조</p>
+                </a>
+            </li>
+            <li>
+                <a href="#"><img src="../resources/images/footer/footer_menu04.png" alt="우리가최고조">
+                    <p>우리가 최고조</p>
+                </a>
+            </li>
+        </ul>
+        <div class="footer_wrap">
+            <div class="container">
+                <ul class="footer_sns_icon">
+                    <li><a href="#"><img src="../resources/images/footer/footer_sns_icon_01.png" alt=""></a></li>
+                    <li><a href="#"><img src="../resources/images/footer/footer_sns_icon_03.png" alt=""></a></li>
+                    <li><a href="#"><img src="../resources/images/footer/footer_sns_icon_05.png" alt=""></a></li>
+                    <li><a href="#"><img src="../resources/images/footer/footer_sns_icon_07.png" alt=""></a></li>
+                    <li><a href="#"><img src="../resources/images/footer/footer_sns_icon_09.png" alt=""></a></li>
+                    <li><a href="#"><img src="../resources/images/footer/footer_sns_icon_11.png" alt=""></a></li>
+                    <li><a href="#"><img src="../resources/images/footer/footer_sns_icon_13.png" alt=""></a></li>
+                </ul>
+
+                <ul class="footer_bottom_list">
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">축제정보 제공사실 열람</a></li>
+                    <li><a href="#">ALL Festival</a></li>
+                    <li><a href="#">찾아오는길</a></li>
+                </ul>
+
+                <div class="copyright">
+                    <h4>&#40;주&#41;축제축제</h4>
+                    <h5>대표이사 문광민. 사업자등록번호 220-81-18745<br>
+                        저작권신고 제2023-서울강남-00481호 사업자정보확인</h5>
+                    <p>Copyright &copy; D-Festival Corp. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
     </footer>
+    
 </body>
 </html>
