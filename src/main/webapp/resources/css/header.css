@@ -3,7 +3,7 @@ a{text-decoration: none; color: inherit; display: block;}
 li{list-style: none; cursor: pointer;}
 
 header{
-    margin-top: 10px;
+    
     width: 100%;
     height: 80px;
     display: flex;
