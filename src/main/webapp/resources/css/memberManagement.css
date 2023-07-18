@@ -88,10 +88,12 @@ header section:nth-of-type(2) input{
 .content{
 	height: 800px;
 	width: 70%;
-	margin: auto;
+	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
 	font-size: 20px;
+    margin-bottom: 100px;
+
 }
 
 .content > div:nth-child(1) {
@@ -112,6 +114,7 @@ header section:nth-of-type(2) input{
 .content > div:nth-child(4) {
 	flex-basis: 70%;
 }
+
 
 .member_list > div{
 	display: flex;
@@ -187,7 +190,10 @@ a:hover {
 table, td, th {
   border : 1px solid black;
   border-collapse : collapse;
-};
+}
+
+
+
 
 
 
