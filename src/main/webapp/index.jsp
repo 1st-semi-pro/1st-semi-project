@@ -26,9 +26,12 @@
         
         	                  <div > <!-- 배너 + 로그인 칸 -->
                       <div class="banner">
-                          <div ><</div>
+                          <div >
+                           <div><a href="#" id="prevft">&lt;</a></div>
+                           <a href="${contextPath}/member/manage">임시버튼</a>
+                        </div>
                           <div></div>
-                          <div>></div>
+                          <div><a href="#" id="nextft">&gt;</a></div>
                       </div>
         	
         
