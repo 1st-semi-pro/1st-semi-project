@@ -68,6 +68,7 @@
 
     <!-- 컨텐츠 -->
     <section class="content">
+        <form action="">
         <div class="selectBoxList">
             <!-- selectBox1 -->
             <div class="box">
@@ -104,7 +105,11 @@
             <!-- selectBox3 -->
             <div class="box">
                 <div class="selectBox2  ">
-                    <button class="label"><i class="fa-solid fa-tag"></i> 카테고리 :</button>
+                    <div class="label">
+                        <i class="fa-solid fa-tag"></i>
+                        <span> 카테고리 :</span>
+                        <span id="sp3"></span>
+                    </div>
                     <ul class="optionList">
                         <li class="optionItem">카</li>
                         <li class="optionItem">테</li>
@@ -113,59 +118,33 @@
                     </ul>
                 </div>
             </div>
-            <button type="reset"><i class="fa-solid fa-repeat"></i></button>
-            <button type="button">검색</button>
+            <button type="reset" id="reset"><i class="fa-solid fa-repeat"></i></button>
+            <button type="button" id="search">검색</button>
             </div>
+        </form>
     </section>
 
     <section class="content2">
         <div id="span-box">
         <span class="festival-date">축제일순</span><span class="popularity">인기순</span>
         </div>
-        <section class="content-box content-box1">
-            <article>
-                <div class="img-box"></div>
-                <div class="text-box"></div>
-            </article>
-            <article>
-                <div class="img-box"></div>
-                <div class="text-box"></div>
-            </article>
-            <article>
-                <div class="img-box"></div>
-                <div class="text-box"></div>
-            </article>
-        </section>
-
-        <section class="content-box content-box2">
-            <article>
-                <div class="img-box"></div>
-                <div class="text-box"></div>
-            </article>
-            <article>
-                <div class="img-box"></div>
-                <div class="text-box"></div>
-            </article>
-            <article>
-                <div class="img-box"></div>
-                <div class="text-box"></div>
-            </article>
-        </section>
-
-        <section class="content-box content-box3">
-            <article>
-                <div class="img-box"></div>
-                <div class="text-box"></div>
-            </article>
-            <article>
-                <div class="img-box"></div>
-                <div class="text-box"></div>
-            </article>
-            <article>
-                <div class="img-box"></div>
-                <div class="text-box"></div>
-            </article>
-        </section>
+        <table>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+        </table>
         <section id="button-box">
         <button><</button>
         <button>1</button>
