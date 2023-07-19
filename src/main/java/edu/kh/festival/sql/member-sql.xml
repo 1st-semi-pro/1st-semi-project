@@ -9,14 +9,14 @@
    </entry>
    
    <entry key="updateMember">
-   	UPDATE MEMBER SET 
-   	MEMBER_REGION = ?,
-   	MEMBER_EMAIL = ?,
-   	MEMBER_TEL = ?,
-	MEMBER_PW = ?,
-	MEMBER_NICKNAME = ? 
-   	WHERE MEMBER_NO=?
-	AND MEMBER_PW = ?
+	   	UPDATE MEMBER SET 
+	   	MEMBER_REGION = ?,
+	   	MEMBER_EMAIL = ?,
+	   	MEMBER_TEL = ?,
+		MEMBER_PW = ?,
+		MEMBER_NICKNAME = ? 
+	   	WHERE MEMBER_NO=?
+		AND MEMBER_PW = ?
    </entry>
 
 

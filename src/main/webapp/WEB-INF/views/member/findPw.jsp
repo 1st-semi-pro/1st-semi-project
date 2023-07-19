@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="${contextPath}/resources/css/findPw.css">
 </head>
 <body>
+
+    <jsp:include page="/WEB-INF/views/common/header.jsp"/>
+
     <div class="container1">
         
         <div class="divide1">
@@ -39,6 +42,6 @@
 
     </div>
 
-
+    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 </body>
 </html>
