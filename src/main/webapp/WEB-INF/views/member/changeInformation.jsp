@@ -11,7 +11,7 @@
 <body>
   <div class="container">
     <h1>회원정보 수정</h1>
-    <form id="memberForm">
+    <form id="infoChange" method="post" action="/myPage/info">
       <table>
         <tr>
           <td class="center-align">아이디</td>
@@ -32,7 +32,7 @@
         <tr>
           <td class="center-align">사는 지역 변경</td>
           <td>
-            <select id="region">
+            <select name="memberRegion" id="memberRegion">
               <option value="서울">서울</option>
               <option value="경기">경기</option>
               <option value="인천">인천</option>
@@ -46,30 +46,30 @@
         <tr>
           <td class="center-align">이메일 변경</td>
           <td>
-            <input type="email" id="email" required>
+            <input type="email" id="memberEmail" name="memberEmail" required>
             <button type="button" onclick="sendEmailVerification()">이메일 인증</button>
           </td>
         </tr>
         <tr>
           <td class="center-align">휴대폰 번호 변경</td>
           <td>
-            <input type="tel" id="phoneNumber" required>
+            <input type="tel" name="memberPhone" id="memberPhone" required>
             <button type="button" onclick="sendPhoneNumberVerification()">휴대폰 번호 변경</button>
           </td>
         </tr>
         <tr>
           <td class="center-align">비밀번호 변경</td>
           <td>
-            <input type="password" id="currentPassword" placeholder="현재 비밀번호" required> <br>
-            <input type="password" id="newPassword" placeholder="새 비밀번호" required> <br>
-            <input type="password" id="confirmNewPassword" placeholder="새 비밀번호 확인" required><br>
+            <input type="password" name="currentPw" id="currentPw" placeholder="현재 비밀번호" required> <br>
+            <input type="password" name="newPw" id="newPw1" placeholder="새 비밀번호" required> <br>
+            <input type="password" name="newPwConfirm" id="newPw2" placeholder="새 비밀번호 확인" required><br>
             <button type="button" onclick="changePassword()">비밀번호 변경</button>
           </td>
         </tr>
         <tr>
           <td class="center-align">닉네임 변경</td>
           <td>
-            <input type="text" id="nickname" required>
+            <input type="text" name="memberNickname" id="memberNickname" required>
             <button type="button" onclick="checkNicknameAvailability()">중복확인</button>
           </td>
         </tr>
