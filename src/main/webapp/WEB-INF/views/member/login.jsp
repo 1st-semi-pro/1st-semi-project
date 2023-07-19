@@ -58,6 +58,12 @@
 					<input type="password" size="40" maxlength="10" placeholder="비밀번호"
 						id="inputPw" name="inputPw">
 				</section>
+				
+				<section class="content1" id="sec2">
+					<img src="${contextPath}/resources/images/password.jpg" id="img3">
+					<input type="file" size="40" maxlength="10" placeholder="파일테스트"
+						id="inputFile" name="inputFile">
+				</section>
 
 				<section class="content1" id="sel1">
 

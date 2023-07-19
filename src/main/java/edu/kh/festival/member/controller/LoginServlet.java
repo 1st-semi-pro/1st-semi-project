@@ -32,10 +32,13 @@ public class LoginServlet extends HttpServlet {
 		// 로그인창에 아이디 입력하고 입력하고 로그인 누르면 값 담김
 		String inputId = req.getParameter("inputId");
 		String inputPw = req.getParameter("inputPw");
+	
+		
+		System.out.println(req.getParameter("inputFile"));
 		
 		// 확인용
-		System.out.println(inputId);
-		System.out.println(inputPw);
+		//System.out.println(inputId);
+		//System.out.println(inputPw);
 		
 		// 입력한 아이디, 비번 Member VO에 세팅
 		Member mem = new Member();
@@ -44,7 +47,7 @@ public class LoginServlet extends HttpServlet {
 		
 		try {
 			
-				// 서비스 객체 만들기 (서비스 메소드 쓸라고)
+				// 서비스 객체 만들기 (서비스 메소드 쓸려고)
 				MemberService service = new MemberService();
 				
 				// 이메일, 비번 일치하는 회원 있는지 조회하고 결과 반환받으러 가기
@@ -54,7 +57,7 @@ public class LoginServlet extends HttpServlet {
 				HttpSession session = req.getSession();
 				
 				if(loginMember != null) {
-					System.out.println("성공"); // 테스트
+					// System.out.println("성공"); // 테스트
 					
 					// DB에서 일치해서 모든 정보 loginMember(Member VO 객체)로 가져오면 그 정보들을 SessionScope 범위로 설정하겠다.
 					session.setAttribute("loginMember", loginMember);
@@ -64,7 +67,20 @@ public class LoginServlet extends HttpServlet {
 					// 30분동안 요청이 아무것도 없으면 세션 만료 -> 로그아웃?????
 					session.setMaxInactiveInterval(1800);
 					
-					//Cookie cookie = new Cookie("Idsave", inputId);
+					
+					// ----------------------------쿠키 -------------------------------- //
+					Cookie cookie = new Cookie("Idsave", inputId);
+									// ("클라이언트쪽에 저장될 쿠키 이름", "쿠키 내용" )
+					
+					// if(req.getParameter("s"))
+					
+					
+					
+					
+					
+					
+					
+					// ----------------------------쿠키 -------------------------------- //
 					
 					// 아이디 비번 DB에 있으면 메인페이지로 가겠다.
 					resp.sendRedirect(req.getContextPath());
