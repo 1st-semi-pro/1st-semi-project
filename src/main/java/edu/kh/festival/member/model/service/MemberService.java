@@ -3,6 +3,7 @@ package edu.kh.festival.member.model.service;
 import static edu.kh.festival.common.JDBCTemplate.*;
 
 import java.sql.Connection;
+import java.util.Map;
 
 import edu.kh.festival.member.model.dao.MemberDAO;
 import edu.kh.festival.member.model.vo.Member;
@@ -48,5 +49,11 @@ public class MemberService {
 		
 		
 		return result;
+	}
+
+
+	public Map<String, Object> manageMember(int type, int cp) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

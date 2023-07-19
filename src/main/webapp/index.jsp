@@ -28,7 +28,7 @@
                       <div class="banner">
                           <div >
                            <div><a href="#" id="prevft">&lt;</a></div>
-                           <a href="${contextPath}/member/manage">임시버튼</a>
+                           <a href="${contextPath}/member/manage?type=5">임시버튼</a>
                         </div>
                           <div></div>
                           <div><a href="#" id="nextft">&gt;</a></div>
@@ -71,7 +71,7 @@
                            <div>
                               <a href="#" id="nickname">유저 닉네임</a>
                               
-                              <a href="#" id="logout-btn">로그아웃</a>
+                              <a href="${contextPath}/member/logout" id="logout-btn">로그아웃</a>
                            </div>
                            
                            <p>
