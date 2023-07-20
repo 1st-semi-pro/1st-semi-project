@@ -94,7 +94,7 @@ public class MemberDAO {
 	 * @return result
 	 * @throws Exception
 	 */
-	public int updateMember(Connection conn, Member mem) throws Exception{
+	public int updateMember(Connection conn, Member mem, String newPw) throws Exception{
 		int result = 0;
 		
 		try {
@@ -114,7 +114,7 @@ public class MemberDAO {
 			pstmt.setString(1, mem.getMemberRegion());
 			pstmt.setString(2, mem.getMemberEmail());
 			pstmt.setInt(3, mem.getMemberPhone());
-			pstmt.setString(4, mem.getMemberPw());
+			pstmt.setString(4, newPw);
 			pstmt.setString(5, mem.getMemberNickname());
 			pstmt.setInt(6, mem.getMemberNo());
 			pstmt.setString(7, mem.getMemberPw());
