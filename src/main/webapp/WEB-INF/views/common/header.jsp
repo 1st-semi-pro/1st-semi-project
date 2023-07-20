@@ -81,20 +81,3 @@
             </ul>
         </nav>
     </header>
-    
-    <div class="find">
-					<a href="${contextPath}/member/findId">아이디 찾기</a>
-				</div>
-
-				<span>|</span>
-
-				<div class="find">
-					<a href="${contextPath}/member/findPw">비밀번호 찾기</a>
-				</div>
-
-				<span>|</span>
-
-
-				<div class="find">
-					<a href="${contextPath}/member/agree">회원가입</a>
-				</div>
