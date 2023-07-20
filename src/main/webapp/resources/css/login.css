@@ -1,4 +1,4 @@
-*{box-sizing:border-box;}
+*{box-sizing:border-box; font-weight: bold;}
 
 html{
     height:900px;
@@ -107,14 +107,12 @@ sectionmargin{
     height:50px;
 }
 
-
 div{
     display:flex; 
     width:50px; 
     height:50px; 
     justify-content:center; align-items: center;
 }
-
 
 
 section.content1:hover{
@@ -133,7 +131,6 @@ div{
     font-size:15px;
 
 }
-
 
 #btn1{
     display:flex;
@@ -199,5 +196,3 @@ footer{
 .footer a{
     display:flex;
 }
-
-
