@@ -22,7 +22,7 @@ public class ManageMemberServlet extends HttpServlet {
 		
 		try {
 	         
-	         int type = Integer.parseInt(req.getParameter("type"));
+	         
 	         
 	         int cp = 1;
 	         
@@ -33,7 +33,7 @@ public class ManageMemberServlet extends HttpServlet {
 	         MemberService service = new MemberService();
 	         
 	         // 게시판 이름, 페이지네이션 객체, 게시글 리스트를 한번에 반환하는 Service 호출
-	         Map<String, Object> map = service.manageMember(type, cp);
+	         Map<String, Object> map = service.manageMember(cp);
 	         
 	         // request 범위로 map을 세팅
 	         req.setAttribute("map", map);
