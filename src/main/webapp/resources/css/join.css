@@ -1,259 +1,370 @@
-*{box-sizing:border-box;  }
-
-html{
-    height:1500px;
+*{
+    box-sizing: border-box; 
+    font-family: 'Hi Melody', cursive;
+    font-size:16px;
+    font-weight: bold;
+    
 }
+
+/* ::placeholder{
+ 
+} */
 
 body{
-
-    margin-top:200px;
-}
-
-
-main{
-    width:500px;
-    background-color: transparent;
-    /* border:1px solid black; */
-    margin:auto;
-
-}
-
-header{
+    height:950px;
     display:flex;
     justify-content: center;
-    align-items:center;
-    /* border:1px solid black; */
-    margin :5px 0; 
-}
-
-header>section{
-    height:500px;
-}
-
-selection.content{
-    display:flex;
-    flex-direction: column;
-    height:600px;
-    border-radius:10px;
-    align-items:center;
-}
-
-selection.content1{
-    display:flex;
-    flex-basis:12.5%;
-    width:450px;
-    justify-content:center;
-    align-items:center;
-    border:1px solid lightgray;
-    border-radius:10px;
-}
-
-selection.content2{
-    display:flex;
-    flex-direction: column;
-    height:50px;
-}
-
-selection.content2>article{
-    border:1px solid #ddd;
-    height:150px;
-    display:Flex;
     align-items: center;
-    justify-content:center;
 }
 
-selection.content2 img{
-    height: 20px;
-    cursor:pointer;
-    border:0;
-    margin-left:10px;
-}
-
-footer{
-    height:100px;
-}
-
-footer>article{
-    border:0;
+main{
     display:flex;
-    justify-content:center;
-    align-items:center;
+    width:45%;
     height:100%;
+    flex-direction: column;
 }
 
-footer>article>button{
-    border:0;
-    font-weight:bold;
-    background-color:rgb(227 31 25);
-    color:white;
-    height:50px;
-    flex-basis:15%;
-    cursor:pointer;
-    border-radius:20px;
+/* 로고div */
+#logoDiv{
+    display:Flex;
+    flex-basis:8%;
+    justify-content: center;
+    align-items: center;
 }
 
-footer>article>button>a{
-    width:100%;
-    height:100%;
-}
-selection.content1>input{
-
-    border:0;
-    flex-basis:50%;
-    
-    outline: 0; /* 마우스 올렸을 때 테두리 없애기 */
-    
-    text-decoration:none;
-}
-
-span{
-    font-family: 'Hi Melody', cursive;
-    font-weight: bold;
-    font-size:14px;
-}
-
-selectionmargin{
-    width:450px;
-    height:50px;
+form{
     display:flex;
+    flex-basis:90%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 8px solid lightgray;
+    border-radius:5px;
+}
+
+/* 아이디,비번,비번확인,이메일 인증 */
+#firstbox{
+    display:flex;
+    width:60%;
+    height:24%;
+    flex-direction: column;
+    border:5px solid lightgray;
+    border-radius:5px;
+}
+
+/* firstBox에 대한 height*/
+#firstbox > article{
+    display:flex;
+    height:33.3%;
     justify-content: flex-start;
     align-items: center;
 }
 
-footer button:hover{
-    background-color: black;
-    transition-duration:1s;
+#innerTextSpan1{
+    display:flex;
+    height:12%;
+    margin-left:50px;
+    margin-bottom: 5px;
+    justify-content: flex-start;
+    align-items: center;
 }
 
-button a{
-    text-decoration: none;
-    color:white;
+/* 닉네임, 이름, 생년월일, 주 활동지역, 통신사, 폰번호, 남/녀, 내/외국인 */
+#height{
+    display:flex;
+    height:1.5%;    
 }
 
-div{
-    display:flex; 
-    width:50px; 
-    height:50px; 
-    justify-content:center; align-items: center;
+#secondBox{
+    display:flex;
+    width:60%;
+    height: 56%;
+    flex-direction: column;
+    border:5px solid lightgray;
+    border-radius:5px;
 }
 
-selection.content1:focus{
-    border:1px solid blue;
+#secondBox:hover{
+    border:5px solid lightcoral;
 }
 
-content1 div1{
-    width:200px;
+
+/* secondBox에 대한 height*/
+#secondBox > article{
+    display:flex;
+    height:11.5%;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* 통신사 */
+article > agency{
+    display:flex;
+    width:80%;
+    justify-content: s;
+}
+
+/* 통신사 div */
+
+.agencyLabels{
+    display:Flex;
+    flex-basis:33.3%;
+    border:1px solid lightgray;
+    border-radius: 5px;
+    height:35px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    
+}
+
+.agency{
     display:flex;
     justify-content: center;
     align-items: center;
 }
 
-selection.content1:hover{
-    border:3px solid red;
+.agency > span{
+    margin-left:5px;
+   margin-top:4px;
 }
 
-.content2:hover{
-    border:3px solid red;
+#agencyMargin{
+    margin-left: 10px;
 }
 
-#idInput:focus{
-    border:2px solid red;
+/* 남/여 , 내/외국인 */
+
+#genderNationality{
+    display:flex;
+    width:80%;
 }
 
-addeve
-
-select{
-    border:0;
+#gender{
+    display:flex;
+    width:50%;
+    margin-right:5px;
+    
 }
 
-::placeholder{
-    font-family: 'Hi Melody', cursive;
-    font-weight: bold;
-}
-
-
-div{
-    height:40px;
-    font-family: 'Hi Melody', cursive;
-    font-weight:bold;
-    font-size:15px;
-
-}
-
-div1{
+#gender label{
+    border:2px solid lightgray;
+    border-radius: 5px;
+    width:50%;
+    height:35px;
     display:flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
-.btn1 button{
+#nationality{
     display:flex;
-    flex-basis:100%;
-    height:100%;
-    border:1px solid rgb(227 31 25);
+    width:50%;
+
+}
+
+#nationality label{
+    border:2px solid lightgray;
+    border-radius: 5px;
+    width:50%;
+    height:35px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.leftLabel{
+    border:1px solid red;
+}
+
+.rightLabel{
+    border-left:1px;
+}
+
+
+/* 2번째 div 정규식 */
+
+#innerTextSpan2{
+    display:flex;
+    height:8%;
+    margin-left:50px;
+
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* 인증약관 전체동의 */
+#thirdBox{
+    display:flex;
+    height:8%;
+    border:5px solid lightgray;
+    margin-top:10px;   
+    width:60%;
     border-radius: 5px;
     justify-content: center;
     align-items: center;
 }
 
-.content1 a{
-    font-size:20px;
-    font-weight: bold;
+#thirdBox:hover{
+    border:5px solid lightcoral;
 }
 
-
-.find{
-  
-    width:150px;
-    margin-top:0px;
-}
-
-.find a{
-    font-size:14px;
-    color:rgba(0, 0, 0, 0.5);
-}
-
-selection.content2{
-    width:450px;
-    margin-left:25px;
-    border-radius:5px;
-}
-
-footer>article>button a{
-    width: 100%;
-    height: 50px;
-    line-height: 50px;
-    display: block;
-}
-
-.btn{
+#thirdBox > span{
     display:flex;
-    width:190px;
-    height:40px; 
-    border:1px solid lightgray;
-    border-radius:10px;
-    background-color: white;
+    margin-left:5px;
+    margin-top:3px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+p{
+    color:lightcoral;
+    margin-top:17px;
+    margin-right:5px;
+}
+
+#agreeImg{
+    width:15px;
+    height:15px;
+    margin-left:10px;
+}
+
+#agreeClickBox{
+    display:none;
+}
+
+#test{
+    display:flex;
+    text-align: end;
+}
+/* 회원가입 버튼 div*/
+#forthBox{
+    display:flex;
+    width:100%;
+    height:8%;
     justify-content: center;
     align-items: center;
 }
 
-.btn:hover{
-    border:2px solid red;
-   
+#btn{
+    height:70%;
+    width:60%;
+    border:0;
+    background-color: lightcoral;
+    color:white;
+    font-size:26px;
+    border-radius: 10px;
+    cursor:pointer;
 }
 
-#img1{
-    width:150px;
+#btn:hover{
+    color:black;
+    transition-duration: 1s;
 }
 
-#img2{
-    width:50px; height:45px;
+img{
+    margin:2px 2px;
+    height:50px;
+    width:50px;
 }
 
 #img3{
-    width:50px; height:45px;
+    height:40px;
 }
 
-#img4{
-    width:50px;
+
+
+/* 주 활동 지역*/
+
+#selectDiv{
+    display:flex;
+    width:80%;
+}
+
+#selectDiv > select{
+    width:100%;
+    height:38px;
+    border:2px solid lightgray;
+    border-radius: 5px;
+}
+
+/* ::placeholder{
+
+} */
+
+.inputs{
+    width:80%;
+    height:32px;
+    border:0;
+    border-bottom: 2px solid lightgray; /* 입력완료->lightcoral */
+    outline:0;
+    
+}
+
+#firstbox:hover{
+    border:5px solid lightcoral;
+
+}
+
+/* 라디오 버튼 숨기기 */
+.radios{
+    display:none;
+}
+
+
+/* 이메일 부분 */
+#inputEmail{
+    width:60%;
+}
+
+#emailBtn{
+    margin-left:10px;
+    width:20%;
+    height:30px;
+    border:0;
+    background-color:lightcoral;
+    color:white;
+    border-radius: 5px;
+    cursor:pointer;
+}
+
+#emailBtn:hover{
+    color:black;
+    transition-duration: 1s;
+}
+
+/* 전체 라벨 호버 */
+label:hover{
+    background-color: lightcoral;
+    color:white;
+    transition-duration: 1s;
+}
+
+
+/* 푸터인데 이것도 jsp 따로 만들어서 인클루드 해야할듯 */
+
+footer{
+    margin-top:20px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+}
+
+.find1{
+    display:flex;
+    margin-top:0px;
+    align-items:center;
+}
+
+.find1 a{
+    font-size:14px;
+    color:rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+}
+
+.footer a{
+    display:flex;
 }

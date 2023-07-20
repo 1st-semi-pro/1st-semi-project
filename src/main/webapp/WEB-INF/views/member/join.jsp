@@ -13,174 +13,204 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&family=Moirai+One&display=swap" rel="stylesheet">
 
-
-
 </head>
 
 <body>
 
     <main>
 
-        <header>
-            <selection>
-                <img src="${contextPath}/resources/images/humanmadelogo.svg" id="img1"> <a> <- 로고 바꾸기</a>
+        <div id = "logoDiv">
+            로고 자리
+        </div>
+
+
+        
+        <form>
+
+            <div id="height"></div>
+
+            <div id="firstbox">
+                <article class = "firstArticles">
+                    <img src="${contextPath}/resources/images/id.png" id="img1">
+                    <input type="text" class="inputs" id="inputId" placeholder="아이디를 입력해주세요.">
+                </article>
+
+                <article>
+                    <img src="${contextPath}/resources/images/password.jpg" id="img2">
+                    <input type="password" class="inputs" id="inputPw" placeholder="비밀번호를 입력해주세요.">
+                </article>
+
+                <article>
+                    <img src="${contextPath}/resources/images/password2.png" id="img3">
+                    <input type="password" class="inputs" id="inputPwCheck" placeholder="비밀번호 확인을 입력해주세요.">
+                </article>
+
+
+                <span id="innerTextSpan1"></span>
+
+            </div>
+
+            <div id="height"></div>
+
+            <div id="secondBox">
+
+                <article id="giveMargin">
+                    <img src="${contextPath}/resources/images/id.png" id="img5">
+                    <input type="text" class="inputs" id="memberNickname" placeholder="닉네임을 입력해주세요.">
                 
-            </selection>
-        </header>
+                </article>
 
-    <selection class="content">
+                <article>
+                    <img src="${contextPath}/resources/images/id.png" id="img6">
+                    <input type="text" class="inputs" id="memberName" placeholder="이름을 입력해주세요.">
 
-        <selectionmargin></selectionmargin>
+                </article>
 
-        <selection class="content1" id = "sel1">
-            
-            <img src="${contextPath}/resources/images/id.png" id="img2">
-             <input type="text" size ="50" maxlength="14" placeholder="아이디" id = "idInput">
-        
-        </selection>
-        
-        <selection class="content1" id = "sel2dot1">
-        
-            <img src="${contextPath}/resources/images/password2.png" id="img3">
-            <input type="password" size = "50" maxlength="10" placeholder="비밀번호" id = "pwInput1" >
-        
-        </selection>
-
-        <selection class="content1" id = "sel2dot2">
-        
-            <img src="${contextPath}/resources/images/password.jpg" id="img4" >
-            <input type="password" size = "50" maxlength="10" placeholder="비밀번호 확인" id = "pwInput2">
-        
-        </selection>
-        
-
-        <selectionmargin>
-            <span style="margin-left:22px;" id="firstSpan"></span>
-        </selectionmargin>
-
-        <selection class="content1" id="sel4">
-            
-            <div>
-                <img src="${contextPath}/resources/images/name.png" style="width:30px; height:30px;">
-            </div>
-           
-            <input type="text" size ="50" maxlength="10" 
-            placeholder="이름" id="nameInput">
-            
-        </selection>
-
-        <selection class="content1" id="sel5">
-
-            <div>
-            <img src="${contextPath}/resources/images/birth.png" style="width:28px; height:28px;">
-            </div>
-
-            <input type="text" size ="50" maxlength="10" 
-            placeholder="생년월일 8자리 (-포함)" id="birthInput">
-
-        </selection>
-
-        <selection class="content1" id="sel3">
-
-            <div>
-            <img src="${contextPath}/resources/images/birth.png" style="width:32px; height:35px;">
-            </div>
-            
-            <input type = "email" size = "50" 
-            placeholder="이메일" id="emailInput" width="50px;">  
-       
-        </selection>
-        
-        <selection class="content1" id="sel6" >
-            
-            <div>
-                <img src="${contextPath}/resources/images/gender.jpg" style="width:35px; height:35px;">
-            </div>
-
-            <div1 >
-            <label for="man"><button class="btn" id="btn1">
-                <div style="width:10px; margin-top:4px;">남</div>
-                <input type="radio" name="gender" id="man"></button>
-            </label>
-            </div1>
-
-            <div1 id="input2">
-            <label for="woman"><button class="btn" id="btn2">
-                <div style="width:10px; margin-top:7px;">여</div>
-                <input type="radio" name="gender" id="woman"></button>
-            </label>
-            </div1>
-
-        </selection>
-            
-        <selection class="content1" id="sel7">
-            
-                <div>
-                <img src="${contextPath}/resources/images/foreign.jpg" style="width:40px; height:40px;">
-                </div>
-
-                <label for="korean">
-                   
-                    <button class="btn" id="btn3">
-                        <div style="width:38px; margin-top:4px;">내국인</div>
-                        <input type="radio" name="nationality" id="korean"></button>
+                <article>
+                    <img src="${contextPath}/resources/images/id.png" id="img7">
+                    <input type="text" class="inputs" id="memberBirth" placeholder="생년월일을 입력해주세요.(- 제외)">
                 
-                </label>
-               
- 
-                <label for="foreigner">
-                    
-                    <button class="btn" id="btn4" >
-                        <div style="width:38px; margin-top:4px;">외국인</div>
-                        <input type="radio" name="nationality" id="foreigner"></button>
+                </article>
+
+                <article>
+                    <img src="${contextPath}/resources/images/id.png" id="img8">
+                 
+                    <div id="selectDiv">
+                        <select>
+                            <option selected>주 활동지역을 선택해주세요.</option> <!-- 이거 선택안되게 하는법? -->
+                            <option value="1">서울</option>
+                            <option value="2">경기</option>
+                            <option value="3">강원</option>
+                            <option value="4">제주</option>
+                        </select>
+                    </div>    
+
+                </article>
+
+                <article>
+                    <img src="${contextPath}/resources/images/id.png" id="img9">
+                    <agency>
+                        <label for="SKT" class="agencyLabels">
+                            <div class="agency">
+                                <input type="radio" name="agency" id="SKT" class="radios">
+                                <span>SKT</span>
+                            </div>
+                        </label>
+
+                        <label for="KT" class="agencyLabels" id="agencyMargin">
+                            <div class="agency" >
+                                <input type="radio" name="agency" id="KT" class="radios">
+                                <span>KT</span>
+                            </div>
+                        </label>
+
+                        <label for="LG" class="agencyLabels" id="agencyMargin">
+                            <div class="agency"> 
+                                <input type="radio" name="agency" id="LG" class="radios"> 
+                                <span>LG</span>
+                            </div>
+                        </label>
+                        
+                    </agency>    
+                </article>
+
+                <article> 
+                    <img src="${contextPath}/resources/images/id.png" id="img10">
+                    <input type="text" class="inputs" id="memberBirth" placeholder="전화번호를 입력해주세요.(- 제외)">
+
+                </article>
+                <article>
+                    <img src="${contextPath}/resources/images/id.png" id="img11"> 
+                    <div id="genderNationality">
+
+                        <div id="gender">
+                            <label for="man" class="leftLabel">
+                                <div>
+                                    <input type="radio" name="gender" id="man" class="radios">
+                                    <span>남</span>
+                                </div>
+                            </label>
+
+                            <label for="woman" class="rightLabel">
+                                <div>
+                                    <input type="radio" name="gender" id="woman" class="radios" >
+                                    <span>여</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div id="nationality">
+                            <label for="kor" class="leftLabel">
+                                <div>
+                                    <input type="radio" name="nation" id="kor" class="radios">
+                                    <span>내국인</span>
+                                </div>
+                            </label>
+
+                            <label for="foreign" class="rightLabel">
+                                <div>
+                                    <input type="radio" name="nation" id="foreign" class="radios">
+                                    <span>외국인</span>
+                                </div>
+                            </label>
+                        </div>
+
+                    </div>
+
+                </article>
                 
-                </label>
-        
-            </selection>
-        
-        <selection class="content1" id="sel8">
-            
-            <div>
-            <img src="${contextPath}/resources/images/phone.png" style="width:30px; height:30px;">
+                <article>
+                    <img src="${contextPath}/resources/images/id.png" id="img4">
+                    <input type="email" class="inputs" id="inputEmail" placeholder="이메일을 입력해주세요.">
+                    <button id="emailBtn">인증하기</button>
+                </article>
+
+
+                <span id="innerTextSpan2"></span>
+
             </div>
-            
-            <input type="text" size="50" placeholder="전화번호 (-포함)" id="phoneInput">
 
-        </selection>
+            <div id="thirdBox">
+                <input type="radio">
+                <span><p>[필수]</p>인증 약관 전체 동의</span>
+                <img src="v.jfif" id="agreeImg">
+            </div>
 
-        <selectionmargin>
-            <span style="margin-left:22px;" id="secondSpan"></span>
-        </selectionmargin> 
+            <div id="agreeClickBox">
+                약관동의 클릭하면 나올 박스
+            </div>
 
-      
-    </selection>
 
-    <selection class="content2" id="sel9" style="border-radius:30px;">
+            <div id="forthBox">
+                <button id="btn">회원가입</button>
+            </div>    
 
-        <article style="border-radius: 20px;">
-         <input type="radio" id="agree">    
-         <a style="font-size:17px; font-weight:bold; font-family: 'Hi Melody', cursive;
-                    margin-top:5px; margin-left:5px;">
-            [필수] 인증 약관 전체동의</a>
-         <img src="resources/images/v.jfif"> <a> <- 클릭시 콤보박스 넣기</a>
-        </article>
+        </form>
 
-    </selection>
-    <footer>
-        <article>
-            <button id="btn">
-            <a href="login.jsp"
-            style="font-family: 'Hi Melody', cursive;">
-            회원가입</a>
-            </button>
-        </article>
-    </footer>
+        <footer>
 
-<button>인증하기</button>
-통신사, 활동지역, 닉네임 div 넣기
+			<section class="find1">
+
+				<a> 이용약관 | 개인정보 처리 방침 | 책임의 한계와 법적고지 | 회원정보 고객센터 </a>
+
+			</section>
+
+			<section class="find1">
+
+				<section>
+
+					<a>Copyright &copy; 2023 OTSUMO CO., LTD. ALL rights reserved<span>|</span></a>
+
+				</section>
+
+			</section>
+		</footer>
+
+
     </main>
 
 
-    <script src="${contextPath}/resources/js/join.js"></script>
+    <script src="/js/join.js"></script>
+   
 </body>
 </html>

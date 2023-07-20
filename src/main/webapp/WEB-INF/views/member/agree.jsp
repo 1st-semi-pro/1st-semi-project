@@ -18,7 +18,7 @@
 
 <body>
 
-    <form action="${contextPath}/member/join" method ="get" onsubmit="return test()">
+    <form action="${contextPath}/member/join" method ="get" onsubmit="return agreeCheck()">
 
     <div id="divKing">
 
@@ -32,7 +32,7 @@
         <div class="divs" id="secondDiv">
           
 
-            <input type="checkbox" id="checkAll" class="boxs" >
+            <input type="checkbox" id="checkAll" class="boxs">
             
             <label for="checkAll" class="labels">
                 <span id="bold">축제축제의 개인정보 처리방침, 서비스 이용약관, 마케팅 수신 여부에 대해 모두 동의합니다.</span>
@@ -160,24 +160,33 @@
             <button id = "btn">다음</button>
         </div>
 
-    
-    
-
-
-
-
       </div>
     
-
-
-
     </section>
 
     </form>
     
+            <footer>
 
-    <script src="${contextPath}/resources/js/agree.js"></script> 
+			<sec class="find1">
 
+				<a> 이용약관 | 개인정보 처리 방침 | 책임의 한계와 법적고지 | 회원정보 고객센터 </a>
+
+			</sec>
+
+			<sec class="find1">
+
+				<sec>
+
+					<a>Copyright &copy; 2023 OTSUMO CO., LTD. ALL rights reserved<span>|</span></a>
+
+				</sec>
+
+			</sec>
+		</footer>
+
+
+    <script src="${contextPath}/resources/js/agree.js"></script>  
 
 </body>
 </html>
