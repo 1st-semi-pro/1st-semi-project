@@ -17,6 +17,7 @@
     flex-basis: 15%;
     margin-left: 50px;
     align-items: center;
+    border: 0;
 }
 
 .sub{
@@ -24,6 +25,7 @@
     margin: 0px 50px;
     height: 7%;
     align-items: center;
+    border: 0;
 }
 
 .divide2{
@@ -31,6 +33,7 @@
     display: flex;
     flex-direction: column;
     margin: 0px 50px;
+    border: 0;
 }
 
 .divide2 > div:first-child{
@@ -39,6 +42,7 @@
     color: white;
     align-items: center;
     justify-content: center;
+    
 }
 
 .divide3{
@@ -46,13 +50,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 0;
 }
 
 .divide4{
     flex-basis: 40%;
     display: flex;
     align-items: center;
-    border: 1px solid black;
+    border: 0;
     
 }
 
@@ -63,7 +68,6 @@
     width: 100%;
     padding-left: 20px;
     border: 1px solid black;
-    border-bottom: 0;
 }
 
 button{
@@ -92,6 +96,12 @@ button{
     width: 15%;
     border-radius: 5%;
     border: 0;
+}
+#btn1:hover{
+    color: black;
+}
+#btn2:hover{
+    color: black;
 }
 #btn3:hover{
     color: black;
