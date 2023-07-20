@@ -28,7 +28,7 @@
                       <div class="banner">
                           <div >
                            <div><a href="#" id="prevft">&lt;</a></div>
-                           <a href="${contextPath}/member/manage?type=5">임시버튼</a>
+                           <a href="${contextPath}/member/manage?cp=1">임시버튼</a>
                         </div>
                           <div></div>
                           <div><a href="#" id="nextft">&gt;</a></div>

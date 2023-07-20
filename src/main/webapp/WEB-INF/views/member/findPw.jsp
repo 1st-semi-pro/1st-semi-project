@@ -42,6 +42,23 @@
 
     </div>
 
-    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+    <footer>
+
+        <section class="find1">
+
+            <a> 이용약관 | 개인정보 처리 방침 | 책임의 한계와 법적고지 | 회원정보 고객센터 </a>
+
+        </section>
+
+        <section class="find1">
+
+            <section>
+
+                <a>Copyright &copy; 2023 OTSUMO CO., LTD. ALL rights reserved<span>|</span></a>
+
+            </section>
+
+        </section>
+    </footer>
 </body>
 </html>

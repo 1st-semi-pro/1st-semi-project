@@ -3,10 +3,13 @@ package edu.kh.festival.member.model.service;
 import static edu.kh.festival.common.JDBCTemplate.*;
 
 import java.sql.Connection;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import edu.kh.festival.member.model.dao.MemberDAO;
 import edu.kh.festival.member.model.vo.Member;
+import edu.kh.festival.member.model.vo.Pagination;
 
 public class MemberService {
 
@@ -52,8 +55,11 @@ public class MemberService {
 	}
 
 
-	public Map<String, Object> manageMember(int type, int cp) {
+	public Map<String, Object> manageMember(int cp) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+
+	
 }

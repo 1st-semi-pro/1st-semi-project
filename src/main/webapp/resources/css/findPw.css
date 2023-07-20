@@ -3,18 +3,18 @@
 
 
 .container1{
-    width: 500px;
-    height: 400px;
+    width: 600px;
+    height: 600px;
     margin: 100px auto;
     display: flex;
     flex-direction: column;
-    border: 4px solid gray;
-    border-radius: 5%;
+    border: 10px solid lightgray;
+    border-radius: 10px;
 }
 
 .divide1{
     display: flex;
-    flex-basis: 25%;
+    flex-basis: 15%;
     margin-left: 50px;
     align-items: center;
 }
@@ -35,7 +35,7 @@
 
 .divide2 > div:first-child{
     display: flex;
-    background-color: black;
+    background-color:black;
     color: white;
     align-items: center;
     justify-content: center;
@@ -52,38 +52,64 @@
     flex-basis: 40%;
     display: flex;
     align-items: center;
+    border: 1px solid black;
     
 }
 
 .divide4 input{
     border: 0;
     font-size: 15px;
+    height: 100%;
+    width: 100%;
+    padding-left: 20px;
+    border: 1px solid black;
+    border-bottom: 0;
 }
 
 button{
     cursor: pointer;
+    background-color: lightcoral;
+    border: 0;
+
 }
 
 
 #btn1{
-    background-color: black;
     color: white;
     width: 100px;
     height: 100%;
     border-radius: 5%;
 }
 #btn2{
-    background-color: black;
     color: white;
     width: 100px;
     height: 100%;
     border-radius: 5%;
 }
 #btn3{
-    background-color: black;
     color: white;
     height: 40%;
     width: 15%;
     border-radius: 5%;
+    border: 0;
 }
+#btn3:hover{
+    color: black;
+}
+
+footer{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer a{
+    display:flex;
+}
+
+footer *{
+    color: rgb(117, 115, 115);
+}
+
 
