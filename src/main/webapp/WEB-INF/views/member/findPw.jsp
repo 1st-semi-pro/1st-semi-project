@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>비밀번호 찾기</title>
 
+    <link rel="stylesheet" href="${contextPath}/resources/css/index.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/findPw.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&family=Moirai+One&display=swap" rel="stylesheet">
 </head>
 <body>
 

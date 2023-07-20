@@ -92,7 +92,40 @@
             <div> <!-- 게시판 모음1 -->
                <div class="board1">
                   <div class="board-name1">공지 게시판</div>
-                  <div class="board-content1"></div>
+                  <div class="board-content1">
+                     <table>
+                        <tr>
+                           <th><a href="#">1번 공지 게시글입니다.</a></th>
+                        </tr>
+                        <tr>
+                           <th><a href="#">2번 공지 게시글입니다.</a></th>
+                        </tr>
+                        <tr>
+                           <th><a href="#">3번 공지 게시글입니다.</a></th>
+                        </tr>
+                        <tr>
+                           <th><a href="#">4번 공지 게시글입니다.</a></th>
+                        </tr>
+                        <tr>
+                           <th><a href="#">5번 공지 게시글입니다.</a></th>
+                        </tr>
+                        <tr>
+                           <th><a href="#">6번 공지 게시글입니다.</a></th>
+                        </tr>
+                        <tr>
+                           <th><a href="#">7번 공지 게시글입니다.</a></th>
+                        </tr>
+                        <tr>
+                           <th><a href="#">8번 공지 게시글입니다.</a></th>
+                        </tr>
+                        <tr>
+                           <th><a href="#">9번 공지 게시글입니다.</a></th>
+                        </tr>
+                        <tr>
+                           <th><a href="#">10번 공지 게시글입니다.</a></th>
+                        </tr>
+                     </table>
+                  </div>
                </div>
                <div class="board2">
                   <div class="board-name2">축제 후기</div>
