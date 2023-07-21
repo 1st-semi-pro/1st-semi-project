@@ -68,6 +68,7 @@ public class MemberDAO {
 				
 				loginMember.setMemberId(rs.getString("MEMBER_ID"));
 				loginMember.setMemberPw(rs.getString("MEMBER_PW"));
+				loginMember.setMemberNickname(rs.getString("MEMBER_NICKNAME"));
 				
 				System.out.println("loginMember rs:: " + loginMember);
 			}
@@ -129,49 +130,43 @@ public class MemberDAO {
 		
 		return result;
 	}
+
+
+	/** 회원가입 - 아이디 중복검사 DAO
+	 * @param conn
+	 * @param memberId
+	 * @return result
+	 * @throws Exception
+	 */
+	public int idCheck(Connection conn, String memberId) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("joinIdCheck");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, memberId);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				result = rs.getInt(1);
+			}
+			
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		
+		return result;
+	}
 		
 		
 }
 
 		
-		
-/*		try {
-			
-			String sql = prop.getProperty("login");
-			
-			pstmt = conn.prepareStatement(sql);
-			
-			pstmt.setString(1, mem.getMemberId());
-			pstmt.setString(2, mem.getMemberPw());
-			
-			System.out.println("mem.getMemberId:: " + mem.getMemberId());
-			System.out.println("mem.getMemberPw:: " + mem.getMemberPw());
-			
-			rs = pstmt.executeQuery();
-			
-			System.out.println("rs.next():::" + rs.next());
-			
-			if(rs.next()){
-				loginMember = new Member();
-				
-				loginMember.setMemberId(rs.getString("MEMBER_ID"));
-				loginMember.setMemberPw(rs.getString("MEMBER_PW"));
-				
-				System.out.println("loginMember rs:: " + loginMember);
-			}
-			
-			if(true) {
-				System.out.println("true입니다");
-			}
-
-			
-		}finally {
-			close(rs);
-			close(pstmt);
-			
-		}
-		System.out.println("loginMember:: " + loginMember);
-		return loginMember;
-	}
-*/
 
