@@ -13,8 +13,8 @@
                 <article class="search-area">
                     <form action="#" name="search-form">
                         <fieldset>
-                            <input type="search" id="search" name="search" size="35" placeholder=" 여행지를 찾아보세요." autocomplete="off">
-                            <button type="submit" id="search-btn" class="fa-solid fa-magnifying-glass"></button>
+                            <input type="search" id="h-search" name="search" size="35" placeholder=" 여행지를 찾아보세요." autocomplete="off">
+                            <button type="submit" id="h-search-btn" class="fa-solid fa-magnifying-glass"></button>
                         </fieldset>
                     </form>
                 </article>
@@ -32,24 +32,17 @@
               </c:when>
               
               <c:otherwise>
-                 <article class="h-login-area">
-                     
+                <article class="h-login-area">
                         <!-- 회원 프로필 이미지 -->
                         <a href="#">
                             <img src="${contextPath}/resources/images/id.png" id="member-profile">
-                        </a>
-                        
+                        </a>   
                         <!-- 회원 정보 + 로그아웃 버튼 -->
-                        <div class="h-my-info">
-                           <div>
-                              <a href="${contextPath}/member/myPage/info" id="nickname"><!-- ${loginMember.memberNickname } --></a>
-                              <div>
-                              <a href="${contextPath}/member/logout" id="logout-btn">로그아웃</a><a href="#">마이페이지</a>
-                              </div>
-                           </div>
-                        </div>
+                    <div class="h-my-info">
+                        <a href="${contextPath}/member/logout" id="logout-btn">로그아웃</a><span>/</span><a href="${contextPath}/member/myPage/info">마이페이지</a>
+                    </div>
                         
-                     </article>
+                </article>
                      
               </c:otherwise>
            
@@ -60,11 +53,12 @@
 
         <nav>
             <ul>
-                <li><a href="#">축제정보</a></li>
+                <li><a href="${contextPath}/member/festivalInfo">축제정보</a></li>
                 <li><a href="#">공지게시판</a></li>
                 <li><a href="#">자유게시판</a></li>
                 <li><a href="#">축제후기</a></li>
-                <li><a href="#">동행자구하기</a></li>
+                <li><a href="${contextPath}/member/companion">동행자구하기</a></li>
+                
             </ul>
         </nav>
     </header>

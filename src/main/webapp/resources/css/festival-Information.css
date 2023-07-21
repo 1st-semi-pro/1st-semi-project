@@ -2,96 +2,148 @@
 a{text-decoration: none; color: inherit; display: block;}
 li{list-style: none; cursor: pointer;}
 
-.swiper-container {
-	height:420px;
-	border:5px solid silver;
-	border-radius:7px;
-	box-shadow:0 0 20px #ccc inset;
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+.swiper {
+  width: 100%;
+  height: 500px;
 }
 .swiper-slide {
-	text-align:center;
-	display:flex; /* 내용을 중앙정렬 하기위해 flex 사용 */
-	align-items:center; /* 위아래 기준 중앙정렬 */
-	justify-content:center; /* 좌우 기준 중앙정렬 */
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .swiper-slide img {
-	box-shadow:0 0 5px #555;
-	max-width:100%; /* 이미지 최대너비를 제한, 슬라이드에 이미지가 여러개가 보여질때 필요 */
-	/* 이 예제에서 필요해서 설정했습니다. 상황에따라 다를 수 있습니다. */
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-/* ----------------------------------------------------------------------------------- */
+.swiper-slide:nth-child(1) {
+  width: 100%;
+}
 
-/* 셀렉트박스 */
+.swiper-slide:nth-child(2n) {
+  width: 60%;
+}
+.swiper-slide:nth-child(5){
+  width: 60%;
+}
+.swiper-slide:nth-child(7){
+  width: 60%;
+}
+.swiper-slide:nth-child(3n) {
+  width: 60%;
+}
+.swiper-slide:nth-child(10){
+  width: 100%;
+}
+.swiper-pagination-bullet {
+  width: var(--swiper-pagination-bullet-width,var(--swiper-pagination-bullet-size,12px)) !important;
+  height: var(--swiper-pagination-bullet-height,var(--swiper-pagination-bullet-size,12px)) !important;
+  display: inline-block;
+  border-radius: var(--swiper-pagination-bullet-border-radius,50%);
+  background: var(--swiper-pagination-bullet-inactive-color,white) !important;
+  opacity: var(--swiper-pagination-bullet-inactive-opacity, .2);
+}
+
+.swiper-pagination-bullet-active {
+  opacity: var(--swiper-pagination-bullet-opacity, 1);
+  background: orange !important;
+}
+/* ---------------게시판 타이틀------------------*/
+.title-box{
+  font-weight: bold;
+  height: 40px;
+  line-height: 40px;
+  font-size: 20px;
+  text-align: center;;
+  background-color: rgb(80, 78, 78);
+  color: white;
+  margin-bottom: 20px;
+}
+/*------------------ 셀렉트박스--------------------- */
 .content, .content2{
-    width: 70%;
-    margin: 0 auto;
+  width: 70%;
+  margin: 0 auto;
+}
+.content2{
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 .selectBox2 i{
-    margin-right: 10px;
-    font-size: 15px;
+  margin-right: 10px;
+  font-size: 15px;
 }
 .selectBoxList {
-    display: flex;
+  display: flex;
 }
 .box{
-  width: 29%;
-  margin-right: 10px;
+width: 29%;
+margin-right: 10px;
 }
 .box:nth-child(3){
-  margin-right: 0px
+margin-right: 0px
 }
 #sp1{
-  padding-left: 10px;
+padding-left: 10px;
 }
 .selectBox2 * { box-sizing: border-box; }
 .selectBox2 {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  height: 35px;
-  border-radius: 4px;
-  border: 2px solid #dedede;
-  background: url(../images/festival_infomation/down-arrow.png) calc(100% - 2.5px) center no-repeat;
-  background-size: 30px;
-  cursor: pointer;
+position: relative;
+z-index: 1;
+width: 100%;
+height: 35px;
+border-radius: 4px;
+border: 2px solid #dedede;
+background: url(../images/festival_infomation/down-arrow.png) calc(100% - 2.5px) center no-repeat;
+background-size: 30px;
+cursor: pointer;
 }
 .selectBox2:after {
-  content: '';
-  display: block; 
-  width: 2px;
-  height: 100%; 
-  position: absolute; 
-  top: 0; 
-  right: 35px;
-  background: #dedede;
+content: '';
+display: block; 
+width: 2px;
+height: 100%; 
+position: absolute; 
+top: 0; 
+right: 35px;
+background: #dedede;
 }
 
 .selectBox2 .label {
-  display: flex;
-  align-items: center;
-  width: inherit;
-  height: inherit;
-  border: 0 none;
-  outline: 0 none;
-  padding-left: 10px;
-  background: transparent;
-  cursor: pointer;
+display: flex;
+align-items: center;
+width: inherit;
+height: inherit;
+border: 0 none;
+outline: 0 none;
+padding-left: 10px;
+background: transparent;
+cursor: pointer;
 }
 
 .selectBox2 .optionList {
-  position: absolute; 
-  top: 31px;
-  left: 0;
-  width: 100%;
-  background: gray;
-  color: #fff;
-  list-style-type: none;
-  padding: 0;
-  border-radius: 6px;
-  overflow: hidden;
-  max-height: 0;
-  transition: .5s ease-in;
+position: absolute; 
+top: 31px;
+left: 0;
+width: 100%;
+background: gray;
+color: #fff;
+list-style-type: none;
+padding: 0;
+border-radius: 6px;
+overflow: hidden;
+max-height: 0;
+transition: .5s ease-in;
 }
 
 .selectBox2 .optionList::-webkit-scrollbar {width: 6px;}
@@ -100,64 +152,51 @@ li{list-style: none; cursor: pointer;}
 .selectBox2 .optionList::-webkit-scrollbar-thumb:hover {background: #303030;}
 
 .selectBox2.active {
-    z-index: 10;
+  z-index: 10;
 }
 
 .selectBox2.active .optionList {
-  max-height: 500px;
+max-height: 500px;
 }
 
 .selectBox2 .optionItem {
-  border-bottom: 1px dashed #dedede;
-  padding: 5px 15px 5px;
-  transition: .1s;
+border-bottom: 1px dashed #dedede;
+padding: 5px 15px 5px;
+transition: .1s;
 }
 
 .selectBox2 .optionItem:hover {
-  background: rgb(196, 122, 122);
+background: rgb(196, 122, 122);
 }
 
 .selectBox2 .optionItem:last-child {
-  border-bottom: 0 none;
+border-bottom: 0 none;
 }
 #reset{
-  text-align: center;
-  font-size: 16px;
-  width: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 10px;
-  border: 0;
-  cursor: pointer;
+text-align: center;
+font-size: 16px;
+width: 30px;
+display: flex;
+justify-content: center;
+align-items: center;
+margin-right: 10px;
+border: 0;
+cursor: pointer;
 }
-#search{
-  width: 100px;
-  font-size: 16px;
-  font-weight: bold;
-  background-color: #eee;
-  border: 0;
-  cursor: pointer;
+#info-search{
+width: 100px;
+font-size: 16px;
+font-weight: bold;
+background-color: #eee;
+border: 0;
+cursor: pointer;
 }
-#search:hover{
-  background-color: orangered;
+#info-search:hover{
+background-color: orangered;
 }
-/* --------------------------------------------------------------------------------- */
-
-/* 게시판 타이틀   */
-.title-box{
-  font-weight: bold;
-  height: 40px;
-  line-height: 40px;
-  font-size: 20px;
-  text-align: center;;
-  background-color: #747474;
-  color: white;
-}
-
-/* ----------------------------------------------------------------------------------- */
+/*------------- 축제일순 / 인기순 --------------- */
 #span-box{
-  width: 95%;
+  width: 94.5%;
   display: flex;
   justify-content: flex-end;
 }
@@ -186,32 +225,19 @@ li{list-style: none; cursor: pointer;}
   right: -10px;
   background: #747474;
 }
-
-.content-box{
-  width: 100%;
+.info-table{
+  height: 900px;
+  width: 90%;
+  margin: 0 auto;
+  border: 2px solid black;
+}
+td{
+  width: 30%;
   height: 300px;
-  display: flex;
-  justify-content: space-evenly;
+  border: 1px solid black;
 }
-.content-box article{
-  width: 28%;
-}
-.img-box{
-  width: 100%;
-  height: 65%;
-  background-color: aqua;
-}
-.text-box{
-  width: 100%;
-  height: 35%;
-  background-color: red;
-}
-.content-box2, .content-box3{
-  margin-top: 30px;
-}
-.content-box3{
-  margin-bottom: 50px;
-}
+
+/*--------------- 페이지버튼 영역 ------------------*/
 #button-box{
   display: flex;
   justify-content: center;
