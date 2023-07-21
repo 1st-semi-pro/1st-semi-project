@@ -33,9 +33,3 @@ td {
   justify-content: center;
   margin-top: 20px;
 }
-
-#name,#id,#gender,#country{
-  background-color: gray;
-  color: #ddd;
-  text-align: center;
-}

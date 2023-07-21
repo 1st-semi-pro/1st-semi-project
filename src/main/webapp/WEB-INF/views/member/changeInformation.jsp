@@ -1,8 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-<%-- 문자열 관련 함수(메소드) 제공 JSTL (EL형식으로 작성) --%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,28 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원정보수정</title>
 
-    <link rel="stylesheet" href="${contextPath}/resource/css/changeInformation.css">
+    <link rel="stylesheet" href="resource/css/changeInformation.css">
 </head>
 <body>
   <div class="container">
     <h1>회원정보 수정</h1>
-    <form id="infoChange" method="post" onsubmit="return infoValidate()" name="myPage-form">
+    <form id="infoChange" method="post" action="/myPage/info">
       <table>
         <tr>
           <td class="center-align">아이디</td>
-          <td id="id"><div>${loginMember.memberId}</div></td>
+          <td><input type="text" id="username" disabled></td>
         </tr>
         <tr>
           <td class="center-align">이름</td>
-          <td id="name"><div>${loginMember.memberName }</div></td>
+          <td><input type="text" id="name" disabled></td>
         </tr>
         <tr>
           <td class="center-align">성별</td>
-          <td id="gender"><div>${loginMember.memberGender }</div></td>
+          <td><input type="text" id="gender" disabled></td>
         </tr>
         <tr>
           <td class="center-align">국가</td>
-          <td id="country"><div>${loginMember.memberNationality }</div></td>
+          <td><input type="text" id="country" disabled></td>
         </tr>
         <tr>
           <td class="center-align">사는 지역 변경</td>
@@ -50,21 +46,21 @@
         <tr>
           <td class="center-align">이메일 변경</td>
           <td>
-            <input type="email" id="memberEmail" name="memberEmail" value="${loginMember.memberEmail }" required>
+            <input type="email" id="memberEmail" name="memberEmail" required>
             <button type="button" onclick="sendEmailVerification()">이메일 인증</button>
           </td>
         </tr>
         <tr>
           <td class="center-align">휴대폰 번호 변경</td>
           <td>
-            <input type="tel" name="memberTel" id="memberTel" value="${loginMember.memberTel }"required>
+            <input type="tel" name="memberPhone" id="memberPhone" required>
             <button type="button" onclick="sendPhoneNumberVerification()">휴대폰 번호 변경</button>
           </td>
         </tr>
         <tr>
           <td class="center-align">비밀번호 변경</td>
           <td>
-            <input type="password" name="currentPw" id="currentPw" value="${loginMember.memberPw }" required> <br>
+            <input type="password" name="currentPw" id="currentPw" placeholder="현재 비밀번호" required> <br>
             <input type="password" name="newPw" id="newPw1" placeholder="새 비밀번호" required> <br>
             <input type="password" name="newPwConfirm" id="newPw2" placeholder="새 비밀번호 확인" required><br>
             <button type="button" onclick="changePassword()">비밀번호 변경</button>
@@ -73,22 +69,21 @@
         <tr>
           <td class="center-align">닉네임 변경</td>
           <td>
-            <input type="text" name="memberNickname" id="memberNickname" value="${loginMember.memberNickname }" required>
+            <input type="text" name="memberNickname" id="memberNickname" required>
             <button type="button" onclick="checkNicknameAvailability()">중복확인</button>
-            <div id="memberNickname">과연ㅋ</div>
-          </td> 
+          </td>
         </tr>
       </table>
       <div class="button-container">
         <tr><td>
-        <button id="outBtn" onclick="cancel()">나가기</button>
-        <button type="submit" id="info-update-btn">저장하기</button></td>
+        <button type="button" onclick="cancel()">나가기</button>
+        <button type="button" onclick="save()">저장하기</button></td>
       </tr>
       </div>
     </form>
   </div>
     
-    <script src="${contextPath}/resources/js/Change-information.js"></script>
+    <script src="Change-information.js"></script>
 </body>
 </html>
 
