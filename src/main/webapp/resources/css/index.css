@@ -16,10 +16,10 @@ div{
     flex-direction: column;
 }
 
-.content > div:first-child{
-    height: 250px;
+.banner{
     display: flex;
     flex-direction: row;
+    height: auto;
 }
 
 .banner{
