@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>메인페이지</title>
 
+    <link rel="stylesheet" href="resources/css/header.css">
     <link rel="stylesheet" href="resources/css/index.css">
     <script src="https://kit.fontawesome.com/16679b9adf.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">

@@ -8,6 +8,7 @@ header{
     margin-bottom: 5px;
     position: sticky;
     top: 0;
+    background-color: white;
 }
 header > .header{
     display: flex;
@@ -19,13 +20,12 @@ header > .header > section:nth-of-type(1) a{
     text-align: center;
 }
 header > .header > section:nth-of-type(2){
-    flex-basis: 55%;
+    flex-basis: 60%;
 }
 header > .header > section:nth-of-type(3){
-    flex-basis: 25%;
-    background-color: black;
+    flex-basis: 20%;
 }
-header > .header > section:nth-of-type(1), header > .header > section:nth-of-type(2) {
+header > .header > section:nth-of-type(1), header > .header > section:nth-of-type(2), header > .header > section:nth-of-type(3){
     display: flex;
     justify-content: center;
     align-items: center;
@@ -74,6 +74,25 @@ nav > ul li{
     color: white;
     text-align: center;
 }
+.h-login{
+    display: flex;
+    width: 100%;
+    border: none;
+    justify-content: center;
+    font-size: 14px;
+}
+.h-login > span{
+    margin: 0px 10px;
+}
+.h-my-info{
+    border: none;
+}
+.h-my-info > div > div{
+    display: flex;
+    border: none;
+    background-color: aqua;
+}
+
 
 
 

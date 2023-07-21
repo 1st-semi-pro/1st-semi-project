@@ -25,24 +25,14 @@
            
               <c:when test="${empty sessionScope.loginMember }">
 
-					<div class="login">
-
-						<div>
-							<a href="${contextPath}/member/login"><button id="loginBtn">로그인</button></a>
-						</div>
-
-						<article id="signup-find-area">
-							<a href="${contextPath}/member/findId">아이디 찾기</a> <span>/</span>
-							<a href="${contextPath}/member/agree">회원가입</a>
-						</article>
-
+					<div class="h-login">
+						<a href="${contextPath}/member/login">로그인 </a><span>/</span><a href="${contextPath}/member/findId">아이디 찾기 </a><span>/</span><a href="${contextPath}/member/agree"> 회원가입</a>
 					</div>
-					</div>
-              
+
               </c:when>
               
               <c:otherwise>
-                 <article class="login-area">
+                 <article class="h-login-area">
                      
                         <!-- 회원 프로필 이미지 -->
                         <a href="#">
@@ -50,16 +40,13 @@
                         </a>
                         
                         <!-- 회원 정보 + 로그아웃 버튼 -->
-                        <div class="my-info">
+                        <div class="h-my-info">
                            <div>
-                              <a href="${contextPath}/member/myPage/info" id="nickname">${loginMember.memberNickname }</a>
-                              
-                              <a href="${contextPath/member/logout}" id="logout-btn">로그아웃</a>
+                              <a href="${contextPath}/member/myPage/info" id="nickname"><!-- ${loginMember.memberNickname } --></a>
+                              <div>
+                              <a href="${contextPath}/member/logout" id="logout-btn">로그아웃</a><a href="#">마이페이지</a>
+                              </div>
                            </div>
-                           
-                           <p>
-                              ${ loginMember.memberEmail }
-                           </p>
                         </div>
                         
                      </article>
@@ -81,20 +68,3 @@
             </ul>
         </nav>
     </header>
-    
-    <div class="find">
-					<a href="${contextPath}/member/findId">아이디 찾기</a>
-				</div>
-
-				<span>|</span>
-
-				<div class="find">
-					<a href="${contextPath}/member/findPw">비밀번호 찾기</a>
-				</div>
-
-				<span>|</span>
-
-
-				<div class="find">
-					<a href="${contextPath}/member/agree">회원가입</a>
-				</div>
