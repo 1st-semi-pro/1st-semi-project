@@ -87,33 +87,6 @@
 
                 </article>
 
-                <article>
-                    <img src="${contextPath}/resources/images/id.png" id="img9">
-                    <agency>
-                        <label for="SKT" class="agencyLabels">
-                            <div class="agency">
-                                <input type="radio" name="agency" id="SKT" class="radios">
-                                <span>SKT</span>
-                            </div>
-                        </label>
-
-                        <label for="KT" class="agencyLabels" id="agencyMargin">
-                            <div class="agency" >
-                                <input type="radio" name="agency" id="KT" class="radios">
-                                <span>KT</span>
-                            </div>
-                        </label>
-
-                        <label for="LG" class="agencyLabels" id="agencyMargin">
-                            <div class="agency"> 
-                                <input type="radio" name="agency" id="LG" class="radios"> 
-                                <span>LG</span>
-                            </div>
-                        </label>
-                        
-                    </agency>    
-                </article>
-
                 <article> 
                     <img src="${contextPath}/resources/images/id.png" id="img10">
                     <input type="text" class="inputs" id="memberBirth" placeholder="전화번호를 입력해주세요.(- 제외)">
