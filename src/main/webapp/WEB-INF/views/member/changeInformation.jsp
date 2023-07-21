@@ -27,7 +27,7 @@
         </tr>
         <tr>
           <td class="center-align">국가</td>
-          <td><input type="text" id="country" disabled></td>
+          <td><input type="text" id="country" disabled ></td>
         </tr>
         <tr>
           <td class="center-align">사는 지역 변경</td>
