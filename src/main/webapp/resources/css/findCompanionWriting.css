@@ -1,0 +1,148 @@
+*{box-sizing:border-box;     
+    font-family: 'Hi Melody', cursive; font-size: 16px; /* border:1px solid black; */}
+
+html{
+    height:1200px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body{
+    display:flex;
+    width:60%;
+    height:75%;
+}
+
+form{
+    width:100%;
+    height:100%;
+}
+
+#divKing{
+    display:flex;
+    width:100%;
+    height:100%;
+    flex-direction: column;
+
+}
+
+.divs{
+    display:flex;
+    /* width:100%; */
+    width:100%;
+
+}
+
+#writingBoardTitle{
+    height:10%;
+    display:flex;
+    align-items: center;
+    /* 앞에 안붙일거면 justify도 */
+
+}
+
+#writingBoardTitle > span{
+    font-size:30px;
+    font-weight: bold;
+    width:100%;
+}
+
+
+#title{
+    height:10%;
+    margin-bottom:20px;
+}
+
+hr{
+    border:0.5px solid black;
+}
+
+#textArea{
+    height:50%;
+    display:flex;
+    justify-content: center;
+}
+
+textArea{
+
+    width:100%;
+    height:80%;
+    margin-top:0;
+    border:0;
+    border-top:1px solid black;
+    border-bottom: 1px solid black;
+    resize: none;
+}
+
+textArea:hover{
+    border:1px solid black;
+}
+
+#divfoot{
+    height:10%;
+}
+
+#divtest{
+    display:flex;
+    justify-content: space-evenly;
+}
+
+#btn1{
+    border:0;
+    background-color: black;
+    color: white;
+    width:120px;
+    height:35px;
+    border-radius: 5px;
+    float:right;
+
+}
+
+#btn2{
+    background-color: white;
+    color: black;
+    width:120px;
+    height:35px;
+    border-radius: 5px;
+    float:right;
+    margin-left:10px;
+}
+
+
+
+input{
+    width:200%;
+    border-radius: 5px;
+    border:1px solid black;
+    height:35px;
+}
+
+#selectBoard{
+    width:200px;
+}
+
+table{
+    width:100%;
+    
+}
+
+select{
+    border:1px solid black;
+    height:35px;
+    border-radius: 5px;
+}
+
+#selectBoard{
+    width:100%;
+}
+
+
+#td2{
+    display:flex;
+    justify-content: end;
+}
+
+#subject{
+    width:181px;
+}
