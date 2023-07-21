@@ -1,32 +1,27 @@
-*{box-sizing: border-box; margin: 0; padding: 0; font-family: 'Hi Melody', cursive;}
+/* *{box-sizing: border-box; margin: 0; padding: 0; font-family: 'Hi Melody', cursive;}
 a{text-decoration: none; color: inherit; display: block;}
 li{list-style: none; cursor: pointer;}
 
-div{
-	border: 1px solid black;
-	
-	
+
+
+/* div *{
+	border: 0;
 }
+ */
 
-
-
-
-.content{
+/* .content{
 	height: 800px;
 	width: 60%;
-	margin: 0 auto;
-    margin-top: 100px;
+	margin: 100px auto;
 	display: flex;
 	flex-direction: column;
 	font-size: 20px;
-    margin-bottom: 100px;
 
 }
 
 .content > div:nth-child(1) {
 	flex-basis: 10%;
 	display: flex;
-	margin-top: 50px;
 	
 }
 
@@ -34,15 +29,11 @@ div{
 	flex-basis: 10%;
 }
 
-.content > div:nth-child(3) {
-	flex-basis: 10%;
-}
 
-.content > div:nth-child(4) {
-	flex-basis: 70%;
-}
+
 
 .member-list{
+	flex-basis: 70%;
 	margin: 0px auto;
 	
 }
@@ -50,36 +41,9 @@ div{
 .member-list > div{
 	display: flex;
 	flex-direction: row;
-	text-align: center;
 }
 
 
-.num{
-	flex-basis: 5%;
-}
-
-.check{
-	flex-basis: 3%;
-}
-
-.memberId{
-	flex-basis: 15%;
-}
-.memberName{
-	flex-basis: 10%;
-}
-.memberEmail{
-	flex-basis: 20%;
-}
-.phoneNum{
-	flex-basis: 20%;
-}
-.enrollDt{
-	flex-basis: 20%;
-}
-.secession{
-	flex-basis: 7%;
-}
 
 .board_page{
 	display: flex;
@@ -97,26 +61,26 @@ a:hover {
 
 
 .no{
-	width: 70px;
+	width: 14%;
 }
 
 .ck{
-	width: 30px;
+	width: 6%;
 }
 .id{
-	width: 140px;
+	width: 30%;
 }
 .nm{
-	width: 110px;
+	width: 30%;
 }
 .em{
-	width: 220px;
+	width: 50%;
 }
 .pn{
-	width: 220px;
+	width: 50%;
 }
 .dt{
-	width:180px;
+	width : 20%;
 }
 
 table, td, th {
@@ -124,10 +88,55 @@ table, td, th {
   border-collapse : collapse;
 }
 
+.table1{
+	width: 100%;
+	height: 100%;
+}
+  */
+container *{
+	border: 0;
+}
 
+.table1{
+	width: 100%;
+	height: 100%;
+  }
+table, td, th {
+  border : 1px solid black;
+  border-collapse : collapse;
+}
+.content{
+	display: flex;
+	flex-direction: column;
+}
 
+.content > div:nth-child(1){
+	flex-basis: 10%;
+	margin-top: 100px;
+}
 
+.content > div:nth-child(2){
+	flex-basis: 10%;
+}
 
+.s2{
+	
+}
+
+.table1{
+	
+	text-align: center;
+}
+
+.board-page {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+.board-page > a {
+	margin: 0px 5px;
+}
 
 
 

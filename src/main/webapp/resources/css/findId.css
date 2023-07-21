@@ -13,6 +13,7 @@
     flex-basis: 25%;
     margin-left: 100px;
     align-items: center;
+    border: 0;
 }
 
 .divide2{
@@ -20,6 +21,7 @@
     display: flex;
     flex-direction: column;
     margin: 0px 50px;
+    border: 0;
 }
 
 input{
@@ -42,6 +44,7 @@ input{
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 0;
 }
 
 .divide4{
