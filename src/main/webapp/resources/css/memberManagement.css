@@ -13,7 +13,7 @@ div{
 
 .content{
 	height: 800px;
-	width: 70%;
+	width: 60%;
 	margin: 0 auto;
     margin-top: 100px;
 	display: flex;
@@ -42,12 +42,17 @@ div{
 	flex-basis: 70%;
 }
 
+.member-list{
+	margin: 0px auto;
+	
+}
 
-.member_list > div{
+.member-list > div{
 	display: flex;
 	flex-direction: row;
 	text-align: center;
 }
+
 
 .num{
 	flex-basis: 5%;
