@@ -19,5 +19,11 @@
 		AND MEMBER_PW = ?
    </entry>
 
+	<entry key="joinIdCheck">
+		SELECT count(*) FROM MEMBER
+   		WHERE MEMBER_ID = ?
+   		AND SECESSION_FL = 'N'
+	</entry>
+
 
 </properties>
