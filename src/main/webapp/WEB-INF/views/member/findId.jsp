@@ -10,6 +10,7 @@
     <title>아이디 찾기</title>
 
     <link rel="stylesheet" href="${contextPath}/resources/css/findId.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/index.css">
 </head>
 <body>
 

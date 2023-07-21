@@ -32,7 +32,7 @@
 			<div>사용자수</div>
 			
 					<div class="member-list">
-						<table border="1">
+						<table border="1" class="table1">
 							<tr class="s1">
 								<th class="no">NO.</th>
 								<td class="ck"><input type="checkbox" id="all"></td>
