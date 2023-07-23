@@ -6,62 +6,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Festival_information</title>
     <script src="https://kit.fontawesome.com/51fc103959.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="../resources/css/festival-Information.css">
     <link rel="stylesheet" href="../resources/css/footer.css">
     <link rel="stylesheet" href="../resources/css/header.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&family=Moirai+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 </head>
 <body>
     <main>
-    <header>
-        <section>
-            <a href="#"><img src="../resources/images/logo.png" id="home-logo"></a>
-        </section>
-        <nav>
-            <ul>
-                <li>축제정보</li>
-                <li>공지게시판</li>
-                <li>자유게시판</li>
-                <li>축제후기</li>
-                <li>동행자구하기</li>
-            </ul>
-        </nav>
-        <section>
-            <article>
-            <input type="search" size="35" placeholder=" 여행지를 찾아보세요." autocomplete="off">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            </article>
-        </section>
-    </header>
-    <!-- 이미지슬라이드  -->
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="https://oldmidi.cdn3.cafe24.com/p/0358.jpg"></div>
-            <div class="swiper-slide"><img src="https://oldmidi.cdn3.cafe24.com/p/0262.jpg"></div>
-            <div class="swiper-slide"><img src="https://ktsmemo.cdn3.cafe24.com/p/0386.jpg"></div>
-            <div class="swiper-slide"><img src="https://oldmidi.cdn3.cafe24.com/p/0784.jpg"></div>
-            <div class="swiper-slide"><img src="https://superkts.cafe24.com/p/0518.jpg"></div>
-            <div class="swiper-slide"><img src="https://oldmidi.cdn3.cafe24.com/p/0762.jpg"></div>
-            <div class="swiper-slide"><img src="https://oldmidi.cdn3.cafe24.com/p/0148.jpg"></div>
-            <div class="swiper-slide"><img src="https://oldmidi.cafe24.com/p/0671.jpg"></div>
-            <div class="swiper-slide"><img src="https://oldmidi.cafe24.com/p/0352.jpg"></div>
-            <div class="swiper-slide"><img src="https://ktsmemo.cdn3.cafe24.com/p/0464.jpg"></div>
-            <div class="swiper-slide"><img src="https://oldmidi.cdn3.cafe24.com/p/0152.jpg"></div>
-            <div class="swiper-slide"><img src="https://oldmidi.cdn3.cafe24.com/p/0122.jpg"></div>
-            <div class="swiper-slide"><img src="https://ktsmemo.cdn3.cafe24.com/p/0241.jpg"></div>
-            <div class="swiper-slide"><img src="https://superkts.cafe24.com/p/0605.jpg"></div>
-            <div class="swiper-slide"><img src="https://oldmidi.cafe24.com/p/0538.jpg"></div>
-        </div>
-        <!-- 네비게이션 -->
-        <div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
-        <div class="swiper-button-prev"></div><!-- 이전 버튼 -->
-        <!-- 페이징 -->
-        <div class="swiper-pagination"></div>
-    </div>
+        <header>
+            <section class="header">
+    
+                <section>
+                    <a href="#"><img src="../resources/images/logo.png" id="home-logo"></a>
+                </section>
+    
+                <section>
+                    <article class="search-area">
+                        <form action="#" name="search-form">
+                            <fieldset>
+                                <input type="search" id="h-search" name="search" size="35" placeholder=" 여행지를 찾아보세요." autocomplete="off">
+                                <button type="submit" id="h-search-btn" class="fa-solid fa-magnifying-glass"></button>
+                            </fieldset>
+                        </form>
+                    </article>
+                </section>
+                <section>
+                
+                </section>
+            </section>
+    
+            <nav>
+                <ul>
+                    <li><a href="#">축제정보</a></li>
+                    <li><a href="#">공지게시판</a></li>
+                    <li><a href="#">자유게시판</a></li>
+                    <li><a href="#">축제후기</a></li>
+                    <li><a href="#">동행자구하기</a></li>
+                    
+                </ul>
+            </nav>
+        </header>
+
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="../resources/images/con2.jpg"></div>
+              <div class="swiper-slide"><img src="../resources/images/con3.jpg"></div>
+              <div class="swiper-slide"><img src="../resources/images/con1.jpg"></div>
+              <div class="swiper-slide"><img src="../resources/images/con2.jpg"></div>
+              <div class="swiper-slide"><img src="../resources/images/con3.jpg"></div>
+              <div class="swiper-slide"><img src="../resources/images/con1.jpg"></div>
+              <div class="swiper-slide"><img src="../resources/images/con3.jpg"></div>
+              <div class="swiper-slide"><img src="../resources/images/con2.jpg"></div>
+              <div class="swiper-slide"><img src="../resources/images/con1.jpg"></div>
+              <div class="swiper-slide"><img src="../resources/images/con2.jpg"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
 
     <!-- 검색게시판 타이틀 -->
     <section class="title-box"> 전국 축제검색 게시판</section>
@@ -119,7 +124,7 @@
                 </div>
             </div>
             <button type="reset" id="reset"><i class="fa-solid fa-repeat"></i></button>
-            <button type="button" id="search">검색</button>
+            <button type="button" id="info-search">검색</button>
             </div>
         </form>
     </section>
@@ -128,24 +133,29 @@
         <div id="span-box">
         <span class="festival-date">축제일순</span><span class="popularity">인기순</span>
         </div>
-        <table>
-            <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-            </tr>
+        <table class="info-table">
+           
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+        
         </table>
-        <section id="button-box">
+        
+        
+    </section>
+    <section id="button-box">
         <button><</button>
         <button>1</button>
         <button>2</button>
@@ -154,8 +164,6 @@
         <button>5</button>
         <button>></button>
         </section>
-        
-    </section>
     
         <footer class="footer">
 			<ul class="quick_menu_list">
