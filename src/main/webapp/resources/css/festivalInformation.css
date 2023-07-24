@@ -87,17 +87,13 @@ body {
   display: flex;
 }
 .box{
-width: 29%;
+width: 30%;
 margin-right: 10px;
 }
 .box:nth-child(3){
 margin-right: 0px
 }
-#sp1{
-padding-left: 10px;
-}
-.selectBox2 * { box-sizing: border-box; }
-.selectBox2 {
+.selectBox{
 position: relative;
 z-index: 1;
 width: 100%;
@@ -108,7 +104,7 @@ background: url(../images/festival_infomation/down-arrow.png) calc(100% - 2.5px)
 background-size: 30px;
 cursor: pointer;
 }
-.selectBox2:after {
+.selectBox:after {
 content: '';
 display: block; 
 width: 2px;
@@ -119,59 +115,37 @@ right: 35px;
 background: #dedede;
 }
 
-.selectBox2 .label {
-display: flex;
-align-items: center;
-width: inherit;
-height: inherit;
-border: 0 none;
-outline: 0 none;
-padding-left: 10px;
-background: transparent;
-cursor: pointer;
+.selectBox .label{
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  width: inherit;
+  height: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+.label > span{
+  margin-left: 10px;
+}
+.active{
+  display: block !important;
+  transition: 1s;
+}
+.selectBox ul{
+  max-height: 150px;
+  background-color: rgb(80, 78, 78);
+  color: white;
+  overflow-y: scroll;
+  font-weight: bold;
+  display: none;
 }
 
-.selectBox2 .optionList {
-position: absolute; 
-top: 31px;
-left: 0;
-width: 100%;
-background: gray;
-color: #fff;
-list-style-type: none;
-padding: 0;
-border-radius: 6px;
-overflow: hidden;
-max-height: 0;
-transition: .5s ease-in;
+.selectBox .optionList > li{
+  border-bottom: 1px dashed orange;
+  padding: 5px 15px 5px;
+  
 }
 
-.selectBox2 .optionList::-webkit-scrollbar {width: 6px;}
-.selectBox2 .optionList::-webkit-scrollbar-track {background: transparent; }
-.selectBox2 .optionList::-webkit-scrollbar-thumb {background: #303030; border-radius: 45px;}
-.selectBox2 .optionList::-webkit-scrollbar-thumb:hover {background: #303030;}
-
-.selectBox2.active {
-  z-index: 10;
-}
-
-.selectBox2.active .optionList {
-max-height: 500px;
-}
-
-.selectBox2 .optionItem {
-border-bottom: 1px dashed #dedede;
-padding: 5px 15px 5px;
-transition: .1s;
-}
-
-.selectBox2 .optionItem:hover {
-background: rgb(196, 122, 122);
-}
-
-.selectBox2 .optionItem:last-child {
-border-bottom: 0 none;
-}
 #reset{
 text-align: center;
 font-size: 16px;

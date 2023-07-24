@@ -13,48 +13,49 @@ var swiper = new Swiper(".mySwiper", {
   });
 
 
+const label = document.querySelectorAll(".label");
+const optionList = document.querySelectorAll(".optionList");
+const optionItem = document.getElementsByClassName("optionItem");
 
+const reset = document.getElementById("reset");
 
-//----------------------------
-const label = document.querySelectorAll('.label');
+const span1 = document.getElementById("sp1");
+const span2 = document.getElementById("sp2");
+const span3 = document.getElementById("sp3");
 
-const sp1 = document.getElementById("sp1");
-const sp2 = document.getElementById("sp2");
+label[0].addEventListener("click",function(){
+    optionList[0].classList.toggle("active");
+    optionList[1].classList.remove("active");
+    optionList[2].classList.remove("active");
+})
+label[1].addEventListener("click",function(){
+    optionList[1].classList.toggle("active");
+    optionList[0].classList.remove("active");
+    optionList[2].classList.remove("active");
+})
+label[2].addEventListener("click",function(){
+    optionList[2].classList.toggle("active");
+    optionList[0].classList.remove("active");
+    optionList[1].classList.remove("active");
+})
 
-label.forEach(function(lb){
-    lb.addEventListener('click', e => {
-        let optionList = lb.nextElementSibling;
-        let optionItems = optionList.querySelectorAll('.optionItem');
-        clickLabel(lb, optionItems);
+reset.addEventListener("click",function(){
+    span1.innerText = "";
+    span2.innerText = "";
+    span3.innerText = "";
+})
+
+for(let i=0; i<optionItem.length; i++){
+    optionItem[i].addEventListener("click", function(){
+        if(i<8){
+            span1.innerText = this.innerText;
+            optionList[0].classList.remove("active");
+        } else if(i<12){
+            span2.innerText = this.innerText;
+            optionList[1].classList.remove("active");
+        }else{ 
+            span3.innerText = this.innerText;
+            optionList[2].classList.remove("active");
+        }
     })
-});
-
-const clickLabel = (lb, optionItems) => {
-    if(lb.parentNode.classList.contains('active')) {
-        lb.parentNode.classList.remove('active');
-        optionItems.forEach((opt) => {
-            opt.removeEventListener('click', () => {
-                handleSelect(lb, opt, sp1)
-                handleSelect1(lb, opt, sp2)
-            })
-        })
-    } else {
-        lb.parentNode.classList.add('active');
-        optionItems.forEach((opt) => {
-            opt.addEventListener('click', () => {
-                handleSelect(lb, opt, sp1)
-                handleSelect1(lb, opt, sp2)
-            })
-        })
-    }
 }
-const handleSelect = (label, item, sp1) => {
-    sp1.innerHTML = item.textContent;
-    label.parentNode.classList.remove('active');
-}
-const handleSelect1 = (label, item, sp2) => {
-    sp2.innerHTML = item.textContent;
-    label.parentNode.classList.remove('active');
-}
-
-/* ------------------------------------------------------------------------------- */
