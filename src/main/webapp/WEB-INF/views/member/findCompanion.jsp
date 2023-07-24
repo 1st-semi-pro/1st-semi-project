@@ -4,9 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Festival_information</title>
+    <title>동행자구하기</title>
     <script src="https://kit.fontawesome.com/51fc103959.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="resources/css/Festival_information.css">
+    
+    
+    <link rel="stylesheet" href="${contextPath}/resources/css/header.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/findCompanion.css">
    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
