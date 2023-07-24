@@ -1,64 +1,61 @@
-const label = document.querySelectorAll('.label');
+var swiper = new Swiper(".mySwiper", {
+    slidesPerView: "auto",
+    centeredSlides: true,
+    spaceBetween: 15,
+    autoplay: {
+        delay:4000, disableOnInteraction: false, // false-스와이프 후 자동 재생
+    },
+    loop :false, loopAdditionalSlides:1,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
 
-const sp1 = document.getElementById("sp1");
-const sp2 = document.getElementById("sp2");
 
-label.forEach(function(lb){
-    lb.addEventListener('click', e => {
-        let optionList = lb.nextElementSibling;
-        let optionItems = optionList.querySelectorAll('.optionItem');
-        clickLabel(lb, optionItems);
+const label = document.querySelectorAll(".label");
+const optionList = document.querySelectorAll(".optionList");
+const optionItem = document.getElementsByClassName("optionItem");
+
+const reset = document.getElementById("reset");
+
+const span1 = document.getElementById("sp1");
+const span2 = document.getElementById("sp2");
+const span3 = document.getElementById("sp3");
+
+label[0].addEventListener("click",function(){
+    optionList[0].classList.toggle("active");
+    optionList[1].classList.remove("active");
+    optionList[2].classList.remove("active");
+})
+label[1].addEventListener("click",function(){
+    optionList[1].classList.toggle("active");
+    optionList[0].classList.remove("active");
+    optionList[2].classList.remove("active");
+})
+label[2].addEventListener("click",function(){
+    optionList[2].classList.toggle("active");
+    optionList[0].classList.remove("active");
+    optionList[1].classList.remove("active");
+})
+
+reset.addEventListener("click",function(){
+    span1.innerText = "";
+    span2.innerText = "";
+    span3.innerText = "";
+})
+
+for(let i=0; i<optionItem.length; i++){
+    optionItem[i].addEventListener("click", function(){
+        if(i<8){
+            span1.innerText = this.innerText;
+            optionList[0].classList.remove("active");
+        } else if(i<12){
+            span2.innerText = this.innerText;
+            optionList[1].classList.remove("active");
+        }else{ 
+            span3.innerText = this.innerText;
+            optionList[2].classList.remove("active");
+        }
     })
-});
-
-const clickLabel = (lb, optionItems) => {
-    if(lb.parentNode.classList.contains('active')) {
-        lb.parentNode.classList.remove('active');
-        optionItems.forEach((opt) => {
-            opt.removeEventListener('click', () => {
-                handleSelect(lb, opt, sp1)
-                handleSelect1(lb, opt, sp2)
-            })
-        })
-    } else {
-        lb.parentNode.classList.add('active');
-        optionItems.forEach((opt) => {
-            opt.addEventListener('click', () => {
-                handleSelect(lb, opt, sp1)
-                handleSelect1(lb, opt, sp2)
-            })
-        })
-    }
 }
-const handleSelect = (label, item, sp1) => {
-    sp1.innerHTML = item.textContent;
-    label.parentNode.classList.remove('active');
-}
-const handleSelect1 = (label, item, sp2) => {
-    sp2.innerHTML = item.textContent;
-    label.parentNode.classList.remove('active');
-}
-
-/* ------------------------------------------------------------------------------- */
-
-new Swiper('.swiper-container', {
-
-	slidesPerView : 3, // 동시에 보여줄 슬라이드 갯수
-	spaceBetween : 30, // 슬라이드간 간격
-	slidesPerGroup : 3, // 그룹으로 묶을 수, slidesPerView 와 같은 값을 지정하는게 좋음
-
-	// 그룹수가 맞지 않을 경우 빈칸으로 메우기
-	// 3개가 나와야 되는데 1개만 있다면 2개는 빈칸으로 채워서 3개를 만듬
-	loopFillGroupWithBlank : true,
-
-	loop : true, // 무한 반복
-
-	pagination : { // 페이징
-		el : '.swiper-pagination',
-		clickable : true, // 페이징을 클릭하면 해당 영역으로 이동, 필요시 지정해 줘야 기능 작동
-	},
-	navigation : { // 네비게이션
-		nextEl : '.swiper-button-next', // 다음 버튼 클래스명
-		prevEl : '.swiper-button-prev', // 이번 버튼 클래스명
-	},
-});

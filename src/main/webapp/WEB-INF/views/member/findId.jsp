@@ -11,6 +11,10 @@
 
     <link rel="stylesheet" href="${contextPath}/resources/css/findId.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/index.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/header.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&family=Moirai+One&display=swap" rel="stylesheet">
+</head>
 </head>
 <body>
 

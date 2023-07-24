@@ -1,5 +1,6 @@
 package edu.kh.festival.member.model.service;
 
+
 import static edu.kh.festival.common.JDBCTemplate.*;
 
 import java.sql.Connection;
@@ -58,6 +59,24 @@ public class MemberService {
 	public Map<String, Object> manageMember(int cp) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+
+	/** 회원가입 - 아이디 중복검사 service
+	 * @param memberId
+	 * @return result
+	 * @throws Exception
+	 */
+	public int idCheck(String memberId) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int result = dao.idCheck(conn, memberId);
+		
+		close(conn);
+		
+		return result;
+
 	}
 
 

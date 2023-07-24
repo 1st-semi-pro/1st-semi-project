@@ -8,6 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>회원 관리 페이지</title>
 	
+	<link rel="stylesheet" href="${contextPath}/resources/css/header.css">
 	<link rel="stylesheet" href="${contextPath}/resources/css/index.css">
 	<link rel="stylesheet" href="${contextPath}/resources/css/memberManagement.css">
 	<script src="https://kit.fontawesome.com/16679b9adf.js"
@@ -31,115 +32,126 @@
 			<div>일반회원관리</div>
 			<div>사용자수</div>
 			
-					<div class="member-list">
-						<table border="1" class="table1">
-							<tr class="s1">
-								<th class="no">NO.</th>
-								<td class="ck"><input type="checkbox" id="all"></td>
-								<th class="id">아이디</th>
-								<th class="nm">이름</th>
-								<th class="em">이메일</th>
-								<th class="pn">전화번호</th>
-								<th class="dt">회원가입일</th>
-								<th>탈퇴여부</th>
-							</tr>
-							<tr class="s2">
-								<td>1</td>
-								<td><input type="checkbox" name="check"></td>
-								<td><a href="#">user01</a></td>
-								<td>유저일</td>
-								<td>user01@gmail.com</td>
-								<td>010-3270-2918</td>
-								<td>2023.07.06</td>
-								<td>N</td>
-							</tr>
-							<tr class="s2">
-								<td>1</td>
-								<td><input type="checkbox" name="check"></td>
-								<td><a href="#">user01</a></td>
-								<td>유저일</td>
-								<td>user01@gmail.com</td>
-								<td>010-3270-2918</td>
-								<td>2023.07.06</td>
-								<td>N</td>
-							</tr>
-							<tr class="s2">
-								<td>1</td>
-								<td><input type="checkbox" name="check"></td>
-								<td><a href="#">user01</a></td>
-								<td>유저일</td>
-								<td>user01@gmail.com</td>
-								<td>010-3270-2918</td>
-								<td>2023.07.06</td>
-								<td>N</td>
-							</tr>
-							<tr class="s2">
-								<td>1</td>
-								<td><input type="checkbox" name="check"></td>
-								<td><a href="#">user01</a></td>
-								<td>유저일</td>
-								<td>user01@gmail.com</td>
-								<td>010-3270-2918</td>
-								<td>2023.07.06</td>
-								<td>N</td>
-							</tr>
-							<tr class="s2">
-								<td>1</td>
-								<td><input type="checkbox" name="check"></td>
-								<td><a href="#">user01</a></td>
-								<td>유저일</td>
-								<td>user01@gmail.com</td>
-								<td>010-3270-2918</td>
-								<td>2023.07.06</td>
-								<td>N</td>
-							</tr>
-							<tr class="s2">
-								<td>1</td>
-								<td><input type="checkbox" name="check"></td>
-								<td><a href="#">user01</a></td>
-								<td>유저일</td>
-								<td>user01@gmail.com</td>
-								<td>010-3270-2918</td>
-								<td>2023.07.06</td>
-								<td>N</td>
-							</tr>
-							<tr class="s2">
-								<td>1</td>
-								<td><input type="checkbox" name="check"></td>
-								<td><a href="#">user01</a></td>
-								<td>유저일</td>
-								<td>user01@gmail.com</td>
-								<td>010-3270-2918</td>
-								<td>2023.07.06</td>
-								<td>N</td>
-							</tr>
-							<tr class="s2">
-								<td>1</td>
-								<td><input type="checkbox" name="check"></td>
-								<td><a href="#">user01</a></td>
-								<td>유저일</td>
-								<td>user01@gmail.com</td>
-								<td>010-3270-2918</td>
-								<td>2023.07.06</td>
-								<td>N</td>
-							</tr>
-							<tr class="s2">
-								<td>1</td>
-								<td><input type="checkbox" name="check"></td>
-								<td><a href="#">user01</a></td>
-								<td>유저일</td>
-								<td>user01@gmail.com</td>
-								<td>010-3270-2918</td>
-								<td>2023.07.06</td>
-								<td>N</td>
-							</tr>
+			<div class="member-list">
+				<table border="1" class="table1">
+					<tr class="s1">
+						<th class="no">NO.</th>
+						<td class="ck"><input type="checkbox" id="all"></td>
+						<th class="id">아이디</th>
+						<th class="nm">이름</th>
+						<th class="em">이메일</th>
+						<th class="pn">전화번호</th>
+						<th class="dt">회원가입일</th>
+						<th>탈퇴여부</th>
+					</tr>
+					<tr class="s2">
+						<td>1</td>
+						<td><input type="checkbox" name="check"></td>
+						<td><a href="#">user01</a></td>
+						<td>유저일</td>
+						<td>user01@gmail.com</td>
+						<td>010-3270-2918</td>
+						<td>2023.07.06</td>
+						<td>N</td>
+					</tr>
+					<tr class="s2">
+						<td>1</td>
+						<td><input type="checkbox" name="check"></td>
+						<td><a href="#">user01</a></td>
+						<td>유저일</td>
+						<td>user01@gmail.com</td>
+						<td>010-3270-2918</td>
+						<td>2023.07.06</td>
+						<td>N</td>
+					</tr>
+					<tr class="s2">
+						<td>1</td>
+						<td><input type="checkbox" name="check"></td>
+						<td><a href="#">user01</a></td>
+						<td>유저일</td>
+						<td>user01@gmail.com</td>
+						<td>010-3270-2918</td>
+						<td>2023.07.06</td>
+						<td>N</td>
+					</tr>
+					<tr class="s2">
+						<td>1</td>
+						<td><input type="checkbox" name="check"></td>
+						<td><a href="#">user01</a></td>
+						<td>유저일</td>
+						<td>user01@gmail.com</td>
+						<td>010-3270-2918</td>
+						<td>2023.07.06</td>
+						<td>N</td>
+					</tr>
+					<tr class="s2">
+						<td>1</td>
+						<td><input type="checkbox" name="check"></td>
+						<td><a href="#">user01</a></td>
+						<td>유저일</td>
+						<td>user01@gmail.com</td>
+						<td>010-3270-2918</td>
+						<td>2023.07.06</td>
+						<td>N</td>
+					</tr>
+					<tr class="s2">
+						<td>1</td>
+						<td><input type="checkbox" name="check"></td>
+						<td><a href="#">user01</a></td>
+						<td>유저일</td>
+						<td>user01@gmail.com</td>
+						<td>010-3270-2918</td>
+						<td>2023.07.06</td>
+						<td>N</td>
+					</tr>
+					<tr class="s2">
+						<td>1</td>
+						<td><input type="checkbox" name="check"></td>
+						<td><a href="#">user01</a></td>
+						<td>유저일</td>
+						<td>user01@gmail.com</td>
+						<td>010-3270-2918</td>
+						<td>2023.07.06</td>
+						<td>N</td>
+					</tr>
+					<tr class="s2">
+						<td>1</td>
+						<td><input type="checkbox" name="check"></td>
+						<td><a href="#">user01</a></td>
+						<td>유저일</td>
+						<td>user01@gmail.com</td>
+						<td>010-3270-2918</td>
+						<td>2023.07.06</td>
+						<td>N</td>
+					</tr>
+					<tr class="s2">
+						<td>1</td>
+						<td><input type="checkbox" name="check"></td>
+						<td><a href="#">user01</a></td>
+						<td>유저일</td>
+						<td>user01@gmail.com</td>
+						<td>010-3270-2918</td>
+						<td>2023.07.06</td>
+						<td>N</td>
+					</tr>
+					<tr class="s2">
+						<td>1</td>
+						<td><input type="checkbox" name="check"></td>
+						<td><a href="#">user01</a></td>
+						<td>유저일</td>
+						<td>user01@gmail.com</td>
+						<td>010-3270-2918</td>
+						<td>2023.07.06</td>
+						<td>N</td>
+					</tr>
+						
 							
 
 							
 
 
 						</table>
-						<div class="board_page">
+						<div class="board-page">
 							<a href="#" class="bt first"><<</a> 
 							<a href="#" class="bt prev"><</a>
 							<a href="#" class="num on">1</a> 
