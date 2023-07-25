@@ -80,5 +80,22 @@ public class MemberService {
 	}
 
 
+	/** 회원가입 - 닉네임 중복검사 service
+	 * @param memberNickname
+	 * @return result
+	 * @throws Exception
+	 */
+	public int nicknameCheck(String memberNickname) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int result = dao.nicknameCheck(conn, memberNickname);
+		
+		close(conn);
+		
+		return result;
+	}
+
+
 	
 }

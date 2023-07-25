@@ -25,5 +25,11 @@
    		AND SECESSION_FL = 'N'
 	</entry>
 
+	<entry key="joinNickCheck">
+		SELECT count(*) FROM MEMBER
+   		WHERE MEMBER_NICKNAME = ?
+   		AND SECESSION_FL = 'N'
+	</entry>
+
 
 </properties>
