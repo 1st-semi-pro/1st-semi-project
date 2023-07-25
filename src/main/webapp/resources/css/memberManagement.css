@@ -138,6 +138,33 @@ table, td, th {
 	margin: 0px 5px;
 }
 
+.pagination{
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination > li{
+    width: 20px;
+    margin: 0 5px;
+    text-align: center;
+}
+
+.pagination a{
+    width: 100%;
+    height: 100%;
+    display: block;
+    /* letter-spacing: -2px; */
+}
+
+/* 현재 페이지 번호 */
+.pagination .current{
+    background-color: #455ba8;
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+}
 
 
 

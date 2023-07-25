@@ -54,9 +54,9 @@
         <nav>
             <ul>
                 <li><a href="${contextPath}/member/festivalInfo">축제정보</a></li>
-                <li><a href="#">공지게시판</a></li>
-                <li><a href="#">자유게시판</a></li>
-                <li><a href="#">축제후기</a></li>
+                <li><a href="${contextPath}/board/list?type=1">공지게시판</a></li>
+                <li><a href="${contextPath}/board/list?type=2">자유게시판</a></li>
+                <li><a href="${contextPath}/board/list?type=3">축제후기</a></li>
                 <li><a href="${contextPath}/member/companion">동행자구하기</a></li>
                 
             </ul>

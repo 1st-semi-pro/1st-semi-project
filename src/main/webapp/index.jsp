@@ -26,9 +26,12 @@
       <div class="content">
         
         	<div class="banner"> <!-- 배너 칸 -->
-            <div></div>
-            <div></div>
-            <div></div>
+            <div>
+               1
+               <a href="${contextPath}/board/memberList?type=0">회원관리</a>
+            </div>
+            <div><img src="#"></div>
+            <div>3</div>
          </div>
            
          <div class="content-1"> <!-- 한반도 + 게시판 -->

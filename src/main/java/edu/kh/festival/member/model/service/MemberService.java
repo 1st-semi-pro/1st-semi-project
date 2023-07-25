@@ -10,7 +10,6 @@ import java.util.Map;
 
 import edu.kh.festival.member.model.dao.MemberDAO;
 import edu.kh.festival.member.model.vo.Member;
-import edu.kh.festival.member.model.vo.Pagination;
 
 public class MemberService {
 
