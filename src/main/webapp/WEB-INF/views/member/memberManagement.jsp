@@ -50,7 +50,7 @@
 					<c:choose>
 						<c:when test="${empty mList}">
 							<tr>
-								<th colspan="8">게시글이 존재하지 않습니다.</th>
+								<th colspan="8">회원이 존재하지 않습니다.</th>
 							</tr>
 						</c:when>
 

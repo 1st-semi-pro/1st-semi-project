@@ -18,7 +18,7 @@ import edu.kh.festival.board.model.service.ManageService;
 import edu.kh.festival.member.model.vo.Member;
 
 
-@WebServlet("/member/*")
+@WebServlet("/board/*")
 public class MemberManageController extends HttpServlet {
 	
 	@Override
@@ -27,34 +27,34 @@ public class MemberManageController extends HttpServlet {
 		// /community/reply/selectReplyList
 		String contextPath = req.getContextPath();
 		// /community
-		String command = uri.substring(  (contextPath + "/member/").length()  );
+		String command = uri.substring((contextPath + "/board/").length());
 		
 		ManageService service = new ManageService();
 		
 		// 전체 회원 조회
+		
+		
 		try {
-			
-			int type = Integer.parseInt(req.getParameter("type"));
-			
-			int cp =1;
-			
-			if(req.getParameter("cp")!=null) { // 쿼리스트링에 "cp"가 존재한다면
-				cp = Integer.parseInt(req.getParameter("cp"));
+			if(command.equals("memberList")) {
+				
+				int type = Integer.parseInt(req.getParameter("type"));
+				
+				int cp =1;
+				
+				if(req.getParameter("cp")!=null) { // 쿼리스트링에 "cp"가 존재한다면
+					cp = Integer.parseInt(req.getParameter("cp"));
+				}
+				
+				Map<String,Object> map = service.selectAllMember(type, cp);
+				
+				req.setAttribute("map", map);
+				
+				String path = "/WEB-INF/views/member/memberManagement.jsp";
+				
+				RequestDispatcher dispatcher = req.getRequestDispatcher(path);
+				dispatcher.forward(req, resp);
+				
 			}
-			
-			Map<String,Object> map = service.selectAllMember(type, cp);
-			
-			req.setAttribute("map", map);
-			
-			String path = "/WEB-INF/views/member/memberManagement.jsp";
-			
-			RequestDispatcher dispatcher = req.getRequestDispatcher(path);
-			dispatcher.forward(req, resp);
-				
-				
-			
-			
-			
 			
 			
 		}catch (Exception e) {

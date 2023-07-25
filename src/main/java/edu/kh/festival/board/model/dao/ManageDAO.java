@@ -18,13 +18,29 @@ public class ManageDAO {
 	private PreparedStatement pstmt;
 	private ResultSet rs;
 	private Properties prop;
-	public int getListCount(Connection conn) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+
+	
+	
+	
+	/** 회원수 조회 DAO
+	 * @param conn
+	 * @param type
+	 * @return
+	 */
 	public int getMemberCount(Connection conn, int type) {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+	
+	
+	
+	
+	
+	
+	
+	public List<Member> selectMemberList(Connection conn, Pagination pagination, int type) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }
