@@ -32,9 +32,6 @@ public class LoginServlet extends HttpServlet {
       // 로그인창에 아이디 입력하고 입력하고 로그인 누르면 값 담김
       String inputId = req.getParameter("inputId");
       String inputPw = req.getParameter("inputPw");
-   
-      
-      System.out.println(req.getParameter("inputFile"));
       
       // 확인용
       //System.out.println(inputId);
@@ -82,7 +79,6 @@ public class LoginServlet extends HttpServlet {
                
             }else {
                System.out.println("실패"); // 테스트
-               
                
                session.setAttribute("message", "아이디 또는 비밀번호가 일치하지 않습니다.");
                // footer 없어서 jsp에 jstl로 message 출력?

@@ -32,17 +32,17 @@
             <div id="firstbox">
                 <article class = "firstArticles">
                     <img src="${contextPath}/resources/images/id.png" id="img1">
-                    <input type="text" class="inputs" id="inputId" placeholder="아이디를 입력해주세요.">
+                    <input type="text" class="inputs" id="inputId" name="inputId" placeholder="아이디를 입력해주세요." autocomplete="off">
                 </article>
 
                 <article>
                     <img src="${contextPath}/resources/images/password.jpg" id="img2">
-                    <input type="password" class="inputs" id="inputPw" placeholder="비밀번호를 입력해주세요.">
+                    <input type="password" class="inputs" id="inputPw" name="inputPw" placeholder="비밀번호를 입력해주세요.">
                 </article>
 
                 <article>
                     <img src="${contextPath}/resources/images/password2.png" id="img3">
-                    <input type="password" class="inputs" id="inputPwCheck" placeholder="비밀번호 확인을 입력해주세요.">
+                    <input type="password" class="inputs" id="inputPwCheck" name="inputPwCheck" placeholder="비밀번호 확인을 입력해주세요.">
                 </article>
 
 
@@ -56,19 +56,19 @@
 
                 <article id="giveMargin">
                     <img src="${contextPath}/resources/images/id.png" id="img5">
-                    <input type="text" class="inputs" id="memberNickname" placeholder="닉네임을 입력해주세요.">
+                    <input type="text" class="inputs" id="memberNickname" name="memberNickname" placeholder="닉네임을 입력해주세요." autocomplete="off">
                 
                 </article>
 
                 <article>
                     <img src="${contextPath}/resources/images/id.png" id="img6">
-                    <input type="text" class="inputs" id="memberName" placeholder="이름을 입력해주세요.">
+                    <input type="text" class="inputs" id="memberName" name="memberName" placeholder="이름을 입력해주세요." autocomplete="off">
 
                 </article>
 
                 <article>
                     <img src="${contextPath}/resources/images/id.png" id="img7">
-                    <input type="text" class="inputs" id="memberBirth" placeholder="생년월일을 입력해주세요.(- 제외)">
+                    <input type="text" class="inputs" id="memberBirth" name="memberBirth" placeholder="생년월일을 8자리로 입력해주세요.(- 제외)" autocomplete="off">
                 
                 </article>
 
@@ -76,12 +76,23 @@
                     <img src="${contextPath}/resources/images/id.png" id="img8">
                  
                     <div id="selectDiv">
-                        <select>
+                        <select id="regionSelect">
                             <option selected>주 활동지역을 선택해주세요.</option> <!-- 이거 선택안되게 하는법? -->
-                            <option value="1">서울</option>
-                            <option value="2">경기</option>
-                            <option value="3">강원</option>
-                            <option value="4">제주</option>
+                            <option value="서울">서울</option>
+                            <option value="경기">경기</option>
+                            <option value="강원">강원</option>
+                            <option value="제주">제주</option>
+                            <!-- 서버랑 연동해서 jstl써서 불러올 수 있음 
+                             
+                            <label for="assNumber">음료</label>
+                                <select>
+                                    <option value="">선택해주세요.</option>
+                                        <c:forEach var="list" items="${result}">
+                                            <option value="${list.beverage}">${list.beverage}</option>
+                                        </c:forEach>
+                                </select>
+
+                             -->
                         </select>
                     </div>    
 
@@ -89,7 +100,7 @@
 
                 <article> 
                     <img src="${contextPath}/resources/images/id.png" id="img10">
-                    <input type="text" class="inputs" id="memberBirth" placeholder="전화번호를 입력해주세요.(- 제외)">
+                    <input type="text" class="inputs" id="memberPhone" name="memberPhone" placeholder="전화번호를 입력해주세요.(- 제외)" autocomplete="off">
 
                 </article>
                 <article>
@@ -97,15 +108,15 @@
                     <div id="genderNationality">
 
                         <div id="gender">
-                            <label for="man" class="leftLabel">
-                                <div>
+                            <label for="man" class="leftLabel" id="manLabel">
+                                <div id = "manDiv">
                                     <input type="radio" name="gender" id="man" class="radios">
                                     <span>남</span>
                                 </div>
                             </label>
 
-                            <label for="woman" class="rightLabel">
-                                <div>
+                            <label for="woman" class="rightLabel" id="womanLabel">
+                                <div id="womanDiv">
                                     <input type="radio" name="gender" id="woman" class="radios" >
                                     <span>여</span>
                                 </div>
@@ -113,15 +124,15 @@
                         </div>
 
                         <div id="nationality">
-                            <label for="kor" class="leftLabel">
-                                <div>
+                            <label for="kor" class="leftLabel" id="korLabel">
+                                <div id="korDiv">
                                     <input type="radio" name="nation" id="kor" class="radios">
                                     <span>내국인</span>
                                 </div>
                             </label>
 
-                            <label for="foreign" class="rightLabel">
-                                <div>
+                            <label for="foreign" class="rightLabel" id="forLabel">
+                                <div id="forDiv"> 
                                     <input type="radio" name="nation" id="foreign" class="radios">
                                     <span>외국인</span>
                                 </div>
@@ -134,27 +145,33 @@
                 
                 <article>
                     <img src="${contextPath}/resources/images/id.png" id="img4">
-                    <input type="email" class="inputs" id="inputEmail" placeholder="이메일을 입력해주세요.">
+                    <input type="email" class="inputs" id="inputEmail" name="inputEmail" placeholder="이메일을 입력해주세요." autocomplete="off">
                     <button id="emailBtn">인증하기</button>
                 </article>
 
+                <articleAgree id="agreeArticle">
 
+                    <div id="borderDiv">dd
+                    <input type="radio" id="agreeRadio">
+                    <span id="necessary">(필수)</span>
+                    <span id="agreeSpan2">인증 약관 전체 동의</span>
+                    <img src="v.jfif" id="agreeImg"> <!-- 임시 -->
+                    </div>
+
+                </articleAgree>
+                
                 <span id="innerTextSpan2"></span>
-
+                
             </div>
+            
 
-            <div id="thirdBox">
-                <input type="radio">
-                <span><p>[필수]</p>인증 약관 전체 동의</span>
-                <img src="v.jfif" id="agreeImg">
-            </div>
 
             <div id="agreeClickBox">
-                약관동의 클릭하면 나올 박스
+                약관동의 클릭하면 나올 박스 <!-- 임시 -->
             </div>
 
 
-            <div id="forthBox">
+            <div id="thirdBox">
                 <button id="btn">회원가입</button>
             </div>    
 
@@ -181,6 +198,10 @@
 
 
     </main>
+
+<!--     <script>
+        const contextPath = "${contextPath}";
+    </script>     -->
 
 
 	<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>

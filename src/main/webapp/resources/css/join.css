@@ -6,6 +6,14 @@
     
 }
 
+.true{
+    color:lightcoral;
+}
+
+.false{
+    color:red;
+}
+
 /* ::placeholder{
  
 } */
@@ -38,7 +46,7 @@ form{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 8px solid lightgray;
+/*     border: 8px solid lightgray; */
     border-radius:5px;
 }
 
@@ -46,7 +54,7 @@ form{
 #firstbox{
     display:flex;
     width:60%;
-    height:24%;
+    height:28%;
     flex-direction: column;
     border:5px solid lightgray;
     border-radius:5px;
@@ -65,8 +73,12 @@ form{
     height:12%;
     margin-left:50px;
     margin-bottom: 5px;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
+
+    font-weight: bold;
+    font-size:18px;
+
 }
 
 /* 닉네임, 이름, 생년월일, 주 활동지역, 통신사, 폰번호, 남/녀, 내/외국인 */
@@ -78,7 +90,7 @@ form{
 #secondBox{
     display:flex;
     width:60%;
-    height: 56%;
+    height: 60%;
     flex-direction: column;
     border:5px solid lightgray;
     border-radius:5px;
@@ -89,11 +101,19 @@ form{
 }
 
 
+
 /* secondBox에 대한 height*/
 #secondBox > article{
     display:flex;
     height:11.5%;
     justify-content: flex-start;
+    align-items: center;
+}
+
+articleAgree{
+    display:flex;
+    height:11.5%;
+    justify-content: center;
     align-items: center;
 }
 
@@ -183,6 +203,48 @@ article > agency{
     border-left:1px;
 }
 
+/* 인증약관 전체동의 */
+
+#agreeArticle{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    border:1px solid black;
+}
+
+#borderDiv{
+    display:flex;
+    width:90%;
+    height:90%;
+    border:1px solid black;
+}
+
+#agreeRadio{
+    margin-left: 20px;
+}
+
+#necessary{
+    color:lightcoral;
+    margin-top:14px;
+    margin-left: 3px;
+    margin-right:5px;
+}
+
+#agreeSpan2{
+    margin-top:14px;
+}
+
+#agreeImg{
+    width:15px;
+    height:15px;
+    margin-left:10px;
+}
+
+
+
+#agreeClickBox{
+    display:none;
+}
 
 /* 2번째 div 정규식 */
 
@@ -195,52 +257,12 @@ article > agency{
     align-items: center;
 }
 
-/* 인증약관 전체동의 */
-#thirdBox{
-    display:flex;
-    height:8%;
-    border:5px solid lightgray;
-    margin-top:10px;   
-    width:60%;
-    border-radius: 5px;
-    justify-content: center;
-    align-items: center;
-}
-
-#thirdBox:hover{
-    border:5px solid lightcoral;
-}
-
-#thirdBox > span{
-    display:flex;
-    margin-left:5px;
-    margin-top:3px;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-p{
-    color:lightcoral;
-    margin-top:17px;
-    margin-right:5px;
-}
-
-#agreeImg{
-    width:15px;
-    height:15px;
-    margin-left:10px;
-}
-
-#agreeClickBox{
-    display:none;
-}
-
 #test{
     display:flex;
     text-align: end;
 }
 /* 회원가입 버튼 div*/
-#forthBox{
+#thirdBox{
     display:flex;
     width:100%;
     height:8%;
