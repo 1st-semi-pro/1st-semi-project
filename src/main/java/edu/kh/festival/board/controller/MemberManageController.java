@@ -37,7 +37,7 @@ public class MemberManageController extends HttpServlet {
 		try {
 			if(command.equals("memberList")) {
 				
-				int type = Integer.parseInt(req.getParameter("type"));
+				
 				
 				int cp =1;
 				
@@ -45,10 +45,12 @@ public class MemberManageController extends HttpServlet {
 					cp = Integer.parseInt(req.getParameter("cp"));
 				}
 				
-				Map<String,Object> map = service.selectAllMember(type, cp);
+				
+				Map<String,Object> map = service.selectAllMember(cp);
 				
 				req.setAttribute("map", map);
 				
+				 
 				String path = "/WEB-INF/views/member/memberManagement.jsp";
 				
 				RequestDispatcher dispatcher = req.getRequestDispatcher(path);

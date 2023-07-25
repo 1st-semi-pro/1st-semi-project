@@ -15,30 +15,28 @@ public class ManageService {
 	
 	private ManageDAO dao = new ManageDAO();
 
-	public Map<String, Object> selectAllMember(int type, int cp) {
+	public Map<String, Object> selectAllMember(int cp)throws Exception {
 		
 		Connection conn = getConnection();
 		
 		
 		// 회원수 조회
-		int memberCount = dao.getMemberCount(conn, type);
+		int memberCount = dao.getMemberCount(conn);
 		
 		// 페이지네이션 객체 생성
 		edu.kh.festival.board.model.vo.Pagination pagination = new edu.kh.festival.board.model.vo.Pagination(cp, memberCount);
 		
 		// 회원목록 조회
-		List<Member> mList = dao.selectMemberList(conn, pagination, type);
+		List<Member> mList = dao.selectMemberList(conn, pagination);
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		
 		map.put("pagination", pagination);
 		map.put("mList", mList);
 		
-		return null;
+		close(conn);
 		
-		//close(conn);
-		
-		//return map;
+		return map;
 	}
 
 		

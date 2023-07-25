@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<c:set var="pagination" value="${map.pagination}" />
+<c:set var="mList" value="${map.mList}" />
 
 
 <!DOCTYPE html>
@@ -57,14 +59,14 @@
 						<c:otherwise>
 							<c:forEach var="member" items="${mList}">
 								<tr class="s2">
-									<td>${mList.memberNo}</td>
+									<td>${member.memberNo}</td>
 									<td><input type="checkbox" name="check"></td>
-									<td><a href="#">${mList.memberId}</a></td>
-									<td>${mList.memberNickname}</td>
-									<td>${mList.memberEmail}</td>
-									<td>${mList.memberPhone}</td>
-									<td>${mList.enrollDate}</td>
-									<td>${mList.secessionFl}</td>
+									<td><a href="#">${member.memberId}</a></td>
+									<td>${member.memberNickname}</td>
+									<td>${member.memberEmail}</td>
+									<td>${member.memberPhone}</td>
+									<td>${member.enrollDate}</td>
+									<td>${member.secessionFl}</td>
 								</tr>
 							</c:forEach>
 
