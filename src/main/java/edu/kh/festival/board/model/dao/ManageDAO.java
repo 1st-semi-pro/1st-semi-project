@@ -73,7 +73,7 @@ public class ManageDAO {
 	
 	public List<Member> selectMemberList(Connection conn, Pagination pagination) throws Exception {
 
-		List<Member> mList = new ArrayList<>();
+		List<Member> mList = new ArrayList<Member>();
 		
 		try {
 			String sql = prop.getProperty("selectMemberList");

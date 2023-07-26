@@ -34,7 +34,7 @@
 
 		<div class="content">
 			<div>일반회원관리</div>
-			<div>사용자수 : ${mList.memberNo.length} </div>
+			<div>사용자수 : ${mList.size()} </div>
 			
 			<div class="member-list">
 				<table border="1" class="table1">

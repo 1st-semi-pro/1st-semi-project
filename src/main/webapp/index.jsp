@@ -28,7 +28,7 @@
         	<div class="banner"> <!-- 배너 칸 -->
             <div>
                1
-               <a href="${contextPath}/board/memberList?type=0">회원관리</a>
+               <a href="${contextPath}/board/memberList">회원관리</a>
             </div>
             <div><img src="#"></div>
             <div>3</div>
