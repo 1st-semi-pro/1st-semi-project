@@ -28,7 +28,7 @@ public class BoardDAO {
       try {
          prop = new Properties();
          
-         String filePath = BoardDAO.class.getResource("/edu/kh/community/sql/board-sql.xml").getPath();
+         String filePath = BoardDAO.class.getResource("/edu/kh/festival/sql/board-sql.xml").getPath();
          
          prop.loadFromXML(new FileInputStream(filePath));
       }catch(Exception e) {
@@ -128,7 +128,7 @@ public class BoardDAO {
 				
 				board.setBoardNo(rs.getInt("BOARD_NO"));
 				board.setBoardTitle(rs.getString("BOARD_TITLE"));
-				board.setMemberNickname(rs.getString("MEMBER_NICK"));
+				board.setMemberNickname(rs.getString("MEMBER_NICKNAME"));
 				board.setCreateDate(rs.getString("CREATE_DT"));
 				board.setReadCount(rs.getInt("READ_COUNT"));
 				
