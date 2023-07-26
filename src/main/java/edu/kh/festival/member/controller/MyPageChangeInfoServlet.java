@@ -43,7 +43,7 @@ public class MyPageChangeInfoServlet extends HttpServlet {
 		Member loginMember = (Member) session.getAttribute("loginMember");
 
 		int memberNo = loginMember.getMemberNo(); // 회원번호 얻어오기 성공
-
+		System.out.println(memberNo);
 		// 업데이트에 필요한 정보를 모아둔 Member객체 생성
 		Member mem = new Member();
 
@@ -59,7 +59,8 @@ public class MyPageChangeInfoServlet extends HttpServlet {
 			MemberService service = new MemberService();
 
 			int result = service.updateMember(mem, newPw);
-
+			
+			System.out.println(result);
 			// 수정 성공 / 실패에 따른 메세지 출력 제어
 			if (result > 0) { // 성공
 				session.setAttribute("message", "회원 정보가 수정되었습니다");
@@ -74,7 +75,7 @@ public class MyPageChangeInfoServlet extends HttpServlet {
 				loginMember.setMemberNickname(memberNickname);
 
 			} else { // 실패
-				session.setAttribute("message", "회원 정보가 수정실패");
+				session.setAttribute("message", "회원 정보 수정실패");
 			}
 
 			// 성공/실패 여부 관계 없이 " 내 정보 " 화면 재요청
