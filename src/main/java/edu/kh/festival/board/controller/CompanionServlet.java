@@ -1,4 +1,4 @@
-package edu.kh.festival.member.controller;
+package edu.kh.festival.board.controller;
 
 import java.io.IOException;
 
@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/member/companion")
+@WebServlet("/board/member/companion")
 public class CompanionServlet extends HttpServlet{
 	
 	@Override
