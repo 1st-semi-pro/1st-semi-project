@@ -95,7 +95,7 @@ public class ManageDAO {
 				member.setMemberId(rs.getString("MEMBER_ID"));
 				member.setMemberNickname(rs.getString("MEMBER_NICKNAME"));
 				member.setMemberEmail(rs.getString("MEMBER_EMAIL"));
-				member.setMemberPhone(rs.getInt("MEMBER_PHONE"));
+				member.setMemberPhone(rs.getString("MEMBER_PHONE"));
 				member.setEnrollDate(rs.getDate("ENROLL_DATE"));
 				member.setSecessionFl(rs.getString("SECESSION_FL"));
 				
