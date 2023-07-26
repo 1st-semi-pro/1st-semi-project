@@ -50,7 +50,7 @@ public class MemberManageController extends HttpServlet {
 				
 				req.setAttribute("map", map);
 				
-				 
+				      
 				String path = "/WEB-INF/views/member/memberManagement.jsp";
 				
 				RequestDispatcher dispatcher = req.getRequestDispatcher(path);

@@ -33,6 +33,8 @@ public class ManageService {
 		
 		map.put("pagination", pagination);
 		map.put("mList", mList);
+		map.put("memberCount", memberCount);
+		
 		
 		close(conn);
 		
