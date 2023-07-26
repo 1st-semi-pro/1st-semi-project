@@ -111,7 +111,7 @@ public class MemberDAO {
 			
 			pstmt.setString(1, mem.getMemberRegion());
 			pstmt.setString(2, mem.getMemberEmail());
-			pstmt.setInt(3, mem.getMemberPhone());
+			pstmt.setString(3, mem.getMemberPhone());
 			pstmt.setString(4, newPw);
 			pstmt.setString(5, mem.getMemberNickname());
 			pstmt.setInt(6, mem.getMemberNo());

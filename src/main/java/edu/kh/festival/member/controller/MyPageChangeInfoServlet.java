@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 import edu.kh.festival.member.model.service.MemberService;
 import edu.kh.festival.member.model.vo.Member;
 
+
 @WebServlet("/member/myPage/info")
 public class MyPageChangeInfoServlet extends HttpServlet {
 
@@ -30,7 +31,7 @@ public class MyPageChangeInfoServlet extends HttpServlet {
 		// 파라미터 얻어오기
 		String memberRegion = req.getParameter("memberRegion");
 		String memberEmail = req.getParameter("memberEmail");
-		int memberPhone = Integer.parseInt(req.getParameter("memberPhone"));
+		String memberPhone = req.getParameter("memberPhone");
 		String memberPw = req.getParameter("memberPw");
 		String newPw = req.getParameter("newPw");
 		String memberNickname = req.getParameter("memberNickname");
@@ -51,7 +52,7 @@ public class MyPageChangeInfoServlet extends HttpServlet {
 
 		mem.setMemberRegion(memberRegion);
 		mem.setMemberEmail(memberEmail);
-		mem.setMemberPhone(memberPhone);
+		mem.setMemberPhone(memberPw);
 		mem.setMemberPw(memberPw);
 		mem.setMemberNickname(memberNickname);
 
