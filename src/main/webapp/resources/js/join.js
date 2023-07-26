@@ -35,6 +35,8 @@ const forDiv = document.getElementById("forDiv");
 const korLabel = document.getElementById("korLabel");
 const forLabel = document.getElementById("forLabel");
 
+const man = document.getElementById("man");
+
 
 
 
@@ -538,6 +540,18 @@ forDiv.addEventListener("click",function(){
     korLabel.style.backgroundColor = "white";
     korLabel.style.color = "black";
     korLabel.style.border = "1px solid lightgray";
+
+})
+// ----------------------------------------------------------------------------- //
+// 이메일
+// 남/여, 내/외국인 체크 안된경우
+
+man.addEventListener("click",function(){
+
+    if(man.checked){
+        alert("test");
+    }
+
 })
 
 

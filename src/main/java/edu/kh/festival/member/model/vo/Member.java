@@ -47,7 +47,7 @@ public class Member {
 	
 	private String memberTc; // 회원 통신사
 	
-	private int memberPhone; // 회원 전화번호
+	private String memberPhone; // 회원 전화번호
 	
 	private String memberGender; // 회원 성별 << 라디오로해놈
 	
