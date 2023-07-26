@@ -25,7 +25,7 @@
 
 
         
-        <form>
+        <form action="join" method="post" onsubmit="return joinValidate()">
 
             <div id="height"></div>
 
@@ -76,7 +76,7 @@
                     <img src="${contextPath}/resources/images/id.png" id="img8">
                  
                     <div id="selectDiv">
-                        <select id="regionSelect">
+                        <select id="regionSelect" name="regionSelect">
                             <option selected>주 활동지역을 선택해주세요.</option> <!-- 이거 선택안되게 하는법? -->
                             <option value="서울">서울</option>
                             <option value="경기">경기</option>
@@ -110,15 +110,15 @@
                         <div id="gender">
                             <label for="man" class="leftLabel" id="manLabel">
                                 <div id = "manDiv">
-                                    <input type="radio" name="gender" id="man" class="radios">
-                                    <span>남</span>
+                                    <input type="radio" name="gender" id="man" class="radios" value="남">
+                                    <span name="남">남</span>
                                 </div>
                             </label>
 
                             <label for="woman" class="rightLabel" id="womanLabel">
                                 <div id="womanDiv">
-                                    <input type="radio" name="gender" id="woman" class="radios" >
-                                    <span>여</span>
+                                    <input type="radio" name="gender" id="woman" class="radios" value="여">
+                                    <span name="여">여</span>
                                 </div>
                             </label>
                         </div>
@@ -126,14 +126,14 @@
                         <div id="nationality">
                             <label for="kor" class="leftLabel" id="korLabel">
                                 <div id="korDiv">
-                                    <input type="radio" name="nation" id="kor" class="radios">
+                                    <input type="radio" name="nation" id="kor" class="radios" value="내국인">
                                     <span>내국인</span>
                                 </div>
                             </label>
 
                             <label for="foreign" class="rightLabel" id="forLabel">
                                 <div id="forDiv"> 
-                                    <input type="radio" name="nation" id="foreign" class="radios">
+                                    <input type="radio" name="nation" id="foreign" class="radios" value="외국인">
                                     <span>외국인</span>
                                 </div>
                             </label>
@@ -151,8 +151,8 @@
 
                 <articleAgree id="agreeArticle">
 
-                    <div id="borderDiv">dd
-                    <input type="radio" id="agreeRadio">
+                    <div id="borderDiv">
+                    <input type="checkbox" id="agreeCbx">
                     <span id="necessary">(필수)</span>
                     <span id="agreeSpan2">인증 약관 전체 동의</span>
                     <img src="v.jfif" id="agreeImg"> <!-- 임시 -->
@@ -163,8 +163,6 @@
                 <span id="innerTextSpan2"></span>
                 
             </div>
-            
-
 
             <div id="agreeClickBox">
                 약관동의 클릭하면 나올 박스 <!-- 임시 -->
@@ -172,7 +170,7 @@
 
 
             <div id="thirdBox">
-                <button id="btn">회원가입</button>
+                <button id="btn" >회원가입</button>
             </div>    
 
         </form>

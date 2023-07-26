@@ -194,6 +194,51 @@ public class MemberDAO {
 		return result;
 		
 	}
+
+// 회원가입 member 테이블 변경하면 sql문 ? 개수랑 위치홀더 개수 변경해야함
+	
+	/** 회원가입 DAO
+	 * @param conn
+	 * @param mem
+	 * @return result
+	 * @throws Exception
+	 */
+	public int join(Connection conn, Member mem) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("join");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, mem.getMemberId());
+			pstmt.setString(2, mem.getMemberPw());
+			pstmt.setString(3, mem.getMemberEmail());
+			pstmt.setString(4, mem.getMemberNickname());
+			pstmt.setString(5, mem.getMemberName());
+			pstmt.setInt(6, mem.getMemberBirth());
+			pstmt.setString(7, mem.getMemberRegion());
+			pstmt.setString(8, mem.getMemberGender());
+			pstmt.setString(9, mem.getMemberNationality());
+			pstmt.setString(10, mem.getMemberPhone());
+			
+			result = pstmt.executeUpdate();
+			
+			// 위치홀더 처음부터 id-pw-email-nick-nm-birth-region-gender-nt-phone
+			// INSERT INTO MEMBER 
+			// VALUES(SEQ_MEMBER_NO.NEXTVAL, ?, ?, ?, ?, ?, TO_DATE(?, 'YYYYMMDD'), ?, ?, ?, ?, DEFAULT, DEFAULT, DEFAULT, NULL, NULL)
+			
+			
+		}finally {
+			close(pstmt);
+		}
+		
+		return result;
+		
+		
+	}
 		
 		
 }

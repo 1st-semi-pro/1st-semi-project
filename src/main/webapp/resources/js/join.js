@@ -36,6 +36,14 @@ const korLabel = document.getElementById("korLabel");
 const forLabel = document.getElementById("forLabel");
 
 const man = document.getElementById("man");
+const woman = document.getElementById("woman");
+const kor = document.getElementById("kor");
+const foreign = document.getElementById("foreign");
+
+/* 인증 관련 */
+const agreeCbx = document.getElementById("agreeCbx");
+const emailBtn = document.getElementById("emailBtn");
+
 
 
 
@@ -497,7 +505,25 @@ memberPhone.addEventListener("input",function(){
 // 남/녀 , 내/외국인
 //체크된 라디오 값 가져오는 법?
 
-manDiv.addEventListener("click",function(){ // 라벨로 클릭하면 2번 이벤트가 발생함.. 왜?
+// 각각의 if는 전화번호가 false일 때
+
+
+// 라벨누르면 alert 한번 뜨는데 div누르면 alert 2번뜨는 이슈가 있음
+manDiv.addEventListener("click",function(){ 
+
+    
+    if(checkInputs.memberPhone != true){
+       
+        alert("전화번호를 올바르게 입력해주세요.");
+        man.checked = false;
+        memberPhone.focus();
+
+        manLabel.style.backgroundColor = "white";
+        manLabel.style.color = "black";
+        manLabel.style.border = "2px solid lightgray";
+        return;
+
+    }
 
     manLabel.style.backgroundColor = "lightcoral";
     manLabel.style.color = "white";
@@ -510,6 +536,20 @@ manDiv.addEventListener("click",function(){ // 라벨로 클릭하면 2번 이�
 
 womanDiv.addEventListener("click",function(){ 
 
+    if(checkInputs.memberPhone != true){
+       
+        alert("전화번호를 올바르게 입력해주세요.2");
+        woman.checked = false;
+        memberPhone.focus();
+
+        womanLabel.style.backgroundColor = "white";
+        womanLabel.style.color = "black";
+        womanLabel.style.border = "2px solid lightgray";
+        return;
+
+
+    }
+
     womanLabel.style.backgroundColor = "lightcoral";
     womanLabel.style.color = "white";
     womanLabel.style.border = "1px solid lightcoral";
@@ -521,6 +561,19 @@ womanDiv.addEventListener("click",function(){
 
 korDiv.addEventListener("click",function(){ // 라벨로 클릭하면 2번 이벤트가 발생함.. 왜?
    
+    if(checkInputs.memberPhone != true){
+       
+        alert("전화번호를 올바르게 입력해주세요.");
+        kor.checked = false;
+        memberPhone.focus();
+
+        korLabel.style.backgroundColor = "white";
+        korLabel.style.color = "black";
+        korLabel.style.border = "2px solid lightgray";
+        return;
+
+    }
+
     korLabel.style.backgroundColor = "lightcoral";
     korLabel.style.color = "white";
     korLabel.style.border = "1px solid lightcoral";
@@ -532,6 +585,18 @@ korDiv.addEventListener("click",function(){ // 라벨로 클릭하면 2번 이�
 })
 
 forDiv.addEventListener("click",function(){ 
+
+    if(checkInputs.memberPhone != true){
+       
+        alert("전화번호를 올바르게 입력해주세요.");
+        foreign.checked = false;
+        memberPhone.focus();
+
+        forLabel.style.backgroundColor = "white";
+        forLabel.style.color = "black";
+        forLabel.style.border = "2px solid lightgray";
+        return;
+    }
 
     forLabel.style.backgroundColor = "lightcoral";
     forLabel.style.color = "white";
@@ -546,13 +611,77 @@ forDiv.addEventListener("click",function(){
 // 이메일
 // 남/여, 내/외국인 체크 안된경우
 
-man.addEventListener("click",function(){
+inputEmail.addEventListener("input",function(){
 
-    if(man.checked){
-        alert("test");
+
+    if(!man.checked && !woman.checked){
+        alert("남/여 여부를 선택해주세요.");
+        this.value = "";
+        checkInputs.inputEmail = false;
+
+    }
+
+    if(!kor.checked && !foreign.checked){
+        alert("내/외국인 여부를 선택해주세요.");
+        this.value = "";
+        checkInputs.inputEmail = false;
+
+    }
+
+    in2.innerText = "";
+
+    if(this.value.trim().length == 0){
+        in2.innerText = "이메일을 입력해주세요.";
+        in2.classList.remove("true", "false");
+        checkInputs.inputEmail = false;
+        return;
+    }
+
+    const regExp = /^[\w\-\_]{4,}@[\w\-\_]+(\.\w+){1,3}$/;
+    // test1@naver.com
+    // test2@iei.or.kr
+    // test3@ko.or.kr
+    // + -> @ 뒤에 한글자 이상은 나와야 한다.
+    // (){1,3} -> ()안의 묶음이 3개까지 가능하게 함. ko.or.kr
+
+    if(regExp.test(this.value)){
+
+        in2.innerText = "유효한 형식의 이메일입니다.";
+
+        in2.classList.add("true");
+        in2.classList.remove("false");
+
+        checkInputs.inputEmail = true;
+
+        this.style.borderBottom = "2px solid lightcoral";
+
+    }else{
+
+        in2.innerText = "유효한 형식의 이메일이 아닙니다.";
+
+        in2.classList.add("false");
+        in2.classList.remove("true");
+
+        this.style.borderBottom = "2px solid lightgray";
+
+        checkInputs.memberPhone = false;
+
     }
 
 })
+
+// ----------------------------------------------------------------------------- //
+// 이메일 인증 
+emailBtn.addEventListener("click", function(){
+
+    if(!agreeCbx.checked){
+        alert("인증 약관에 동의해주세요.");
+    }
+
+    alert("구현못함 ㅠ");
+
+})
+
 
 
 
@@ -566,3 +695,11 @@ man.addEventListener("click",function(){
 
 // 조건 안맞으면 회원가입 못하게 하기
 
+function joinValidate(){
+    return true;
+}
+
+
+/////////////////////////////////////////////////////////////////////////
+// radio alert 2번뜨는 거 고치기, 인증, 
+// 인증약관 박스펼치기, 이메일 중복검사 해야함

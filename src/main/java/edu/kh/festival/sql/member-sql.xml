@@ -30,6 +30,11 @@
    		WHERE MEMBER_NICKNAME = ?
    		AND SECESSION_FL = 'N'
 	</entry>
+	
+	<entry key="join">
+		INSERT INTO MEMBER 
+		VALUES(SEQ_MEMBER_NO.NEXTVAL, ?, ?, ?, ?, ?, TO_DATE(?, 'YYYYMMDD'), ?, ?, ?, ?, DEFAULT, DEFAULT, DEFAULT, NULL, NULL)
+	</entry>
 
 
 </properties>
