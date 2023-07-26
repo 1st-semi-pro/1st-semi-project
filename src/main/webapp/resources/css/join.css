@@ -207,19 +207,21 @@ article > agency{
 
 #agreeArticle{
     display:flex;
-    justify-content:center;
+    justify-content:flex-start;
     align-items: center;
-    border:1px solid black;
+
 }
 
 #borderDiv{
+    margin-left:12px;
     display:flex;
-    width:90%;
+    width:89%;
     height:90%;
-    border:1px solid black;
+    border:2px solid lightgray;
+    border-radius: 10px;
 }
 
-#agreeRadio{
+#agreeCbx{
     margin-left: 20px;
 }
 
@@ -343,7 +345,7 @@ img{
 
 #emailBtn{
     margin-left:10px;
-    width:20%;
+    width:18%;
     height:30px;
     border:0;
     background-color:lightcoral;

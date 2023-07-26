@@ -1,6 +1,5 @@
 package edu.kh.festival.member.model.service;
 
-
 import static edu.kh.festival.common.JDBCTemplate.*;
 
 import java.sql.Connection;
@@ -94,6 +93,27 @@ public class MemberService {
 		
 		return result;
 	}
+
+
+	/** 회원가입 service
+	 * @param mem
+	 * @return result
+	 * @throws Exception
+	 */
+	public int join(Member mem) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int result = dao.join(conn, mem);
+		
+		if(result > 0 ) commit(conn);
+		else 			rollback(conn);
+		
+		close(conn);
+		
+		return result;
+	}
+
 
 
 	
