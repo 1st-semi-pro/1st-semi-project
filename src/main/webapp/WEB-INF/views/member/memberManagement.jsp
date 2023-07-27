@@ -38,8 +38,8 @@
 				<div class="divide2">
 					<select name="sel" style="font-size: 15px;">
 						<option value="1" selected>아이디</option>
-						<option value="2">이름</option>
-						<option value="3">닉네임</option>
+						<option value="2">닉네임</option>
+						<option value="3">이메일</option>
 					</select>
 					<input type="search" id="mem-search" name="search" size="30" placeholder="검색" autocomplete="off">
 					<button type="submit" id="mem-search-btn" class="fa-solid fa-magnifying-glass"></button>
@@ -56,7 +56,7 @@
 						<th class="no">NO.</th>
 						<td class="ck"><input type="checkbox" id="all"></td>
 						<th class="id">아이디</th>
-						<th class="nm">이름</th>
+						<th class="nm">닉네임</th>
 						<th class="em">이메일</th>
 						<th class="pn">전화번호</th>
 						<th class="dt">회원가입일</th>
