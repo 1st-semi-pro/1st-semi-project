@@ -27,7 +27,7 @@
         
         	<div class="banner"> <!-- 배너 칸 -->
             <div>
-               <c:if test="${loginMember.memberNo == 0}">
+               <c:if test="${loginMember.memberNo == 1}">
                   <a href="${contextPath}/board/memberList">회원관리</a>
                </c:if>
             </div>
