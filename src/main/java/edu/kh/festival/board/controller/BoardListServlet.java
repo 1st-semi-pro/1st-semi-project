@@ -21,7 +21,7 @@ public class BoardListServlet extends HttpServlet {
 		
 		try {
 			
-			// 쿼리스트링 얻어오기 == 파라미터 얻어오기
+			// 쿼리스트링 얻어오기 == 파라미터 얻어오기!!!!
 			
 			int type = Integer.parseInt(req.getParameter("type"));
 			
