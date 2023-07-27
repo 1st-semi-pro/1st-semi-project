@@ -170,7 +170,7 @@ background-color: orangered;
 }
 /*------------- 축제일순 / 인기순 --------------- */
 #span-box{
-  width: 94.5%;
+  width: 99%;
   display: flex;
   justify-content: flex-end;
 }
