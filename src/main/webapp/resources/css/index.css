@@ -83,6 +83,7 @@ li{list-style: none; cursor: pointer;}
 	display: flex;
 	flex-direction: row;
     border-top: 1px solid black;
+    margin-top: 30px;
 }
 
 .content-1 > div:nth-child(1){
@@ -123,6 +124,10 @@ li{list-style: none; cursor: pointer;}
 }
 .board-name1{
 	flex-basis: 10%;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+    background-color: lightgray;
+    text-align: center;
 }
 .board-content1{
 	flex-basis: 90%;
@@ -135,6 +140,10 @@ li{list-style: none; cursor: pointer;}
 
 .board-name2{
 	flex-basis: 10%;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+    background-color: lightgray;
+    text-align: center;
 }
 .board-content2{
 	flex-basis: 90%;
@@ -145,6 +154,10 @@ li{list-style: none; cursor: pointer;}
 }
 .board-name3{
 	flex-basis: 10%;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+    background-color: lightgray;
+    text-align: center;
 }
 .board-content3{
 	flex-basis: 90%;
@@ -155,6 +168,10 @@ li{list-style: none; cursor: pointer;}
 }
 .board-name4{
 	flex-basis: 10%;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+    background-color: lightgray;
+    text-align: center;
 }
 .board-content4{
 	flex-basis: 90%;
