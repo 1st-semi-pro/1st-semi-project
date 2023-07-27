@@ -30,11 +30,25 @@
 	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
 	
 	<div class="container">
-		
 
 		<div class="content">
-			<div>일반회원관리</div>
-			<div>사용자수 : ${mList.size()} </div>
+			<div class="title"><h2>일반회원관리</h2></div>
+			<div class="memberCount">사용자수 : ${map.memberCount} </div>
+			<div class="divide1">
+				<div class="divide2">
+					<select name="sel" style="font-size: 15px;">
+						<option value="1" selected>아이디</option>
+						<option value="2">이름</option>
+						<option value="3">닉네임</option>
+					</select>
+					<input type="search" id="mem-search" name="search" size="30" placeholder="검색" autocomplete="off">
+					<button type="submit" id="mem-search-btn" class="fa-solid fa-magnifying-glass"></button>
+				</div>
+				<div class="btn-area">
+					<button id="secession" name="secession">탈퇴</button>
+
+				</div>
+			</div>
 			
 			<div class="member-list">
 				<table border="1" class="table1">
@@ -60,7 +74,7 @@
 							<c:forEach var="member" items="${mList}">
 								<tr class="s2">
 									<td>${member.memberNo}</td>
-									<td><input type="checkbox" name="check"></td>
+									<td><input type="checkbox" class="check" name="check" value="${memer.memberNo}"></td>
 									<td><a href="#">${member.memberId}</a></td>
 									<td>${member.memberNickname}</td>
 									<td>${member.memberEmail}</td>
@@ -68,16 +82,17 @@
 									<td>${member.enrollDate}</td>
 									<td>${member.secessionFl}</td>
 								</tr>
+								
 							</c:forEach>
-
 						</c:otherwise>
 					</c:choose>
 				</table>
 			</div>
+			
 			<div class="pagination-area">
 
 				<!-- 페이지네이션 a태그에 사용될 공통 주소를 저장한 변수 선언 -->
-				<c:set var="url" value="list?type=${param.type}&cp="/>
+				<c:set var="url" value="memberList?cp="/>
 
 
 				<ul class="pagination">
