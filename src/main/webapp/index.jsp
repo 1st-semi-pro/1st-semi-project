@@ -16,6 +16,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&family=Moirai+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
 
 </head>
@@ -25,16 +27,28 @@
         
       <div class="content">
         
-        	<div class="banner"> <!-- 배너 칸 -->
-            <div>
-               <c:if test="${loginMember.memberNo == 1}">
-                  <a href="${contextPath}/board/memberList">회원관리</a>
-               </c:if>
+        	
+            
+         <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+               <div class="swiper-slide"><img src="${contextPath}/resources/images/con2.jpg"></div>
+               <div class="swiper-slide"><img src="${contextPath}/resources/images/con3.jpg"></div>
+               <div class="swiper-slide"><img src="${contextPath}/resources/images/con1.jpg"></div>
+               <div class="swiper-slide"><img src="${contextPath}/resources/images/con2.jpg"></div>
+               <div class="swiper-slide"><img src="${contextPath}/resources/images/con3.jpg"></div>
+               <div class="swiper-slide"><img src="${contextPath}/resources/images/con1.jpg"></div>
+               <div class="swiper-slide"><img src="${contextPath}/resources/images/con3.jpg"></div>
+               <div class="swiper-slide"><img src="${contextPath}/resources/images/con2.jpg"></div>
+               <div class="swiper-slide"><img src="${contextPath}/resources/images/con1.jpg"></div>
+               <div class="swiper-slide"><img src="${contextPath}/resources/images/con2.jpg"></div>
             </div>
-            <div><img src="#"></div>
-            <div>3</div>
+            <div class="swiper-pagination"></div>
          </div>
-           
+        
+         
+         <c:if test="${loginMember.memberNo == 1}">
+            <a href="${contextPath}/board/memberList">회원관리</a>
+         </c:if>
          <div class="content-1"> <!-- 한반도 + 게시판 -->
             <div class="korea"> <!-- 한반도 -->
                <img src="resources/images/korea.png">
@@ -103,6 +117,8 @@
       </div>
 
       <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+
+      <script src="${contextPath}/resources/js/main.js"></script>
     
 </body>
 </html>
