@@ -62,6 +62,7 @@ public class MemberDAO {
 
 				 loginMember.setMemberNo(rs.getInt("MEMBER_NO")); 
 				 loginMember.setMemberId(rs.getString("MEMBER_ID"));
+				 loginMember.setMemberPw(rs.getString("MEMBER_PW"));
 				 loginMember.setMemberEmail(rs.getString("MEMBER_EMAIL"));
 				 loginMember.setMemberNickname(rs.getString("MEMBER_NICKNAME"));
 				 loginMember.setMemberName(rs.getString("MEMBER_NAME"));
@@ -123,7 +124,7 @@ public class MemberDAO {
 			close(pstmt);
 
 		}
-
+		System.out.println(result);
 		return result;
 	}
 
