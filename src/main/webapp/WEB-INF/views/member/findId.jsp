@@ -37,7 +37,7 @@
     
 
         <div class="divide3">
-            <button type="button" id="btn3">뒤로가기</button>
+            <button type="button" onclick="location.href='${header.referer}'" id="btn3">뒤로가기</button>
         </div>
 
 

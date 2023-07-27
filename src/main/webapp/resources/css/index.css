@@ -2,10 +2,7 @@
 a{text-decoration: none; color: inherit; display: block;}
 li{list-style: none; cursor: pointer;}
 
-div{
-    border: 1px solid black;
-   
-}
+
 
 
 .content{
@@ -14,6 +11,7 @@ div{
     height: auto;
     display: flex;
     flex-direction: column;
+    border: 1px solid black;
 }
 
 .banner{
@@ -84,17 +82,19 @@ div{
 .content-1{
 	display: flex;
 	flex-direction: row;
-    border: 0;
+    border-top: 1px solid black;
 }
 
 .content-1 > div:nth-child(1){
 	width: 40%;
 	height: 500px;
+    border-right : 1px solid black;
 }
 
 .content-1 > div:nth-child(2){
 	width: 30%;
 	height: 500px;
+    border-right : 1px solid black;
 }
 
 .content-1 > div:nth-child(3){
@@ -114,7 +114,12 @@ div{
 
 .board1{
 	height: 50%;
+    border-bottom: 1px solid black;
 	
+}
+
+.board3{
+    border-bottom: 1px solid black;
 }
 .board-name1{
 	flex-basis: 10%;
@@ -171,3 +176,56 @@ a:hover {
 table a{
     font-weight: lighter;
 }
+
+.swiper {
+    width: 100%;
+    height: 500px;
+  }
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .swiper-slide:nth-child(1) {
+    width: 100%;
+  }
+  
+  .swiper-slide:nth-child(2n) {
+    width: 60%;
+  }
+  .swiper-slide:nth-child(5){
+    width: 60%;
+  }
+  .swiper-slide:nth-child(7){
+    width: 60%;
+  }
+  .swiper-slide:nth-child(3n) {
+    width: 60%;
+  }
+  .swiper-slide:nth-child(10){
+    width: 100%;
+  }
+  .swiper-pagination-bullet {
+    width: var(--swiper-pagination-bullet-width,var(--swiper-pagination-bullet-size,12px)) !important;
+    height: var(--swiper-pagination-bullet-height,var(--swiper-pagination-bullet-size,12px)) !important;
+    display: inline-block;
+    border-radius: var(--swiper-pagination-bullet-border-radius,50%);
+    background: var(--swiper-pagination-bullet-inactive-color,white) !important;
+    opacity: var(--swiper-pagination-bullet-inactive-opacity, .2);
+  }
+  
+  .swiper-pagination-bullet-active {
+    opacity: var(--swiper-pagination-bullet-opacity, 1);
+    background: orange !important;
+  }
