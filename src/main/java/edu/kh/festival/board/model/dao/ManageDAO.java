@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Properties;
 
 import edu.kh.festival.board.model.vo.Pagination;
+import edu.kh.festival.board.model.vo.Pagination2;
 import edu.kh.festival.member.model.vo.Member;
 
 public class ManageDAO {
@@ -71,7 +72,7 @@ public class ManageDAO {
 	
 	
 	
-	public List<Member> selectMemberList(Connection conn, Pagination pagination) throws Exception {
+	public List<Member> selectMemberList(Connection conn, Pagination2 pagination) throws Exception {
 
 		List<Member> mList = new ArrayList<Member>();
 		
@@ -96,7 +97,7 @@ public class ManageDAO {
 				member.setMemberNickname(rs.getString("MEMBER_NICKNAME"));
 				member.setMemberEmail(rs.getString("MEMBER_EMAIL"));
 				member.setMemberPhone(rs.getString("MEMBER_PHONE"));
-				member.setEnrollDate(rs.getDate("ENROLL_DATE"));
+				member.setEnrollDate(rs.getDate("ENROLL_DT"));
 				member.setSecessionFl(rs.getString("SECESSION_FL"));
 				
 				mList.add(member);

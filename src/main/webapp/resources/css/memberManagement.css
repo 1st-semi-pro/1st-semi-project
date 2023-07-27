@@ -92,10 +92,25 @@ table, td, th {
 	width: 100%;
 	height: 100%;
 }
+
   */
-container *{
+
+/* .container *{
 	border: 0;
 }
+ */
+
+ .divide1{
+	display: flex;
+	flex-direction: row;
+ }
+
+ .divide2{
+	flex-basis: 70%;
+	padding-left: 30px;
+	margin: 10px 0;
+	border: 0;
+ }
 
 .table1{
 	width: 100%;
@@ -109,6 +124,14 @@ table, td, th {
 	display: flex;
 	flex-direction: column;
 }
+
+.title{
+	text-align: center;
+}
+.memberCount{
+	padding-left: 30px;
+}
+
 
 .content > div:nth-child(1){
 	flex-basis: 10%;
@@ -145,6 +168,12 @@ table, td, th {
     justify-content: center;
 }
 
+.pagination-area{
+	border: 0;
+	padding-top: 20px;
+}
+
+
 .pagination > li{
     width: 20px;
     margin: 0 5px;
@@ -164,6 +193,30 @@ table, td, th {
     color: white;
     font-weight: bold;
     border-radius: 50%;
+}
+
+#secession{
+	width: 80px;
+    height: 30px;
+
+    font-weight: bold;
+    border: 0;
+    background-color: #534c4c;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-area{
+	display: flex;
+	justify-content: right;
+	padding-right: 30px;
+	margin: 10px 0;
+	flex-basis: 30%;
+	border: 0;
+}
+
+.check{
+	margin: auto;
 }
 
 
