@@ -45,10 +45,10 @@
             <div class="swiper-pagination"></div>
          </div>
         
-         
          <c:if test="${loginMember.memberNo == 1}">
             <a href="${contextPath}/board/memberList">회원관리</a>
          </c:if>
+         
          <div class="content-1"> <!-- 한반도 + 게시판 -->
             <div class="korea"> <!-- 한반도 -->
                <img src="resources/images/korea.png">
@@ -95,6 +95,38 @@
                <div class="board2">
                   <div class="board-name2">축제 후기</div>
                      <div class="board-content2">
+                        <table>
+                           <tr>
+                              <th><a href="#">1번 축제 후기 게시글입니다.</a></th>
+                           </tr>
+                           <tr>
+                              <th><a href="#">2번 축제 후기 게시글입니다.</a></th>
+                           </tr>
+                           <tr>
+                              <th><a href="#">3번 축제 후기 게시글입니다.</a></th>
+                           </tr>
+                           <tr>
+                              <th><a href="#">4번 축제 후기 게시글입니다.</a></th>
+                           </tr>
+                           <tr>
+                              <th><a href="#">5번 축제 후기 게시글입니다.</a></th>
+                           </tr>
+                           <tr>
+                              <th><a href="#">6번 축제 후기 게시글입니다.</a></th>
+                           </tr>
+                           <tr>
+                              <th><a href="#">7번 축제 후기 게시글입니다.</a></th>
+                           </tr>
+                           <tr>
+                              <th><a href="#">8번 축제 후기 게시글입니다.</a></th>
+                           </tr>
+                           <tr>
+                              <th><a href="#">9번 축제 후기 게시글입니다.</a></th>
+                           </tr>
+                           <tr>
+                              <th><a href="#">10번 축제 후기 게시글입니다.</a></th>
+                           </tr>
+                        </table>
 
                      </div>
                   </div>
@@ -104,13 +136,77 @@
                <div class="board3">
                   <div class="board-name3">자유 게시판</div>
                      <div class="board-content3">
-
+                        <table>
+                           <tr>
+                              <th><a href="#">1번 자유 게시판 게시글입니다.</a></th>
+                           </tr>
+                           <tr>
+                              <th><a href="#">2번 자유 게시판 게시글입니다.</a></th>
+                           </tr>
+                           <tr>
+                              <th><a href="#">3번 자유 게시판 게시글입니다.</a></th>
+                           </tr>
+                           <tr>
+                              <th><a href="#">4번 자유 게시판 게시글입니다.</a></th>
+                           </tr>
+                           <tr>
+                              <th><a href="#">5번 자유 게시판 게시글입니다.</a></th>
+                           </tr>
+                           <tr>
+                              <th><a href="#">6번 자유 게시판 게시글입니다.</a></th>
+                           </tr>
+                           <tr>
+                              <th><a href="#">7번 자유 게시판 게시글입니다.</a></th>
+                           </tr>
+                           <tr>
+                              <th><a href="#">8번 자유 게시판 게시글입니다.</a></th>
+                           </tr>
+                           <tr>
+                              <th><a href="#">9번 자유 게시판 게시글입니다.</a></th>
+                           </tr>
+                           <tr>
+                              <th><a href="#">10번 자유 게시판 게시글입니다.</a></th>
+                           </tr>
+                        </table>
                      </div>
                   </div>
 
                <div class="board4">
                   <div class="board-name4">동행자 구하기</div>
-                  <div class="board-content4"></div>
+                  <div class="board-content4">
+                     <table>
+                        <tr>
+                           <th><a href="#">1번 동행자 구하기 게시글입니다.</a></th>
+                        </tr>
+                        <tr>
+                           <th><a href="#">2번 동행자 구하기 게시글입니다.</a></th>
+                        </tr>
+                        <tr>
+                           <th><a href="#">3번 동행자 구하기 게시글입니다.</a></th>
+                        </tr>
+                        <tr>
+                           <th><a href="#">4번 동행자 구하기 게시글입니다.</a></th>
+                        </tr>
+                        <tr>
+                           <th><a href="#">5번 동행자 구하기 게시글입니다.</a></th>
+                        </tr>
+                        <tr>
+                           <th><a href="#">6번 동행자 구하기 게시글입니다.</a></th>
+                        </tr>
+                        <tr>
+                           <th><a href="#">7번 동행자 구하기 게시글입니다.</a></th>
+                        </tr>
+                        <tr>
+                           <th><a href="#">8번 동행자 구하기 게시글입니다.</a></th>
+                        </tr>
+                        <tr>
+                           <th><a href="#">9번 동행자 구하기 게시글입니다.</a></th>
+                        </tr>
+                        <tr>
+                           <th><a href="#">10번 동행자 구하기 게시글입니다.</a></th>
+                        </tr>
+                     </table>
+                  </div>
                </div>
             </div>
          </div>
