@@ -4,15 +4,16 @@
 <comment>member-sql.xml</comment>
 
 	 <entry key="login">
-		SELECT MEMBER_ID, MEMBER_PW FROM MEMBER
-		WHERE MEMBER_ID = ? AND MEMBER_PW = ?
+		SELECT MEMBER_NO, MEMBER_ID, MEMBER_EMAIL, MEMBER_NICKNAME, MEMBER_NAME, MEMBER_BIRTH, MEMBER_REGION, MEMBER_GENDER, MEMBER_NT,
+        MEMBER_PHONE, ENROLL_DT, ADMIN_FL, MEMBER_PROFILE, MEMBER_MESSAGE FROM MEMBER
+		WHERE MEMBER_ID = ? AND MEMBER_PW = ? AND SECESSION_FL = 'N'
    </entry>
    
    <entry key="updateMember">
 	   	UPDATE MEMBER SET 
 	   	MEMBER_REGION = ?,
 	   	MEMBER_EMAIL = ?,
-	   	MEMBER_TEL = ?,
+	   	MEMBER_PHONE = ?,
 		MEMBER_PW = ?,
 		MEMBER_NICKNAME = ? 
 	   	WHERE MEMBER_NO=?
@@ -31,9 +32,15 @@
    		AND SECESSION_FL = 'N'
 	</entry>
 	
+	<entry key="joinEmailCheck">
+		SELECT count(*) FROM MEMBER
+   		WHERE MEMBER_EMAIL = ?
+   		AND SECESSION_FL = 'N'
+	</entry>
+	
 	<entry key="join">
 		INSERT INTO MEMBER 
-		VALUES(SEQ_MEMBER_NO.NEXTVAL, ?, ?, ?, ?, ?, TO_DATE(?, 'YYYYMMDD'), ?, ?, ?, ?, DEFAULT, DEFAULT, DEFAULT, NULL, NULL)
+		VALUES(SEQ_MEMBER_NO.NEXTVAL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, DEFAULT, DEFAULT, DEFAULT, NULL, NULL)
 	</entry>
 
 

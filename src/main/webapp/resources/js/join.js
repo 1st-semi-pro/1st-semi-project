@@ -10,7 +10,7 @@ const memberNickname = document.getElementById("memberNickname");
 const memberName = document.getElementById("memberName");
 const memberBirth = document.getElementById("memberBirth");
 
-/* select 박스 감싼 div에서 select 된 값 가져오는법 찾기 */
+/* select 박스 감싼 div */
 const regionSelect = document.getElementById("regionSelect");
 
 
@@ -304,6 +304,7 @@ memberNickname.addEventListener("input",function(){
                     in2.classList.add("true");
                     in2.classList.remove("false");
                     memberNickname.style.borderBottom = "2px solid lightcoral"; // 여기서의 this는 inputId가 아닌듯
+                    
                     checkInputs.memberNickname = true;
 
                 }
@@ -646,14 +647,40 @@ inputEmail.addEventListener("input",function(){
 
     if(regExp.test(this.value)){
 
-        in2.innerText = "유효한 형식의 이메일입니다.";
+        $.ajax({ // 이메일 중복검사
 
-        in2.classList.add("true");
-        in2.classList.remove("false");
+            url : "emailDupCheck",
 
-        checkInputs.inputEmail = true;
+            data : {"inputEmail" : inputEmail.value},
 
-        this.style.borderBottom = "2px solid lightcoral";
+            type : "GET",
+
+            success : function(result){
+
+                if( result == 1){
+
+                    in2.innerText = "이미 사용중인 이메일입니다.";
+                    in2.classList.add("false");
+                    in2.classList.remove("true");
+                    inputEmail.style.borderBottom = "2px solid lightgray";
+
+                    checkInputs.inputEmail = false;
+
+                }else{
+
+                    in2.innerText = "사용 가능한 이메일입니다.";
+                    in2.classList.add("true");
+                    in2.classList.remove("false");
+                    inputEmail.style.borderBottom = "2px solid lightcoral";
+                    
+                    checkInputs.inputEmail = true;
+
+                }
+
+            }
+
+        })
+
 
     }else{
 

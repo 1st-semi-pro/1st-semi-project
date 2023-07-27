@@ -45,19 +45,21 @@ public class Member {
 	
 	private String memberRegion; // 회원 주 활동지역
 	
-	private String memberTc; // 회원 통신사
+	private String memberGender; // 회원 성별 << 라디오
+	
+	private String memberNationality; // 회원 국적 << 라디오
 	
 	private String memberPhone; // 회원 전화번호
 	
-	private String memberGender; // 회원 성별 << 라디오로해놈
+	private Date enrollDate; // 회원의 가입일
 	
-	private String memberNationality; // 회원 국적 << 라디오로 해놈
+	private String adminFl; // 관리자 여부
+	
+	private String secessionFl; // 회원 탈퇴 여부
 	
 	public String memberProfileImage; // 회원 프로필 이미지 
 	
-	private Date enrollDate; // 가입 날짜
-	
-	private String secessionFl; // 탈퇴 여부
+	public String memberMessage; // 회원 프로필 메세지
 	
 }
 

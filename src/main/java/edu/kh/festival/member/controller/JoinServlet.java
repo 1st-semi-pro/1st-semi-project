@@ -60,7 +60,7 @@ public class JoinServlet extends HttpServlet{
 		mem.setMemberPhone(memberPhone);
 		mem.setMemberGender(gender);
 		mem.setMemberNationality(nationality);
-		mem.setMemberEmail(memberName);
+		mem.setMemberEmail(inputEmail);
 		
 		try {
 			MemberService service = new MemberService();

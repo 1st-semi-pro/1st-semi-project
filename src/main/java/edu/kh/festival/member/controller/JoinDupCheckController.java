@@ -46,7 +46,17 @@ public class JoinDupCheckController extends HttpServlet{
 				
 			}
 				
+			if(command.equals("emailDupCheck")) {
 				
+				String inputEmail = req.getParameter("inputEmail");
+				
+				int result = service.emailCheck(inputEmail);
+			
+				System.out.println(result);
+				
+				resp.getWriter().print(result);
+				
+			}
 			
 			
 			
