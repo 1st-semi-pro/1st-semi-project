@@ -116,7 +116,7 @@
                     
                     <a href="#">
                     <div class="item-title"><h1>대한민국축제</h1><span>2023.xx.xx</span></div>
-                    <span class="item-content">dddddddddddddddddddddddddd</span>
+                    <span class="item-content">내용</span>
                     </a>
                 </div>
             </div>

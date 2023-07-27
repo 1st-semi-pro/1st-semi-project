@@ -2,4 +2,13 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
 <comment>festival-sql.xml</comment>
+
+	<entry key="BoardName">
+	SELECT BOARD_NM FROM BOARD_TYPE
+	WHERE BOARD_CD = ?
+	</entry>
+	<entry key="festivalCount">
+	SELECT COUNT(*) FROM INFO_BOARD
+			WHERE BOARD_CD = ?
+	</entry>
 </properties>

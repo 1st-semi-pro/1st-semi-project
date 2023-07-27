@@ -32,6 +32,7 @@ public class FestivalinfoServlet extends HttpServlet{
 			
 			Map<String,Object> map = service.festivalInfo(type, cp);
 			
+			
 			req.setAttribute("map", map);
 			
 			String path = "/WEB-INF/views/board/festivalInformation.jsp";
