@@ -94,6 +94,21 @@ public class MemberService {
 		return result;
 	}
 
+	/** 회원가입 - 이메일 중복검사 service
+	 * @param inputEmail
+	 * @return result
+	 * @throws Exception
+	 */
+	public int emailCheck(String inputEmail) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int result = dao.emailCheck(conn, inputEmail);
+		
+		close(conn);
+		
+		return result;
+	}
 
 	/** 회원가입 service
 	 * @param mem
@@ -113,6 +128,8 @@ public class MemberService {
 		
 		return result;
 	}
+
+
 
 
 

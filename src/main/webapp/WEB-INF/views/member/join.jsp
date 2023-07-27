@@ -45,7 +45,6 @@
                     <input type="password" class="inputs" id="inputPwCheck" name="inputPwCheck" placeholder="비밀번호 확인을 입력해주세요.">
                 </article>
 
-
                 <span id="innerTextSpan1"></span>
 
             </div>
@@ -193,7 +192,6 @@
 
 			</section>
 		</footer>
-
 
     </main>
 
