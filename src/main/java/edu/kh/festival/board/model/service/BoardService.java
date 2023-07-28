@@ -28,7 +28,7 @@ public class BoardService {
 		
 		// 1. 게시판 이름 조회 DAO호출
 		String boardName = dao.selectBoardName(conn,type);
-		
+		//ds
 		// 2-1. 특정 게시판 전체 게시글 수 조회 DAO 호출
 		int listCount = dao.getListCount(conn,type);
 		
