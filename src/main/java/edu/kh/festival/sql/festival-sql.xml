@@ -11,4 +11,15 @@
 	SELECT COUNT(*) FROM INFO_BOARD
 			WHERE BOARD_CD = ?
 	</entry>
+	<entry key="festivalList">
+	SELECT * FROM(
+    SELECT ROWNUM RNUM, A.* FROM(
+        SELECT FESTIVAL_NO, FESTIVAL_TITLE, FESTIVAL_CT, 
+              FESTIVAL_DT,READ_COUNT FROM INFO_BOARD
+        WHERE BOARD_CD = ?
+        ORDER BY FESTIVAL_NO DESC
+    ) A
+)
+	WHERE RNUM BETWEEN ? AND ?
+	</entry>
 </properties>
