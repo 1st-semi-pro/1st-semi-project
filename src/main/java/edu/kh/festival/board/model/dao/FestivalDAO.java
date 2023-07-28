@@ -7,7 +7,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
+
+import edu.kh.festival.board.model.vo.Festival;
+import edu.kh.festival.board.model.vo.Pagination9;
 
 
 public class FestivalDAO {
@@ -90,6 +95,20 @@ public class FestivalDAO {
 		}
 
 		return festivalCount;
+	}
+
+	/** 축제 범위 목록 조회 DAO
+	 * @param conn
+	 * @param pagination
+	 * @param type
+	 * @return
+	 * @throws Exception
+	 */
+	public List<Festival> festivalList(Connection conn, Pagination9 pagination, int type) throws Exception {
+		
+		List<Festival> festival = new ArrayList<Festival>();
+		
+		return festival;
 	}
 
 }
