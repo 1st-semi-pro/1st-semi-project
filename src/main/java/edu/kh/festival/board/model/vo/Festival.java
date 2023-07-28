@@ -20,7 +20,6 @@ public class Festival {
 	private String readCount;
 	private int boardCode;
 	
-	
 	private List<Festival> imageList;
 
 }
