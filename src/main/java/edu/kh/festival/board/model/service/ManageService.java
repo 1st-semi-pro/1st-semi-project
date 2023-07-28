@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 import edu.kh.festival.board.model.dao.ManageDAO;
+import edu.kh.festival.board.model.vo.Pagination2;
 import edu.kh.festival.member.model.vo.Member;
 
 public class ManageService {
@@ -60,11 +61,22 @@ public class ManageService {
 		case "em" : condition  = " AND MEMBER_EMAIL LIKE '%" + search + "%' "; break;
 		}
 		
-		int memberCounnt = dao.getMemberCount(conn, condition);
+		int memberCount = dao.getMemberCount(conn, condition);
+		
+		Pagination2 pagination = new Pagination2(cp, memberCount);
+		
+		List<Member> mList = dao.searchMemberList(conn, pagination, condition);
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		
+		map.put("pagination", pagination);
+		map.put("mList", mList);
+		map.put("memberCount", memberCount);
+		
+		close(conn);
 		
 		
-		
-		return null;
+		return map;
 	}
 
 		

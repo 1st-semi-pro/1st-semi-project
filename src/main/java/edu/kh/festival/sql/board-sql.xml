@@ -45,6 +45,24 @@
 		 	WHERE RNUM BETWEEN ? AND ? 
 	 </entry>
 	 
+	 <!-- 회원목록에서 조건을 만족하는 회원 리스트 조회 -->
+	 <entry key="searchMemberList1">
+	 	SELECT * FROM (
+		    SELECT  ROWNUM RNUM, A.* FROM (
+		        SELECT MEMBER_NO, MEMBER_ID, MEMBER_NICKNAME, MEMBER_EMAIL, MEMBER_PHONE,
+		                    TO_CHAR(ENROLL_DT, 'YYYY-MM-DD') AS ENROLL_DT, 
+		                    SECESSION_FL
+		        FROM MEMBER
+		        WHERE SECESSION_FL = 'N'
+	 </entry>
+	 
+	 <entry key="searchMemberList2">
+	 	ORDER BY MEMBER_NO DESC
+		    ) A
+		)
+		WHERE RNUM BETWEEN ? AND ?
+	 </entry>
+	 
 
 	 
 	 

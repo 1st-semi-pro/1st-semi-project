@@ -29,4 +29,40 @@ this.addEventListener("click", function(e){
             }
         }
     }
-})
+});
+
+function searchValidate(){
+
+    if(document.getElementById("mem-search").value.trim().length == 0){
+        alert("검색어를 입력해주세요.");
+        return false;
+    }
+    return true;
+};
+
+(function(){
+    const select = document.getElementById("ctg");
+
+    const input = document.getElementById("mem-search");
+
+    const option = select.children;
+
+    if(select != null){ 
+
+        const params = new URL(location.href).searchParams;
+
+        const ctg = params.get("ctg");
+        const search = params.get("search");
+
+        input.value = search;
+
+        // option을 반복 접근해서 value와 key와 같으면 selected 속성 추가
+        for(let op of option){
+            if(op.value == ctg){
+                op.selected = true;
+            }
+        }
+
+    }
+
+})();
