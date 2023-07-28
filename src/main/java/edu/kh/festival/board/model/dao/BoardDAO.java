@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Properties;
 
 import edu.kh.festival.board.model.vo.Board;
+import edu.kh.festival.board.model.vo.BoardDetail;
 import edu.kh.festival.board.model.vo.Pagination;
 import edu.kh.festival.member.model.vo.Member;
 
@@ -143,6 +144,52 @@ public class BoardDAO {
 		
 		
 		return boardList;
+	}
+
+	/** 게시글 상세조회 DAO
+	 * @param conn
+	 * @param boardNo
+	 * @return detail
+	 * @throws Exception
+	 */
+	public BoardDetail selectBoardDetail(Connection conn, int boardNo) throws Exception {
+		
+		BoardDetail detail = null;
+		
+		try {
+			
+			String sql = prop.getProperty("selectBoardDetail");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, boardNo);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				
+				detail = new BoardDetail();
+				
+	            detail.setBoardNo(rs.getInt(1));
+	            detail.setBoardTitle(rs.getString(2));
+	            detail.setBoardContent(rs.getString(3));
+	            detail.setCreateDate(rs.getString(4));
+	            detail.setUpdateDate(rs.getString(5));
+	            detail.setReadCount(rs.getInt(6));
+	            detail.setMemberNickname(rs.getString(7));
+	            detail.setProfileImage(rs.getString(8));
+	            detail.setMemberNo(rs.getInt(9));
+	            detail.setBoardName(rs.getString(10));
+				
+			}
+			
+			
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return detail;
 	}
 	
 }

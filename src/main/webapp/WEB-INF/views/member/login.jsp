@@ -96,6 +96,9 @@
 					<a href="${contextPath}/member/agree">회원가입</a>
 				</div>
 
+				<form action="mailTest" method="post">
+					<button type="submit">mailTest</button>
+				</form>
 
 
 			</section>
