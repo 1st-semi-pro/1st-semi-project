@@ -1,7 +1,6 @@
-DROP TABLE MEMBER;
-
+------------------------------------------------MEMBER 테이블-----------------------------------------------------------
 CREATE TABLE "MEMBER" (
-   "MEMBER_NO"   NUMBER      NOT NULL,
+   "MEMBER_NO"   NUMBER      PRIMARY KEY,
    "MEMBER_ID"   VARCHAR2(50)      NOT NULL,
    "MEMBER_PW"   VARCHAR2(200)      NOT NULL,
    "MEMBER_EMAIL"   VARCHAR2(50)      NOT NULL,
@@ -57,13 +56,11 @@ CREATE SEQUENCE SEQ_MEMBER_NO INCREMENT BY 1;
 
 INSERT INTO MEMBER VALUES(SEQ_MEMBER_NO.NEXTVAL, '1', '1', 'testemail', 'testnick', 'testname', '19971030', '서울', '남', DEFAULT, '01033339999', DEFAULT, DEFAULT, DEFAULT, NULL, NULL);
 -- INSERT INTO MEMBER VALUES(SEQ_MEMBER_NO.NEXTVAL, ?, ?, ?, ?, ?, TO_DATE(?, 'YYYYMMDD'), ?, ?, ?, ?, DEFAULT, DEFAULT, DEFAULT, NULL, NULL);
-commit;
-
--------------------------------------------------------------------------------
+------------------------------------------------BOARD-TYPE 테이블-----------------------------------------------------------
 
 -- 게시판 종류 
 
-DROP TABLE "BOARD_TYPE";
+-- DROP TABLE "BOARD_TYPE";
 
 CREATE TABLE "BOARD_TYPE" (
    "BOARD_CD"   NUMBER      PRIMARY KEY,
@@ -73,15 +70,87 @@ CREATE TABLE "BOARD_TYPE" (
 COMMENT ON COLUMN "BOARD_TYPE"."BOARD_CD" IS '게시판 코드';
 COMMENT ON COLUMN "BOARD_TYPE"."BOARD_NM" IS '게시판 이름';
 
+-- BOARD_TYPE 데이터 삽입
+INSERT INTO BOARD_TYPE VALUES(1,'공지사항');
+INSERT INTO BOARD_TYPE VALUES(2,'자유 게시판');
+INSERT INTO BOARD_TYPE VALUES(3,'축제후기 게시판');
+INSERT INTO BOARD_TYPE VALUES(4,'축제정보');
+INSERT INTO BOARD_TYPE VALUES(5,'동행자구하기 게시판 ');
 
+------------------------------------------------BOARD 테이블---------------------------------------------------------------
 -- 게시판 (게시글 저장 테이블)
 -- DROP TABLE "BOARD";
+
+CREATE TABLE "BOARD" (
+   "BOARD_NO"   NUMBER      NOT NULL,
+   "BOARD_TITLE"   VARCHAR2(150)      NOT NULL,
+   "BOARD_CONTENT"   VARCHAR2(4000)      NOT NULL,
+   "CREATE_DT"   DATE   DEFAULT SYSDATE   NOT NULL,
+   "UPDATE_DT"   DATE      NULL,
+   "READ_COUNT"   NUMBER   DEFAULT 0   NOT NULL,
+   "BOARD_ST"   CHAR(1)   DEFAULT 'N'   NOT NULL,
+   "MEMBER_NO"   NUMBER      NOT NULL,
+   "BOARD_CD"   NUMBER      NOT NULL
+);
+
+COMMENT ON COLUMN "BOARD"."BOARD_NO" IS '게시글번호(시퀀스)';
+COMMENT ON COLUMN "BOARD"."BOARD_TITLE" IS '게시글제목';
+COMMENT ON COLUMN "BOARD"."BOARD_CONTENT" IS '게시글내용';
+COMMENT ON COLUMN "BOARD"."CREATE_DT" IS '작성일';
+COMMENT ON COLUMN "BOARD"."UPDATE_DT" IS '마지막수정일';
+COMMENT ON COLUMN "BOARD"."READ_COUNT" IS '조회수';
+COMMENT ON COLUMN "BOARD"."BOARD_ST" IS '게시글상태(정상N,삭제Y)';
+COMMENT ON COLUMN "BOARD"."MEMBER_NO" IS '작성자 회원 번호';
+COMMENT ON COLUMN "BOARD"."BOARD_CD" IS '게시판 코드';
+
+-- BOARD 테이블 제약조건 추가
+ALTER TABLE BOARD
+ADD PRIMARY KEY(BOARD_NO); -- 제약조건명 생략(SYS_XXXX)
+
+ALTER TABLE BOARD
+ADD CONSTRAINT "FK_BOARD_CD1" -- 제약 조건명 지정
+FOREIGN KEY("BOARD_CD") -- BOARD의 BOARD_CODE 컬럼에 FK 지정
+REFERENCES "BOARD_TYPE"; -- 참조할 테이블
+
+ALTER TABLE BOARD
+ADD CONSTRAINT "CHK_BOARD_ST"
+CHECK("BOARD_ST" IN('N','Y'));
+
+ALTER TABLE BOARD
+ADD CONSTRAINT "FK_BOARD_MEMBER"
+FOREIGN KEY("MEMBER_NO")
+REFERENCES MEMBER;
+
+-- BOARD_NO용 시퀀스
+CREATE SEQUENCE SEQ_BOARD_NO
+       INCREMENT BY 1 -- 증가값
+       START WITH 1 -- 시작값
+       MINVALUE 1; -- 최솟값
+    
+-- BOARD 테이블 샘플 데이터 삽입(PL / SQL)
+BEGIN
+    FOR I IN 1..500 LOOP
+        
+        INSERT INTO BOARD
+        VALUES(SEQ_BOARD_NO.NEXTVAL,
+               SEQ_BOARD_NO.CURRVAL || '번째 게시글',
+               SEQ_BOARD_NO.CURRVAL || '번째 게시글 내용입니다.',
+               DEFAULT,DEFAULT,DEFAULT,DEFAULT,1,2
+               
+        );
+        
+    END LOOP;
+END;
+/
+
+------------------------------------------------INFO-BOARD 축제 테이블------------------------------------------------
+-- 게시판 (게시글 저장 테이블)
+-- DROP TABLE "INFO_BOARD";
 
 CREATE TABLE "INFO_BOARD" (
    "FESTIVAL_NO"   NUMBER      NOT NULL,
    "FESTIVAL_TITLE"   VARCHAR2(150)      NOT NULL,
    "FESTIVAL_CT"   VARCHAR2(300)      NOT NULL,
-   "FESTIVAL_IMG"  VARCHAR2(500) NOT NULL,
    "FESTIVAL_DT"   VARCHAR2(100)      NULL,
    "READ_COUNT"   NUMBER   DEFAULT 0   NOT NULL,
    "BOARD_CD"   NUMBER      NOT NULL
@@ -90,7 +159,6 @@ CREATE TABLE "INFO_BOARD" (
 COMMENT ON COLUMN "INFO_BOARD"."FESTIVAL_NO" IS '축제번호(시퀀스)';
 COMMENT ON COLUMN "INFO_BOARD"."FESTIVAL_TITLE" IS '축제제목';
 COMMENT ON COLUMN "INFO_BOARD"."FESTIVAL_CT" IS '축제내용';
-COMMENT ON COLUMN "INFO_BOARD"."FESTIVAL_IMG" IS '축제내용';
 COMMENT ON COLUMN "INFO_BOARD"."FESTIVAL_DT" IS '축제날짜';
 COMMENT ON COLUMN "INFO_BOARD"."READ_COUNT" IS '조회수';
 COMMENT ON COLUMN "INFO_BOARD"."BOARD_CD" IS '게시판 코드';
@@ -110,12 +178,6 @@ CREATE SEQUENCE SEQ_FESTIVAL_NO
        START WITH 1 -- 시작값
        MINVALUE 1; -- 최솟값
        
--- BOARD_TYPE 데이터 삽입
-INSERT INTO BOARD_TYPE VALUES(1,'공지사항');
-INSERT INTO BOARD_TYPE VALUES(2,'자유 게시판');
-INSERT INTO BOARD_TYPE VALUES(3,'축제후기 게시판');
-INSERT INTO BOARD_TYPE VALUES(4,'축제정보');
-INSERT INTO BOARD_TYPE VALUES(5,'동행자구하기 게시판 ');
 -- INFO-BOARD 테이블 샘플 데이터 삽입(PL / SQL)
 
 BEGIN
@@ -125,15 +187,64 @@ BEGIN
         VALUES(SEQ_FESTIVAL_NO.NEXTVAL,
                SEQ_FESTIVAL_NO.CURRVAL || '번째 제목',
                SEQ_FESTIVAL_NO.CURRVAL || '번째 게시글 내용입니다.',
-               '/resources/images/board/test.png',
                DEFAULT,DEFAULT,4
         );
         
     END LOOP;
 END;
 /
-commit;
+
+------------------------------------------------축제 이미지 테이블 ---------------------------------------------------
+CREATE TABLE FESTIVAL_IMG(
+    IMG_NO NUMBER NOT NULL,
+    IMG_RENAME VARCHAR2(500) NOT NULL,
+    IMG_LEVEL NUMBER NOT NULL
+);
+
+COMMENT ON COLUMN "FESTIVAL_IMG"."IMG_NO" IS '이미지(축제) 번호';
+COMMENT ON COLUMN "FESTIVAL_IMG"."IMG_RENAME" IS '이미지 저장 경로 + 변경명';
+COMMENT ON COLUMN "FESTIVAL_IMG"."IMG_LEVEL" IS '이미지위치 저장 번호';
+
+-- 이미지 번호 시퀀스 생성
+CREATE SEQUENCE SEQ_IMG_NO NOCACHE;
+
+ALTER TABLE "FESTIVAL_IMG"
+ADD CONSTRAINT "FK_FESTIVAL_IMG" -- 제약 조건명 지정
+FOREIGN KEY("IMG_NO") -- BOARD의 BOARD_CODE 컬럼에 FK 지정
+REFERENCES "INFO_BOARD"; -- 참조
+
+BEGIN
+    FOR I IN 1..180 LOOP
+        
+        INSERT INTO FESTIVAL_IMG
+        VALUES(SEQ_IMG_NO.NEXTVAL,
+               '/resources/images/board/test.png',
+               0
+        );
+        
+    END LOOP;
+END;
+/
+
+-------------------------------------축제상세검색 테이블---------------------
+-- DROP TABLE "FESTIVAL_DETAIL";
+CREATE TABLE "FESTIVAL_DETAIL" (
+   "FESTIVAL_NO"   NUMBER      NOT NULL,
+   "FESTIVAL_CONTENT"   VARCHAR2(2000)      NOT NULL,
+   "FESTIVAL_DETAILINFO"   VARCHAR2(500)      NOT NULL,
+   "FESTIVAL_IMAGE"   VARCHAR2(200)      NULL
+);
+
+COMMENT ON COLUMN "FESTIVAL_DETAIL"."FESTIVAL_NO" IS '축제번호';
+
+COMMENT ON COLUMN "FESTIVAL_DETAIL"."FESTIVAL_CONTENT" IS '축제 상세설명';
+
+COMMENT ON COLUMN "FESTIVAL_DETAIL"."FESTIVAL_DETAILINFO" IS '축제 상세정보';
+
+COMMENT ON COLUMN "FESTIVAL_DETAIL"."FESTIVAL_IMAGE" IS '축제 이미지(썸네일 + 이미지들)';
 
 
-
-
+ALTER TABLE "FESTIVAL_DETAIL"
+ADD CONSTRAINT "FK_FESTIVAL_DETAIL" -- 제약 조건명 지정
+FOREIGN KEY("FESTIVAL_NO") -- BOARD의 BOARD_CODE 컬럼에 FK 지정
+REFERENCES "INFO_BOARD"; -- 참조
