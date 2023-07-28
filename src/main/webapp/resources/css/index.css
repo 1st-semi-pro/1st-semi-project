@@ -244,5 +244,5 @@ table a{
   
   .swiper-pagination-bullet-active {
     opacity: var(--swiper-pagination-bullet-opacity, 1);
-    background: orange !important;
+    background: white !important;
   }

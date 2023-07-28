@@ -47,7 +47,7 @@ public class ManageDAO {
 		int memberCount = 0;
 		
 		try {
-			String sql = prop.getProperty("getListCount");
+			String sql = prop.getProperty("getListCount1");
 			
 			pstmt = conn.prepareStatement(sql);
 
@@ -72,6 +72,12 @@ public class ManageDAO {
 	
 	
 	
+	/** 전체 회원목록 조회 DAO
+	 * @param conn
+	 * @param pagination
+	 * @return
+	 * @throws Exception
+	 */
 	public List<Member> selectMemberList(Connection conn, Pagination2 pagination) throws Exception {
 
 		List<Member> mList = new ArrayList<Member>();
@@ -108,6 +114,12 @@ public class ManageDAO {
 		}
 		
 		return mList;
+	}
+
+	public int getMemberCount(Connection conn, String condition) {
+
+		
+		return 0;
 	}
 
 
