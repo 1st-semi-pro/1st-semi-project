@@ -58,7 +58,6 @@
     display: flex;
     align-items: center;
     border: 0;
-    
 }
 
 .divide4 input{
@@ -74,29 +73,30 @@ button{
     cursor: pointer;
     background-color: lightcoral;
     border: 0;
-
 }
 
 
-#btn1{
+#email-authentication-btn{
     color: white;
     width: 100px;
     height: 100%;
     border-radius: 5%;
 }
-#btn2{
+#authentication-check-btn{
     color: white;
     width: 100px;
     height: 100%;
     border-radius: 5%;
 }
-#btn3{
+#goToBack-btn, #findId-btn{
     color: white;
     height: 40%;
     width: 15%;
     border-radius: 5%;
     border: 0;
+    margin: 0 10px;
 }
+
 #btn1:hover{
     color: black;
 }

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판</title>
+    <script src="https://kit.fontawesome.com/51fc103959.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../resources/css/findCompanionDetail.css">
+    <link rel="stylesheet" href="../resources/css/footer.css">
+    <link rel="stylesheet" href="../resources/css/header.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&family=Moirai+One&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <main>
+        <header>
+            <section class="header">
+    
+                <section>
+                    <a href="#"><img src="../resources/images/logo.png" id="home-logo"></a>
+                </section>
+    
+                <section>
+                    <article class="search-area">
+                        <form action="#" name="search-form">
+                            <fieldset>
+                                <input type="search" id="search" name="search" size="35" placeholder=" 여행지를 찾아보세요." autocomplete="off">
+                                <button type="submit" id="search-btn" class="fa-solid fa-magnifying-glass"></button>
+                            </fieldset>
+                        </form>
+                    </article>
+                </section>
+                <section>로그인</section>
+            </section>
+    
+            <nav>
+                <ul>
+                    <li><a href="#">축제정보</a></li>
+                    <li><a href="#">공지게시판</a></li>
+                    <li><a href="#">자유게시판</a></li>
+                    <li><a href="#">축제후기</a></li>
+                    <li><a href="#">동행자구하기</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#">공지사항</a></li>
+                <li><a href="#">자유 게시판</a></li>
+                <li><a href="#">질문 게시판</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">1:1문의</a></li>
+            </ul>
+        </nav>
+
+        <section class="board-detail">
+
+            <!-- 제목 -->
+            <div class="board-title">제목</div>
+
+            <!-- 프로필 + 닉네임 + 작성일 + 조회수 -->
+            <div class="board-header">
+                <div class="board-writer">
+                    <img src="../resources/images/user.png">
+                    <span>닉네임</span>
+                </div>
+
+                <div class="board-info">
+                    <p><span>작성일</span> 2023년 07월 19일 11:11:23</p>
+                    <p><span>마지막 수정일</span> 2023년 07월 19일 11:11:23</p>
+                    <p><span>조회수</span> 23</p>
+                </div>
+            </div>
+
+            <!-- 썸네일 영역 -->
+            <h5>썸네일</h5>
+            <div class="img-box">
+                <div class="boardImg thumnail">
+                    <img src="../resources/images/kh-logo.jpg">
+                    <a href="#">다운로드</a>
+                </div>
+            </div>
+
+            <!-- 업로드 이미지 영역 -->
+            <h5>업로드 이미지</h5>
+            <div class="img-box">
+                <div class="boardImg">
+                    <img src="../resources/images/kh-logo.jpg">
+                    <a href="#">다운로드</a>
+                </div>
+                <div class="boardImg">
+                    <img src="../resources/images/kh-logo.jpg">
+                    <a href="#">다운로드</a>
+                </div>
+                <div class="boardImg">
+                    <img src="../resources/images/kh-logo.jpg">
+                    <a href="#">다운로드</a>
+                </div>
+                <div class="boardImg">
+                    <img src="../resources/images/kh-logo.jpg">
+                    <a href="#">다운로드</a>
+                </div>
+            </div>
+
+            <!-- 내용 -->
+            <div class="board-content">
+                내용입니다<br>
+                내용입니다<br>
+                내용입니다<br>
+                내용입니다<br>
+                내용입니다<br>
+                내용입니다<br>
+            </div>
+
+            <!-- 버튼 영역 -->
+            <div class="board-btn-area">
+                <button id="updateBtn">수정</button>
+                <button id="deleteBtn">삭제</button>
+                <button id="goToListBtn">목록으로</button>
+            </div>
+        </section>
+        
+    </main>
+    <footer class="footer">
+        <ul class="quick_menu_list">
+            <li>
+                <a href="#"><img src="../resources/images/footer/footer_menu01.png" alt="휴대폰 구매">
+                    <p>학원좀 나와조</p>
+                </a>
+            </li>
+            <li>
+                <a href="#"><img src="../resources/images/footer/footer_menu02.png" alt="인터넷/IPTV">
+                    <p>학원좀 나와조</p>
+                </a>
+            </li>
+            <li>
+                <a href="#"><img src="../resources/images/footer/footer_menu03.png" alt="이벤트">
+                    <p>학원좀 나와조</p>
+                </a>
+            </li>
+            <li>
+                <a href="#"><img src="../resources/images/footer/footer_menu04.png" alt="내 가입정보">
+                    <p>학원좀 나와조</p>
+                </a>
+            </li>
+        </ul>
+        <div class="footer_wrap">
+            <div class="container">
+                <ul class="footer_sns_icon">
+                    <li><a href="#"><img src="../resources/images/footer/footer_sns_icon_01.png" alt=""></a></li>
+                    <li><a href="#"><img src="../resources/images/footer/footer_sns_icon_03.png" alt=""></a></li>
+                    <li><a href="#"><img src="../resources/images/footer/footer_sns_icon_05.png" alt=""></a></li>
+                    <li><a href="#"><img src="../resources/images/footer/footer_sns_icon_07.png" alt=""></a></li>
+                    <li><a href="#"><img src="../resources/images/footer/footer_sns_icon_09.png" alt=""></a></li>
+                    <li><a href="#"><img src="../resources/images/footer/footer_sns_icon_11.png" alt=""></a></li>
+                    <li><a href="#"><img src="../resources/images/footer/footer_sns_icon_13.png" alt=""></a></li>
+                </ul>
+
+                <ul class="footer_bottom_list">
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">축제정보 제공사실 열람</a></li>
+                    <li><a href="#">ALL Festival</a></li>
+                    <li><a href="#">찾아오는길</a></li>
+                </ul>
+
+                <div class="copyright">
+                    <h4>&#40;주&#41;축제축제</h4>
+                    <h5>대표이사 문광민 사업자등록번호 220-81-18745<br>
+                        저작권신고 제2023-서울강남-00481호 사업자정보확인</h5>
+                    <p>Copyright &copy; D-Festival Corp. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
