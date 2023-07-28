@@ -10,6 +10,7 @@ import java.util.Map;
 
 import edu.kh.festival.board.model.dao.BoardDAO;
 import edu.kh.festival.board.model.vo.Board;
+import edu.kh.festival.board.model.vo.BoardDetail;
 import edu.kh.festival.board.model.vo.Pagination;
 
 public class BoardService {
@@ -48,6 +49,20 @@ public class BoardService {
 		close(conn);
 		
 		return map;
+	}
+
+	/** 게시글 상세조회 Service
+	 * @param boardNo
+	 * @return detail
+	 * @throws Exception
+	 */
+	public BoardDetail selectboardDetail(int boardNo) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		BoardDetail detail = dao.selectBoardDetail(conn, boardNo);
+		
+		return detail;
 	}
 
 }
