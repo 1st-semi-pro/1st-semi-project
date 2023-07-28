@@ -45,10 +45,7 @@
             <div class="swiper-pagination"></div>
          </div>
         
-         <c:if test="${loginMember.memberNo == 1}">
-            <a href="${contextPath}/board/memberList">회원관리</a>
-         </c:if>
-         
+                 
          <div class="content-1"> <!-- 한반도 + 게시판 -->
             <div class="korea"> <!-- 한반도 -->
                <img src="resources/images/korea.png">

@@ -28,17 +28,21 @@
 <body>
 
 	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
+
+	<c:if test="${!empty param.ctg}">
+            <c:set var="sURL" value="&ctg=${param.ctg}&search=${param.search}"/>
+    </c:if>
 	
 	<div class="container">
 
 		<div class="content">
-			<div class="title"><h2>일반회원관리</h2></div>
-			<div class="memberCount">사용자수 : ${map.memberCount} </div>
+			<div class="title"><h2><a href="memberList">일반회원관리</a></h2></div>
+			<div class="memberCount">검색된 사용자수 : ${map.memberCount}</div>
 			<div class="divide1">
 				<div class="divide2">
 
-					<form action="memberList" method="get" id="memberSearch">
-						<select name="ctg" style="font-size: 15px;">
+					<form action="memberList" method="get" id="memberSearch" onsubmit="return searchValidate()">
+						<select name="ctg" id="ctg" style="font-size: 15px;">
 							<option value="id" selected>아이디</option>
 							<option value="ni">닉네임</option>
 							<option value="em">이메일</option>
@@ -55,42 +59,45 @@
 			</div>
 			
 			<div class="member-list">
-				<table border="1" class="table1">
-					<tr class="s1">
-						<th class="no">NO.</th>
-						<td class="ck"><input type="checkbox" id="all"></td>
-						<th class="id">아이디</th>
-						<th class="nm">닉네임</th>
-						<th class="em">이메일</th>
-						<th class="pn">전화번호</th>
-						<th class="dt">회원가입일</th>
-						<th>탈퇴여부</th>
-					</tr>
 
-					<c:choose>
-						<c:when test="${empty mList}">
-							<tr>
-								<th colspan="8">회원이 존재하지 않습니다.</th>
-							</tr>
-						</c:when>
+				<form>
+					<table border="1" class="table1">
+						<tr class="s1">
+							<th class="no">NO.</th>
+							<td class="ck"><input type="checkbox" id="all"></td>
+							<th class="id">아이디</th>
+							<th class="nm">닉네임</th>
+							<th class="em">이메일</th>
+							<th class="pn">전화번호</th>
+							<th class="dt">회원가입일</th>
+							<th>탈퇴여부</th>
+						</tr>
 
-						<c:otherwise>
-							<c:forEach var="member" items="${mList}">
-								<tr class="s2">
-									<td>${member.memberNo}</td>
-									<td><input type="checkbox" class="check" name="check" value="${memer.memberNo}"></td>
-									<td><a href="#">${member.memberId}</a></td>
-									<td>${member.memberNickname}</td>
-									<td>${member.memberEmail}</td>
-									<td>${member.memberPhone}</td>
-									<td>${member.enrollDate}</td>
-									<td>${member.secessionFl}</td>
+						<c:choose>
+							<c:when test="${empty mList}">
+								<tr>
+									<th colspan="8">회원이 존재하지 않습니다.</th>
 								</tr>
-								
-							</c:forEach>
-						</c:otherwise>
-					</c:choose>
-				</table>
+							</c:when>
+
+							<c:otherwise>
+								<c:forEach var="member" items="${mList}">
+									<tr class="s2">
+										<td>${member.memberNo}</td>
+										<td><input type="checkbox" class="check" name="checkRow" value="${member.memberNo}"></td>
+										<td><a href="#">${member.memberId}</a></td>
+										<td>${member.memberNickname}</td>
+										<td>${member.memberEmail}</td>
+										<td>${member.memberPhone}</td>
+										<td>${member.enrollDate}</td>
+										<td>${member.secessionFl}</td>
+									</tr>
+									
+								</c:forEach>
+							</c:otherwise>
+						</c:choose>
+					</table>
+				</form>
 			</div>
 			
 			<div class="pagination-area">
@@ -100,10 +107,10 @@
 
 
 				<ul class="pagination">
-					<li><a href="${url}1">&lt;&lt;</a></li> <!-- 리스트 넘기기, <<로 처음화면 가게하기? -->
+					<li><a href="${url}1${sURL}">&lt;&lt;</a></li> <!-- 리스트 넘기기, <<로 처음화면 가게하기? -->
 
 					<!-- 이전 목록 마지막 번호로 이동 -->
-					<li><a href="${url}${pagination.prevPage}">&lt;</a></li> 
+					<li><a href="${url}${pagination.prevPage}${sURL}">&lt;</a></li> 
 
 					<!-- li*10>a{$} -->
 
@@ -117,15 +124,15 @@
 							</c:when>
 
 							<c:otherwise>
-								<li><a href="${url}${i}">${i}</a></li>
+								<li><a href="${url}${i}${sURL}">${i}</a></li>
 							</c:otherwise>
 						</c:choose>
 
 					</c:forEach>
 
 
-					<li><a href="${url}${pagination.nextPage}">&gt;</a></li> 
-					<li><a href="${url}${pagination.maxPage}">&gt;&gt;</a></li> 
+					<li><a href="${url}${pagination.nextPage}${sURL}">&gt;</a></li> 
+					<li><a href="${url}${pagination.maxPage}${sURL}">&gt;&gt;</a></li> 
 				</ul>
 			</div>
 		</div>

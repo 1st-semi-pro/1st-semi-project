@@ -116,10 +116,75 @@ public class ManageDAO {
 		return mList;
 	}
 
-	public int getMemberCount(Connection conn, String condition) {
+	public int getMemberCount(Connection conn, String condition) throws Exception {
+		
+		int memberCount = 0;
+		
+		try {
+			String sql = prop.getProperty("getListCount1") + condition;
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				memberCount = rs.getInt(1);
+			}
+		
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
 
 		
-		return 0;
+		return memberCount;
+	}
+
+	/** 회원목록에서 검색에 만족하는 회원리스트 조회 DAO
+	 * @param conn
+	 * @param pagination
+	 * @param condition
+	 * @return mList
+	 * @throws Exception
+	 */
+	public List<Member> searchMemberList(Connection conn, Pagination2 pagination, String condition) throws Exception {
+
+		List<Member> mList = new ArrayList<Member>();
+		
+		try {
+			String sql = prop.getProperty("searchMemberList1")
+						+condition
+						+prop.getProperty("searchMemberList2");
+			int start = ( pagination.getCurrentPage() -1) * pagination.getLimit() + 1;
+			int end = start + pagination.getLimit() -1;
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, start);
+			pstmt.setInt(2, end);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				Member member = new Member();
+				
+				member.setMemberNo(rs.getInt("MEMBER_NO"));
+				member.setMemberId(rs.getString("MEMBER_ID"));
+				member.setMemberNickname(rs.getString("MEMBER_NICKNAME"));
+				member.setMemberEmail(rs.getString("MEMBER_EMAIL"));
+				member.setMemberPhone(rs.getString("MEMBER_PHONE"));
+				member.setEnrollDate(rs.getDate("ENROLL_DT"));
+				member.setSecessionFl(rs.getString("SECESSION_FL"));
+				
+				mList.add(member);
+			}	
+			
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+	
+		return mList;
 	}
 
 
