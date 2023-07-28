@@ -5,6 +5,12 @@
 
 	
 	<entry key="getListCount">
+      SELECT COUNT(*) FROM BOARD
+      WHERE BOARD_CD = ?
+      AND BOARD_ST = 'N'
+    </entry>
+	
+	<entry key="getListCount1">
 		SELECT COUNT(*) FROM MEMBER
 		WHERE SECESSION_FL = 'N'
 	</entry>
@@ -38,5 +44,9 @@
 		 	) A)
 		 	WHERE RNUM BETWEEN ? AND ? 
 	 </entry>
+	 
+
+	 
+	 
 	
 </properties>

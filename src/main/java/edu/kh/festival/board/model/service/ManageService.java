@@ -41,6 +41,32 @@ public class ManageService {
 		return map;
 	}
 
+	/** 검색 목록 조회 Service
+	 * @param cp
+	 * @param ctg
+	 * @param search
+	 * @return map
+	 * @throws Exception
+	 */
+	public Map<String, Object> searchBoardList(int cp, String ctg, String search) throws Exception {
+		
+		Connection conn  = getConnection();
+		
+		String condition  = null;
+		
+		switch(ctg) {
+		case "id" : condition  = " AND MEMBER_ID LIKE '%" + search + "%' "; break;
+		case "ni" : condition  = " AND MEMBER_NICKNAME LIKE '%" + search + "%' "; break;
+		case "em" : condition  = " AND MEMBER_EMAIL LIKE '%" + search + "%' "; break;
+		}
+		
+		int memberCounnt = dao.getMemberCount(conn, condition);
+		
+		
+		
+		return null;
+	}
+
 		
 		
 		

@@ -46,7 +46,16 @@ public class MemberManageController extends HttpServlet {
 				}
 				
 				
-				Map<String,Object> map = service.selectAllMember(cp);
+				Map<String,Object> map = null;
+				
+				if(req.getParameter("ctg") == null) {
+					map = service.selectAllMember(cp);
+				} else {
+					String ctg = req.getParameter("ctg");
+					String search = req.getParameter("search");
+					
+					map = service.searchBoardList(cp, ctg, search);
+				}
 				
 				req.setAttribute("map", map);
 				

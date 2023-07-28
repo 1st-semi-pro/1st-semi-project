@@ -36,13 +36,17 @@
 			<div class="memberCount">사용자수 : ${map.memberCount} </div>
 			<div class="divide1">
 				<div class="divide2">
-					<select name="sel" style="font-size: 15px;">
-						<option value="1" selected>아이디</option>
-						<option value="2">닉네임</option>
-						<option value="3">이메일</option>
-					</select>
-					<input type="search" id="mem-search" name="search" size="30" placeholder="검색" autocomplete="off">
-					<button type="submit" id="mem-search-btn" class="fa-solid fa-magnifying-glass"></button>
+
+					<form action="memberList" method="get" id="memberSearch">
+						<select name="ctg" style="font-size: 15px;">
+							<option value="id" selected>아이디</option>
+							<option value="ni">닉네임</option>
+							<option value="em">이메일</option>
+						</select>
+						<input type="search" id="mem-search" name="search" size="30" placeholder="검색" autocomplete="off">
+						<button type="submit" id="mem-search-btn" class="fa-solid fa-magnifying-glass"></button>
+					</form>
+
 				</div>
 				<div class="btn-area">
 					<button id="secession" name="secession">탈퇴</button>
