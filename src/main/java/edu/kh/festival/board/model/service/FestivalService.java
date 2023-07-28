@@ -33,6 +33,7 @@ public class FestivalService {
 		
 		// 3. 페이지네이션
 		Pagination9 pagination = new Pagination9(cp, festivalCount);
+		
 		// 3. 축제 목록조회
 		List<Festival> festival = dao.festivalList(conn,pagination,type);
 		
