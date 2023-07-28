@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+<!-- map에 저장된 값을 각각 변수에 저장 -->
+<c:set var="festivalName" value="${map.festivalName}"/>
+<c:set var="pagination" value="${map.pagination}"/>
+<c:set var="festivalList" value="${map.festivalList}"/>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,7 +45,7 @@
           </div>
 
     <!-- 검색게시판 타이틀 -->
-    <section class="title-box"> 전국 축제검색 게시판</section>
+    <section class="title-box"> ${festivalName}</section>
 
     <!-- 컨텐츠 -->
     <section class="content">
@@ -111,7 +116,7 @@
 
         <div id="grid-container">
             <div class="item">
-                <div class="item-image"><a href="#"><img src="${contextPath}/resources/images/con1.jpg" alt=""></a></div>
+                <div class="item-image"><a href="${festivalNo}"><img src="${contextPath}/resources/images/con1.jpg" alt=""></a></div>
                 <div class="item-text">
                     
                     <a href="#">

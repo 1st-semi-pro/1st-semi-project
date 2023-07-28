@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Properties;
 
 import edu.kh.festival.board.model.vo.Festival;
+import edu.kh.festival.board.model.vo.FestivalImage;
 import edu.kh.festival.board.model.vo.Pagination9;
 
 
@@ -78,7 +79,8 @@ public class FestivalDAO {
 
 		try {
 			String sql = prop.getProperty("festivalCount");
-
+			
+		
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, type);
 
@@ -106,9 +108,45 @@ public class FestivalDAO {
 	 */
 	public List<Festival> festivalList(Connection conn, Pagination9 pagination, int type) throws Exception {
 		
-		List<Festival> festival = new ArrayList<Festival>();
+		List<Festival> festivalList = new ArrayList<Festival>();
 		
-		return festival;
+		try {
+			String sql = prop.getProperty("festivalList");
+			
+			// BETWEEN 구문에 들어갈 범위 계산
+			int start = (pagination.getCurrentPage() - 1) * pagination.getLimit() + 1;
+
+			int end = start + pagination.getLimit() - 1;
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, type);
+			pstmt.setInt(2, start);
+			pstmt.setInt(3, end);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				Festival festival = new Festival();
+				
+				festival.setFestivalNo(rs.getInt("FESTIVAL_NO"));
+				festival.setFestivalTitle(rs.getString("FESTIVAL_TITLE"));
+				festival.setFestivalContent(rs.getString("FESTIVAL_CT"));
+				festival.setFestivalDate(rs.getString("FESTIVAL_DT"));
+				festival.setReadCount(rs.getInt("READ_COUNT"));
+				
+				
+				festivalList.add(festival);
+				
+			}
+			
+		} finally {
+			
+			close(rs);
+			close(pstmt);
+		}
+		
+		return festivalList;
 	}
 
 }

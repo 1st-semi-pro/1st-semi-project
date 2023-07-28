@@ -9,6 +9,7 @@ import java.util.Map;
 
 import edu.kh.festival.board.model.dao.FestivalDAO;
 import edu.kh.festival.board.model.vo.Festival;
+import edu.kh.festival.board.model.vo.FestivalImage;
 import edu.kh.festival.board.model.vo.Pagination9;
 
 public class FestivalService {
@@ -26,7 +27,7 @@ public class FestivalService {
 		Connection conn = getConnection();
 		
 		// 1. 게시판이름
-		String boardName = dao.selectBoardName(conn,type);
+		String festivalName = dao.selectBoardName(conn,type);
 		
 		// 2. 전체 축제 수 조회
 		int	festivalCount = dao.getfestival(conn,type);
@@ -35,9 +36,16 @@ public class FestivalService {
 		Pagination9 pagination = new Pagination9(cp, festivalCount);
 		
 		// 3. 축제 목록조회
-		List<Festival> festival = dao.festivalList(conn,pagination,type);
+		List<Festival> festivalList = dao.festivalList(conn,pagination,type);
 		
 		Map<String, Object> map = new HashMap<String, Object>();
+		
+		map.put("festivalName", festivalName);
+		map.put("pagination", pagination);
+		map.put("festivalList", festivalList);
+		
+		close(conn);
+		
 		return map;
 	}
 }

@@ -17,9 +17,9 @@ public class Festival {
 	private String festivalTitle;
 	private String festivalContent;
 	private String festivalDate;
-	private String readCount;
+	private int readCount;
 	private int boardCode;
 	
-	private List<Festival> imageList;
+	private List<FestivalImage> festivalList;
 
 }
