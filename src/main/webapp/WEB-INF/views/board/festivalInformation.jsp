@@ -27,6 +27,10 @@
 <body>
     <main>
         <jsp:include page="/WEB-INF/views/common/header.jsp"/>
+        <c:if test="${!empty param.key}">
+            <c:set var="sURL" value="&key=${param.key}&query=${param.query}"/>
+        </c:if>
+
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide"><img src="${contextPath}/resources/images/con2.jpg"></div>
@@ -48,62 +52,62 @@
 
     <!-- 컨텐츠 -->
     <section class="content">
-        <form action="">
-        <div class="selectBoxList">
-            <!-- selectBox1 -->
-            <div class="box">
-                <div class="selectBox ">
-                    <div class="label">
-                        <i class="fa-regular fa-calendar-check"></i>
-                        <span> 시기별 :</span>
-                        <span id="sp1"></span>
-                    </div>
-                    <ul class="optionList">
-                        <li class="optionItem">2023년</li>
-                        <li class="optionItem">2022년</li>
-                        <li class="optionItem">2021년</li>
-                        <li class="optionItem">2020년</li>
-                        <li class="optionItem">2023년</li>
-                        <li class="optionItem">2022년</li>
-                        <li class="optionItem">2021년</li>
-                        <li class="optionItem">2020년</li>
-                    </ul>
+        <form action="festivlaInfo" method="get" id="festivalSearch" onsubmit="return searchValidate()">
+            <input type="hidden" name="type" value="${param.type}">
+
+            <div class="search-box-wrap">
+                <div class="select-box select-date">
+                    <label for="festivalDate">날짜</label>
+                    <select name="festivalDate" id="festivalDate" title="날짜">
+                        <option value >★-날짜-★</option>
+                        <option value="01">01월</option>
+                        <option value="02">02월</option>
+                        <option value="03">03월</option>
+                        <option value="04">04월</option>
+                        <option value="05">05월</option>
+                        <option value="06">06월</option>
+                        <option value="07">07월</option>
+                        <option value="08">08월</option>
+                        <option value="09">09월</option>
+                        <option value="10">10월</option>
+                        <option value="11">11월</option>
+                        <option value="12">12월</option>
+                    </select>
                 </div>
-            </div>
-            <!-- selectBox2 -->
-            <div class="box">
-                <div class="selectBox">
-                    <div class="label">
-                        <i class="fa-solid fa-map-location-dot"></i>
-                        <span> 지역별 :</span>
-                        <span id="sp2"></span>
-                    </div>
-                    <ul class="optionList">
-                        <li class="optionItem">서울</li>
-                        <li class="optionItem">경기도</li>
-                        <li class="optionItem">부산</li>
-                        <li class="optionItem">시발</li>
-                    </ul>
+                <div class="select-box select-area">
+                    <label for="festivalArea">지역</label>
+                    <select name="festivalArea" id="festivalArea" title="지역">
+                        <option value="">★-지역-★</option>
+                        <option value="1">서울</option>
+                        <option value="2">경기도</option>
+                        <option value="3">03월</option>
+                        <option value="4">04월</option>
+                        <option value="5">05월</option>
+                        <option value="6">06월</option>
+                        <option value="7">07월</option>
+                        <option value="8">08월</option>
+                        <option value="9">09월</option>
+                        <option value="10">10월</option>
+                        <option value="11">11월</option>
+                        <option value="12">12월</option>
+                        <option value="13">12월</option>
+                        <option value="14">12월</option>
+                        <option value="15">12월</option>
+                        <option value="16">12월</option>
+                    </select>
                 </div>
-            </div>
-            <!-- selectBox3 -->
-            <div class="box">
-                <div class="selectBox">
-                    <div class="label">
-                        <i class="fa-solid fa-tag"></i>
-                        <span> 카테고리 :</span>
-                        <span id="sp3"></span>
-                    </div>
-                    <ul class="optionList">
-                        <li class="optionItem">카</li>
-                        <li class="optionItem">테</li>
-                        <li class="optionItem">고</li>
-                        <li class="optionItem">리</li>
-                    </ul>
+                <div class="select-box select-cat">
+                    <label for="festivalCat">카테고리</label>
+                    <select name="festivalCat" id="festivalCat" title="카테고리">
+                        <option value="">★-카테고리-★</option>
+                        <option value="1">담배</option>
+                        <option value="1">술</option>
+                        <option value="1">꽃</option>
+                        <option value="1">연애</option>
+                    </select>
                 </div>
-            </div>
-            <button type="reset" id="reset"><i class="fa-solid fa-repeat"></i></button>
-            <button type="submit" id="info-search">검색</button>
+                <button type="reset" id="reset"><i class="fa-solid fa-repeat"></i></button>
+                <button type="submit" id="info-search">검색</button>
             </div>
         </form>
     </section>
