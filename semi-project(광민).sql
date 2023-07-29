@@ -135,7 +135,7 @@ BEGIN
         VALUES(SEQ_BOARD_NO.NEXTVAL,
                SEQ_BOARD_NO.CURRVAL || '번째 게시글',
                SEQ_BOARD_NO.CURRVAL || '번째 게시글 내용입니다.',
-               DEFAULT,DEFAULT,DEFAULT,DEFAULT,1,2
+               DEFAULT,DEFAULT,DEFAULT,DEFAULT,1,3
                
         );
         
@@ -261,5 +261,9 @@ SELECT * FROM(
     ) A
 )
 WHERE RNUM BETWEEN 1 AND 30;
+
+SELECT FESTIVAL_DT FROM info_board
+WHERE NOT FESTIVAL_DT IS NULL
+ORDER BY FESTIVAL_DT;
 
 
