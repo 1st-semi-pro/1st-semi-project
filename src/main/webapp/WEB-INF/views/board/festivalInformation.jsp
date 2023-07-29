@@ -27,7 +27,6 @@
 <body>
     <main>
         <jsp:include page="/WEB-INF/views/common/header.jsp"/>
-        
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide"><img src="${contextPath}/resources/images/con2.jpg"></div>
@@ -168,7 +167,6 @@
 
     <script>
         const contextPath = "${contextPath}";
-        const festivalNo = "${festivalList.festivalNo}"
     </script>
     
 
