@@ -106,7 +106,7 @@
                         <option value="1">연애</option>
                     </select>
                 </div>
-                <button type="reset" id="reset"><i class="fa-solid fa-repeat"></i></button>
+                <button type="reset" id="reset"></button>
                 <button type="submit" id="info-search">검색</button>
             </div>
         </form>
@@ -114,7 +114,8 @@
 
     <section class="content2">
         <div id="span-box">
-        <span class="festival-date">축제일순</span><span class="popularity">인기순</span>
+        <a href="${contextPath}/board/festivalInfo?type=4&dt=1"><span id="festival-date" name="festival-date" value="dt">축제일순</span></a>
+        <a href="${contextPath}/board/festivalInfo?type=4&pop=1"><span id="popularity" name="popularity" vaule="pop">인기순</span></a>
         </div>
         <c:choose>
             <c:when test="${empty festivalList}">

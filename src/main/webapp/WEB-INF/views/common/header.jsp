@@ -56,11 +56,11 @@
 
         <nav>
             <ul>
-                <li><a href="${contextPath}/board/member/festivalInfo?type=4">축제정보</a></li>
+                <li><a href="${contextPath}/board/festivalInfo?type=4">축제정보</a></li>
                 <li><a href="${contextPath}/board/list?type=1">공지게시판</a></li>
                 <li><a href="${contextPath}/board/list?type=2">자유게시판</a></li>
                 <li><a href="${contextPath}/board/list?type=3">축제후기</a></li>
-                <li><a href="${contextPath}/board/member/companion?type=5">동행자구하기</a></li>
+                <li><a href="${contextPath}/board/companion?type=5">동행자구하기</a></li>
                 
             </ul>
         </nav>
