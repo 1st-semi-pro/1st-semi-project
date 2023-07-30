@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/board/member/companion")
+@WebServlet("/board/companion")
 public class CompanionServlet extends HttpServlet{
 	
 	@Override

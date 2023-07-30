@@ -12,12 +12,14 @@ import javax.servlet.http.HttpServletResponse;
 
 import edu.kh.festival.board.model.service.FestivalService;
 
-@WebServlet("/board/member/festivalInfo")
+@WebServlet("/board/festivalInfo")
 public class FestivalinfoServlet extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
+		System.out.println(req.getParameter("dt"));
+		System.out.println(";;;;;;;");
 		try {
 			
 			int type = Integer.parseInt(req.getParameter("type"));
