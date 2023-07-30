@@ -1,11 +1,11 @@
 const all = document.getElementById("all"); 
-const checkList = document.getElementsByName("check");
+const checkList = document.getElementsByName("checkRow");
 
 all.addEventListener("click", function(){
     for(let i = 0 ; i < checkList.length ; i++){
         checkList[i].checked = all.checked;
     }
-})
+});
 
 this.addEventListener("click", function(e){
     for(let i = 0 ; i < checkList.length ; i++){
@@ -31,6 +31,8 @@ this.addEventListener("click", function(e){
     }
 });
 
+
+
 function searchValidate(){
 
     if(document.getElementById("mem-search").value.trim().length == 0){
@@ -39,6 +41,8 @@ function searchValidate(){
     }
     return true;
 };
+
+
 
 (function(){
     const select = document.getElementById("ctg");
@@ -66,3 +70,11 @@ function searchValidate(){
     }
 
 })();
+
+function goToDeleteMember
+
+
+document.getElementById("selectMemberDelete").addEventListener("click", function(){
+    
+    const checkRow = document.getElementsByName("checkRow");
+});

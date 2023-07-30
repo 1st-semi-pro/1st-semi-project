@@ -56,7 +56,7 @@
                      <div class="board-content1">
                         <table>
                            <tr>
-                              <th><a href="#">1번 공지 게시글입니다.</a></th>
+                              <th><a href="#">${board.boardTitle}</a></th>
                            </tr>
                            <tr>
                               <th><a href="#">2번 공지 게시글입니다.</a></th>

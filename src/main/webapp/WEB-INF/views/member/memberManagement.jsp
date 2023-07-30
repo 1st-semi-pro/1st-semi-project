@@ -53,7 +53,7 @@
 
 				</div>
 				<div class="btn-area">
-					<button id="secession" name="secession">탈퇴</button>
+					<button id="selectMemberDelete" name="secession" onclick="return goToDeleteMember()">탈퇴</button>
 
 				</div>
 			</div>
