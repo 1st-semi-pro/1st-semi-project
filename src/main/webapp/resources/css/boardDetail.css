@@ -3,12 +3,31 @@
     font-family: 'Hi Melody', cursive;
     font-size:16px;
     font-weight: bold;
-    border : 1px solid lightcoral;
+
     
+}
+
+main{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .boardDetail{
     width:1000px;
     min-height:750px;
-
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border:2px solid lightcoral;
+    border-radius: 5px;
 }
+
+.board-title{
+    display:flex;
+    flex-basis:33.33%;
+    border:1px solid lightcoral;
+}
+

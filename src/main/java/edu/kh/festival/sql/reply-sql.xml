@@ -14,6 +14,23 @@
 	ORDER BY REPLY_NO
 </entry>
 
+<!-- 댓글 삽입  -->
+<entry key="insertReply">
+	INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, ?, SYSDATE, SYSDATE, DEFAULT, ?, ?)
+</entry>
+
+<!-- 댓글 수정 -->
+<entry key="updateReply">
+	UPDATE REPLY SET REPLY_CT = ? WHERE REPLY_NO = ?
+</entry>	
+
+<!-- 댓글 삭제  -->
+<!-- selectReplyList -> 조회할때 REPLY_ST = 'N'이라 UPDATE로 진행 --> 
+<entry key="deleteReply">
+	UPDATE REPLY SET
+	REPLY_ST = 'Y'
+	WHERE REPLY_NO = ?
+</entry>
 
 
 

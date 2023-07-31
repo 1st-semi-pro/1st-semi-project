@@ -13,6 +13,7 @@
 
     <link rel="stylesheet" href="${contextPath}/resources/css/boardDetail.css">
 
+    <link rel="stylesheet" href="${contextPath}/resources/css/reply.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -122,6 +123,17 @@
         <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
       
         <script src="${contextPath}/resources/js/board.js"></script>
+
+        <!-- reply.js에서의 사용을 위함 -->
+        <script>
+            const contextPath = "${contextPath}";
+   
+            const boardNo = "${detail.boardNo}"; 
+
+            const loginMemberNo = "${loginMember.memberNo}";
+        </script>
+
+    <script src="${contextPath}/resources/js/reply.js"></script>
 
 </body>
 
