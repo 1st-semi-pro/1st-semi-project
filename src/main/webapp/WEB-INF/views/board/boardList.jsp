@@ -77,8 +77,15 @@
             </div>
 
             <div class="btn-area">
-                <button id="insertBtn">글쓰기</button>
-            </div>
+                    
+                    <c:if test="${!empty loginMember}"> <!-- 로그인 한 경우에만 -->
+
+                        <!-- /community/board/write -->
+                        <button id="insertBtn" onclick="location.href='write?mode=insert&type=${param.type}&cp=${param.cp}'">글쓰기</button>
+                                                        
+                    </c:if>
+
+                </div>
             
             <div class="pagination-area">
 
