@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/51fc103959.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="${contextPath}/resources/css/mypage.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/myPage.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/header.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/footer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,42 +16,74 @@
     <title>마이페이지</title>
 </head>
 <body>
-    <main>
+    <main id="contain">
         <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
         <section id="content">
         
             <div class="title">마이페이지</div>
             <section>
-                <section id="info-box">
-                    <section id="profile-img-box">
-                        <article id="profile-img"></article>
-                        <input type="file" id="img-file" name="img-file" accept="images/*">
-                    </section>
-                    <section>
-                        <article id="intro">
-                            <textarea name="" id="" cols="80" rows="10"></textarea>
-                        </article>
-                        <article id="history">
-                            <textarea name="" id="" cols="80" rows="10"></textarea>
-                            <table>
-                                <tr>
-                                    <td>
+                <article class="sub-title">프로필</article>
+            </section>
+            <section>
+                
+                <form action="myPage" method="post" name="myPage-form"
+                    enctype="multipart/form-data" onsubmit="return profileValidate()">
+                    <section id="info-box">
+
+                        <div class = profile-image-area>
+                            <span>프로필 이미지</span>
+                            <c:if test="${empty loginMember.memberProfileImage}"> <!-- 프로필 이미지 없는 경우-->
+                                <img src="${contextPath}/resources/images/default_profile.png" id="profile-image">
+                            </c:if>
+                            <c:if test="${!empty loginMember.memberProfileImage}">  <!-- 프로필 이미지 있는 경우-->
+                                <img src="${contextPath}${loginMember.memberProfileImage}" id="profile-image">
+                            </c:if>
+    
+                            <div class="profile-btn-area">
+                                <label for="input-image"></label>
+                                <input type="file" name="memberProfileImage" id="input-image" accept="image/*">
+                                <!-- accept="image/* : 이미지 파일 확장자만 섵택 허용" -->
+                                <!-- accept="video/* : 동영상 파일 확장자만 섵택 허용" -->
+                                <!-- accept=".pdf/* :  파일 확장자만 섵택 허용" -->
+                                <span id="delete-image">프로필 이미지 삭제</span>
+                                <!-- 프로필 이미지 삭제 버튼 -->
+                            </div>
+                        </div>
+                        
+                        <section>
+                            <article id="intro">
+                                <span>프로필 메세지</span>
+                                <textarea name="profileMessage" id="" cols="80" rows="10">"${loginMember.memberMessage}</textarea>
+                            </article>
+                            <article>
+                                <span>축제 히스토리</span>
+                                <div id="history" name="memberHistory">${loginMember.enrollDate}</div>
+    
+                                <div id="info-btn-area">
+                                    <div>
                                         <img src="${contextPath}/resources/images/good.png" alt="칭찬 횟수" class="mypage-icon">
-                                        <span class="mypage-span" id="good-span"></span>
-                                    </td>
-                                    <td>
+                                        <span class="mypage-span" id="good-span">28회</span>
+                                    </div>
+                                    <div>
                                         <img src="${contextPath}/resources/images/report.png" alt="신고 횟수" class="mypage-icon">
-                                        <span class="mypage-span" id="report-span"></span>
-                                    </td>
-                                    <td></td>
-                                    <td><button type="button" class="mypage-btn" id="update-btn">내 정보 수정</button></td>
-                                    <td><button type="submit" class="mypage-btn" id="save-btn">저장</button></td>
-                                </tr>-.
-                            </table>
-                        </article>
+                                        <span class="mypage-span" id="report-span">0회</span>
+                                    </div>
+                                    <button type="button" class="mypage-btn" id="update-btn">내 정보 수정</button>
+                                    <button type="submit" class="mypage-btn" id="save-btn">변경사항 저장</button>
+                                </div>
+    
+                            </article>
+                        </section>
                     </section>
-                </section>
+                    
+                    <!-- 삭제버튼(x)이 눌러짐을 기록하는 숨겨진 input 태그 -->
+                    <!-- 0 : 안눌러짐, 1: 눌러짐 -->
+                    <input type="hidden" name="delete" id="delete" value="0">
+                </form>
+
+                
+
                 <section>
                     <article class="sub-title">관심목록</article>
                 </section>
@@ -76,6 +110,8 @@
     </main>
 
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+
+    <script src="${contextPath}/resources/js/myPage.js"></script>
     
 </body>
 </html>
