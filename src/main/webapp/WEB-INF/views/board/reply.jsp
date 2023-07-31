@@ -9,7 +9,7 @@
 
         <ul id="replyList">
         
-            <c:forEach var="reply" items="${rList}">
+            <c:forEach var="reply" items="${ReplyList}">
         
             <!--  -->
             <li class="replyRow">
@@ -19,7 +19,7 @@
                     
                     <c:if test="${empty reply.profileImage}">
                         <!-- 프로필 이미지가 없을 경우 -->
-                        <img src="${contextPath}/resources/images/user.png">
+                        <img src="${contextPath}/resources/images/id.png"> <!-- 임시 -->
                     </c:if>
 
                     <c:if test="${!empty reply.profileImage}">
@@ -27,17 +27,17 @@
                         <img src="${contextPath}${reply.profileImage}">
                     </c:if>
 
-                    <div>${reply.memberNickname}</div>
+                    <div class="nickDate">${reply.memberNickname}</div>
                     
-                    <div class="reply-date">(${reply.createDate})</div>
+                    <div class="nickDate">(${reply.createDate})</div>
 
                 </div>
                 
-                <div class="reply-content">${reply.replyContent}</div>
+                <div class="replyContent">${reply.replyContent}</div>
                 
                 <c:if test="${loginMember.memberNo == reply.memberNo}">
-                    
-                    <div class="replyBtn">
+                        
+                    <div class="replyBtnDiv">
                         <button onclick="showUpdateReply(${reply.replyNo}, this)">수정</button>
                         <button onclick="deleteReply(${reply.replyNo})">삭제</button> <!-- 오류아님 -->
                     </div>
@@ -53,15 +53,17 @@
 
     <!-- 댓글 작성 부분 -->
 
-    <div class="reply-write-area">
+    <div class="replyWriteArea">
+
+  
+
+        <c:if test="${!empty loginMember}">
 
         <textarea id="replyContent"></textarea>
 
-        <button id="addReply">
-            댓글<br>
-            등록
+        <button id="addReply">댓글<br>등록</button>
 
-        </button>
+        </c:if>
 
     </div>
 

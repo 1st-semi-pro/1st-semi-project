@@ -1,0 +1,137 @@
+
+
+
+/* 댓글 통째를 담는 div */
+#reply-area{
+    width:80%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ul 바로 상위 부모 */
+.replyListArea{
+    display:flex;
+    width:80%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ul (댓글 전체)*/
+#replyList{
+
+    display:flex;
+    width:80%;
+    flex-direction: column;
+
+}
+
+/* li (댓글 하나하나) */
+.replyRow{
+
+    border-top:1px solid lightcoral;
+    margin-top:5px;
+
+}
+
+.replyWriter{
+    display:flex;
+}
+
+/* 프로필 이미지 */
+.replyWriter > img{
+    width:50px;
+    height:50px;
+}
+
+/* 작성자 닉네임, 작성일 */
+.nickDate {
+    font-weight: bold;
+    margin-left: 14px;
+    color:lightcoral;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* 수정,삭제 버튼 오른쪽 끝으로 보내기 */
+.replyBtnDiv{
+    display:flex; 
+    justify-content: flex-end;
+}
+
+/* 버튼 // 바뀌었을 때도 classadd로 class가 같다.*/
+.replyBtnDiv > button{
+    width:50px;
+    height:30px;
+    margin-left:10px;
+
+    font-weight:bold;
+    color:white;
+    background-color:lightcoral;
+    border:0;
+    border-radius: 3px;
+    cursor:pointer;
+}
+
+/* 버튼 hover */
+.replyBtnDiv > button:hover{
+    color:black;
+    transition-duration: 1;
+}
+
+.replyWriteArea{
+    width:64%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height:100px; 
+    border-top:1px solid lightcoral;
+    margin: 20px 0;
+
+}
+/* 댓글 작성 textarea */
+
+.replyContent{
+    resize:none;
+    margin-top:20px;
+    margin-left:20px;
+}
+
+#replyContent{
+    resize:none;
+    border:2px solid lightcoral;
+    border-radius: 5px;
+    height:80px;
+    width:85%;
+    margin-top:20px;
+
+}
+
+/* 댓글 등록 버튼 */
+#addReply{
+    width:7%;
+    height:80px;
+    margin-left:10px;
+    font-weight: bold;
+    background-color: lightcoral;
+    color:white;
+    border:2px solid lightcoral;
+    border-radius:5px;
+    cursor:pointer;
+    margin-top:20px;
+}
+
+/* 수정시 나오는 textarea */
+.update-textarea{
+
+    resize:none;
+    border:2px solid lightcoral;
+    border-radius: 10px;
+    margin: 20px 20px 0 20px;
+    width:85%;
+    height:100px;
+}
