@@ -41,12 +41,12 @@
                             </c:if>
     
                             <div class="profile-btn-area">
-                                <label for="input-image"></label>
+                                <label for="input-image">이미지 선택</label>
                                 <input type="file" name="memberProfileImage" id="input-image" accept="image/*">
                                 <!-- accept="image/* : 이미지 파일 확장자만 섵택 허용" -->
                                 <!-- accept="video/* : 동영상 파일 확장자만 섵택 허용" -->
                                 <!-- accept=".pdf/* :  파일 확장자만 섵택 허용" -->
-                                <span id="delete-image">프로필 이미지 삭제</span>
+                                <span id="delete-image">이미지 삭제</span>
                                 <!-- 프로필 이미지 삭제 버튼 -->
                             </div>
                         </div>
@@ -54,7 +54,7 @@
                         <section>
                             <article id="intro">
                                 <span>프로필 메세지</span>
-                                <textarea name="profileMessage" id="" cols="80" rows="10">"${loginMember.memberMessage}</textarea>
+                                <textarea name="profileMessage" id="profileMessage" cols="80" rows="10">"${loginMember.memberMessage}</textarea>
                             </article>
                             <article>
                                 <span>축제 히스토리</span>
@@ -110,6 +110,10 @@
     </main>
 
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+
+    <script>
+        const contextPath = "${contextPath}"; // 최상위 경로를 JS 전역변수로 선언
+    </script>
 
     <script src="${contextPath}/resources/js/myPage.js"></script>
     

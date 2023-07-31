@@ -1,5 +1,7 @@
 package edu.kh.festival.member.model.service;
 
+import static edu.kh.festival.common.JDBCTemplate.close;
+import static edu.kh.festival.common.JDBCTemplate.getConnection;
 import static edu.kh.festival.common.JDBCTemplate.*;
 
 import java.sql.Connection;
@@ -127,6 +129,38 @@ public class MemberService {
 		close(conn);
 		
 		return result;
+	}
+
+	/**
+	 * 프로필이미지 변경 service
+	 * @param memberNo
+	 * @param profileImage
+	 * @return result
+	 * @throws Exception
+	 */
+	public int updateProfileImage(int memberNo, String profileImage) throws Exception{
+		Connection conn = getConnection();
+		
+		int result = dao.updateProfileImage(conn, memberNo, profileImage);
+		
+		if(result>0) commit(conn);
+		else rollback(conn);
+		
+		close(conn);
+		
+		return result;
+	}
+
+	/**
+	 * 이름,아이디 일치하는 회원 조회 service
+	 * @param memberName
+	 * @param memberId
+	 * @return 
+	 * @throws Exception
+	 */
+	public Member searchMember(String memberName, String memberId) throws Exception{
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 

@@ -7,7 +7,7 @@
     <title>비밀번호 찾기</title>
 
     <link rel="stylesheet" href="${contextPath}/resources/css/index.css">
-    <link rel="stylesheet" href="${contextPath}/resources/css/findPw.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/changePw.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/header.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&family=Moirai+One&display=swap" rel="stylesheet">
@@ -19,25 +19,23 @@
     <div class="container1">
         
         <div class="divide1">
-            <h1>비밀번호 찾기</h1>  
+            <h1>비밀번호 변경</h1>  
         </div>
         <div class="sub">
-            <h5>※ 비밀번호의 경우 암호화 저장되어 분실 시  찾아드릴 수 없는 정보입니다.</h5>
+            <h5>※ 작성해주신 이메일로 인증번호를 전송했습니다.</h5>
         </div>
         <div class="sub">
-            <h5>※ 본인 확인을 통해 비밀번호를 재설정 하실 수 있습니다.</h5>
+            <h5>※ 인증번호 입력 후 비밀번호를 재설정 해주십시오.</h5>
         </div>
     
-        <form id="findPw-form" action="member/findPw/changePw">
+        <form id="findPw-form" action="findPw/changePw">
             <div class="divide2">
-                <div class="divide4">비밀번호 찾기</div>
-                <div class="divide4"><input type="text" name="memberName" placeholder="이름입력"></div>
-                <div class="divide4"><input type="text" name="memberId" placeholder="아이디 입력" size="35"></div>
-                <div class="divide4"><input type="text" name="memberEmail" placeholder="이메일 입력" size="35"><button id="email-authentication-btn">인증번호 전송</button></div>
-                <!-- <div class="divide4"><input type="text" placeholder="인증번호 입력" size="35"><button id="authentication-check-btn">인증 확인</button></div> -->
+                <div class="divide4"><input type="text" placeholder="인증번호 입력" size="35"></div>
+                <div class="divide4"><input type="text" placeholder="비밀번호 입력"></div>
+                <div class="divide4"><input type="text" placeholder="비밀번호 확인" size="35"></div>
+                
                 <div class="divide3">
-                    <button type="button" id="goToBack-btn">뒤로가기</button>
-                    <button type="button" id="findPw-btn">아이디 찾기</button>
+                    <button id="authentication-check-btn">비밀번호 변경</button>
                 </div>
             </div>        
         </form>
@@ -55,6 +53,6 @@
             </section>
         </section>
     </footer>
-    <script src="${contextPath}/resources/js/findPw.js"></script>
+    <script src="${contextPath}/resources/js/changePw.js"></script>
 </body>
 </html>

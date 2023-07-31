@@ -25,7 +25,7 @@ li{list-style: none; cursor: pointer;}
 #content{
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 50%;
 }
 
 #info-box{
@@ -44,6 +44,17 @@ li{list-style: none; cursor: pointer;}
     flex-direction: column;
     height: 100%;
 }
+
+.profile-btn-area{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 50px;
+}
+
+.profile-btn-area > label{
+    cursor: pointer;
+}
+
 #delete-image{
     padding: 0;
 }
@@ -51,20 +62,21 @@ li{list-style: none; cursor: pointer;}
 #profile-image{
     height: 400px;
     width: 400px;
-    margin-right: 30px;
+    margin-right: 50px;
     margin-bottom: 10px;
-    border: 1px solid black;
+    border: 1px solid gray;
 }
 
 #input-image{
-    width: 280px;
+    width: 230px;
+    display: none;
 }
 
 /* 프로필 메세지, 동행후기 영역*/
 #intro{
     display: flex;
     flex-direction: column;
-    margin-top: 5px;
+    
     margin-bottom: 50px;
 }
 #profileMessage{
@@ -139,4 +151,7 @@ article a{
     display: block;
     width: 100%;
     height: 100%;
+}
+#delete-image{
+    cursor: pointer;
 }
