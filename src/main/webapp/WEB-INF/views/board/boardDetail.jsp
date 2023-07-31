@@ -34,45 +34,108 @@
         <!-- 게시글 상세내용 -->
         <div class="boardDetail">
 
-            <!-- 제목 -->
-            <div class="board-title">${detail.boardTitle} - ${detail.boardCd}
+            <div id="boardCd">${detail.boardCd}</div>
 
-            </div>
+            <!-- 제목 -->
+            <div class="board-title">${detail.boardTitle}</div>
 
             <!-- 상세내용 헤더 -->
             <div class="boardHeader">
+                 
+                <div id="imgNick">
+                    <!-- 프로필 이미지인데 우리 db에는 member에 프로필이미지가 있어서 sql로 갖고옴-->
+                    <!-- 우린 마이페이지에서 이미지 설정할 수 있음 -->
+                    <div>
+                    <c:if test="${empty detail.profileImage}">
+                        <img src="${contextPath}/resources/images/id.png"> <!-- 기본값 -->
+                    </c:if>
+
+                    <c:if test="${!empty detail.profileImage}">
+                        <img src="${contextPath}${detail.profileImage}">
+                    </c:if>
+                    </div>
+
+                    <div id="nick">${detail.memberNickname}</div>
+
+                </div>
+
+                <div class="boardInfo">
+                    <div> 작성일 : ${detail.createDate}</div>
                 
-                <!-- 프로필 이미지인데 우리 db에는 member에 프로필이미지가 있어서 sql로 갖고옴-->
-                <!-- 우린 마이페이지에서 이미지 설정할 수 있음 -->
-                <c:if test="${empty detail.profileImage}">
-                    <img src="${contextPath}/resources/images/id.png"> <!-- 기본값 -->
-                </c:if>
-
-                <c:if test="${!empty detail.profileImage}">
-                    <img src="${contextPath}${detail.profileImage}">
-                </c:if>
-
-                <span>${detail.memberNickname}</span>
+                    <!-- 수정일이 존재하는 경우 (수정한 경우) -->
+                    <c:if test="${!empty detail.updateDate}">
+                        <div>수정일 : ${detail.updateDate}</div>
+                    </c:if>
+    
+                    <div>조회수 : ${detail.readCount}</div>
+    
+                </div>
 
             </div>
 
-            <div class="board-info">
-                <div> 작성일 : ${detail.createDate}</div>
-            
-                <!-- 수정일이 존재하는 경우 (수정한 경우) -->
-                <c:if test="${!empty detail.updateDate}">
-                    <div>수정일 : ${detail.updateDate}</div>
-                </c:if>
-
-                <div>조회수 : ${detail.readCount}</div>
-
-            </div>
 
    
 
         <!-- 이미지가 있다면 -->
 
+        <c:if test="${!empty detail.imageList}">    
+                <!-- 썸네일이 있을 경우 변수 생성 -->
+                <c:if test="${detail.imageList[0].imageLevel == 0}">
+                    <c:set var="thumbnail" value="${detail.imageList[0]}"/>
+                    <!-- 기본값 : page scope (if문 안에 있지만 페이지 어디서든 변수 사용 가능함) -->
+
+                </c:if>
+                
+            </c:if>
+
+
+            <!-- 썸네일 영역 (썸네일이 있을 경우)-->
+
+            <c:if test="${!empty thumbnail}">
+
+                <h5>썸네일</h5>
+                <div class="img-box">
+                    <div class="boardImg thumnail">
+                        <img src="${contextPath}${thumbnail.imageReName}">
+                        <a href="${contextPath}${thumbnail.imageReName}" download="${thumbnail.imageOriginal}">다운로드</a>
+                    </div>
+                </div>
+
+            </c:if>
+
+            <c:if test="${empty thumbnail}"> <!-- 썸네일 X -->
+                <c:set var="start" value="0"/>
+            </c:if>
+
+            <c:if test="${!empty thumbnail}"> <!-- 썸네일 O -->
+                <c:set var="start" value="1"/>
+            </c:if>
+
+            <!-- 업로드 이미지가 있는 경우 -->
+            <!-- !empty thumbnail && fn:length(detail.imageList) == 1을 고려 -->
+            <c:if test="${fn:length(detail.imageList) > start}">
+                
+                <!-- 업로드 이미지 영역 -->
+                <h5>업로드 이미지</h5>
+                
+                <div class="img-box">
+                    
+                    <c:forEach var = "i" begin="${start}" end="${fn:length(detail.imageList) - 1}"> 
+                        <!-- 썸네일없으면 0부터 썸네일 있으면 1부터 -->
+                        <!-- 1,2,3,4,5 -> 1,2,3,4 (썸네일 O) 0,1,2,3,4 -> 0,1,2,3 (썸네일 X)-->
+                        <!-- ${detail.imageList} .size 이런거 출력 안됨.-->
+                        <!--    ${detail.imageList[i]}<br> -->
+    
+                        <div class="boardImg">
+                            <img src="${contextPath}${detail.imageList[i].imageReName}">
+                            <a href="${contextPath}${detail.imageList[i].imageReName}" download="${detail.imageList[i].imageOriginal}">다운로드</a> 
+                        </div>
         
+                    </c:forEach>
+    
+                </div>
+
+            </c:if>
         
         <!-- 내용 -->
         <div class="board-Content">${detail.boardContent}</div>

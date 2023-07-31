@@ -4,6 +4,7 @@
     font-size:16px;
     font-weight: bold;
 
+
     
 }
 
@@ -19,15 +20,98 @@ main{
     min-height:750px;
     display:flex;
     flex-direction: column;
+    border:3px solid lightcoral;
+    border-radius: 5px;
+    margin:30px auto; 
     justify-content: center;
     align-items: center;
-    border:2px solid lightcoral;
-    border-radius: 5px;
+}
+
+#boardCd{
+    display:flex;
+    font-size: 30px;
+    width:90%;
+    border-bottom:2px solid lightcoral;
+    margin-top:10px;
+    padding:0 10px;
 }
 
 .board-title{
     display:flex;
-    flex-basis:33.33%;
-    border:1px solid lightcoral;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 40px;
+    font-weight: 2em;
+    width:90%;
+    height: 100px;
+    border-bottom:2px solid lightcoral;
 }
+
+.boardHeader {
+    display:flex;
+    width:90%;
+    height:80px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.boardHeader #imgNick{
+
+    display:flex;
+
+}
+.boardHeader img{
+    width:60px;
+    height:60px;
+}   
+
+.boardHeader #nick{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:22px;
+}
+
+.boardHeader .boardInfo{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-right: 5px;
+}
+
+.board-Content{
+    min-height:500px;
+    padding: 20px 10px;
+    border-top:2px solid lightcoral;
+    border-bottom:2px solid lightcoral;
+    width:90%;
+    font-size:18px;
+}
+
+/* 버튼 영역 */
+.boardBtn{
+    text-align:right;
+    width:90%;
+    margin:20px 0;
+}
+
+/* 버튼 */
+.boardBtn button{
+    width:80px;
+    height:30px;
+    font-weight:bold;
+    border:0;
+    border-radius: 5px;
+    background-color: lightcoral;
+    color:white;
+    cursor:pointer;
+}
+
+.boardBtn button:hover{
+    background-color: lightcoral;
+    color:white;
+    transition-duration: 1;
+
+}
+
 

@@ -28,14 +28,23 @@ public class BoardWriteController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		String mode = req.getParameter("mode"); //  onclick="location.href='write?mode=insert&type=${param.type}'"
-		//  insert인지 update인지 구분
-		
 		
 		try {
 			
+			String mode = req.getParameter("mode"); //  onclick="location.href='write?mode=insert&type=${param.type}'"
+			//  insert인지 update인지 구분 insert의 경우는 바로 jsp로
 			
-			
+			if(mode.equals("update")) {
+				
+				int boardNo = Integer.parseInt(req.getParameter("no"));
+				
+				BoardDetail detail = new BoardService().selectBoardDetail(boardNo);
+				
+				detail.setBoardContent(detail.getBoardContent().replaceAll("<br>", "\n"));
+				
+				req.setAttribute("detail", detail);
+				
+			}
 			
 			String path = "/WEB-INF/views/board/boardWriteForm.jsp";
 			req.getRequestDispatcher(path).forward(req, resp);
@@ -95,7 +104,7 @@ public class BoardWriteController extends HttpServlet {
 							private int imageNo;
 							private String imageReName;
 							private int imageLevel
-						}*/
+					}*/
 	        		
 	        	} // if문 끝
 	        	
@@ -153,8 +162,38 @@ public class BoardWriteController extends HttpServlet {
 	        	
 	        }
 	        
-	        if(mode.equals("update")) {}
-	        
+	        if(mode.equals("update")) {
+	        	
+	        	int boardNo = Integer.parseInt(mpReq.getParameter("no"));
+	        	
+	        	int cp = Integer.parseInt(mpReq.getParameter("cp"));
+	        	
+	        	String deleteList = mpReq.getParameter("deleteList");
+	        	
+	        	detail.setBoardNo(boardNo);
+	        	
+	        	int result = service.updateBoard(detail, imageList, deleteList);
+	        	
+	        	String path = null;
+	        	String message = null;
+	        	
+	        	if(result > 0 ) { // 성공
+	        		
+	        		// detail?no=1000&type=1&cp=20
+	        		path = "detail?no=" + boardNo + "&type=" + boardCode + "&cp=" + cp; // 상세조회 페이지 요청 주소
+	        		
+	        		message = "게시글이 수정되었습니다.";
+	        	
+	        	}else { 
+	        		path = req.getHeader("referer");
+	        		
+	        		message = "게시글 수정 실패";
+	        		
+	        	}	
+	        	
+	        	session.setAttribute("message", message);
+	        	resp.sendRedirect(path);
+	        }
 	        
 		}catch(Exception e){
 			e.printStackTrace();

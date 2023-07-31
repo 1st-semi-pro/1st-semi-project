@@ -31,6 +31,14 @@
             } else{
                 cp = "cp=1";
             } 
+
+            if(params.get("type") == null){
+                cp = "type=1";
+            }
+
+            if(params.get("cp") == null){
+                cp = "cp=1";
+            }
             
             url += type + "&" + cp // 다합치기
 
@@ -54,3 +62,36 @@
 
 // ------------------------------------------------------------------------------------------------------------------------//
 // 삭제 버튼
+(function(){
+
+    const deleteBtn = document.getElementById("deleteBtn"); 
+
+    if(deleteBtn != null){ // 버튼이 화면이 존재할 때만 
+
+        deleteBtn.addEventListener("click",function(){
+            // 현재 위치 : /community/board/detail?no=1500&cp=1&type=1
+            // 목표 위치 : /community/board/delete?no=1500&type=1
+            // 상대 경로 -> delete
+
+            let url = "delete"; 
+
+            // 주소에 작성된 쿼리스트링에서 필요한 파라미터만 얻어오기
+
+            // 현재 페이지 주소에서 쿼리스트링에 존재하는 파라미터만 얻어온다.
+            const params = new URL(location.href).searchParams; 
+
+            const no = "?no=" + params.get("no");
+
+            const type = "&type=" + params.get("type");
+
+            url += no + type;
+
+            if(confirm("정말로 삭제하시겠습니까?")){
+                location.href = url; // get방식으로 url에 요청
+            }
+        
+        });
+    
+    }
+
+})();

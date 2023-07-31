@@ -1,4 +1,4 @@
-/* // 미리보기 관련 요소 모두 얻어오기
+// 미리보기 관련 요소 모두 얻어오기
 
 const inputImage = document.getElementsByClassName("inputImage"); //file
 const preview = document.getElementsByClassName("preview"); //img
@@ -61,13 +61,14 @@ for(let i = 0; i < inputImage.length; i++){
             deleteSet.add(i);
 
         }
-
         
     })
 
     // 게시글이라 이미지 삭제, 삽입만 하면 끝
 
-} */
+}
+
+
 
 // 게시글 작성 유효성 검사
 function writeValidate(){

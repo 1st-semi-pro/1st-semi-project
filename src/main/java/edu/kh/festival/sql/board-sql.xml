@@ -73,7 +73,28 @@
 	 WHERE BOARD_NO = ? AND BOARD_ST = 'N' 
 	 </entry>
 	 
+	<!-- 게시글 삭제 -->
+	<entry key="deleteBoard">
+		UPDATE BOARD SET BOARD_ST = 'Y' WHERE BOARD_NO = ?
+	</entry>
 
+	<!-- 다음 게시글 번호 조회  -->
+	<entry key="nextBoardNo">
+		SELECT SEQ_BOARD_NO.NEXTVAL FROM DUAL
+	</entry>
+	 
+	<!-- 게시글 삽입 -->
+	<entry key="insertBoard">
+		INSERT INTO BOARD
+		VALUES(?, ?, ?, DEFAULT, DEFAULT, DEFAULT, DEFAULT, ?, ?)
+	</entry> 
+	 
+	<!-- 게시글 수정 -->
+	<entry key="updateBoard">
+		UPDATE BOARD SET BOARD_TITLE = ?, BOARD_CONTENT = ?, UPDATE_DT = SYSDATE
+		WHERE BOARD_NO =?
+	</entry> 
+	 
 	 
 	 
 	

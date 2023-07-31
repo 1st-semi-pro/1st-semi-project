@@ -1,6 +1,6 @@
-
 package edu.kh.festival.board.model.service;
 
+import static edu.kh.festival.common.JDBCTemplate.getConnection;
 import static edu.kh.festival.common.JDBCTemplate.*;
 
 import java.sql.Connection;
@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import edu.kh.festival.common.Util;
 import edu.kh.festival.board.model.dao.BoardDAO;
 import edu.kh.festival.board.model.vo.Board;
 import edu.kh.festival.board.model.vo.BoardDetail;
@@ -77,18 +78,95 @@ public class BoardService {
 		
 		
 	}
+	
+	/** 게시글 삭제 Service
+	 * @param boardNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int deleteBoard(int boardNo) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		int result = dao.deleteBoard(conn, boardNo);
+		
+		if(result > 0) commit(conn);
+		else rollback(conn);
+		
+		close(conn);
+		
+		return result;
+	}
 
 
 	/** 게시글 삽입 DAO
 	 * @param detail
 	 * @param imageList
 	 * @param boardCode
-	 * @return
+	 * @return boardNo
 	 */
 
-	public int insertBoard(BoardDetail detail, List<BoardImage> imageList, int boardCode) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int insertBoard(BoardDetail detail, List<BoardImage> imageList, int boardCode) throws Exception {
+		Connection conn = getConnection();
+		
+		int boardNo = dao.nextBoardNo(conn);
+		
+		detail.setBoardNo(boardNo);
+		
+		detail.setBoardTitle(Util.XSSHandling( detail.getBoardTitle() ) );
+		detail.setBoardContent(Util.XSSHandling( detail.getBoardContent() ) );
+		detail.setBoardContent(Util.newLineHandling( detail.getBoardContent() ) );
+		
+		int result = dao.insertBoard(conn, detail, boardCode);
+		
+		if (result > 0 ) {
+			// 이미지
+		}
+		
+		if(result > 0) { 
+			commit(conn);
+		
+		}else { // 2, 3 번에서 한 번이라도 실패한 경우 // 위에서 result == 0 일떄 break;
+			rollback(conn);
+			boardNo = 0; // 게시글 번호를 0으로 바꿔서 실패했음을 컨트롤러로 전달해준다.
+		}
+		
+		close(conn);
+		
+		return boardNo;
+		
+	}
+
+	
+
+	/** 게시글 수정 Service
+	 * @param detail
+	 * @param imageList
+	 * @param deleteList
+	 * @return result
+	 * @throws Exception
+	 */
+	public int updateBoard(BoardDetail detail, List<BoardImage> imageList, String deleteList) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		detail.setBoardTitle(Util.XSSHandling(detail.getBoardTitle()));
+		detail.setBoardContent(Util.XSSHandling(detail.getBoardContent()));
+		detail.setBoardContent(Util.newLineHandling(detail.getBoardContent()));
+		
+		int result = dao.updateBoard(conn, detail);
+		
+		if(result == 1) {//이미지부분
+			}
+		
+		if(result > 0) commit(conn);
+		else rollback(conn);
+		
+		close(conn);
+		
+		return result;
+		
+		
 	}
 	
 	
