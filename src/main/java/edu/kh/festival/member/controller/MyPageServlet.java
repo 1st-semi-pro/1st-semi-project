@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import com.oreilly.servlet.MultipartRequest;
 
-import edu.kh.festival.common.MyrenamePolicy;
+import edu.kh.festival.common.MyRenamePolicy;
 import edu.kh.festival.member.model.service.MemberService;
 import edu.kh.festival.member.model.vo.Member;
 
@@ -74,7 +74,7 @@ public class MyPageServlet extends HttpServlet {
 			// ***** (중요) *****
 			// MultipartRequest 객체가 생성됨과 동시에 지정된 경로에
 			// 지정된 파일명 변경 정책에 맞게 이름이 바뀐 파일이 저장(서버에 업로드)된다.
-			MultipartRequest mpReq = new MultipartRequest(req, filePath, maxSize, encoding, new MyrenamePolicy());
+			MultipartRequest mpReq = new MultipartRequest(req, filePath, maxSize, encoding, new MyRenamePolicy());
 			
 			// 프로필 이미지 변경 Service 호출 시 필요한 값
 			// 1) 로그인한 회원의 회원 번호
