@@ -25,7 +25,7 @@ public class MainController extends HttpServlet {
 		
 		try {
 			List<BoardDetail> boardList1 = new ArrayList<BoardDetail>();
-			List<Board> boardList2 = new ArrayList<Board>();
+			List<BoardDetail> boardList2 = new ArrayList<BoardDetail>();
 			List<Board> boardList3 = new ArrayList<Board>();
 			List<Board> boardList4 = new ArrayList<Board>();
 			

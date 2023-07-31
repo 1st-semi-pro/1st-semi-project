@@ -31,4 +31,15 @@ public class MainBoardService {
 		return boardList1;
 	}
 
+
+	public List<BoardDetail> selectMainboard2() throws Exception {
+		Connection conn =  getConnection();
+		
+		List<BoardDetail> boardList2 = dao.selectBoardList2(conn);
+		
+		close(conn);
+		
+		return boardList2;
+	}
+
 }
