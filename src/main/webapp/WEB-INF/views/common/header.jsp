@@ -41,7 +41,7 @@
                     <div class="h-my-info">
                         <a href="${contextPath}/member/logout" id="logout-btn">로그아웃</a><span>/</span><a href="${contextPath}/member/myPage">마이페이지</a>
                         <c:if test="${loginMember.memberNo == 2}">
-                            <a href="${contextPath}/board/memberList">회원관리</a>
+                            <span>/</span><a href="${contextPath}/board/memberList">회원관리</a>
                         </c:if>
                     </div>
                         
