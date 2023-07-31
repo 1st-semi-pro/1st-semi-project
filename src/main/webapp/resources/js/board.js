@@ -23,7 +23,7 @@
             const params = new URL(location.href).searchParams;
             // 현재 페이지의 쿼리 스트링 부분만 담겠다.
 
-            const type = "type=" + params.get("type"); // type = 1
+            let type = "type=" + params.get("type"); // type = 1
             let cp; 
 
             if(params.get("cp") != ""){ // 쿼리스트링에 cp가 있을 경우
@@ -33,7 +33,7 @@
             } 
 
             if(params.get("type") == null){
-                type = "type=1";
+                type = "1";
             }
 
             if(params.get("cp") == null){
