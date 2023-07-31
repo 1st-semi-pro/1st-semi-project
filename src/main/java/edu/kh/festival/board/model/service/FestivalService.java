@@ -79,4 +79,36 @@ public class FestivalService {
 		
 		return map;
 	}
+
+
+	/** 인기순 조회 Service
+	 * @param type
+	 * @param cp
+	 * @param pop
+	 * @return map
+	 * @throws Exception
+	 */
+	
+	public Map<String, Object> festivalInfo1(int type, int cp, int pop) throws Exception{
+		
+		Connection conn = getConnection();
+
+		String festivalName = dao.selectBoardName(conn, type);
+
+		int festivalCount = dao.festivalPopCount(conn, type, pop);
+
+		Pagination9 pagination = new Pagination9(cp, festivalCount);
+
+		List<Festival> festivalList = dao.festivalpop(conn, pagination, type, pop);
+
+		Map<String, Object> map = new HashMap<String, Object>();
+
+		map.put("festivalName", festivalName);
+		map.put("pagination", pagination);
+		map.put("festivalList", festivalList);
+
+		close(conn);
+
+		return map;
+	}
 }

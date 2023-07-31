@@ -25,6 +25,8 @@ public class FestivalinfoServlet extends HttpServlet{
 			
 			int ft = Integer.parseInt(req.getParameter("ft"));
 			
+			int pop = Integer.parseInt(req.getParameter("pop"));
+			
 			int cp = 1;
 			
 			if(req.getParameter("cp")!=null) { // 쿼리스트링에 "cp"가 존재한다면
@@ -35,16 +37,21 @@ public class FestivalinfoServlet extends HttpServlet{
 			
 			Map<String,Object> map = service.festivalInfo(type, cp);
 			
-			if( ft == 0 ) {
+			if( ft == 0 && pop ==0 ) {
+				
 				map = service.festivalInfo(type, cp);
 				System.out.println("map null == " + map);
 			}
 			
 			if( ft == 1 ) {
 				map = service.festivalInfo(type, cp,ft);
-				System.out.println("map == 1" + map);
+				System.out.println("map ft == "+ ft);
 			}
 			
+			if( pop == 1) {
+				map = service.festivalInfo1(type, cp,pop);
+				System.out.println("map pop == "+ pop);
+			}
 			
 			req.setAttribute("map", map);
 			

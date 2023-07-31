@@ -128,7 +128,6 @@ body {
 }
 select:focus{
   border: 2px solid orange;
-  cu
 }
 #reset{
 width: 40px;
@@ -157,6 +156,9 @@ background-color: orangered;
   display: flex;
   justify-content: flex-end;
   font-size: 22px;
+}
+.color{
+  color: green;
 }
 #festival-date, #popularity{
   display: inline-block;

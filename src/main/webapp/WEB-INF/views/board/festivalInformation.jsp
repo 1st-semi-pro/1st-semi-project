@@ -114,8 +114,30 @@
 
     <section class="content2">
         <div id="span-box">
-        <a href="${contextPath}/board/festivalInfo?type=4&ft=1"><span id="festival-date" name="festival-date" value="dt">축제일순</span></a>
-        <a href="${contextPath}/board/festivalInfo?type=4&pop=1"><span id="popularity" name="popularity" vaule="pop">인기순</span></a>
+
+            <c:if test="${param.pop == 0 && param.ft == 0}">
+                <a href="${contextPath}/board/festivalInfo?type=4&ft=1&pop=0"><span id="festival-date" name="festival-date" value="dt">축제일순</span></a>
+                <a href="${contextPath}/board/festivalInfo?type=4&pop=1&ft=0"><span id="popularity" name="popularity" value="dt">인기순</span></a>
+            </c:if>
+
+            <c:if test="${param.ft == 1}">
+                <a href="${contextPath}/board/festivalInfo?type=4&ft=1&pop=0"><span id="festival-date" class="color" name="festival-date" value="dt">축제일순</span></a>
+            </c:if>
+            
+            <c:if test="${param.ft == 0 && param.pop == 1}">
+                <a href="${contextPath}/board/festivalInfo?type=4&ft=1&pop=0"><span id="festival-date" name="festival-date" value="dt">축제일순</span></a>
+            </c:if>
+
+            <c:if test="${param.pop == 1}">
+                <a href="${contextPath}/board/festivalInfo?type=4&pop=1&ft=0"><span id="popularity" class="color" name="popularity" vaule="pop">인기순</span></a>
+            </c:if>
+            <c:if test="${param.pop == 0 && param.ft == 1}">
+                <a href="${contextPath}/board/festivalInfo?type=4&pop=1&ft=0"><span id="popularity" name="popularity" value="dt">인기순</span></a>
+            </c:if>
+            
+            
+        
+        
         </div>
         <c:choose>
             <c:when test="${empty festivalList}">
@@ -143,7 +165,7 @@
     </section>
     <section id="page-area">
 
-        <c:set var="url" value="festivalInfo?type=${param.type}&cp="/>
+        <c:set var="url" value="festivalInfo?type=${param.type}&cp=&dt=${param.dt}&pop=&{param.pop}"/>
         <ul class="pagination">
             <li><a href="${url}1${sURL}">&lt;&lt;</a></li>
             <li><a href="${url}${pagination.prevPage}${sURL}">&lt;</a></li>
