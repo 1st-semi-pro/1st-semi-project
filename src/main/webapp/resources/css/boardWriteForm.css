@@ -3,6 +3,99 @@
     font-family: 'Hi Melody', cursive;
     font-size:16px;
     font-weight: bold;
-    border : 1px solid lightcoral;
+
     
+}
+
+/* main{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */
+
+form{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+} 
+
+#formInDivs{
+    display:flex;
+    width:60%;
+    flex-direction: column;
+    min-height:500px;
+    border:3px solid lightcoral;
+    border-radius: 5px;
+    margin:30px 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.board-title{
+
+    width:90%;
+    padding:20px 0;
+    border-bottom: 3px solid #ccc;
+}
+
+.board-title > input{
+    height:50%;
+    border:0;
+}
+
+.board-content{
+    width:90%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    min-height: 500px;
+    flex-direction: column;
+}
+
+[name = boardContent]{
+    width:100%;
+    resize:none;
+    min-height:200px;
+    border:2px solid lightcoral;
+    border-radius: 5px;
+}
+
+/* 파일선택 가리기 */
+.inputImage{display:none;}
+
+#imageArea{
+    margin-top:30px;
+    width:100%;
+}
+
+.img-box{
+    display:flex;
+    justify-content: space-between;
+}
+
+label{
+    width:120px;
+    height:120px;
+    border:1px solid lightcoral;
+    border-radius: 5px;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    cursor : pointer;
+
+}
+
+span{
+    cursor:pointer;
+    text-align: end;
+}
+
+.preview{
+    max-width: 100%;
+    max-height: 100%; /* 한 방향으로 100%를 맞추면 다른방향으로 100% 안맞춤 */
+                      /* 가로 100%되면 세로 100% 안맞춰짐 깨질까봐 */
 }

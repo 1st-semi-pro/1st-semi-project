@@ -1,4 +1,3 @@
-
 package edu.kh.festival.board.model.dao;
 
 import static edu.kh.festival.common.JDBCTemplate.*;
@@ -18,6 +17,14 @@ import edu.kh.festival.board.model.vo.BoardImage;
 import edu.kh.festival.board.model.vo.Pagination;
 import edu.kh.festival.member.model.vo.Member;
 
+/**
+ * @author user1
+ *
+ */
+/**
+ * @author user1
+ *
+ */
 public class BoardDAO {
    
    private Statement stmt;
@@ -207,7 +214,133 @@ public class BoardDAO {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 	
+	/** 게시글 삭제 s ervice
+	 * @param conn
+	 * @param boardNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int deleteBoard(Connection conn, int boardNo) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("deleteBoard");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, boardNo);
+			
+			result = pstmt.executeUpdate();
+			
+		}finally {
+			
+			close(pstmt);
+			
+		}
+		
+		return result;
+	}
+
+	/** 다음 게시글 번호 조회 DAO
+	 * @param conn
+	 * @return boardNo
+	 * @throws Exception
+	 */
+	public int nextBoardNo(Connection conn) throws Exception {
+		
+		int boardNo = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("nextBoardNo");
+			
+			stmt = conn.createStatement();
+			
+			rs = stmt.executeQuery(sql);
+			
+			if(rs.next()) {
+				boardNo = rs.getInt(1);
+			}
+			
+		}finally {
+			
+			close(rs);
+			close(stmt);
+			
+		}
+		
+		return boardNo;
+	}
+
+	
+	/** 게시글 삽입 DAO
+	 * @param conn
+	 * @param detail
+	 * @param boardCode
+	 * @return result
+	 * @throws Exception
+	 */
+	public int insertBoard(Connection conn, BoardDetail detail, int boardCode) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("insertBoard");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, detail.getBoardNo());
+	        pstmt.setString(2, detail.getBoardTitle());
+	        pstmt.setString(3, detail.getBoardContent());
+	        pstmt.setInt(4, detail.getMemberNo());
+	        pstmt.setInt(5, boardCode);
+	        
+	        result = pstmt.executeUpdate();
+			
+		}finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	
+	
+	/** 게시글 수정 DAO
+	 * @param conn
+	 * @param detail
+	 * @return result
+	 * @throws Exception
+	 */
+	public int updateBoard(Connection conn, BoardDetail detail) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("updateBoard");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, detail.getBoardTitle());
+			pstmt.setString(2, detail.getBoardContent());
+			pstmt.setInt(3, detail.getBoardNo());
+			
+			result = pstmt.executeUpdate();
+			
+		}finally {
+
+			close(pstmt);
+			
+		}
+		
+		return result;
+	}
 }
 	
 	
