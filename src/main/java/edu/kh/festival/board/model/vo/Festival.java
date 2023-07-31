@@ -17,6 +17,8 @@ public class Festival {
 	private String festivalTitle;
 	private String festivalContent;
 	private String festivalDate;
+	private String festivalCat;
+	private String festivalArea;
 	private int readCount;
 	private int boardCode;
 	

@@ -6,7 +6,7 @@ import java.util.Date;
 
 import com.oreilly.servlet.multipart.FileRenamePolicy;
 
-public class  MyRenamePolicy implements FileRenamePolicy{
+public class MyRenamePolicy implements FileRenamePolicy{
 
 	@Override
 	public File rename(File originalFile) {

@@ -86,10 +86,9 @@ public class FestivalDAO {
 		try {
 			
 			String sql = prop.getProperty("festivalCount");
-			
-
+	
 			if(festivalDate != null) {
-			   sql += "AND FESTIVAL_DT LIKE '%" + festivalDate + "%' ";
+			   sql += "AND FESTIVAL_DT LIKE '%_____" + festivalDate + "%' ";
 			}
 			if(festivalArea != null) {
 			   sql += "AND FESTIVAL_AREA LIKE '%" + festivalArea + "%' ";
@@ -97,17 +96,18 @@ public class FestivalDAO {
 			if(festivalCat != null){
 			   sql += "AND FESTIVAL_CAT LIKE '%" + festivalCat + "%' ";
 			}
-		
+			
 			pstmt = conn.prepareStatement(sql);
+			
 			pstmt.setInt(1, type);
 
 			rs = pstmt.executeQuery();
 
-			if (rs.next()) {
+			if(rs.next()) {
 
 				festivalCount = rs.getInt(1);
 			}
-
+			
 		} finally {
 			close(rs);
 			close(stmt);
@@ -133,17 +133,15 @@ public class FestivalDAO {
 		
 		
 		try {
-			
 		
-			
 			String sql1 = prop.getProperty("festivalList1");
 			String sql2 = prop.getProperty("festivalList2");
 			String sql3 = prop.getProperty("festivalList3");
 			
-			String sql= sql1+sql2+sql3;
+			
 		
 			if(festivalDate != null) {
-				   sql2 += "AND FESTIVAL_DT LIKE '%" + festivalDate + "%' ";
+				   sql2 += "AND FESTIVAL_DT LIKE '%_____" + festivalDate + "%' ";
 			}
 			if(festivalArea != null) {
 				   sql2 += "AND FESTIVAL_AREA LIKE '%" + festivalArea + "%' ";
@@ -151,6 +149,8 @@ public class FestivalDAO {
 			if(festivalCat != null){
 				   sql2 += "AND FESTIVAL_CAT LIKE '%" + festivalCat + "%' ";
 			}
+			
+			String sql= sql1+sql2+sql3;
 			
 			// BETWEEN 구문에 들어갈 범위 계산
 			int start = (pagination.getCurrentPage() - 1) * pagination.getLimit() + 1;
@@ -174,12 +174,13 @@ public class FestivalDAO {
 				festival.setFestivalContent(rs.getString("FESTIVAL_CT"));
 				festival.setFestivalDate(rs.getString("FESTIVAL_DT"));
 				festival.setReadCount(rs.getInt("READ_COUNT"));
+				festival.setFestivalArea(rs.getString("FESTIVAL_AREA"));
+				festival.setFestivalCat(rs.getString("FESTIVAL_CAT"));
 				
 				
 				festivalList.add(festival);
 				
 			}
-			
 		} finally {
 			
 			close(rs);
