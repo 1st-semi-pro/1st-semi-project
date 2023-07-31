@@ -77,6 +77,13 @@
 	<entry key="deleteBoard">
 		UPDATE BOARD SET BOARD_ST = 'Y' WHERE BOARD_NO = ?
 	</entry>
+	
+	<!-- 게시글에 첨부된 이미지 리스트 조회  -->
+	<entry key="selectImageList">
+		SELECT * FROM BOARD_IMG
+		WHERE BOARD_NO = ?
+		ORDER BY IMG_LEVEL
+	</entry> 
 
 	<!-- 다음 게시글 번호 조회  -->
 	<entry key="nextBoardNo">
@@ -89,13 +96,31 @@
 		VALUES(?, ?, ?, DEFAULT, DEFAULT, DEFAULT, DEFAULT, ?, ?)
 	</entry> 
 	 
+	<!-- 게시글 이미지 삽입 -->
+	<entry key="insertBoardImage">
+		INSERT INTO BOARD_IMG
+		VALUES(SEQ_BOARDIMG_NO.NEXTVAL, ?, ?, ?, ?)
+	</entry> 
+	 
+	 
 	<!-- 게시글 수정 -->
 	<entry key="updateBoard">
 		UPDATE BOARD SET BOARD_TITLE = ?, BOARD_CONTENT = ?, UPDATE_DT = SYSDATE
 		WHERE BOARD_NO =?
 	</entry> 
 	 
+	 <!-- 게시글 이미지 수정 -->
+	<entry key="updateBoardImage">
+		UPDATE BOARD_IMG SET IMG_RENAME = ?, IMG_ORIGINAL = ?
+		WHERE BOARD_NO = ? AND IMG_LEVEL = ?
+	</entry>
 	 
+	<!-- 게시글 이미지 삭제 -->
+	<entry key="deleteBoardImage">
+		DELETE FROM BOARD_IMG
+		WHERE BOARD_NO = ?
+		AND IMG_LEVEL IN (
+	</entry>
 	 
 	
 </properties>

@@ -27,7 +27,6 @@ public class BoardWriteController extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
 		
 		try {
 			
@@ -54,8 +53,6 @@ public class BoardWriteController extends HttpServlet {
 		}
 	}
 	
-	
-	
 	// enctype="multipart/form-data" method="POST"
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -72,7 +69,7 @@ public class BoardWriteController extends HttpServlet {
 	        String folderPath = "/resources/images/board/"; 
 
 	        String filePath = root + folderPath; 
-	        // /community/src/main/webapp + /resources/images/board/ 
+	        // /festival/src/main/webapp + /resources/images/board/ 
 	        
 	        String encoding = "UTF-8";
 			

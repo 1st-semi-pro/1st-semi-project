@@ -76,7 +76,6 @@ public class BoardService {
 		
 		return detail;
 		
-		
 	}
 	
 	/** 게시글 삭제 Service
@@ -120,7 +119,18 @@ public class BoardService {
 		int result = dao.insertBoard(conn, detail, boardCode);
 		
 		if (result > 0 ) {
-			// 이미지
+			// 게시글 삽입 성공하면 이미지 삽입
+			for(BoardImage image : imageList) { // 하나씩 꺼내서 DAO 수행
+				image.setBoardNo(boardNo); 
+				
+				result = dao.insertBoardImage(conn, image); 
+			
+				if(result == 0) { 
+					break;
+				}
+				
+			}
+			
 		}
 		
 		if(result > 0) { 
@@ -157,7 +167,34 @@ public class BoardService {
 		int result = dao.updateBoard(conn, detail);
 		
 		if(result == 1) {//이미지부분
+			
+		// 2. 이미지 부분 수정 -- 있는건 수정하고 없는건 삽입한다.
+			for(BoardImage img : imageList) {
+				
+				img.setBoardNo(detail.getBoardNo()); // 게시글 번호 세팅
+				
+				// 이미지 1개씩 수정 (for문 안임)
+				result = dao.updateBoardImage(conn, img);
+				
+				if(result == 1) {
+				
+				}
+				
+				if(result == 0){ // dao 실행 안됨 -> 원래 사진이 안들어가있었음 -> 삽입을 해버린다.
+					result =  dao.insertBoardImage(conn, img);
+					
+				}
+				
+			} //for
+			
+			// x 누를 시 삭제
+			if(!deleteList.equals("")){ // 삭제된3. 이미지 레벨이 기록되어 있을 때만 삭제를 하겠다.
+				
+				result = dao.deleteBoardImage(conn, deleteList, detail.getBoardNo());
+				
 			}
+			
+		}
 		
 		if(result > 0) commit(conn);
 		else rollback(conn);

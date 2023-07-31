@@ -20,7 +20,7 @@ main{
     min-height:750px;
     display:flex;
     flex-direction: column;
-    border:3px solid lightcoral;
+    border:5px solid lightcoral;
     border-radius: 5px;
     margin:30px auto; 
     justify-content: center;
@@ -80,10 +80,7 @@ main{
 }
 
 .board-Content{
-    min-height:500px;
-    padding: 20px 10px;
-    border-top:2px solid lightcoral;
-    border-bottom:2px solid lightcoral;
+
     width:90%;
     font-size:18px;
 }
@@ -115,3 +112,34 @@ main{
 }
 
 
+/* 수정이나 삽입했을 때 이미지 조절하기 */
+
+.boardImg {
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+    flex-direction: column;
+
+}
+
+a{
+    display:flex;
+    text-align: end;
+}
+
+img{
+    max-width: 90%;
+    max-height: 100%;
+}
+
+#imageContext{
+    border-top:2px solid lightcoral;
+    border-bottom:2px solid lightcoral;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:90%;
+}

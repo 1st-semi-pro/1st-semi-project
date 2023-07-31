@@ -78,6 +78,8 @@
 
         <!-- 이미지가 있다면 -->
 
+        <div id="imageContext">
+
         <c:if test="${!empty detail.imageList}">    
                 <!-- 썸네일이 있을 경우 변수 생성 -->
                 <c:if test="${detail.imageList[0].imageLevel == 0}">
@@ -86,24 +88,31 @@
 
                 </c:if>
                 
-            </c:if>
+        </c:if>
+
+        <c:if test="${empty detail.imageList}">
+        </c:if>
 
 
             <!-- 썸네일 영역 (썸네일이 있을 경우)-->
 
             <c:if test="${!empty thumbnail}">
 
-                <h5>썸네일</h5>
                 <div class="img-box">
                     <div class="boardImg thumnail">
                         <img src="${contextPath}${thumbnail.imageReName}">
-                        <a href="${contextPath}${thumbnail.imageReName}" download="${thumbnail.imageOriginal}">다운로드</a>
+                       <!--  <a href="${contextPath}${thumbnail.imageReName}" download="${thumbnail.imageOriginal}">다운로드</a> -->
                     </div>
                 </div>
 
             </c:if>
 
-            <c:if test="${empty thumbnail}"> <!-- 썸네일 X -->
+            
+        
+        <!-- 내용 -->
+        <div class="board-Content">${detail.boardContent}</div>
+
+        <c:if test="${empty thumbnail}"> <!-- 썸네일 X -->
                 <c:set var="start" value="0"/>
             </c:if>
 
@@ -116,19 +125,16 @@
             <c:if test="${fn:length(detail.imageList) > start}">
                 
                 <!-- 업로드 이미지 영역 -->
-                <h5>업로드 이미지</h5>
+                <h5></h5>
                 
                 <div class="img-box">
                     
                     <c:forEach var = "i" begin="${start}" end="${fn:length(detail.imageList) - 1}"> 
-                        <!-- 썸네일없으면 0부터 썸네일 있으면 1부터 -->
-                        <!-- 1,2,3,4,5 -> 1,2,3,4 (썸네일 O) 0,1,2,3,4 -> 0,1,2,3 (썸네일 X)-->
-                        <!-- ${detail.imageList} .size 이런거 출력 안됨.-->
-                        <!--    ${detail.imageList[i]}<br> -->
-    
+ 
                         <div class="boardImg">
                             <img src="${contextPath}${detail.imageList[i].imageReName}">
-                            <a href="${contextPath}${detail.imageList[i].imageReName}" download="${detail.imageList[i].imageOriginal}">다운로드</a> 
+                           <!--  <a href="${contextPath}${detail.imageList[i].imageReName}" 
+                            download="${detail.imageList[i].imageOriginal}"></a>  -->
                         </div>
         
                     </c:forEach>
@@ -136,10 +142,8 @@
                 </div>
 
             </c:if>
-        
-        <!-- 내용 -->
-        <div class="board-Content">${detail.boardContent}</div>
 
+        </div>    
         <!-- 버튼 -->
         <div class="boardBtn">
 
@@ -172,6 +176,7 @@
         <button id="goToListBtn">목록으로</button>
 
     </div>
+
 
  </div>
 
