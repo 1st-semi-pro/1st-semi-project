@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>mainBoard-sql.xml</comment>
+
+	<entry key="selectBoardList">
+		SELECT * FROM (SELECT * FROM BOARD
+			WHERE BOARD_CD = 2
+			AND BOARD_ST = 'N'
+			ORDER BY BOARD_NO DESC)
+		WHERE ROWNUM BETWEEN 1 AND 10
+	</entry>
+
+</properties>

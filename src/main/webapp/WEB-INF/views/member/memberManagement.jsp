@@ -60,7 +60,7 @@
 			
 			<div class="member-list">
 
-				<form>
+				<form name="memberform" action="memberList">
 					<table border="1" class="table1">
 						<tr class="s1">
 							<th class="no">NO.</th>
@@ -84,7 +84,7 @@
 								<c:forEach var="member" items="${mList}">
 									<tr class="s2">
 										<td>${member.memberNo}</td>
-										<td><input type="checkbox" class="check" name="checkRow" value="${member.memberNo}"></td>
+										<td><input type="checkbox" class="check" name="checkRow" value="${member.memberId}"></td>
 										<td><a href="#">${member.memberId}</a></td>
 										<td>${member.memberNickname}</td>
 										<td>${member.memberEmail}</td>
@@ -97,6 +97,7 @@
 							</c:otherwise>
 						</c:choose>
 					</table>
+					<!-- <input type="hidden" name="deleteList" id="deleteList" value=""> -->
 				</form>
 			</div>
 			

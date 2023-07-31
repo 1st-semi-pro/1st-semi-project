@@ -187,6 +187,58 @@ public class ManageDAO {
 		return mList;
 	}
 
+	
+	/** 관리자 회원 탈퇴 DAO
+	 * @param conn
+	 * @param checkRow
+	 * @return result
+	 * @throws Exception
+	 */
+	public int deleteMember(Connection conn, int checkRow) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = "UPDATE MEMBER SET SECESSION_FL = 'Y' WHERE MEMBER_NO = ?";
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, checkRow);
+			
+			result = pstmt.executeUpdate();
+			
+		}finally {
+			close(pstmt);
+		}
+		
+		
+		return result;
+	}
+
+	public int deleteMember(Connection conn, String[] checkRow) throws Exception {
+		int result = 0;
+		
+		try {
+			for(int i = 0 ; i < checkRow.length ; i ++) {
+			
+			String sql = "UPDATE MEMBER SET SECESSION_FL = 'Y' WHERE MEMBER_ID = ?";
+			pstmt = conn.prepareStatement(sql);
+			
+				pstmt.setString(1, checkRow[i]);
+				
+				result = pstmt.executeUpdate();
+			}
+			
+			
+			
+		}finally {
+			close(pstmt);
+		}
+		
+		
+		return result;
+	}
+
 
 	
 }

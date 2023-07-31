@@ -4,8 +4,9 @@
     margin: 100px auto;
     display: flex; 
     flex-direction: column;
-    border: 10px solid lightgray;
+    border: 3px solid lightgray;
     border-radius: 10px;
+
 }
 
 .divide1{
@@ -44,7 +45,7 @@ input{
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 0;
+    
 }
 
 .divide4{
@@ -81,6 +82,7 @@ input{
     border-radius: 5%;
     cursor: pointer;
     border: 0;
+    margin: 0px 15px;
     
 }
 
@@ -91,14 +93,20 @@ input{
 #inputName{
     height: 100%;
     width: 100%;
+    border: 0;
+    border-bottom: 2px solid gray;
 }
 
 #inputEmail{
     height: 100%;
+    border: 0;
+    border-bottom: 2px solid gray;
 }
 
 #inputNum{
     height: 100%;
+    border: 0;
+    border-bottom: 2px solid gray;
 }
 footer{
     display:flex;

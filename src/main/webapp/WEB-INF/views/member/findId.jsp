@@ -38,6 +38,7 @@
 
         <div class="divide3">
             <button type="button" onclick="location.href='${header.referer}'" id="btn3">뒤로가기</button>
+            <button type="button" onclick="location.href='${header.referer}'" id="btn3">비밀번호 찾기</button>
         </div>
 
 

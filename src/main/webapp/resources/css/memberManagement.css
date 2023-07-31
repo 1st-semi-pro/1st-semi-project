@@ -95,14 +95,15 @@ table, td, th {
 
   */
 
-/* .container *{
+.content{
 	border: 0;
 }
- */
+
 
  .divide1{
 	display: flex;
 	flex-direction: row;
+	
  }
 
  .divide2{
@@ -189,7 +190,7 @@ table, td, th {
 
 /* 현재 페이지 번호 */
 .pagination .current{
-    background-color: #455ba8;
+    background-color: lightcoral;
     color: white;
     font-weight: bold;
     border-radius: 50%;
@@ -217,6 +218,20 @@ table, td, th {
 
 .check{
 	margin: auto;
+}
+
+#selectMemberDelete{
+	border: 0;
+	width: 50px;
+	height: 30px;
+	background-color: lightgray;
+	cursor: pointer;
+	font-weight: bold;
+	border-radius: 10%;
+}
+
+#selectMemberDelete:hover{
+	color: white;
 }
 
 
