@@ -106,11 +106,13 @@ li{list-style: none; cursor: pointer;}
 .korea{
 	display: flex;
 	align-content: center;
+    position: relative;
 }
 
 .korea > img{
     width: 100%;
     height: 100%;
+    position: absolute;
 }
 
 .board1{
@@ -246,3 +248,88 @@ table a{
     opacity: var(--swiper-pagination-bullet-opacity, 1);
     background: white !important;
   }
+
+  #seoul {
+    position: absolute;
+    width: 80px;
+    height: 100px;
+    top: 45px;
+    left: 85px;
+    z-index: 1;
+}
+
+#seoul:hover{
+    width: 85px;
+    height: 105px;
+}
+
+
+#gyeonggi{
+    position: absolute;
+    width: 140px;
+    height: 170px;
+    left: 50px;
+    top: 5px;
+}
+
+#gyeonggi:hover{
+    width: 145px;
+    height: 175px;
+}
+
+#incheon{
+    width: 70px;
+    height: 100px;
+    top: 50px;
+    left: 45px;
+}
+
+#incheon:hover{
+    width: 75px;
+    height: 105px;
+}
+
+#gangwon{
+    position: absolute;
+    width: 120px;
+    height: 160px;
+    top: 7px;
+    right: 60px;
+}
+
+#gangwon:hover{
+    width: 125px;
+    height: 165px;
+}
+
+#chungnam{
+    position: absolute;
+    width: 110px;
+    height: 150px;
+    top: 132px;
+    left: 50px;
+}
+
+#chungnam:hover{
+    width: 115px;
+    height: 155px;
+}
+
+#daejeon{
+    width: 40px;
+    height: 50px;
+    top: 180px;
+    left: 122px;
+}
+
+#daejeon:hover{
+    width: 44px;
+    height: 55px;
+    top: 177px;
+}
+
+#chungbuk{
+    width: 100px;
+    height: 150px;
+    top: 200px;
+}
