@@ -26,7 +26,7 @@
               <c:when test="${empty sessionScope.loginMember }">
 
 					<div class="h-login">
-						<a href="${contextPath}/member/login">로그인 </a><span>/</span><a href="${contextPath}/member/findId">아이디 찾기 </a><span>/</span><a href="${contextPath}/member/agree"> 회원가입</a>
+						<div><a href="${contextPath}/member/login">로그인</a><a href="${contextPath}/member/findId">아이디 찾기</a><a href="${contextPath}/member/findPw">비밀번호 찾기</a><a href="${contextPath}/member/agree">회원가입</a></div>
 					</div>
 
               </c:when>
@@ -39,7 +39,7 @@
                         </a>   
                         <!-- 회원 정보 + 로그아웃 버튼 -->
                     <div class="h-my-info">
-                        <a href="${contextPath}/member/logout" id="logout-btn">로그아웃</a><span>/</span><a href="${contextPath}/member/myPage/info">마이페이지</a><span>/</span>
+                        <a href="${contextPath}/member/logout" id="logout-btn">로그아웃</a><span>/</span><a href="${contextPath}/member/myPage">마이페이지</a>
                         <c:if test="${loginMember.memberNo == 2}">
                             <a href="${contextPath}/board/memberList">회원관리</a>
                         </c:if>

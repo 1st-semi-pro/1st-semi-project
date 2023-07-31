@@ -251,7 +251,6 @@ background-color: orangered;
   font-size: 14px;
   font-weight: bold;
   text-align: center;
-  cursor: pointer;
   border-radius: 50%;
 }
 .pagination a{
@@ -260,11 +259,14 @@ background-color: orangered;
   border-radius: 50%;
   display: block;
 }
+.pagination a:hover{
+  background-color: #dedede;
+}
 
 .pagination .current{
   background-color: orange;
   color: white;
   font-weight: bold;
   border-radius: 50%;
-
+  pointer-events: none;
 }
