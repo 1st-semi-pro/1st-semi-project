@@ -56,7 +56,7 @@
                             <c:when test="${boardImage.imageLevel == 0}">
                                 <c:set var="img0" value="${contextPath}${boardImage.imageReName}"/>
                             </c:when>
-        
+      
                             <c:when test="${boardImage.imageLevel == 1}">
                                 <c:set var="img1" value="${contextPath}${boardImage.imageReName}"/>
                             </c:when>

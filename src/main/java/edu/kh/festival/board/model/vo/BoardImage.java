@@ -14,7 +14,10 @@ import lombok.ToString;
 public class BoardImage {
 
 	private int imageNo;
-	private String imageReName;
 	private int imageLevel;
+	private String imageReName;
+	private String imageOriginal;
+	
+	private int boardNo;
 	
 }
