@@ -28,7 +28,7 @@ public class MyPageServlet extends HttpServlet {
 		try {
 			// 프로필 이미지 업로드 -> 변경
 			
-			System.out.println(req.getParameter("profileImage")); // null값
+//			System.out.println(req.getParameter("memberProfileImage")); // null값
 			// 1. enctype = "multipart/form-data" -> 인코딩 안되어있어 파라미터가 인지되지 않음
 			// 2. input type = "file" -> 파일형태 데이터
 			
@@ -85,15 +85,15 @@ public class MyPageServlet extends HttpServlet {
 			
 			// getOriginalFileName("input" type=file 의 name속성 값")
 			// -> 원본 파일명
-			System.out.println(mpReq.getOriginalFileName("profileImage"));
+//			System.out.println(mpReq.getOriginalFileName("profileImage"));
 			
 			// getFilesystemName("input" type=file 의 name속성 값")
 			// -> 변경된 파일명
-			System.out.println(mpReq.getFilesystemName("profileImage"));
+//			System.out.println(mpReq.getFilesystemName("profileImage"));
 			
 			// DB에 삽입될 프로필 이미지 경로
 			// 단, x버튼이 클릭된 상태면 null을 가지게 한다. 
-			String profileImage = folderPath + mpReq.getFilesystemName("profileImage");
+			String profileImage = folderPath + mpReq.getFilesystemName("memberProfileImage");
 			
 			// ** 프로필 이미지 삭제 **
 			// 1) delete input type="hidden" 태그의 값(파라미터) 얻어오기
@@ -108,21 +108,19 @@ public class MyPageServlet extends HttpServlet {
 			}
 			
 			// 새로운 이미지 변경 Service 호출 후 결과 반환 받기
-			MemberService service = new MemberService();
 			
-			//int result = service.updateProfileImage(memberNo, profileImage);
-			int result=1;
+			int result = new MemberService().updateProfileImage(memberNo, profileImage);
 			
 			if(result > 0) {
 				session.setAttribute("message", "프로필 이미지가 변경되었습니다.");
 				loginMember.setMemberProfileImage(profileImage); // 세션의 값이 변경됨
 			}else {
-				session.setAttribute("message", "프로필 이미지변경 실패ㅜㅜ");
+				session.setAttribute("message", "프로필 이미지변경 실패");
 			}
 			
 			// 성공/실패 관계 없이 프로필 화면 재요청 (redirect)
-			// /member/myPage/profile (POST)
-			resp.sendRedirect("profile");
+			// /member/myPage
+			resp.sendRedirect("myPage");
 			
 		}catch(Exception e) {
 			e.printStackTrace();

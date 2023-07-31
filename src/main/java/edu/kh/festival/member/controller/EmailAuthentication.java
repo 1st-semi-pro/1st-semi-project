@@ -13,21 +13,23 @@ import javax.servlet.http.HttpSession;
 import edu.kh.festival.member.model.service.MemberService;
 import edu.kh.festival.member.model.vo.Member;
 
+import java.io.Console;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.Random;
 
-@WebServlet("/member/changePw")
+@WebServlet("/member/findPw/changePw")
 public class EmailAuthentication extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String memberName = request.getParameter("memberName");
         String memberId = request.getParameter("memberId");
-        String email = request.getParameter("email");
+        String memberEmail = request.getParameter("memberEmail");
         
         //먼저 아이디로 회원정보를 받아오고 가져온 데이터에서 email값을 비교하여 존재하지 않으면 인증메일 보내지 못함
-        Member m = new Member();// new MemberService().memberLogin(memberId);
-        if(m==null || !m.getMemberEmail().equals(email))
+        Member m = new MemberService().searchMember(memberName, memberId);
+        if(m==null || !m.getMemberEmail().equals(memberEmail))
         {
             request.setAttribute("message", "아이디나 이메일 정보가 맞지 않습니다");
             //request.setAttribute("loc", "/member/findPw");
@@ -82,17 +84,26 @@ public class EmailAuthentication extends HttpServlet{
         
         //email 전송
         try {
+        	System.out.println("1");
+        	System.out.println(session);
+        	System.out.println("2");
             MimeMessage msg = new MimeMessage(session);
+            System.out.println("3");
             msg.setFrom(new InternetAddress(user, "대한민국 축제축제"));
+            System.out.println("4");
             msg.addRecipient(Message.RecipientType.TO, new InternetAddress(to_email));
             
+            System.out.println("5");
             //메일 제목
             msg.setSubject("안녕하세요 축제축제 인증번호 입니다.");
+            System.out.println("6");
             //메일 내용
             msg.setText("인증 번호는 :"+temp);
             
+            System.out.println("7");
             Transport.send(msg);
             System.out.println("이메일 전송");
+            
             
         }catch (Exception e) {
             e.printStackTrace();// TODO: handle exception
@@ -101,7 +112,8 @@ public class EmailAuthentication extends HttpServlet{
         saveKey.setAttribute("AuthenticationKey", AuthenticationKey);
         //패스워드 바꿀때 뭘 바꿀지 조건에 들어가는 id
         request.setAttribute("id", memberId);
-        request.getRequestDispatcher("/views/login_myPage/searchPasswordEnd.jsp").forward(request, response);
+        String path = "/WEB-INF/views/member/changePw.jsp";
+		request.getRequestDispatcher(path).forward(request, response);
     }
 
 	
