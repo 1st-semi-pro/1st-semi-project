@@ -48,4 +48,35 @@ public class FestivalService {
 		
 		return map;
 	}
+
+	
+	/** 축제일순 조회Service
+	 * @param type
+	 * @param cp
+	 * @param ft
+	 * @return map
+	 * @throws Exception
+	 */
+	public Map<String, Object> festivalInfo(int type, int cp, int ft) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		String festivalName = dao.selectBoardName(conn,type);
+		
+		int	festivalCount = dao.festivalDt(conn,type,ft);
+		
+		Pagination9 pagination = new Pagination9(cp, festivalCount);
+		
+		List<Festival> festivalList = dao.festivalList(conn, pagination, type,ft);
+
+		Map<String, Object> map = new HashMap<String, Object>();
+
+		map.put("festivalName", festivalName);
+		map.put("pagination", pagination);
+		map.put("festivalList", festivalList);
+
+		close(conn);
+		
+		return map;
+	}
 }

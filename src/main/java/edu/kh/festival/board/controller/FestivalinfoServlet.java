@@ -17,12 +17,13 @@ public class FestivalinfoServlet extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		System.out.println(req.getParameter("dt"));
-		System.out.println(";;;;;;;");
+			
+			
 		try {
 			
 			int type = Integer.parseInt(req.getParameter("type"));
+			
+			int ft = Integer.parseInt(req.getParameter("ft"));
 			
 			int cp = 1;
 			
@@ -34,11 +35,21 @@ public class FestivalinfoServlet extends HttpServlet{
 			
 			Map<String,Object> map = service.festivalInfo(type, cp);
 			
+			if( ft == 0 ) {
+				map = service.festivalInfo(type, cp);
+				System.out.println("map null == " + map);
+			}
+			
+			if( ft == 1 ) {
+				map = service.festivalInfo(type, cp,ft);
+				System.out.println("map == 1" + map);
+			}
+			
 			
 			req.setAttribute("map", map);
 			
 			String path = "/WEB-INF/views/board/festivalInformation.jsp";
-
+			
 			RequestDispatcher dispatcher = req.getRequestDispatcher(path);
 			dispatcher.forward(req, resp);
 			

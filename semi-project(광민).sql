@@ -135,7 +135,7 @@ BEGIN
         VALUES(SEQ_BOARD_NO.NEXTVAL,
                SEQ_BOARD_NO.CURRVAL || '번째 게시글',
                SEQ_BOARD_NO.CURRVAL || '번째 게시글 내용입니다.',
-               DEFAULT,DEFAULT,DEFAULT,DEFAULT,1,3
+               DEFAULT,DEFAULT,DEFAULT,DEFAULT,1,2
                
         );
         
@@ -250,6 +250,58 @@ FOREIGN KEY("FESTIVAL_NO") -- BOARD의 BOARD_CODE 컬럼에 FK 지정
 REFERENCES "INFO_BOARD"; -- 참조
 
 commit;
+----------------------------------------댓글 테이블-------------------------------------------
+-- DROP TABLE "REPLY";
+
+CREATE TABLE "REPLY" (
+   "REPLY_NO"   NUMBER      NOT NULL,
+   "REPLY_CT"   VARCHAR2(200)      NOT NULL,
+   "REPLY_TI"   DATE      NOT NULL,
+   "REPLY_MD"   DATE      NOT NULL,
+    "REPLY_ST" VARCHAR(1) DEFAULT 'N' NOT NULL,
+   "BOARD_NO"   NUMBER      NOT NULL,
+   "MEMBER_NO"   NUMBER      NOT NULL
+);
+
+COMMENT ON COLUMN "REPLY"."REPLY_NO" IS '댓글번호(시퀀스)';
+
+COMMENT ON COLUMN "REPLY"."REPLY_CT" IS '댓글내용';
+
+COMMENT ON COLUMN "REPLY"."REPLY_TI" IS '댓글작성시간';
+
+COMMENT ON COLUMN "REPLY"."REPLY_MD" IS '댓글수정시간';
+
+COMMENT ON COLUMN "REPLY"."REPLY_ST" IS '댓글 삭제 여부(N,Y)';
+
+COMMENT ON COLUMN "REPLY"."BOARD_NO" IS '게시글번호(시퀀스)';
+
+COMMENT ON COLUMN "REPLY"."MEMBER_NO" IS '회원번호(시퀀스)';
+
+ALTER TABLE "REPLY"
+ADD CONSTRAINT "REPLY_BOARD_NO" 
+FOREIGN KEY("BOARD_NO")
+REFERENCES "BOARD";
+
+ALTER TABLE "REPLY"
+ADD CONSTRAINT "REPLY_MEMBER_NO" 
+FOREIGN KEY("MEMBER_NO")
+REFERENCES "MEMBER";
+
+ALTER TABLE "REPLY"
+ADD CONSTRAINT "CHK_REPLY_ST"
+CHECK("REPLY_ST" IN('N','Y'));
+
+--DROP SEQUENCE SEQ_REPLY_NO;
+
+CREATE SEQUENCE SEQ_REPLY_NO
+       INCREMENT BY 1 -- 증가값
+       START WITH 1 -- 시작값
+       MINVALUE 1; -- 최솟값
+--INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, ?, sysdate, sysdate, default, ?, ?);
+
+INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, '테스트', SYSDATE, SYSDATE, DEFAULT, 1000, 1);
+COMMIT;
+-------------------------------------------------------------------------------------------------------------------------------
 -- 축제 갯수조회
 
 SELECT * FROM(
@@ -262,8 +314,18 @@ SELECT * FROM(
 )
 WHERE RNUM BETWEEN 1 AND 30;
 
-SELECT FESTIVAL_DT FROM info_board
-WHERE NOT FESTIVAL_DT IS NULL
-ORDER BY FESTIVAL_DT;
+-- 축제 일순 갯수 조회
+SELECT FESTIVAL_DT FROM INFO_BOARD;
+
+-- 축제일순 조회
+SELECT * FROM(
+    SELECT ROWNUM RNUM, A.* FROM(
+        SELECT FESTIVAL_NO, FESTIVAL_TITLE, FESTIVAL_CT, 
+              FESTIVAL_DT,READ_COUNT FROM INFO_BOARD
+        ORDER BY FESTIVAL_DT DESC
+    ) A
+)
+WHERE RNUM BETWEEN 1 AND 30;
+
 
 

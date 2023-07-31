@@ -56,7 +56,7 @@
 
         <nav>
             <ul>
-                <li><a href="${contextPath}/board/festivalInfo?type=4">축제정보</a></li>
+                <li><a href="${contextPath}/board/festivalInfo?type=4&ft=0">축제정보</a></li>
                 <li><a href="${contextPath}/board/list?type=1">공지게시판</a></li>
                 <li><a href="${contextPath}/board/list?type=2">자유게시판</a></li>
                 <li><a href="${contextPath}/board/list?type=3">축제후기</a></li>

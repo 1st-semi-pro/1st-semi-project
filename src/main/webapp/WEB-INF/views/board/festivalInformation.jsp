@@ -114,7 +114,7 @@
 
     <section class="content2">
         <div id="span-box">
-        <a href="${contextPath}/board/festivalInfo?type=4&dt=1"><span id="festival-date" name="festival-date" value="dt">축제일순</span></a>
+        <a href="${contextPath}/board/festivalInfo?type=4&ft=1"><span id="festival-date" name="festival-date" value="dt">축제일순</span></a>
         <a href="${contextPath}/board/festivalInfo?type=4&pop=1"><span id="popularity" name="popularity" vaule="pop">인기순</span></a>
         </div>
         <c:choose>
