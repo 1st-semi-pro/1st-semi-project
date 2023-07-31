@@ -38,7 +38,7 @@
 
 .divide2 > div:first-child{
     display: flex;
-    background-color:black;
+    background-color:lightcoral;
     color: white;
     align-items: center;
     justify-content: center;
@@ -66,7 +66,7 @@
     height: 100%;
     width: 100%;
     padding-left: 20px;
-    border: 1px solid black;
+    border-bottom: 2px solid gray;
 }
 
 button{
@@ -88,7 +88,7 @@ button{
     height: 100%;
     border-radius: 5%;
 }
-#goToBack-btn, #findId-btn{
+#goToBack-btn, #findPw-btn{
     color: white;
     height: 40%;
     width: 15%;
@@ -97,13 +97,16 @@ button{
     margin: 0 10px;
 }
 
-#btn1:hover{
+#email-authentication-btn:hover{
     color: black;
 }
-#btn2:hover{
+#authentication-check-btn:hover{
     color: black;
 }
-#btn3:hover{
+#goToBack-btn:hover{
+    color: black;
+}
+#findPw-btn:hover{
     color: black;
 }
 

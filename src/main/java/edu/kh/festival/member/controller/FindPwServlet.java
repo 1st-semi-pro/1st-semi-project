@@ -1,6 +1,8 @@
 package edu.kh.festival.member.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,6 +16,7 @@ public class FindPwServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String path = "/WEB-INF/views/member/findPw.jsp";
 		req.getRequestDispatcher(path).forward(req, resp);
+		
 	}
-
+	
 }
