@@ -32,7 +32,7 @@ var swiper = new Swiper(".mySwiper", {
           
           const a1 = document.createElement("a");
           a1.innerText = item.boardTitle;
-          a1.setAttribute("href", "board/detail?no=" + item.boardNo);
+          a1.setAttribute("href", "board/detail?no=" + item.boardNo + "&type=2");
 
           tr.append(th);
 
