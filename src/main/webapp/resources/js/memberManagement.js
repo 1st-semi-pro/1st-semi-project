@@ -1,5 +1,6 @@
 const all = document.getElementById("all"); 
 const checkList = document.getElementsByName("checkRow");
+const deleteSet = new Set();
 
 all.addEventListener("click", function(){
     for(let i = 0 ; i < checkList.length ; i++){
@@ -72,11 +73,31 @@ function searchValidate(){
 })();
 
 function goToDeleteMember(){
+    if(confirm("정말 탈퇴시키겠습니까?")){
+        const checkRow = document.getElementsByName("checkRow");
+        flag = false;
 
+        for(i = 0 ; i < checkRow.length ; i++){
+            if(checkRow[i].checked){
+                flag = true;
+               /*  deleteSet.add(checkRow[i].value); */
+            }
+        }
+        /* const deleteList = document.getElementById("deleteList");
+        deleteList.value = Array.from(deleteSet); */
+
+        if(flag == false){
+            alert("하나 이상 선택되어야 삭제 가능합니다.")
+            return;
+        }
+
+       
+
+        document.memberform.submit();
+            
+        alert("탈퇴시켰습니다.");
+            
+        
+        
+    }
 };
-
-
-document.getElementById("selectMemberDelete").addEventListener("click", function(){
-    
-    const checkRow = document.getElementsByName("checkRow");
-});

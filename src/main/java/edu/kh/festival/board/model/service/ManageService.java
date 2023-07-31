@@ -79,7 +79,25 @@ public class ManageService {
 		return map;
 	}
 
+	/** 관리자 회원 탈퇴
+	 * @param checkRow
+	 * @return result
+	 * @throws Exception
+	 */
+	public int deleteMember(String[] checkRow) throws Exception {
 		
+		Connection conn = getConnection();
+		
+		int result = dao.deleteMember(conn, checkRow);
+		
+		if(result > 0) commit(conn);
+		else		   rollback(conn);
+
+		close(conn);
+		
+		return result;
+	}
+
 		
 		
 		

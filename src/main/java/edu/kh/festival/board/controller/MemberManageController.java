@@ -59,11 +59,21 @@ public class MemberManageController extends HttpServlet {
 				
 				req.setAttribute("map", map);
 				
+				if(req.getParameter("checkRow") != null) {
+					
+					String[] checkRow = req.getParameterValues("checkRow");
+					for(int i = 0 ; i < checkRow.length ; i++) {
+						
+						int result = service.deleteMember(checkRow);
+						
+					}
+				}
 				      
 				String path = "/WEB-INF/views/member/memberManagement.jsp";
 				
 				RequestDispatcher dispatcher = req.getRequestDispatcher(path);
 				dispatcher.forward(req, resp);
+				
 				
 			}
 			

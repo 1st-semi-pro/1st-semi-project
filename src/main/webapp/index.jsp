@@ -55,36 +55,10 @@
                   <div class="board-name1">공지 게시판</div>
                      <div class="board-content1">
                         <table>
-                           <tr>
-                              <th><a href="#">${board.boardTitle}</a></th>
-                           </tr>
-                           <tr>
-                              <th><a href="#">2번 공지 게시글입니다.</a></th>
-                           </tr>
-                           <tr>
-                              <th><a href="#">3번 공지 게시글입니다.</a></th>
-                           </tr>
-                           <tr>
-                              <th><a href="#">4번 공지 게시글입니다.</a></th>
-                           </tr>
-                           <tr>
-                              <th><a href="#">5번 공지 게시글입니다.</a></th>
-                           </tr>
-                           <tr>
-                              <th><a href="#">6번 공지 게시글입니다.</a></th>
-                           </tr>
-                           <tr>
-                              <th><a href="#">7번 공지 게시글입니다.</a></th>
-                           </tr>
-                           <tr>
-                              <th><a href="#">8번 공지 게시글입니다.</a></th>
-                           </tr>
-                           <tr>
-                              <th><a href="#">9번 공지 게시글입니다.</a></th>
-                           </tr>
-                           <tr>
-                              <th><a href="#">10번 공지 게시글입니다.</a></th>
-                           </tr>
+                           <tbody id="bList1">
+                             
+                              
+                           </tbody>
                         </table>
                      </div>
                   </div>
@@ -210,6 +184,8 @@
       </div>
 
       <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+
+      <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 
       <script src="${contextPath}/resources/js/main.js"></script>
     
