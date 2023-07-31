@@ -1,6 +1,6 @@
 *{box-sizing: border-box; margin: 0; padding: 0; font-family: 'Hi Melody', cursive;}
 a{text-decoration: none; color: inherit; display: block;}
-li{list-style: none; cursor: pointer;}
+li{list-style: none;}
 
 html,
 body {
@@ -128,6 +128,7 @@ body {
 }
 select:focus{
   border: 2px solid orange;
+  cu
 }
 #reset{
 width: 40px;
