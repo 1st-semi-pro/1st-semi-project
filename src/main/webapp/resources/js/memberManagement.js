@@ -71,7 +71,9 @@ function searchValidate(){
 
 })();
 
-function goToDeleteMember
+function goToDeleteMember(){
+
+};
 
 
 document.getElementById("selectMemberDelete").addEventListener("click", function(){
