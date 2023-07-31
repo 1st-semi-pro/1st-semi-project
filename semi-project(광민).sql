@@ -302,6 +302,44 @@ CREATE SEQUENCE SEQ_REPLY_NO
 INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, '테스트', SYSDATE, SYSDATE, DEFAULT, 1000, 1);
 COMMIT;
 -------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------ 보드 이미지 테이블 -------------------------------------------------
+--DROP TABLE BOARD_IMG;
+
+CREATE TABLE "BOARD_IMG" (
+   "IMG_NO"   NUMBER      PRIMARY KEY,
+   "IMG_LEVEL"   NUMBER      NULL,
+   "IMG_RENAME"   VARCHAR(200)      NULL,
+   "IMG_ORIGINAL"   VARCHAR(200)      NULL,
+   "BOARD_NO"   NUMBER      NOT NULL
+);
+
+COMMENT ON COLUMN "BOARD_IMG"."IMG_NO" IS '이미지 번호';
+
+COMMENT ON COLUMN "BOARD_IMG"."IMG_LEVEL" IS '이미지 레벨';
+
+COMMENT ON COLUMN "BOARD_IMG"."IMG_RENAME" IS '이미지 경로 및 이름';
+
+COMMENT ON COLUMN "BOARD_IMG"."IMG_ORIGINAL" IS '이미지 원래 이름';
+
+COMMENT ON COLUMN "BOARD_IMG"."BOARD_NO" IS '게시글번호(시퀀스)';
+
+CREATE SEQUENCE SEQ_BOARDIMG_NO
+       INCREMENT BY 1
+       START WITH 1
+       MINVALUE 1; 
+       
+      -- DROP SEQUENCE SEQ_BOARDIMG_NO;
+
+ALTER TABLE "BOARD_IMG"
+ADD CONSTRAINT "FK_BOARD_IMG"
+FOREIGN KEY("BOARD_NO")
+REFERENCES "BOARD";
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+-- 컬럼추가
+ALTER TABLE INFO_BOARD ADD FESTIVAL_AREA VARCHAR(20) DEFAULT '-' NOT NULL;
+ALTER TABLE INFO_BOARD ADD FESTIVAL_CAT VARCHAR(20) DEFAULT '-' NOT NULL;
+
 -- 축제 갯수조회
 
 SELECT * FROM(
@@ -350,4 +388,29 @@ SELECT * FROM(
     ) A
 );
 
+SELECT FESTIVAL_DT FROM INFO_BOARD;
 
+
+SELECT * FROM(
+    SELECT ROWNUM RNUM, A.* FROM(
+        SELECT FESTIVAL_NO, FESTIVAL_TITLE, FESTIVAL_CT, 
+              FESTIVAL_DT,READ_COUNT FROM INFO_BOARD
+        WHERE BOARD_CD = 1
+        AND FESTIVAL_DT LIKE '%01%'
+        ORDER BY FESTIVAL_NO DESC
+    ) A
+)
+	WHERE RNUM BETWEEN ? AND ?;
+
+SELECT * FROM(
+    SELECT ROWNUM RNUM, A.* FROM(
+        SELECT FESTIVAL_NO, FESTIVAL_TITLE, FESTIVAL_CT, 
+              FESTIVAL_DT,READ_COUNT FROM INFO_BOARD
+        WHERE BOARD_CD = 1
+        AND FESTIVAL_DT LIKE '%01%'
+        AND FESTIVAL_NO LIKE '%45%'
+        ORDER BY FESTIVAL_NO DESC
+    ) A
+)
+	WHERE RNUM BETWEEN ? AND ?
+    

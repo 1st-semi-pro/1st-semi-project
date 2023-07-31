@@ -7,6 +7,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
 import edu.kh.festival.board.model.dao.FestivalDAO;
 import edu.kh.festival.board.model.vo.Festival;
 import edu.kh.festival.board.model.vo.FestivalImage;
@@ -16,13 +18,13 @@ public class FestivalService {
 	
 	FestivalDAO dao = new FestivalDAO();
 
-	/** 축제정보 Service
+	/** 축제정보 Service / 축제검색 Service
 	 * @param type
 	 * @param cp
 	 * @return map
 	 * @throws Exception
 	 */
-	public Map<String, Object> festivalInfo(int type, int cp) throws Exception {
+	public Map<String, Object> festivalInfo(int type, int cp,HttpServletRequest req) throws Exception {
 		
 		Connection conn = getConnection();
 		
@@ -30,13 +32,14 @@ public class FestivalService {
 		String festivalName = dao.selectBoardName(conn,type);
 		
 		// 2. 전체 축제 수 조회
-		int	festivalCount = dao.getfestival(conn,type);
+		int	festivalCount = dao.getfestival(conn,type,req);
 		
 		// 3. 페이지네이션
 		Pagination9 pagination = new Pagination9(cp, festivalCount);
 		
 		// 3. 축제 목록조회
-		List<Festival> festivalList = dao.festivalList(conn,pagination,type);
+		List<Festival> festivalList = dao.festivalList(conn,pagination,type,req);
+	
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		
@@ -67,7 +70,7 @@ public class FestivalService {
 		
 		Pagination9 pagination = new Pagination9(cp, festivalCount);
 		
-		List<Festival> festivalList = dao.festivalList(conn, pagination, type,ft);
+		List<Festival> festivalList = dao.festivalDtList(conn, pagination, type,ft);
 
 		Map<String, Object> map = new HashMap<String, Object>();
 
@@ -99,7 +102,7 @@ public class FestivalService {
 
 		Pagination9 pagination = new Pagination9(cp, festivalCount);
 
-		List<Festival> festivalList = dao.festivalpop(conn, pagination, type, pop);
+		List<Festival> festivalList = dao.PopfestivalList(conn, pagination, type, pop);
 
 		Map<String, Object> map = new HashMap<String, Object>();
 

@@ -52,8 +52,10 @@
 
     <!-- 컨텐츠 -->
     <section class="content">
-        <form action="festivlaInfo" method="get" id="festivalSearch" onsubmit="return searchValidate()">
+        <form action="festivalInfo" method="get" id="festivalSearch" onsubmit="return searchValidate()">
             <input type="hidden" name="type" value="${param.type}">
+            <input type="hidden" name="ft" value="${param.ft}">
+            <input type="hidden" name="pop" value="${param.pop}">
 
             <div class="search-box-wrap">
                 <div class="select-box select-date">
@@ -74,42 +76,49 @@
                         <option value="12">12월</option>
                     </select>
                 </div>
+        
                 <div class="select-box select-area">
                     <label for="festivalArea">지역</label>
                     <select name="festivalArea" id="festivalArea" title="지역">
                         <option value="">★-지역-★</option>
-                        <option value="1">서울</option>
-                        <option value="2">경기도</option>
-                        <option value="3">03월</option>
-                        <option value="4">04월</option>
-                        <option value="5">05월</option>
-                        <option value="6">06월</option>
-                        <option value="7">07월</option>
-                        <option value="8">08월</option>
-                        <option value="9">09월</option>
-                        <option value="10">10월</option>
-                        <option value="11">11월</option>
-                        <option value="12">12월</option>
-                        <option value="13">12월</option>
-                        <option value="14">12월</option>
-                        <option value="15">12월</option>
-                        <option value="16">12월</option>
+                        <option value="서울특별시">서울특별시</option>
+                        <option value="경기도">경기도</option>
+                        <option value="강원도">강원도</option>
+                        <option value="인천광역시">인천광역시</option>
+                        <option value="충청북도">충청북도</option>
+                        <option value="충청남도">충청남도</option>
+                        <option value="대전광역시">대전광역시</option>
+                        <option value="경상북도">경상북도</option>
+                        <option value="전라북도">전라북도</option>
+                        <option value="대구광역시">대구광역시</option>
+                        <option value="울산광역시">울산광역시</option>
+                        <option value="부산광역시">부산광역시</option>
+                        <option value="경상남도">경상남도</option>
+                        <option value="광주광역시">광주광역시</option>
+                        <option value="전라남도">전라남도</option>
+                        <option value="제주특별자치도">제주특별자치도</option>
+                        <option value="세종특별자치시">세종특별자치시</option>
                     </select>
                 </div>
                 <div class="select-box select-cat">
                     <label for="festivalCat">카테고리</label>
                     <select name="festivalCat" id="festivalCat" title="카테고리">
                         <option value="">★-카테고리-★</option>
-                        <option value="1">담배</option>
-                        <option value="1">술</option>
-                        <option value="1">꽃</option>
-                        <option value="1">연애</option>
+                        <option value="연인">연인</option>
+                        <option value="술">술</option>
+                        <option value="꽃">꽃</option>
+                        <option value="불꽃">불꽃</option>
+                        <option value="여름">여름</option>
+                        <option value="바다">바다</option>
+                        <option value="도심">도심</option>
                     </select>
                 </div>
                 <button type="reset" id="reset"></button>
                 <button type="submit" id="info-search">검색</button>
             </div>
+
         </form>
+        
     </section>
 
     <section class="content2">

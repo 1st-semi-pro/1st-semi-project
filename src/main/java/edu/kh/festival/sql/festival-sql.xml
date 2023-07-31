@@ -11,16 +11,20 @@
 	SELECT COUNT(*) FROM INFO_BOARD
 			WHERE BOARD_CD = ?
 	</entry>
-	<entry key="festivalList">
+	<entry key="festivalList1">
 	SELECT * FROM(
     SELECT ROWNUM RNUM, A.* FROM(
-        SELECT FESTIVAL_NO, FESTIVAL_TITLE, FESTIVAL_CT, 
+	</entry>
+	<entry key="festivalList2">
+		SELECT FESTIVAL_NO, FESTIVAL_TITLE, FESTIVAL_CT, 
               FESTIVAL_DT,READ_COUNT FROM INFO_BOARD
         WHERE BOARD_CD = ?
-        ORDER BY FESTIVAL_NO DESC
-    ) A
+	</entry>
+	<entry key="festivalList3">
+	 ORDER BY FESTIVAL_NO DESC
+	) A
 )
-	WHERE RNUM BETWEEN ? AND ?
+		WHERE RNUM BETWEEN ? AND ?
 	</entry>
 	
 	<!-- 축제일순 조회  -->

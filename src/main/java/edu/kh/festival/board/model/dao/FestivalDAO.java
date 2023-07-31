@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+import javax.servlet.http.HttpServletRequest;
+
 import edu.kh.festival.board.model.vo.Festival;
 import edu.kh.festival.board.model.vo.FestivalImage;
 import edu.kh.festival.board.model.vo.Pagination9;
@@ -67,19 +69,34 @@ public class FestivalDAO {
 		return boardName;
 	}
 
-	/** 축제게시글 조회 DAO
+	/** 축제게시글 조회 DAO / 축제검색 DAO
 	 * @param conn
 	 * @param type
 	 * @return festivalCount
 	 * @throws Exception
 	 */
-	public int getfestival(Connection conn, int type) throws Exception {
+	public int getfestival(Connection conn, int type,HttpServletRequest req) throws Exception {
 		
 		int festivalCount = 0;
-
+		
+		String festivalDate = req.getParameter("festivalDate");
+		String festivalArea = req.getParameter("festivalArea");
+		String festivalCat = req.getParameter("festivalCat");
+		
 		try {
+			
 			String sql = prop.getProperty("festivalCount");
 			
+
+			if(festivalDate != null) {
+			   sql += "AND FESTIVAL_DT LIKE '%" + festivalDate + "%' ";
+			}
+			if(festivalArea != null) {
+			   sql += "AND FESTIVAL_AREA LIKE '%" + festivalArea + "%' ";
+			}
+			if(festivalCat != null){
+			   sql += "AND FESTIVAL_CAT LIKE '%" + festivalCat + "%' ";
+			}
 		
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, type);
@@ -99,19 +116,41 @@ public class FestivalDAO {
 		return festivalCount;
 	}
 
-	/** 축제 범위 목록 조회 DAO
+	/** 축제 범위 목록 조회 DAO / 특정검색 목록 조회 DAO
 	 * @param conn
 	 * @param pagination
 	 * @param type
 	 * @return
 	 * @throws Exception
 	 */
-	public List<Festival> festivalList(Connection conn, Pagination9 pagination, int type) throws Exception {
+	public List<Festival> festivalList(Connection conn, Pagination9 pagination, int type, HttpServletRequest req) throws Exception {
 		
 		List<Festival> festivalList = new ArrayList<Festival>();
 		
+		String festivalDate = req.getParameter("festivalDate");
+		String festivalArea = req.getParameter("festivalArea");
+		String festivalCat = req.getParameter("festivalCat");
+		
+		
 		try {
-			String sql = prop.getProperty("festivalList");
+			
+		
+			
+			String sql1 = prop.getProperty("festivalList1");
+			String sql2 = prop.getProperty("festivalList2");
+			String sql3 = prop.getProperty("festivalList3");
+			
+			String sql= sql1+sql2+sql3;
+		
+			if(festivalDate != null) {
+				   sql2 += "AND FESTIVAL_DT LIKE '%" + festivalDate + "%' ";
+			}
+			if(festivalArea != null) {
+				   sql2 += "AND FESTIVAL_AREA LIKE '%" + festivalArea + "%' ";
+			}
+			if(festivalCat != null){
+				   sql2 += "AND FESTIVAL_CAT LIKE '%" + festivalCat + "%' ";
+			}
 			
 			// BETWEEN 구문에 들어갈 범위 계산
 			int start = (pagination.getCurrentPage() - 1) * pagination.getLimit() + 1;
@@ -127,6 +166,7 @@ public class FestivalDAO {
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
+				
 				Festival festival = new Festival();
 				
 				festival.setFestivalNo(rs.getInt("FESTIVAL_NO"));
@@ -190,8 +230,10 @@ public class FestivalDAO {
 	 * @return
 	 * @throws Exception
 	 */
-	public List<Festival> festivalList(Connection conn, Pagination9 pagination, int type, int ft) throws Exception {
+	public List<Festival> festivalDtList(Connection conn, Pagination9 pagination, int type, int ft) throws Exception {
+		
 			List<Festival> festivalList = new ArrayList<Festival>();
+			
 			
 			try {
 				
@@ -274,7 +316,7 @@ public class FestivalDAO {
 	 * @return festivalList
 	 * @throws Exception
 	 */
-	public List<Festival> festivalpop(Connection conn, Pagination9 pagination, int type, int pop) throws Exception {
+	public List<Festival> PopfestivalList(Connection conn, Pagination9 pagination, int type, int pop) throws Exception {
 		
 		
 		List<Festival> festivalList = new ArrayList<Festival>();
