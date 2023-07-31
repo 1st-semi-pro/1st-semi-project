@@ -10,6 +10,8 @@ import java.util.Map;
 
 import edu.kh.festival.board.model.dao.BoardDAO;
 import edu.kh.festival.board.model.vo.Board;
+import edu.kh.festival.board.model.vo.BoardDetail;
+import edu.kh.festival.board.model.vo.BoardImage;
 import edu.kh.festival.board.model.vo.Pagination;
 
 public class BoardService {
@@ -50,4 +52,47 @@ public class BoardService {
 		return map;
 	}
 
+	/** 게시글 상세페이지 service
+	 * @param boardNo
+	 * @return detail
+	 * @throws Exception
+	 */
+	public BoardDetail selectBoardDetail(int boardNo) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		BoardDetail detail = dao.selectBoardDetail(conn, boardNo);
+		
+		// 이미지 조회
+		if(detail != null) {
+			
+			List<BoardImage> imageList = dao.selectImageList(conn, boardNo);
+			
+			detail.setImageList(imageList);
+		} 
+		
+		close(conn);
+		
+		return detail;
+		
+		
+	}
+
+
+	/** 게시글 삽입 DAO
+	 * @param detail
+	 * @param imageList
+	 * @param boardCode
+	 * @return
+	 */
+
+	public int insertBoard(BoardDetail detail, List<BoardImage> imageList, int boardCode) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+	
+	
+	
+	
 }
