@@ -22,4 +22,40 @@
 )
 	WHERE RNUM BETWEEN ? AND ?
 	</entry>
+	
+	<!-- 축제일순 조회  -->
+	<entry key="festivalDt">
+	SELECT FESTIVAL_DT FROM INFO_BOARD
+	ORDER BY FESTIVAL_DT
+	</entry>
+	
+	<entry key="DtfestivalList">
+	SELECT * FROM(
+    SELECT ROWNUM RNUM, A.* FROM(
+        SELECT FESTIVAL_NO, FESTIVAL_TITLE, FESTIVAL_CT, 
+              FESTIVAL_DT,READ_COUNT FROM INFO_BOARD
+        ORDER BY FESTIVAL_DT
+    ) A
+)
+WHERE RNUM BETWEEN ? AND ?
+    </entry>
+    
+    <!--인기순 조회 -->
+    <entry key="festivalPop">
+	SELECT READ_COUNT FROM INFO_BOARD
+	WHERE READ_COUNT !='0'
+    </entry>
+    
+    <entry key="PopfestivalList">
+    SELECT * FROM(
+    SELECT ROWNUM RNUM, A.* FROM(
+        SELECT FESTIVAL_NO, FESTIVAL_TITLE, FESTIVAL_CT, 
+              FESTIVAL_DT,READ_COUNT FROM INFO_BOARD
+        WHERE READ_COUNT !='0'
+        ORDER BY READ_COUNT DESC
+    ) A
+)
+WHERE RNUM BETWEEN ? AND ?
+    </entry>
+    
 </properties>

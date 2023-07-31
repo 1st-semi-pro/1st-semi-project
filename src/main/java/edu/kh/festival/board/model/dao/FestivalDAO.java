@@ -149,4 +149,175 @@ public class FestivalDAO {
 		return festivalList;
 	}
 
+	/** 축제일순 조회 DAO
+	 * @param conn
+	 * @param type
+	 * @param ft
+	 * @return festivalCount
+	 * @throws Exception
+	 */
+	public int festivalDt(Connection conn, int type, int ft) throws Exception {
+		
+		int festivalCount = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("festivalDt");
+			
+			stmt = conn.prepareStatement(sql);
+			
+			rs = stmt.executeQuery(sql);
+
+			while (rs.next()) {
+
+				festivalCount++;
+			}
+
+		} finally {
+			close(rs);
+			close(stmt);
+		}
+		
+		System.out.println("festivalCount == " + festivalCount);
+		return festivalCount;
+	}
+
+	/** 축제일순 List 조회 DAO
+	 * @param conn
+	 * @param pagination
+	 * @param type
+	 * @param ft
+	 * @return
+	 * @throws Exception
+	 */
+	public List<Festival> festivalList(Connection conn, Pagination9 pagination, int type, int ft) throws Exception {
+			List<Festival> festivalList = new ArrayList<Festival>();
+			
+			try {
+				
+				String sql = prop.getProperty("DtfestivalList");
+				
+				int start = (pagination.getCurrentPage()-1)* pagination.getLimit()+1;
+		         
+		        int end = start + pagination.getLimit()-1;
+		        
+		        pstmt = conn.prepareStatement(sql);
+		        
+		        pstmt.setInt(1, start);
+		        pstmt.setInt(2, end);
+		        
+		        rs = pstmt.executeQuery();
+		        
+		        while(rs.next()) {
+		        	Festival festival = new Festival();
+		        	
+		        	festival.setFestivalNo(rs.getInt("FESTIVAL_NO"));
+					festival.setFestivalTitle(rs.getString("FESTIVAL_TITLE"));
+					festival.setFestivalContent(rs.getString("FESTIVAL_CT"));
+					festival.setFestivalDate(rs.getString("FESTIVAL_DT"));
+					festival.setReadCount(rs.getInt("READ_COUNT"));
+					
+					
+					festivalList.add(festival);
+					
+		        }
+				
+				
+			} finally {
+				
+				close(rs);
+				close(pstmt);
+				
+				
+			}
+			
+		return festivalList;
+	}
+
+	/** 인기순 조회 DAO
+	 * @param conn
+	 * @param type
+	 * @param pop
+	 * @return festivalCount
+	 * @throws Exception
+	 */
+	public int festivalPopCount(Connection conn, int type, int pop) throws Exception{
+		
+		int festivalCount = 0;
+
+		try {
+
+			String sql = prop.getProperty("festivalPop");
+
+			stmt = conn.prepareStatement(sql);
+
+			rs = stmt.executeQuery(sql);
+
+			while (rs.next()) {
+
+				festivalCount++;
+			}
+
+		} finally {
+			close(rs);
+			close(stmt);
+		}
+		
+		return festivalCount;
+	}
+
+	/** 인기순 목록조회 DAO
+	 * @param conn
+	 * @param pagination
+	 * @param type
+	 * @param pop
+	 * @return festivalList
+	 * @throws Exception
+	 */
+	public List<Festival> festivalpop(Connection conn, Pagination9 pagination, int type, int pop) throws Exception {
+		
+		
+		List<Festival> festivalList = new ArrayList<Festival>();
+		
+		try {
+			
+			String sql = prop.getProperty("PopfestivalList");
+			
+			int start = (pagination.getCurrentPage()-1)* pagination.getLimit()+1;
+	         
+	        int end = start + pagination.getLimit()-1;
+	        
+	        pstmt = conn.prepareStatement(sql);
+	        
+	        pstmt.setInt(1, start);
+	        pstmt.setInt(2, end);
+	        
+	        rs = pstmt.executeQuery();
+	        
+	        while(rs.next()) {
+	        	Festival festival = new Festival();
+	        	
+	        	festival.setFestivalNo(rs.getInt("FESTIVAL_NO"));
+				festival.setFestivalTitle(rs.getString("FESTIVAL_TITLE"));
+				festival.setFestivalContent(rs.getString("FESTIVAL_CT"));
+				festival.setFestivalDate(rs.getString("FESTIVAL_DT"));
+				festival.setReadCount(rs.getInt("READ_COUNT"));
+				
+				
+				festivalList.add(festival);
+				
+	        }
+			
+		} finally {
+			
+			close(rs);
+			close(pstmt);
+			
+			
+		}
+		
+	return festivalList;
+	}
+	
+
 }
