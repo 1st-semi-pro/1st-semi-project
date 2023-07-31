@@ -33,7 +33,7 @@
             } 
 
             if(params.get("type") == null){
-                cp = "type=1";
+                type = "type=1";
             }
 
             if(params.get("cp") == null){
