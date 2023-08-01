@@ -79,35 +79,36 @@ public class FestivalDAO {
 		
 		int festivalCount = 0;
 		
-		String festivalDate = req.getParameter("festivalDate");
-		String festivalArea = req.getParameter("festivalArea");
-		String festivalCat = req.getParameter("festivalCat");
 		
 		try {
 			
+			String festivalDate = req.getParameter("festivalDate");
+			String festivalArea = req.getParameter("festivalArea");
+			String festivalCat = req.getParameter("festivalCat");
+			
 			String sql = prop.getProperty("festivalCount");
-	
-			if(festivalDate != null) {
+			
+			
+			if(festivalDate != null && festivalDate !="") {
 			   sql += "AND FESTIVAL_DT LIKE '%_____" + festivalDate + "%' ";
 			}
-			if(festivalArea != null) {
+			if(festivalArea != null && festivalArea !="") {
 			   sql += "AND FESTIVAL_AREA LIKE '%" + festivalArea + "%' ";
 			}
-			if(festivalCat != null){
+			if(festivalCat != null && festivalCat !=""){
 			   sql += "AND FESTIVAL_CAT LIKE '%" + festivalCat + "%' ";
 			}
-			
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setInt(1, type);
-
+			
 			rs = pstmt.executeQuery();
 
 			if(rs.next()) {
 
 				festivalCount = rs.getInt(1);
 			}
-			
+			System.out.println("festivalCount ==" + festivalCount);
 		} finally {
 			close(rs);
 			close(stmt);
@@ -126,32 +127,30 @@ public class FestivalDAO {
 	public List<Festival> festivalList(Connection conn, Pagination9 pagination, int type, HttpServletRequest req) throws Exception {
 		
 		List<Festival> festivalList = new ArrayList<Festival>();
-		
+
 		String festivalDate = req.getParameter("festivalDate");
 		String festivalArea = req.getParameter("festivalArea");
 		String festivalCat = req.getParameter("festivalCat");
 		
-		
 		try {
-		
+			
 			String sql1 = prop.getProperty("festivalList1");
 			String sql2 = prop.getProperty("festivalList2");
 			String sql3 = prop.getProperty("festivalList3");
-			
-			
 		
-			if(festivalDate != null) {
+			if(festivalDate != null && festivalDate !="") {
 				   sql2 += "AND FESTIVAL_DT LIKE '%_____" + festivalDate + "%' ";
 			}
-			if(festivalArea != null) {
+			if(festivalArea != null && festivalArea !="") {
 				   sql2 += "AND FESTIVAL_AREA LIKE '%" + festivalArea + "%' ";
 			}
-			if(festivalCat != null){
+			if(festivalCat != null && festivalCat !=""){
 				   sql2 += "AND FESTIVAL_CAT LIKE '%" + festivalCat + "%' ";
 			}
 			
 			String sql= sql1+sql2+sql3;
 			
+			System.out.println("sql === " + sql);
 			// BETWEEN 구문에 들어갈 범위 계산
 			int start = (pagination.getCurrentPage() - 1) * pagination.getLimit() + 1;
 
@@ -219,7 +218,6 @@ public class FestivalDAO {
 			close(stmt);
 		}
 		
-		System.out.println("festivalCount == " + festivalCount);
 		return festivalCount;
 	}
 
