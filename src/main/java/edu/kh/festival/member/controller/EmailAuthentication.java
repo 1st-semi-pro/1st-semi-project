@@ -22,19 +22,26 @@ import java.util.Random;
 public class EmailAuthentication extends HttpServlet{
 	
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String memberName = request.getParameter("memberName");
-        String memberId = request.getParameter("memberId");
-        String memberEmail = request.getParameter("memberEmail");
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String memberName = req.getParameter("memberName");
+        String memberId = req.getParameter("memberId");
+        String memberEmail = req.getParameter("memberEmail");
         
-        //먼저 아이디로 회원정보를 받아오고 가져온 데이터에서 email값을 비교하여 존재하지 않으면 인증메일 보내지 못함
-        Member m = new MemberService().searchMember(memberName, memberId);
-        if(m==null || !m.getMemberEmail().equals(memberEmail))
-        {
-            request.setAttribute("message", "아이디나 이메일 정보가 맞지 않습니다");
-            //request.setAttribute("loc", "/member/findPw");
-            //request.getRequestDispatcher("/views/common/msg.jsp").forward(request, response);
-            return;
+        try {
+        	//먼저 아이디로 회원정보를 받아오고 가져온 데이터에서 email값을 비교하여 존재하지 않으면 인증메일 보내지 못함
+            Member m = new MemberService().searchMember(memberName, memberId);
+            System.out.println(m.getMemberId());
+            System.out.println(m.getMemberName());
+            System.out.println(m.getMemberEmail());
+            if(m==null || !m.getMemberEmail().equals(memberEmail))
+            {
+                req.setAttribute("message", "아이디나 이메일 정보가 맞지 않습니다");
+                //req.setAttribute("loc", "/member/findPw");
+                //req.getreqDispatcher("/views/common/msg.jsp").forward(req, resp);
+                return;
+            }
+        }catch(Exception e) {
+        	e.printStackTrace();
         }
         
         //mail server 설정
@@ -108,12 +115,12 @@ public class EmailAuthentication extends HttpServlet{
         }catch (Exception e) {
             e.printStackTrace();// TODO: handle exception
         }
-        HttpSession saveKey = request.getSession();
+        HttpSession saveKey = req.getSession();
         saveKey.setAttribute("AuthenticationKey", AuthenticationKey);
         //패스워드 바꿀때 뭘 바꿀지 조건에 들어가는 id
-        request.setAttribute("id", memberId);
+        req.setAttribute("id", memberId);
         String path = "/WEB-INF/views/member/changePw.jsp";
-		request.getRequestDispatcher(path).forward(request, response);
+		req.getRequestDispatcher(path).forward(req, resp);
     }
 
 	

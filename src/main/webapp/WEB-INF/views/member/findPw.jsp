@@ -28,13 +28,12 @@
             <h5>※ 본인 확인을 통해 비밀번호를 재설정 하실 수 있습니다.</h5>
         </div>
     
-        <form id="findPw-form" action="member/findPw/changePw">
+        <form id="findPw-form" action="findPw/changePw" method="get">
             <div class="divide2">
                 <div class="divide4">비밀번호 찾기</div>
                 <div class="divide4"><input type="text" name="memberName" placeholder="이름입력"></div>
                 <div class="divide4"><input type="text" name="memberId" placeholder="아이디 입력" size="35"></div>
-                <div class="divide4"><input type="text" name="memberEmail" placeholder="이메일 입력" size="35"><button id="email-authentication-btn">인증번호 전송</button></div>
-                <!-- <div class="divide4"><input type="text" placeholder="인증번호 입력" size="35"><button id="authentication-check-btn">인증 확인</button></div> -->
+                <div class="divide4"><input type="text" name="memberEmail" placeholder="이메일 입력" size="35"><button type="submit" id="email-authentication-btn">인증번호 전송</button></div>
                 <div class="divide3">
                     <button type="button" id="goToBack-btn">뒤로가기</button>
                     <button type="button" id="findPw-btn">아이디 찾기</button>
