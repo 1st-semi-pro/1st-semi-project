@@ -162,6 +162,7 @@
                                 <div class="item-title"><h1>${festival.festivalTitle}</h1><span>${festival.festivalDate}</span></div>
                                 <div class="item-content"><span>${festival.festivalContent}</span></div>
                                 </a>
+                                <div class="pop"></div>
                             </div>
                         </div>
                 </c:forEach>

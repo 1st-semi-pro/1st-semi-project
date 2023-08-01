@@ -19,6 +19,7 @@ import edu.kh.festival.member.model.vo.Member;
 public class MyPageServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
 		String path = "/WEB-INF/views/member/myPage.jsp";
 		req.getRequestDispatcher(path).forward(req, resp);
 	}
