@@ -28,17 +28,17 @@ var swiper = new Swiper(".mySwiper", {
         for(let item of boardList1){
           const tr = document.createElement("tr");
 
-          const th = document.createElement("th");
+          const td = document.createElement("td");
           
           const a1 = document.createElement("a");
           a1.innerText = item.boardTitle;
           a1.setAttribute("href", "board/detail?no=" + item.boardNo + "&type=2");
 
-          tr.append(th);
+          tr.append(td);
 
           bList1.append(tr);
 
-          th.append(a1);
+          td.append(a1);
         }
 
 
@@ -56,7 +56,7 @@ var swiper = new Swiper(".mySwiper", {
   (function(){
     selectBoard();
 
-    window.setInterval(selectBoard, 60000);
+    window.setInterval(selectBoard, 600000);
   })();
 
 
@@ -77,17 +77,17 @@ var swiper = new Swiper(".mySwiper", {
         for(let item of boardList2){
           const tr = document.createElement("tr");
 
-          const th = document.createElement("th");
+          const td = document.createElement("td");
           
           const a1 = document.createElement("a");
           a1.innerText = item.boardTitle;
           a1.setAttribute("href", "board/detail?no=" + item.boardNo + "&type=3");
 
-          tr.append(th);
+          tr.append(td);
 
           bList2.append(tr);
 
-          th.append(a1);
+          td.append(a1);
         }
 
 
@@ -105,7 +105,7 @@ var swiper = new Swiper(".mySwiper", {
   (function(){
     selectBoard2();
 
-    window.setInterval(selectBoard2, 60000);
+    window.setInterval(selectBoard2, 600000);
   })();
 
 
@@ -124,17 +124,17 @@ var swiper = new Swiper(".mySwiper", {
         for(let item of boardList3){
           const tr = document.createElement("tr");
 
-          const th = document.createElement("th");
+          const td = document.createElement("td");
           
           const a1 = document.createElement("a");
           a1.innerText = item.boardTitle;
           a1.setAttribute("href", "board/detail?no=" + item.boardNo + "&type=3");
 
-          tr.append(th);
+          tr.append(td);
 
           bList3.append(tr);
 
-          th.append(a1);
+          td.append(a1);
         }
 
 
@@ -152,5 +152,5 @@ var swiper = new Swiper(".mySwiper", {
   (function(){
     selectBoard3();
 
-    window.setInterval(selectBoard3, 60000);
+    window.setInterval(selectBoard3, 600000);
   })();

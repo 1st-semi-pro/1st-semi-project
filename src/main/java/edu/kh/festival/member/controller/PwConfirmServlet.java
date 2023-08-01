@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import edu.kh.festival.board.model.service.ManageService;
 
-@WebServlet("/member/pwConfirm/*")
+@WebServlet("/member/pwConfirm/view")
 public class PwConfirmServlet extends HttpServlet {
 	
 	@Override
@@ -25,10 +25,9 @@ public class PwConfirmServlet extends HttpServlet {
 		
 		ManageService service = new ManageService();
 		
-		if(command.equals("view")) {
-			String path = "/WEB-INF/views/member/pwConfirm.jsp";
-			req.getRequestDispatcher(path).forward(req, resp);
-		}
+		String path = "/WEB-INF/views/member/pwConfirm.jsp";
+		req.getRequestDispatcher(path).forward(req, resp);
+		
 		
 		/*
 		 * if(command.equals("check")) { String inputPw = req.getParameter("inputPw");

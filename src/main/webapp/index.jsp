@@ -73,10 +73,7 @@
                   <div class="board-name1">공지 게시판</div>
                      <div class="board-content1">
                         <table>
-                           <tbody id="bList1">
-                             
-                              
-                           </tbody>
+                           <tbody id="bList1"></tbody>
                         </table>
                      </div>
                   </div>
