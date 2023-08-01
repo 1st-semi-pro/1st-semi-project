@@ -56,7 +56,7 @@ var swiper = new Swiper(".mySwiper", {
   (function(){
     selectBoard();
 
-    window.setInterval(selectBoard, 600000);
+   
   })();
 
 
@@ -105,7 +105,6 @@ var swiper = new Swiper(".mySwiper", {
   (function(){
     selectBoard2();
 
-    window.setInterval(selectBoard2, 600000);
   })();
 
 
@@ -152,5 +151,5 @@ var swiper = new Swiper(".mySwiper", {
   (function(){
     selectBoard3();
 
-    window.setInterval(selectBoard3, 600000);
+   
   })();

@@ -15,7 +15,7 @@
 
     <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
-    <form action="${contextPath}/member/confirm/check" method="post" onsubmit="return confirmValidate()">
+    <form action="${contextPath}/member/pwConfirm" method="post" onsubmit="return confirmValidate()">
         <div class="container">
             <div class="divide1">
                 <h1>회원 정보 확인</h1>
@@ -24,7 +24,7 @@
                 <span>${loginMember.memberName}</span> 님의 정보를 안전하게 보호하기 위해 비밀번호를 다시 한번 확인합니다.
             </div>
             <div class="divide3">
-                <input type="password" size="40" placeholder="비밀번호를 입력하시오." id="inputPw">
+                <input type="password" size="40" placeholder="비밀번호를 입력하시오." name="inputPw" id="inputPw">
             </div>
             <div class="divide4">
                 <button id="pwConfirm">확인</button>
@@ -53,6 +53,8 @@
 
         </section>
     </footer>
+
+    
 
     
     
