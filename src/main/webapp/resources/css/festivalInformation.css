@@ -203,13 +203,20 @@ background-color: orangered;
 .item{
   position: relative;
 }
+
 .pop{
+  display: flex;
+  align-items: center;
   width: 30%;
   position: absolute;
   left: 10px;
   top: 10px;
-  background-color: #747474;
-  
+  font-size: 28px;
+}
+.pop > span{
+  margin-left: 10px;
+  color: white;
+  font-weight: bold;
 }
 .item-image > a,img{
   width: 100%;
