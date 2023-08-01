@@ -148,7 +148,7 @@
         <c:choose>
             <c:when test="${empty festivalList}">
                 <div class="empty">
-                    <h1>축제정보가 없습니다.</h1>
+                    <h1>축제정보가 없습니다!!</h1>
                 </div>
             </c:when>
             <c:otherwise>
