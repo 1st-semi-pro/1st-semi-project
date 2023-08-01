@@ -1,6 +1,8 @@
 // 회원 프로필 이미지 변경(미리보기)
 const inputImage = document.getElementById("input-image");
 
+const inputMessage = document.getElementById("profile-message");
+
 if(inputImage != null){ // inputImage 요소가 화면에 존재할 때
     inputImage.addEventListener("change", function(){
 
@@ -8,8 +10,8 @@ if(inputImage != null){ // inputImage 요소가 화면에 존재할 때
 
         // files :  input type="file"만 사용 가능한 속성으로
         //          선택된 파일 목록(배열)을 반환
-        console.log(this.files);
-        console.log(this.files[0]); // 파일 목록에서 첫번째 파일 객체를 선택
+        // console.log(this.files);
+        // console.log(this.files[0]); // 파일 목록에서 첫번째 파일 객체를 선택
 
         if(this.files[0] != undefined){
             const reader = new FileReader();

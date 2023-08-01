@@ -1,0 +1,131 @@
+*{box-sizing: border-box; margin: 0; padding: 0; font-family: 'Hi Melody', cursive;}
+
+
+
+.container1{
+    width: 600px;
+    height: 600px;
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    border: 10px solid lightgray;
+    border-radius: 10px;
+}
+
+.divide1{
+    display: flex;
+    flex-basis: 15%;
+    margin-left: 50px;
+    align-items: center;
+    border: 0;
+}
+
+.sub{
+    display: flex;
+    margin: 0px 50px;
+    height: 7%;
+    align-items: center;
+    border: 0;
+}
+
+#findPw-form{
+    height: 300px;
+}
+.divide2{
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    margin: 0px 50px;
+    border: 0;
+    height: 400px;
+}
+
+.divide2 > div:first-child{
+    display: flex;
+    background-color:lightcoral;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.divide3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+}
+
+.divide4{
+    flex-basis: 40%;
+    display: flex;
+    align-items: center;
+    border: 0;
+}
+
+.divide4 input{
+    border: 0;
+    font-size: 15px;
+    height: 100%;
+    width: 100%;
+    padding-left: 20px;
+    border-bottom: 2px solid gray;
+}
+
+button{
+    cursor: pointer;
+    background-color: lightcoral;
+    border: 0;
+}
+
+
+#email-authentication-btn{
+    color: white;
+    width: 100px;
+    height: 100%;
+    border-radius: 5%;
+}
+#authentication-check-btn{
+    color: white;
+    width: 100px;
+    height: 100%;
+    border-radius: 5%;
+}
+#goToBack-btn, #findPw-btn{
+    color: white;
+    height: 50px;
+    width: 20%;
+    border-radius: 5%;
+    border: 0;
+    margin: 30px 10px;
+}
+
+#email-authentication-btn:hover{
+    color: black;
+}
+#authentication-check-btn:hover{
+    color: black;
+}
+#goToBack-btn:hover{
+    color: black;
+}
+#findPw-btn:hover{
+    color: black;
+}
+
+footer{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer a{
+    display:flex;
+}
+
+footer *{
+    color: rgb(117, 115, 115);
+}
+
+

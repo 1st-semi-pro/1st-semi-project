@@ -159,8 +159,13 @@ public class MemberService {
 	 * @throws Exception
 	 */
 	public Member searchMember(String memberName, String memberId) throws Exception{
-		// TODO Auto-generated method stub
-		return null;
+		Connection conn = getConnection();
+		
+		Member member = dao.searchMember(conn, memberName, memberId);
+		
+		close(conn);
+		
+		return member;
 	}
 
 

@@ -301,4 +301,36 @@ public class MemberDAO {
 		return result;
 	}
 
+	/**
+	 * 이름,아이디 일치하는 회원 조회 DAO
+	 * @param conn
+	 * @param memberName
+	 * @param memberId
+	 * @return member
+	 * @throws Exception
+	 */
+	public Member searchMember(Connection conn, String memberName, String memberId) throws Exception{
+		Member member = null;
+		
+		try {
+			String sql = prop.getProperty("searchMember");
+			pstmt.setString(1, memberName);
+			pstmt.setString(2, memberId);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				member.setMemberNo(rs.getInt(1));
+				member.setMemberId(rs.getString(2));
+				member.setMemberEmail(rs.getString(4));
+			}
+			
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return member;
+	}
+
 }
