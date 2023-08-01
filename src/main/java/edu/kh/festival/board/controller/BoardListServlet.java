@@ -36,16 +36,23 @@ public class BoardListServlet extends HttpServlet {
 			if(req.getParameter("cp")!=null) { // 쿼리스트링에 "cp"가 존재한다면
 				cp = Integer.parseInt(req.getParameter("cp"));
 			}
-			
 			BoardService service = new BoardService();
 			
 			// 게시판 이름, 페이지네이션 객체, 게시글 리스트 한번에 반화하는 Service 호출
-			Map<String,Object> map = service.selectBoardList(type, cp);
+			Map<String,Object> map = null;
+			
+			if(req.getParameter("key")==null) { // 일반 목록 조회
+				map = service.selectBoardList(type, cp);
+				
+			}else { // 검색 목록 조회
+				String key = req.getParameter("key");
+				String query = req.getParameter("query");
+				
+				map = service.searchBoardList(type,cp,key,query);
+				
+			}
 			
 			// request 범위로 map을 세팅
-			
-			System.out.println(map.get("boardName"));
-			
 			req.setAttribute("map", map);
 			
 			

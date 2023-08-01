@@ -1,6 +1,5 @@
 package edu.kh.festival.member.model.dao;
 
-import static edu.kh.festival.common.JDBCTemplate.close;
 import static edu.kh.festival.common.JDBCTemplate.*;
 
 import java.io.FileInputStream;
@@ -97,7 +96,7 @@ public class MemberDAO {
 	 * @return result
 	 * @throws Exception
 	 */
-	public int updateMember(Connection conn, Member mem, String newPw) throws Exception {
+	public int updateMember(Connection conn, Member mem/* , String newPw */) throws Exception {
 		int result = 0;
 
 		try {
@@ -113,10 +112,10 @@ public class MemberDAO {
 			pstmt.setString(1, mem.getMemberRegion());
 			pstmt.setString(2, mem.getMemberEmail());
 			pstmt.setString(3, mem.getMemberPhone());
-			pstmt.setString(4, newPw);
-			pstmt.setString(5, mem.getMemberNickname());
-			pstmt.setInt(6, mem.getMemberNo());
-			pstmt.setString(7, mem.getMemberPw());
+			/* pstmt.setString(4, newPw); */
+			pstmt.setString(4, mem.getMemberNickname());
+			pstmt.setInt(5, mem.getMemberNo());
+			/* pstmt.setString(7, mem.getMemberPw()); */
 
 			result = pstmt.executeUpdate();
 
@@ -276,7 +275,7 @@ public class MemberDAO {
 		return result;
 
 	}
-
+	
 	/**
 	 * 프로필 이미지 변경 DAO
 	 * @param conn
@@ -334,6 +333,139 @@ public class MemberDAO {
 		}
 		
 		return member;
+	}
+	
+	/** 비밀번호변경 DAO
+	 * @param conn
+	 * @param currentPw
+	 * @param newPw
+	 * @param memberNo
+	 * @return
+	 * @throws Exception
+	 */
+	public int changePw(Connection conn, String currentPw, String newPw, int memberNo) throws Exception{
+		
+		int result = 0;
+		
+		
+		try {
+			String sql = prop.getProperty("changePw");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, newPw );
+			pstmt.setInt(2, memberNo);
+			pstmt.setString(3, currentPw);
+			
+			result = pstmt.executeUpdate();
+			
+		} finally {
+			
+			// try - finally 왜 사용하는가?
+			// 	-> try 구문에서 JDBC 관련 예외가발생하더라도 사용중이던 JDBC 객체 자원을 무조건 반환 
+			
+			close(pstmt);
+			
+		}
+		
+		return result;
+	}
+
+
+	/** 회원탈퇴 DAO
+	 * @param conn
+	 * @param memberNo
+	 * @param memberPw
+	 * @return
+	 * @throws Exception
+	 */
+	public int secession(Connection conn, int memberNo, String memberPw) throws Exception {
+		int result =0;
+		
+		try {
+			String sql = prop.getProperty("secession");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, memberNo);
+			pstmt.setString(2, memberPw);
+			
+			result = pstmt.executeUpdate();			
+			
+		} finally {
+			close(pstmt);
+		}
+		
+		
+		return result;
+	}
+	
+	/** 이메일 중복 검사 DAO
+	 * @param conn
+	 * @param memberEmail
+	 * @return result
+	 * @throws Exception
+	 */
+	public int emailDupCheck(Connection conn, String memberEmail) throws Exception{
+		
+		int result = 0;
+		
+		try {
+			
+			
+			String sql = prop.getProperty("emailDupCheck");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, memberEmail);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				result = rs.getInt(1); // 1번 컬럼 결과를 result에 대입
+			}
+			
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+
+	/** 닉네임 중복검사 DAO
+	 * @param conn
+	 * @param memberNickname
+	 * @return result
+	 * @throws Exception
+	 */
+	public int NicknameDupCheck(Connection conn, String memberNickname) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("NicknameDupCheck");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, memberNickname);
+			
+			rs= pstmt.executeQuery();
+			
+			if(rs.next()) {
+				result=rs.getInt(1);
+			}
+			
+		} finally {
+			
+			close(rs);
+			close(pstmt);
+			
+		}
+		
+		return result;
 	}
 
 }

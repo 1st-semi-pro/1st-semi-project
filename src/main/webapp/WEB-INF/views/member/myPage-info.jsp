@@ -8,90 +8,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>회원정보수정</title>
-
-    <link rel="stylesheet" href="${contextPath}/resources/css/changeInformation.css">
+    <title>마이페이지</title>
+    <link rel="stylesheet" href="${contextPath}/resources/css/header.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/myPage-info.css">
+    <script src="https://kit.fontawesome.com/51fc103959.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <jsp:include page="/WEB-INF/views/common/header.jsp"/>
-    <div class="container">
-      <h1>회원정보 수정</h1>
-      <form id="info" method="post" onsubmit="return infoValidate()" name="myPage-form">
-        <table>
-          <tr>
-            <td class="center-align">아이디</td>
-            <td id="id"><div>${loginMember.memberId}</div></td>
-          </tr>
-          <tr>
-            <td class="center-align">이름</td>
-            <td id="name"><div>${loginMember.memberName}</div></td>
-          </tr>
-          <tr>
-            <td class="center-align">성별</td>
-            <td id="gender"><div>${loginMember.memberGender}</div></td>
-          </tr>
-          <tr>
-            <td class="center-align">국가</td>
-            <td id="country"><div>${loginMember.memberNationality}</div></td>
-          </tr>
-          <tr>
-            <td class="center-align">사는 지역 변경</td>
-            <td>
-              <select name="memberRegion" id="memberRegion">
-                <option value="서울">서울</option>
-                <option value="경기">경기</option>
-                <option value="인천">인천</option>
-                <option value="강원도">강원도</option>
-                <option value="충청도">충청도</option>
-                <option value="전라도">전라도</option>
-                <option value="경상도">경상도</option>
-              </select>
-            </td>
-          </tr>
-          <tr>
-            <td class="center-align">이메일 변경</td>
-            <td>
-              <input type="email" id="memberEmail" name="memberEmail" value="${loginMember.memberEmail }" >
-              <button type="button" onclick="sendEmailVerification()">이메일 인증</button>
-            </td>
-          </tr>
-          <tr>
-            <td class="center-align">휴대폰 번호 변경</td>
-            <td>
-              <input type="tel" name="memberPhone" id="memberPhone" value="${loginMember.memberPhone }">
-              <button type="button">휴대폰 번호 변경</button>
-            </td>
-          </tr>
-          <tr>
-            <td class="center-align">비밀번호 변경</td>
-            <td>
-              <input type="password" name="currentPw" id="currentPw" value="${loginMember.memberPw }" > <br>
-              <input type="password" name="newPw" id="newPw1" placeholder="새 비밀번호" > <br>
-              <input type="password" name="newPwConfirm" id="newPw2" placeholder="새 비밀번호 확인" ><br>
-              <button type="button">비밀번호 변경</button>
-            </td>
-          </tr>
-          <tr>
-            <td class="center-align">닉네임 변경</td>
-            <td>
-              <input type="text" name="memberNickname" id="memberNickname" value="${loginMember.memberNickname }" >
-              <button type="button">중복확인</button>
-              <div id="memberNickname">과연ㅋ</div>
-            </td> 
-          </tr>
-        </table>
-        <div class="button-container">
-          <tr><td>
-          <button id="outBtn">나가기</button>
-          <button type="submit" id="info-update-btn">저장하기</button></td>
-        </tr>
-        </div>
-      </form>
-    </div>
-    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
-      
-      <script src="${contextPath}/resources/js/Change-information.js"></script>
-  </body>
+
+    <main>
+        
+        <jsp:include page="/WEB-INF/views/common/header.jsp"/>
+        
+        <!-- 마이페이지 내 정보 -->
+        <section class="myPage-content">
+
+            <!-- 왼쪽 사이드 메뉴 -->
+            <section class="left-side">
+                사이드 메뉴
+
+                <ul class="list-group">
+
+                    <!-- /communty/member/myPage/info -->
+                    <li><a href="${contextPath}/member/myPage/info">내 정보 변경</a></li>
+                    
+                    <!-- /communty/member/myPage/changePw-->
+                    <li><a href="${contextPath}/member/myPage/changePw">비밀번호 변경</a></li>
+
+                    <!-- /communty/member/myPage/secession-->
+                    <li><a href="${contextPath}/member/myPage/secession">회원 탈퇴</a></li>
+                </ul>
+            </section>
+            
+            <!-- 오른쪽 마이페이지 주요 내용 부분 -->
+            <section class="myPage-main">
+
+                <h1 class="myPage-title">내정보</h1>
+                <span class="myPage-explanation">원하는 회원 정보를 수정할 수 있습니다.</span>
+                <form action="info" method="post" onsubmit="return infoValidate()" name="myPage-form">
+                    
+                    <div class="myPage-row" id="disabled">
+                        <label>아이디</label>
+                        <input type="text" name="memberId" value="${loginMember.memberId }" maxlength="30" disabled>
+                    </div>
+                    <div class="myPage-row" id="disabled">
+                        <label>이름</label>
+                        <input type="text" name="memberName" value="${loginMember.memberName }" maxlength="30" disabled>
+                    </div>
+                    <div class="myPage-row" id="disabled">
+                        <label>성별</label>
+                        <input type="text" name="memberEmail" value="${loginMember.memberGender }" maxlength="30" disabled>
+                    </div>
+                    <div class="myPage-row" id="disabled">
+                        <label>국가</label>
+                        <input type="text" name="memberNationality" value="${loginMember.memberNationality }" maxlength="30" disabled>
+                    </div>
+                    <div class="myPage-row">
+                        <label>사는 지역</label>
+                        <select name="memberRegion" id="memberRegion" value="${loginMember.memberRegion }">
+                            <option value="${loginMember.memberRegion }">${loginMember.memberRegion}</option>
+                            <option value="서울">서울</option>
+                            <option value="경기">경기</option>
+                            <option value="인천">인천</option>
+                            <option value="강원도">강원도</option>
+                            <option value="충청도">충청도</option>
+                            <option value="전라도">전라도</option>
+                            <option value="경상도">경상도</option>
+                          </select>
+                    </div>
+                    <div class="myPage-row">
+                        <label>이메일</label>
+                        <input type="email" name="memberEmail" id="memberEmail" value="${loginMember.memberEmail}" maxlength="30">
+                    </div>
+                    <div class="myPage-row">
+                        <label>닉네임</label>
+                        <input type="text" name="memberNickname" id="memberNickname" value="${loginMember.memberNickname}" maxlength="10">
+                    </div>
+                    
+                    <div class="myPage-row">
+                        <label>전화번호</label>
+                        <input type="text" name="memberPhone" value="${loginMember.memberPhone}" maxlength="11">
+                    </div>
+
+                    <span id="innerTextSpan2">오렌지 변경 불가</span>
+                    <button id="info-update-btn" >수정하기</button>
+                </form>
+            </section>
+        </section>
+
+    </main>
+        
+       <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+       <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+       <script src="${contextPath}/resources/js/Changee-information.js"></script>
+    
+</body>
 </html>
-
-
