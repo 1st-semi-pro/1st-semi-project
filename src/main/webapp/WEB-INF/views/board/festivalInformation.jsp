@@ -20,6 +20,7 @@
    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/51fc103959.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&family=Moirai+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
@@ -156,13 +157,15 @@
                 <c:forEach var="festival" items="${festivalList}">
                     
                         <div class="item">
-                            <div class="item-image"><a href="#"><img src="${contextPath}/resources/images/con1.jpg" alt=""></a></div>
+                            <div class="item-image"><a href="dtdt?${festival.festivalNo}"><img src="${contextPath}/resources/images/con1.jpg" alt=""></a></div>
                             <div class="item-text">
                                 <a href="#">
                                 <div class="item-title"><h1>${festival.festivalTitle}</h1><span>${festival.festivalDate}</span></div>
                                 <div class="item-content"><span>${festival.festivalContent}</span></div>
                                 </a>
-                                <div class="pop"></div>
+                                <c:if test="${festival.readCount > 0 }">
+                                    <div class="pop"><i class="fa-solid fa-star" style="color: #fff047;"></i>${festival.readCount}</div>
+                                </c:if>
                             </div>
                         </div>
                 </c:forEach>
