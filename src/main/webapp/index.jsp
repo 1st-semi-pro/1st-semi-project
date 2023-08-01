@@ -45,25 +45,26 @@
             <div class="swiper-pagination"></div>
          </div>
         
+         <span><a href="${contextPath}/member/pwConfirm/view">회원정보 변경할때</a></span>
                  
          <div class="content-1"> <!-- 한반도 + 게시판 -->
             <div class="korea"> <!-- 한반도 -->
-               <img src="resources/images/korea/seoul.png" id="seoul">
-               <img src="resources/images/korea/Gyeonggi.png" id="gyeonggi">
-               <img src="resources/images/korea/incheon.png" id="incheon">
-               <img src="resources/images/korea/gangwon.png" id="gangwon">
-               <img src="resources/images/korea/chungnam.png" id="chungnam">
-               <img src="resources/images/korea/daejeon.png" id="daejeon">
-               <img src="resources/images/korea/chungbuk.png" id="chungbuk">
-               <img src="resources/images/korea/gyeongsang.png" id="gyeongsang">
-               <img src="resources/images/korea/daegu.png" id="daegu">
-               <img src="resources/images/korea/jeonbuk.png" id="jeonbuk">
-               <img src="resources/images/korea/jeonnam.png" id="jeonnam">
-               <img src="resources/images/korea/gwangju.png" id="gwangju">
-               <img src="resources/images/korea/gyeongnam.png" id="gyeongnam">
-               <img src="resources/images/korea/jeju.png" id="jeju">
-               <img src="resources/images/korea/busan.png" id="busan">
-               <img src="resources/images/korea/ulsan.png" id="ulsan">
+               <a href="${contextPath}/board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=서울특별시&festivalCat="><img src="resources/images/korea/seoul.png" id="seoul"></a>
+               <a href="${contextPath}/board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=경기도&festivalCat="><img src="resources/images/korea/Gyeonggi.png" id="gyeonggi"></a>
+               <a href="${contextPath}/board/festivalInfo?type=1&ft=0&pop=0&festuvalDate=&festivalArea=인천광역시&festivalCat="><img src="resources/images/korea/incheon.png" id="incheon"></a>
+               <a href="${contextPath}/board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=강원도&festivalCat="><img src="resources/images/korea/gangwon.png" id="gangwon"></a>
+               <a href="${contextPath}/board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=충청남도&festivalCat="><img src="resources/images/korea/chungnam.png" id="chungnam"></a>
+               <a href="${contextPath}/board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=대전광역시&festivalCat="><img src="resources/images/korea/daejeon.png" id="daejeon"></a>
+               <a href="${contextPath}/board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=충청북도&festivalCat="><img src="resources/images/korea/chungbuk.png" id="chungbuk"></a>
+               <a href="${contextPath}/board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=경상북도&festivalCat="><img src="resources/images/korea/gyeongsang.png" id="gyeongsang"></a>
+               <a href="${contextPath}/board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=대구광역시&festivalCat="><img src="resources/images/korea/daegu.png" id="daegu"></a>
+               <a href="${contextPath}/board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=전라북도&festivalCat="><img src="resources/images/korea/jeonbuk.png" id="jeonbuk"></a>
+               <a href="${contextPath}/board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=전라남도&festivalCat="><img src="resources/images/korea/jeonnam.png" id="jeonnam"></a>
+               <a href="${contextPath}/board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=광주광역시&festivalCat="><img src="resources/images/korea/gwangju.png" id="gwangju"></a>
+               <a href="${contextPath}/board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=경상남도&festivalCat="><img src="resources/images/korea/gyeongnam.png" id="gyeongnam"></a>
+               <a href="${contextPath}/board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=제주특별자치도&festivalCat="><img src="resources/images/korea/jeju.png" id="jeju"></a>
+               <a href="${contextPath}/board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=부산광역시&festivalCat="><img src="resources/images/korea/busan.png" id="busan"></a>
+               <a href="${contextPath}/board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=울산광역시&festivalCat="><img src="resources/images/korea/ulsan.png" id="ulsan"></a>
             </div>
 
 
@@ -98,6 +99,9 @@
                   <div class="board-name3">자유 게시판</div>
                      <div class="board-content3">
                         <table>
+                           <tbody id="bList3">
+                              
+                           </tbody>
                           
                         </table>
                      </div>
