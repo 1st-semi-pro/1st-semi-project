@@ -61,7 +61,7 @@
                 <div class="select-box select-date">
                     <label for="festivalDate">날짜</label>
                     <select name="festivalDate" id="festivalDate" title="날짜">
-                        <option value >★-날짜-★</option>
+                        <option value="">★-날짜-★</option>
                         <option value="01">01월</option>
                         <option value="02">02월</option>
                         <option value="03">03월</option>
