@@ -56,21 +56,16 @@ public class PwConfirmServlet extends HttpServlet {
 		Member loginMember = (Member)session.getAttribute("loginMember");
 		String memberId = loginMember.getMemberId();
 		
-		
-		System.out.println("로그인한멤버 아이디 확인" + memberId);
-		
 		try{
 			ConfirmService service = new ConfirmService();
 			
 			int result = service.confirmMember(memberId, inputPw);
-			System.out.println(inputPw);
 			
-			System.out.println(result);
 			
 			if(result == 1) {
 				resp.sendRedirect(req.getContextPath() +"/member/myPage/info");
 			}else {
-				resp.sendRedirect(req.getContextPath() + "/member/pwConfirm/view");
+				resp.sendRedirect(req.getContextPath() + "/member/pwConfirm");
 			}
 			
 		}catch (Exception e) {
