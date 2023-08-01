@@ -59,28 +59,29 @@ public class FestivalService {
 	 * @return map
 	 * @throws Exception
 	 */
-	public Map<String, Object> festivalInfo(int type, int cp, int ft) throws Exception {
-		
-		Connection conn = getConnection();
-		
-		String festivalName = dao.selectBoardName(conn,type);
-		
-		int	festivalCount = dao.festivalDt(conn,type,ft);
-		
-		Pagination9 pagination = new Pagination9(cp, festivalCount);
-		
-		List<Festival> festivalList = dao.festivalDtList(conn, pagination, type,ft);
-
-		Map<String, Object> map = new HashMap<String, Object>();
-
-		map.put("festivalName", festivalName);
-		map.put("pagination", pagination);
-		map.put("festivalList", festivalList);
-
-		close(conn);
-		
-		return map;
-	}
+	/*
+	 * public Map<String, Object> festivalInfo(int type, int cp, int ft) throws
+	 * Exception {
+	 * 
+	 * Connection conn = getConnection();
+	 * 
+	 * String festivalName = dao.selectBoardName(conn,type);
+	 * 
+	 * int festivalCount = dao.festivalDt(conn,type,ft);
+	 * 
+	 * Pagination9 pagination = new Pagination9(cp, festivalCount);
+	 * 
+	 * List<Festival> festivalList = dao.festivalDtList(conn, pagination, type,ft);
+	 * 
+	 * Map<String, Object> map = new HashMap<String, Object>();
+	 * 
+	 * map.put("festivalName", festivalName); map.put("pagination", pagination);
+	 * map.put("festivalList", festivalList);
+	 * 
+	 * close(conn);
+	 * 
+	 * return map; }
+	 */
 
 
 	/** 인기순 조회 Service
@@ -91,17 +92,17 @@ public class FestivalService {
 	 * @throws Exception
 	 */
 	
-	public Map<String, Object> festivalInfo1(int type, int cp, int pop) throws Exception{
+	public Map<String, Object> festivalInfo1(int type, int cp, int pop , HttpServletRequest req) throws Exception{
 		
 		Connection conn = getConnection();
 
 		String festivalName = dao.selectBoardName(conn, type);
 
-		int festivalCount = dao.festivalPopCount(conn, type, pop);
+		int festivalCount = dao.festivalPopCount(conn, type, pop , req);
 
 		Pagination9 pagination = new Pagination9(cp, festivalCount);
 
-		List<Festival> festivalList = dao.PopfestivalList(conn, pagination, type, pop);
+		List<Festival> festivalList = dao.PopfestivalList(conn, pagination, type, pop ,req);
 
 		Map<String, Object> map = new HashMap<String, Object>();
 

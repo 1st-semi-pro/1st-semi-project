@@ -13,61 +13,45 @@ import javax.servlet.http.HttpServletResponse;
 import edu.kh.festival.board.model.service.FestivalService;
 
 @WebServlet("/board/festivalInfo")
-public class FestivalinfoServlet extends HttpServlet{
-	
+public class FestivalinfoServlet extends HttpServlet {
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-			
-			
+
 		try {
-			
+
 			int type = Integer.parseInt(req.getParameter("type"));
-			
-			int ft = Integer.parseInt(req.getParameter("ft"));
-			
+
 			int pop = Integer.parseInt(req.getParameter("pop"));
-				
+
 			int cp = 1;
-			
-			if(req.getParameter("cp")!=null) { 
+
+			if (req.getParameter("cp") != null) {
 				cp = Integer.parseInt(req.getParameter("cp"));
 			}
-			
-			FestivalService service = new FestivalService();
-			
-			Map<String,Object> map = service.festivalInfo(type, cp, req);
-			
-			if( ft == 0 && pop ==0 ) {
-				map = service.festivalInfo(type, cp, req);
-			}
-			
-			if( ft == 1 ) {
-				map = service.festivalInfo(type, cp, ft);
-			}
-			
-			if( pop == 1) {
-				map = service.festivalInfo1(type, cp,pop);
-			}
-			
 
-		
-		
+			FestivalService service = new FestivalService();
+
+			Map<String, Object> map = service.festivalInfo(type, cp, req);
+
 			
-			
+			/*
+			 * if( pop == 1) { map = service.festivalInfo1(type, cp,pop,req); }
+			 */
+		
+			  
 			req.setAttribute("map", map);
-			
+
 			String path = "/WEB-INF/views/board/festivalInformation.jsp";
-			
+
 			RequestDispatcher dispatcher = req.getRequestDispatcher(path);
 			dispatcher.forward(req, resp);
-			
-			
+
 		} catch (Exception e) {
-			
+
 			e.printStackTrace();
 		}
-		
-		
+
 	}
 
 }

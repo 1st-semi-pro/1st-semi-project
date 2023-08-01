@@ -340,6 +340,60 @@ REFERENCES "BOARD";
 ALTER TABLE INFO_BOARD ADD FESTIVAL_AREA VARCHAR(20) DEFAULT '-' NOT NULL;
 ALTER TABLE INFO_BOARD ADD FESTIVAL_CAT VARCHAR(20) DEFAULT '-' NOT NULL;
 COMMIT;
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 -- 축제 갯수조회
 
@@ -416,3 +470,12 @@ SELECT * FROM(
     
 SELECT FESTIVAL_NO, COUNT(FESTIVAL_NO) S FROM INFO_BOARD
 			WHERE BOARD_CD = 1;
+            
+SELECT COUNT(*) FROM INFO_BOARD
+			WHERE BOARD_CD = 1
+AND FESTIVAL_AREA LIKE '%서울특별시%';
+
+SELECT READ_COUNT FROM INFO_BOARD
+    WHERE READ_COUNT !='0'
+    AND FESTIVAL_DT LIKE '_____01%'
+    AND FESTIVAL_AREA LIKE '%서울특별시%';

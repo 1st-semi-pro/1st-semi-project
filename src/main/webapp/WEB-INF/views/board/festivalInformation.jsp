@@ -55,7 +55,6 @@
     <section class="content">
         <form action="festivalInfo" method="get" id="festivalSearch" onsubmit="return searchValidate()">
             <input type="hidden" name="type" value="${param.type}">
-            <input type="hidden" name="ft" value="${param.ft}">
             <input type="hidden" name="pop" value="${param.pop}">
 
             <div class="search-box-wrap">
@@ -125,24 +124,14 @@
     <section class="content2">
         <div id="span-box">
 
-            <c:if test="${param.pop == 0 && param.ft == 0}">
-                <a href="${contextPath}/board/festivalInfo?cp=1&type=4&ft=1&pop=0" ><span id="festival-date" name="festival-date" value="dt">축제일순</span></a>
-                <a href="${contextPath}/board/festivalInfo?cp=1&type=4&pop=1&ft=0" ><span id="popularity" name="popularity" value="dt">인기순</span></a>
-            </c:if>
-
-            <c:if test="${param.ft == 1}">
-                <a><span id="festival-date" class="color" name="festival-date" value="dt">축제일순</span></a>
+            <c:if test="${param.pop == 0}">
+                <a href="${contextPath}/board/festivalInfo?type=1&pop=0" ><span id="festival-date" class="color">전체조회</span></a>
+                <a href="${contextPath}/board/festivalInfo?type=1&pop=1"><span id="popularity">인기순</span></a>
             </c:if>
             
-            <c:if test="${param.ft == 0 && param.pop == 1}">
-                <a href="${contextPath}/board/festivalInfo?cp=1&type=4&ft=1&pop=0" ><span id="festival-date" name="festival-date" value="dt">축제일순</span></a>
-            </c:if>
-
             <c:if test="${param.pop == 1}">
-                <a><span id="popularity" class="color" name="popularity" vaule="pop">인기순</span></a>
-            </c:if>
-            <c:if test="${param.pop == 0 && param.ft == 1}">
-                <a href="${contextPath}/board/festivalInfo?cp=1&type=4&pop=1&ft=0" ><span id="popularity" name="popularity" value="dt">인기순</span></a>
+                <a href="${contextPath}/board/festivalInfo?type=1&pop=0" ><span id="festival-date">전체조회</span></a>
+                <a href="${contextPath}/board/festivalInfo?type=1&pop=1"><span id="popularity" class="color">인기순</span></a>
             </c:if>
             
         </div>
@@ -164,7 +153,7 @@
                                 <div class="item-content"><span>${festival.festivalContent}</span></div>
                                 </a>
                                 <c:if test="${festival.readCount > 0 }">
-                                    <div class="pop"><i class="fa-solid fa-star" style="color: #fff047;"></i>${festival.readCount}</div>
+                                    <div class="pop"><i class="fa-solid fa-star" style="color: #fff047;"></i><span>${festival.readCount}</span></div>
                                 </c:if>
                             </div>
                         </div>
@@ -176,7 +165,7 @@
     
     <section id="page-area">
 
-        <c:set var="url" value="festivalInfo?type=${param.type}&ft=${param.ft}&pop=${param.pop}&cp="/>
+        <c:set var="url" value="festivalInfo?type=${param.type}&pop=${param.pop}&cp="/>
         <ul class="pagination">
             <li><a href="${url}1${sURL}">&lt;&lt;</a></li>
             <li><a href="${url}${pagination.prevPage}${sURL}">&lt;</a></li>
