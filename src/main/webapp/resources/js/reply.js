@@ -116,6 +116,8 @@ function selectReplyList(){
 const addReply = document.getElementById("addReply");
 const replyContent = document.getElementById("replyContent");
 
+    if(addReply != null){
+
 addReply.addEventListener("click",function(){ // 댓글 등록 버튼이 클릭 되었을 때
 
     // 2) 댓글 내용이 작성되어있나?
@@ -160,6 +162,8 @@ addReply.addEventListener("click",function(){ // 댓글 등록 버튼이 클릭 
     })
 
 }) 
+
+}
 // ---------------------------------------------------------------------------------------------------------- //
 // 댓글 수정
 let beforeReplyRow; // 수정 전 원래 행의 상태를 저장할 변수

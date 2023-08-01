@@ -1,4 +1,4 @@
-*{box-sizing:border-box; font-weight: bold;}
+*{box-sizing:border-box; font-weight: bold; }
 
 html{
     height:900px;
@@ -36,7 +36,7 @@ main{
 }
 
 #img1{
-    width:120px;
+    width:200px;
 }
 
 #img2{
@@ -92,6 +92,10 @@ section.content1>input{
     outline: 0; 
     text-decoration:none;
     width:80%;
+}
+
+#inputId{
+    font-family: 'Hi Melody', cursive;
 }
 
 #sel1{

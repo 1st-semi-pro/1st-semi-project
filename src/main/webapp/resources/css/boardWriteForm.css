@@ -3,7 +3,6 @@
     font-family: 'Hi Melody', cursive;
     font-size:16px;
     font-weight: bold;
-
     
 }
 
@@ -33,16 +32,36 @@ form{
     align-items: center;
 }
 
+#update > div{
+    font-size:35px;
+    font-weight:2em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color:lightcoral;
+}
+
+
+
 .board-title{
 
     width:90%;
     padding:20px 0;
-    border-bottom: 3px solid #ccc;
+    border-top: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    font-size:30px;
 }
 
 .board-title > input{
-    height:50%;
+    width:60%;
+    height:80%;
     border:0;
+    outline:0;
+    font-size:30px;
+}
+
+
+input:focus{
+ 
 }
 
 .board-content{
@@ -58,9 +77,16 @@ form{
 [name = boardContent]{
     width:100%;
     resize:none;
-    min-height:200px;
+    min-height:450px;
     border:2px solid lightcoral;
     border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+[name = boardContent]:focus{
+    outline:0;
+    border:5px solid lightcoral;
+
 }
 
 /* 파일선택 가리기 */
@@ -69,23 +95,59 @@ form{
 #imageArea{
     margin-top:30px;
     width:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:center;
 }
 
 .img-box{
+    width:100%;
     display:flex;
     justify-content: space-between;
 }
 
+.boardImg{
+    width: 200px;
+    height: 180px;
+    display:inline-block;
+    text-align: center;
+    margin-bottom : 20px;
+    position: relative; /* &times 감쌈 */
+}
+
 label{
-    width:120px;
-    height:120px;
-    border:1px solid lightcoral;
+    width:100%;
+    height:100%;
+    border:2px solid lightcoral;
     border-radius: 5px;
 
     display:flex;
     justify-content: center;
     align-items: center;
     cursor : pointer;
+
+}
+
+.delete-image{
+
+    position:absolute;
+    
+    top:7px;
+    right:7px;
+    font-size:20px;
+    cursor:pointer;
+
+}
+
+.imageInfo{
+
+    position : absolute;
+
+    top:7px;
+    left:7px;
+    font-size:20px;
+    color:lightcoral;
 
 }
 
@@ -98,4 +160,21 @@ span{
     max-width: 100%;
     max-height: 100%; /* 한 방향으로 100%를 맞추면 다른방향으로 100% 안맞춤 */
                       /* 가로 100%되면 세로 100% 안맞춰짐 깨질까봐 */
+}
+
+.buttons{
+    margin-bottom:10px;
+    border:0;
+    border-radius: 5px;
+    width:80px;
+    height:50px;
+    color:white;
+    background-color: lightcoral;
+    cursor:pointer;
+
+}
+
+.buttons:hover{
+    color:black;
+    transition-duration: 1s;
 }

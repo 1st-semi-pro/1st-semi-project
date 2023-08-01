@@ -60,6 +60,26 @@
 
 })();
 
+(function(){
+    const goToPreviousPage = document.getElementById("goToPreviousPage");
+
+    if(goToPreviousPage != null){ // 수정 취소버튼 
+
+        goToPreviousPage.addEventListener("click", function(){
+
+            alert("test");
+
+            history.back(); // 이전페이지로
+
+
+        });
+
+    }
+
+})();
+
+
+
 // ------------------------------------------------------------------------------------------------------------------------//
 // 삭제 버튼
 (function(){
@@ -95,3 +115,67 @@
     }
 
 })();
+
+// 조회수 증가 비동기
+
+// ------------------------------------------------------------------------------------------------------------------------//
+// 조회수 비동기 증가
+/* 
+(function(){   
+   
+    console.log("test::" + boardNo);
+    console.log("readCount::" + readCount);
+    $.ajax({
+
+        url : "detailtest",
+        data : {"boardNo" : boardNo},
+        type : "GET",
+        success : function(result){
+            if(result == 1){
+                readCount = readCount + 1;
+            }else{
+                console.log("에러");
+            }
+        },
+        error : function(){
+            console.log("완전 에러");
+        }
+    })
+})();    */  
+
+/* const title = document.getElementById("title");
+
+console.log("dd");
+
+    if(title != null){
+
+        title.addEventListener("click",function(){
+                
+            $.ajax({
+
+                url : "test",
+
+                data : {"boardTitle" : boardTitle},
+
+                type : "get",
+
+                success : function(result){
+                    if(result == 1){
+                        console.log("성공");
+                    }else{
+                        console.log("에러");
+                    }
+                },
+
+                error : function(){
+                    console.log("완전에러");
+                }
+
+            })
+
+
+
+
+        })
+
+} */
