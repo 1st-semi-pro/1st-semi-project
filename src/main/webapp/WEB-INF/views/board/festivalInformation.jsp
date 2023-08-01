@@ -157,7 +157,7 @@
                 <c:forEach var="festival" items="${festivalList}">
                     
                         <div class="item">
-                            <div class="item-image"><a href="dtdt?${festival.festivalNo}"><img src="${contextPath}/resources/images/con1.jpg" alt=""></a></div>
+                            <div class="item-image"><a href="festivalDetail?festivalNo=${festival.festivalNo}"><img src="${contextPath}/resources/images/con1.jpg" alt=""></a></div>
                             <div class="item-text">
                                 <a href="#">
                                 <div class="item-title"><h1>${festival.festivalTitle}</h1><span>${festival.festivalDate}</span></div>

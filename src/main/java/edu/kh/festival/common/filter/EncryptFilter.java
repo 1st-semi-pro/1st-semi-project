@@ -13,7 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 
 import edu.kh.festival.common.wrapper.EncryptWrapper;
 
-@WebFilter(filterName = "encryptFilter", urlPatterns = {"/member/join", "/member/login", "/member/pwConfirm/check"})
+@WebFilter(filterName = "encryptFilter", urlPatterns = {"/member/join", "/member/login", "/member/pwConfirm/check"
+														 ,"member/myPage/chagePw"})
 public class EncryptFilter extends HttpFilter implements Filter {
 
 

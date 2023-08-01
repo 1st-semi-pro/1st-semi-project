@@ -23,7 +23,7 @@ public class LoginServlet extends HttpServlet {
       String path = "/WEB-INF/views/member/login.jsp";
       
       req.getRequestDispatcher(path).forward(req, resp);
-      
+
    }
    
    @Override
