@@ -45,7 +45,7 @@
             <div class="swiper-pagination"></div>
          </div>
         
-         <span><a href="${contextPath}/member/pwConfirm/view">회원정보 변경할때</a></span>
+         <span><a href="${contextPath}/member/pwConfirm">회원정보 변경할때</a></span>
                  
          <div class="content-1"> <!-- 한반도 + 게시판 -->
             <div class="korea"> <!-- 한반도 -->
@@ -79,7 +79,7 @@
                   </div>
 
                <div class="board2">
-                  <div class="board-name2">축제 후기</div>
+                  <div class="board-name2">자유 게시판</div>
                      <div class="board-content2">
                         <table>
                            <tbody id="bList2">
@@ -93,7 +93,7 @@
 
             <div> <!-- 게시판 모음2 -->
                <div class="board3">
-                  <div class="board-name3">자유 게시판</div>
+                  <div class="board-name3">축제 후기</div>
                      <div class="board-content3">
                         <table>
                            <tbody id="bList3">

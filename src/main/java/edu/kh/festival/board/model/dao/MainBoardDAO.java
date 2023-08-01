@@ -110,7 +110,7 @@ public class MainBoardDAO {
 		
 		try {
 			
-			String sql = "SELECT * FROM (SELECT * FROM BOARD WHERE BOARD_CD = 1	AND BOARD_ST = 'N' ORDER BY BOARD_NO DESC) WHERE ROWNUM BETWEEN 1 AND 10";
+			String sql = "SELECT * FROM (SELECT * FROM BOARD WHERE BOARD_CD = 4	AND BOARD_ST = 'N' ORDER BY BOARD_NO DESC) WHERE ROWNUM BETWEEN 1 AND 10";
 			
 			stmt = conn.createStatement();
 			
