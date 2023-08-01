@@ -28,7 +28,7 @@
             <h5>※ 본인 확인을 통해 비밀번호를 재설정 하실 수 있습니다.</h5>
         </div>
     
-        <form id="findPw-form" action="findPw/changePw" method="get">
+        <form id="findPw-form" action="changePw">
             <div class="divide2">
                 <div class="divide4">비밀번호 찾기</div>
                 <div class="divide4"><input type="text" name="memberName" placeholder="이름입력"></div>
