@@ -14,10 +14,8 @@
 	   	MEMBER_REGION = ?,
 	   	MEMBER_EMAIL = ?,
 	   	MEMBER_PHONE = ?,
-		MEMBER_PW = ?,
 		MEMBER_NICKNAME = ? 
 	   	WHERE MEMBER_NO=?
-		AND MEMBER_PW = ?
    </entry>
 
 	<entry key="joinIdCheck">
