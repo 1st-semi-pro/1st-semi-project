@@ -127,7 +127,7 @@ body {
   background-position: 10px;
 }
 select:focus{
-  border: 2px solid orange;
+  border: 3px solid orange;
 }
 #reset{
 width: 40px;

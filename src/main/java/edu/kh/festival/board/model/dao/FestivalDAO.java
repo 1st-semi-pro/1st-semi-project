@@ -108,7 +108,8 @@ public class FestivalDAO {
 
 				festivalCount = rs.getInt(1);
 			}
-			System.out.println("festivalCount ==" + festivalCount);
+	
+			
 		} finally {
 			close(rs);
 			close(stmt);
@@ -150,7 +151,6 @@ public class FestivalDAO {
 			
 			String sql= sql1+sql2+sql3;
 			
-			System.out.println("sql === " + sql);
 			// BETWEEN 구문에 들어갈 범위 계산
 			int start = (pagination.getCurrentPage() - 1) * pagination.getLimit() + 1;
 

@@ -61,7 +61,7 @@
                 <div class="select-box select-date">
                     <label for="festivalDate">날짜</label>
                     <select name="festivalDate" id="festivalDate" title="날짜">
-                        <option value >★-날짜-★</option>
+                        <option value="">★-날짜-★</option>
                         <option value="01">01월</option>
                         <option value="02">02월</option>
                         <option value="03">03월</option>
@@ -169,6 +169,7 @@
             </c:otherwise>
         </c:choose>
     </section>
+    
     <section id="page-area">
 
         <c:set var="url" value="festivalInfo?type=${param.type}&ft=${param.ft}&pop=${param.pop}&cp="/>
