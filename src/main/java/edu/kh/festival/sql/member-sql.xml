@@ -51,7 +51,7 @@
    	
    	<!-- 이름, 아이디 일치하는 회원 조회 -->
    	<entry key="searchMember">
-   		SELECT FROM MEMBER
+   		SELECT * FROM MEMBER
    		WHERE MEMBER_NAME = ?
    		AND MEMBER_ID = ?
    	</entry>

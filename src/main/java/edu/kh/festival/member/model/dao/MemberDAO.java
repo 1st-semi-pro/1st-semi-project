@@ -314,15 +314,18 @@ public class MemberDAO {
 		
 		try {
 			String sql = prop.getProperty("searchMember");
+			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, memberName);
 			pstmt.setString(2, memberId);
 			
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
+				member = new Member();
 				member.setMemberNo(rs.getInt(1));
 				member.setMemberId(rs.getString(2));
 				member.setMemberEmail(rs.getString(4));
+				member.setMemberName(rs.getString(6));
 			}
 			
 		}finally {

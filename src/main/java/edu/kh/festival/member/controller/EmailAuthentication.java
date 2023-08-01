@@ -1,24 +1,29 @@
 package edu.kh.festival.member.controller;
 
-import javax.mail.*;
+import java.util.Random;
+
+import java.util.Properties;
+
+import java.io.IOException;
+
+import javax.mail.Message;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import edu.kh.festival.member.model.service.MemberService;
 import edu.kh.festival.member.model.vo.Member;
 
-import java.io.Console;
-import java.io.IOException;
-import java.util.Properties;
-import java.util.Random;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/member/findPw/changePw")
+@WebServlet("/member/changePw")
 public class EmailAuthentication extends HttpServlet{
 	
 	@Override
@@ -40,6 +45,7 @@ public class EmailAuthentication extends HttpServlet{
                 //req.getreqDispatcher("/views/common/msg.jsp").forward(req, resp);
                 return;
             }
+            else System.out.println("이메일 일치");
         }catch(Exception e) {
         	e.printStackTrace();
         }
@@ -55,7 +61,7 @@ public class EmailAuthentication extends HttpServlet{
         //SMTP 서버 정보를 설정한다.
         Properties props = new Properties();
         props.put("mail.smtp.host", host);
-        props.put("mail.smtp.port", 465);
+        props.put("mail.smtp.port", 587);
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.ssl.enable", "true");
         
