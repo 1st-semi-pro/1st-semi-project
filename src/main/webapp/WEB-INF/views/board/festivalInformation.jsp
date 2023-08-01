@@ -169,6 +169,7 @@
             </c:otherwise>
         </c:choose>
     </section>
+    
     <section id="page-area">
 
         <c:set var="url" value="festivalInfo?type=${param.type}&ft=${param.ft}&pop=${param.pop}&cp="/>
