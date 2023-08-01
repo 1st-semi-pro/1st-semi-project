@@ -80,9 +80,10 @@ main{
 }
 
 .board-Content{
-
     width:90%;
     font-size:18px;
+    margin-top:5px;
+    min-height:200px;
 }
 
 /* 버튼 영역 */

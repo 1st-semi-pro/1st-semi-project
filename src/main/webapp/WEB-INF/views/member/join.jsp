@@ -20,7 +20,10 @@
     <main>
 
         <div id = "logoDiv">
-            로고 자리
+            <img src="${contextPath}/resources/images/logo.png" id="img0"
+                        style="width: 200px !important;
+                               height: 100px !important;">
+
         </div>
 
 

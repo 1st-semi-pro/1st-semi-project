@@ -61,7 +61,9 @@
                                         <tr>
                                             <td>${board.boardNo}</td>
                                             <td>
-                                                <a href="detail?no=${board.boardNo}&cp=${pagination.currentPage}&type=${param.type}">${board.boardTitle}</a>
+                                                <a href="detail?no=${board.boardNo}&cp=${pagination.currentPage}&type=${param.type}" id="title">
+                                                    ${board.boardTitle}
+                                                </a>
                                             </td>
                                             <td>${board.memberNickname}</td>
                                             <td>${board.createDate}</td>
@@ -140,5 +142,15 @@
     </main>
 
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+
+    <script>
+
+     const boardTitle = "${detail.boardTitle}"; 
+
+    </script>
+
+    <script src="${contextPath}/resources/js/board.js"></script>
+
+
 </body>
 </html> 

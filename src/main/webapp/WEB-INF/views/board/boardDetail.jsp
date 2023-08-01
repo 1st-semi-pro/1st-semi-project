@@ -36,6 +36,7 @@
 
             <div id="boardCd">${detail.boardCd}</div>
 
+
             <!-- 제목 -->
             <div class="board-title">${detail.boardTitle}</div>
 
@@ -190,16 +191,20 @@
         <!-- 여기부터 jQuery 사용가능 -->
         <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
       
-        <script src="${contextPath}/resources/js/board.js"></script>
-
-        <!-- reply.js에서의 사용을 위함 -->
         <script>
             const contextPath = "${contextPath}";
    
             const boardNo = "${detail.boardNo}"; 
 
             const loginMemberNo = "${loginMember.memberNo}";
+
+            const readCount =  "${detail.readCount}";
+
         </script>
+
+        <script src="${contextPath}/resources/js/board.js"></script>
+
+     
 
     <script src="${contextPath}/resources/js/reply.js"></script>
 

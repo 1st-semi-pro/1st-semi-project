@@ -47,6 +47,9 @@ document.getElementById("idSave").addEventListener("change",function(){
 
 })
 
+// 아이디가 쿠키에 남아서 저장되어있다면
+
+
 
 // 효과주기
 inputId.addEventListener("focus",function(){

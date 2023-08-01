@@ -28,8 +28,8 @@
 
 	<section id="imgSection">
 
-		<a href="${contextPath}"> <img
-			src="${contextPath}/resources/images/foreign.jpg" id="img1">
+		<a href="${contextPath}"> 
+			<img src="${contextPath}/resources/images/logo.png" id="img1">
 		</a>
 
 	</section>
@@ -49,7 +49,7 @@
 				<section class="content1" id="sec1">
 					<img src="${contextPath}/resources/images/id.png" id="img2">
 					<input type="text" size="40" maxlength="10" placeholder="아이디"
-						id="inputId" name="inputId">
+						id="inputId" name="inputId" value="${ cookie.idSave.value }">
 				</section>
 
 
@@ -61,11 +61,15 @@
 
 				<section class="content1" id="sel1">
 
+					<c:if test="${!empty cookie.idSave.value}">
+						<c:set var="chk" value="checked"></c:set>
+					</c:if>
+
 					<div id="widthdiv">
-						<input type="radio" id="idSave">
+						<input type="checkbox" id="idSave" ${chk} name="idSave">
 					</div>
 
-					<input type="text" size="50" placeholder="로그인 상태 유지">
+					<input type="text" size="50" placeholder="아이디 저장">
 				</section>
 
 

@@ -28,7 +28,7 @@ public class BoardListServlet extends HttpServlet {
 			// nav 메뉴(공지사항, 자유게시판, 질문게시판) 선택시
 			// 쿼리스트링에 cp가 없음 --> cp = 1 고정
 			
-			int cp =1;
+			int cp = 1;
 			
 			// 페이지네이션 번호 선택 시
 			// 쿼리스트링에 cp가 있음 --> cp = 쿼리스트링의 cp값
@@ -43,6 +43,9 @@ public class BoardListServlet extends HttpServlet {
 			Map<String,Object> map = service.selectBoardList(type, cp);
 			
 			// request 범위로 map을 세팅
+			
+			System.out.println(map.get("boardName"));
+			
 			req.setAttribute("map", map);
 			
 			

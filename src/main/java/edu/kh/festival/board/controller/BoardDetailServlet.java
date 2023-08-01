@@ -21,14 +21,27 @@ public class BoardDetailServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String uri = req.getRequestURI(); 
+		String contextPath = req.getContextPath(); 
+		String command = uri.substring(  (contextPath + "/board/").length()  );
 		
 		try {
 			
-			int boardNo = Integer.parseInt(req.getParameter("no"));
-			
 			BoardService service = new BoardService();
 			
+			int boardNo = Integer.parseInt(req.getParameter("no"));
+			
 			BoardDetail detail = service.selectBoardDetail(boardNo);
+	
+
+			
+			int result = service.updateReadCount(boardNo);
+			
+			System.out.println(result);
+	
+			resp.getWriter().print(result);
+
+			
 			
 			// 댓글 조회
 			if(detail != null) {
@@ -46,7 +59,6 @@ public class BoardDetailServlet extends HttpServlet {
 			String path = "/WEB-INF/views/board/boardDetail.jsp";
 			
 			req.getRequestDispatcher(path).forward(req, resp);
-			
 			
 		}catch(Exception e) {
 			e.printStackTrace();

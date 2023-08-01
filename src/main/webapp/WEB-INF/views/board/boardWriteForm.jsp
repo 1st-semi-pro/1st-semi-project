@@ -8,9 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>게시판</title>
 
-    <link rel="stylesheet" href="${contextPath}/resources/css/header.css">
+    
     
     <link rel="stylesheet" href="${contextPath}/resources/css/boardWriteForm.css">
+
+    <link rel="stylesheet" href="${contextPath}/resources/css/header.css">
+
 
     <script src="https://kit.fontawesome.com/16679b9adf.js" crossorigin="anonymous"></script>
 
@@ -29,24 +32,21 @@
         <form action="write" enctype="multipart/form-data" method="POST" class="board-write"
             onsubmit="return writeValidate()">
         <div id="formInDivs">
-                <!-- @WebServlet("/board/write")  -->
-                <!-- http://localhost:8080/community/board/write?mode=insert&type=1 -->
-                <!-- http://localhost:8080/community/board/detail?no=1562&type=1 -->
-                <!-- path = "detail?no=" + boardNo + "&type=" + boardCode; -->
-
             <!-- 제목 -->
+
+            <div id="update">
+                <div>게시글 수정</div>
+            </div>
+
             <h1 class="board-title">
-                <input type="text" name="boardTitle" placeholder="제목을 입력해주세요." value="${detail.boardTitle}">
+                <input type="text" name="boardTitle" placeholder="제목을 입력해주세요." value="${detail.boardTitle}"
+                        autocomplete="off">
             </h1>
 
             
             <!-- 내용 -->
             <div class="board-content">
 
-                <textarea name="boardContent">${detail.boardContent}</textarea>
-
-                <!-- imageList에 존재하는 이미지 레벨을 이용하여 변수 생성 -->
-                
                 <div id="imageArea">
                     
                     <c:forEach items="${detail.imageList}" var="boardImage">
@@ -76,88 +76,87 @@
                         </c:choose>
         
                     </c:forEach>
-        
-                <!-- 썸네일 -->
-    
-                <!-- 업로드 이미지 -->
-                <div class="img-box">
-                    
-                    <div class="boardImg">
+
+                    <!-- 썸네일 -->
+
+                    <div class="boardImg" id="thumbnailDiv" 
+                    style="width:60% !important; height:400px !important;">
                         
-                        <label for="img0">
+                        <label for="img0" class="labels" style="height:400px !important;">
                             <img class="preview" src="${img0}"> <!-- 위에 c:set 만약 없다면 안나온다. -->
+                            <span></span>
                         </label>
                         <input type="file" class="inputImage" id="img0" name="0" accept="image/*">
-                        <span class="delete-image">삭제</span>
+                        <span class="imageInfo">썸네일</span>
+                        <span class="delete-image">&times;</span>
                         
                     </div>
 
+
+                <textarea name="boardContent">${detail.boardContent}</textarea>
+
+                <!-- imageList에 존재하는 이미지 레벨을 이용하여 변수 생성 -->
+
+                <!-- 업로드 이미지 -->
+                <div class="img-box">
                     <div class="boardImg">
-                        <label for="img1">ㅇㅇㅇㅇ
+                        <label for="img1" class="labels">
                             <img class="preview" src="${img1}">
                         </label>
                         <input type="file" class="inputImage" id="img1" name="1" accept="image/*">
+                        <span class="imageInfo">추가이미지1</span>
                         <span class="delete-image">&times;</span>
-
                     </div>
     
                     <div class="boardImg">
-                        
-                        <label for="img2">
+                        <label for="img2" class="labels">
                             <img class="preview" src="${img2}">
                         </label>
                         <input type="file" class="inputImage" id="img2" name="2" accept="image/*">
+                        <span class="imageInfo">추가이미지2</span>
                         <span class="delete-image">&times;</span>
-
                     </div>
     
                     <div class="boardImg">
                         
-                        <label for="img3">
+                        <label for="img3" class="labels">
                             <img class="preview" src="${img3}">
                         </label>
                         <input type="file" class="inputImage" id="img3" name="3" accept="image/*">
+                        <span class="imageInfo">추가이미지3</span>
                         <span class="delete-image">&times;</span>
-                        <!-- &times : x 모양의 문자 -->
                     </div>
     
                     <div class="boardImg">
                         
-                        <label for="img4">
+                        <label for="img4" class="labels">
                             <img class="preview" src="${img4}">
                         </label>
                         <input type="file" class="inputImage" id="img4" name="4" accept="image/*">
+                        <span class="imageInfo">추가이미지3</span>
                         <span class="delete-image">&times;</span>
-                        <!-- &times : x 모양의 문자 -->
                     </div>
     
-                </div>
-
-                <!-- 
-                        XSS 처리로 인해서 &lt; 와 같은 형태로 변한 문자들은
-                        HTML 문서에 출력될 때 &lt; 가 아닌 해석된 형태 "<" 로 출력이 된다.
-                        -> 이 특징을 이용하면 별도로 XSS 처리 해제하는 코드를 작성할 필요가 없다.
-
-                        하지만 개행문자 <br> -> \n으로 변경해줘야 한다.
-                     -->
                     </div>
+
+                </div>
             </div>
 
             <!-- 버튼 영역 -->
             <div class="board-btn-area">
-                <button type="submit" id="writeBtn">등록</button>
+                <button type="submit" id="writeBtn" class="buttons">등록</button>
                 
                 <!-- insert 모드 -->
                 <c:if test="${param.mode == 'insert'}">
 
-                    <button type="button" id="goToListBtn">목록으로</button>
+                    <button type="button" id="goToListBtn" class="buttons">목록으로</button>
                 
                 </c:if>
                 
                  <!-- update 모드 -->
                 <c:if test="${param.mode == 'update'}">
                    
-                    <button type="button">이전으로</button>
+                    <button type="button" id="goToPreviousPage" class="buttons">수정취소</button>
 
                 </c:if>
             

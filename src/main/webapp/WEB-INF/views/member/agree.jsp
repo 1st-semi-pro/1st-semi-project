@@ -23,7 +23,7 @@
     <div id="divKing">
 
         <div class="divs" id="firstDiv">
-            <img src="${contextPath}/resources/images/foreign.jpg">
+            <img src="${contextPath}/resources/images/logo.png">
         </div>
 
 

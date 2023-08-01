@@ -33,10 +33,6 @@ public class LoginServlet extends HttpServlet {
       String inputId = req.getParameter("inputId");
       String inputPw = req.getParameter("inputPw");
       
-      // 확인용
-      //System.out.println(inputId);
-      //System.out.println(inputPw);
-      
       // 입력한 아이디, 비번 Member VO에 세팅
       Member mem = new Member();
       mem.setMemberId(inputId);
@@ -61,17 +57,25 @@ public class LoginServlet extends HttpServlet {
                
                session.setAttribute("message", loginMember.getMemberId() + "님 환영합니다.");
                
-               // 30분동안 요청이 아무것도 없으면 세션 만료 -> 로그아웃?????
+               // 30분동안 요청이 아무것도 없으면 세션 만료
                session.setMaxInactiveInterval(1800);
                
-               System.out.println(loginMember);
-               
-               
                // ----------------------------쿠키 -------------------------------- //
-               Cookie cookie = new Cookie("Idsave", inputId);
+               Cookie cookie = new Cookie("idSave", inputId);
                            // ("클라이언트쪽에 저장될 쿠키 이름", "쿠키 내용" )
                
-               // if(req.getParameter("s"))
+               if(req.getParameter("idSave") != null) {
+            	   cookie.setMaxAge(60 * 60 * 24 * 7); // 7일
+            	   System.out.println("성공");
+               
+               }else {
+            	   cookie.setMaxAge(0);
+            	   System.out.println("실패");
+               }
+               
+               cookie.setPath(req.getContextPath() + "/member/login");
+               
+               resp.addCookie(cookie);
                
                
                // ----------------------------쿠키 -------------------------------- //
@@ -79,11 +83,11 @@ public class LoginServlet extends HttpServlet {
                // 아이디 비번 DB에 있으면 메인페이지로 가겠다.
                resp.sendRedirect(req.getContextPath());
                
-            }else {
+               }else {
                System.out.println("실패"); // 테스트
                
                session.setAttribute("message", "아이디 또는 비밀번호가 일치하지 않습니다.");
-               // footer 없어서 jsp에 jstl로 message 출력?
+               // footer 없어서 jsp에 jstl로 message 출력
          
                // 아이디 비번이 DB에 없으면 다시 같은화면으로 가겠다.
                resp.sendRedirect(req.getContextPath() + "/member/login");

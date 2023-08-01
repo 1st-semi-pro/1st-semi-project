@@ -67,6 +67,8 @@ public class BoardDAO {
 				boardName = rs.getString(1);
 			}
 			
+			System.out.println(boardName);
+			
 		} finally {
 			close(rs);
 			close(stmt);
@@ -469,6 +471,35 @@ public class BoardDAO {
 
 		return result;
 		
+	}
+
+	/** 게시글 조회수 증가 DAO
+	 * @param conn
+	 * @param boardNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int updateReadCount(Connection conn, int boardNo) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("updateReadCount");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, boardNo);
+			
+			result = pstmt.executeUpdate();
+			
+			System.out.println(result);
+			
+		}finally {
+			close(pstmt);
+		}
+		
+		return result;
 	}
 }
 	
