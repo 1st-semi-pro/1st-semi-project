@@ -54,7 +54,7 @@
                         <section>
                             <article id="intro">
                                 <span>프로필 메세지</span>
-                                <textarea name="profileMessage" id="profileMessage" cols="80" rows="10">"${loginMember.memberMessage}</textarea>
+                                <textarea name="profileMessage" id="profile-message" cols="80" rows="10">"${loginMember.memberMessage}</textarea>
                             </article>
                             <article>
                                 <span>축제 히스토리</span>
@@ -69,7 +69,7 @@
                                         <img src="${contextPath}/resources/images/report.png" alt="신고 횟수" class="mypage-icon">
                                         <span class="mypage-span" id="report-span">0회</span>
                                     </div>
-                                    <button type="button" class="mypage-btn" id="update-btn">내 정보 수정</button>
+                                    <a href="${contextPath}/member/myPage/info"><button type="button" class="mypage-btn" id="update-btn">내 정보 수정</button></a>
                                     <button type="submit" class="mypage-btn" id="save-btn">변경사항 저장</button>
                                 </div>
     

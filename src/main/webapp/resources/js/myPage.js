@@ -79,59 +79,44 @@ document.getElementById("delete-image").addEventListener("click", function(){
     }
 })
 
-/* 즉시실행함수 */
-(function(){
-    const goToListBtn = document.getElementById("goToListBtn");
+// /* 즉시실행함수 */
+// (function(){
+//     const updateBtn = document.getElementById("update-btn");
 
-    if(goToListBtn != null){ // 목록으로 버튼이 화면에 있을 때만 이벤트 추가하겠다.
+//     if(updateBtn != null){ // 목록으로 버튼이 화면에 있을 때만 이벤트 추가하겠다.
 
-        goToListBtn.addEventListener("click", function(){
+//         updateBtn.addEventListener("click", function(){
 
-            // location 객체(BOM)
+//             // location 객체(BOM)
 
-            // 문자열.substring(시작, 끝) : 시작 이상 끝 미만 인덱스까지 문자열 자르기
+//             // 문자열.substring(시작, 끝) : 시작 이상 끝 미만 인덱스까지 문자열 자르기
 
-            // 문자열.indexOf("검색 문자열", 시작 인덱스)
-            // : 문자열에서 "검색 문자열"의 위치(인덱스)를 찾아서 반환
-            // 단, 시작 인덱스 이후부터 검색
+//             // 문자열.indexOf("검색 문자열", 시작 인덱스)
+//             // : 문자열에서 "검색 문자열"의 위치(인덱스)를 찾아서 반환
+//             // 단, 시작 인덱스 이후부터 검색
 
-            const pathname = location.pathname; // 주소상에서 요청 경로 반환
+//             const pathname = location.pathname; // 주소상에서 요청 경로 반환
 
 
-            // 이동할 주소를 저장
-            let url = pathname.substring(0, pathname.indexOf("/", 1));
-            // url에 /community가 저장됨
+//             // 이동할 주소를 저장
+//             let url = pathname.substring(0, pathname.indexOf("/", 1));
+//             // url에 /1st-semi-pro가 저장됨
 
-            url += "/board/list?" // /community/board/list?
+//             url += "/member/myPage/info";
 
-            // URL 내장 객체 : 주소 관련 정보를 나타내는 객체
-            // location.href : 현재 페이지 주소 + 쿼리스트링
-            // URL.searchParams : 쿼리 스트링만 별도 객체로 반환
+//             // URL 내장 객체 : 주소 관련 정보를 나타내는 객체
+//             // location.href : 현재 페이지 주소 + 쿼리스트링
+//             // URL.searchParams : 쿼리 스트링만 별도 객체로 반환
         
-            /* http://localhost:8080/community/board/detail?no=1502&cp=1&type=1 에서 */
-            /* http://localhost:8080/community/board/list?type=1 으로 */
-            const params = new URL(location.href).searchParams;
+//             /* http://localhost:8080/community/board/detail?no=1502&cp=1&type=1 에서 */
+//             /* http://localhost:8080/community/board/list?type=1 으로 */
+//             const params = new URL(location.href).searchParams;
 
-            const type = "type=" + params.get("type"); // type = 1
-            let cp = "cp=" + (params.get("cp") !="" ? params.get("cp") : "1" );// cp = 1
+//             // location.href = "주소"; -> 해당 주소로 이동
+//             location.href = url;
 
-            // 조립
-            // /community/board/list?type=1&cp=1
-            url += type + "&" + cp;
+//         });
 
-            // 검색 key, query가 존재하는 경우 url에 추가 ( 상세페이지 들어갔다가 목록으로 나가도 특정 검색어 검색목록 유지되게끔)
-            if(params.get("key") != null){
-                const key = "&key=" + params.get("key");
-                const query = "&query=" + params.get("query");
+//     }
 
-                url += key + query; // ure뒤에 붙이기
-            }
-
-            // location.href = "주소"; -> 해당 주소로 이동
-            location.href = url;
-
-        });
-
-    }
-
-})();
+// })();
