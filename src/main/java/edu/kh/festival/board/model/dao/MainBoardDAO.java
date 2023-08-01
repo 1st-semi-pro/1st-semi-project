@@ -58,7 +58,7 @@ public class MainBoardDAO {
 			}
 		}finally {
 			close(rs);
-			close(pstmt);
+			close(stmt);
 		}
 		
 		
@@ -95,7 +95,7 @@ public class MainBoardDAO {
 			}
 		}finally {
 			close(rs);
-			close(pstmt);
+			close(stmt);
 		}
 		
 		
@@ -132,7 +132,7 @@ public class MainBoardDAO {
 			}
 		}finally {
 			close(rs);
-			close(pstmt);
+			close(stmt);
 		}
 		
 		

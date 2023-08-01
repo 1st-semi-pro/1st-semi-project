@@ -26,7 +26,6 @@ public class MainBoardService {
 		
 		List<BoardDetail> boardList1 = dao.selectBoardList(conn);
 		
-		close(conn);
 		
 		return boardList1;
 	}
@@ -37,7 +36,6 @@ public class MainBoardService {
 		
 		List<BoardDetail> boardList2 = dao.selectBoardList2(conn);
 		
-		close(conn);
 		
 		return boardList2;
 	}
