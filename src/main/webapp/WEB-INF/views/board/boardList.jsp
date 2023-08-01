@@ -19,17 +19,37 @@
     <main>
         <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
-       <!--  <nav>
-            <ul>
-                <li><a href="${contextPath}/board/list?type=1">공지사항</a></li>
-                <li><a href="${contextPath}/board/list?type=2">자유 게시판</a></li>
-                <li><a href="${contextPath}/board/list?type=3">축제후기 게시판</a></li>
-                <li><a href="${contextPath}/board/list?type=4">동행자 구하기</a></li>
-                <li><a href="#">1:1문의</a></li>
-            </ul>
-        </nav> -->
+        <c:if test="${!empty param.key}">
+            <c:set var="sURL" value="&key=${param.key}&query=${param.query}"/>
+        </c:if>
+
         <section class="board-list">
             <h1 class="board-name">${boardName}</h1>
+
+                <!-- /board/list?type=1&key=t&query=검색어 -->
+                <form action="#" method="get" id="boardSearch" onsubmit="return searchValidate()">
+                    <input type="hidden" name="type" value="${param.type}">
+    
+                    <select name="key" id="search-key">
+                        <option value="t">제목</option>
+                        <option value="c">내용</option>
+                        <option value="tc">제목+내용</option>
+                        <option value="w">작성자</option>
+                    </select>
+    
+                    <input type="text" name="query" id="search-query" placeholder="검색어를 입력해주세요." autocomplete="off">
+    
+                    <button>검색</button>
+                    <!-- 추천창 -->
+                    <div id="suggestion_box" class = "invisible">
+                        <div id = suggested_items></div>
+                    </div>
+                </form>
+    
+
+            <c:if test="${!empty param.key}">
+                <h3>검색어 : ${param.query}</h3>
+            </c:if>
 
             <div class="list-wrapper">
                 <table class="list-table">
@@ -61,9 +81,7 @@
                                         <tr>
                                             <td>${board.boardNo}</td>
                                             <td>
-                                                <a href="detail?no=${board.boardNo}&cp=${pagination.currentPage}&type=${param.type}" id="title">
-                                                    ${board.boardTitle}
-                                                </a>
+                                                <a href="detail?no=${board.boardNo}&cp=${pagination.currentPage}&type=${param.type}${sURL}">${board.boardTitle}</a>
                                             </td>
                                             <td>${board.memberNickname}</td>
                                             <td>${board.createDate}</td>
@@ -79,15 +97,12 @@
             </div>
 
             <div class="btn-area">
-                    
-                    <c:if test="${!empty loginMember}"> <!-- 로그인 한 경우에만 -->
 
-                        <!-- /community/board/write -->
-                        <button id="insertBtn" onclick="location.href='write?mode=insert&type=${param.type}&cp=${param.cp}'">글쓰기</button>
-                                                        
-                    </c:if>
+                <c:if test="${!empty loginMember}">
 
-                </div>
+                    <button id="insertBtn" onclick="location.href='write?mode=insert&type=${param.type}&cp=${param.cp}'">글쓰기</button>
+                </c:if>
+            </div>
             
             <div class="pagination-area">
 
@@ -95,8 +110,8 @@
                 <c:set var="url" value="list?type=${param.type}&cp="/>
 
                 <ul class="pagination">
-                    <li><a href="${url}1">&lt;&lt;</a></li>
-                    <li><a href="${url}${pagination.prevPage}">&lt;</a></li>
+                    <li><a href="${url}1${sURL}">&lt;&lt;</a></li>
+                    <li><a href="${url}${pagination.prevPage}${sURL}">&lt;</a></li>
             
                     <!-- 범위가 정해진 일반 for문 사용 -->
                     <c:forEach var="i" begin="${pagination.startPage}" end="${pagination.endPage}" step="1">
@@ -107,7 +122,7 @@
                             </c:when>
 
                             <c:otherwise>
-                                <li><a href="${url}${i}">${i}</a></li>
+                                <li><a href="${url}${i}${sURL}">${i}</a></li>
                             </c:otherwise>
 
                         </c:choose>
@@ -115,42 +130,22 @@
                     </c:forEach>
 
                     <!-- 다음 목록 시작 번호로 이동 -->
-                    <li><a href="${url}${pagination.nextPage}">&gt;</a></li>
+                    <li><a href="${url}${pagination.nextPage}${sURL}">&gt;</a></li>
 
                     <!-- 끝 페이지로 이동  -->
-                    <li><a href="${url}${pagination.maxPage}">&gt;&gt;</a></li>
+                    <li><a href="${url}${pagination.maxPage}${sURL}">&gt;&gt;</a></li>
                 </ul>
             </div>
 
-           <!--  <form action="#" method="get" id="boardSearch">
+        
 
-                <select name="key">
-                    <option value="t">제목</option>
-                    <option value="c">내용</option>
-                    <option value="tc">제목+내용</option>
-                    <option value="w">작성자</option>
-                </select>
-
-                <input type="text" name="query" placeholder="검색어를 입력해주세요.">
-
-                <button>검색</button>
-            </form> -->
-
+        </section>
 
         </section>
 
     </main>
 
-    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
-
-    <script>
-
-     const boardTitle = "${detail.boardTitle}"; 
-
-    </script>
-
     <script src="${contextPath}/resources/js/board.js"></script>
-
-
+    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 </body>
 </html> 

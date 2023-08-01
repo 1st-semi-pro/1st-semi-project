@@ -32,8 +32,10 @@ public class MyPageChangeInfoServlet extends HttpServlet {
 		String memberRegion = req.getParameter("memberRegion");
 		String memberEmail = req.getParameter("memberEmail");
 		String memberPhone = req.getParameter("memberPhone");
-		String memberPw = req.getParameter("memberPw");
-		String newPw = req.getParameter("newPw");
+		/*
+		 * String memberPw = req.getParameter("currentPw"); String newPw =
+		 * req.getParameter("newPw");
+		 */
 		String memberNickname = req.getParameter("memberNickname");
 
 		// *** 세션에서 로그인한 회원 정보 얻어오기 ***
@@ -52,14 +54,15 @@ public class MyPageChangeInfoServlet extends HttpServlet {
 
 		mem.setMemberRegion(memberRegion);
 		mem.setMemberEmail(memberEmail);
-		mem.setMemberPhone(memberPw);
-		mem.setMemberPw(memberPw);
+		mem.setMemberPhone(memberPhone);
+		/* mem.setMemberPw(memberPw); */
 		mem.setMemberNickname(memberNickname);
 
 		try {
 			MemberService service = new MemberService();
 
-			int result = service.updateMember(mem, newPw);
+			/* int result = service.updateMember(mem, newPw); */
+			int result = service.updateMember(mem);
 			
 			System.out.println(result);
 			// 수정 성공 / 실패에 따른 메세지 출력 제어
@@ -72,7 +75,7 @@ public class MyPageChangeInfoServlet extends HttpServlet {
 				loginMember.setMemberRegion(memberRegion);
 				loginMember.setMemberEmail(memberEmail);
 				loginMember.setMemberPhone(memberPhone);
-				loginMember.setMemberPw(newPw);
+				/* loginMember.setMemberPw(newPw); */
 				loginMember.setMemberNickname(memberNickname);
 
 			} else { // 실패

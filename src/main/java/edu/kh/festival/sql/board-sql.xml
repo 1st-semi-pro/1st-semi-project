@@ -126,6 +126,37 @@
 	<entry key="updateReadCount">
 		UPDATE BOARD SET READ_COUNT = READ_COUNT +1 WHERE BOARD_NO = ?
 	</entry>
+	
+  <!-- 게시글 검색 -->
+   <entry key="searchListCount">
+		SELECT COUNT(*) FROM BOARD 
+		JOIN MEMBER USING(MEMBER_NO)
+		WHERE BOARD_ST = 'N'
+		AND BOARD_CD =?
+   </entry>
+   
+   <!-- 특정 게시판에서 조건을 만족하는 게시글 목록 조회 -->
+   <entry key="searchBoardList1">
+	SELECT * FROM(
+		SELECT ROWNUM AS RNUM, A.* FROM(
+			SELECT BOARD_NO,BOARD_TITLE,MEMBER_NICKNAME,
+			TO_CHAR(CREATE_DT,'YYYY-MM-DD') AS CREATE_DT,  
+			READ_COUNT,
+				(SELECT IMG_RENAME FROM BOARD_IMG
+				WHERE IMG_LEVEL=0 
+				AND BOARD_IMG.BOARD_NO = BOARD.BOARD_NO) THUMBNAIL
+			FROM BOARD
+			JOIN MEMBER USING(MEMBER_NO)
+			WHERE BOARD_CD=? 
+			AND BOARD_ST='N'
+	</entry>
+
+	<entry key="searchBoardList2">
+		ORDER BY BOARD_NO DESC
+		) A
+	)
+	WHERE RNUM BETWEEN ? AND ?
+	</entry>
 	 
 	
 </properties>

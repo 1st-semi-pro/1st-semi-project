@@ -1,7 +1,5 @@
 package edu.kh.festival.member.model.service;
 
-import static edu.kh.festival.common.JDBCTemplate.close;
-import static edu.kh.festival.common.JDBCTemplate.getConnection;
 import static edu.kh.festival.common.JDBCTemplate.*;
 
 import java.sql.Connection;
@@ -40,11 +38,11 @@ public class MemberService {
 	 * @return result
 	 * @throws Exception
 	 */
-	public int updateMember(Member mem, String newPw) throws Exception{
+	public int updateMember(Member mem/* , String newPw */) throws Exception{
 		
 		Connection conn = getConnection();
 		
-		int result = dao.updateMember(conn, mem , newPw);
+		int result = dao.updateMember(conn, mem /* , newPw */);
 		
 		if(result >0) commit(conn);
 		else		  rollback(conn);
@@ -169,6 +167,82 @@ public class MemberService {
 	}
 
 
+
+	/** 비밀번호 변경 Service
+	 * @param currentPw
+	 * @param newPw
+	 * @param memberNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int changePw(String currentPw, String newPw, int memberNo) throws Exception {
+		
+		Connection conn = getConnection();
+
+		int result = dao.changePw(conn, currentPw,newPw,memberNo);
+
+		if (result > 0) commit(conn);
+		else rollback(conn);
+
+		close(conn);
+
+		return result;
+	}
+
+	/** 회원탈퇴 Service
+	 * @param memberNo
+	 * @param memberPw
+	 * @return result
+	 * @throws Exception
+	 */
+	public int secession(int memberNo, String memberPw) throws Exception{
+		
+		Connection conn = getConnection();
+
+		int result = dao.secession(conn,memberNo,memberPw);
+
+		if (result > 0) commit(conn);
+		else rollback(conn);
+
+		close(conn);
+
+		return result;
+	}
+
+
+
+	/** 이메일 중복 검사 Service
+	 * @param memberEmail
+	 * @return result
+	 * @throws Exception
+	 */
+	public int emailDupCheck(String memberEmail) throws Exception {
+		
+		
+		Connection conn = getConnection(); // DBCP에서 만들어둔 커넥션 얻어오기
+		
+		int result = dao.emailDupCheck(conn,memberEmail);
+		
+		close(conn);
+		
+		return result;
+	}
+
+	/** 닉네임 중복 검사 Service
+	 * @param memberNickname
+	 * @return
+	 * @throws Exception
+	 */
+	public int NicknameDupCheck(String memberNickname) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int result = dao.NicknameDupCheck(conn,memberNickname);
+		
+		close(conn);
+		
+		return result;
+	}
 
 
 

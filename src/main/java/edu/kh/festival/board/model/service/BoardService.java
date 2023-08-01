@@ -228,6 +228,50 @@ public class BoardService {
 		
 	}
 	
+	/** 검색 목록 조회 Service
+	 * @param type
+	 * @param cp
+	 * @param key
+	 * @param query
+	 * @return map
+	 */
+	public Map<String, Object> searchBoardList(int type, int cp, String key, String query) throws Exception{
+		
+		Connection conn = getConnection();
+		// 1. 게시판 이름 조회
+		String boardName = dao.selectBoardName(conn,type);
+		
+		// 2. SQL 조건절에 추가될 구문 가공
+		String condition = null; // 조건
+		
+		switch(key) {
+		case "t":condition=" AND BOARD_TITLE LIKE '%"+query+"%' "; break; // "AND BOARD_TITLE LIKE '%"+query+"%'" <- 이거 안됨!! "랑 AND랑 꼭 띄어쓰기!!!
+		case "c":condition=" AND BOARD_CONTENT LIKE '%"+query+"%' "; break;
+		case "tc":condition=" AND (BOARD_CONTENT LIKE '%"+query+"%' OR BOARD_TITLE LIKE '%"+query+"%') "; break;
+		case "w":condition=" AND MEMBER_NICK LIKE '%"+query+"%' "; break;
+		}
+		
+		// 3-1 특정 게시판에서 조건을 만족하는 게시글 수 조회
+		int listCount = dao.searchListCount(conn,type, condition);
+		
+		// 3-2. listCount + 현재 페이지(cp)를 이용해 페이지네이션 객체 생성
+		Pagination pagination = new Pagination(cp,listCount);
+		
+		// 4. 특정 게시판에서 조건을 만족하는 게시글 목록 조회
+		List<Board> boardList = dao.searchBoardList(conn, pagination, type, condition);
+		
+		// 5. 결과 값을 하나의 Map에 모아서 반환
+		Map<String, Object> map = new HashMap<String, Object>();
+		
+		map.put("boardName", boardName);
+		map.put("pagination", pagination);
+		map.put("boardList", boardList);
+		
+		close(conn);
+		
+		return map;
+	}
+	
 	
 	
 	
