@@ -200,6 +200,17 @@ background-color: orangered;
   grid-template-rows: 450px 450px 450px;
   gap: 20px;
 }
+.item{
+  position: relative;
+}
+.pop{
+  width: 30%;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  background-color: #747474;
+  
+}
 .item-image > a,img{
   width: 100%;
   height: 100%;
