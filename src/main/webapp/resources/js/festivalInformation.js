@@ -39,8 +39,6 @@ function  searchValidate(){
     const option2 = document.querySelectorAll("#festivalArea > option");
     const option3 = document.querySelectorAll("#festivalCat > option");
 
-    console.log(select1);
-
     if(select1 !="" || select2 !="" || select3 !=""){ 
         
         // 현재페이지주소 쿼리스트링 얻기
@@ -69,14 +67,40 @@ function  searchValidate(){
     }
 })();
 
-document.getElementById("festivalDate").addEventListener("change",function(){
-
     const festivalDate = document.getElementById("festivalDate");
+    const festivalArea = document.getElementById("festivalArea");
+    const festivalCat = document.getElementById("festivalCat");
 
-    festivalDate.style.color = "red";
+festivalDate.addEventListener("change", function () {
 
+    if (festivalDate.value !="") {
+        festivalDate.classList.add("on");
 
+        festivalArea.classList.remove("on");
+        festivalCat.classList.remove("on");
+    }
 });
+
+festivalArea.addEventListener("change",function(){
+
+    if (festivalArea.value !="") {
+        festivalArea.classList.add("on");
+
+        festivalDate.classList.remove("on");
+        festivalCat.classList.remove("on");
+    }
+});
+
+festivalCat.addEventListener("change",function(){
+
+    if (festivalCat.value !="") {
+        festivalCat.classList.add("on");
+
+        festivalDate.classList.remove("on");
+        festivalArea.classList.remove("on");
+    }
+});
+
 
 
 
