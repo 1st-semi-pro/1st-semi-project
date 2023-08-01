@@ -2,8 +2,6 @@
 a{text-decoration: none; color: inherit; display: block;}
 li{list-style: none;}
 
-
-
 html,
 body {
   position: relative;
@@ -165,6 +163,7 @@ background-color: orangered;
   justify-content: flex-end;
   font-size: 22px;
 }
+
 .color{
   color: green;
 }
@@ -174,6 +173,7 @@ background-color: orangered;
   height: 30px;
   text-align: center;
   font-weight: bold;
+  cursor: pointer;
 }
 #festival-date:hover, #popularity:hover{
   color: green;

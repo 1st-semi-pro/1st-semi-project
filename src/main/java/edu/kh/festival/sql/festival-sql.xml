@@ -27,7 +27,7 @@
 		WHERE RNUM BETWEEN ? AND ?
 	</entry>
 	
-	<!-- 축제일순 조회  -->
+	<!-- 축제일순조회
 	<entry key="festivalDt">
 	SELECT FESTIVAL_DT FROM INFO_BOARD
 	ORDER BY FESTIVAL_DT
@@ -42,7 +42,7 @@
     ) A
 )
 WHERE RNUM BETWEEN ? AND ?
-    </entry>
+    </entry> -->
     
     <!--인기순 조회 -->
     <entry key="festivalPop">
