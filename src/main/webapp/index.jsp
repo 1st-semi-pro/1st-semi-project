@@ -48,7 +48,6 @@
                  
          <div class="content-1"> <!-- 한반도 + 게시판 -->
             <div class="korea"> <!-- 한반도 -->
-               <img src="resources/images/korea.png">
                <img src="resources/images/korea/seoul.png" id="seoul">
                <img src="resources/images/korea/Gyeonggi.png" id="gyeonggi">
                <img src="resources/images/korea/incheon.png" id="incheon">
@@ -56,6 +55,15 @@
                <img src="resources/images/korea/chungnam.png" id="chungnam">
                <img src="resources/images/korea/daejeon.png" id="daejeon">
                <img src="resources/images/korea/chungbuk.png" id="chungbuk">
+               <img src="resources/images/korea/gyeongsang.png" id="gyeongsang">
+               <img src="resources/images/korea/daegu.png" id="daegu">
+               <img src="resources/images/korea/jeonbuk.png" id="jeonbuk">
+               <img src="resources/images/korea/jeonnam.png" id="jeonnam">
+               <img src="resources/images/korea/gwangju.png" id="gwangju">
+               <img src="resources/images/korea/gyeongnam.png" id="gyeongnam">
+               <img src="resources/images/korea/jeju.png" id="jeju">
+               <img src="resources/images/korea/busan.png" id="busan">
+               <img src="resources/images/korea/ulsan.png" id="ulsan">
             </div>
 
 
