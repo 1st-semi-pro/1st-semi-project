@@ -70,7 +70,7 @@
 							<th class="em">이메일</th>
 							<th class="pn">전화번호</th>
 							<th class="dt">회원가입일</th>
-							<th>탈퇴여부</th>
+							<th>신고 횟수</th>
 						</tr>
 
 						<c:choose>

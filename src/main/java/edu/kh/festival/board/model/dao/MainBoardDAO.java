@@ -102,4 +102,41 @@ public class MainBoardDAO {
 		return boardList2;
 	}
 
+
+
+
+	public List<BoardDetail> selectBoardList3(Connection conn) throws Exception {
+		List<BoardDetail> boardList3 = new ArrayList<BoardDetail>();
+		
+		try {
+			
+			String sql = "SELECT * FROM (SELECT * FROM BOARD WHERE BOARD_CD = 1	AND BOARD_ST = 'N' ORDER BY BOARD_NO DESC) WHERE ROWNUM BETWEEN 1 AND 10";
+			
+			stmt = conn.createStatement();
+			
+			
+			rs = stmt.executeQuery(sql);
+			
+			while(rs.next()) {
+				BoardDetail board = new BoardDetail();
+				
+				board.setBoardNo( rs.getInt(1));
+				board.setBoardTitle(rs.getString(2));
+				board.setBoardContent(rs.getString(3));
+				board.setCreateDate(rs.getString("CREATE_DT"));
+				board.setReadCount(rs.getInt("READ_COUNT"));
+				board.setMemberNo(rs.getInt("MEMBER_NO"));
+				board.setBoardCd(rs.getString("BOARD_CD"));
+				
+				boardList3.add(board);
+			}
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		
+		return boardList3;
+	}
+
 }

@@ -42,4 +42,15 @@ public class MainBoardService {
 		return boardList2;
 	}
 
+
+	public List<BoardDetail> selectMainboard3() throws Exception {
+		Connection conn =  getConnection();
+		
+		List<BoardDetail> boardList3 = dao.selectBoardList3(conn);
+		
+		close(conn);
+		
+		return boardList3;
+	}
+
 }

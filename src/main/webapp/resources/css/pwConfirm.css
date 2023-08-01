@@ -1,53 +1,82 @@
 *{box-sizing: border-box; margin: 0; padding: 0; font-family: 'Hi Melody', cursive;}
 
 .container{
-    width: 500px;
-    height: 300px;
-    border: 1px solid black;
-    margin: 200px auto;
+    width: 600px;
+    height: 600px;
+    border: 10px solid lightgray;
+    border-radius: 10px;
+    margin: 50px auto;
     display: flex;
     flex-direction: column;
 }
 
-.container > div:nth-child(1){
+.divide1{
     flex-basis: 30%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.container > div:nth-child(2){
+.divide2{
     flex-basis: 10%;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 15px;
 
 }
-.container > div:nth-child(3){
-    flex-basis: 30%;
+
+.divide2 > span{
+    font-weight: bold;
+}
+
+.divide3{
+    flex-basis: 10%;
     display: flex;
-    margin: 20px;
+    margin: auto;
     align-items: center;
 
 }
-.container > div:nth-child(4){
-    flex-basis: 30%;
+.divide4{
+    flex-basis: 17%;
     display: flex;
     justify-content: space-between;
-    margin: 0px 20px;
+    margin: 0px 60px;
 }
 
 input{
     font-size: 20px;
+    width: 450px;
     height: 50px;
     align-items: center;
+    border: 0;
+    border-bottom: 3px solid lightgray;
+    padding-left: 10px;
     
 }
 
 button{
-    background-color: black;
+    background-color: lightcoral;
+    border: 0;
     color: white;
+    font-size: 30px;
+    cursor: pointer;
     width: 48%;
     height: 65%;
     border-radius: 5%;
 
+}
+
+footer{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer a{
+    display:flex;
+}
+
+footer *{
+    color: rgb(117, 115, 115);
 }
