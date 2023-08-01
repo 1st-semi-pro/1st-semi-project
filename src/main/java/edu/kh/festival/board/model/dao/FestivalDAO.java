@@ -8,12 +8,15 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 
 import javax.servlet.http.HttpServletRequest;
 
 import edu.kh.festival.board.model.vo.Festival;
+import edu.kh.festival.board.model.vo.FestivalDetail;
 import edu.kh.festival.board.model.vo.FestivalImage;
 import edu.kh.festival.board.model.vo.Pagination9;
 
@@ -354,11 +357,69 @@ public class FestivalDAO {
 			close(rs);
 			close(pstmt);
 			
-			
 		}
 		
 	return festivalList;
 	}
+
+	
+	/** 축제 상세 페이지 조회 DAO
+	 * @param festivalNo
+	 * @return map
+	 * @throws Exception
+	 */
+	public Map<String, Object> selectFestivalDetail(Connection conn, int festivalNo) throws Exception {
+		Map<String, Object> map = new HashMap<String, Object>();
+
+		Festival fes = null;
+		FestivalDetail fesDt = null;
+		FestivalImage fesImg = null;
+		
+		try {
+			
+			String sql = prop.getProperty("selectFestivalDetail");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, festivalNo);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				fes = new Festival();
+				fesDt = new FestivalDetail();
+				fesImg = new FestivalImage();
+				
+				fes.setFestivalNo(rs.getInt(1));
+				fes.setFestivalTitle(rs.getString(2));
+				fes.setFestivalContent(rs.getString(3));
+				fes.setFestivalDate(rs.getString(4));
+				fes.setReadCount(rs.getInt(5));
+				fes.setBoardCode(rs.getInt(6));
+				fes.setFestivalArea(rs.getString(7));
+				fes.setFestivalCat(rs.getString(8));
+				
+				fesDt.setFestivalNo(rs.getInt(1));
+				fesDt.setFestivalContent(rs.getString(9));
+				fesDt.setFestivalDetailInfo(rs.getString(10));
+				
+				map.put("fes", fes);
+				map.put("fesDt", fesDt);
+			}
+			
+			System.out.println(fes);
+			System.out.println(fesDt);
+			System.out.println(map);
+			
+		}finally {
+			close(pstmt);
+		}
+		
+		return map;
+	}
+	
+
+
 	
 
 }

@@ -113,4 +113,26 @@ public class FestivalService {
 
 		return map;
 	}
+
+
+	/** 축제 상세정보페이지 조회 Service
+	 * @param festivalNo
+	 * @return map
+	 * @throws Exception
+	 */
+	public Map<String, Object> selectFesitvalDetail(int festivalNo) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		
+		map = dao.selectFestivalDetail(conn, festivalNo);
+		
+		if(map != null) {
+			System.out.println(map);
+		}
+		
+		return map;
+		
+	}
 }
