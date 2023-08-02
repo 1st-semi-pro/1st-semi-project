@@ -69,7 +69,7 @@
                                         <img src="${contextPath}/resources/images/report.png" alt="신고 횟수" class="mypage-icon">
                                         <span class="mypage-span" id="report-span">0회</span>
                                     </div>
-                                    <a href="${contextPath}/member/myPage/info"><button type="button" class="mypage-btn" id="update-btn">내 정보 수정</button></a>
+                                    <a href="${contextPath}/member/pwConfirm"><button type="button" class="mypage-btn" id="update-btn">내 정보 수정</button></a>
                                     <button type="submit" class="mypage-btn" id="save-btn">변경사항 저장</button>
                                 </div>
     
