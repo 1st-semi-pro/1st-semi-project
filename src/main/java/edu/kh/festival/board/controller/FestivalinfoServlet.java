@@ -23,7 +23,9 @@ public class FestivalinfoServlet extends HttpServlet {
 			int type = Integer.parseInt(req.getParameter("type"));
 
 			int pop = Integer.parseInt(req.getParameter("pop"));
-
+			
+			String festivalDate = req.getParameter("festivalDate");
+			
 			int cp = 1;
 
 			if (req.getParameter("cp") != null) {
@@ -34,15 +36,13 @@ public class FestivalinfoServlet extends HttpServlet {
 
 			Map<String, Object> map = service.festivalInfo(type, cp, req);
 
-			
-			
 			if (pop == 1) {
 				
 				map = service.festivalInfo1(type, cp, pop, req);
 			}
+
 			
 		
-			  
 			req.setAttribute("map", map);
 
 			String path = "/WEB-INF/views/board/festivalInformation.jsp";

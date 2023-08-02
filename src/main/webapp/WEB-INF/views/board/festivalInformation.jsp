@@ -124,13 +124,23 @@
     <section class="content2">
         <div id="span-box">
 
-            <c:if test="${param.pop == 0}">
-                <a href="${contextPath}/board/festivalInfo?type=1&pop=1"><span id="popularity">인기순</span></a>
+            <c:if test="${param.pop == 0 && param.festivalDate == null }">
+                <a href="${contextPath}/board/festivalInfo?type=1&pop=1&festivalDate=${param.festivalDate}&festivalArea=${param.festivalArea}&festivalCat=${param.festivalCat}"><i class="fa-solid fa-star" style="color: #fff047;"></i><span id="popularity">인기순</span></a>
                 <a href="${contextPath}/board/festivalInfo?type=1&pop=0" ><span id="festival-date" class="color">전체</span></a>
             </c:if>
+
+            <c:if test="${param.pop == 0 && param.festivalDate !=null }">
+                <a href="${contextPath}/board/festivalInfo?type=1&pop=1&festivalDate=${param.festivalDate}&festivalArea=${param.festivalArea}&festivalCat=${param.festivalCat}"><i class="fa-solid fa-star" style="color: #fff047;"></i><span id="popularity">인기순</span></a>
+                <a href="${contextPath}/board/festivalInfo?type=1&pop=0" ><span id="festival-date">전체</span></a>
+            </c:if>
+
+            <c:if test="${param.pop == 1 && param.festivalDate ==null }">
+                <a href="${contextPath}/board/festivalInfo?type=1&pop=1&festivalDate=${param.festivalDate}&festivalArea=${param.festivalArea}&festivalCat=${param.festivalCat}"><i class="fa-solid fa-star" style="color: #fff047;"></i><span id="popularity">인기순</span></a>
+                <a href="${contextPath}/board/festivalInfo?type=1&pop=0" ><span id="festival-date">전체</span></a>
+            </c:if>
             
-            <c:if test="${param.pop == 1}">
-                <a href="${contextPath}/board/festivalInfo?type=1&pop=1"><span id="popularity" class="color">인기순</span></a>
+            <c:if test="${param.pop == 1 && param.festivalDate != null}">
+                <a href="${contextPath}/board/festivalInfo?type=1&pop=1&festivalDate=${param.festivalDate}&festivalArea=${param.festivalArea}&festivalCat=${param.festivalCat}"><i class="fa-solid fa-star" style="color: #fff047;"></i><span id="popularity" class="color">인기순</span></a>
                 <a href="${contextPath}/board/festivalInfo?type=1&pop=0" ><span id="festival-date">전체</span></a>
             </c:if>
             
