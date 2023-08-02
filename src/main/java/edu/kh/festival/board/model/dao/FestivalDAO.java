@@ -193,88 +193,6 @@ public class FestivalDAO {
 		return festivalList;
 	}
 
-	/** 축제일순 조회 DAO
-	 * @param conn
-	 * @param type
-	 * @param ft
-	 * @return festivalCount
-	 * @throws Exception
-	 */
-	/*
-	 * public int festivalDt(Connection conn, int type, int ft) throws Exception {
-	 * 
-	 * int festivalCount = 0;
-	 * 
-	 * try {
-	 * 
-	 * String sql = prop.getProperty("festivalDt");
-	 * 
-	 * stmt = conn.prepareStatement(sql);
-	 * 
-	 * rs = stmt.executeQuery(sql);
-	 * 
-	 * while (rs.next()) {
-	 * 
-	 * festivalCount++; }
-	 * 
-	 * } finally { close(rs); close(stmt); }
-	 * 
-	 * return festivalCount; }
-	 */
-
-	/** 축제일순 List 조회 DAO
-	 * @param conn
-	 * @param pagination
-	 * @param type
-	 * @param ft
-	 * @return
-	 * @throws Exception
-	 */
-	/*
-	 * public List<Festival> festivalDtList(Connection conn, Pagination9 pagination,
-	 * int type, int ft) throws Exception {
-	 * 
-	 * List<Festival> festivalList = new ArrayList<Festival>();
-	 * 
-	 * 
-	 * try {
-	 * 
-	 * String sql = prop.getProperty("DtfestivalList");
-	 * 
-	 * int start = (pagination.getCurrentPage()-1)* pagination.getLimit()+1;
-	 * 
-	 * int end = start + pagination.getLimit()-1;
-	 * 
-	 * pstmt = conn.prepareStatement(sql);
-	 * 
-	 * pstmt.setInt(1, start); pstmt.setInt(2, end);
-	 * 
-	 * rs = pstmt.executeQuery();
-	 * 
-	 * while(rs.next()) { Festival festival = new Festival();
-	 * 
-	 * festival.setFestivalNo(rs.getInt("FESTIVAL_NO"));
-	 * festival.setFestivalTitle(rs.getString("FESTIVAL_TITLE"));
-	 * festival.setFestivalContent(rs.getString("FESTIVAL_CT"));
-	 * festival.setFestivalDate(rs.getString("FESTIVAL_DT"));
-	 * festival.setReadCount(rs.getInt("READ_COUNT"));
-	 * 
-	 * 
-	 * festivalList.add(festival);
-	 * 
-	 * }
-	 * 
-	 * 
-	 * } finally {
-	 * 
-	 * close(rs); close(pstmt);
-	 * 
-	 * 
-	 * }
-	 * 
-	 * return festivalList; }
-	 */
-
 	/** 인기순 조회 DAO
 	 * @param conn
 	 * @param type
@@ -340,7 +258,23 @@ public class FestivalDAO {
 		
 		try {
 			
-			String sql = prop.getProperty("PopfestivalList");
+			
+			
+			String sql1 = prop.getProperty("PopfestivalList1");
+			String sql2 = prop.getProperty("PopfestivalList2");
+			String sql3 = prop.getProperty("PopfestivalList3");
+			
+			if(festivalDate != null && festivalDate !="") {
+				   sql2 += "AND FESTIVAL_DT LIKE '_____" + festivalDate + "%' ";
+			}
+			if(festivalArea != null && festivalArea !="") {
+				   sql2 += "AND FESTIVAL_AREA LIKE '%" + festivalArea + "%' ";
+			}
+			if(festivalCat != null && festivalCat !=""){
+				   sql2 += "AND FESTIVAL_CAT LIKE '%" + festivalCat + "%' ";
+			}
+			
+			String sql = sql1 + sql2 + sql3;
 			
 			int start = (pagination.getCurrentPage()-1)* pagination.getLimit()+1;
 	         
@@ -361,6 +295,8 @@ public class FestivalDAO {
 				festival.setFestivalContent(rs.getString("FESTIVAL_CT"));
 				festival.setFestivalDate(rs.getString("FESTIVAL_DT"));
 				festival.setReadCount(rs.getInt("READ_COUNT"));
+				festival.setFestivalArea(rs.getString("FESTIVAL_AREA"));
+				festival.setFestivalCat(rs.getString("FESTIVAL_CAT"));
 				
 				
 				festivalList.add(festival);

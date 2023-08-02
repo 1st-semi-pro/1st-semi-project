@@ -50,17 +50,23 @@ WHERE RNUM BETWEEN ? AND ?
 	WHERE READ_COUNT !='0'
     </entry>
     
-    <entry key="PopfestivalList">
+    <entry key="PopfestivalList1">
     SELECT * FROM(
     SELECT ROWNUM RNUM, A.* FROM(
-        SELECT FESTIVAL_NO, FESTIVAL_TITLE, FESTIVAL_CT, 
-              FESTIVAL_DT,READ_COUNT FROM INFO_BOARD
-        WHERE READ_COUNT !='0'
-        ORDER BY READ_COUNT DESC
+    </entry>
+        
+	<entry key="PopfestivalList2">
+	SELECT FESTIVAL_NO, FESTIVAL_TITLE, FESTIVAL_CT, 
+              FESTIVAL_DT,FESTIVAL_AREA,FESTIVAL_CAT,READ_COUNT FROM INFO_BOARD
+    WHERE READ_COUNT !='0'
+	
+	</entry>
+	<entry key="PopfestivalList3">
+	 ORDER BY READ_COUNT DESC
     ) A
 )
-WHERE RNUM BETWEEN ? AND ?
-    </entry>
+	WHERE RNUM BETWEEN ? AND ?
+	</entry>
     
     <entry key="selectFestivalDetail">
     	SELECT FESTIVAL_NO, FESTIVAL_TITLE, FESTIVAL_CT, FESTIVAL_DT, READ_COUNT, BOARD_CD, FESTIVAL_AREA, FESTIVAL_CAT, 
