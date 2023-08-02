@@ -85,7 +85,7 @@
 									<tr class="s2">
 										<td>${member.memberNo}</td>
 										<td><input type="checkbox" class="check" name="checkRow" value="${member.memberId}"></td>
-										<td><a href="#">${member.memberId}</a></td>
+										<td><a href="${contextPath}/member/myPage2?memberNo=${member.memberNo}">${member.memberId}</a></td>
 										<td>${member.memberNickname}</td>
 										<td>${member.memberEmail}</td>
 										<td>${member.memberPhone}</td>

@@ -135,3 +135,10 @@
     width:85%;
     height:100px;
 }
+
+a{
+    display: flex;
+    width: 60px;
+    height: 60px;
+    margin-top: 10px;
+}
