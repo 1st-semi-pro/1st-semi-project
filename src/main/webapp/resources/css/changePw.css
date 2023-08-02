@@ -28,8 +28,9 @@
     border: 0;
 }
 
-#findPw-form{
+#changePw-form{
     height: 300px;
+    margin-top: 50px;
 }
 .divide2{
     flex-basis: 50%;
@@ -37,7 +38,7 @@
     flex-direction: column;
     margin: 0px 50px;
     border: 0;
-    height: 400px;
+    height: 300px;
 }
 
 .divide2 > div:first-child{
@@ -54,6 +55,12 @@
     align-items: center;
     justify-content: center;
     border: 0;
+    width: 100%;
+}
+
+.divide3 > a{
+    width: 25%;
+    margin: 30px 30px;
 }
 
 .divide4{
@@ -79,37 +86,27 @@ button{
 }
 
 
-#email-authentication-btn{
+#goToBack-btn{
     color: white;
-    width: 100px;
-    height: 100%;
-    border-radius: 5%;
-}
-#authentication-check-btn{
-    color: white;
-    width: 100px;
-    height: 100%;
-    border-radius: 5%;
-}
-#goToBack-btn, #findPw-btn{
-    color: white;
-    height: 50px;
-    width: 20%;
+    height: 40px;
+    width: 100%;
     border-radius: 5%;
     border: 0;
-    margin: 30px 10px;
 }
 
-#email-authentication-btn:hover{
-    color: black;
+#authentication-check-btn{
+    color: white;
+    height: 40px;
+    width: 25%;
+    border-radius: 5%;
+    border: 0;
 }
-#authentication-check-btn:hover{
-    color: black;
-}
+
 #goToBack-btn:hover{
     color: black;
 }
-#findPw-btn:hover{
+
+#authentication-check-btn:hover{
     color: black;
 }
 
@@ -127,5 +124,3 @@ footer{
 footer *{
     color: rgb(117, 115, 115);
 }
-
-
