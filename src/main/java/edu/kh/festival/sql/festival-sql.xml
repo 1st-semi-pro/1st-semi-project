@@ -71,6 +71,13 @@ WHERE RNUM BETWEEN ? AND ?
 		WHERE FESTIVAL_NO = ?
     </entry>
     
+    <entry key="selectImgList">
+    	SELECT IMG_NO, IMG_RENAME, IMG_LEVEL , FESTIVAL_NO
+		FROM FESTIVAL_IMG
+		JOIN INFO_BOARD ON (IMG_NO = FESTIVAL_NO)
+		WHERE FESTIVAL_NO = ?
+    </entry>
+    
     
     
 </properties>
