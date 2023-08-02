@@ -35,9 +35,12 @@ public class FestivalinfoServlet extends HttpServlet {
 			Map<String, Object> map = service.festivalInfo(type, cp, req);
 
 			
-			/*
-			 * if( pop == 1) { map = service.festivalInfo1(type, cp,pop,req); }
-			 */
+			
+			if (pop == 1) {
+				
+				map = service.festivalInfo1(type, cp, pop, req);
+			}
+			
 		
 			  
 			req.setAttribute("map", map);

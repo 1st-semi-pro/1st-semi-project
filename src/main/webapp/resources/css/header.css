@@ -93,8 +93,19 @@ nav > ul li:hover{
     align-items: center;
 }
 .h-login a{
-    width: 24%;
     text-align: center;
+}
+.h-login a:nth-last-child(1){
+    width: 20%;
+}
+.h-login a:nth-last-child(2){
+    width: 30%;
+}
+.h-login a:nth-last-child(3){
+    width: 30%;
+}
+.h-login a:nth-last-child(4){
+    width: 20%;
 }
 .h-login a:last-child{
     margin-right: 15px;

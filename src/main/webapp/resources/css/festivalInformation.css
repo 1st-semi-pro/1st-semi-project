@@ -178,11 +178,11 @@ background-color: orangered;
 #festival-date:hover, #popularity:hover{
   color: green;
 }
-#festival-date{
+#popularity{
   position: relative;
   margin-right: 15px;
 }
-#festival-date:after {
+#popularity:after {
   content: ' ';
   display: block; 
   width: 2px;

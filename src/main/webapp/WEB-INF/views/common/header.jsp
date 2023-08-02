@@ -39,7 +39,7 @@
                         </a>   
                         <!-- 회원 정보 + 로그아웃 버튼 -->
                     <div class="h-my-info">
-                        <a href="${contextPath}/member/logout" id="logout-btn">로그아웃</a><span>/</span><a href="${contextPath}/member/myPage">마이페이지</a>
+                        <a href="${contextPath}/member/logout" id="logout-btn">로그아웃</a><span>/</span><a href="${contextPath}/member/myPage?memberNo=${loginMember.memberNo}">마이페이지</a>
                         <c:if test="${loginMember.memberNo == 2}">
                             <span>/</span><a href="${contextPath}/board/memberList">회원관리</a>
                         </c:if>
