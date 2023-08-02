@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,12 +20,69 @@
     <main>
         <jsp:include page="/WEB-INF/views/common/header.jsp"/>
         
-    <!-- 이미지슬라이드  -->
-    <section> 
-        이미지슬라이드
-    </section>
-    <!-- 검색게시판  -->
-    <article class="title-box"> 전국 축제검색 게시판</article>
+    <section id="content-box">
+        <section class="main-title"> 동행자구하기</section>
+        <section id="main-content">
+            <article class="main-content-one">
+                <div>
+                    <div>img</div>
+                    <div>축제이름 : 000<br>
+                         나이: 00<br>
+                         사는곳 : 서울<br>
+                         희망인원 : 00<br>
+                    </div>
+                </div>
+
+                <div>
+                    <div>img</div>
+                    <div>축제이름 : 000<br>
+                         나이: 00<br>
+                         사는곳 : 경기도<br>
+                         희망인원 : 00<br>
+                    </div>
+                </div>
+
+                <div>
+                    <div>img</div>
+                    <div>축제이름 : 000<br>
+                         나이: 00<br>
+                         사는곳 : 인천<br>
+                         희망인원 : 00<br>
+                         
+
+                    </div>
+                </div>
+               
+            </article>
+
+            <article class="main-content-two">
+                <div>
+                    <div>img</div>
+                    <div>축제이름 : 000<br>
+                         나이: 00<br>
+                         사는곳 : 서울<br>
+                         희망인원 : 00<br>
+                    </div>
+                </div>
+                
+                <div>
+                    <div>img</div>
+                    <div>축제이름 : 000<br>
+                         나이: 00<br>
+                         사는곳 : 경기도<br>
+                         희망인원 : 00<br>
+                    </div>
+                </div>
+
+                <div>
+                    <div>img</div>
+                    <div>축제이름 : 000<br>
+                         나이: 00<br>
+                         사는곳 : 인천<br>
+                         희망인원 : 00<br>
+                    </div>
+                </div>
+            </article>
     </main>
 
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
