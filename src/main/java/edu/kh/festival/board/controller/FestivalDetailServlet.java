@@ -34,6 +34,22 @@ public class FestivalDetailServlet extends HttpServlet  {
 			
 			map = service.selectFesitvalDetail(festivalNo);
 			
+			//map.put("festival", fes);
+			//map.put("festivalDetail", fesDt); 
+			// festival, festivalDetail 안의 컬럼 값들 전부 다 가져오고
+			
+			//map.put("imgList", imgList);
+			// imgList(여러행) 을 가져온다.
+			
+			System.out.println(map);
+			
+			req.setAttribute("map", map);
+			
+			String path = "WEB-INF/views/board/festivalDetail.jsp";
+			
+			req.getRequestDispatcher(path).forward(req, resp);
+			
+			
 			
 			
 		} catch (Exception e) {

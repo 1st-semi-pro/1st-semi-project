@@ -130,8 +130,13 @@ public class FestivalService {
 		map = dao.selectFestivalDetail(conn, festivalNo);
 		
 		if(map != null) {
-			System.out.println(map);
+			
+			List<FestivalImage> imgList = dao.selectImgList(conn, festivalNo);
+			
+			map.put("imgList", imgList);
+			
 		}
+		
 		
 		return map;
 		

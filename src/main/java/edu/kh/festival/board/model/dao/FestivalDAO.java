@@ -15,6 +15,7 @@ import java.util.Properties;
 
 import javax.servlet.http.HttpServletRequest;
 
+
 import edu.kh.festival.board.model.vo.Festival;
 import edu.kh.festival.board.model.vo.FestivalDetail;
 import edu.kh.festival.board.model.vo.FestivalImage;
@@ -387,7 +388,6 @@ public class FestivalDAO {
 
 		Festival fes = null;
 		FestivalDetail fesDt = null;
-		FestivalImage fesImg = null;
 		
 		try {
 			
@@ -402,7 +402,6 @@ public class FestivalDAO {
 			while(rs.next()) {
 				fes = new Festival();
 				fesDt = new FestivalDetail();
-				fesImg = new FestivalImage();
 				
 				fes.setFestivalNo(rs.getInt(1));
 				fes.setFestivalTitle(rs.getString(2));
@@ -417,13 +416,9 @@ public class FestivalDAO {
 				fesDt.setFestivalContent(rs.getString(9));
 				fesDt.setFestivalDetailInfo(rs.getString(10));
 				
-				map.put("fes", fes);
-				map.put("fesDt", fesDt);
+				map.put("festival", fes);
+				map.put("festivalDetail", fesDt);
 			}
-			
-			System.out.println(fes);
-			System.out.println(fesDt);
-			System.out.println(map);
 			
 		}finally {
 			close(pstmt);
@@ -431,9 +426,47 @@ public class FestivalDAO {
 		
 		return map;
 	}
-	
 
-
-	
+	/** 축제 상세조회 페이지 이미지 여러 개씩 갖고오기 DAO
+	 * @param conn
+	 * @param festivalNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public List<FestivalImage> selectImgList(Connection conn, int festivalNo) throws Exception {
+		
+		List<FestivalImage> imgList = new ArrayList<>();
+		
+		try {
+			
+			String sql = prop.getProperty("selectImgList");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, festivalNo);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				FestivalImage image = new FestivalImage();
+				
+				image.setImageNo(rs.getInt(1));
+				image.setImageReName(rs.getString(2));
+				image.setImageLevel(rs.getInt(3));
+				
+				imgList.add(image);
+				
+			}
+			
+		}finally {
+			
+			close(rs);
+			close(pstmt);
+			
+		}
+		
+		return imgList;
+	}
 
 }
