@@ -3,8 +3,16 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
     <header>
+        <script>
+            const pathname = location.pathname;
+            const contextPathEq = "${contextPath}"+"/";
+            const boolean = (pathname==contextPathEq);
+    
+            console.log(boolean);
+            console.log(pathname == '/1-semi-project/');
+        </script>
         <section class="header">
-
+           
             <section>
                 <a href="${contextPath}"><img src="${contextPath}/resources/images/logo.png" id="home-logo"></a>
             </section>
@@ -24,9 +32,15 @@
             <c:choose>
            
               <c:when test="${empty sessionScope.loginMember }">
-
+                
 					<div class="h-login">
-						<div><a href="${contextPath}/member/login">로그인</a><a href="${contextPath}/member/findId">아이디 찾기</a><a href="${contextPath}/member/findPw">비밀번호 찾기</a><a href="${contextPath}/member/agree">회원가입</a></div>
+						<div><a href="${contextPath}/member/login"><i class="fa-solid fa-user-large"></i></a></div>
+                        <div><a href="${contextPath}/member/findId"><i class="fa-solid fa-id-card"></i></a></div>
+                        <div><a href="${contextPath}/member/findPw"><i class="fa-solid fa-unlock-keyhole"></i></a></div>
+                        
+                        <c:if test="${pathname == contextPathEq}">
+                            <a href="${contextPath}/member/agree"><div class="background" style="height: 0;"></div></a>
+                        </c:if>
 					</div>
 
               </c:when>
@@ -61,7 +75,8 @@
                 <li><a href="${contextPath}/board/list?type=3">자유게시판</a></li>
                 <li><a href="${contextPath}/board/list?type=4">축제후기</a></li>
                 <li><a href="${contextPath}/board/companion?type=5">동행자구하기</a></li>
-                
             </ul>
         </nav>
     </header>
+    
+    

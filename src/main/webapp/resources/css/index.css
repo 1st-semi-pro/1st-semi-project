@@ -2,15 +2,9 @@
 a{text-decoration: none; color: inherit; display: block;}
 li{list-style: none; cursor: pointer;}
 
-
-#allDiv{
-    dislay:flex;
-}
-
-
 .content{
     width: 60%;
-    margin: 0px auto;
+    margin: 30px auto;
     height: auto;
     display: flex;
     flex-direction: column;
