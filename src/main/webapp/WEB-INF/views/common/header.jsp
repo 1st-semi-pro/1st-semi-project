@@ -4,6 +4,7 @@
 
     <header>
         <section class="header">
+    
             <section>
                 <a href="${contextPath}"><img src="${contextPath}/resources/images/logo.png" id="home-logo"></a>
             </section>
@@ -27,12 +28,12 @@
 					<div class="h-login">
 						<div><a href="${contextPath}/member/login"><i class="fa-solid fa-user-large"></i></a></div>
 
-                        <c:if test="${pageContext.request.requestURL != Id}">
-                        <div><a href="${contextPath}/member/findId"><i class="fa-solid fa-id-card"></i></a><i class="fa-solid fa-magnifying-glass" id="search"></i></div>
+                        <c:if test="${icon != Id}">
+                        <div><a href="${contextPath}/member/findId"><i class="fa-solid fa-id-card"></i><i class="fa-solid fa-magnifying-glass" id="search"></i></a></div>
                         </c:if>
                         
-                        <c:if test="${pageContext.request.requestURL != Pw}">
-                        <div><a href="${contextPath}/member/findPw"><i class="fa-solid fa-unlock-keyhole"></i></a></div>
+                        <c:if test="${icon != Pw}">
+                        <div><a href="${contextPath}/member/findPw"><i class="fa-solid fa-unlock-keyhole"></i><i class="fa-solid fa-magnifying-glass"></i></a></div>
                         </c:if>
                         <div><a href="${contextPath}/member/agree"><div class="background"></div></a></div>
 					</div>

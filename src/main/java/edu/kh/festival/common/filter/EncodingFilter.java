@@ -36,12 +36,16 @@ public class EncodingFilter extends HttpFilter implements Filter {
 
 		String contextpath = ((HttpServletRequest)request).getContextPath(); 
 		
-		String Id = "http://localhost:9000/1-semi-project/WEB-INF/views/member/findId.jsp";
-		String Pw = "http://localhost:9000/1-semi-project/WEB-INF/views/member/findPw.jsp";
+		// 헤더 아이콘
+		String icon = ((HttpServletRequest)request).getServletPath();
+		String Id = "/member/findId";
+		String Pw = "/member/findPw";
 		
 		// 세팅
 		application.setAttribute("contextPath", contextpath);
 		
+		
+		application.setAttribute("icon", icon);
 		application.setAttribute("Id", Id);
 		application.setAttribute("Pw", Pw);
 
