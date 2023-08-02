@@ -77,6 +77,16 @@ public class MemberManageController extends HttpServlet {
 				
 			}
 			
+			if(command.equals("memberList2")) {
+				
+				List<Member> mList = service.selectMemberList();
+				
+				System.out.println(mList);
+				
+				new Gson().toJson(mList, resp.getWriter());
+				
+			}
+			
 			
 		}catch (Exception e) {
 			

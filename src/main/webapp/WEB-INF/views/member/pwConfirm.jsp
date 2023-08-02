@@ -8,6 +8,7 @@
     <title>회원정보확인</title>
 
     <link rel="stylesheet" href="${contextPath}/resources/css/header.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/footer.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/pwConfirm.css">
     <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&family=Moirai+One&display=swap" rel="stylesheet">
 </head>
@@ -16,7 +17,7 @@
     <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
     <form action="${contextPath}/member/pwConfirm" method="post" onsubmit="return confirmValidate()">
-        <div class="container">
+        <div class="container1">
             <div class="divide1">
                 <h1>회원 정보 확인</h1>
             </div>
@@ -35,7 +36,7 @@
         </div>
     </form>
         
-    <footer>
+    <!-- <footer>
 
         <section class="find1">
 
@@ -53,11 +54,11 @@
 
         </section>
     </footer>
-
+ -->
     
     
 
-    
+    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     
     <script src="${contextPath}/resources/js/pwConfirm.js"></script>
 

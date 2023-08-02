@@ -16,7 +16,7 @@ public class MainBoardService {
 	private MainBoardDAO dao = new MainBoardDAO();
 	
 	
-	/** 메인에서 게시판1 글 목록 조회
+	/** 메인에서 게시판1 최신글 목록 조회 Service
 	 * @return boardList1
 	 * @throws Exception
 	 */
@@ -31,6 +31,10 @@ public class MainBoardService {
 	}
 
 
+	/** 메인에서 게시판2 최신글 목록 조회 Service
+	 * @return boardList2
+	 * @throws Exception
+	 */
 	public List<BoardDetail> selectMainboard2() throws Exception {
 		Connection conn =  getConnection();
 		
@@ -41,6 +45,10 @@ public class MainBoardService {
 	}
 
 
+	/** 메인에서 게시판3 최신글 목록 조회 Service
+	 * @return boardList3
+	 * @throws Exception
+	 */
 	public List<BoardDetail> selectMainboard3() throws Exception {
 		Connection conn =  getConnection();
 		

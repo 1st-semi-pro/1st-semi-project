@@ -30,6 +30,11 @@ public class MainBoardDAO {
 	
 	
 
+	/** 메인에서 게시판1 최신글 목록 조회 DAO
+	 * @param conn
+	 * @return boardList1
+	 * @throws Exception
+	 */
 	public List<BoardDetail> selectBoardList(Connection conn) throws Exception {
 		
 		List<BoardDetail> boardList1 = new ArrayList<BoardDetail>();
@@ -67,7 +72,11 @@ public class MainBoardDAO {
 
 
 
-
+	/** 메인에서 게시판2 최신글 목록 조회 DAO
+	 * @param conn
+	 * @return boardList2
+	 * @throws Exception
+	 */
 	public List<BoardDetail> selectBoardList2(Connection conn) throws Exception {
 		List<BoardDetail> boardList2 = new ArrayList<BoardDetail>();
 		
@@ -104,7 +113,11 @@ public class MainBoardDAO {
 
 
 
-
+	/** 메인에서 게시판3 최신글 목록 조회 DAO
+	 * @param conn
+	 * @return boardList3
+	 * @throws Exception
+	 */
 	public List<BoardDetail> selectBoardList3(Connection conn) throws Exception {
 		List<BoardDetail> boardList3 = new ArrayList<BoardDetail>();
 		
