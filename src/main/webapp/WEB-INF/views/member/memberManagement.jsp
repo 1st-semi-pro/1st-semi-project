@@ -82,16 +82,19 @@
 
 							<c:otherwise>
 								<c:forEach var="member" items="${mList}">
-									<tr class="s2">
-										<td>${member.memberNo}</td>
-										<td><input type="checkbox" class="check" name="checkRow" value="${member.memberId}"></td>
-										<td><a href="${contextPath}/member/myPage2?memberNo=${member.memberNo}">${member.memberId}</a></td>
-										<td>${member.memberNickname}</td>
-										<td>${member.memberEmail}</td>
-										<td>${member.memberPhone}</td>
-										<td>${member.enrollDate}</td>
-										<td>${member.secessionFl}</td>
-									</tr>
+									<tbody>
+
+										<tr>
+											<td>${member.memberNo}</td>
+											<td><input type="checkbox" class="check" name="checkRow" value="${member.memberId}"></td>
+											<td><a href="${contextPath}/member/myPage2?memberNo=${member.memberNo}">${member.memberId}</a></td>
+											<td>${member.memberNickname}</td>
+											<td>${member.memberEmail}</td>
+											<td>${member.memberPhone}</td>
+											<td>${member.enrollDate}</td>
+											<td>${member.secessionFl}</td>
+										</tr>
+									</tbody>
 									
 								</c:forEach>
 							</c:otherwise>

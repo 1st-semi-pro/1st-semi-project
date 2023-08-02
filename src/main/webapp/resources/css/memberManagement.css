@@ -96,7 +96,8 @@ table, td, th {
   */
 
 .content{
-	border: 0;
+	border: 1px solid black;
+	padding: 0px 10px;
 }
 
 
@@ -143,9 +144,6 @@ table, td, th {
 	flex-basis: 10%;
 }
 
-.s2{
-	
-}
 
 .table1{
 	
@@ -172,6 +170,7 @@ table, td, th {
 .pagination-area{
 	border: 0;
 	padding-top: 20px;
+	padding-bottom: 10px;
 }
 
 
@@ -232,6 +231,10 @@ table, td, th {
 
 #selectMemberDelete:hover{
 	color: white;
+}
+
+#mem-search-btn{
+	margin-top: 10px;
 }
 
 

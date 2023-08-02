@@ -1,0 +1,153 @@
+*{box-sizing: border-box; margin: 0; padding: 0; font-family: 'Hi Melody', cursive;}
+a{text-decoration: none; color: inherit; display: block;}
+li{list-style: none; cursor: pointer;}
+
+
+/*  마이페이지 컨탠츠 부분 */
+
+.title{
+    padding: 20px 0;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    /*background-color: rgb(80, 78, 78);*/
+    color: black;
+    border: 0;
+}
+
+#contain{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#content{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+#info-box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    border: 1px solid gray;
+    padding: 10px 0;
+}
+
+/* 이미지첨부 영역 */
+.profile-image-area{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.profile-btn-area{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 50px;
+}
+
+.profile-btn-area > label{
+    cursor: pointer;
+}
+
+#delete-image{
+    padding: 0;
+}
+
+#profile-image{
+    height: 400px;
+    width: 400px;
+    margin-right: 50px;
+    margin-bottom: 10px;
+    border: 1px solid gray;
+}
+
+#input-image{
+    width: 230px;
+    display: none;
+}
+
+/* 프로필 메세지, 동행후기 영역*/
+#intro{
+    display: flex;
+    flex-direction: column;
+    
+    margin-bottom: 50px;
+}
+#profileMessage{
+    resize: none;
+}
+
+#history{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    border: 1px solid gray;
+}
+
+#info-btn-area{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#info-btn-area > div{
+    align-items: center;
+}
+
+.mypage-icon{
+    width:25px;
+    height: 25px;
+}
+
+.mypage-span{
+    margin-left: 20px;
+}
+
+.mypage-btn{
+    width: 100px;
+}
+
+/* 관심목록 영역 */
+
+.sub-title{
+    width: 100px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    background-color: black;
+}
+
+#festival-box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    border: 1px solid gray;
+}
+
+#festival-box > article{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 300px;
+    margin: 10px 30px;
+}
+
+article img{
+    width: 100%;
+    height: 95%;
+    object-fit: cover;
+}
+
+#delete-image{
+    cursor: pointer;
+}
