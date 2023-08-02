@@ -32,16 +32,6 @@ public class BoardDetailServlet extends HttpServlet {
 			int boardNo = Integer.parseInt(req.getParameter("no"));
 			
 			BoardDetail detail = service.selectBoardDetail(boardNo);
-	
-
-			
-			int result = service.updateReadCount(boardNo);
-			
-			System.out.println(result);
-	
-			resp.getWriter().print(result);
-
-			
 			
 			// 댓글 조회
 			if(detail != null) {

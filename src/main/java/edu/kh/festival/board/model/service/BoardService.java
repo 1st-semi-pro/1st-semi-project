@@ -61,7 +61,13 @@ public class BoardService {
 	public BoardDetail selectBoardDetail(int boardNo) throws Exception{
 		
 		Connection conn = getConnection();
-		
+
+			// 조회수 증가를 detail 가져오기 전에 수행한다 -> 들어가자마자 조회수가 올라간다.
+			int result = dao.updateReadCount(conn, boardNo);
+			
+			if(result > 0) commit(conn);
+			else rollback(conn);
+			
 		BoardDetail detail = dao.selectBoardDetail(conn, boardNo);
 		
 		// 이미지 조회
@@ -206,28 +212,6 @@ public class BoardService {
 		
 	}
 
-	/** 조회수 증가 service
-	 * @param boardNo
-	 * @return result
-	 * @throws Exception
-	 */
-	public int updateReadCount(int boardNo) throws Exception {
-		
-		Connection conn = getConnection();
-		
-		int result = dao.updateReadCount(conn, boardNo);
-		
-		if(result > 0) commit(conn);
-		else rollback(conn);
-		
-		close(conn);
-		
-		return result;
-		
-		
-		
-	}
-	
 	/** 검색 목록 조회 Service
 	 * @param type
 	 * @param cp

@@ -40,6 +40,8 @@ const woman = document.getElementById("woman");
 const kor = document.getElementById("kor");
 const foreign = document.getElementById("foreign");
 
+const radios = document.getElementsByClassName("radios");
+
 /* 인증 관련 */
 const agreeCbx = document.getElementById("agreeCbx");
 const emailBtn = document.getElementById("emailBtn");
@@ -57,7 +59,10 @@ const checkInputs = {
     "memberNickname" : false,
     "memberName" : false,
     "memberBirth" : false,
-    /* radio 안넣었음 몰라서 */
+    "regionSelect" : false,
+    "memberPhone" : false,
+    "radios" : false
+
 
 }
 
@@ -268,6 +273,14 @@ function pwCheck(){
 
 memberNickname.addEventListener("input",function(){
 
+    if(inputPwCheck != true){
+        alert("처음부터 입력해주세요.");
+        memberNickname.value = "";
+        inputId.focus();
+        return;
+
+    }
+
     if(memberNickname.value.trim().length == 0){
         in2.innerText = "2~12글자 사이의 영어/숫자/한글로 입력해주세요.";
         in2.classList.remove("true","false");
@@ -341,6 +354,7 @@ memberName.addEventListener("input",function(){
         alert("닉네임을 올바르게 입력해주세요.");
         this.value = "";
         memberNickname.focus();
+        return;
     }
 
     if(this.value.trim().length == 0){
@@ -391,6 +405,7 @@ memberBirth.addEventListener("input", function(){
         alert("이름을 올바르게 입력해주세요.");
         this.value = "";
         memberName.focus();
+        return;
     }
 
 
@@ -436,7 +451,7 @@ memberBirth.addEventListener("input", function(){
 // -------------------------------------------------------------------------------------- //
 // 활동지역
 
-regionSelect.addEventListener("click",function(){
+regionSelect.addEventListener("change",function(){
 
     in2.innerText = "";
 
@@ -444,10 +459,25 @@ regionSelect.addEventListener("click",function(){
        
         alert("생년월일을 올바르게 입력해주세요.");
         memberBirth.focus();
+        regionSelect.value = "default";
+        return;
     }
 
+    if(regionSelect.value == "default"){
+        
+        checkInputs.regionSelect = false;
+        regionSelect.style.border = "2px solid lightgray";
+        regionSelect.style.outline = "0";
+        regionSelect.style.borderRadius = "10px";
+    }
 
-    // 주 활동지역을 선택해주세요. 선택되어있을때 안넘어가는법?
+    if(regionSelect.value != "default"){
+        checkInputs.regionSelect = true;
+        regionSelect.style.border = "2px solid lightcoral";
+        regionSelect.style.outline = "0";
+        regionSelect.style.borderRadius = "10px";
+    }
+
 
 })
 
@@ -456,12 +486,14 @@ regionSelect.addEventListener("click",function(){
 
 memberPhone.addEventListener("input",function(){
 
-    //if(regionSelect ) 지역 선택이 안됐을때 입력 못하게 하기 모르겠음
 
-    // 왜 autocomplete off인데 저장된정보뜸
-
-    in2.innerText = "";
-
+    if(checkInputs.regionSelect != true){
+        
+        alert("지역을 올바르게 선택해주세요.");
+        this.value = "";
+        regionSelect.focus();
+        return;
+    }
 
     if(this.value.trim().length == 0){
         in2.innerText = "전화번호를 입력해주세요. (-제외)";
@@ -619,6 +651,7 @@ inputEmail.addEventListener("input",function(){
         alert("남/여 여부를 선택해주세요.");
         this.value = "";
         checkInputs.inputEmail = false;
+        return;
 
     }
 
@@ -723,8 +756,39 @@ emailBtn.addEventListener("click", function(){
 // 조건 안맞으면 회원가입 못하게 하기
 
 function joinValidate(){
-    return true;
+   
+    let str;
+
+    for(let key in checkInputs){
+
+        if(!checkInputs[key]){
+
+            switch(key){
+                case "inputId"          : str= "이메일이"; break;
+                case "inputPw"          : str= "비번이"; break;
+                case "inputPwCheck"     : str= "비밀번호 확인이"; break;
+                case "memberNickname"   : str= "닉네임이"; break;
+                case "memberName"       : str= "이름이"; break;
+                case "memberBirth"      : str= "생년월일이"; break;
+                case "regionSelect"     : str= "지역선택이"; break;
+                case "memberPhone"      : str= "전화번호가"; break;
+            }
+
+        }
+
+    }
+
+    for(let i = 0; i < radios.length; i++){
+        
+        if(!radios.checked){
+            alert("남/여 혹은 내/외국인을 체크해주세요.");
+            return false;
+        }
+    }
+
 }
+
+
 
 
 /////////////////////////////////////////////////////////////////////////

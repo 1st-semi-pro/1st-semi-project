@@ -405,4 +405,33 @@ public class FestivalDAO {
 		return imgList;
 	}
 
+	/** 축제 상세페이지 조회수 증가 DAO
+	 * @param conn
+	 * @param festivalNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int updateReadCount(Connection conn, int festivalNo) throws Exception{
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("updateReadCount");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, festivalNo);
+			
+			result = pstmt.executeUpdate();
+			
+		}finally {
+			
+			close(pstmt);
+			
+		}
+		
+		return result;
+	}
+
 }

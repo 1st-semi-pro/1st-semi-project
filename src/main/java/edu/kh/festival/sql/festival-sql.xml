@@ -68,6 +68,7 @@ WHERE RNUM BETWEEN ? AND ?
 	WHERE RNUM BETWEEN ? AND ?
 	</entry>
     
+    <!-- 축제 상세페이지  -->
     <entry key="selectFestivalDetail">
     	SELECT FESTIVAL_NO, FESTIVAL_TITLE, FESTIVAL_CT, FESTIVAL_DT, READ_COUNT, BOARD_CD, FESTIVAL_AREA, FESTIVAL_CAT, 
         FESTIVAL_CONTENT, FESTIVAL_DETAILINFO, IMG_NO, IMG_RENAME, IMG_LEVEL
@@ -77,11 +78,17 @@ WHERE RNUM BETWEEN ? AND ?
 		WHERE FESTIVAL_NO = ?
     </entry>
     
+    <!-- 이미지리스트 가져오기  -->
     <entry key="selectImgList">
     	SELECT IMG_NO, IMG_RENAME, IMG_LEVEL , FESTIVAL_NO
 		FROM FESTIVAL_IMG
 		JOIN INFO_BOARD ON (IMG_NO = FESTIVAL_NO)
 		WHERE FESTIVAL_NO = ?
+    </entry>
+    
+    <!-- 게시글 들어가면 INFO_BOARD 안 축제 조회수 1 상승  -->
+    <entry key="updateReadCount">
+    	UPDATE INFO_BOARD SET READ_COUNT = READ_COUNT + 1 WHERE FESTIVAL_NO = ?
     </entry>
     
     
