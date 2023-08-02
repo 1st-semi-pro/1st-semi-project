@@ -19,12 +19,16 @@
                     
                     <c:if test="${empty reply.profileImage}">
                         <!-- 프로필 이미지가 없을 경우 -->
-                        <img src="${contextPath}/resources/images/id.png"> <!-- 임시 -->
+                        <a href="${contextPath}/member/myPage2?memberNo=${reply.memberNo}">
+                            <img src="${contextPath}/resources/images/id.png"> <!-- 임시 -->
+                        </a>
                     </c:if>
 
                     <c:if test="${!empty reply.profileImage}">
                         <!-- 프로필 이미지가 있을 경우 -->
-                        <img src="${contextPath}${reply.profileImage}">
+                        <a href="${contextPath}/member/myPage2?memberNo=${reply.memberNo}">
+                            <img src="${contextPath}${reply.profileImage}">
+                        </a>
                     </c:if>
 
                     <div class="nickDate">${reply.memberNickname}</div>

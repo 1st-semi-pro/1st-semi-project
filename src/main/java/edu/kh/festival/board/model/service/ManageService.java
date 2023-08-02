@@ -98,6 +98,23 @@ public class ManageService {
 		return result;
 	}
 
+	/** 관리자 회원 프로필 보기
+	 * @param memberNo
+	 * @return member
+	 * @throws Exception
+	 */
+	public Member viewProfile(int viewMemberNo) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		Member viewMember = dao.viewProfile(conn, viewMemberNo);
+		
+		close(conn);
+		
+		return viewMember;
+		
+	}
+
 		
 		
 		

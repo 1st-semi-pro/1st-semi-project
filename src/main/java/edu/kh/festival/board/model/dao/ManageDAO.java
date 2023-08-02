@@ -106,6 +106,7 @@ public class ManageDAO {
 				member.setEnrollDate(rs.getDate("ENROLL_DT"));
 				member.setSecessionFl(rs.getString("SECESSION_FL"));
 				
+				
 				mList.add(member);
 			}
 		}finally {
@@ -237,6 +238,45 @@ public class ManageDAO {
 		
 		
 		return result;
+	}
+
+	/** 관리자 회원 프로필 보기
+	 * @param conn
+	 * @param memberNo
+	 * @return member
+	 * @throws Exception
+	 */
+	public Member viewProfile(Connection conn, int viewMemberNo) throws Exception {
+		
+		Member viewMember = new Member();
+		
+		try {
+			String sql = "SELECT * FROM MEMBER WHERE MEMBER_NO = ?";
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, viewMemberNo);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				viewMember.setMemberNo(rs.getInt("MEMBER_NO"));
+				viewMember.setMemberId(rs.getString("MEMBER_ID"));
+				viewMember.setMemberPw(rs.getString("MEMBER_PW"));
+				viewMember.setMemberEmail(rs.getString("MEMBER_EMAIL"));
+				viewMember.setMemberNickname(rs.getString("MEMBER_NICKNAME"));
+				viewMember.setMemberMessage(rs.getString("MEMBER_MESSAGE"));
+				viewMember.setMemberGender(rs.getString("MEMBER_GENDER"));
+				viewMember.setMemberProfileImage(rs.getString("MEMBER_PROFILE"));
+			}
+			
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		
+		return viewMember;
 	}
 
 
