@@ -3,6 +3,7 @@ package edu.kh.festival.board.controller;
 import java.io.IOException;
 import java.util.Map;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -40,17 +41,12 @@ public class FestivalDetailServlet extends HttpServlet  {
 			
 			//map.put("imgList", imgList);
 			// imgList(여러행) 을 가져온다.
-			
-			System.out.println(map);
-			
+
 			req.setAttribute("map", map);
 			
-			String path = "WEB-INF/views/board/festivalDetail.jsp";
+			String path = "/WEB-INF/views/board/festivalDetail.jsp";
 			
 			req.getRequestDispatcher(path).forward(req, resp);
-			
-			
-			
 			
 		} catch (Exception e) {
 			e.printStackTrace();
