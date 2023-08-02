@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="${contextPath}/resources/css/header.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&family=Moirai+One&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/51fc103959.js" crossorigin="anonymous"></script>
 </head>
 </head>
 <body>

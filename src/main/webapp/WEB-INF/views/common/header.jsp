@@ -3,16 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
     <header>
-        <script>
-            const pathname = location.pathname;
-            const contextPathEq = "${contextPath}"+"/";
-            const boolean = (pathname==contextPathEq);
-    
-            console.log(boolean);
-            console.log(pathname == '/1-semi-project/');
-        </script>
         <section class="header">
-           
             <section>
                 <a href="${contextPath}"><img src="${contextPath}/resources/images/logo.png" id="home-logo"></a>
             </section>
@@ -22,7 +13,7 @@
                     <form action="#" name="search-form">
                         <fieldset>
                             <input type="search" id="h-search" name="search" size="35" placeholder=" 여행지를 찾아보세요." autocomplete="off">
-                            <button type="submit" id="h-search-btn" class="fa-solid fa-magnifying-glass"></button>
+                            <button type="submit" id="h-search-btn" class="fa-solid fa-magnifying-glass-plus"></button>
                         </fieldset>
                     </form>
                 </article>
@@ -32,25 +23,34 @@
             <c:choose>
            
               <c:when test="${empty sessionScope.loginMember }">
-                
+           
 					<div class="h-login">
 						<div><a href="${contextPath}/member/login"><i class="fa-solid fa-user-large"></i></a></div>
-                        <div><a href="${contextPath}/member/findId"><i class="fa-solid fa-id-card"></i></a></div>
-                        <div><a href="${contextPath}/member/findPw"><i class="fa-solid fa-unlock-keyhole"></i></a></div>
-                        
-                        <c:if test="${pathname == contextPathEq}">
-                            <a href="${contextPath}/member/agree"><div class="background" style="height: 0;"></div></a>
+
+                        <c:if test="${pageContext.request.requestURL != Id}">
+                        <div><a href="${contextPath}/member/findId"><i class="fa-solid fa-id-card"></i></a><i class="fa-solid fa-magnifying-glass" id="search"></i></div>
                         </c:if>
+                        
+                        <c:if test="${pageContext.request.requestURL != Pw}">
+                        <div><a href="${contextPath}/member/findPw"><i class="fa-solid fa-unlock-keyhole"></i></a></div>
+                        </c:if>
+                        <div><a href="${contextPath}/member/agree"><div class="background"></div></a></div>
 					</div>
 
               </c:when>
               
               <c:otherwise>
                 <article class="h-login-area">
+                    
                         <!-- 회원 프로필 이미지 -->
-                        <a href="#">
-                            <img src="${contextPath}/resources/images/id.png" id="member-profile">
-                        </a>   
+                    <div class="profile-box">
+                    <c:if test="${empty loginMember.memberProfileImage}"> <!-- 프로필 이미지 없는 경우-->
+                        <img src="${contextPath}/resources/images/id.png" id="member-profile">
+                    </c:if>
+                    <c:if test="${!empty loginMember.memberProfileImage}">  <!-- 프로필 이미지 있는 경우-->
+                        <img src="${contextPath}${loginMember.memberProfileImage}" id="profile-images">
+                    </c:if>
+                    </div>
                         <!-- 회원 정보 + 로그아웃 버튼 -->
                     <div class="h-my-info">
                         <a href="${contextPath}/member/logout" id="logout-btn">로그아웃</a><span>/</span><a href="${contextPath}/member/myPage?memberNo=${loginMember.memberNo}">마이페이지</a>
