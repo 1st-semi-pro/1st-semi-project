@@ -19,14 +19,14 @@
                     
                     <c:if test="${empty reply.profileImage}">
                         <!-- 프로필 이미지가 없을 경우 -->
-                        <a href="${contextPath}/member/myPage2?memberNo=${reply.memberNo}">
+                        <a href="${contextPath}/member/myPage2?memberNo=${reply.memberNo}" class="as">
                             <img src="${contextPath}/resources/images/id.png"> <!-- 임시 -->
                         </a>
                     </c:if>
 
                     <c:if test="${!empty reply.profileImage}">
                         <!-- 프로필 이미지가 있을 경우 -->
-                        <a href="${contextPath}/member/myPage2?memberNo=${reply.memberNo}">
+                        <a href="${contextPath}/member/myPage2?memberNo=${reply.memberNo}" class="as">
                             <img src="${contextPath}${reply.profileImage}">
                         </a>
                     </c:if>

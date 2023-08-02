@@ -9,10 +9,11 @@
     <title>게시판</title>
 
     
+
+    <link rel="stylesheet" href="${contextPath}/resources/css/header.css">
     
     <link rel="stylesheet" href="${contextPath}/resources/css/boardWriteForm.css">
 
-    <link rel="stylesheet" href="${contextPath}/resources/css/header.css">
 
 
     <script src="https://kit.fontawesome.com/16679b9adf.js" crossorigin="anonymous"></script>
@@ -35,7 +36,14 @@
             <!-- 제목 -->
 
             <div id="update">
-                <div>게시글 수정</div>
+                <c:if test="${empty detail.boardTitle}">
+                    <div>게시글 작성</div>
+                </c:if>
+
+                <c:if test="${!empty detail.boardTitle}">
+                    <div>게시글 수정</div>
+                </c:if>
+                
             </div>
 
             <h1 class="board-title">

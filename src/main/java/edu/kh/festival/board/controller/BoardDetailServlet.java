@@ -46,7 +46,7 @@ public class BoardDetailServlet extends HttpServlet {
 			// 댓글 조회
 			if(detail != null) {
 				
-				ReplyService service2 = new ReplyService();
+				ReplyService service2	 = new ReplyService();
 				List<Reply> ReplyList = service2.selectReplyList(boardNo);
 				// replyContorller는 주소로? 받지만 얘는 서비스로 바로넘겨서 상관이 없음
 				

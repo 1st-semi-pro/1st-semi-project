@@ -115,8 +115,6 @@
                 <img src="${img0}">
             </div>
 
-
-
             <div id="halfContent">
                 <div>${festivalDetail.festivalDetailInfo}</div>
 
@@ -129,22 +127,40 @@
             <div id="map" style="width:80%;height:400px;"></div>
           
             <div id="searchAddress">
-            <input id="address" type="text" placeholder="검색할 주소" id="address">
-            <input id="submit" type="button" value="주소 검색" id="sear">
+            <input id="address" type="text" placeholder="검색할 주소를 입력해주세요." id="address">
+            <input id="submit" type="button" value="주소 검색" id="search" 
+                    style="width:100px !important; height:40px !important; 
+                    border:0 !important; border-radius:10px !important; 
+                    background-color: lightcoral !important; 
+                    font-size:20px !important; cursor:pointer !important;">
+                    <!-- api떄문에 css에서의 style이 안먹는듯 -->
             </div>    
 
         </div>
 
         <div id="youtube">
-            해당축제 유튜브 있으면 띄우기
+           <!-- youtube 부분 -> db 만들어야 되서 일단 임시 -->
+           <iframe width="600" height="360" 
+           src="https://www.youtube.com/embed/7HDeem-JaSY" 
+           title="(여자)아이들((G)I-DLE) - &#39;퀸카 (Queencard)&#39; Official Music Video" 
+           frameborder="0" 
+           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+           allowfullscsreen></iframe>
+
         </div>
 
         <div id="similar">
-            비슷 축제 4개 뽑기
-        </div>
+           <!-- 랜덤 축제 4개 뽑기 임시 -->
+           <div>이런 축제는 어떠세요?</div>
 
-        
-        
+            <!-- <img src="이미지경로/<%= 1 + Math.floor(Math.random() * 15.99) %>.jpg"/> -->
+            <div>
+            <img src="${contextPath}/resources/images/board/suwon.png">
+            <img src="${contextPath}/resources/images/board/suwon.png">
+            <img src="${contextPath}/resources/images/board/suwon.png">
+            <img src="${contextPath}/resources/images/board/suwon.png">
+            </div>    
+        </div>
         
     </div>
     

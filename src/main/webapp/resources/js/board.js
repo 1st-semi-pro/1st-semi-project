@@ -135,6 +135,18 @@ function searchValidate(){
 
     return true;
 }
+/* 수정 취소 */
+
+    if(document.getElementById("goToPreviousPage") != null){
+
+        document.getElementById("goToPreviousPage").addEventListener("click",function(){
+            history.back();
+        })
+    }
+
+
+
+
 
 // 검색어 추천 왜 안되지..ㅠ
 $(function() {
