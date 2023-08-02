@@ -28,7 +28,7 @@
             <h5>※ 인증번호 입력 후 비밀번호를 재설정 해주십시오.</h5>
         </div>
     
-        <form id="findPw-form" action="/findPw/changPw">
+        <form id="findPw-form" action="changPw" method="post">
             <div class="divide2">
                 <div class="divide4"><input type="text" placeholder="인증번호 입력" size="35"></div>
                 <div class="divide4"><input type="text" placeholder="비밀번호 입력"></div>
