@@ -139,8 +139,13 @@
     align-items: center;
 }
 
+#map{
+    width:60%;
+    height:600px;
+}
+
 #findWayApi{
-    height:400px;
+    height:600px;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -148,10 +153,46 @@
     flex-direction: column;
 }
 
+#searchAddress{
+    display:flex;
+    height:100px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#address{
+    width:200px;
+    height:40px;
+    border:2px solid lightcoral;
+    border-radius: 10px;
+    outline:0;
+    margin-right: 5px;
+
+}
+
 #youtube{
-    height:200px;
+    height:400px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#spanDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #similar{
-    height:200px;
+    height:300px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#similar img{
+    width:200px;
+
 }
