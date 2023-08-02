@@ -15,6 +15,15 @@ public class ConfirmDAO {
 	private ResultSet rs;
 	private Properties prop;
 	
+	
+	
+	/** 비밀번호 확인 DAO
+	 * @param conn
+	 * @param memberId
+	 * @param inputPw
+	 * @return result
+	 * @throws Exception
+	 */
 	public int confirmMember(Connection conn, String memberId, String inputPw) throws Exception {
 
 		int result = 0;

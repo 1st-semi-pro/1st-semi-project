@@ -78,7 +78,34 @@ function selectMemberList(){
 
     $.ajax({
         url : "board/memberList2",
-        data
+        type : "get",
+        dataType : "JSON",
+        success : function(mList){
+            const memberList = document.getElementById("member-list");
+            memberList.innerHTML = "";
+
+            for(let item of mList){
+                const tr = document.createElement("tr");
+                const td1 = document.createElement("td");
+                const td2 = document.createElement("td");
+                const td3 = document.createElement("td");
+                const td4 = document.createElement("td");
+                const td5 = document.createElement("td");
+                const td6 = document.createElement("td");
+                const td7 = document.createElement("td");
+                const td8 = document.createElement("td");
+                const input = document.createElement("input");
+
+                td1.innerText = item.memberNo;
+                td2.innerText  = item
+
+                tr.append(td);
+            }
+
+        },
+        error : function(){
+            console.log("에러발생");
+        }
     })
 }
 
@@ -109,8 +136,7 @@ function goToDeleteMember(){
         document.memberform.submit();
             
         alert("탈퇴시켰습니다.");
-
-
+        /* selectMemberList(); */
 
         
     }

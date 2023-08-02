@@ -24,25 +24,6 @@ public class PwConfirmServlet extends HttpServlet {
 		req.getRequestDispatcher(path).forward(req, resp);
 		
 		
-		/*
-		 * if(command.equals("check")) { String inputPw = req.getParameter("inputPw");
-		 * System.out.println("입력한 비밀번호" +inputPw);
-		 * 
-		 * HttpSession session = req.getSession();
-		 * 
-		 * edu.kh.festival.member.model.vo.Member loginMember =
-		 * (edu.kh.festival.member.model.vo.Member)(session.getAttribute("loginMember"))
-		 * ; System.out.println(loginMember + "~~~");
-		 * 
-		 * String path = "/WEB-INF/views/member/pwConfirm.jsp";
-		 * req.getRequestDispatcher(path).forward(req, resp);
-				
-			
-			
-		}
-		 */
-		
-		
 	}
 	
 	

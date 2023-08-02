@@ -14,6 +14,12 @@ public class ConfirmService {
 	private ConfirmDAO dao = new ConfirmDAO();
 	
 
+	/** 비밀번호 확인 Service
+	 * @param memberId
+	 * @param inputPw
+	 * @return result
+	 * @throws Exception
+	 */
 	public int confirmMember(String memberId, String inputPw) throws Exception {
 		
 		Connection conn = getConnection();

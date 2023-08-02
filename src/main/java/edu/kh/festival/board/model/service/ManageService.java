@@ -16,6 +16,13 @@ public class ManageService {
 	
 	private ManageDAO dao = new ManageDAO();
 
+	
+	
+	/** 회원 목록 조회 Service (관리자)
+	 * @param cp
+	 * @return map
+	 * @throws Exception
+	 */
 	public Map<String, Object> selectAllMember(int cp)throws Exception {
 		
 		Connection conn = getConnection();
@@ -42,7 +49,7 @@ public class ManageService {
 		return map;
 	}
 
-	/** 검색 목록 조회 Service
+	/** 검색 목록 조회 Service (관리자)
 	 * @param cp
 	 * @param ctg
 	 * @param search
@@ -113,6 +120,18 @@ public class ManageService {
 		
 		return viewMember;
 		
+	}
+
+	
+	public List<Member> selectMemberList() throws Exception {
+		
+		Connection conn = getConnection();
+		
+		List<Member> mList = dao.selectMemberList(conn);
+		
+		
+		
+		return mList;
 	}
 
 		

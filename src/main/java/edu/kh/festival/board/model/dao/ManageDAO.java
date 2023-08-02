@@ -240,7 +240,7 @@ public class ManageDAO {
 		return result;
 	}
 
-	/** 관리자 회원 프로필 보기
+	/**회원 프로필 정보 DAO
 	 * @param conn
 	 * @param memberNo
 	 * @return member
@@ -277,6 +277,39 @@ public class ManageDAO {
 		
 		
 		return viewMember;
+	}
+
+	public List<Member> selectMemberList(Connection conn) throws Exception  {
+		
+		List<Member> mList = new ArrayList<Member>();
+		
+		try {
+			String sql = "SELECT * FROM MEMBER WHERE SECESSION_FL = 'N'";
+			
+			stmt = conn.createStatement();
+			
+			rs = stmt.executeQuery(sql);
+			
+			while(rs.next()) {
+				Member member = new Member();
+				
+				member.setMemberNo(rs.getInt("MEMBER_NO"));
+				member.setMemberId(rs.getString("MEMBER_ID"));
+				member.setMemberNickname(rs.getString("MEMBER_NICKNAME"));
+				member.setMemberEmail(rs.getString("MEMBER_EMAIL"));
+				member.setMemberPhone(rs.getString("MEMBER_PHONE"));
+				member.setEnrollDate(rs.getDate("ENROLL_DT"));
+				member.setSecessionFl(rs.getString("SECESSION_FL"));
+				
+				mList.add(member);
+			}
+			
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return mList;
 	}
 
 
