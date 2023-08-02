@@ -65,6 +65,7 @@ public class PwConfirmServlet extends HttpServlet {
 			if(result == 1) {
 				resp.sendRedirect(req.getContextPath() +"/member/myPage/info");
 			}else {
+				session.setAttribute("message", "비밀번호를 확인해주세요.");
 				resp.sendRedirect(req.getContextPath() + "/member/pwConfirm");
 			}
 			

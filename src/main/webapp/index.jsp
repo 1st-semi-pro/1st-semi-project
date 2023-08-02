@@ -45,7 +45,6 @@
             <div class="swiper-pagination"></div>
          </div>
         
-         <span><a href="${contextPath}/member/pwConfirm">회원정보 변경할때</a></span>
                  
          <div class="content-1"> <!-- 한반도 + 게시판 -->
             <div class="korea"> <!-- 한반도 -->
