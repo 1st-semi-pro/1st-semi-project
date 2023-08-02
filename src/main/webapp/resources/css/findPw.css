@@ -40,20 +40,16 @@
     height: 400px;
 }
 
-.divide2 > div:first-child{
-    display: flex;
-    background-color:lightcoral;
-    color: white;
-    align-items: center;
-    justify-content: center;
-    
-}
-
 .divide3{
     display: flex;
     align-items: center;
     justify-content: center;
     border: 0;
+    width: 100%;
+}
+.divide3 > a{
+    width: 25%;
+    margin: 30px 30px;
 }
 
 .divide4{
@@ -61,6 +57,7 @@
     display: flex;
     align-items: center;
     border: 0;
+    border-bottom: 2px solid gray;
 }
 
 .divide4 input{
@@ -69,7 +66,17 @@
     height: 100%;
     width: 100%;
     padding-left: 20px;
-    border-bottom: 2px solid gray;
+    outline-style: none;
+}
+
+.divide2 > div:first-child{
+    display: flex;
+    background-color:lightcoral;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    
 }
 
 button{
@@ -79,31 +86,25 @@ button{
 }
 
 
-#email-authentication-btn{
-    color: white;
-    width: 100px;
-    height: 100%;
-    border-radius: 5%;
-}
-#authentication-check-btn{
-    color: white;
-    width: 100px;
-    height: 100%;
-    border-radius: 5%;
-}
 #goToBack-btn, #findPw-btn{
     color: white;
-    height: 50px;
-    width: 20%;
+    height: 40px;
+    width: 100%;
     border-radius: 5%;
     border: 0;
-    margin: 30px 10px;
+}
+#sendEmail-btn, #email-authentication-btn{
+    color: white;
+    height: 40px;
+    width: 25%;
+    border-radius: 5%;
+    border: 0;
 }
 
-#email-authentication-btn:hover{
+#sendEmail-btn:hover{
     color: black;
 }
-#authentication-check-btn:hover{
+#email-authentication-btn:hover{
     color: black;
 }
 #goToBack-btn:hover{
