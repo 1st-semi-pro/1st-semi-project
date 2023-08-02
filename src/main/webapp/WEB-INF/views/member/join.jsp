@@ -38,12 +38,12 @@
                     <input type="text" class="inputs" id="inputId" name="inputId" placeholder="아이디를 입력해주세요." autocomplete="off">
                 </article>
 
-                <article>
+                <article class = "firstArticles">
                     <img src="${contextPath}/resources/images/password.jpg" id="img2">
                     <input type="password" class="inputs" id="inputPw" name="inputPw" placeholder="비밀번호를 입력해주세요.">
                 </article>
 
-                <article>
+                <article class = "firstArticles">
                     <img src="${contextPath}/resources/images/password2.png" id="img3">
                     <input type="password" class="inputs" id="inputPwCheck" name="inputPwCheck" placeholder="비밀번호 확인을 입력해주세요.">
                 </article>
@@ -79,7 +79,7 @@
                  
                     <div id="selectDiv">
                         <select id="regionSelect" name="regionSelect">
-                            <option selected>주 활동지역을 선택해주세요.</option> <!-- 이거 선택안되게 하는법? -->
+                            <option selected value="default">주 활동지역을 선택해주세요.</option> <!-- 이거 선택안되게 하는법? -->
                             <option value="서울">서울</option>
                             <option value="경기">경기</option>
                             <option value="강원">강원</option>

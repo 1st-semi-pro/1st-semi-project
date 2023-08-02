@@ -68,9 +68,7 @@ public class BoardDAO {
 				
 				boardName = rs.getString(1);
 			}
-			
-			System.out.println(boardName);
-			
+
 		} finally {
 			close(rs);
 			close(stmt);
@@ -494,8 +492,7 @@ public class BoardDAO {
 			pstmt.setInt(1, boardNo);
 			
 			result = pstmt.executeUpdate();
-			
-			System.out.println(result);
+
 			
 		}finally {
 			close(pstmt);

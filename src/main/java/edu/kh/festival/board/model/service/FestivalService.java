@@ -125,6 +125,9 @@ public class FestivalService {
 		
 		Connection conn = getConnection();
 		
+		// 상세페이지 들어가면 조회수 +1 시키기
+		int result = dao.updateReadCount(conn, festivalNo);
+		
 		Map<String, Object> map = new HashMap<String, Object>();
 		
 		map = dao.selectFestivalDetail(conn, festivalNo);
@@ -140,5 +143,22 @@ public class FestivalService {
 		
 		return map;
 		
+	}
+
+
+	/** 축제 상세페이지 조회수 증가 Service
+	 * @param festivalNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int updateReadCount(int festivalNo) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		int result = dao.updateReadCount(conn, festivalNo);
+		 
+		close(conn);
+		
+		return result;
 	}
 }

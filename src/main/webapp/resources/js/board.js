@@ -37,11 +37,19 @@
             
             let cp; 
             
-            if(params.get("cp") != ""){ // 쿼리스트링에 cp가 있을 경우
+            if(params.get("cp") != ""){
                 cp = "cp=" + params.get("cp"); 
-            }else{
-                cp = "cp=1";
+            
             }
+            
+            if(params.get("cp") == null){ 
+                cp = "cp=1"; 
+                
+            }
+
+            if(params.get("cp") == ""){ 
+                cp = "cp=1";
+            } 
 
             // 조립
             // /community/board/list?type=1&cp=1

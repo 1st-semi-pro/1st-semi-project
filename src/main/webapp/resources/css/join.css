@@ -68,12 +68,17 @@ form{
     align-items: center;
 }
 
+.firstArticles{
+    margin-top:5px;
+    margin-left:10px;
+}
+
 #innerTextSpan1{
     display:flex;
     height:12%;
-    margin-left:50px;
-    margin-bottom: 5px;
-    justify-content: center;
+    margin-left:55px;
+    margin-bottom: 4px;
+    justify-content: flex-start;
     align-items: center;
 
     font-weight: bold;

@@ -66,21 +66,16 @@ public class BoardWriteController extends HttpServlet {
 				String root = session.getServletContext().getRealPath("/"); 
 				// /festival/src/main/webapp
 				
-				System.out.println(session.getServletContext());
-				
 		        String folderPath = "/resources/images/board/"; 
 
 		        String filePath = root + folderPath; 
 		        // /festival/src/main/webapp + /resources/images/board/ 
-		        System.out.println(root);
-		        System.out.println(filePath);
 		        
 		        String encoding = "UTF-8";
 				
-		        System.out.println("test1");
 		        MultipartRequest mpReq = new MultipartRequest(req, filePath, maxSize, encoding, new MyRenamePolicy());
 				// 객체가 생성됨과 동시에 파라미터로 전달된 파일이 지정된 경로에 저장됨 그냥 이 객체는 그렇게 해줌
-				System.out.println("test2");
+
 				System.out.println(mpReq);
 		        Enumeration<String> files = mpReq.getFileNames();
 		        
