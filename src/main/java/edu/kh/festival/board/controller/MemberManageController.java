@@ -24,9 +24,7 @@ public class MemberManageController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String uri = req.getRequestURI();
-		// /community/reply/selectReplyList
 		String contextPath = req.getContextPath();
-		// /community
 		String command = uri.substring((contextPath + "/board/").length());
 		
 		ManageService service = new ManageService();
@@ -58,6 +56,8 @@ public class MemberManageController extends HttpServlet {
 				}
 				
 				req.setAttribute("map", map);
+				
+				// 선택된 회원 탈퇴
 				
 				if(req.getParameter("checkRow") != null) {
 					

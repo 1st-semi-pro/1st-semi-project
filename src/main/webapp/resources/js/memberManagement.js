@@ -34,6 +34,8 @@ this.addEventListener("click", function(e){
 
 
 
+
+
 function searchValidate(){
 
     if(document.getElementById("mem-search").value.trim().length == 0){
@@ -61,7 +63,6 @@ function searchValidate(){
 
         input.value = search;
 
-        // option을 반복 접근해서 value와 key와 같으면 selected 속성 추가
         for(let op of option){
             if(op.value == ctg){
                 op.selected = true;
@@ -71,6 +72,20 @@ function searchValidate(){
     }
 
 })();
+
+
+function selectMemberList(){
+
+    $.ajax({
+        url : "board/memberList2",
+        data
+    })
+}
+
+
+
+
+
 
 function goToDeleteMember(){
     if(confirm("정말 탈퇴시키겠습니까?")){
@@ -83,8 +98,6 @@ function goToDeleteMember(){
                /*  deleteSet.add(checkRow[i].value); */
             }
         }
-        /* const deleteList = document.getElementById("deleteList");
-        deleteList.value = Array.from(deleteSet); */
 
         if(flag == false){
             alert("하나 이상 선택되어야 삭제 가능합니다.")
@@ -96,8 +109,10 @@ function goToDeleteMember(){
         document.memberform.submit();
             
         alert("탈퇴시켰습니다.");
-            
-        
+
+
+
         
     }
 };
+
