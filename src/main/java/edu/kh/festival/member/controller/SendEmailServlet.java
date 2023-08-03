@@ -23,15 +23,15 @@ public class SendEmailServlet extends HttpServlet{
 		String memberId = req.getParameter("memberId");
 		String memberEmail = req.getParameter("memberEmail");		
 		
-		System.out.println(memberName);
-		System.out.println(memberId);
-		System.out.println(memberEmail);
+		//System.out.println(memberName);
+		//System.out.println(memberId);
+		//System.out.println(memberEmail);
 		
 		try {
 			Member member = new MemberService().searchMember(memberName, memberId);
 			
 			if(member.getMemberEmail().equals(memberEmail)) {
-				System.out.println("DB조회한 이메일이랑 일치함");
+				//System.out.println("DB조회한 이메일이랑 일치함");
 				String key = EmailSender.sendEmail(memberEmail);
 				new Gson().toJson(key, resp.getWriter());
 			}

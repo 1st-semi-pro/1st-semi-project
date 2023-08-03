@@ -54,7 +54,7 @@ public class EmailSender extends Exception{
             }
         }
         String AuthenticationKey = temp.toString();
-        System.out.println(AuthenticationKey);
+        // System.out.println(AuthenticationKey);
         
         try {
 
@@ -74,6 +74,7 @@ public class EmailSender extends Exception{
 
             // 발송
             Transport.send(message);
+            System.out.println(incomingEmail+"으로 인증번호 발송");
             
         } catch (MessagingException e) {
             e.printStackTrace();
