@@ -91,6 +91,10 @@ WHERE RNUM BETWEEN ? AND ?
     	UPDATE INFO_BOARD SET READ_COUNT = READ_COUNT + 1 WHERE FESTIVAL_NO = ?
     </entry>
     
+    <!-- 관심축제 등록  -->
+    <entry key="insertDib">
+    	INSERT INTO DIB VALUES(?, ?)
+    </entry>
     
     
 </properties>

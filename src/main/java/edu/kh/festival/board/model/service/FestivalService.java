@@ -128,6 +128,11 @@ public class FestivalService {
 		// 상세페이지 들어가면 조회수 +1 시키기
 		int result = dao.updateReadCount(conn, festivalNo);
 		
+		System.out.println("조회수 : " +  result);
+		
+		if(result == 1) commit(conn);
+		else 			rollback(conn);
+		
 		Map<String, Object> map = new HashMap<String, Object>();
 		
 		map = dao.selectFestivalDetail(conn, festivalNo);
@@ -139,7 +144,6 @@ public class FestivalService {
 			map.put("imgList", imgList);
 			
 		}
-		
 		
 		return map;
 		
@@ -161,4 +165,26 @@ public class FestivalService {
 		
 		return result;
 	}
+
+	
+	/** 관심축제 Update Service
+	 * @param festivalNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int insertDib(int memberNo, int festivalNo) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		int result = dao.insertDib(conn, memberNo, festivalNo);
+		 
+		if(result == 1) commit(conn);
+		else 			rollback(conn);
+		
+		close(conn);
+		
+		return result;
+	}
+
+
 }

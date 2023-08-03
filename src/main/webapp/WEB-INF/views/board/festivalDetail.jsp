@@ -42,7 +42,7 @@
             <c:choose>
 
                 <c:when test="${imgList.imageLevel == 0}">
-                    <c:set var="img0" value="${contextPath}${imgList.imageReName}"/>
+                    <c:set var="img0" value="${imgList.imageReName}"/>
                 </c:when>
 
                 <c:when test="${imgList.imageLevel == 1}">
@@ -79,15 +79,19 @@
             <a href="${header.referer}" id="Nav2">축제 검색 페이지로</a>
         </div>
 
+        
         <div id="info">
-
+            
             <div id="contentAndBtns">
                 ${festivalDetail.festivalContent}
-                <button id="btn1" class="btns">관심축제 등록</button>
-                <button id="btn2" class="btns">좋아요</button>
+                <!-- 관심축제 등록 button -->
+                <!-- 누를때마다 ajax로 바껴야 해서 include 형식으로 jsp 하나 만듬 -->
+                <jsp:include page="/WEB-INF/views/board/dib.jsp"/>
             </div>
-
+        
         </div>
+        
+
 
 
         <div class="swiper mySwiper">
@@ -169,6 +173,14 @@
 
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
+    <script>
+        /* ajax에서 쓰기 위함 */
+        const festivalNo = "${festival.festivalNo}";
+        const memberNo = "${loginMember.memberNo}";
+
+    </script>
+
 
     <script src="${contextPath}/resources/js/festivalDetail.js"></script>
 </body>

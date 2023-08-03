@@ -434,4 +434,39 @@ public class FestivalDAO {
 		return result;
 	}
 
+	
+	/** 관심축제 Update DAO
+	 * @param conn
+	 * @param festivalNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int insertDib(Connection conn, int memberNo, int festivalNo) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("insertDib");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, memberNo);
+
+			pstmt.setInt(2, festivalNo);
+			
+			result = pstmt.executeUpdate();
+			
+			System.out.println(result);
+
+		}finally {
+			
+			close(pstmt);
+			
+		}
+		
+		return result;
+		
+	}
+
 }
