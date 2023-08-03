@@ -235,8 +235,8 @@ END;
 CREATE TABLE "FESTIVAL_DETAIL" (
    "FESTIVAL_NO"   NUMBER      NOT NULL,
    "FESTIVAL_CONTENT"   VARCHAR2(2000)      NOT NULL,
-   "FESTIVAL_DETAILINFO"   VARCHAR2(500)      NOT NULL,
-   "FESTIVAL_IMAGE"   VARCHAR2(200)      NULL
+   "FESTIVAL_DETAILINFO"   VARCHAR2(500)      NOT NULL
+
 );
 
 COMMENT ON COLUMN "FESTIVAL_DETAIL"."FESTIVAL_NO" IS '축제번호';
@@ -245,15 +245,30 @@ COMMENT ON COLUMN "FESTIVAL_DETAIL"."FESTIVAL_CONTENT" IS '축제 상세설명';
 
 COMMENT ON COLUMN "FESTIVAL_DETAIL"."FESTIVAL_DETAILINFO" IS '축제 상세정보';
 
-COMMENT ON COLUMN "FESTIVAL_DETAIL"."FESTIVAL_IMAGE" IS '축제 이미지(썸네일 + 이미지들)';
-
 
 ALTER TABLE "FESTIVAL_DETAIL"
 ADD CONSTRAINT "FK_FESTIVAL_DETAIL" -- 제약 조건명 지정
 FOREIGN KEY("FESTIVAL_NO") -- BOARD의 BOARD_CODE 컬럼에 FK 지정
-REFERENCES "INFO_BOARD"; -- 참조
+REFERENCES "INFO_BOARD"; -- 참조할 테이블
 
-commit;
+CREATE SEQUENCE SEQ_FESTIVALDETAIL_NO
+       INCREMENT BY 1 -- 증가값
+       START WITH 1 -- 시작값
+       MINVALUE 1; -- 최솟값
+
+--BEGIN
+--    FOR I IN 1..180 LOOP
+        
+--       INSERT INTO FESTIVAL_DETAIL
+--        VALUES(SEQ_FESTIVALDETAIL_NO.NEXTVAL,
+--               '해당 축제 상세내용',
+--               ' 해당 축제 상세정보.'
+--       );
+        
+--   END LOOP;
+-- END;      
+
+
 ----------------------------------------댓글 테이블-------------------------------------------
 -- DROP TABLE "REPLY";
 
@@ -303,9 +318,6 @@ CREATE SEQUENCE SEQ_REPLY_NO
        MINVALUE 1; -- 최솟값
 --INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, ?, sysdate, sysdate, default, ?, ?);
 
-INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, '테스트', SYSDATE, SYSDATE, DEFAULT, 1000, 1);
-COMMIT;
--------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------ 보드 이미지 테이블 -------------------------------------------------
 --DROP TABLE BOARD_IMG;
 
@@ -339,11 +351,36 @@ ADD CONSTRAINT "FK_BOARD_IMG"
 FOREIGN KEY("BOARD_NO")
 REFERENCES "BOARD";
 
----------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------찜하기 테이블 ---------------------------------------------------------------------------
+CREATE TABLE "DIB" (
+   "MEMBER_NO"   NUMBER      NOT NULL,
+   "FESTIVAL_NO"   NUMBER      NOT NULL
+);
 
+ALTER TABLE "DIB"
+ADD CONSTRAINT "FK_DIB_MEMEBERNO"
+FOREIGN KEY("MEMBER_NO")
+REFERENCES "MEMBER";
 
+ALTER TABLE "DIB"
+ADD CONSTRAINT "FK_DIB_FESTIVALNO"
+FOREIGN KEY("FESTIVAL_NO")
+REFERENCES "INFO_BOARD";
 
+COMMENT ON COLUMN "DIB"."MEMBER_NO" IS '회원번호(시퀀스)';
+
+COMMENT ON COLUMN "DIB"."FESTIVAL_NO" IS '축제번호';
+
+-- MEMBER_NO로 찜한 축제의 이미지 불러오기
+SELECT IMG_RENAME
+FROM MEMBER
+JOIN DIB USING (MEMBER_NO)
+JOIN INFO_BOARD USING(FESTIVAL_NO)
+JOIN FESTIVAL_IMG ON(FESTIVAL_NO = IMG_NO)
+WHERE MEMBER_NO = ? AND IMG_LEVEL = 0;
+
+--------------------------------------------------------------------------------------------------------------------------------
+COMMIT;
 
 
 
@@ -451,24 +488,10 @@ SELECT * FROM(
               FESTIVAL_DT,READ_COUNT FROM INFO_BOARD
         WHERE BOARD_CD = 1
         AND FESTIVAL_DT LIKE '%01%'
-        ORDER BY FESTIVAL_NO DESC
-    ) A
-)
-	WHERE RNUM BETWEEN ? AND ?;
-
-SELECT * FROM(
-    SELECT ROWNUM RNUM, A.* FROM(
-        SELECT FESTIVAL_NO, FESTIVAL_TITLE, FESTIVAL_CT, 
-              FESTIVAL_DT,READ_COUNT FROM INFO_BOARD
-        WHERE BOARD_CD = 1
-        AND FESTIVAL_DT LIKE '%01%'
         ORDER BY FESTIVAL_DT
     ) A
 )
-	WHERE RNUM BETWEEN ? AND ?;
-    
-SELECT FESTIVAL_NO, COUNT(FESTIVAL_NO) S FROM INFO_BOARD
-			WHERE BOARD_CD = 1;
+	WHERE RNUM BETWEEN ? AND ? ;
             
 SELECT COUNT(*) FROM INFO_BOARD
 			WHERE BOARD_CD = 1
@@ -478,3 +501,4 @@ SELECT READ_COUNT FROM INFO_BOARD
     WHERE READ_COUNT !='0'
     AND FESTIVAL_DT LIKE '_____01%'
     AND FESTIVAL_AREA LIKE '%서울특별시%';
+
