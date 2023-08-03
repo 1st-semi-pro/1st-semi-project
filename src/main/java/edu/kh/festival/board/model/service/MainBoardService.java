@@ -1,7 +1,9 @@
 package edu.kh.festival.board.model.service;
 
 import java.sql.Connection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static edu.kh.festival.common.JDBCTemplate.*;
 
@@ -9,6 +11,8 @@ import edu.kh.festival.board.model.dao.BoardDAO;
 import edu.kh.festival.board.model.dao.MainBoardDAO;
 import edu.kh.festival.board.model.vo.Board;
 import edu.kh.festival.board.model.vo.BoardDetail;
+import edu.kh.festival.board.model.vo.Pagination;
+
 
 public class MainBoardService {
 
@@ -59,4 +63,41 @@ public class MainBoardService {
 		return boardList3;
 	}
 
+	/** 검색 결과 조회 Service
+	 * @param type
+	 * @param cp
+	 * @param key
+	 * @param query
+	 * @return
+	 */
+	public Map<String, Object> searchResultList(String query) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		// 2. SQL 조건절에 추가될 구문 가공
+		//String condition = null; // 조건
+		int type = 0; // 조건
+		
+		
+		//condition=" AND (BOARD_CONTENT LIKE '%"+query+"%' OR BOARD_TITLE LIKE '%"+query+"%') ";  break;
+		
+		
+		
+		String boardName = null; 
+		Map<String, Object> map = new HashMap<String, Object>();
+		
+		
+		for( int i=2; i<5; i++) {
+	         boardName = dao.selectBoardName(conn, i);
+	         List<Board> boardList = dao.searchBoardList(conn, i, query);
+	         map.put("boardName"+i, boardName);
+	         map.put("boardList"+i, boardList);
+	      }
+		
+		
+		close(conn);
+		return map;
+	}
+
+	
 }
