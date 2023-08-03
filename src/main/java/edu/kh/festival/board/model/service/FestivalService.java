@@ -38,6 +38,9 @@ public class FestivalService {
 		
 		// 3. 축제 목록조회
 		List<Festival> festivalList = dao.festivalList(conn,pagination,query,type,req);
+		
+		// 4. 이미지 조회
+		List<FestivalImage> imgList = dao.imgList(conn);
 	
 		
 		Map<String, Object> map = new HashMap<String, Object>();
@@ -45,7 +48,7 @@ public class FestivalService {
 		map.put("festivalName", festivalName);
 		map.put("pagination", pagination);
 		map.put("festivalList", festivalList);
-		
+		map.put("imgList",imgList);
 		close(conn);
 		
 		return map;

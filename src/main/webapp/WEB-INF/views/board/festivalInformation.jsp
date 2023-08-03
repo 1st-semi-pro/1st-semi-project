@@ -5,6 +5,7 @@
 <c:set var="festivalName" value="${map.festivalName}"/>
 <c:set var="pagination" value="${map.pagination}"/>
 <c:set var="festivalList" value="${map.festivalList}"/>
+<c:set var="imgList" value="${map.imgList}"/>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -50,7 +51,7 @@
 
     <!-- 검색게시판 타이틀 -->
     <section class="title-box"> ${festivalName} 게시판</section>
-    
+   aaaa--==  ${img}
     <!-- 컨텐츠 -->
     <section class="content">
         <form action="festivalInfo" method="get" id="festivalSearch" onsubmit="return searchValidate()">
@@ -114,11 +115,10 @@
                 <button type="reset" id="reset"></button>
                 <button type="submit" id="info-search">검색</button>
             </div>
-
+            
         </form>
         
     </section>
-
     <section class="content2">
         <div id="span-box">
 
@@ -141,8 +141,7 @@
                 <a href="${contextPath}/board/festivalInfo?type=1&pop=1&festivalDate=${param.festivalDate}&festivalArea=${param.festivalArea}&festivalCat=${param.festivalCat}"><i class="fa-solid fa-star" style="color: #fff047;"></i><span id="popularity" class="color">인기순</span></a>
                 <a href="${contextPath}/board/festivalInfo?type=1&pop=0" ><span id="festival-date">전체</span></a>
             </c:if>
-            
-        </div>
+        </div><!-- ${imgList[status.index].imageReName} -->
         <c:choose>
             <c:when test="${empty festivalList}">
                 <div class="empty">
@@ -151,11 +150,12 @@
             </c:when>
             <c:otherwise>
                 <div id="grid-container">
-                <c:forEach var="festival" items="${festivalList}">
+                <c:forEach var="festival" items="${festivalList}" varStatus="status">
                         <div class="item">
                             <div class="item-image"><a href="festivalDetail?festivalNo=${festival.festivalNo}">
-                                <img src="${contextPath}/resources/images/festival_infomation/${festival.festivalNo}.png" alt=""></a></div>
-                            <div class="item-text">
+                                <img src="${contextPath}/resources/images/festival_infomation/${festival.festivalNo}.png">
+                                </a></div>
+                           		 <div class="item-text">
                                 <a href="#">
                                 <div class="item-title"><h1>${festival.festivalTitle}</h1></div>
                                 <div class="item-content"><span>${festival.festivalArea}</span><span>${festival.festivalDate}</span></div>
