@@ -44,11 +44,12 @@ function findPwValidate(){
 		return false;
 	}
 	
-    if(check.value != inputkey.value){
+    if( sessionStorage.getItem('authenticationKey') != inputkey.value){ // 세션에 있는 인증번호와 입력값이 같지 않으면
         alert("인증번호가 일치하지 않습니다, 다시 확인해주세요.");
 
 		return false;
     }
+    else sessionStorage.removeItem('authenticationKey'); // 일치하면 세션에 있는 인증번호 삭제
 
 	return true;
 
@@ -67,8 +68,8 @@ document.getElementById("sendEmail-btn").addEventListener("click", function(){
         dataType : "JSON",
         type : "POST",
         success : function(key){
-            console.log(key);
-            check.value = key;
+            sessionStorage.setItem('authenticationKey', key); // 세션에 값을 담아줌
+            check.value="인증번호 전송 완료";
         },
 
         error : function(){
@@ -76,6 +77,5 @@ document.getElementById("sendEmail-btn").addEventListener("click", function(){
         }
 
     })
-    // check.value="인증번호 전송 완료";
 
 })

@@ -25,11 +25,11 @@
             <h5>※ 인증번호 확인이 완료되었습니다! 비밀번호를 재설정 해주십시오.</h5>
         </div>
     
-        <form id="changePw-form" action="changePw" method="post">
+        <form id="changePw-form" action="changePw" method="post" onsubmit="return changePwValidate()">
             <div class="divide2">
                 <div class="divide4">비밀번호 변경</div>
                 <div class="divide4"><input type="password" name="newPw" placeholder="새 비밀번호 입력" size="35"></div>
-                <div class="divide4"><input type="password" name="newPwChech" placeholder="새 비밀번호 확인" size="35"></div>
+                <div class="divide4"><input type="password" name="newPwCheck" placeholder="새 비밀번호 확인" size="35"></div>
                 
                 <div class="divide3">
                     <a href="${contextPath}/member/findPw"><button type="button" id="goToBack-btn">뒤로가기</button></a>
@@ -51,6 +51,6 @@
             </section>
         </section>
     </footer>
-    <!-- <script src="${contextPath}/resources/js/changePw.js"></script> -->
+    <script src="${contextPath}/resources/js/changePw.js"></script>
 </body>
 </html>
