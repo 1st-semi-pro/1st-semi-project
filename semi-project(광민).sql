@@ -149,10 +149,12 @@ END;
 
 CREATE TABLE "INFO_BOARD" (
    "FESTIVAL_NO"   NUMBER      NOT NULL,
-   "FESTIVAL_TITLE"   VARCHAR2(150)      NOT NULL,
-   "FESTIVAL_CT"   VARCHAR2(300)      NOT NULL,
-   "FESTIVAL_DT"   VARCHAR2(100)      NULL,
+   "FESTIVAL_TITLE"   VARCHAR2(200)      NOT NULL,
+   "FESTIVAL_CT"   VARCHAR2(4000)      NOT NULL,
+   "FESTIVAL_DT"   VARCHAR2(300)      NULL,
    "READ_COUNT"   NUMBER   DEFAULT 0   NOT NULL,
+   "FESTIVAL_AREA" VARCHAR2(100) DEFAULT '-' NOT NULL,
+   "FESTIVAL_CAT" VARCHAR2(100) DEFAULT '-' NOT NULL,
    "BOARD_CD"   NUMBER      NOT NULL
 );
 
@@ -160,6 +162,8 @@ COMMENT ON COLUMN "INFO_BOARD"."FESTIVAL_NO" IS '축제번호(시퀀스)';
 COMMENT ON COLUMN "INFO_BOARD"."FESTIVAL_TITLE" IS '축제제목';
 COMMENT ON COLUMN "INFO_BOARD"."FESTIVAL_CT" IS '축제내용';
 COMMENT ON COLUMN "INFO_BOARD"."FESTIVAL_DT" IS '축제날짜';
+COMMENT ON COLUMN "INFO_BOARD"."FESTIVAL_AREA" IS '축제지역';
+COMMENT ON COLUMN "INFO_BOARD"."FESTIVAL_CAT" IS '축제카테고리';
 COMMENT ON COLUMN "INFO_BOARD"."READ_COUNT" IS '조회수';
 COMMENT ON COLUMN "INFO_BOARD"."BOARD_CD" IS '게시판 코드';
 
@@ -336,12 +340,7 @@ FOREIGN KEY("BOARD_NO")
 REFERENCES "BOARD";
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
--- 컬럼추가
-ALTER TABLE INFO_BOARD ADD FESTIVAL_AREA VARCHAR(20) DEFAULT '-' NOT NULL;
-ALTER TABLE INFO_BOARD ADD FESTIVAL_CAT VARCHAR(20) DEFAULT '-' NOT NULL;
-COMMIT;
 -----------------------------------------------------------------------------------------------------------------------------------------------
-
 
 
 

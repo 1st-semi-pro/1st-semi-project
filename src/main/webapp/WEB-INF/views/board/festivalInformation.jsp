@@ -34,23 +34,23 @@
 
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
-              <div class="swiper-slide"><img src="${contextPath}/resources/images/con2.jpg"></div>
-              <div class="swiper-slide"><img src="${contextPath}/resources/images/con3.jpg"></div>
-              <div class="swiper-slide"><img src="${contextPath}/resources/images/con1.jpg"></div>
-              <div class="swiper-slide"><img src="${contextPath}/resources/images/con2.jpg"></div>
-              <div class="swiper-slide"><img src="${contextPath}/resources/images/con3.jpg"></div>
-              <div class="swiper-slide"><img src="${contextPath}/resources/images/con1.jpg"></div>
-              <div class="swiper-slide"><img src="${contextPath}/resources/images/con3.jpg"></div>
-              <div class="swiper-slide"><img src="${contextPath}/resources/images/con2.jpg"></div>
-              <div class="swiper-slide"><img src="${contextPath}/resources/images/con1.jpg"></div>
-              <div class="swiper-slide"><img src="${contextPath}/resources/images/con2.jpg"></div>
+              <div class="swiper-slide"><img src="${contextPath}/resources/images/festival_infomation/22.png"></div>
+              <div class="swiper-slide"><img src="${contextPath}/resources/images/festival_infomation/42.png"></div>
+              <div class="swiper-slide"><img src="${contextPath}/resources/images/festival_infomation/69.png"></div>
+              <div class="swiper-slide"><img src="${contextPath}/resources/images/festival_infomation/72.png"></div>
+              <div class="swiper-slide"><img src="${contextPath}/resources/images/festival_infomation/73.png"></div>
+              <div class="swiper-slide"><img src="${contextPath}/resources/images/festival_infomation/75.png"></div>
+              <div class="swiper-slide"><img src="${contextPath}/resources/images/festival_infomation/79.png"></div>
+              <div class="swiper-slide"><img src="${contextPath}/resources/images/festival_infomation/86.png"></div>
+              <div class="swiper-slide"><img src="${contextPath}/resources/images/festival_infomation/93.png"></div>
+              <div class="swiper-slide"><img src="${contextPath}/resources/images/festival_infomation/58.png"></div>
             </div>
             <div class="swiper-pagination"></div>
           </div>
 
     <!-- 검색게시판 타이틀 -->
     <section class="title-box"> ${festivalName} 게시판</section>
-
+    
     <!-- 컨텐츠 -->
     <section class="content">
         <form action="festivalInfo" method="get" id="festivalSearch" onsubmit="return searchValidate()">
@@ -84,19 +84,19 @@
                         <option value="서울특별시">서울특별시</option>
                         <option value="경기도">경기도</option>
                         <option value="강원도">강원도</option>
-                        <option value="인천광역시">인천광역시</option>
+                        <option value="인천">인천</option>
                         <option value="충청북도">충청북도</option>
                         <option value="충청남도">충청남도</option>
-                        <option value="대전광역시">대전광역시</option>
+                        <option value="대전">대전</option>
                         <option value="경상북도">경상북도</option>
                         <option value="전라북도">전라북도</option>
-                        <option value="대구광역시">대구광역시</option>
-                        <option value="울산광역시">울산광역시</option>
-                        <option value="부산광역시">부산광역시</option>
+                        <option value="대구">대구</option>
+                        <option value="울산">울산</option>
+                        <option value="부산">부산</option>
                         <option value="경상남도">경상남도</option>
-                        <option value="광주광역시">광주광역시</option>
+                        <option value="광주">광주</option>
                         <option value="전라남도">전라남도</option>
-                        <option value="제주특별자치도">제주특별자치도</option>
+                        <option value="제주도">제주도</option>
                         <option value="세종특별자치시">세종특별자치시</option>
                     </select>
                 </div>
@@ -104,12 +104,10 @@
                     <label for="festivalCat">카테고리</label>
                     <select name="festivalCat" id="festivalCat" title="카테고리">
                         <option value="">카테고리</option>
+                        <option value="가족">가족</option>
                         <option value="연인">연인</option>
-                        <option value="술">술</option>
                         <option value="꽃">꽃</option>
-                        <option value="불꽃">불꽃</option>
-                        <option value="여름">여름</option>
-                        <option value="바다">바다</option>
+                        <option value="힐링">힐링</option>
                         <option value="도심">도심</option>
                     </select>
                 </div>
