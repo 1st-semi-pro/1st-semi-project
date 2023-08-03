@@ -217,7 +217,7 @@ public class FestivalService {
 		
 		int result = dao.deleteDib(conn, memberNo, festivalNo);
 		 
-		if(result == 1) commit(conn);
+		if(result > 0) commit(conn);
 		else 			rollback(conn);
 		
 		close(conn);
