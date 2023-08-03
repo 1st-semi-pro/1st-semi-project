@@ -235,8 +235,8 @@ END;
 CREATE TABLE "FESTIVAL_DETAIL" (
    "FESTIVAL_NO"   NUMBER      NOT NULL,
    "FESTIVAL_CONTENT"   VARCHAR2(2000)      NOT NULL,
-   "FESTIVAL_DETAILINFO"   VARCHAR2(500)      NOT NULL,
-   "FESTIVAL_IMAGE"   VARCHAR2(200)      NULL
+   "FESTIVAL_DETAILINFO"   VARCHAR2(500)      NOT NULL
+
 );
 
 COMMENT ON COLUMN "FESTIVAL_DETAIL"."FESTIVAL_NO" IS '축제번호';
@@ -245,15 +245,12 @@ COMMENT ON COLUMN "FESTIVAL_DETAIL"."FESTIVAL_CONTENT" IS '축제 상세설명';
 
 COMMENT ON COLUMN "FESTIVAL_DETAIL"."FESTIVAL_DETAILINFO" IS '축제 상세정보';
 
-COMMENT ON COLUMN "FESTIVAL_DETAIL"."FESTIVAL_IMAGE" IS '축제 이미지(썸네일 + 이미지들)';
-
 
 ALTER TABLE "FESTIVAL_DETAIL"
 ADD CONSTRAINT "FK_FESTIVAL_DETAIL" -- 제약 조건명 지정
 FOREIGN KEY("FESTIVAL_NO") -- BOARD의 BOARD_CODE 컬럼에 FK 지정
-REFERENCES "INFO_BOARD"; -- 참조
+REFERENCES "INFO_BOARD"; -- 참조할 테이블
 
-commit;
 ----------------------------------------댓글 테이블-------------------------------------------
 -- DROP TABLE "REPLY";
 
@@ -303,9 +300,6 @@ CREATE SEQUENCE SEQ_REPLY_NO
        MINVALUE 1; -- 최솟값
 --INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, ?, sysdate, sysdate, default, ?, ?);
 
-INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, '테스트', SYSDATE, SYSDATE, DEFAULT, 1000, 1);
-COMMIT;
--------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------ 보드 이미지 테이블 -------------------------------------------------
 --DROP TABLE BOARD_IMG;
 
@@ -339,8 +333,36 @@ ADD CONSTRAINT "FK_BOARD_IMG"
 FOREIGN KEY("BOARD_NO")
 REFERENCES "BOARD";
 
----------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------찜하기 테이블 ---------------------------------------------------------------------------
+CREATE TABLE "DIB" (
+   "MEMBER_NO"   NUMBER      NOT NULL,
+   "FESTIVAL_NO"   NUMBER      NOT NULL
+);
+
+ALTER TABLE "DIB"
+ADD CONSTRAINT "FK_DIB_MEMEBERNO"
+FOREIGN KEY("MEMBER_NO")
+REFERENCES "MEMBER";
+
+ALTER TABLE "DIB"
+ADD CONSTRAINT "FK_DIB_FESTIVALNO"
+FOREIGN KEY("FESTIVAL_NO")
+REFERENCES "INFO_BOARD";
+
+COMMENT ON COLUMN "DIB"."MEMBER_NO" IS '회원번호(시퀀스)';
+
+COMMENT ON COLUMN "DIB"."FESTIVAL_NO" IS '축제번호';
+
+-- MEMBER_NO로 찜한 축제의 이미지 불러오기
+SELECT IMG_RENAME
+FROM MEMBER
+JOIN DIB USING (MEMBER_NO)
+JOIN INFO_BOARD USING(FESTIVAL_NO)
+JOIN FESTIVAL_IMG ON(FESTIVAL_NO = IMG_NO)
+WHERE MEMBER_NO = ? AND IMG_LEVEL = 0
+
+--------------------------------------------------------------------------------------------------------------------------------
+
 
 
 
