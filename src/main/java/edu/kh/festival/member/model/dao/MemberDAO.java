@@ -347,7 +347,6 @@ public class MemberDAO {
 		
 		int result = 0;
 		
-		
 		try {
 			String sql = prop.getProperty("changePw");
 			
@@ -366,6 +365,26 @@ public class MemberDAO {
 			
 			close(pstmt);
 			
+		}
+		
+		return result;
+	}
+	public int changePw(Connection conn, String newPw, String memberId) throws Exception{
+		
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("changePw2");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, newPw );
+			pstmt.setString(2, memberId);
+			
+			result = pstmt.executeUpdate();
+			
+		} finally {
+			close(pstmt);
 		}
 		
 		return result;

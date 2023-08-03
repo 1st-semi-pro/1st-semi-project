@@ -188,6 +188,19 @@ public class MemberService {
 
 		return result;
 	}
+	public int changePw(String newPw, String memberId) throws Exception {
+		
+		Connection conn = getConnection();
+
+		int result = dao.changePw(conn, newPw, memberId);
+
+		if (result > 0) commit(conn);
+		else rollback(conn);
+
+		close(conn);
+
+		return result;
+	}
 
 	/** 회원탈퇴 Service
 	 * @param memberNo
