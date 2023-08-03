@@ -31,16 +31,16 @@
             
          <div class="swiper mySwiper">
             <div class="swiper-wrapper">
-               <div class="swiper-slide"><img src="${contextPath}/resources/images/con2.jpg"></div>
-               <div class="swiper-slide"><img src="${contextPath}/resources/images/con3.jpg"></div>
-               <div class="swiper-slide"><img src="${contextPath}/resources/images/con1.jpg"></div>
-               <div class="swiper-slide"><img src="${contextPath}/resources/images/con2.jpg"></div>
-               <div class="swiper-slide"><img src="${contextPath}/resources/images/con3.jpg"></div>
-               <div class="swiper-slide"><img src="${contextPath}/resources/images/con1.jpg"></div>
-               <div class="swiper-slide"><img src="${contextPath}/resources/images/con3.jpg"></div>
-               <div class="swiper-slide"><img src="${contextPath}/resources/images/con2.jpg"></div>
-               <div class="swiper-slide"><img src="${contextPath}/resources/images/con1.jpg"></div>
-               <div class="swiper-slide"><img src="${contextPath}/resources/images/con2.jpg"></div>
+               <div class="swiper-slide"><a href="#"><img src="resources/images/con2.jpg"></a></div>
+               <div class="swiper-slide"><a href="#"><img src="resources/images/con3.jpg"></a></div>
+               <div class="swiper-slide"><a href="#"><img src="resources/images/con1.jpg"></a></div>
+               <div class="swiper-slide"><a href="#"><img src="resources/images/con2.jpg"></a></div>
+               <div class="swiper-slide"><a href="#"><img src="resources/images/con3.jpg"></a></div>
+               <div class="swiper-slide"><a href="#"><img src="resources/images/con1.jpg"></a></div>
+               <div class="swiper-slide"><a href="#"><img src="resources/images/con3.jpg"></a></div>
+               <div class="swiper-slide"><a href="#"><img src="resources/images/con2.jpg"></a></div>
+               <div class="swiper-slide"><a href="#"><img src="resources/images/con1.jpg"></a></div>
+               <div class="swiper-slide"><a href="#"><img src="resources/images/con2.jpg"></a></div>
             </div>
             <div class="swiper-pagination"></div>
          </div>
@@ -48,22 +48,22 @@
                  
          <div class="content-1"> <!-- 한반도 + 게시판 -->
             <div class="korea"> <!-- 한반도 -->
-               <a href="${contextPath}/board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=서울특별시&festivalCat="><img src="resources/images/korea/seoul.png" id="seoul"></a>
-               <a href="${contextPath}/board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=경기도&festivalCat="><img src="resources/images/korea/Gyeonggi.png" id="gyeonggi"></a>
-               <a href="${contextPath}/board/festivalInfo?type=1&ft=0&pop=0&festuvalDate=&festivalArea=인천광역시&festivalCat="><img src="resources/images/korea/incheon.png" id="incheon"></a>
-               <a href="${contextPath}/board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=강원도&festivalCat="><img src="resources/images/korea/gangwon.png" id="gangwon"></a>
-               <a href="${contextPath}/board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=충청남도&festivalCat="><img src="resources/images/korea/chungnam.png" id="chungnam"></a>
-               <a href="${contextPath}/board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=대전광역시&festivalCat="><img src="resources/images/korea/daejeon.png" id="daejeon"></a>
-               <a href="${contextPath}/board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=충청북도&festivalCat="><img src="resources/images/korea/chungbuk.png" id="chungbuk"></a>
-               <a href="${contextPath}/board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=경상북도&festivalCat="><img src="resources/images/korea/gyeongsang.png" id="gyeongsang"></a>
-               <a href="${contextPath}/board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=대구광역시&festivalCat="><img src="resources/images/korea/daegu.png" id="daegu"></a>
-               <a href="${contextPath}/board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=전라북도&festivalCat="><img src="resources/images/korea/jeonbuk.png" id="jeonbuk"></a>
-               <a href="${contextPath}/board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=전라남도&festivalCat="><img src="resources/images/korea/jeonnam.png" id="jeonnam"></a>
-               <a href="${contextPath}/board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=광주광역시&festivalCat="><img src="resources/images/korea/gwangju.png" id="gwangju"></a>
-               <a href="${contextPath}/board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=경상남도&festivalCat="><img src="resources/images/korea/gyeongnam.png" id="gyeongnam"></a>
-               <a href="${contextPath}/board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=제주특별자치도&festivalCat="><img src="resources/images/korea/jeju.png" id="jeju"></a>
-               <a href="${contextPath}/board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=부산광역시&festivalCat="><img src="resources/images/korea/busan.png" id="busan"></a>
-               <a href="${contextPath}/board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=울산광역시&festivalCat="><img src="resources/images/korea/ulsan.png" id="ulsan"></a>
+               <a href="board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=서울특별시&festivalCat="><img src="resources/images/korea/seoul.png" id="seoul"></a>
+               <a href="board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=경기도&festivalCat="><img src="resources/images/korea/Gyeonggi.png" id="gyeonggi"></a>
+               <a href="board/festivalInfo?type=1&ft=0&pop=0&festuvalDate=&festivalArea=인천광역시&festivalCat="><img src="resources/images/korea/incheon.png" id="incheon"></a>
+               <a href="board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=강원도&festivalCat="><img src="resources/images/korea/gangwon.png" id="gangwon"></a>
+               <a href="board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=충청남도&festivalCat="><img src="resources/images/korea/chungnam.png" id="chungnam"></a>
+               <a href="board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=대전광역시&festivalCat="><img src="resources/images/korea/daejeon.png" id="daejeon"></a>
+               <a href="board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=충청북도&festivalCat="><img src="resources/images/korea/chungbuk.png" id="chungbuk"></a>
+               <a href="board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=경상북도&festivalCat="><img src="resources/images/korea/gyeongsang.png" id="gyeongsang"></a>
+               <a href="board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=대구광역시&festivalCat="><img src="resources/images/korea/daegu.png" id="daegu"></a>
+               <a href="board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=전라북도&festivalCat="><img src="resources/images/korea/jeonbuk.png" id="jeonbuk"></a>
+               <a href="board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=전라남도&festivalCat="><img src="resources/images/korea/jeonnam.png" id="jeonnam"></a>
+               <a href="board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=광주광역시&festivalCat="><img src="resources/images/korea/gwangju.png" id="gwangju"></a>
+               <a href="board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=경상남도&festivalCat="><img src="resources/images/korea/gyeongnam.png" id="gyeongnam"></a>
+               <a href="board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=제주특별자치도&festivalCat="><img src="resources/images/korea/jeju.png" id="jeju"></a>
+               <a href="board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=부산광역시&festivalCat="><img src="resources/images/korea/busan.png" id="busan"></a>
+               <a href="board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=울산광역시&festivalCat="><img src="resources/images/korea/ulsan.png" id="ulsan"></a>
             </div>
 
 
@@ -107,7 +107,9 @@
                   <div class="board-name4">동행자 구하기</div>
                   <div class="board-content4">
                      <table>
-                        
+                        <tbody id="bList4">
+                              
+                        </tbody>
                      </table>
                   </div>
                </div>

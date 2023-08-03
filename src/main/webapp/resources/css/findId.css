@@ -40,6 +40,8 @@ input{
     justify-content: center;
 }
 
+
+
 .divide3{
     flex-basis: 25%;
     display: flex;
@@ -54,13 +56,14 @@ input{
     align-items: center;
     margin: 0px 50px;
     justify-content: space-between;
+    border-bottom: 2px solid gray;
 }
 
 #btn1{
     background-color:  lightcoral;
     color: white;
     width: 100px;
-    height: 100%;
+    height: 60%;
     border-radius: 5%;
     cursor: pointer;
     border: 1px solid lightgray;
@@ -69,7 +72,7 @@ input{
     background-color: lightcoral;
     color: white;
     width: 100px;
-    height: 100%;
+    height: 60%;
     border-radius: 5%;
     cursor: pointer;
     border: 1px solid lightgray;
@@ -94,19 +97,20 @@ input{
     height: 100%;
     width: 100%;
     border: 0;
-    border-bottom: 2px solid gray;
+    outline-style: none;
+    
 }
 
 #inputEmail{
     height: 100%;
     border: 0;
-    border-bottom: 2px solid gray;
+    outline-style: none;
 }
 
-#inputNum{
+#inputKey{
     height: 100%;
     border: 0;
-    border-bottom: 2px solid gray;
+    outline-style: none;
 }
 footer{
     display:flex;
