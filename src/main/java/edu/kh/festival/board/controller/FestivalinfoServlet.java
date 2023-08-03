@@ -35,6 +35,7 @@ public class FestivalinfoServlet extends HttpServlet {
 			}
 
 			FestivalService service = new FestivalService();
+			
 
 			Map<String, Object> map = service.festivalInfo(query,type, cp, req);
 

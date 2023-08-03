@@ -598,4 +598,39 @@ public class FestivalDAO {
 		return result;
 	}
 
+	/** 이미지만 조회
+	 * @param conn
+	 * @return
+	 * @throws Exception
+	 */
+	public List<FestivalImage> imgList(Connection conn)throws Exception {
+		List<FestivalImage> imgList = new ArrayList<>();
+		
+		try {
+			
+			String sql = prop.getProperty("ImgList");
+			
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+			
+			while(rs.next()) {
+				FestivalImage img = new FestivalImage();
+				
+				img.setImageNo(rs.getInt(1));
+				img.setImageReName(rs.getString(2));
+				img.setImageLevel(rs.getInt(3));
+				
+				imgList.add(img);
+				
+			}
+			
+		} finally {
+			close(rs);
+			close(stmt);
+			
+		}
+		return imgList;
+	}
+
+
 }

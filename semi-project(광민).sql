@@ -184,19 +184,19 @@ CREATE SEQUENCE SEQ_FESTIVAL_NO
        
 -- INFO-BOARD 테이블 샘플 데이터 삽입(PL / SQL)
 
-BEGIN
-    FOR I IN 1..180 LOOP
+--BEGIN
+--    FOR I IN 1..180 LOOP
         
-        INSERT INTO INFO_BOARD
-        VALUES(SEQ_FESTIVAL_NO.NEXTVAL,
-               SEQ_FESTIVAL_NO.CURRVAL || '번째 제목',
-               SEQ_FESTIVAL_NO.CURRVAL || '번째 게시글 내용입니다.',
-               DEFAULT,DEFAULT,4
-        );
+--        INSERT INTO INFO_BOARD
+--       VALUES(SEQ_FESTIVAL_NO.NEXTVAL,
+--               SEQ_FESTIVAL_NO.CURRVAL || '번째 제목',
+--               SEQ_FESTIVAL_NO.CURRVAL || '번째 게시글 내용입니다.',
+--               DEFAULT,DEFAULT,4
+--        );
         
-    END LOOP;
-END;
-/
+--    END LOOP;
+--END;
+-- /
 
 ------------------------------------------------축제 이미지 테이블 ---------------------------------------------------
 CREATE TABLE FESTIVAL_IMG(
@@ -217,18 +217,18 @@ ADD CONSTRAINT "FK_FESTIVAL_IMG" -- 제약 조건명 지정
 FOREIGN KEY("IMG_NO") -- BOARD의 BOARD_CODE 컬럼에 FK 지정
 REFERENCES "INFO_BOARD"; -- 참조
 
-BEGIN
-    FOR I IN 1..180 LOOP
+--BEGIN
+--    FOR I IN 1..180 LOOP
         
-        INSERT INTO FESTIVAL_IMG
-        VALUES(SEQ_IMG_NO.NEXTVAL,
-               '/resources/images/board/test.png',
-               0
-        );
+--       INSERT INTO FESTIVAL_IMG
+--        VALUES(SEQ_IMG_NO.NEXTVAL,
+--               '/resources/images/board/test.png',
+--               0
+--        );
         
-    END LOOP;
-END;
-/
+--    END LOOP;
+--END;
+--/
 
 -------------------------------------축제상세검색 테이블---------------------
 -- DROP TABLE "FESTIVAL_DETAIL";
@@ -245,30 +245,28 @@ COMMENT ON COLUMN "FESTIVAL_DETAIL"."FESTIVAL_CONTENT" IS '축제 상세설명';
 
 COMMENT ON COLUMN "FESTIVAL_DETAIL"."FESTIVAL_DETAILINFO" IS '축제 상세정보';
 
-
-ALTER TABLE "FESTIVAL_DETAIL"
-ADD CONSTRAINT "FK_FESTIVAL_DETAIL" -- 제약 조건명 지정
-FOREIGN KEY("FESTIVAL_NO") -- BOARD의 BOARD_CODE 컬럼에 FK 지정
-REFERENCES "INFO_BOARD"; -- 참조할 테이블
-
 CREATE SEQUENCE SEQ_FESTIVALDETAIL_NO
        INCREMENT BY 1 -- 증가값
        START WITH 1 -- 시작값
        MINVALUE 1; -- 최솟값
 
---BEGIN
---    FOR I IN 1..180 LOOP
+BEGIN
+    FOR I IN 1..180 LOOP
         
---       INSERT INTO FESTIVAL_DETAIL
---        VALUES(SEQ_FESTIVALDETAIL_NO.NEXTVAL,
---               '해당 축제 상세내용',
---               ' 해당 축제 상세정보.'
---       );
+       INSERT INTO FESTIVAL_DETAIL
+        VALUES(SEQ_FESTIVALDETAIL_NO.NEXTVAL,
+              '해당 축제 상세내용',
+               ' 해당 축제 상세정보.'
+       );
         
---   END LOOP;
--- END;      
+   END LOOP;
+ END;      
+/
 
-
+ALTER TABLE "FESTIVAL_DETAIL"
+ADD CONSTRAINT "FK_FESTIVAL_DETAIL" -- 제약 조건명 지정
+FOREIGN KEY("FESTIVAL_NO") -- BOARD의 BOARD_CODE 컬럼에 FK 지정
+REFERENCES "INFO_BOARD"; -- 참조할 테이블
 ----------------------------------------댓글 테이블-------------------------------------------
 -- DROP TABLE "REPLY";
 
@@ -356,6 +354,7 @@ CREATE TABLE "DIB" (
    "MEMBER_NO"   NUMBER      NOT NULL,
    "FESTIVAL_NO"   NUMBER      NOT NULL
 );
+
 
 ALTER TABLE "DIB"
 ADD CONSTRAINT "FK_DIB_MEMEBERNO"
@@ -502,3 +501,6 @@ SELECT READ_COUNT FROM INFO_BOARD
     AND FESTIVAL_DT LIKE '_____01%'
     AND FESTIVAL_AREA LIKE '%서울특별시%';
 
+SELECT * FROM FESTIVAL_IMG
+   WHERE IMG_NO BETWEEN 1 AND 180 
+   ORDER BY IMG_LEVEL;

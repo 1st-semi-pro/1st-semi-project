@@ -67,6 +67,14 @@ WHERE RNUM BETWEEN ? AND ?
 )
 	WHERE RNUM BETWEEN ? AND ?
 	</entry>
+	
+	<!-- 이미지만 가져오기 -->
+	<entry key="ImgList">
+	SELECT * FROM FESTIVAL_IMG
+   	WHERE IMG_NO BETWEEN 1 AND 180 
+   	ORDER BY IMG_LEVEL
+	</entry>
+	
     
     <!-- 축제 상세페이지  -->
     <entry key="selectFestivalDetail">
