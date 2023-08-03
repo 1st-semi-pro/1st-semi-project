@@ -49,6 +49,8 @@ const emailBtn = document.getElementById("emailBtn");
 
 
 
+
+
 /* 각 input 별 true, false 담을 객체 */
 const checkInputs = {
 
@@ -60,8 +62,8 @@ const checkInputs = {
     "memberBirth" : false,
     "regionSelect" : false,
     "memberPhone" : false,
-    "inputEmail" : false
-
+    "inputEmail" : false,
+    "emailBtn" : false
 
 }
 
@@ -783,6 +785,10 @@ inputEmail.addEventListener("input",function(){
 
                 }
 
+            },
+
+            error : function(){
+                console.log("에러 발생함");
             }
 
         })
@@ -809,17 +815,38 @@ emailBtn.addEventListener("click", function(){
 
     if(!agreeCbx.checked){
         alert("인증 약관에 동의해주세요.");
+        checkInputs.emailBtn = false;
+        return;
     }
 
+    if(checkInputs.inputEmail != true){
+        alert("유효한 이메일을 입력해주세요.");
+        checkInputs.emailBtn = false;
+        return;
+    }
+
+    $.ajax({
+
+        url : "emailAuthentication",
+
+        data : {"Email" : inputEmail.value},
+
+        type : "GET",
+
+        success : function(key){
+            if(key != null){
+
+            }
+        },
+
+        error : function(){
+
+        }
+
+
+    })
+
 })
-
-// ----------------------------------------------------------------------------- //
-// secondDiv 다체크되면 border주기
-// input을 한번에 지웠을 때를 대비
-
-
-
-
 
 // ----------------------------------------------------------------------------- //
 
@@ -828,7 +855,6 @@ emailBtn.addEventListener("click", function(){
 
 
 // ----------------------------------------------------------------------------- //
-
 // 조건 안맞으면 회원가입 못하게 하기
 
 function joinValidate(){
@@ -849,6 +875,7 @@ function joinValidate(){
                 case "regionSelect"     : str= "지역선택이"; break;
                 case "memberPhone"      : str= "전화번호가"; break;
                 case "inputEmail"       : str= "이메일이"; break;
+                case "emailBtn"         : str = "이메일 인증이"; break;
             }
 
             str += " 유효하지 않습니다.";

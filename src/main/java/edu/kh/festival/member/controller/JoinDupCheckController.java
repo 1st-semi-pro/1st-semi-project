@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.gson.Gson;
+
+import edu.kh.festival.common.EmailSender;
 import edu.kh.festival.member.model.service.MemberService;
 
 @WebServlet("/member/*")
@@ -56,6 +59,18 @@ public class JoinDupCheckController extends HttpServlet{
 				
 				resp.getWriter().print(result);
 				
+			}
+			
+			if(command.equals("emailAuthentication")) {
+				
+				String Email = req.getParameter("Email");
+				
+				System.out.println(Email);
+				
+				String key = EmailSender.sendEmail(Email);
+				
+				new Gson().toJson(key, resp.getWriter());
+				 
 			}
 			
 			
