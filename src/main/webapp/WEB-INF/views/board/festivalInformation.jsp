@@ -39,7 +39,7 @@
               <div class="swiper-slide"><img src="${contextPath}/resources/images/festival_infomation/69.png"></div>
               <div class="swiper-slide"><img src="${contextPath}/resources/images/festival_infomation/72.png"></div>
               <div class="swiper-slide"><img src="${contextPath}/resources/images/festival_infomation/73.png"></div>
-              <div class="swiper-slide"><img src="${contextPath}/resources/images/festival_infomation/75.png"></div>
+              <div class="swiper-slide"><img src="${contextPath}/resources/images/festival_infomation/77.png"></div>
               <div class="swiper-slide"><img src="${contextPath}/resources/images/festival_infomation/79.png"></div>
               <div class="swiper-slide"><img src="${contextPath}/resources/images/festival_infomation/86.png"></div>
               <div class="swiper-slide"><img src="${contextPath}/resources/images/festival_infomation/93.png"></div>
@@ -152,13 +152,13 @@
             <c:otherwise>
                 <div id="grid-container">
                 <c:forEach var="festival" items="${festivalList}">
-                    
                         <div class="item">
-                            <div class="item-image"><a href="festivalDetail?festivalNo=${festival.festivalNo}"><img src="${contextPath}/resources/images/con1.jpg" alt=""></a></div>
+                            <div class="item-image"><a href="festivalDetail?festivalNo=${festival.festivalNo}">
+                                <img src="${contextPath}/resources/images/festival_infomation/${festival.festivalNo}.png" alt=""></a></div>
                             <div class="item-text">
                                 <a href="#">
-                                <div class="item-title"><h1>${festival.festivalTitle}</h1><span>${festival.festivalDate}</span></div>
-                                <div class="item-content"><span>${festival.festivalContent}</span></div>
+                                <div class="item-title"><h1>${festival.festivalTitle}</h1></div>
+                                <div class="item-content"><span>${festival.festivalArea}</span><span>${festival.festivalDate}</span></div>
                                 </a>
                                 <c:if test="${festival.readCount > 0 }">
                                     <div class="pop"><i class="fa-solid fa-star" style="color: #fff047;"></i><span>${festival.readCount}</span></div>

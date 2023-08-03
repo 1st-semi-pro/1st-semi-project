@@ -251,6 +251,24 @@ ADD CONSTRAINT "FK_FESTIVAL_DETAIL" -- 제약 조건명 지정
 FOREIGN KEY("FESTIVAL_NO") -- BOARD의 BOARD_CODE 컬럼에 FK 지정
 REFERENCES "INFO_BOARD"; -- 참조할 테이블
 
+CREATE SEQUENCE SEQ_FESTIVALDETAIL_NO
+       INCREMENT BY 1 -- 증가값
+       START WITH 1 -- 시작값
+       MINVALUE 1; -- 최솟값
+
+--BEGIN
+--    FOR I IN 1..180 LOOP
+        
+--       INSERT INTO FESTIVAL_DETAIL
+--        VALUES(SEQ_FESTIVALDETAIL_NO.NEXTVAL,
+--               '해당 축제 상세내용',
+--               ' 해당 축제 상세정보.'
+--       );
+        
+--   END LOOP;
+-- END;      
+
+
 ----------------------------------------댓글 테이블-------------------------------------------
 -- DROP TABLE "REPLY";
 
@@ -359,13 +377,10 @@ FROM MEMBER
 JOIN DIB USING (MEMBER_NO)
 JOIN INFO_BOARD USING(FESTIVAL_NO)
 JOIN FESTIVAL_IMG ON(FESTIVAL_NO = IMG_NO)
-WHERE MEMBER_NO = ? AND IMG_LEVEL = 0
+WHERE MEMBER_NO = ? AND IMG_LEVEL = 0;
 
 --------------------------------------------------------------------------------------------------------------------------------
-
-
-
-
+COMMIT;
 
 
 
@@ -473,24 +488,10 @@ SELECT * FROM(
               FESTIVAL_DT,READ_COUNT FROM INFO_BOARD
         WHERE BOARD_CD = 1
         AND FESTIVAL_DT LIKE '%01%'
-        ORDER BY FESTIVAL_NO DESC
-    ) A
-)
-	WHERE RNUM BETWEEN ? AND ?;
-
-SELECT * FROM(
-    SELECT ROWNUM RNUM, A.* FROM(
-        SELECT FESTIVAL_NO, FESTIVAL_TITLE, FESTIVAL_CT, 
-              FESTIVAL_DT,READ_COUNT FROM INFO_BOARD
-        WHERE BOARD_CD = 1
-        AND FESTIVAL_DT LIKE '%01%'
         ORDER BY FESTIVAL_DT
     ) A
 )
-	WHERE RNUM BETWEEN ? AND ?;
-    
-SELECT FESTIVAL_NO, COUNT(FESTIVAL_NO) S FROM INFO_BOARD
-			WHERE BOARD_CD = 1;
+	WHERE RNUM BETWEEN ? AND ? ;
             
 SELECT COUNT(*) FROM INFO_BOARD
 			WHERE BOARD_CD = 1
@@ -500,3 +501,4 @@ SELECT READ_COUNT FROM INFO_BOARD
     WHERE READ_COUNT !='0'
     AND FESTIVAL_DT LIKE '_____01%'
     AND FESTIVAL_AREA LIKE '%서울특별시%';
+
