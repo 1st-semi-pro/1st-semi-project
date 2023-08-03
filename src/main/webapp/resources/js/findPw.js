@@ -76,6 +76,6 @@ document.getElementById("sendEmail-btn").addEventListener("click", function(){
         }
 
     })
-    check.value="인증번호 전송 완료";
+    // check.value="인증번호 전송 완료";
 
 })

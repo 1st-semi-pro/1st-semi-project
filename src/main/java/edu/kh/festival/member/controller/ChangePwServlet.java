@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import edu.kh.festival.member.model.service.MemberService;
 import edu.kh.festival.member.model.vo.Member;
@@ -23,9 +24,7 @@ public class ChangePwServlet extends HttpServlet{
 		try {
 			//먼저 아이디로 회원정보를 받아오고 가져온 데이터에서 email값을 비교하여 존재하지 않으면 인증메일 보내지 못함
 			Member m = new MemberService().searchMember(memberName, memberId);
-			System.out.println(m.getMemberId());
-			System.out.println(m.getMemberName());
-			System.out.println(m.getMemberEmail());
+
 			if(m==null || !m.getMemberEmail().equals(memberEmail)) {
 				req.setAttribute("message", "아이디나 이메일 정보가 맞지 않습니다");
 			}
@@ -40,9 +39,40 @@ public class ChangePwServlet extends HttpServlet{
 		req.getRequestDispatcher(path).forward(req, resp);
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String newPw = req.getParameter("newPw");
+		String newPwCheck = req.getParameter("newPwCheck");
+		String memberId = req.getParameter("memberId");
+		
+		HttpSession session = req.getSession(); // 세션 얻어오기
+		String path = null;
+		
+		if(newPw.equals(newPwCheck)) {
+			System.out.println("새비밀번호, 비밀번호 확인 일치");
+			
+			try {
+				int result = new MemberService().changePw(newPw, memberId );
+				
+				
+				if(result > 0) { // 성공
+					// session scope -> key="message", value="비밀번호 성공!"
+					// path = "내 정보 페이지 주소"
+					session.setAttribute("message", "비밀번호 변경이 완료되었습니다.");
+					
+					path = req.getContextPath() + "/member/login";
+					
+				} else { // 실패
+					session.setAttribute("message", "비밀번호 변경에 실패했습니다..");
+					
+					// path = req.getContextPath() +"/member/changePw";
+					path = "changePw";
+				}
+				
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		resp.sendRedirect(path);
 	}
 
 }

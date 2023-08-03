@@ -58,6 +58,9 @@
 	<entry key="changePw">
 		UPDATE MEMBER SET MEMBER_PW = ? WHERE MEMBER_NO = ? AND MEMBER_PW =?
 	</entry>
+	<entry key="changePw2">
+		UPDATE MEMBER SET MEMBER_PW = ? WHERE MEMBER_ID = ?
+	</entry>
 
 	<!-- 회원탈퇴-->
 	<entry key="secession">
