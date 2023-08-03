@@ -20,9 +20,12 @@
     <main>
 
         <div id = "logoDiv">
-            <img src="${contextPath}/resources/images/logo.png" id="img0"
-                        style="width: 200px !important;
-                               height: 100px !important;">
+
+            <a href="${contextPath}">
+                <img src="${contextPath}/resources/images/logo.png" id="img0"
+                            style="width: 200px !important;
+                                height: 100px !important;">
+            </a>                   
 
         </div>
 
