@@ -23,7 +23,9 @@
     <div id="divKing">
 
         <div class="divs" id="firstDiv">
+            <a href="${contextPath}">
             <img src="${contextPath}/resources/images/logo.png">
+            </a>
         </div>
 
 

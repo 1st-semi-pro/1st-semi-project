@@ -91,10 +91,20 @@ WHERE RNUM BETWEEN ? AND ?
     	UPDATE INFO_BOARD SET READ_COUNT = READ_COUNT + 1 WHERE FESTIVAL_NO = ?
     </entry>
     
+	<!-- 관심축제 체크여부 확인 -->
+	<entry key="dibTest">
+		SELECT * FROM DIB WHERE MEMBER_NO = ? AND FESTIVAL_NO = ?
+	</entry>    
+	
     <!-- 관심축제 등록  -->
     <entry key="insertDib">
     	INSERT INTO DIB VALUES(?, ?)
     </entry>
-    
+
+	<!-- 관심축제 삭제  -->
+    <entry key="deleteDib">
+    	DELETE FROM DIB WHERE MEMBER_NO = ? AND FESTIVAL_NO = ?
+    </entry>
+
     
 </properties>

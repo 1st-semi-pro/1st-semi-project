@@ -1,5 +1,4 @@
 // 스위퍼
-
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: "auto",
     centeredSlides: true,
@@ -12,7 +11,7 @@ var swiper = new Swiper(".mySwiper", {
       el: ".swiper-pagination",
       clickable: true,
     },
-  });
+});
 
 // 지도 api 활성화 및 검색
    
@@ -206,35 +205,175 @@ var swiper = new Swiper(".mySwiper", {
     
     naver.maps.onJSContentLoaded = initGeocoder;
     
+// ------------------------------------------------------------------------------------------------------- //    
 /* 관심축제 등록 */
+
 
 const btn1 = document.getElementById("btn1");
 
-/* 관심축제를 눌렀을 때 */
-btn1.addEventListener("click",function(){
+/* 상세페이지에 들어왔을때 해당 memberNo이 해당 festivalNo을 좋아요 눌렀는지
+   안눌렀는지 구분해서 화면 표시 바꾸기 */
 
-    if(memberNo == ""){
-        alert("로그인 후 이용해주세요.");
-        return;
-    }
+/* 조건문 안달면 이클립스에서 cannot parse string null 뜸 */
+if(btn1.innerText == ""){
 
-   $.ajax({
-
-        url : "dib",
-
-        data : {"festivalNo": festivalNo,
-                "memberNo" : memberNo},
+    (function(){
         
-        type : "GET",
+        $.ajax({
 
-        success : function(result){
+            url : "dibTest",
 
-        },
+            data : {"festivalNo" : festivalNo,
+                    "memberNo" : memberNo},
 
-        error : function(){
+            type : "GET",
+            
+            success : function(result){
 
-        }
+             if(result == 1){
+                    
+                    btn1.innerText = "내가 찜한 축제";
 
-   })
+                }else{
+                   
+                    btn1.innerText = "관심 축제로 등록";
 
-})
+                }
+
+            }
+
+        })
+
+    })();
+
+}
+
+/* 관심축제를 click 할 때*/
+
+// 내가 찜한 축제가 아니라면
+// 버튼을 클릭하면 handler1이 실행되고, 다시 버튼을 클릭하면 handler2가 실행되게 된다.
+btn1.addEventListener("click", function handler1() {   
+    if (btn1.innerText != "내가 찜한 축제") {
+        $.ajax({
+            url: "dibInsert",
+            data: {
+                "festivalNo": festivalNo,
+                "memberNo": memberNo
+            },
+            type: "GET",
+            success: function (result) {
+                if (result > 0) {
+                    alert("찜 등록 성공");
+                    btn1.innerText = "내가 찜한 축제";
+                } else {
+                    alert("찜 등록 실패");
+                }
+                // handler1 제거
+                btn1.removeEventListener("click", handler1);
+                // handler2 추가
+                btn1.addEventListener("click", handler2);
+            },
+            error: function () {
+
+            }
+        });
+    }
+});
+
+function handler2() {
+    if (btn1.innerText != "관심 축제로 등록") {
+        $.ajax({
+            url: "dibDelete",
+            data: {
+                "festivalNo": festivalNo,
+                "memberNo": memberNo
+            },
+            type: "GET",
+            success: function (result) {
+                if (result > 0) {
+                    alert("찜 취소 성공");
+                    btn1.innerText = "관심 축제로 등록";
+                    btn1.style.color = "black";
+                    btn1.style.transitionDuration = "2s";
+                } else {
+                    alert("찜 취소 실패");
+                }
+                // handler2 제거
+                btn1.removeEventListener("click", handler2);
+                // handler1 추가
+                btn1.addEventListener("click", handler1);
+            },
+            error: function () {
+
+            }
+        });
+    }
+}
+
+// 여기까지 하면 버튼이 2번밖에 안눌리고 찜되어있을때는 동작안함
+// -> 거꾸로의 함수도 똑같이 만들어서 추가해준다.
+
+btn1.addEventListener("click", handler2);
+            
+function handler1() {   
+    if (btn1.innerText != "내가 찜한 축제") {
+        $.ajax({
+            url: "dibInsert",
+            data: {
+                "festivalNo": festivalNo,
+                "memberNo": memberNo
+            },
+            type: "GET",
+            success: function (result) {
+                if (result > 0) {
+                    alert("찜 등록 성공");
+                    btn1.innerText = "내가 찜한 축제";
+                } else {
+                    alert("찜 등록 실패");
+                }
+                // handler1 제거
+                btn1.removeEventListener("click", handler1);
+                // handler2 추가
+                btn1.addEventListener("click", handler2);
+            },
+            error: function () {
+
+            }
+        });
+    }
+}
+
+function handler2() {
+    if (btn1.innerText != "관심 축제로 등록") {
+        $.ajax({
+            url: "dibDelete",
+            data: {
+                "festivalNo": festivalNo,
+                "memberNo": memberNo
+            },
+            type: "GET",
+            success: function (result) {
+                if (result > 0) {
+                    alert("찜 취소 성공");
+                    btn1.innerText = "관심 축제로 등록";
+                    btn1.style.color = "black";
+                    btn1.style.transitionDuration = "2s";
+                } else {
+                    alert("찜 취소 실패");
+                }
+                // handler2 제거
+                btn1.removeEventListener("click", handler2);
+                // handler1 추가
+                btn1.addEventListener("click", handler1);
+            },
+            error: function () {
+
+            }
+        });
+    }
+}
+
+
+
+
+
