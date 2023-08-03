@@ -206,3 +206,35 @@ var swiper = new Swiper(".mySwiper", {
     
     naver.maps.onJSContentLoaded = initGeocoder;
     
+/* 관심축제 등록 */
+
+const btn1 = document.getElementById("btn1");
+
+/* 관심축제를 눌렀을 때 */
+btn1.addEventListener("click",function(){
+
+    if(memberNo == ""){
+        alert("로그인 후 이용해주세요.");
+        return;
+    }
+
+   $.ajax({
+
+        url : "dib",
+
+        data : {"festivalNo": festivalNo,
+                "memberNo" : memberNo},
+        
+        type : "GET",
+
+        success : function(result){
+
+        },
+
+        error : function(){
+
+        }
+
+   })
+
+})

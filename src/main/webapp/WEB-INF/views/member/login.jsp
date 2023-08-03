@@ -100,14 +100,6 @@
 					<a href="${contextPath}/member/agree">회원가입</a>
 				</div>
 
-				<div>
-
-					<a href="${contextPath}/member/mail">메일테스트</a>
-
-				</div>
-
-
-
 			</section>
 
 

@@ -178,6 +178,8 @@ inputPw.addEventListener("input",function(){
         inputPw.style.borderBottom = "2px solid lightgray";
         inputPwCheck.style.borderBottom = "2px solid lightgray";
 
+        checkInputs.inputPw = false;
+
         return;
     }    
     
@@ -273,13 +275,28 @@ function pwCheck(){
 
 memberNickname.addEventListener("input",function(){
 
-    if(inputPwCheck != true){
-        alert("처음부터 입력해주세요.");
+    if(checkInputs.inputId != true){
+        alert("아이디를 제대로 입력해주세요.");
         memberNickname.value = "";
         inputId.focus();
         return;
-
     }
+
+    if(checkInputs.inputPw != true){
+        alert("비밀번호를 제대로 입력해주세요.");
+        memberNickname.value = "";
+        inputPw.focus();
+        return;
+    }
+
+    if(checkInputs.inputPwCheck != true){
+        alert("비밀번호 확인을 제대로 입력해주세요.");
+        memberNickname.value = "";
+        inputPwCheck.focus();
+        return;
+    }
+
+
 
     if(memberNickname.value.trim().length == 0){
         in2.innerText = "2~12글자 사이의 영어/숫자/한글로 입력해주세요.";
@@ -738,8 +755,6 @@ emailBtn.addEventListener("click", function(){
         alert("인증 약관에 동의해주세요.");
     }
 
-    alert("구현못함 ㅠ");
-
 })
 
 
@@ -778,13 +793,13 @@ function joinValidate(){
 
     }
 
-    for(let i = 0; i < radios.length; i++){
+/*     for(let i = 0; i < radios.length; i++){
         
         if(!radios.checked){
             alert("남/여 혹은 내/외국인을 체크해주세요.");
             return false;
         }
-    }
+    } */
 
 }
 
@@ -792,5 +807,4 @@ function joinValidate(){
 
 
 /////////////////////////////////////////////////////////////////////////
-// radio alert 2번뜨는 거 고치기, 인증, 
-// 인증약관 박스펼치기, 이메일 중복검사 해야함
+// radio alert 2번뜨는 거 고치기 , 인증약관 박스펼치기, 인증구현하기

@@ -76,13 +76,13 @@ form{
 #innerTextSpan1{
     display:flex;
     height:12%;
-    margin-left:55px;
+    margin-left:65px;
     margin-bottom: 4px;
     justify-content: flex-start;
     align-items: center;
 
     font-weight: bold;
-    font-size:18px;
+    font-size:16px;
 
 }
 

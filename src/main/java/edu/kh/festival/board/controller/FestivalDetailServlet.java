@@ -41,6 +41,8 @@ public class FestivalDetailServlet extends HttpServlet  {
 			
 			//map.put("imgList", imgList);
 			// imgList(여러행) 을 가져온다.
+			
+			// service 안에서 detail을 보여주기 전 조회수를 +1 시킨다
 
 			req.setAttribute("map", map);
 			
