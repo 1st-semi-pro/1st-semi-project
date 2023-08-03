@@ -27,6 +27,8 @@ public class DibTestServlet extends HttpServlet {
 			FestivalService service = new FestivalService();
 			 
 			int result = service.dibTest(memberNo, festivalNo);
+			
+			System.out.println(result);
 
 			resp.getWriter().print(result);
 			
