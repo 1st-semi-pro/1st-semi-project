@@ -29,6 +29,15 @@
     <!-- geocoding -->
     <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=vo8pyrmnk8&submodules=geocoder"></script>
 
+    <script>
+        
+        /* ajax에서 쓰기 위함 */
+        const festivalNo = "${festival.festivalNo}";
+        const memberNo = "${loginMember.memberNo}";
+        const contextPath = "${contextPath}"
+
+    </script>
+
 </head>
 
 <body>
@@ -75,8 +84,8 @@
 
         <div id="thumbNailDiv">
             <img src="${img0}">
-            <a href="${contextPath}" id="Nav1">메인페이지로</a>
-            <a href="${header.referer}" id="Nav2">축제 검색 페이지로</a>
+            <a href="${contextPath}" id="Nav1" class="navs">메인페이지로</a>
+            <a href="${header.referer}" id="Nav2" class="navs">축제 검색 페이지로</a>
         </div>
 
         
@@ -84,9 +93,11 @@
             
             <div id="contentAndBtns">
                 ${festivalDetail.festivalContent}
+                
                 <!-- 관심축제 등록 button -->
-                <!-- 누를때마다 ajax로 바껴야 해서 include 형식으로 jsp 하나 만듬 -->
                 <jsp:include page="/WEB-INF/views/board/dib.jsp"/>
+                <!-- ajax로 계속 바뀌어야 해서 구분하려고 include 형식으로 jsp 하나 만듬 -->
+            
             </div>
         
         </div>
@@ -174,12 +185,6 @@
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 
-    <script>
-        /* ajax에서 쓰기 위함 */
-        const festivalNo = "${festival.festivalNo}";
-        const memberNo = "${loginMember.memberNo}";
-
-    </script>
 
 
     <script src="${contextPath}/resources/js/festivalDetail.js"></script>

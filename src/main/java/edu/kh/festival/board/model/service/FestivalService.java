@@ -128,8 +128,6 @@ public class FestivalService {
 		// 상세페이지 들어가면 조회수 +1 시키기
 		int result = dao.updateReadCount(conn, festivalNo);
 		
-		System.out.println("조회수 : " +  result);
-		
 		if(result == 1) commit(conn);
 		else 			rollback(conn);
 		
@@ -165,9 +163,27 @@ public class FestivalService {
 		
 		return result;
 	}
+	
+	
+	/** 관심축제 선택여부 조회 Service
+	 * @param memberNo
+	 * @param festivalNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int dibTest(int memberNo, int festivalNo) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int result = dao.dibTest(conn, memberNo, festivalNo);
+		
+		close(conn);
+		
+		return result;
+	}
 
 	
-	/** 관심축제 Update Service
+	/** 관심축제 Insert Service
 	 * @param festivalNo
 	 * @return result
 	 * @throws Exception
@@ -186,5 +202,30 @@ public class FestivalService {
 		return result;
 	}
 
+
+
+
+	/** 관심축제 Delete Service
+	 * @param memberNo
+	 * @param festivalNo
+	 * @return result;
+	 * @throws Exception
+	 */
+	public int deleteDib(int memberNo, int festivalNo) throws Exception {
+	
+		Connection conn = getConnection();
+		
+		int result = dao.deleteDib(conn, memberNo, festivalNo);
+		 
+		if(result == 1) commit(conn);
+		else 			rollback(conn);
+		
+		close(conn);
+		
+		return result;
+		
+		
+		
+	}
 
 }

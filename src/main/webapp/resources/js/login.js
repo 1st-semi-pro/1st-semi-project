@@ -4,12 +4,25 @@ const sec1 = document.getElementById("sec1");
 const sec2 = document.getElementById("sec2");
 
 // 로그인 유효성 검사
+
+/* 즉시실행 - 아이디 저장하면 페이지 들어가자마자 아이디 있어서 border주기 */
+(function(){
+
+	if(inputId.value.trim().length != 0){
+		sec1.style.border = "2px solid lightcoral";
+	}
+		
+})()
+
+
+
+
 function loginValidate(){
 	
 	if(inputId.value.trim().length == 0){
 		
 		alert("아이디를 입력해주세요.");
-		
+
 		inputId.value="";
 		inputId.focus();
 

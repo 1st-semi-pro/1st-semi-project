@@ -20,9 +20,9 @@ public class ReplyController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	
-		String uri = req.getRequestURI(); // /community/reply/test
-		String contextPath = req.getContextPath(); // /community
-		String command = uri.substring(  (contextPath + "/reply/").length()  );// test (/reply/ 뒤)
+		String uri = req.getRequestURI(); 
+		String contextPath = req.getContextPath(); 
+		String command = uri.substring(  (contextPath + "/reply/").length()  );
 		// /festival/reply/ 뒤부터 잘라냄을 의미
 		
 		ReplyService service = new ReplyService();

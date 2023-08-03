@@ -48,11 +48,15 @@
                     <!-- 우린 마이페이지에서 이미지 설정할 수 있음 -->
                     <div>
                     <c:if test="${empty detail.profileImage}">
+                        <a href="${contextPath}/member/myPage2?memberNo=${detail.memberNo}">
                         <img src="${contextPath}/resources/images/id.png"> <!-- 기본값 -->
+                        </a>
                     </c:if>
 
                     <c:if test="${!empty detail.profileImage}">
+                        <a href="${contextPath}/member/myPage2?memberNo=${detail.memberNo}">
                         <img src="${contextPath}${detail.profileImage}">
+                        </a>
                     </c:if>
                     </div>
 

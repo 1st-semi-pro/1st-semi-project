@@ -25,8 +25,6 @@ public class FestivalDetailServlet extends HttpServlet  {
 
 			int festivalNo = Integer.parseInt(req.getParameter("festivalNo"));
 			
-			System.out.println(festivalNo);
-			
 			FestivalDetail detail = new FestivalDetail();
 			
 			FestivalService service = new FestivalService();

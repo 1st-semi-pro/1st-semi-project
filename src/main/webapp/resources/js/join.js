@@ -49,7 +49,6 @@ const emailBtn = document.getElementById("emailBtn");
 
 
 
-
 /* 각 input 별 true, false 담을 객체 */
 const checkInputs = {
 
@@ -61,7 +60,7 @@ const checkInputs = {
     "memberBirth" : false,
     "regionSelect" : false,
     "memberPhone" : false,
-    "radios" : false
+    "inputEmail" : false
 
 
 }
@@ -302,6 +301,8 @@ memberNickname.addEventListener("input",function(){
         in2.innerText = "2~12글자 사이의 영어/숫자/한글로 입력해주세요.";
         in2.classList.remove("true","false");
         checkInputs.memberNickname = false;
+        memberNickname.style.borderBottom = "2px solid lightgray";
+        secondBox.style.border = "2px solid lightgray";
         return;
     }
 
@@ -325,7 +326,7 @@ memberNickname.addEventListener("input",function(){
                     in2.classList.add("false");
                     in2.classList.remove("true");
                     memberNickname.style.borderBottom = "2px solid lightgray";
-
+                    secondBox.style.border = "2px solid lightgray";
                     checkInputs.memberNickname = false;
 
                 }else{
@@ -336,6 +337,13 @@ memberNickname.addEventListener("input",function(){
                     memberNickname.style.borderBottom = "2px solid lightcoral"; // 여기서의 this는 inputId가 아닌듯
                     
                     checkInputs.memberNickname = true;
+
+                    if(checkInputs.memberNickname != false && checkInputs.memberName != false && 
+                        checkInputs.memberPhone != false && checkInputs.memberBirth != false &&
+                        checkInputs.regionSelect != false && checkInputs.inputEmail != false){
+                        secondBox.style.border = "5px solid lightcoral";
+            
+                    }
 
                 }
 
@@ -355,7 +363,8 @@ memberNickname.addEventListener("input",function(){
         in2.classList.remove("true");
 
        checkInputs.memberNickname = false; // 유효 x 기록
-
+       secondBox.style.border = "2px solid lightgray";
+       memberNickname.style.borderBottom = "2px solid lightgray";
     }
 
 
@@ -378,6 +387,7 @@ memberName.addEventListener("input",function(){
         in2.innerText = "이름을 입력해주세요.";
         in2.classList.remove("true","false");
         checkInputs.memberName = false;
+        secondBox.style.border = "2px solid lightgray";
         return;
     }
 
@@ -394,6 +404,13 @@ memberName.addEventListener("input",function(){
 
         this.style.borderBottom = "2px solid lightcoral";
 
+        if(checkInputs.memberNickname != false && checkInputs.memberName != false && 
+            checkInputs.memberPhone != false && checkInputs.memberBirth != false &&
+            checkInputs.regionSelect != false && checkInputs.inputEmail != false){
+            secondBox.style.border = "5px solid lightcoral";
+
+        }
+
     }else{
 
         in2.innerText = "유효한 형식의 이름이 아닙니다.";
@@ -402,6 +419,7 @@ memberName.addEventListener("input",function(){
         in2.classList.remove("true");
 
         this.style.borderBottom = "2px solid lightgray";
+        secondBox.style.border = "2px solid lightgray";
 
         checkInputs.memberName = false;
 
@@ -430,7 +448,9 @@ memberBirth.addEventListener("input", function(){
         in2.innerText = "생년월일을 8자리로 입력해주세요. (-제외)";
         in2.classList.remove("true", "false");
         checkInputs.memberBirth = false;
+        secondBox.style.border = "2px solid lightgray";
         return;
+
     }
 
     const regExp = /^(?:19|20)\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|1[0-9]|2[0-9]|30|31)$/;
@@ -450,6 +470,13 @@ memberBirth.addEventListener("input", function(){
 
         this.style.borderBottom = "2px solid lightcoral";
 
+        if(checkInputs.memberNickname != false && checkInputs.memberName != false && 
+            checkInputs.memberPhone != false && checkInputs.memberBirth != false &&
+            checkInputs.regionSelect != false && checkInputs.inputEmail != false){
+            secondBox.style.border = "5px solid lightcoral";
+
+        }
+
     }else{
 
         in2.innerText = "유효한 형식의 생년월일이 아닙니다.";
@@ -458,7 +485,7 @@ memberBirth.addEventListener("input", function(){
         in2.classList.remove("true");
 
         this.style.borderBottom = "2px solid lightgray";
-
+        secondBox.style.border = "2px solid lightgray";
         checkInputs.memberBirth = false;
 
     }
@@ -486,6 +513,7 @@ regionSelect.addEventListener("change",function(){
         regionSelect.style.border = "2px solid lightgray";
         regionSelect.style.outline = "0";
         regionSelect.style.borderRadius = "10px";
+        secondBox.style.border = "2px solid lightgray";
     }
 
     if(regionSelect.value != "default"){
@@ -493,6 +521,13 @@ regionSelect.addEventListener("change",function(){
         regionSelect.style.border = "2px solid lightcoral";
         regionSelect.style.outline = "0";
         regionSelect.style.borderRadius = "10px";
+
+        if(checkInputs.memberNickname != false && checkInputs.memberName != false && 
+            checkInputs.memberPhone != false && checkInputs.memberBirth != false &&
+            checkInputs.regionSelect != false && checkInputs.inputEmail != false){
+            secondBox.style.border = "5px solid lightcoral";
+
+        }
     }
 
 
@@ -510,12 +545,14 @@ memberPhone.addEventListener("input",function(){
         this.value = "";
         regionSelect.focus();
         return;
+        
     }
 
     if(this.value.trim().length == 0){
         in2.innerText = "전화번호를 입력해주세요. (-제외)";
         in2.classList.remove("true", "false");
         checkInputs.memberPhone = false;
+        secondBox.style.border = "2px solid lightgray";
         return;
     }
 
@@ -536,6 +573,13 @@ memberPhone.addEventListener("input",function(){
 
         this.style.borderBottom = "2px solid lightcoral";
 
+        if(checkInputs.memberNickname != false && checkInputs.memberName != false && 
+            checkInputs.memberPhone != false && checkInputs.memberBirth != false &&
+            checkInputs.regionSelect != false && checkInputs.inputEmail != false){
+            secondBox.style.border = "5px solid lightcoral";
+
+        }
+
     }else{
 
         in2.innerText = "유효한 형식의 전화번호가 아닙니다.";
@@ -546,6 +590,7 @@ memberPhone.addEventListener("input",function(){
         this.style.borderBottom = "2px solid lightgray";
 
         checkInputs.memberPhone = false;
+        secondBox.style.border = "2px solid lightgray";
 
     }
 
@@ -588,7 +633,7 @@ womanDiv.addEventListener("click",function(){
 
     if(checkInputs.memberPhone != true){
        
-        alert("전화번호를 올바르게 입력해주세요.2");
+        alert("전화번호를 올바르게 입력해주세요.");
         woman.checked = false;
         memberPhone.focus();
 
@@ -685,6 +730,7 @@ inputEmail.addEventListener("input",function(){
         in2.innerText = "이메일을 입력해주세요.";
         in2.classList.remove("true", "false");
         checkInputs.inputEmail = false;
+        secondBox.style.border = "2px solid lightgray";
         return;
     }
 
@@ -713,7 +759,7 @@ inputEmail.addEventListener("input",function(){
                     in2.classList.add("false");
                     in2.classList.remove("true");
                     inputEmail.style.borderBottom = "2px solid lightgray";
-
+                    secondBox.style.border = "2px solid lightgray";
                     checkInputs.inputEmail = false;
 
                 }else{
@@ -724,6 +770,16 @@ inputEmail.addEventListener("input",function(){
                     inputEmail.style.borderBottom = "2px solid lightcoral";
                     
                     checkInputs.inputEmail = true;
+
+                    
+                if(checkInputs.memberNickname != false && checkInputs.memberName != false && 
+                    checkInputs.memberPhone != false && checkInputs.memberBirth != false &&
+                    checkInputs.regionSelect != false && checkInputs.inputEmail != false){
+                    secondBox.style.border = "5px solid lightcoral";
+
+                }
+
+       
 
                 }
 
@@ -740,8 +796,8 @@ inputEmail.addEventListener("input",function(){
         in2.classList.remove("true");
 
         this.style.borderBottom = "2px solid lightgray";
-
-        checkInputs.memberPhone = false;
+        secondBox.style.border = "2px solid lightgray";
+        checkInputs.inputEmail = false;
 
     }
 
@@ -756,6 +812,11 @@ emailBtn.addEventListener("click", function(){
     }
 
 })
+
+// ----------------------------------------------------------------------------- //
+// secondDiv 다체크되면 border주기
+// input을 한번에 지웠을 때를 대비
+
 
 
 
@@ -787,11 +848,23 @@ function joinValidate(){
                 case "memberBirth"      : str= "생년월일이"; break;
                 case "regionSelect"     : str= "지역선택이"; break;
                 case "memberPhone"      : str= "전화번호가"; break;
+                case "inputEmail"       : str= "이메일이"; break;
             }
+
+            str += " 유효하지 않습니다.";
+            alert(str);
+
+            document.getElementById(key).focus();
+            
+            return false;
 
         }
 
     }
+
+    return true;
+    
+}
 
 /*     for(let i = 0; i < radios.length; i++){
         
@@ -800,11 +873,5 @@ function joinValidate(){
             return false;
         }
     } */
-
-}
-
-
-
-
 /////////////////////////////////////////////////////////////////////////
 // radio alert 2번뜨는 거 고치기 , 인증약관 박스펼치기, 인증구현하기

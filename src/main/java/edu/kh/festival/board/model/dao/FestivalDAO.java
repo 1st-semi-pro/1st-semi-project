@@ -433,9 +433,46 @@ public class FestivalDAO {
 		
 		return result;
 	}
+	
+	
+	/** 관심축제 선택여부 조회 DAO
+	 * @param conn
+	 * @param memberNo
+	 * @param festivalNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int dibTest(Connection conn, int memberNo, int festivalNo) throws Exception{
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("dibTest");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, memberNo);
+			pstmt.setInt(2, festivalNo);
+			
+			rs = pstmt.executeQuery();
+			
+			
+			if(rs.next()) {
+				result = rs.getInt(1);
+			}
+			// result가 1이면 찜한 축제라는것이고 0이면 찜한 축제가 아니라는 것 
+			
+		}finally {
+			close(pstmt);
+		}
+		
+		return result;
+		
+	}
 
 	
-	/** 관심축제 Update DAO
+	/** 관심축제 Insert DAO
 	 * @param conn
 	 * @param festivalNo
 	 * @return result
@@ -456,8 +493,6 @@ public class FestivalDAO {
 			pstmt.setInt(2, festivalNo);
 			
 			result = pstmt.executeUpdate();
-			
-			System.out.println(result);
 
 		}finally {
 			
@@ -467,6 +502,37 @@ public class FestivalDAO {
 		
 		return result;
 		
+	}
+
+
+	/** 관심축제 Delete DAO
+	 * @param conn
+	 * @param memberNo
+	 * @param festivalNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int deleteDib(Connection conn, int memberNo, int festivalNo) throws Exception{
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("deleteDib");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, memberNo);
+			pstmt.setInt(2, festivalNo);
+			
+			result = pstmt.executeUpdate();
+			
+			
+		}finally {
+			close(pstmt);
+		}
+		
+		return result;
 	}
 
 }

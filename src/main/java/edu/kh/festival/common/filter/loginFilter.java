@@ -20,7 +20,7 @@ import javax.servlet.http.HttpSession;
 
 @WebFilter(filterName = "loginFilter", //write에 insert,update 들어가있음
 		   urlPatterns = {"/board/write", "/board/delete", 
-				   		  "/reply/insert", "/reply/update", "/reply/delete"}) 
+				   		  "/reply/insert", "/reply/update", "/reply/delete", "/member/myPage2"}) 
 public class loginFilter extends HttpFilter implements Filter {
   
   

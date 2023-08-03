@@ -72,11 +72,14 @@ public class JoinServlet extends HttpServlet{
 			HttpSession session = req.getSession();			
 			
 			if(result == 1) {
-				System.out.println("성공");
+				session.setAttribute("message", "회원가입 성공");
+				
 			}else {
-				System.out.println("실패");
+				session.setAttribute("message", "회원가입 실패");
 			}
 			
+			
+			resp.sendRedirect(req.getContextPath() + "/member/login");
 			
 		}catch(Exception e){
 			e.printStackTrace();
