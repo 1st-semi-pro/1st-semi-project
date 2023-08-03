@@ -24,6 +24,8 @@ public class FestivalinfoServlet extends HttpServlet {
 
 			int pop = Integer.parseInt(req.getParameter("pop"));
 			
+			String query = req.getParameter("query");
+			
 			String festivalDate = req.getParameter("festivalDate");
 			
 			int cp = 1;
@@ -34,7 +36,7 @@ public class FestivalinfoServlet extends HttpServlet {
 
 			FestivalService service = new FestivalService();
 
-			Map<String, Object> map = service.festivalInfo(type, cp, req);
+			Map<String, Object> map = service.festivalInfo(query,type, cp, req);
 
 			if (pop == 1) {
 				

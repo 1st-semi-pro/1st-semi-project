@@ -24,7 +24,7 @@ public class FestivalService {
 	 * @return map
 	 * @throws Exception
 	 */
-	public Map<String, Object> festivalInfo(int type, int cp,HttpServletRequest req) throws Exception {
+	public Map<String, Object> festivalInfo(String query,int type, int cp,HttpServletRequest req) throws Exception {
 		
 		Connection conn = getConnection();
 		
@@ -37,7 +37,7 @@ public class FestivalService {
 		Pagination9 pagination = new Pagination9(cp, festivalCount);
 		
 		// 3. 축제 목록조회
-		List<Festival> festivalList = dao.festivalList(conn,pagination,type,req);
+		List<Festival> festivalList = dao.festivalList(conn,pagination,query,type,req);
 	
 		
 		Map<String, Object> map = new HashMap<String, Object>();
@@ -50,6 +50,30 @@ public class FestivalService {
 		
 		return map;
 	}
+	/**
+	 * 축제정보 지민ver
+	 * @param type
+	 * @param req
+	 * @return
+	 * @throws Exception
+	 */
+	public Map<String, Object> festivalInfo( String query) throws Exception {
+		
+		Connection conn = getConnection();
+		
+	
+		
+		// 3. 축제 목록조회
+		List<Festival> festivalList = dao.festivalList(conn,query);
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("festivalList", festivalList);
+		
+		close(conn);
+		
+		return map;
+	}
+
 
 	
 	/** 축제일순 조회Service

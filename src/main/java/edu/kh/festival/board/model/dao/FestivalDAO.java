@@ -129,7 +129,7 @@ public class FestivalDAO {
 	 * @return
 	 * @throws Exception
 	 */
-	public List<Festival> festivalList(Connection conn, Pagination9 pagination, int type, HttpServletRequest req) throws Exception {
+	public List<Festival> festivalList(Connection conn, Pagination9 pagination, String query , int type, HttpServletRequest req) throws Exception {
 		
 		List<Festival> festivalList = new ArrayList<Festival>();
 
@@ -151,6 +151,10 @@ public class FestivalDAO {
 			}
 			if(festivalCat != null && festivalCat !=""){
 				   sql2 += "AND FESTIVAL_CAT LIKE '%" + festivalCat + "%' ";
+			}
+			
+			if(query != null) {
+				sql2 += " AND (FESTIVAL_CT LIKE '%" + query + "%' OR FESTIVAL_TITLE LIKE '%" + query + "%') ";
 			}
 			
 			String sql= sql1+sql2+sql3;
@@ -179,6 +183,65 @@ public class FestivalDAO {
 				festival.setReadCount(rs.getInt("READ_COUNT"));
 				festival.setFestivalArea(rs.getString("FESTIVAL_AREA"));
 				festival.setFestivalCat(rs.getString("FESTIVAL_CAT"));
+				
+				
+				festivalList.add(festival);
+				
+			}
+		} finally {
+			
+			close(rs);
+			close(pstmt);
+		}
+		
+		return festivalList;
+	}
+	
+	/**
+	 *  지민버전
+	 * @param conn
+	 * @param type
+	 * @param req
+	 * @return
+	 * @throws Exception
+	 */
+	public List<Festival> festivalList(Connection conn, String query) throws Exception { 
+		List<Festival> festivalList = new ArrayList<Festival>();
+
+		try {
+			
+			String sql1 = prop.getProperty("festivalList1");
+			String sql2 = prop.getProperty("festivalList2");
+			String sql3 = prop.getProperty("festivalList3");	
+		
+		
+			String sql= sql1+sql2+ " AND (FESTIVAL_CT LIKE '%" + query + "%' OR FESTIVAL_TITLE LIKE '%" + query + "%') "+sql3;
+		
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, 1);
+			pstmt.setInt(2, 1);
+			pstmt.setInt(3, 5);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				Festival festival = new Festival();
+				
+				festival.setFestivalNo(rs.getInt("FESTIVAL_NO"));
+				festival.setFestivalTitle(rs.getString("FESTIVAL_TITLE"));
+				
+				String preStr = rs.getString("FESTIVAL_CT");
+				// --- 게시글 내용 가져와서 15자만 미리보기로 보여줌 ---
+				if (preStr.length() > 30) {
+					preStr = preStr.substring(0, 15) + "..."; // 자르고 ... 붙이기
+				}
+				festival.setFestivalContent(preStr);
+				
+				festival.setFestivalDate(rs.getString("FESTIVAL_DT"));
+				festival.setReadCount(rs.getInt("READ_COUNT"));
 				
 				
 				festivalList.add(festival);
