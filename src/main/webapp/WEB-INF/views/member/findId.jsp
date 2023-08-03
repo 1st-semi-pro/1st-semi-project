@@ -29,17 +29,15 @@
         <div class="divide2">
             <div class="divide4">아이디 찾기</div>
             <div class="divide4"><input type="text" id="inputName" placeholder="이름입력"></div>
-            <div class="divide4"><input type="text" id="inputEmail" placeholder="이메일 입력" size="35"><button id="btn1">이메일인증</button></div>
-            <div class="divide4"><input type="text" id="inputNum" placeholder="인증번호 입력" size="35"><button id="btn2">인증확인</button></div>
+            <div class="divide4"><input type="text" id="inputEmail" placeholder="이메일 입력" size="35"><button id="btn1" onsubmit="return inputValidate()">이메일인증</button></div>
+            <div class="divide4"><input type="text" id="inputKey" placeholder="인증번호 입력" size="35"><button id="btn2">인증확인</button></div>
         </div>
 
        
-        
-    
 
         <div class="divide3">
             <button type="button" onclick="location.href='${header.referer}'" id="btn3">뒤로가기</button>
-            <button type="button" onclick="location.href='${header.referer}'" id="btn3">비밀번호 찾기</button>
+            <button type="button" onclick="location.href='findPw'" id="btn3">비밀번호 찾기</button>
         </div>
 
 
@@ -64,7 +62,8 @@
         </section>
     </footer>
 
-
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="${contextPath}/resources/js/findId.js"></script>
 
 
 
