@@ -30,6 +30,15 @@ public class MyPageServlet2 extends HttpServlet {
 			
 			System.out.println(viewMember);
 			
+			// 좋아요 갯수 추가
+			int goodNum = service.viewGood(viewMemberNo);
+			
+			// 신고 갯수 추가
+			int badNum = service.viewBad(viewMemberNo);
+			
+			
+			req.setAttribute("badNum", badNum);
+			req.setAttribute("goodNum", goodNum);
 			 req.setAttribute("viewMember", viewMember);
 			
 			String path = "/WEB-INF/views/member/myPage2.jsp";

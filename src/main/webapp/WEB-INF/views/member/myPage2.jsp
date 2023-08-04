@@ -59,12 +59,14 @@
     
                                 <div id="info-btn-area">
                                     <div>
-                                        <img src="${contextPath}/resources/images/good.png" alt="칭찬 횟수" class="mypage-icon">
-                                        <span class="mypage-span" id="good-span">28회</span>
+                                        <button type="button" id="good"><img src="${contextPath}/resources/images/good.png" alt="칭찬 횟수" class="mypage-icon"></button>
+                                        <span class="mypage-span" id="good-span">${goodNum}</span>
+                                        <input type="hidden" id="loginMember" value="${loginMember.memberNo}">
+                                        <input type="hidden" id="goodMember" value="${viewMember.memberNo}">
                                     </div>
                                     <div>
-                                        <img src="${contextPath}/resources/images/report.png" alt="신고 횟수" class="mypage-icon">
-                                        <span class="mypage-span" id="report-span">0회</span>
+                                        <button type="button" id="bad"><img src="${contextPath}/resources/images/report.png" alt="신고 횟수" class="mypage-icon"></button>
+                                        <span class="mypage-span" id="bad-span">${badNum}</span>
                                     </div>
                                 </div>
     
@@ -110,7 +112,9 @@
         const contextPath = "${contextPath}"; // 최상위 경로를 JS 전역변수로 선언
     </script>
 
-    <script src="${contextPath}/resources/js/myPage.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="${contextPath}/resources/js/myPage2.js"></script>
     
 </body>
 </html>

@@ -312,6 +312,66 @@ public class ManageDAO {
 		return mList;
 	}
 
+	/** 좋아요 갯수 출력 DAO
+	 * @param conn
+	 * @param viewMemberNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int viewGood(Connection conn, int viewMemberNo) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			String sql = "SELECT COUNT(*) FROM MEMBER JOIN ASSESS_MEMBER ON (MEMBER_NO = GOOD_MEMBER_NO) WHERE GOOD_MEMBER_NO = ?";
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, viewMemberNo);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				result = rs.getInt(1);
+			}
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	
+	/** 신고 갯수 출력 DAO
+	 * @param conn
+	 * @param viewMemberNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int viewBad(Connection conn, int viewMemberNo) throws Exception {
+
+		int result = 0;
+		
+		try {
+			String sql = "SELECT COUNT(*) FROM MEMBER JOIN ASSESS_MEMBER1 ON (MEMBER_NO = BAD_MEMBER_NO) WHERE BAD_MEMBER_NO = ?";
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, viewMemberNo);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				result = rs.getInt(1);
+			}	
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return result;
+	}
 
 	
 }
