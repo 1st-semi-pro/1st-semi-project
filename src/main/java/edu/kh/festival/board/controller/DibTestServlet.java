@@ -13,7 +13,6 @@ import edu.kh.festival.board.model.service.FestivalService;
 // 찜이 되어있는지 안되어있는지 조회하는 dibTest Servlet 즉시실행함수로 페이지 들어오자마자 실행
 @WebServlet("/board/dibTest")
 public class DibTestServlet extends HttpServlet {
-
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

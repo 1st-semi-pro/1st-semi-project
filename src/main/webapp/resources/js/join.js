@@ -46,6 +46,8 @@ const radios = document.getElementsByClassName("radios");
 const agreeCbx = document.getElementById("agreeCbx");
 const emailBtn = document.getElementById("emailBtn");
 
+var authenticationInput = document.getElementById("authenticationInput");
+var authenticationButton = document.getElementById("authenticationButton");
 
 
 
@@ -554,6 +556,7 @@ memberPhone.addEventListener("input",function(){
         in2.innerText = "전화번호를 입력해주세요. (-제외)";
         in2.classList.remove("true", "false");
         checkInputs.memberPhone = false;
+        this.style.borderBottom = "2px solid lightgray";
         secondBox.style.border = "2px solid lightgray";
         return;
     }
@@ -834,15 +837,41 @@ emailBtn.addEventListener("click", function(){
         type : "GET",
 
         success : function(key){
-            if(key != null){
+            
+            if(key == ""){
+
+                alert("인증번호 전송 실패");
+                checkInputs.emailBtn = false;
+                return;
+
+            }else{
+
+                alert("인증번호를 전송했습니다.");
+                authenticationInput.setAttribute('type','text');
+                authenticationButton.setAttribute('type','button'); 
+                authenticationButton.value = "인증";  
+            
+                authenticationButton.addEventListener("click",function(){
+
+                    if(key == '"' + authenticationInput.value + '"'){
+
+                        alert("인증 완료!");
+                        checkInputs.emailBtn = true;
+
+                    }else{
+                        alert("인증번호가 일치하지 않습니다.");
+                        checkInputs.emailBtn = false;
+                    }
+              
+                })
 
             }
+
         },
 
         error : function(){
 
         }
-
 
     })
 
@@ -893,12 +922,5 @@ function joinValidate(){
     
 }
 
-/*     for(let i = 0; i < radios.length; i++){
-        
-        if(!radios.checked){
-            alert("남/여 혹은 내/외국인을 체크해주세요.");
-            return false;
-        }
-    } */
-/////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
 // radio alert 2번뜨는 거 고치기 , 인증약관 박스펼치기, 인증구현하기

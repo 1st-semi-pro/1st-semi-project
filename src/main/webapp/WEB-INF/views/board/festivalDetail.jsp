@@ -45,13 +45,14 @@
     <main>
 
     <div id="allDiv">
-        <!-- 이미지 변수설정으로 쉽게 사용 메인 썸네일 1, 추가이미지 -->
+        <!-- 이미지 변수설정으로 쉽게 사용 -->
+        <!-- 0 = 썸네일 1~6 = 상세 이미지들 7 = half이미지 -->
         <c:forEach items="${imgList}" var="imgList">
         
             <c:choose>
-
+                
                 <c:when test="${imgList.imageLevel == 0}">
-                    <c:set var="img0" value="${imgList.imageReName}"/>
+                    <c:set var="img0" value="${contextPath}${imgList.imageReName}"/>
                 </c:when>
 
                 <c:when test="${imgList.imageLevel == 1}">
@@ -78,21 +79,28 @@
                     <c:set var="img6" value="${contextPath}${imgList.imageReName}"/>
                 </c:when>
 
+                <c:when test="${imgList.imageLevel == 7}">
+                    <c:set var="img6" value="${contextPath}${imgList.imageReName}"/>
+                </c:when>
+
             </c:choose>
 
         </c:forEach>
 
+        <!-- 썸네일 -->
         <div id="thumbNailDiv">
             <img src="${img0}">
             <a href="${contextPath}" id="Nav1" class="navs">메인페이지로</a>
             <a href="${header.referer}" id="Nav2" class="navs">축제 검색 페이지로</a>
         </div>
 
-        
+        <!-- 기본 정보, 찜하기 -->
         <div id="info">
             
-            <div id="contentAndBtns">
-                ${festivalDetail.festivalContent}
+            <div id="contentAndBtn">
+
+                <div id="festivalTitle">${festival.festivalTitle}</div>
+                <div id="festivalContent">${festival.festivalContent}</div>
                 
                 <!-- 관심축제 등록 button -->
                 <jsp:include page="/WEB-INF/views/board/dib.jsp"/>
@@ -102,38 +110,35 @@
         
         </div>
         
+        <!-- 상세정보 -->
 
+        <div id="imageAndContent">
+            
+            <div id="halfImage">
+                <img src="${img7}">
+            </div>
+
+            <div id="halfContent">
+
+                <div>${festivalDetail.festivalDetailInfo}</div>
+
+                <div>개별 축제 홈페이지 링크 달 수 있다면 달기</div>
+
+            </div>
+
+        </div>
 
 
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="${img0}"></div>
-                <div class="swiper-slide"><img src="${img0}"></div>
-                <div class="swiper-slide"><img src="${img0}"></div>
-                <div class="swiper-slide"><img src="${img0}"></div>
-                <div class="swiper-slide"><img src="${img0}"></div>
-                <div class="swiper-slide"><img src="${img0}"></div>
+                <div class="swiper-slide"><img src="${img1}"></div>
+                <div class="swiper-slide"><img src="${img2}"></div>
+                <div class="swiper-slide"><img src="${img3}"></div>
+                <div class="swiper-slide"><img src="${img4}"></div>
+                <div class="swiper-slide"><img src="${img5}"></div>
+                <div class="swiper-slide"><img src="${img6}"></div>
             </div>
             <div class="swiper-pagination"></div>
-        </div>
-
-
-        <div id="contents">
-            <div>
-
-            </div>
-        </div>
-
-        <div id="imageAndContent">
-            <div id="halfImage">
-                <img src="${img0}">
-            </div>
-
-            <div id="halfContent">
-                <div>${festivalDetail.festivalDetailInfo}</div>
-
-                <div>개별 축제 홈페이지 링크 달 수 있다면 달기</div>
-            </div>
         </div>
 
         <div id="findWayApi">
@@ -153,6 +158,7 @@
         </div>
 
         <div id="youtube">
+
            <!-- youtube 부분 -> db 만들어야 되서 일단 임시 -->
            <iframe width="600" height="360" 
            src="https://www.youtube.com/embed/7HDeem-JaSY" 
