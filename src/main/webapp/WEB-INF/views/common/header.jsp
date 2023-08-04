@@ -8,19 +8,6 @@
             <section>
                 <a href="${contextPath}"><img src="${contextPath}/resources/images/logo.png" id="home-logo"></a>
             </section>
-
-            <section>
-                <article class="search-area">
-                    <form action="#" name="search-form">
-                        <fieldset>
-                            <input type="search" id="h-search" name="search" size="35" placeholder=" 여행지를 찾아보세요." autocomplete="off">
-                            <button type="submit" id="h-search-btn" class="fa-solid fa-magnifying-glass-plus"></button>
-                        </fieldset>
-                    </form>
-                </article>
-                <article class="search-area">
-            </section>
-            <section>
             
             <c:choose>
            
