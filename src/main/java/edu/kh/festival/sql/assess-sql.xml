@@ -6,19 +6,19 @@
 	
 	<!-- 좋아요 중복 검사 -->
 	<entry key="checkAssess">
-		SELECT COUNT(*) FROM ASSESS_MEMBER
+		SELECT COUNT(*) FROM GOOD_ASSESS
 		WHERE REC_MEMBER_NO= ?
 		AND GOOD_MEMBER_NO = ?
 	</entry>
 
 	<!-- 좋아요 추가 -->
 	<entry key="addAssess">
-		INSERT INTO ASSESS_MEMBER VALUES(?, ?)
+		INSERT INTO GOOD_ASSESS VALUES(?, ?)
 	</entry>
 	
 	<!-- 좋아요 삭제 -->
 	<entry key="deleteAssess">
-		DELETE FROM ASSESS_MEMBER
+		DELETE FROM GOOD_ASSESS
 		WHERE REC_MEMBER_NO = ?
 		AND GOOD_MEMBER_NO = ?
 	</entry>
@@ -26,33 +26,33 @@
 	<!-- 좋아요 개수 조회 -->
 	<entry key="selectAssess">
 		SELECT COUNT(*) FROM MEMBER
-		JOIN ASSESS_MEMBER ON (MEMBER_NO = GOOD_MEMBER_NO)
+		JOIN GOOD_ASSESS ON (MEMBER_NO = GOOD_MEMBER_NO)
 		WHERE GOOD_MEMBER_NO = ?
 	</entry>
 	
 	<!-- 신고하기 중복 조회 -->
 	<entry key="checkAssess1">
-		SELECT COUNT(*) FROM ASSESS_MEMBER1
+		SELECT COUNT(*) FROM BAD_ASSESS
 		WHERE REC_MEMBER_NO1= ?
 		AND BAD_MEMBER_NO = ?
 	</entry>
 	
 	<!-- 신고하기 행 추가 -->
-	<entry key="addAssess1">
-		INSERT INTO ASSESS_MEMBER1 VALUES(?, ?)
+	<entry key="addBadAssess">
+		INSERT INTO BAD_ASSESS VALUES(?, ?)
 	</entry>
 	
 	<!-- 신고하기 행 삭제 -->
-	<entry key="deleteAssess1">
-		DELETE FROM ASSESS_MEMBER1
+	<entry key="deleteBadAssess">
+		DELETE FROM BAD_ASSESS
 		WHERE REC_MEMBER_NO1 = ?
 		AND BAD_MEMBER_NO = ?
 	</entry>
 	
 	<!-- 신고하기 개수 조회 -->
-	<entry key="selectAssess1">
+	<entry key="selectBadAssess">
 		SELECT COUNT(*) FROM MEMBER
-		JOIN ASSESS_MEMBER1 ON (MEMBER_NO = BAD_MEMBER_NO)
+		JOIN BAD_ASSESS ON (MEMBER_NO = BAD_MEMBER_NO)
 		WHERE BAD_MEMBER_NO = ?
 	</entry>
 	

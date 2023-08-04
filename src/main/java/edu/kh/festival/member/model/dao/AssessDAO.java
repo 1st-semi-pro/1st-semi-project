@@ -204,12 +204,12 @@ public class AssessDAO {
 	 * @return result
 	 * @throws Exception
 	 */
-	public int addAssess1(Connection conn, int recNo, int badNo) throws Exception {
+	public int addBadAssess(Connection conn, int recNo, int badNo) throws Exception {
 		
 		int result = 0;
 		
 		try {
-			String sql =  prop.getProperty("addAssess1");
+			String sql =  prop.getProperty("addBadAssess");
 			
 			pstmt = conn.prepareStatement(sql);
 			
@@ -235,11 +235,11 @@ public class AssessDAO {
 	 * @return result
 	 * @throws Exception
 	 */
-	public int deleteAssess1(Connection conn, int recNo, int badNo) throws Exception {
+	public int deleteBadAssess(Connection conn, int recNo, int badNo) throws Exception {
 		int result = 0;
 		
 		try {
-			String sql = prop.getProperty("deleteAssess1");
+			String sql = prop.getProperty("deleteBadAssess");
 			
 			pstmt = conn.prepareStatement(sql);
 			
@@ -263,11 +263,11 @@ public class AssessDAO {
 	 * @return
 	 * @throws Exception
 	 */
-	public int selectAssess1(Connection conn, int badNo) throws Exception {
+	public int selectBadAssess(Connection conn, int badNo) throws Exception {
 		int result = 0;
 		
 		try {
-			String sql = prop.getProperty("selectAssess1");
+			String sql = prop.getProperty("selectBadAssess");
 			
 			pstmt = conn.prepareStatement(sql);
 			
