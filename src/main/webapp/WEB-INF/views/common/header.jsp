@@ -8,23 +8,6 @@
             <section>
                 <a href="${contextPath}"><img src="${contextPath}/resources/images/logo.png" id="home-logo"></a>
             </section>
-
-            <section>
-                <article class="search-area">
-                    
-                    <form action="${contextPath}/board/search" name="key" value="tc" id="search-key"  onsubmit="return searchValidate()">
-                        <select type="hidden" name="key" id="key" >
-                            <option value="tc">제목+내용</option>
-                        </select>
-                        <fieldset>
-                            <!-- <input type="search" id="h-search" name="search" size="35" placeholder=" 여행지를 찾아보세요." autocomplete="off"> -->
-                            <input type="text"  name="query" id="h-search" placeholder="검색어를 입력해주세요." autocomplete="off">
-                            <button type="submit" id="h-search-btn" class="fa-solid fa-magnifying-glass-plus" style="color: #ffd43b; font-size: 26px;"></button>
-                        </fieldset>
-                    </form>
-                </article>
-            </section>
-            <section>
             
             <c:choose>
            
