@@ -25,7 +25,7 @@ public class EncryptWrapper extends HttpServletRequestWrapper {
 		
 		switch(name) {
 			
-		case "inputPw" : // getParameter("inputPw")
+		case "inputPw" : case "newPw" : case "newPwCheck" : // getParameter("inputPw")
 			
 			value = getSha512(super.getParameter(name)); //(switch에 pw만 넣었음)
 			break;

@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.google.gson.Gson;
 
@@ -25,6 +26,8 @@ public class SendEmailServlet extends HttpServlet{
 		//System.out.println(memberName);
 		//System.out.println(memberId);
 		//System.out.println(memberEmail);
+		HttpSession session = req.getSession(); // 세션 얻어오기
+		session.setMaxInactiveInterval(5*60);
 		
 		try {
 			Member member = new MemberService().searchMember(memberName, memberId);

@@ -65,7 +65,8 @@ li{list-style: none; cursor: pointer;}
     object-fit:cover;
     margin-right: 50px;
     margin-bottom: 10px;
-    border: 1px solid gray;
+    border: 2px solid gray;
+    border-radius: 50%;
 }
 
 #input-image{
@@ -78,15 +79,15 @@ li{list-style: none; cursor: pointer;}
     display: flex;
     flex-direction: column;
     
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
-#profileMessage{
+#profile-message{
     resize: none;
 }
 
 #history{
     width: 100%;
-    height: 150px;
+    height: 250px;
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
