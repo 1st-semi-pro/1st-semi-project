@@ -133,6 +133,42 @@ public class ManageService {
 		
 		return mList;
 	}
+	
+	
+
+	/** 좋아요 갯수 출력 Service
+	 * @param viewMemberNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int viewGood(int viewMemberNo) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int result = dao.viewGood(conn, viewMemberNo);
+		
+		close(conn);
+		
+		return result;
+	}
+
+	
+	
+	/** 신고 갯수 출력 Service
+	 * @param viewMemberNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int viewBad(int viewMemberNo) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int result = dao.viewBad(conn, viewMemberNo);
+		
+		close(conn);
+		
+		return result;
+	}
 
 		
 		

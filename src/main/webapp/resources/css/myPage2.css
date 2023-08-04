@@ -114,6 +114,17 @@ li{list-style: none; cursor: pointer;}
     width: 100px;
 }
 
+#good{
+    background-color: white;
+    border: 1px solid white;
+    cursor: pointer;
+}
+#bad{
+    background-color: white;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
 /* 관심목록 영역 */
 
 .sub-title{

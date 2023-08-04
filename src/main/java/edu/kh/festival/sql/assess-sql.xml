@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>assess-sql.xml</comment>
+
+	
+	<!-- 좋아요 중복 검사 -->
+	<entry key="checkAssess">
+		SELECT COUNT(*) FROM ASSESS_MEMBER
+		WHERE REC_MEMBER_NO= ?
+		AND GOOD_MEMBER_NO = ?
+	</entry>
+
+	<!-- 좋아요 추가 -->
+	<entry key="addAssess">
+		INSERT INTO ASSESS_MEMBER VALUES(?, ?)
+	</entry>
+	
+	<!-- 좋아요 삭제 -->
+	<entry key="deleteAssess">
+		DELETE FROM ASSESS_MEMBER
+		WHERE REC_MEMBER_NO = ?
+		AND GOOD_MEMBER_NO = ?
+	</entry>
+	
+	<!-- 좋아요 개수 조회 -->
+	<entry key="selectAssess">
+		SELECT COUNT(*) FROM MEMBER
+		JOIN ASSESS_MEMBER ON (MEMBER_NO = GOOD_MEMBER_NO)
+		WHERE GOOD_MEMBER_NO = ?
+	</entry>
+	
+	<!-- 신고하기 중복 조회 -->
+	<entry key="checkAssess1">
+		SELECT COUNT(*) FROM ASSESS_MEMBER1
+		WHERE REC_MEMBER_NO1= ?
+		AND BAD_MEMBER_NO = ?
+	</entry>
+	
+	<!-- 신고하기 행 추가 -->
+	<entry key="addAssess1">
+		INSERT INTO ASSESS_MEMBER1 VALUES(?, ?)
+	</entry>
+	
+	<!-- 신고하기 행 삭제 -->
+	<entry key="deleteAssess1">
+		DELETE FROM ASSESS_MEMBER1
+		WHERE REC_MEMBER_NO1 = ?
+		AND BAD_MEMBER_NO = ?
+	</entry>
+	
+	<!-- 신고하기 개수 조회 -->
+	<entry key="selectAssess1">
+		SELECT COUNT(*) FROM MEMBER
+		JOIN ASSESS_MEMBER1 ON (MEMBER_NO = BAD_MEMBER_NO)
+		WHERE BAD_MEMBER_NO = ?
+	</entry>
+	
+	
+	
+
+</properties>
