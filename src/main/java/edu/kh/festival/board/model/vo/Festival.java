@@ -22,6 +22,7 @@ public class Festival {
 	private int readCount;
 	private int boardCode;
 	
-	private List<FestivalImage> festivalList;
+	private List<Festival> festivalList;
+	private List<FestivalImage> festivalImageList;
 
 }

@@ -101,39 +101,55 @@ nav > ul li:hover{
     height: 35px;
 }
 .h-login > div:nth-child(1){
-    width: 20%;
+    width: 25%;
+    height: 35px;
+    position: relative;
 }
 .h-login > div:nth-child(2){
-    width: 20%;
+    width: 25%;
+    height: 35px;
+    position: relative;
 }
 .h-login > div:nth-child(2) > a , .h-login > div:nth-child(3) > a{
     width: 100%;
-    height: 40px;
+    height: 35px;
     position: relative;
 } 
 .h-login > div:nth-child(3){
-    width: 20%;
+    width: 25%;
+    position: relative;
    
 }
 .h-login > div:nth-child(4){
-    width: 20%;
+    width: 25%;
+    position: relative;
 }
 .h-login > div:nth-child(4) a{
     width: 100%;
 }
-.fa-magnifying-glass{
-    bottom: -15px;
-    right: 7px;
-    font-size: 20px !important;
-    font-weight: bold;
+.span{
     position: absolute;
-    color: red;
+    left: -30px;
+    bottom: 10px;
+    font-size: 13px;
+    font-weight: bold;
+    color: orange;
+    opacity: 0;
+    z-index: -5;
+    
 }
+.h-login a:nth-of-type(1):hover + span{
+    opacity: 1;
+    bottom: -17px;
+    left: 2px;
+    transition: all 1s;
+}
+
 .background{
     width: 100%;
     height: 35px;
     background: url(../images/1.png) no-repeat;
-    background-size: 30px 30px;
+    background-size: 35px 35px;
     cursor: pointer;
 }
 

@@ -39,6 +39,7 @@ public class ChangePwServlet extends HttpServlet{
 		req.getRequestDispatcher(path).forward(req, resp);
 	}
 
+	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String newPw = req.getParameter("newPw");
 		String newPwCheck = req.getParameter("newPwCheck");
@@ -53,10 +54,10 @@ public class ChangePwServlet extends HttpServlet{
 			try {
 				int result = new MemberService().changePw(newPw, memberId );
 				
+				System.out.println(result);
+				System.out.println(result>0 ? "변경성공" : "변경실패");
 				
 				if(result > 0) { // 성공
-					// session scope -> key="message", value="비밀번호 성공!"
-					// path = "내 정보 페이지 주소"
 					session.setAttribute("message", "비밀번호 변경이 완료되었습니다.");
 					
 					path = req.getContextPath() + "/member/login";
@@ -72,7 +73,7 @@ public class ChangePwServlet extends HttpServlet{
 				e.printStackTrace();
 			}
 		}
-		resp.sendRedirect(path);
+		req.getRequestDispatcher(path).forward(req, resp);
 	}
 
 }
