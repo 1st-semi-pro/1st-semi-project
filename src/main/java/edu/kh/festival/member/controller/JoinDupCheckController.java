@@ -48,7 +48,8 @@ public class JoinDupCheckController extends HttpServlet{
 				resp.getWriter().print(result);
 				
 			}
-				
+			
+			// 이메일 중복검사	
 			if(command.equals("emailDupCheck")) {
 				
 				String inputEmail = req.getParameter("inputEmail");
@@ -61,6 +62,7 @@ public class JoinDupCheckController extends HttpServlet{
 				
 			}
 			
+			// 이메일 인증하기	
 			if(command.equals("emailAuthentication")) {
 				
 				String Email = req.getParameter("Email");
@@ -69,12 +71,12 @@ public class JoinDupCheckController extends HttpServlet{
 				
 				String key = EmailSender.sendEmail(Email);
 				
+				System.out.println(key);
+				
 				new Gson().toJson(key, resp.getWriter());
 				 
 			}
-			
-			
-			
+			 
 		}catch(Exception e){
 			e.printStackTrace();
 		}
@@ -86,7 +88,5 @@ public class JoinDupCheckController extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doGet(req,resp); //POST 요청도 GET으로 처리
 	}
-	
-	
 	
 }

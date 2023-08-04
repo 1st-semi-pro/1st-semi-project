@@ -151,8 +151,14 @@
                 <article>
                     <img src="${contextPath}/resources/images/id.png" id="img4">
                     <input type="email" class="inputs" id="inputEmail" name="inputEmail" placeholder="이메일을 입력해주세요." autocomplete="off">
-                    <button id="emailBtn">인증하기</button>
+                    <button id="emailBtn" type="button">인증하기</button>
                 </article>
+
+                <article>
+                    <input type="hidden" class="inputs" id="authenticationInput" placeholder="인증번호를 입력해주세요." class="inputs">
+                    <input type="hidden" id="authenticationButton">
+                </article>
+             
 
                 <articleAgree id="agreeArticle">
 

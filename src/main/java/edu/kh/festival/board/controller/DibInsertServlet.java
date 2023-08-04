@@ -30,8 +30,6 @@ public class DibInsertServlet extends HttpServlet {
 				
 				int result = service.insertDib(memberNo, festivalNo);
 				
-				System.out.println(result);
-				
 				resp.getWriter().print(result);
 		
 			}	catch(Exception e) {

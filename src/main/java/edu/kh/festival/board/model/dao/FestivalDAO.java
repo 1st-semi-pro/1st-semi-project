@@ -391,7 +391,7 @@ public class FestivalDAO {
 		try {
 			
 			String sql = prop.getProperty("selectFestivalDetail");
-			
+				
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setInt(1, festivalNo);

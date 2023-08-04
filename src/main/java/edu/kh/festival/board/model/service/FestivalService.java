@@ -49,6 +49,7 @@ public class FestivalService {
 		map.put("pagination", pagination);
 		map.put("festivalList", festivalList);
 		map.put("imgList",imgList);
+		
 		close(conn);
 		
 		return map;
