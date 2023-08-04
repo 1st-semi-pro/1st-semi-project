@@ -157,7 +157,7 @@ function searchValidate(){
 
 
 // 검색어 추천 왜 안되지..ㅠ
-$(function() {
+/* $(function() {
     $("#search-query").keyup(function() {
   
       const recommendBox = document.querySelector("#suggestion_box");
@@ -192,4 +192,4 @@ $(function() {
         suggestedItems.appendChild(suggestedItem);
       }
     })
-  })
+  }) */

@@ -87,7 +87,7 @@ public class MainBoardService {
 		Map<String, Object> map = new HashMap<String, Object>();
 		
 		
-		for( int i=2; i<5; i++) {
+		for( int i=1; i<5; i++) {
 	         boardName = dao.selectBoardName(conn, i);
 	         List<Board> boardList = dao.searchBoardList(conn, i, query);
 	         map.put("boardName"+i, boardName);

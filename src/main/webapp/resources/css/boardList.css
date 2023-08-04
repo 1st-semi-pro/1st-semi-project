@@ -14,6 +14,7 @@
 .board-list{
     width: 1000px;
     margin: 50px auto;
+
 }
 
 /* 게시판 이름 */
@@ -26,6 +27,7 @@
 .list-wrapper{
     width: 100%;
     min-height: 670px;
+
 }
 
 /* 목록 출력 테이블 */
@@ -49,9 +51,13 @@
     height: 60px;
 }
 
-.list-table > tbody > tr{
-    border-bottom: 1px solid ccc;
+.tbody{
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
+
+
 
 .list-table tr > *{
     text-align: center;
