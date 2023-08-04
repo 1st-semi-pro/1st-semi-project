@@ -26,6 +26,7 @@ li{list-style: none; cursor: pointer;}
   grid-template-columns: repeat(2,1fr);
   grid-template-rows: repeat(2,700px);
   gap: 20px;
+  margin-bottom: 100px;
 }
 #main-content-box , #ft-content{
   width: 100%;
@@ -51,6 +52,7 @@ li{list-style: none; cursor: pointer;}
   color: white;
   text-align: center;
   height: 50px;
+  margin-bottom: 5px;
 }
 .margin{
   margin: 0 10px;
@@ -69,6 +71,46 @@ li{list-style: none; cursor: pointer;}
 .ft-text span:nth-of-type(3){
   color: red;
   font-weight: bold;
+  font-size: 16px;
+}
+.my-img{
+  margin-left: 10%;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid orange;
+  background-color: rgb(245, 225, 200);
+  position: relative;
+}
+.my-img img{
+  width: 60%;
+  height: 60%;
+}
+.my-text{
+  margin: 0 2.5%;
+  margin-bottom: 10%;
+  width: 35%;
+  font-weight: bold;
+}
+.my-text button{
+  position: absolute;
+  width: 35%;
+  height: 40px;
+  font-size: 20px;
+  right: 5px;
+  bottom: 5px;
+  background-color: orange;
+  color:black;
+  font-weight: bold;
+  cursor: pointer;
+}
+.my-text button:nth-of-type(2){
+  bottom: 50px;
+  height: 40px;
+  background-color: black;
+  color: white;
+  border: 3px solid #d8d8d8;
 }
 
 
