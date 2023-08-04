@@ -123,10 +123,10 @@ public class AssessService {
 	 * @return result
 	 * @throws Exception
 	 */
-	public int addAssess1(int recNo, int badNo) throws Exception {
+	public int addBadAssess(int recNo, int badNo) throws Exception {
 		Connection conn = getConnection();
 		
-		int result = dao.addAssess1(conn, recNo, badNo);
+		int result = dao.addBadAssess(conn, recNo, badNo);
 		
 		if(result>0) commit(conn);
 		else rollback(conn);
@@ -145,11 +145,11 @@ public class AssessService {
 	 * @return result
 	 * @throws Exception
 	 */
-	public int deleteAssess1(int recNo, int badNo) throws Exception {
+	public int deleteBadAssess(int recNo, int badNo) throws Exception {
 		
 		Connection conn = getConnection();
 		
-		int result = dao.deleteAssess1(conn, recNo, badNo);
+		int result = dao.deleteBadAssess(conn, recNo, badNo);
 		
 		if(result>0) commit(conn);
 		else rollback(conn);
@@ -166,11 +166,11 @@ public class AssessService {
 	 * @return result
 	 * @throws Exception
 	 */
-	public int selectAssess1(int badNo) throws Exception {
+	public int selectBadAssess(int badNo) throws Exception {
 		
 Connection conn = getConnection();
 		
-		int result = dao.selectAssess1(conn, badNo);
+		int result = dao.selectBadAssess(conn, badNo);
 		
 		close(conn);
 		

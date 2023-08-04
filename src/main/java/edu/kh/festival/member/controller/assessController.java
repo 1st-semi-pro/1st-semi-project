@@ -62,15 +62,15 @@ public class assessController extends HttpServlet {
 				// 조회해서 존재하면 삭제/ 없으면 추가
 				if(check == 0) {
 					// 추가
-					int result = service.addAssess1(recNo, badNo);
+					int result = service.addBadAssess(recNo, badNo);
 					
 				} else {
-					int result = service.deleteAssess1(recNo, badNo);
+					int result = service.deleteBadAssess(recNo, badNo);
 				}
 				
 				
 				// 칭찬횟수 출력
-				int assessNum1 = service.selectAssess1(badNo);
+				int assessNum1 = service.selectBadAssess(badNo);
 				
 				new Gson().toJson( assessNum1, resp.getWriter());
 			}

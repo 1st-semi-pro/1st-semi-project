@@ -323,7 +323,7 @@ public class ManageDAO {
 		int result = 0;
 		
 		try {
-			String sql = "SELECT COUNT(*) FROM MEMBER JOIN ASSESS_MEMBER ON (MEMBER_NO = GOOD_MEMBER_NO) WHERE GOOD_MEMBER_NO = ?";
+			String sql = "SELECT COUNT(*) FROM MEMBER JOIN GOOD_ASSESS ON (MEMBER_NO = GOOD_MEMBER_NO) WHERE GOOD_MEMBER_NO = ?";
 			
 			pstmt = conn.prepareStatement(sql);
 			
@@ -354,7 +354,7 @@ public class ManageDAO {
 		int result = 0;
 		
 		try {
-			String sql = "SELECT COUNT(*) FROM MEMBER JOIN ASSESS_MEMBER1 ON (MEMBER_NO = BAD_MEMBER_NO) WHERE BAD_MEMBER_NO = ?";
+			String sql = "SELECT COUNT(*) FROM MEMBER JOIN BAD_ASSESS ON (MEMBER_NO = BAD_MEMBER_NO) WHERE BAD_MEMBER_NO = ?";
 			
 			pstmt = conn.prepareStatement(sql);
 			
