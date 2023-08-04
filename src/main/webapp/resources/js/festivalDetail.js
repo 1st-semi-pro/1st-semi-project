@@ -267,7 +267,7 @@ btn1.addEventListener("click",function t1(){
                 
                 if(result > 0){
                     // 클릭시 insert
-                    alert("찜하셨습니다.");
+                    alert( festivalTitle + "를 찜하셨습니다.");
                     btn1.innerText = "내가 찜한 축제";
                     
                 }else{
@@ -298,7 +298,7 @@ btn1.addEventListener("click",function t1(){
             success: function (result) {
                 
                 if (result > 0) {
-                    alert("찜을 취소하셨습니다.");
+                    alert( festivalTitle + " 찜을 취소하셨습니다.");
                     btn1.innerText = "찜하기";
                 } else {
                     alert("찜 취소 실패");
