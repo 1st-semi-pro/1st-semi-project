@@ -20,69 +20,82 @@
     <main>
         <jsp:include page="/WEB-INF/views/common/header.jsp"/>
         
-    <section id="content-box">
         <section class="main-title"> 동행자구하기</section>
-        <section id="main-content">
-            <article class="main-content-one">
-                <div>
-                    <div>img</div>
-                    <div>축제이름 : 000<br>
-                         나이: 00<br>
-                         사는곳 : 서울<br>
-                         희망인원 : 00<br>
-                    </div>
-                </div>
+        <section id="content-box">
+            <section id="main-content">
 
-                <div>
-                    <div>img</div>
-                    <div>축제이름 : 000<br>
-                         나이: 00<br>
-                         사는곳 : 경기도<br>
-                         희망인원 : 00<br>
+                <article id="main-content-box">
+                    
+                    <div id="ft-content">
+                        <div class="ft-img">
+                            <img src="../resources/images/festival_infomation/79.png" alt="">
+                        </div>
+                        <div class="ft-text">
+                            <h1>축제제목</h1><span>서울특별시</span><span class="margin">|</span><span>2023.03.07 ~ 2023.04.08</span>
+                        </div>
+                        <div class="my-img">
+                            <img src="../resources/images/festival_infomation/181.gif">
+                            <div class="my-text"><span>안녕하세요 저는 ESFJ이고 혈액형은 B형 거주지역은 서울입니다. <br>좋은추억만들어봐요 ^~^</span>
+                            <button type="button">채팅하기</button><button type="button">게시글수정</button></div>
+                            
+                        </div>
                     </div>
-                </div>
+                 </article>
 
-                <div>
-                    <div>img</div>
-                    <div>축제이름 : 000<br>
-                         나이: 00<br>
-                         사는곳 : 인천<br>
-                         희망인원 : 00<br>
-                         
+                 <article id="main-content-box">
 
+                    <div id="ft-content">
+                        <div class="ft-img">
+                            <img src="../resources/images/festival_infomation/79.png" alt="">
+                        </div>
+                        <div class="ft-text">
+                            <h1>축제제목</h1><span>서울특별시</span><span class="margin">|</span><span>2023.03.07 ~ 2023.04.08</span>
+                        </div>
+                        <div class="my-img">
+                            <img src="../resources/images/festival_infomation/181.gif">
+                            <div class="my-text"><span>안녕하세요 저는 ESFJ이고 혈액형은 B형 거주지역은 서울입니다. <br>좋은추억만들어봐요 ^~^</span>
+                            <button type="button">채팅하기</button><button type="button">게시글수정</button></div>
+                            
+                        </div>
                     </div>
-                </div>
-               
-            </article>
+                 </article>
 
-            <article class="main-content-two">
-                <div>
-                    <div>img</div>
-                    <div>축제이름 : 000<br>
-                         나이: 00<br>
-                         사는곳 : 서울<br>
-                         희망인원 : 00<br>
-                    </div>
-                </div>
-                
-                <div>
-                    <div>img</div>
-                    <div>축제이름 : 000<br>
-                         나이: 00<br>
-                         사는곳 : 경기도<br>
-                         희망인원 : 00<br>
-                    </div>
-                </div>
+                 <article id="main-content-box">
 
-                <div>
-                    <div>img</div>
-                    <div>축제이름 : 000<br>
-                         나이: 00<br>
-                         사는곳 : 인천<br>
-                         희망인원 : 00<br>
+                    <div id="ft-content">
+                        <div class="ft-img">
+                            <img src="../resources/images/festival_infomation/79.png" alt="">
+                        </div>
+                        <div class="ft-text">
+                            <h1>축제제목</h1><span>서울특별시</span><span class="margin">|</span><span>2023.03.07 ~ 2023.04.08</span>
+                        </div>
+                        <div class="my-img">
+                            <img src="../resources/images/festival_infomation/181.gif">
+                            <div class="my-text"><span>안녕하세요 저는 ESFJ이고 혈액형은 B형 거주지역은 서울입니다. <br>좋은추억만들어봐요 ^~^</span>
+                            <button type="button">채팅하기</button><button type="button">게시글수정</button></div>
+                            
+                        </div>
                     </div>
-                </div>
-            </article>
+                 </article>
+
+                 <article id="main-content-box">
+
+                    <div id="ft-content">
+                        <div class="ft-img">
+                            <img src="../resources/images/festival_infomation/79.png" alt="">
+                        </div>
+                        <div class="ft-text">
+                            <h1>축제제목</h1><span>서울특별시</span><span class="margin">|</span><span>2023.03.07 ~ 2023.04.08</span>
+                        </div>
+                        <div class="my-img">
+                            <img src="../resources/images/festival_infomation/181.gif">
+                            <div class="my-text"><span>안녕하세요 저는 ESFJ이고 혈액형은 B형 거주지역은 서울입니다. <br>좋은추억만들어봐요 ^~^</span>
+                            <button type="button">채팅하기</button><button type="button">게시글수정</button></div>
+                            
+                        </div>
+                    </div>
+                 </article>
+            </section>
     </main>
 
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
