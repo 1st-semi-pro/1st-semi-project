@@ -12,7 +12,7 @@
             <section>
                 <article class="search-area">
                     
-                    <form action="${contextPath}/board/search" name="key" value="tc" id="search-key"  onsubmit="return searchValidate()">
+                    <form action="${contextPath}/board/search" id="resultSearch"  onsubmit="return searchValidate()">
                         <select type="hidden" name="key" id="key" >
                             <option value="tc">제목+내용</option>
                         </select>
@@ -85,5 +85,7 @@
             </ul>
         </nav>
     </header>
+
+    <script src="${contextPath}/resources/js/searchResult.js"></script>
     
     

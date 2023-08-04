@@ -199,6 +199,7 @@ public class FestivalDAO {
 	
 	/**
 	 *  지민버전
+	 *  축제 검색어 후 조회
 	 * @param conn
 	 * @param type
 	 * @param req
@@ -217,12 +218,11 @@ public class FestivalDAO {
 		
 			String sql= sql1+sql2+ " AND (FESTIVAL_CT LIKE '%" + query + "%' OR FESTIVAL_TITLE LIKE '%" + query + "%') "+sql3;
 		
-			
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setInt(1, 1);
 			pstmt.setInt(2, 1);
-			pstmt.setInt(3, 5);
+			pstmt.setInt(3, 9);
 			
 			rs = pstmt.executeQuery();
 			
@@ -235,13 +235,15 @@ public class FestivalDAO {
 				
 				String preStr = rs.getString("FESTIVAL_CT");
 				// --- 게시글 내용 가져와서 15자만 미리보기로 보여줌 ---
-				if (preStr.length() > 30) {
-					preStr = preStr.substring(0, 15) + "..."; // 자르고 ... 붙이기
+				if (preStr.length() > 50) {
+					preStr = preStr.substring(0, 40) + "..."; // 자르고 ... 붙이기
 				}
 				festival.setFestivalContent(preStr);
 				
 				festival.setFestivalDate(rs.getString("FESTIVAL_DT"));
 				festival.setReadCount(rs.getInt("READ_COUNT"));
+				festival.setFestivalArea(rs.getString("FESTIVAL_AREA"));
+				festival.setFestivalCat(rs.getString("FESTIVAL_CAT"));
 				
 				
 				festivalList.add(festival);
