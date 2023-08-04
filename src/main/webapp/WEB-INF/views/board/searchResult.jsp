@@ -119,13 +119,10 @@
                                     <!-- 향상된 for문 처럼사용 -->
                                     <c:forEach var="board" items="${boardList3}">
                                         <tr>
-                                            <td>${board.boardNo}</td>
                                             <td>
                                                 <a href="detail?no=${board.boardNo}&cp=${pagination.currentPage}&type=${param.type}${sURL}">${board.boardTitle}</a>
                                             </td>
-                                            <td>${board.memberNickname}</td>
-                                            <td>${board.createDate}</td>
-                                            <td>${board.readCount}</td>
+                                            <td>${board.boardContent}</td>
                                         </tr>
 
                                     </c:forEach>
@@ -153,13 +150,10 @@
                                     <!-- 향상된 for문 처럼사용 -->
                                     <c:forEach var="board" items="${boardList4}">
                                         <tr>
-                                            <td>${board.boardNo}</td>
                                             <td>
                                                 <a href="detail?no=${board.boardNo}&cp=${pagination.currentPage}&type=${param.type}${sURL}">${board.boardTitle}</a>
                                             </td>
-                                            <td>${board.memberNickname}</td>
-                                            <td>${board.createDate}</td>
-                                            <td>${board.readCount}</td>
+                                            <td>${board.boardContent}</td>
                                         </tr>
 
                                     </c:forEach>
