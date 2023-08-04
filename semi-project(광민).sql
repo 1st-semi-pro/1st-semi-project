@@ -230,6 +230,7 @@ REFERENCES "INFO_BOARD"; -- 참조
 --/
 
 ---------------------------------------------------------축제상세검색 테이블---------------------------------------------
+
 -- DROP TABLE FESTIVAL_DETAIL;
 
 CREATE TABLE "FESTIVAL_DETAIL" (
@@ -239,7 +240,8 @@ CREATE TABLE "FESTIVAL_DETAIL" (
    "FESTIVAL_PHONE"   VARCHAR2(15)      NULL,
    "FESTIVAL_FREE_FL"   VARCHAR2(6)      NULL,
     "FESTIVAL_YOUTUBE" VARCHAR2(1000) NULL,
-   "FESTIVAL_RELATEDAGENCIES"   VARCHAR2(100)      NULL
+   "FESTIVAL_RELATEDAGENCIES"   VARCHAR2(100)      NULL,
+    "FESTIVAL_HOMEPAGE" VARCHAR2(500) NULL
 );
 
 COMMENT ON COLUMN "FESTIVAL_DETAIL"."FESTIVAL_NO" IS '축제번호';
@@ -256,6 +258,8 @@ COMMENT ON COLUMN "FESTIVAL_DETAIL"."FESTIVAL_YOUTUBE" IS '축제 유튜브';
 
 COMMENT ON COLUMN "FESTIVAL_DETAIL"."FESTIVAL_RELATEDAGENCIES" IS '축제 관련 기관';
 
+COMMENT ON COLUMN "FESTIVAL_DETAIL"."FESTIVAL_HOMEPAGE" IS '축제 홈페이지';
+
 -- DROP SEQUENCE SEQ_FESTIVALDETAIL_NO;
 
 CREATE SEQUENCE SEQ_FESTIVALDETAIL_NO
@@ -268,7 +272,7 @@ BEGIN
         
        INSERT INTO FESTIVAL_DETAIL
         VALUES(SEQ_FESTIVALDETAIL_NO.NEXTVAL,
-              '해당 축제 상세내용', ' 해당 축제 슬로건', '전화번호', '무료', 'YOUTUBE', '해당 축제 관련 기관'
+              '해당 축제 상세내용', ' 해당 축제 슬로건', '전화번호', '무료', 'YOUTUBE', '해당 축제 관련 기관', '홈피'
        );
         
    END LOOP;
@@ -412,6 +416,36 @@ COMMENT ON COLUMN "BAD_ASSESS"."REC_MEMBER_NO1" IS '신고자';
 COMMENT ON COLUMN "BAD_ASSESS"."BAD_MEMBER_NO" IS '피신고자';
 
 --------------------------------------------------------------------------------------------------------------------------------
+-- 축제 이미지 데이터 삽입
+
+CREATE OR REPLACE PROCEDURE INSERT_FESTIVAL_IMG
+(F_START    IN    NUMBER  
+,F_END       IN    NUMBER
+,L_START IN      NUMBER
+,L_END    IN      NUMBER)
+IS
+   F_NUM NUMBER:= F_START;
+   F_LEVEL NUMBER:= L_START;
+
+BEGIN
+    LOOP
+        EXIT WHEN F_NUM > F_END;
+         LOOP
+            EXIT WHEN F_LEVEL > L_END;
+            INSERT INTO FESTIVAL_IMG
+                VALUES(F_NUM,
+                        '/resources/images/festival_infomation/' || F_NUM ||'-'|| F_LEVEL ||'.png',
+                        F_LEVEL);      
+            F_LEVEL := F_LEVEL+1;
+         END LOOP;
+         F_LEVEL := L_START;
+         F_NUM := F_NUM+1;
+   END LOOP;
+END;
+/
+
+EXEC INSERT_FESTIVAL_IMG(1,10,1,7); -- (1번축제부터 10번축제 각각 레벨1부터 7레벨까지 INSERT)
+------------------------------------------------------------------------------------------------------------------
 COMMIT;
 
 
@@ -537,3 +571,6 @@ SELECT READ_COUNT FROM INFO_BOARD
 SELECT * FROM FESTIVAL_IMG
    WHERE IMG_NO BETWEEN 1 AND 180 
    ORDER BY IMG_LEVEL;
+   
+   
+ 
