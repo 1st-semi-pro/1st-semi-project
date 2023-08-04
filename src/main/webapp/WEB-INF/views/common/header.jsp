@@ -11,6 +11,14 @@
 
             <section>
                 <article class="search-area">
+                    <form action="#" name="search-form">
+                        <fieldset>
+                            <input type="search" id="h-search" name="search" size="35" placeholder=" 여행지를 찾아보세요." autocomplete="off">
+                            <button type="submit" id="h-search-btn" class="fa-solid fa-magnifying-glass-plus"></button>
+                        </fieldset>
+                    </form>
+                </article>
+                <article class="search-area">
                     
                     <form action="${contextPath}/board/search" name="key" value="tc" id="search-key"  onsubmit="return searchValidate()">
                         <select type="hidden" name="key" id="key" >
