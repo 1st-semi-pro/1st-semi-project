@@ -208,7 +208,6 @@
         const contextPath = "${contextPath}";
     </script>
     
-
     <script src="${contextPath}/resources/js/festivalInformation.js"></script>
     
 </body>
