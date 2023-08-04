@@ -101,6 +101,13 @@ festivalCat.addEventListener("change",function(){
     }
 });
 
+document.getElementById("reset").addEventListener("click",function(){
 
+    document.getElementById("festivalDate").classList.remove("on");
+    document.getElementById("festivalArea").classList.remove("on");
+    document.getElementById("festivalCat").classList.remove("on");
+});
+
+   
 
 

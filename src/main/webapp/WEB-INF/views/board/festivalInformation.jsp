@@ -51,7 +51,7 @@
 
     <!-- 검색게시판 타이틀 -->
     <section class="title-box"> ${festivalName} 게시판</section>
-   aaaa--==  ${img}
+   
     <!-- 컨텐츠 -->
     <section class="content">
         <form action="festivalInfo" method="get" id="festivalSearch" onsubmit="return searchValidate()">
@@ -154,11 +154,15 @@
                         <div class="item">
                             <div class="item-image"><a href="festivalDetail?festivalNo=${festival.festivalNo}">
                                 <img src="${contextPath}/resources/images/festival_infomation/${festival.festivalNo}.png">
-                                </a></div>
-                           		 <div class="item-text">
+                                </a>
+                            </div>
+
+                           	<div class="item-text">
                                 <a href="#">
                                 <div class="item-title"><h1>${festival.festivalTitle}</h1></div>
+                                <c:if test="${festival.festivalDate != null}">
                                 <div class="item-content"><span>${festival.festivalArea}</span><span>${festival.festivalDate}</span></div>
+                                </c:if>
                                 </a>
                                 <c:if test="${festival.readCount > 0 }">
                                     <div class="pop"><i class="fa-solid fa-star" style="color: #fff047;"></i><span>${festival.readCount}</span></div>
