@@ -198,7 +198,7 @@ CREATE SEQUENCE SEQ_FESTIVAL_NO
 --END;
 -- /
 
-------------------------------------------------축제 이미지 테이블 ---------------------------------------------------
+-------------------------------------------------------축제 이미지 테이블 ---------------------------------------------------
 CREATE TABLE FESTIVAL_IMG(
     IMG_NO NUMBER NOT NULL,
     IMG_RENAME VARCHAR2(500) NOT NULL,
@@ -230,20 +230,34 @@ REFERENCES "INFO_BOARD"; -- 참조
 --END;
 --/
 
--------------------------------------축제상세검색 테이블---------------------
--- DROP TABLE "FESTIVAL_DETAIL";
+---------------------------------------------------------축제상세검색 테이블---------------------------------------------
+-- DROP TABLE FESTIVAL_DETAIL;
+
 CREATE TABLE "FESTIVAL_DETAIL" (
    "FESTIVAL_NO"   NUMBER      NOT NULL,
-   "FESTIVAL_CONTENT"   VARCHAR2(2000)      NOT NULL,
-   "FESTIVAL_DETAILINFO"   VARCHAR2(500)      NOT NULL
-
+   "FESTIVAL_DETAILINFO"   VARCHAR2(500)      NOT NULL,
+   "FESTIVAL_SLOGAN"   VARCHAR2(100)      NULL,
+   "FESTIVAL_PHONE"   VARCHAR2(15)      NULL,
+   "FESTIVAL_FREE_FL"   VARCHAR2(6)      NULL,
+    "FESTIVAL_YOUTUBE" VARCHAR2(1000) NULL,
+   "FESTIVAL_RELATEDAGENCIES"   VARCHAR2(100)      NULL
 );
 
 COMMENT ON COLUMN "FESTIVAL_DETAIL"."FESTIVAL_NO" IS '축제번호';
 
-COMMENT ON COLUMN "FESTIVAL_DETAIL"."FESTIVAL_CONTENT" IS '축제 상세설명';
-
 COMMENT ON COLUMN "FESTIVAL_DETAIL"."FESTIVAL_DETAILINFO" IS '축제 상세정보';
+
+COMMENT ON COLUMN "FESTIVAL_DETAIL"."FESTIVAL_SLOGAN" IS '축제 슬로건';
+
+COMMENT ON COLUMN "FESTIVAL_DETAIL"."FESTIVAL_PHONE" IS '축제 전화번호';
+
+COMMENT ON COLUMN "FESTIVAL_DETAIL"."FESTIVAL_FREE_FL" IS '축제 유/무료 여부';
+
+COMMENT ON COLUMN "FESTIVAL_DETAIL"."FESTIVAL_YOUTUBE" IS '축제 유튜브';
+
+COMMENT ON COLUMN "FESTIVAL_DETAIL"."FESTIVAL_RELATEDAGENCIES" IS '축제 관련 기관';
+
+-- DROP SEQUENCE SEQ_FESTIVALDETAIL_NO;
 
 CREATE SEQUENCE SEQ_FESTIVALDETAIL_NO
        INCREMENT BY 1 -- 증가값
@@ -255,19 +269,20 @@ BEGIN
         
        INSERT INTO FESTIVAL_DETAIL
         VALUES(SEQ_FESTIVALDETAIL_NO.NEXTVAL,
-              '해당 축제 상세내용',
-               ' 해당 축제 상세정보.'
+              '해당 축제 상세내용', ' 해당 축제 슬로건', '전화번호', '무료', 'YOUTUBE', '해당 축제 관련 기관'
        );
         
    END LOOP;
- END;      
+ END;
 /
+ 
+COMMIT;
 
 ALTER TABLE "FESTIVAL_DETAIL"
 ADD CONSTRAINT "FK_FESTIVAL_DETAIL" -- 제약 조건명 지정
 FOREIGN KEY("FESTIVAL_NO") -- BOARD의 BOARD_CODE 컬럼에 FK 지정
 REFERENCES "INFO_BOARD"; -- 참조할 테이블
-----------------------------------------댓글 테이블-------------------------------------------
+-------------------------------------------------------------댓글 테이블-------------------------------------------------------
 -- DROP TABLE "REPLY";
 
 CREATE TABLE "REPLY" (
@@ -316,7 +331,7 @@ CREATE SEQUENCE SEQ_REPLY_NO
        MINVALUE 1; -- 최솟값
 --INSERT INTO REPLY VALUES(SEQ_REPLY_NO.NEXTVAL, ?, sysdate, sysdate, default, ?, ?);
 
------------------------------------------------------- 보드 이미지 테이블 -------------------------------------------------
+--------------------------------------------------------- 보드 이미지 테이블 --------------------------------------------------------------
 --DROP TABLE BOARD_IMG;
 
 CREATE TABLE "BOARD_IMG" (
@@ -349,7 +364,7 @@ ADD CONSTRAINT "FK_BOARD_IMG"
 FOREIGN KEY("BOARD_NO")
 REFERENCES "BOARD";
 
------------------------------------------------------------------찜하기 테이블 ---------------------------------------------------------------------------
+---------------------------------------------------------------찜하기 테이블 ---------------------------------------------------------------------------
 CREATE TABLE "DIB" (
    "MEMBER_NO"   NUMBER      NOT NULL,
    "FESTIVAL_NO"   NUMBER      NOT NULL
@@ -377,6 +392,25 @@ JOIN DIB USING (MEMBER_NO)
 JOIN INFO_BOARD USING(FESTIVAL_NO)
 JOIN FESTIVAL_IMG ON(FESTIVAL_NO = IMG_NO)
 WHERE MEMBER_NO = ? AND IMG_LEVEL = 0;
+
+--------------------------------------------------------------------------------------------------------------------------------
+-- 좋아요,신고 테이블
+
+CREATE TABLE GOOD_ASSESS(
+    REC_MEMBER_NO NUMBER REFERENCES MEMBER(MEMBER_NO),
+    GOOD_MEMBER_NO NUMBER REFERENCES MEMBER(MEMBER_NO)
+    );
+COMMENT ON COLUMN "GOOD_ASSESS"."REC_MEMBER_NO" IS '좋아요할 사람';
+COMMENT ON COLUMN "GOOD_ASSESS"."GOOD_MEMBER_NO" IS '좋아요받은 사람';
+
+CREATE TABLE BAD_ASSESS(
+    REC_MEMBER_NO1 NUMBER REFERENCES MEMBER(MEMBER_NO),
+    BAD_MEMBER_NO NUMBER REFERENCES MEMBER(MEMBER_NO)
+    );
+    
+
+COMMENT ON COLUMN "BAD_ASSESS"."REC_MEMBER_NO1" IS '신고자';
+COMMENT ON COLUMN "BAD_ASSESS"."BAD_MEMBER_NO" IS '피신고자';
 
 --------------------------------------------------------------------------------------------------------------------------------
 COMMIT;

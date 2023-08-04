@@ -13,7 +13,7 @@ body {
 }
 .swiper {
   width: 100%;
-  height: 670px;
+  height: 690px;
   background-color: black;
 }
 .swiper-slide {
@@ -112,6 +112,7 @@ body {
   border: none;
   z-index: -1;
   outline: 0;
+  color: rgb(136, 136, 136);
 }
 #festivalDate{
   background: url(../images/festival_infomation/date.png) no-repeat;
@@ -143,8 +144,8 @@ background-size: 35px 35px;
 }
 
 .on{
-  color: rgb(199, 3, 3);
-  transition: all 2s;
+  transition: all 1.5s;
+  color: black !important;
   font-size: 30px !important;
 }
 
