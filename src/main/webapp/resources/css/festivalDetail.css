@@ -48,7 +48,7 @@
 
 #info{
     display:flex;
-    width:50%;
+    width:60%;
     justify-content: center;
     align-items: center;
     margin-top:50px;
@@ -83,15 +83,23 @@
     width: 100%;
 }
   
-.swiper-slide:nth-child(2n) {
+.swiper-slide:nth-child(2) {
     width: 60%;
 }
 
 .swiper-slide:nth-child(3) {
     width: 60%;
 }
+
+.swiper-slide:nth-child(4) {
+    width: 60%;
+}
   
-.swiper-slide:nth-child(5){
+.swiper-slide:nth-child(5) {
+    width: 60%;
+}
+
+.swiper-slide:nth-child(6) {
     width: 100%;
 }
 
@@ -182,7 +190,7 @@
 #imageAndContent{
     display:flex;
     height:400px;
-    width:50%;
+    width:60%;
     border-top: 2px solid lightgray;
     border-bottom: 2px solid lightgray;
 }
@@ -211,7 +219,7 @@
 
 .halfArticle{
     display:flex;
-    margin: 3px 0;  
+    margin: 10px 0;  
 }
 
 .halfArticle img{
@@ -227,7 +235,7 @@
 }
 
 #findWayApi{
-    width:50%;
+    width:60%;
     height:600px;
     display:flex;
     justify-content: center;
@@ -235,6 +243,7 @@
     position:relative;
     flex-direction: column;
     border-bottom: 2px solid lightgray;
+    margin:20px 0;
 }
 
 #map{
@@ -247,7 +256,7 @@
     height:100px;
     justify-content: center;
     align-items: center;
-
+    margin-bottom:20px;
 }
 
 #address{
@@ -261,10 +270,22 @@
 }
 
 #youtube{
-    height:400px;
+    margin-top:20px;
     display:flex;
     justify-content: center;
     align-items: center;
+    height:600px;
+}
+
+#youtubeLogo{
+    display:flex;
+    width:60%;
+    justify-content: flex-start;
+}
+
+#youtubeImage{
+    margin-left:5px;
+    height:35px;
 }
 
 #spanDiv{
@@ -274,14 +295,44 @@
 }
 
 #similar{
-    height:300px;
+    width:60%;
+    height:350px;
     display:flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    border-top:1px solid lightgray;
+    margin: 30px 0;
+}
+
+#randomImage{
+    display:flex;
+    width:100%;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+#similarTell{
+    font-size:35px;
+    font-size:bold;
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    width:100%;
+    margin:30px;
+}
+
+#similar a{
+    display:block;
+    width:20%;
 }
 
 #similar img{
-    width:200px;
+    width:100%;
+    height:220px;
+    border:3px solid lightcoral;
+    border-radius:10px;
+    cursor:pointer;
 
 }

@@ -213,28 +213,47 @@
 
         </div>
 
-        <div id="youtube">
+        <div class="brDiv"></div>
 
-           <!-- youtube 부분 -> db 만들어야 되서 일단 임시 -->
-           <iframe width="600" height="360" 
-           src="https://www.youtube.com/embed/7HDeem-JaSY" 
-           title="(여자)아이들((G)I-DLE) - &#39;퀸카 (Queencard)&#39; Official Music Video" 
-           frameborder="0" 
-           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-           allowfullscsreen></iframe>
+        <!-- youtube 부분 -->
+        <c:if test="${!empty festivalDetail.festivalYoutube}">
+            
+            <div id="youtubeLogo">
+                <img src="${contextPath}/resources/images/festival_infomation/youtubelogo.png" id="youtubeImage">
+            </div>
 
-        </div>
+            <div id="youtube">
+
+            <iframe width="1100" height="580" 
+                src="${festivalDetail.festivalYoutube}" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscsreen></iframe>
+            </div>
+
+        </c:if>
+
+        <div class="brDiv"></div>
 
         <div id="similar">
            <!-- 랜덤 축제 4개 뽑기 임시 -->
-           <div>이런 축제는 어떠세요?</div>
+           <div id="similarTell">이런 축제는 어떠세요?</div>
 
             <!-- <img src="이미지경로/<%= 1 + Math.floor(Math.random() * 15.99) %>.jpg"/> -->
-            <div>
-            <img src="${contextPath}/resources/images/board/suwon.png">
-            <img src="${contextPath}/resources/images/board/suwon.png">
-            <img src="${contextPath}/resources/images/board/suwon.png">
-            <img src="${contextPath}/resources/images/board/suwon.png">
+            <div id="randomImage">
+
+            <%
+                for(int i = 0; i < 4; i++){
+            %>
+                
+                <a href="#">
+                    <img src="${contextPath}/resources/images/festival_infomation/<%= 1 + (int)(Math.random() * 100) %>.png" class="randomImages">
+                </a>
+            
+            <%
+                }
+            %>
+
             </div>    
         </div>
         

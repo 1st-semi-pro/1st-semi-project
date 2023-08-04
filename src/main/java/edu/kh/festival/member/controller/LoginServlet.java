@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 import edu.kh.festival.member.model.service.MemberService;
 import edu.kh.festival.member.model.vo.Member;
 
-@WebServlet("/member/login")
+@WebServlet("/member/login") 
 public class LoginServlet extends HttpServlet {
 
    @Override
@@ -51,7 +51,9 @@ public class LoginServlet extends HttpServlet {
             
             if(loginMember != null) {
                // System.out.println("성공"); // 테스트
-               
+            
+            
+            	
                // DB에서 일치해서 모든 정보 loginMember(Member VO 객체)로 가져오면 그 정보들을 SessionScope 범위로 설정하겠다.
                session.setAttribute("loginMember", loginMember);
                
