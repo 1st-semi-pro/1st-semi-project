@@ -1,7 +1,7 @@
 // 회원 프로필 이미지 변경(미리보기)
 const inputImage = document.getElementById("input-image");
-
 const inputMessage = document.getElementById("profile-message");
+const del = document.getElementById("delete");
 
 if(inputImage != null){ // inputImage 요소가 화면에 존재할 때
     inputImage.addEventListener("change", function(){
@@ -50,15 +50,12 @@ if(inputImage != null){ // inputImage 요소가 화면에 존재할 때
 }
 
 function profileValidate(){
-
-    const inputImage = document.getElementById("input-image");
-
-    const del = document.getElementById("delete");
-    if(inputImage.value == "" && del.value == 0){ // 빈문자열 == 파일 선택 X
-        alert("이미지를 선택한 후 변경 버튼을 클릭해주세요.");
+    // DB에 저장된 프로필 메세지와 마이페이지 프로필 메세지가 같다 == 변경되지 않음
+    if(inputImage.value == "" && del.value == 0 && inputMessage.value == memberMessage){ // 빈문자열 == 파일 선택 X
+        alert("변경사항이 없습니다.")
         return false;
     }
-    
+
     return true;
 
 }

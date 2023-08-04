@@ -40,6 +40,7 @@
                 <div class="divide4">
                     <input type="text" name="authenticationKey" placeholder="인증번호 입력" size="35">
                     <button type="submit" id="email-authentication-btn">인증번호 확인</button>
+                    <span id="timer"></span>
                 </div>
                 <div class="divide3">
                     <a href="${contextPath}"><button type="button" id="goToBack-btn">뒤로가기</button></a>

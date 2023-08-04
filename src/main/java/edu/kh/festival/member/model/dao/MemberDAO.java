@@ -378,7 +378,7 @@ public class MemberDAO {
 			
 			pstmt = conn.prepareStatement(sql);
 			
-			pstmt.setString(1, newPw );
+			pstmt.setString(1, newPw);
 			pstmt.setString(2, memberId);
 			
 			result = pstmt.executeUpdate();

@@ -79,6 +79,10 @@
     
 }
 
+.divide4:nth-of-type(5){
+    display: none;
+}
+
 button{
     cursor: pointer;
     background-color: lightcoral;

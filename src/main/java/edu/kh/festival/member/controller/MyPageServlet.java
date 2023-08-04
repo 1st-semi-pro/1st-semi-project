@@ -2,6 +2,7 @@ package edu.kh.festival.member.controller;
 
 import java.io.IOException;
 
+import javax.mail.Session;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import com.oreilly.servlet.MultipartRequest;
 
+import edu.kh.festival.board.model.service.ManageService;
 import edu.kh.festival.common.MyRenamePolicy;
 import edu.kh.festival.member.model.service.MemberService;
 import edu.kh.festival.member.model.vo.Member;
@@ -19,7 +21,26 @@ import edu.kh.festival.member.model.vo.Member;
 public class MyPageServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		int goodNum = 0;
+		int badNum = 0;
 		
+		try {
+			HttpSession session = req.getSession(); // 세션 얻어오기
+			Member member = (Member)session.getAttribute("loginMember");
+			
+			// 좋아요 갯수 추가
+			goodNum = new ManageService().viewGood(member.getMemberNo());
+			
+			// 신고 갯수 추가
+			badNum = new ManageService().viewBad(member.getMemberNo());
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		req.setAttribute("badNum", badNum);
+		req.setAttribute("goodNum", goodNum);
+					
 		String path = "/WEB-INF/views/member/myPage.jsp";
 		req.getRequestDispatcher(path).forward(req, resp);
 	}
@@ -113,10 +134,10 @@ public class MyPageServlet extends HttpServlet {
 			int result = new MemberService().updateProfileImage(memberNo, profileImage);
 			
 			if(result > 0) {
-				session.setAttribute("message", "프로필 이미지가 변경되었습니다.");
+				session.setAttribute("message", "프로필이 수정되었습니다.");
 				loginMember.setMemberProfileImage(profileImage); // 세션의 값이 변경됨
 			}else {
-				session.setAttribute("message", "프로필 이미지변경 실패");
+				session.setAttribute("message", "프로필 수정 실패");
 			}
 			
 			// 성공/실패 관계 없이 프로필 화면 재요청 (redirect)

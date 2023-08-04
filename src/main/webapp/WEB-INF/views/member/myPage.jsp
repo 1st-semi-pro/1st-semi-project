@@ -54,7 +54,7 @@
                         <section>
                             <article id="intro">
                                 <span>프로필 메세지</span>
-                                <textarea name="profileMessage" id="profile-message" cols="80" rows="10">"${loginMember.memberMessage}</textarea>
+                                <textarea name="profileMessage" id="profile-message" cols="80" rows="5">${loginMember.memberMessage}</textarea>
                             </article>
                             <article>
                                 <span>축제 히스토리</span>
@@ -63,11 +63,11 @@
                                 <div id="info-btn-area">
                                     <div>
                                         <img src="${contextPath}/resources/images/good.png" alt="칭찬 횟수" class="mypage-icon">
-                                        <span class="mypage-span" id="good-span">28회</span>
+                                        <span class="mypage-span" id="good-span">${goodNum}</span>
                                     </div>
                                     <div>
                                         <img src="${contextPath}/resources/images/report.png" alt="신고 횟수" class="mypage-icon">
-                                        <span class="mypage-span" id="report-span">0회</span>
+                                        <span class="mypage-span" id="bad-span">${badNum}</span>
                                     </div>
                                     <a href="${contextPath}/member/pwConfirm"><button type="button" class="mypage-btn" id="update-btn">내 정보 수정</button></a>
                                     <button type="submit" class="mypage-btn" id="save-btn">변경사항 저장</button>
@@ -113,6 +113,7 @@
 
     <script>
         const contextPath = "${contextPath}"; // 최상위 경로를 JS 전역변수로 선언
+        const memberMessage = "${loginMember.memberMessage}"; // 현재 저장되어있는 프로필 메세지
     </script>
 
     <script src="${contextPath}/resources/js/myPage.js"></script>

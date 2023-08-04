@@ -57,6 +57,8 @@ function findPwValidate(){
 
 document.getElementById("sendEmail-btn").addEventListener("click", function(){
     
+    document.getElementsByClassName("divide4")[4].style.display="flex"; // 인증번호 확인란 추가
+
     // ajax 코드
     $.ajax({
         url : "sendEmail",
@@ -77,5 +79,36 @@ document.getElementById("sendEmail-btn").addEventListener("click", function(){
         }
 
     })
+
+    let timer;
+    let isRunning = false;
+
+    // 인증번호 발송 및 타이머 함수 실행
+    function sendAuthNum(){
+        display = document.querySelector('#timer');
+        // 이미 타이머가 작동중이면 중지
+        if (isRunning){
+            clearInterval(timer);
+        }
+        startTimer(60*5, display);
+    }
+
+    function startTimer(count, display) {
+        var minutes, seconds;
+        timer = setInterval(function () {
+            minutes = parseInt(count / 60, 10);
+            seconds = parseInt(count % 60, 10);
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+            display.textContent = minutes + ":" + seconds;
+            // 타이머 종료
+            if (--count < 0) {
+                clearInterval(timer);
+                display.textContent = "";
+                isRunning = false;
+            }
+        }, 1000);
+        isRunning = true;
+    }
 
 })

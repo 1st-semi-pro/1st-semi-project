@@ -47,33 +47,25 @@ public class ChangePwServlet extends HttpServlet{
 		
 		HttpSession session = req.getSession(); // 세션 얻어오기
 		String path = null;
+		int result = 0;
 		
 		if(newPw.equals(newPwCheck)) {
-			System.out.println("새비밀번호, 비밀번호 확인 일치");
+			//System.out.println("새비밀번호, 비밀번호확인 일치");
 			
 			try {
-				int result = new MemberService().changePw(newPw, memberId );
+				result = new MemberService().changePw(newPw, memberId );
 				
-				System.out.println(result);
-				System.out.println(result>0 ? "변경성공" : "변경실패");
+				//System.out.println("비밀번호 변경"+(result>0 ? "성공" : "실패"));
 				
-				if(result > 0) { // 성공
-					session.setAttribute("message", "비밀번호 변경이 완료되었습니다.");
-					
-					path = req.getContextPath() + "/member/login";
-					
-				} else { // 실패
-					session.setAttribute("message", "비밀번호 변경에 실패했습니다..");
-					
-					// path = req.getContextPath() +"/member/changePw";
-					path = "changePw";
-				}
+				path = req.getContextPath()+ (result>0 ? "/member/login" : "");
 				
 			}catch(Exception e) {
 				e.printStackTrace();
 			}
 		}
-		req.getRequestDispatcher(path).forward(req, resp);
+		
+		resp.sendRedirect(path);
+		session.setAttribute("message","비밀번호 변경" + (result>0 ? "이 완료되었습니다" : "에 실패했습니다.."));
 	}
 
 }

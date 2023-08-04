@@ -18,13 +18,12 @@
 
     <div class="container1">
         
-        <div class="divide1">
+        <div class="divide1"> 
             <h1>${param.memberName}님의 아이디 '${param.memberId}'</h1>  
         </div>
         <div class="sub">
             <h5>※ 인증번호 확인이 완료되었습니다! 비밀번호를 재설정 해주십시오.</h5>
         </div>
-    
         <form id="changePw-form" action="changePw" method="post" onsubmit="return changePwValidate()">
             <div class="divide2">
                 <div class="divide4">비밀번호 변경</div>
@@ -35,7 +34,8 @@
                     <a href="${contextPath}/member/findPw"><button type="button" id="goToBack-btn">뒤로가기</button></a>
                     <button type="submit" id="authentication-check-btn">변경 확인</button>
                 </div>
-            </div>        
+            </div>
+            <input type="hidden" name="memberId" value="${param.memberId}">
         </form>
 
     </div>
