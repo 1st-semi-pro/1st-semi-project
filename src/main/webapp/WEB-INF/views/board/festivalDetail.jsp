@@ -34,7 +34,8 @@
         /* ajax에서 쓰기 위함 */
         const festivalNo = "${festival.festivalNo}";
         const memberNo = "${loginMember.memberNo}";
-        const contextPath = "${contextPath}"
+        const contextPath = "${contextPath}";
+        const festivalTitle = "${festival.festivalTitle}";
 
     </script>
 
@@ -45,6 +46,10 @@
     <main>
 
     <div id="allDiv">
+
+
+
+
         <!-- 이미지 변수설정으로 쉽게 사용 -->
         <!-- 0 = 썸네일 1~6 = 상세 이미지들 7 = half이미지 -->
         <c:forEach items="${imgList}" var="imgList">
@@ -80,7 +85,7 @@
                 </c:when>
 
                 <c:when test="${imgList.imageLevel == 7}">
-                    <c:set var="img6" value="${contextPath}${imgList.imageReName}"/>
+                    <c:set var="img7" value="${contextPath}${imgList.imageReName}"/>
                 </c:when>
 
             </c:choose>
@@ -99,9 +104,32 @@
             
             <div id="contentAndBtn">
 
+                <div id="slogan">${festivalDetail.festivalSlogan}</div>
                 <div id="festivalTitle">${festival.festivalTitle}</div>
+                <div id="festivalDt">${festival.festivalDate}</div>
+                        <!-- img 1~6 스위퍼 -->
+                
+                <!-- 이미지 없으면 스위퍼 안열기 1개라도 넣으면 6개 다 넣을거임 --> 
+                <c:if test="${!empty img1}">
+
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="${img1}"></div>
+                            <div class="swiper-slide"><img src="${img2}"></div>
+                            <div class="swiper-slide"><img src="${img3}"></div>
+                            <div class="swiper-slide"><img src="${img4}"></div>
+                            <div class="swiper-slide"><img src="${img5}"></div>
+                            <div class="swiper-slide"><img src="${img6}"></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+
+                </c:if>
+
                 <div id="festivalContent">${festival.festivalContent}</div>
                 
+                <div id="readCount">조회수 : ${festival.readCount}</div>
+
                 <!-- 관심축제 등록 button -->
                 <jsp:include page="/WEB-INF/views/board/dib.jsp"/>
                 <!-- ajax로 계속 바뀌어야 해서 구분하려고 include 형식으로 jsp 하나 만듬 -->
@@ -110,49 +138,77 @@
         
         </div>
         
+        <!-- height만 준 div -->
+        <div class="brDiv"></div>
+
         <!-- 상세정보 -->
 
         <div id="imageAndContent">
             
-            <div id="halfImage">
-                <img src="${img7}">
-            </div>
+            
+            <!-- 이미지7이 있을 때만 -->
+            <c:if test="${!empty img7}">
+
+                <div id="halfImage">
+                    <img src="${img7}">
+                </div>
+
+            </c:if>
+       
 
             <div id="halfContent">
 
-                <div>${festivalDetail.festivalDetailInfo}</div>
+                <div> 
+                
+                    <article class="halfArticle">
+                        <div><img src = "${contextPath}/resources/images/festival_infomation/info1.png"></div>
+                        <div class="contents">${festival.festivalDate}</div>
+                    </article>
 
-                <div>개별 축제 홈페이지 링크 달 수 있다면 달기</div>
+                    <article class="halfArticle">
+                        <div><img src = "${contextPath}/resources/images/festival_infomation/info2.png"></div>
+                        <div class="contents">${festival.festivalArea}</div>
+                    </article>    
+
+                    <article class="halfArticle">
+                        <div><img src = "${contextPath}/resources/images/festival_infomation/info3.png"></div>
+                        <div class="contents">${festivalDetail.festivalFreeFl}</div>
+                    </article>  
+                    
+                    <article class="halfArticle">
+                        <div><img src = "${contextPath}/resources/images/festival_infomation/info4.png"></div>
+                        <div class="contents">${festivalDetail.festivalPhone}</div>
+                    </article>    
+
+                    <article class="halfArticle">
+                        <div><img src = "${contextPath}/resources/images/festival_infomation/info5.png"></div>
+                        <div class="contents">${festivalDetail.festivalRelatedAgencies}</div>
+                    </article>   
+
+                </div>
 
             </div>
 
         </div>
 
-
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="${img1}"></div>
-                <div class="swiper-slide"><img src="${img2}"></div>
-                <div class="swiper-slide"><img src="${img3}"></div>
-                <div class="swiper-slide"><img src="${img4}"></div>
-                <div class="swiper-slide"><img src="${img5}"></div>
-                <div class="swiper-slide"><img src="${img6}"></div>
-            </div>
-            <div class="swiper-pagination"></div>
-        </div>
+        <!-- height만 준 div -->
+        <div class="brDiv"></div>
 
         <div id="findWayApi">
             
-            <div id="map" style="width:80%;height:400px;"></div>
+            <!-- 네이버 지도 -->
+            <div id="map"></div>
           
             <div id="searchAddress">
-            <input id="address" type="text" placeholder="검색할 주소를 입력해주세요." id="address">
-            <input id="submit" type="button" value="주소 검색" id="search" 
-                    style="width:100px !important; height:40px !important; 
-                    border:0 !important; border-radius:10px !important; 
-                    background-color: lightcoral !important; 
-                    font-size:20px !important; cursor:pointer !important;">
-                    <!-- api떄문에 css에서의 style이 안먹는듯 -->
+
+                <input id="address" type="text" placeholder="검색할 주소를 입력해주세요." id="address">
+                <input id="submit" type="button" value="주소 검색" id="search" 
+                        style="width:100px !important; height:40px !important; 
+                        border:0 !important; border-radius:10px !important; 
+                        background-color: lightcoral !important; 
+                        font-size:20px !important; cursor:pointer !important;">
+                        <!-- api떄문에 css에서의 style이 안먹는듯 -->
+
             </div>    
 
         </div>
@@ -191,8 +247,7 @@
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 
-
-
     <script src="${contextPath}/resources/js/festivalDetail.js"></script>
+
 </body>
 </html>

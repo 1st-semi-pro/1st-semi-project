@@ -412,8 +412,13 @@ public class FestivalDAO {
 				fes.setFestivalCat(rs.getString(8));
 				
 				fesDt.setFestivalNo(rs.getInt(1));
-				fesDt.setFestivalContent(rs.getString(9));
-				fesDt.setFestivalDetailInfo(rs.getString(10));
+				fesDt.setFestivalDetailInfo(rs.getString(9));
+				fesDt.setFestivalSlogan(rs.getString(10));
+				fesDt.setFestivalPhone(rs.getString(11));
+				fesDt.setFestivalFreeFl(rs.getString(12));
+				fesDt.setFestivalYoutube(rs.getString(13));
+				fesDt.setFestivalRelatedAgencies(rs.getString(14));
+				fesDt.setFestivalHomepage(rs.getString(15));
 				
 				map.put("festival", fes);
 				map.put("festivalDetail", fesDt);

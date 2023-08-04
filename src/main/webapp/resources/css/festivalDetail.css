@@ -48,73 +48,19 @@
 
 #info{
     display:flex;
-    width:70%;
-    height:300px;
+    width:50%;
     justify-content: center;
     align-items: center;
     margin-top:50px;
 
 }
 
-#contentAndBtn{
-    position:relative;
-}
-
-#festivalTitle{
-    margin-top:7px;
-    font-size:30px;
-    font-weight: bold;
-}
-
-#festivalContent{
-    font-size:18px;
-    margin: 20px 0;
-    line-height: 30px;
-}
-
-
-#btn1{
-    position:absolute;
-    top:7px;
-    right:7px;   
-    width:100px;
-    height:40px;
-    border:0;
-    border-radius: 70px;
-    background-color: lightcoral;
-    color:white;
-    cursor:pointer; 
-    font-size:20px;
-}
-
-
-
-.btns:hover{
-    color:black;
-    transition-duration: 1s;
-}
-
-#info > div{
-    width:80%;
-    height:80%;
-}
-
-#imageAndContent{
-    display:flex;
-    height:300px;
-}
-
-#imageAndContent > div{
-    width:50%;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
+/* 스위퍼 */
 .swiper {
-    width: 80%;
-    height: 500px;
+    margin: 20px 0;
+    width: 100%;
+    border-radius: 10px;
+    height: 350px;
 }
 
 .swiper-slide {
@@ -163,20 +109,137 @@
     background: white !important;
 }
 
+#contentAndBtn{
+    position:relative;
+}
+
+#slogan{
+    margin:10px 0;
+    font-size:28px;
+    font-weight:bold;
+}
+
+#festivalTitle{
+    margin:20px 0;
+    font-size:40px;
+    font-weight: bold;
+}
+
+#festivalDt{
+    font-size:20px;
+    font-weight: bold;
+    width:170px;
+    height:28px;
+    margin: 20px 0;
+    margin-left:2px;
+    border:2px solid lightcoral;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#festivalContent{
+    font-size:18px;
+    margin: 20px 0;
+    line-height: 30px;
+}
+
+#readCount{
+    position:absolute;
+    top:10px;
+    right:30px;
+    font-size:20px;
+    font-weight:bold;
+}
+
+#btn1{
+    position:absolute;
+    top:70px;
+    right:7px;   
+    width:130px;
+    height:40px;
+    border:0;
+    border-radius: 70px;
+    background-color: lightcoral;
+    color:white;
+    cursor:pointer; 
+    font-size:20px;
+}
+
+.btns:hover{
+    color:black;
+    transition-duration: 1s;
+}
+
+#info > div{
+    width:100%;
+    height:100%;
+}
+
+.brDiv{
+    height:30px;
+}
+
+#imageAndContent{
+    display:flex;
+    height:400px;
+    width:50%;
+    border-top: 2px solid lightgray;
+    border-bottom: 2px solid lightgray;
+}
 
 
-#map{
-    width:60%;
-    height:600px;
+#halfImage{
+
+    width:50%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#halfImage > img{
+    width:50%;
+    height:50%;
+}
+
+#halfContent{
+    width:50%;
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.halfArticle{
+    display:flex;
+    margin: 3px 0;  
+}
+
+.halfArticle img{
+    width:60px;
+    height:60px;
+}
+
+.contents{
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 10px;
 }
 
 #findWayApi{
+    width:50%;
     height:600px;
     display:flex;
     justify-content: center;
     align-items: center;
     position:relative;
     flex-direction: column;
+    border-bottom: 2px solid lightgray;
+}
+
+#map{
+    width:100%;
+    height:600px;
 }
 
 #searchAddress{

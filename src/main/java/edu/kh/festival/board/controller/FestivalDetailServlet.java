@@ -44,6 +44,8 @@ public class FestivalDetailServlet extends HttpServlet  {
 
 			req.setAttribute("map", map);
 			
+			System.out.println(map);
+			
 			String path = "/WEB-INF/views/board/festivalDetail.jsp";
 			
 			req.getRequestDispatcher(path).forward(req, resp);
