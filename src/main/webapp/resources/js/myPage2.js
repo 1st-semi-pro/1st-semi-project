@@ -40,4 +40,3 @@ badBtn.addEventListener("click", function(){
     })
 });
 
-

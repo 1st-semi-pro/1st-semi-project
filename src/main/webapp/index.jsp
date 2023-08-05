@@ -25,27 +25,23 @@
     
     	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
         
-      <div class="content">
-        
-        	
-            
-         <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-               <div class="swiper-slide"><a href="#"><img src="resources/images/con2.jpg"></a></div>
-               <div class="swiper-slide"><a href="#"><img src="resources/images/con3.jpg"></a></div>
-               <div class="swiper-slide"><a href="#"><img src="resources/images/con1.jpg"></a></div>
-               <div class="swiper-slide"><a href="#"><img src="resources/images/con2.jpg"></a></div>
-               <div class="swiper-slide"><a href="#"><img src="resources/images/con3.jpg"></a></div>
-               <div class="swiper-slide"><a href="#"><img src="resources/images/con1.jpg"></a></div>
-               <div class="swiper-slide"><a href="#"><img src="resources/images/con3.jpg"></a></div>
-               <div class="swiper-slide"><a href="#"><img src="resources/images/con2.jpg"></a></div>
-               <div class="swiper-slide"><a href="#"><img src="resources/images/con1.jpg"></a></div>
-               <div class="swiper-slide"><a href="#"><img src="resources/images/con2.jpg"></a></div>
-            </div>
-            <div class="swiper-pagination"></div>
+      <div class="swiper mySwiper">
+         <div class="swiper-wrapper">
+             <div class="swiper-slide"><a href="#"><img src="resources/images/festival_infomation/22.png"></a></div>
+             <div class="swiper-slide"><a href="#"><img src="resources/images/festival_infomation/42.png"></a></div>
+             <div class="swiper-slide"><a href="#"><img src="resources/images/festival_infomation/69.png"></a></div>
+             <div class="swiper-slide"><a href="#"><img src="resources/images/festival_infomation/105.png"></a></div>
+             <div class="swiper-slide"><a href="#"><img src="resources/images/festival_infomation/106.png"></a></div>
+             <div class="swiper-slide"><a href="#"><img src="resources/images/festival_infomation/109.png"></a></div>
+             <div class="swiper-slide"><a href="#"><img src="resources/images/festival_infomation/111.png"></a></div>
+             <div class="swiper-slide"><a href="#"><img src="resources/images/festival_infomation/113.png"></a></div>
+             <div class="swiper-slide"><a href="#"><img src="resources/images/festival_infomation/115.png"></a></div>
+             <div class="swiper-slide"><a href="#"><img src="resources/images/festival_infomation/122.png"></a></div>
          </div>
-        
-                 
+             <div class="swiper-pagination"></div>
+      </div>
+
+      <div class="content">
          <div class="content-1"> <!-- 한반도 + 게시판 -->
             <div class="korea"> <!-- 한반도 -->
                <a href="board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=서울특별시&festivalCat="><img src="resources/images/korea/seoul.png" id="seoul"></a>
@@ -66,57 +62,50 @@
                <a href="board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=울산광역시&festivalCat="><img src="resources/images/korea/ulsan.png" id="ulsan"></a>
             </div>
 
-
-            <div> <!-- 게시판 모음1 -->
-               <div class="board1">
-                  <div class="board-name1">공지 게시판</div>
+            <div class="divide1" id="divide1">
+               <div class="divide2">
+                  <div class="divide3">
+                     <div class="board-name1">공지게시판</div>
                      <div class="board-content1">
                         <table>
                            <tbody id="bList1"></tbody>
                         </table>
                      </div>
                   </div>
-
-               <div class="board2">
-                  <div class="board-name2">자유 게시판</div>
+                  <div class="divide4">
+                     <div class="board-name2">자유게시판</div>
                      <div class="board-content2">
                         <table>
-                           <tbody id="bList2">
-                              
-                           </tbody>
+                           <tbody id="bList2"></tbody>
                         </table>
-
                      </div>
                   </div>
                </div>
-
-            <div> <!-- 게시판 모음2 -->
-               <div class="board3">
-                  <div class="board-name3">축제 후기</div>
-                     <div class="board-content3">
+               <div class="divide5">
+                  <div class="divide6">
+                     <div class="board-name3">축제 후기</div>
+                     <div  class="board-content3">
                         <table>
-                           <tbody id="bList3">
-                              
-                           </tbody>
-                          
+                           <tbody id="bList3"></tbody>
                         </table>
                      </div>
                   </div>
-
-               <div class="board4">
-                  <div class="board-name4">동행자 구하기</div>
-                  <div class="board-content4">
-                     <table>
-                        <tbody id="bList4">
-                              
-                        </tbody>
-                     </table>
+                  <div class="divide7">
+                     <div class="board-name4">동행자 구하기</div>
+                     <div class="board-content4">
+                        <table>
+                           <tbody id="bList4"></tbody>
+                        </table>
+                     </div>
                   </div>
                </div>
             </div>
-         </div>
-      </div>
+         </div>   
+      </div>      
+           
 
+            
+         
       <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
       <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>

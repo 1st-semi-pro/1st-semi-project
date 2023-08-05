@@ -11,6 +11,7 @@ import edu.kh.festival.board.model.dao.BoardDAO;
 import edu.kh.festival.board.model.dao.MainBoardDAO;
 import edu.kh.festival.board.model.vo.Board;
 import edu.kh.festival.board.model.vo.BoardDetail;
+import edu.kh.festival.board.model.vo.Festival;
 import edu.kh.festival.board.model.vo.Pagination;
 
 
@@ -97,6 +98,16 @@ public class MainBoardService {
 		
 		close(conn);
 		return map;
+	}
+
+
+	public List<Festival> selectFestival1() throws Exception {
+		Connection conn =  getConnection();
+		
+		List<Festival> festivalList1 = dao.selectFestival1(conn);
+		
+		
+		return festivalList1;
 	}
 
 	
