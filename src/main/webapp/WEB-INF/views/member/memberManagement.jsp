@@ -13,7 +13,6 @@
 	<title>회원 관리 페이지</title>
 	
 	<link rel="stylesheet" href="${contextPath}/resources/css/header.css">
-	<link rel="stylesheet" href="${contextPath}/resources/css/index.css">
 	<link rel="stylesheet" href="${contextPath}/resources/css/memberManagement.css">
 	<script src="https://kit.fontawesome.com/16679b9adf.js"
 		crossorigin="anonymous"></script>

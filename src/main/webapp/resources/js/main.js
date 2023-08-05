@@ -1,16 +1,16 @@
 var swiper = new Swiper(".mySwiper", {
-    slidesPerView: "auto",
-    centeredSlides: true,
-    spaceBetween: 15,
-    autoplay: {
-        delay:4000, disableOnInteraction: false, // false-스와이프 후 자동 재생
-    },
-    loop :false, loopAdditionalSlides:1,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-  });
+  slidesPerView: "auto",
+  centeredSlides: true,
+  spaceBetween: 15,
+  autoplay: {
+      delay:4000, disableOnInteraction: false, // false-스와이프 후 자동 재생
+  },
+  loop :false, loopAdditionalSlides:1,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});
 
 
   function selectBoard(){
@@ -153,3 +153,27 @@ var swiper = new Swiper(".mySwiper", {
 
    
   })();
+
+
+const seoul = document.getElementById("seoul");
+
+seoul.addEventListener("mouseover", function(){
+
+  $.ajax({
+    url : "board/mainList/festival1",
+    dataType : "json",
+    success : function(festivalList1){
+      console.log(festivalList1);
+      console.log(festivalList1[0].festivalTitle);
+      
+      
+
+      
+      
+    },
+    error : function(){
+      console.log("에러 발생");
+    }
+
+  })
+})

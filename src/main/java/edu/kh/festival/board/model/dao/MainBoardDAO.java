@@ -228,4 +228,31 @@ public class MainBoardDAO {
 		return boardList;
 	}
 
+	
+	public List<Festival> selectFestival1(Connection conn) throws Exception {
+		
+		List<Festival> festivalList1 = new ArrayList<Festival>();
+		
+		try {
+			
+			String sql = "SELECT * FROM (SELECT * FROM INFO_BOARD WHERE FESTIVAL_AREA = '서울특별시' ORDER BY READ_COUNT DESC) WHERE ROWNUM BETWEEN 1 AND 4";
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+			
+			while(rs.next()) {
+				Festival festival = new Festival();
+				
+				festival.setFestivalNo(rs.getInt(1));
+				festival.setFestivalTitle(rs.getString(2));
+				
+				festivalList1.add(festival);
+			}
+			
+		}finally {
+			close(rs);
+			close(stmt);
+		}
+		return festivalList1;
+	}
+
 }
