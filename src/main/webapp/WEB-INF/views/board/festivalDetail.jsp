@@ -107,6 +107,7 @@
                 <div id="slogan">${festivalDetail.festivalSlogan}</div>
                 <div id="festivalTitle">${festival.festivalTitle}</div>
                 <div id="festivalDt">${festival.festivalDate}</div>
+                ${festivalDetail.festivalYoutube}
                         <!-- img 1~6 스위퍼 -->
                 
                 <!-- 이미지 없으면 스위퍼 안열기 1개라도 넣으면 6개 다 넣을거임 --> 
@@ -225,10 +226,12 @@
             <div id="youtube">
 
             <iframe width="1100" height="580" 
-                src="${festivalDetail.festivalYoutube}" 
+                src="${festivalDetail.festivalYoutube}"
                 frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                allowfullscsreen></iframe>
+                allowfullscsreen>
+            </iframe>  
+
             </div>
 
         </c:if>

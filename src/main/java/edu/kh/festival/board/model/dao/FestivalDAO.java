@@ -422,6 +422,10 @@ public class FestivalDAO {
 				fesDt.setFestivalRelatedAgencies(rs.getString(14));
 				fesDt.setFestivalHomepage(rs.getString(15));
 				
+				/*	    SELECT FESTIVAL_NO, FESTIVAL_TITLE, FESTIVAL_CT, FESTIVAL_DT, READ_COUNT, BOARD_CD, FESTIVAL_AREA, FESTIVAL_CAT, 
+				        FESTIVAL_DETAILINFO, FESTIVAL_SLOGAN, FESTIVAL_PHONE, FESTIVAL_FREE_FL, FESTIVAL_YOUTUBE, 
+				        FESTIVAL_RELATEDAGENCIES, FESTIVAL_HOMEPAGE*/
+				
 				map.put("festival", fes);
 				map.put("festivalDetail", fesDt);
 			}
