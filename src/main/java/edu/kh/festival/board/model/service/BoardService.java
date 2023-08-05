@@ -14,6 +14,7 @@ import edu.kh.festival.board.model.vo.Board;
 import edu.kh.festival.board.model.vo.BoardDetail;
 import edu.kh.festival.board.model.vo.BoardImage;
 import edu.kh.festival.board.model.vo.Pagination;
+import edu.kh.festival.board.model.vo.Pagination4;
 
 public class BoardService {
 
@@ -253,6 +254,32 @@ public class BoardService {
 		
 		close(conn);
 		
+		return map;
+	}
+
+	/** 동행자구하기 Service <광민>
+	 * @param type
+	 * @param cp
+	 * @return result
+	 * @throws Exception
+	 */
+	public Map<String, Object> companionList(int type, int cp) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		int listCount = dao.getListCount(conn, type);
+
+		Pagination4 pagination = new Pagination4(cp, listCount);
+
+		List<Board> companionList = dao.selectBoardList(conn, pagination, type);
+
+		Map<String, Object> map = new HashMap<String, Object>();
+
+		map.put("pagination", pagination);
+		map.put("companionList", companionList);
+
+		close(conn);
+
 		return map;
 	}
 

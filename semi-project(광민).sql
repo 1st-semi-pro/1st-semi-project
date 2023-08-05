@@ -70,10 +70,10 @@ COMMENT ON COLUMN "BOARD_TYPE"."BOARD_CD" IS '게시판 코드';
 COMMENT ON COLUMN "BOARD_TYPE"."BOARD_NM" IS '게시판 이름';
 
 -- BOARD_TYPE 데이터 삽입
-INSERT INTO BOARD_TYPE VALUES(1,'공지사항');
-INSERT INTO BOARD_TYPE VALUES(2,'자유 게시판');
-INSERT INTO BOARD_TYPE VALUES(3,'축제후기 게시판');
-INSERT INTO BOARD_TYPE VALUES(4,'축제정보');
+INSERT INTO BOARD_TYPE VALUES(1,'축제정보');
+INSERT INTO BOARD_TYPE VALUES(2,'공지사항 게시판');
+INSERT INTO BOARD_TYPE VALUES(3,'자유 게시판');
+INSERT INTO BOARD_TYPE VALUES(4,'축제후기 게시판');
 INSERT INTO BOARD_TYPE VALUES(5,'동행자구하기 게시판 ');
 
 ------------------------------------------------BOARD 테이블---------------------------------------------------------------
@@ -128,13 +128,13 @@ CREATE SEQUENCE SEQ_BOARD_NO
     
 -- BOARD 테이블 샘플 데이터 삽입(PL / SQL)
 BEGIN
-    FOR I IN 1..500 LOOP
+    FOR I IN 1..50 LOOP
         
         INSERT INTO BOARD
         VALUES(SEQ_BOARD_NO.NEXTVAL,
                SEQ_BOARD_NO.CURRVAL || '번째 게시글',
                SEQ_BOARD_NO.CURRVAL || '번째 게시글 내용입니다.',
-               DEFAULT,DEFAULT,DEFAULT,DEFAULT,1,2
+               DEFAULT,DEFAULT,DEFAULT,DEFAULT,3,5
                
         );
         

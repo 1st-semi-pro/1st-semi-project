@@ -17,6 +17,7 @@ import edu.kh.festival.board.model.vo.Board;
 import edu.kh.festival.board.model.vo.BoardDetail;
 import edu.kh.festival.board.model.vo.BoardImage;
 import edu.kh.festival.board.model.vo.Pagination;
+import edu.kh.festival.board.model.vo.Pagination4;
 import edu.kh.festival.member.model.vo.Member;
 
 /**
@@ -582,6 +583,54 @@ public class BoardDAO {
 		}
 		
 		return boardList;
+	}
+
+	/** 동행자게시판 DAO <광민>
+	 * @param conn
+	 * @param pagination
+	 * @param type
+	 * @return
+	 * @throws Exception
+	 */
+	public List<Board> selectBoardList(Connection conn, Pagination4 pagination, int type) throws Exception{
+		List<Board> companionList = new ArrayList<Board>();
+
+		try {
+			String sql = prop.getProperty("selectBoardList");
+
+			// BETWEEN 구문에 들어갈 범위 계산
+			int start = (pagination.getCurrentPage() - 1) * pagination.getLimit() + 1;
+
+			int end = start + pagination.getLimit() - 1;
+
+			pstmt = conn.prepareStatement(sql);
+
+			pstmt.setInt(1, type);
+			pstmt.setInt(2, start);
+			pstmt.setInt(3, end);
+
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				Board board = new Board();
+
+				board.setBoardNo(rs.getInt("BOARD_NO"));
+				board.setBoardTitle(rs.getString("BOARD_TITLE"));
+				board.setMemberNickname(rs.getString("MEMBER_NICKNAME"));
+				board.setCreateDate(rs.getString("CREATE_DT"));
+				board.setReadCount(rs.getInt("READ_COUNT"));
+
+				companionList.add(board);
+
+			}
+		} finally {
+
+			close(rs);
+			close(pstmt);
+		}
+
+		return companionList;
+
 	}
 
 }
