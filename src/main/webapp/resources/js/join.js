@@ -43,7 +43,6 @@ const foreign = document.getElementById("foreign");
 const radios = document.getElementsByClassName("radios");
 
 /* 인증 관련 */
-const agreeCbx = document.getElementById("agreeCbx");
 const emailBtn = document.getElementById("emailBtn");
 
 var authenticationInput = document.getElementById("authenticationInput");
@@ -69,6 +68,9 @@ const checkInputs = {
 
 }
 
+
+
+
 // firstbox-------------------------------------------------------------------------------------- //
 
 // -------------------------------------------------------------------------------------- //
@@ -81,8 +83,8 @@ inputId.addEventListener("input",function(){
     if(inputId.value.trim().length == 0){
         in1.innerText = "아이디를 입력해주세요.";
         in1.classList.remove("true", "false");
-        this.style.borderBottom = "2px solid lightgray";
-        firstbox.style.border = "5px solid lightgray";
+        this.style.borderBottom = "2px dashed lightgray";
+        firstbox.style.border = "5px dashed lightgray";
         
         checkInputs.inputId = false;
 
@@ -106,8 +108,8 @@ inputId.addEventListener("input",function(){
                     in1.innerText = "이미 사용중인 아이디입니다.";
                     in1.classList.add("false");
                     in1.classList.remove("true");
-                    inputId.style.borderBottom = "2px solid lightgray";
-                    firstbox.style.border = "5px solid lightgray";
+                    inputId.style.borderBottom = "2px dashed lightgray";
+                    firstbox.style.border = "5px dashed lightgray";
 
                     checkInputs.inputId = false;
 
@@ -116,7 +118,7 @@ inputId.addEventListener("input",function(){
                     in1.innerText = "사용 가능한 아이디입니다.";
                     in1.classList.add("true");
                     in1.classList.remove("false");
-                    inputId.style.borderBottom = "2px solid lightcoral"; // 여기서의 this는 inputId가 아닌듯
+                    inputId.style.borderBottom = "2px dashed lightcoral"; // 여기서의 this는 inputId가 아닌듯
                     checkInputs.inputId = true;
 
                     // 아이디 통으로 지웠다가 다시 작성했을때 border 
@@ -124,9 +126,9 @@ inputId.addEventListener("input",function(){
                         in1.innerText = "유효한 아이디, 비밀번호입니다.";
                         in1.classList.add("true");
                         in1.classList.remove("false");
-                        inputPw.style.borderBottom = "2px solid lightcoral";
-                        inputPwCheck.style.borderBottom = "2px solid lightcoral";
-                        firstbox.style.border = "5px solid lightcoral";
+                        inputPw.style.borderBottom = "2px dashed lightcoral";
+                        inputPwCheck.style.borderBottom = "2px dashed lightcoral";
+                        firstbox.style.border = "5px dashed lightcoral";
                 
                     }
                
@@ -144,8 +146,8 @@ inputId.addEventListener("input",function(){
         in1.innerText = "아이디 : 영어(소문자) , 숫자로만 이루어진 6~14 글자로 입력해주세요.";
         in1.classList.add("false");
         in1.classList.remove("true");
-        inputId.style.borderBottom = "2px solid lightgray";
-        firstbox.style.border = "5px solid lightgray";
+        inputId.style.borderBottom = "2px dashed lightgray";
+        firstbox.style.border = "5px dashed lightgray";
 
         checkInputs.inputId = false;
         
@@ -160,8 +162,9 @@ inputId.addEventListener("input",function(){
 inputPw.addEventListener("input",function(){
     
     if(checkInputs.inputId != true){
-        alert("아이디를 올바른 형식으로 입력해주세요.");
-        
+
+        alert("아이디를 올바르게 입력해주세요.");
+       
         inputId.focus();
 
         inputPw.value = "";
@@ -177,9 +180,9 @@ inputPw.addEventListener("input",function(){
         in1.classList.remove("true", "false");
         
         // 비밀번호를 통째로 지워버렸을 때를 대비
-        firstbox.style.border = "5px solid lightgray";
-        inputPw.style.borderBottom = "2px solid lightgray";
-        inputPwCheck.style.borderBottom = "2px solid lightgray";
+        firstbox.style.border = "5px dashed lightgray";
+        inputPw.style.borderBottom = "2px dashed lightgray";
+        inputPwCheck.style.borderBottom = "2px dashed lightgray";
 
         checkInputs.inputPw = false;
 
@@ -202,7 +205,7 @@ inputPw.addEventListener("input",function(){
             in1.innerText = "유효한 비밀번호 형식입니다.";
             in1.classList.add("true");
             in1.classList.remove("false");
-            inputPw.style.borderBottom = "2px solid lightcoral";
+            inputPw.style.borderBottom = "2px dashed lightcoral";
             
 
         }else{ // 비밀번호 유효하면서 비밀번호 확인도 작성이 된 경우
@@ -217,7 +220,7 @@ inputPw.addEventListener("input",function(){
         in1.innerText = "비밀번호 : 소문자, 숫자, 특수문자를 포함한 8~16자리로 입력해주세요.";
         in1.classList.add("false");
         in1.classList.remove("true");
-        inputPw.style.borderBottom = "2px solid lightgray";
+        inputPw.style.borderBottom = "2px dashed lightgray";
 
         checkInputs.inputPw = false;
 
@@ -239,7 +242,8 @@ function pwCheck(){
     // 비번 확인을 입력하는데 비번이 유효하지 않다면
     const regExp = /^(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,16}$/;
     if(!regExp.test(inputPw.value)){
-        alert("비밀번호를 올바르게 입력해주세요.");
+        
+        alert("비밀번호를 올바른 형식으로 입력해주세요.");
         inputPwCheck.value = "";
         inputPw.focus();
         return;
@@ -251,8 +255,8 @@ function pwCheck(){
         in1.innerText = "비밀번호가 일치하지 않습니다.";
         in1.classList.add("false");
         in1.classList.remove("true");
-        inputPwCheck.style.borderBottom = "2px solid lightgray";
-        firstbox.style.border = "5px solid lightgray";
+        inputPwCheck.style.borderBottom = "2px dashed lightgray";
+        firstbox.style.border = "5px dashed lightgray";
         checkInputs.inputPwCheck = false;
     
     }else {
@@ -260,9 +264,9 @@ function pwCheck(){
         in1.innerText = "유효한 아이디, 비밀번호입니다.";
         in1.classList.add("true");
         in1.classList.remove("false");
-        inputPw.style.borderBottom = "2px solid lightcoral";
-        inputPwCheck.style.borderBottom = "2px solid lightcoral";
-        firstbox.style.border = "5px solid lightcoral";
+        inputPw.style.borderBottom = "2px dashed lightcoral";
+        inputPwCheck.style.borderBottom = "2px dashed lightcoral";
+        firstbox.style.border = "5px dashed lightcoral";
        
         checkInputs.inputPwCheck = true;
 
@@ -279,21 +283,28 @@ function pwCheck(){
 memberNickname.addEventListener("input",function(){
 
     if(checkInputs.inputId != true){
-        alert("아이디를 제대로 입력해주세요.");
+        
+        alert("아이디를 올바른 형식으로 입력해주세요.");
+
         memberNickname.value = "";
-        inputId.focus();
+            inputId.focus();
         return;
     }
 
+
     if(checkInputs.inputPw != true){
-        alert("비밀번호를 제대로 입력해주세요.");
+        
+        alert("비밀번호를 올바른 형식으로 입력해주세요.");
+
         memberNickname.value = "";
         inputPw.focus();
         return;
     }
 
     if(checkInputs.inputPwCheck != true){
-        alert("비밀번호 확인을 제대로 입력해주세요.");
+       
+        alert("비밀번호 확인을 올바른 형식으로 입력해주세요.");
+
         memberNickname.value = "";
         inputPwCheck.focus();
         return;
@@ -305,8 +316,8 @@ memberNickname.addEventListener("input",function(){
         in2.innerText = "2~12글자 사이의 영어/숫자/한글로 입력해주세요.";
         in2.classList.remove("true","false");
         checkInputs.memberNickname = false;
-        memberNickname.style.borderBottom = "2px solid lightgray";
-        secondBox.style.border = "2px solid lightgray";
+        memberNickname.style.borderBottom = "2px dashed lightgray";
+        secondBox.style.border = "5px dashed lightgray";
         return;
     }
 
@@ -329,8 +340,8 @@ memberNickname.addEventListener("input",function(){
                     in2.innerText = "이미 사용중인 닉네임입니다.";
                     in2.classList.add("false");
                     in2.classList.remove("true");
-                    memberNickname.style.borderBottom = "2px solid lightgray";
-                    secondBox.style.border = "2px solid lightgray";
+                    memberNickname.style.borderBottom = "2px dashed lightgray";
+                    secondBox.style.border = "5px dashed lightgray";
                     checkInputs.memberNickname = false;
 
                 }else{
@@ -338,14 +349,15 @@ memberNickname.addEventListener("input",function(){
                     in2.innerText = "사용 가능한 닉네임입니다.";
                     in2.classList.add("true");
                     in2.classList.remove("false");
-                    memberNickname.style.borderBottom = "2px solid lightcoral"; // 여기서의 this는 inputId가 아닌듯
+                    memberNickname.style.borderBottom = "2px dashed lightcoral"; // 여기서의 this는 inputId가 아닌듯
                     
                     checkInputs.memberNickname = true;
 
                     if(checkInputs.memberNickname != false && checkInputs.memberName != false && 
                         checkInputs.memberPhone != false && checkInputs.memberBirth != false &&
-                        checkInputs.regionSelect != false && checkInputs.inputEmail != false){
-                        secondBox.style.border = "5px solid lightcoral";
+                        checkInputs.regionSelect != false && checkInputs.inputEmail != false &&
+                        checkInputs.emailBtn != false){
+                        secondBox.style.border = "5px dashed lightcoral";
             
                     }
 
@@ -367,8 +379,8 @@ memberNickname.addEventListener("input",function(){
         in2.classList.remove("true");
 
        checkInputs.memberNickname = false; // 유효 x 기록
-       secondBox.style.border = "2px solid lightgray";
-       memberNickname.style.borderBottom = "2px solid lightgray";
+       secondBox.style.border = "5px dashed lightgray";
+       memberNickname.style.borderBottom = "2px dashed lightgray";
     }
 
 
@@ -391,7 +403,8 @@ memberName.addEventListener("input",function(){
         in2.innerText = "이름을 입력해주세요.";
         in2.classList.remove("true","false");
         checkInputs.memberName = false;
-        secondBox.style.border = "2px solid lightgray";
+        this.style.borderBottom = "2px dashed lightgray";
+        secondBox.style.border = "5px dashed lightgray";
         return;
     }
 
@@ -406,12 +419,13 @@ memberName.addEventListener("input",function(){
 
         checkInputs.memberName = true;
 
-        this.style.borderBottom = "2px solid lightcoral";
+        this.style.borderBottom = "2px dashed lightcoral";
 
         if(checkInputs.memberNickname != false && checkInputs.memberName != false && 
             checkInputs.memberPhone != false && checkInputs.memberBirth != false &&
-            checkInputs.regionSelect != false && checkInputs.inputEmail != false){
-            secondBox.style.border = "5px solid lightcoral";
+            checkInputs.regionSelect != false && checkInputs.inputEmail != false &&
+            checkInputs.emailBtn != false){
+            secondBox.style.border = "5px dashed lightcoral";
 
         }
 
@@ -422,8 +436,8 @@ memberName.addEventListener("input",function(){
         in2.classList.add("false");
         in2.classList.remove("true");
 
-        this.style.borderBottom = "2px solid lightgray";
-        secondBox.style.border = "2px solid lightgray";
+        this.style.borderBottom = "2px dashed lightgray";
+        secondBox.style.border = "5px dashed lightgray";
 
         checkInputs.memberName = false;
 
@@ -452,7 +466,8 @@ memberBirth.addEventListener("input", function(){
         in2.innerText = "생년월일을 8자리로 입력해주세요. (-제외)";
         in2.classList.remove("true", "false");
         checkInputs.memberBirth = false;
-        secondBox.style.border = "2px solid lightgray";
+        this.style.borderBottom = "2px dashed lightgray";
+        secondBox.style.border = "5px dashed lightgray";
         return;
 
     }
@@ -472,12 +487,13 @@ memberBirth.addEventListener("input", function(){
 
         checkInputs.memberBirth = true;
 
-        this.style.borderBottom = "2px solid lightcoral";
+        this.style.borderBottom = "2px dashed lightcoral";
 
         if(checkInputs.memberNickname != false && checkInputs.memberName != false && 
             checkInputs.memberPhone != false && checkInputs.memberBirth != false &&
-            checkInputs.regionSelect != false && checkInputs.inputEmail != false){
-            secondBox.style.border = "5px solid lightcoral";
+            checkInputs.regionSelect != false && checkInputs.inputEmail != false &&
+            checkInputs.emailBtn != false){
+            secondBox.style.border = "5px dashed lightcoral";
 
         }
 
@@ -488,8 +504,8 @@ memberBirth.addEventListener("input", function(){
         in2.classList.add("false");
         in2.classList.remove("true");
 
-        this.style.borderBottom = "2px solid lightgray";
-        secondBox.style.border = "2px solid lightgray";
+        this.style.borderBottom = "2px dashed lightgray";
+        secondBox.style.border = "5px dashed lightgray";
         checkInputs.memberBirth = false;
 
     }
@@ -514,22 +530,23 @@ regionSelect.addEventListener("change",function(){
     if(regionSelect.value == "default"){
         
         checkInputs.regionSelect = false;
-        regionSelect.style.border = "2px solid lightgray";
+        regionSelect.style.border = "2px dashed lightgray";
         regionSelect.style.outline = "0";
         regionSelect.style.borderRadius = "10px";
-        secondBox.style.border = "2px solid lightgray";
+        secondBox.style.border = "5px dashed lightgray";
     }
 
     if(regionSelect.value != "default"){
         checkInputs.regionSelect = true;
-        regionSelect.style.border = "2px solid lightcoral";
+        regionSelect.style.border = "2px dashed lightcoral";
         regionSelect.style.outline = "0";
         regionSelect.style.borderRadius = "10px";
 
         if(checkInputs.memberNickname != false && checkInputs.memberName != false && 
             checkInputs.memberPhone != false && checkInputs.memberBirth != false &&
-            checkInputs.regionSelect != false && checkInputs.inputEmail != false){
-            secondBox.style.border = "5px solid lightcoral";
+            checkInputs.regionSelect != false && checkInputs.inputEmail != false &&
+            checkInputs.emailBtn != false){
+            secondBox.style.border = "5px dashed lightcoral";
 
         }
     }
@@ -556,8 +573,8 @@ memberPhone.addEventListener("input",function(){
         in2.innerText = "전화번호를 입력해주세요. (-제외)";
         in2.classList.remove("true", "false");
         checkInputs.memberPhone = false;
-        this.style.borderBottom = "2px solid lightgray";
-        secondBox.style.border = "2px solid lightgray";
+        this.style.borderBottom = "2px dashed lightgray";
+        secondBox.style.border = "5px dashed lightgray";
         return;
     }
 
@@ -576,12 +593,13 @@ memberPhone.addEventListener("input",function(){
 
         checkInputs.memberPhone = true;
 
-        this.style.borderBottom = "2px solid lightcoral";
+        this.style.borderBottom = "2px dashed lightcoral";
 
         if(checkInputs.memberNickname != false && checkInputs.memberName != false && 
             checkInputs.memberPhone != false && checkInputs.memberBirth != false &&
-            checkInputs.regionSelect != false && checkInputs.inputEmail != false){
-            secondBox.style.border = "5px solid lightcoral";
+            checkInputs.regionSelect != false && checkInputs.inputEmail != false &&
+            checkInputs.emailBtn != false){
+            secondBox.style.border = "5px dashed lightcoral";
 
         }
 
@@ -592,10 +610,10 @@ memberPhone.addEventListener("input",function(){
         in2.classList.add("false");
         in2.classList.remove("true");
 
-        this.style.borderBottom = "2px solid lightgray";
+        this.style.borderBottom = "2px dashed lightgray";
 
         checkInputs.memberPhone = false;
-        secondBox.style.border = "2px solid lightgray";
+        secondBox.style.border = "5px dashed lightgray";
 
     }
 
@@ -735,7 +753,7 @@ inputEmail.addEventListener("input",function(){
         in2.innerText = "이메일을 입력해주세요.";
         in2.classList.remove("true", "false");
         checkInputs.inputEmail = false;
-        secondBox.style.border = "2px solid lightgray";
+        secondBox.style.border = "5px dashed lightgray";
         return;
     }
 
@@ -763,8 +781,8 @@ inputEmail.addEventListener("input",function(){
                     in2.innerText = "이미 사용중인 이메일입니다.";
                     in2.classList.add("false");
                     in2.classList.remove("true");
-                    inputEmail.style.borderBottom = "2px solid lightgray";
-                    secondBox.style.border = "2px solid lightgray";
+                    inputEmail.style.borderBottom = "2px dashed lightgray";
+                    secondBox.style.border = "5px dashed lightgray";
                     checkInputs.inputEmail = false;
 
                 }else{
@@ -772,19 +790,18 @@ inputEmail.addEventListener("input",function(){
                     in2.innerText = "사용 가능한 이메일입니다.";
                     in2.classList.add("true");
                     in2.classList.remove("false");
-                    inputEmail.style.borderBottom = "2px solid lightcoral";
+                    inputEmail.style.borderBottom = "2px dashed lightcoral";
                     
                     checkInputs.inputEmail = true;
 
-                    
-                if(checkInputs.memberNickname != false && checkInputs.memberName != false && 
-                    checkInputs.memberPhone != false && checkInputs.memberBirth != false &&
-                    checkInputs.regionSelect != false && checkInputs.inputEmail != false){
-                    secondBox.style.border = "5px solid lightcoral";
+                    if(checkInputs.memberNickname != false && checkInputs.memberName != false && 
+                        checkInputs.memberPhone != false && checkInputs.memberBirth != false &&
+                        checkInputs.regionSelect != false && checkInputs.inputEmail != false &&
+                        checkInputs.emailBtn != false){
+                        secondBox.style.border = "5px dashed lightcoral";
+    
 
                 }
-
-       
 
                 }
 
@@ -804,8 +821,8 @@ inputEmail.addEventListener("input",function(){
         in2.classList.add("false");
         in2.classList.remove("true");
 
-        this.style.borderBottom = "2px solid lightgray";
-        secondBox.style.border = "2px solid lightgray";
+        this.style.borderBottom = "2px dashed lightgray";
+        secondBox.style.border = "5px dashed lightgray";
         checkInputs.inputEmail = false;
 
     }
@@ -816,17 +833,10 @@ inputEmail.addEventListener("input",function(){
 // 이메일 인증 
 emailBtn.addEventListener("click", function(){
 
-    if(!agreeCbx.checked){
-        Swal.fire(
-            '인증약관에 동의해주세요.',
-            'error'
-          )
-        checkInputs.emailBtn = false;
-        return;
-    }
 
     if(checkInputs.inputEmail != true){
         Swal.fire(
+            '이메일',
             '유효한 이메일을 입력해주세요.',
             'error'
           )
@@ -861,6 +871,7 @@ emailBtn.addEventListener("click", function(){
                 authenticationInput.setAttribute('type','text');
                 authenticationButton.setAttribute('type','button'); 
                 authenticationButton.value = "인증";  
+                in2.innerText = "";
             
                 authenticationButton.addEventListener("click",function(){
 
@@ -872,8 +883,17 @@ emailBtn.addEventListener("click", function(){
                             'success'
                           )
                         checkInputs.emailBtn = true;
+                        
+                        if(checkInputs.memberNickname != false && checkInputs.memberName != false && 
+                            checkInputs.memberPhone != false && checkInputs.memberBirth != false &&
+                            checkInputs.regionSelect != false && checkInputs.inputEmail != false &&
+                            checkInputs.emailBtn != false){
+                            secondBox.style.border = "5px dashed lightcoral";
+    
+                        }
 
-                    }else{
+
+                        }else{
                         Swal.fire(
                             '인증번호가 일치하지 않습니다.',
                             '실패',
@@ -914,21 +934,23 @@ function joinValidate(){
         if(!checkInputs[key]){
 
             switch(key){
-                case "inputId"          : str= "아이디가"; break;
-                case "inputPw"          : str= "비번이"; break;
-                case "inputPwCheck"     : str= "비밀번호 확인이"; break;
-                case "memberNickname"   : str= "닉네임이"; break;
-                case "memberName"       : str= "이름이"; break;
-                case "memberBirth"      : str= "생년월일이"; break;
-                case "regionSelect"     : str= "지역선택이"; break;
-                case "memberPhone"      : str= "전화번호가"; break;
-                case "inputEmail"       : str= "이메일이"; break;
-                case "emailBtn"         : str = "이메일 인증이"; break;
+                case "inputId"          : str= "아이디"; break;
+                case "inputPw"          : str= "비밀번호"; break;
+                case "inputPwCheck"     : str= "비밀번호 확인"; break;
+                case "memberNickname"   : str= "닉네임"; break;
+                case "memberName"       : str= "이름"; break;
+                case "memberBirth"      : str= "생년월일"; break;
+                case "regionSelect"     : str= "지역"; break;
+                case "memberPhone"      : str= "전화번호"; break;
+                case "inputEmail"       : str= "이메일"; break;
+                case "emailBtn"         : str = "이메일 인증"; break;
             }
 
-            str += " 유효하지 않습니다.";
+            
             Swal.fire(
-                str,
+                
+                '가입 실패',
+                '유효하지 않은' + str + '입니다.',
                 'error'
               )
 

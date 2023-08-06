@@ -18,9 +18,9 @@
 
 </head>
 
-<body>
+<body style="height:1000px !important;">
 
-    <main>
+    <main style="height:100% !important;">
 
         <div id = "logoDiv">
 
@@ -36,82 +36,76 @@
         
         <form action="join" method="post" onsubmit="return joinValidate()">
 
-            <div id="height"></div>
+            <div class="height"></div>
 
             <div id="firstbox">
-                <article class = "firstArticles">
+                <article class = "Articles">
                     <img src="${contextPath}/resources/images/id.png" id="img1">
                     <input type="text" class="inputs" id="inputId" name="inputId" placeholder="아이디를 입력해주세요." autocomplete="off">
                 </article>
 
-                <article class = "firstArticles">
+                <article class = "Articles">
                     <img src="${contextPath}/resources/images/password.jpg" id="img2">
                     <input type="password" class="inputs" id="inputPw" name="inputPw" placeholder="비밀번호를 입력해주세요.">
                 </article>
 
-                <article class = "firstArticles">
+                <article class = "Articles">
                     <img src="${contextPath}/resources/images/password2.png" id="img3">
                     <input type="password" class="inputs" id="inputPwCheck" name="inputPwCheck" placeholder="비밀번호 확인을 입력해주세요.">
                 </article>
 
-                <span id="innerTextSpan1"></span>
+                <div id="innerTextSpan1"></div>
 
             </div>
 
-            <div id="height"></div>
+            <div class="height"></div>
 
             <div id="secondBox">
 
-                <article id="giveMargin">
+                <article id="giveMargin" class = "Articles">
                     <img src="${contextPath}/resources/images/id.png" id="img5">
                     <input type="text" class="inputs" id="memberNickname" name="memberNickname" placeholder="닉네임을 입력해주세요." autocomplete="off">
                 
                 </article>
 
-                <article>
+                <article class = "Articles">
                     <img src="${contextPath}/resources/images/id.png" id="img6">
                     <input type="text" class="inputs" id="memberName" name="memberName" placeholder="이름을 입력해주세요." autocomplete="off">
 
-                </article>
+                </article >
 
-                <article>
+                <article class = "Articles">
                     <img src="${contextPath}/resources/images/id.png" id="img7">
                     <input type="text" class="inputs" id="memberBirth" name="memberBirth" placeholder="생년월일을 8자리로 입력해주세요.(- 제외)" autocomplete="off">
                 
                 </article>
 
-                <article>
+                <article class = "Articles">
                     <img src="${contextPath}/resources/images/id.png" id="img8">
                  
                     <div id="selectDiv">
                         <select id="regionSelect" name="regionSelect">
                             <option selected value="default">주 활동지역을 선택해주세요.</option> <!-- 이거 선택안되게 하는법? -->
                             <option value="서울">서울</option>
-                            <option value="경기">경기</option>
-                            <option value="강원">강원</option>
-                            <option value="제주">제주</option>
-                            <!-- 서버랑 연동해서 jstl써서 불러올 수 있음 
-                             
-                            <label for="assNumber">음료</label>
-                                <select>
-                                    <option value="">선택해주세요.</option>
-                                        <c:forEach var="list" items="${result}">
-                                            <option value="${list.beverage}">${list.beverage}</option>
-                                        </c:forEach>
-                                </select>
+                            <option value="경기도">경기도</option>
+                            <option value="강원도">강원도</option>
+                            <option value="충청도">충청도</option>
+                            <option value="전라도">전라도</option>
+                            <option value="경상도">경상도</option>
+                            <option value="제주도">제주도</option>
 
-                             -->
                         </select>
                     </div>    
 
                 </article>
 
-                <article> 
+                <article class = "Articles"> 
                     <img src="${contextPath}/resources/images/id.png" id="img10">
                     <input type="text" class="inputs" id="memberPhone" name="memberPhone" placeholder="전화번호를 입력해주세요.(- 제외)" autocomplete="off">
 
                 </article>
-                <article>
+
+                <article class = "Articles">
                     <img src="${contextPath}/resources/images/id.png" id="img11"> 
                     <div id="genderNationality">
 
@@ -151,41 +145,28 @@
 
                 </article>
                 
-                <article>
+                <article class = "Articles">
                     <img src="${contextPath}/resources/images/id.png" id="img4">
                     <input type="email" class="inputs" id="inputEmail" name="inputEmail" placeholder="이메일을 입력해주세요." autocomplete="off">
                     <button id="emailBtn" type="button">인증하기</button>
                 </article>
 
-                <article>
+                <article class = "Articles" id="">
                     <input type="hidden" class="inputs" id="authenticationInput" placeholder="인증번호를 입력해주세요." class="inputs">
                     <input type="hidden" id="authenticationButton">
                 </article>
-             
 
-                <articleAgree id="agreeArticle">
+                <div id="innerTextSpan2" ></div>
 
-                    <div id="borderDiv">
-                    <input type="checkbox" id="agreeCbx">
-                    <span id="necessary">(필수)</span>
-                    <span id="agreeSpan2">인증 약관 전체 동의</span>
-                    <img src="v.jfif" id="agreeImg"> <!-- 임시 -->
-                    </div>
-
-                </articleAgree>
-                
-                <span id="innerTextSpan2"></span>
-                
             </div>
 
-            <div id="agreeClickBox">
-                약관동의 클릭하면 나올 박스 <!-- 임시 -->
-            </div>
-
+            <div class="height2"></div>
 
             <div id="thirdBox">
-                <button id="btn" >회원가입</button>
+                <button id="btn">회원가입</button>
             </div>    
+
+            <div class="height2"></div>
 
         </form>
 

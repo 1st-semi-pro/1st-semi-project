@@ -21,7 +21,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
-<body>
+<body id="body" style="height:950px !important;">
 
 
 
@@ -36,9 +36,9 @@
 
 
 
-	<main>
+	<main style="height: 100% !important;">
 
-		<section class="content">
+		<section class="content" id="cont">
 
 			<sectionmargin></sectionmargin>
 
@@ -137,7 +137,11 @@
 
 		<script>
 
-				alert("${message}");
+			/* 	alert("${message}"); */
+
+				Swal.fire(
+					'${message}'
+				) 
 
 		</script>
 

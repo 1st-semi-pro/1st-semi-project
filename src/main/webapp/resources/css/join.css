@@ -14,12 +14,8 @@
     color:red;
 }
 
-/* ::placeholder{
- 
-} */
 
 body{
-    height:950px;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -27,9 +23,10 @@ body{
 
 main{
     display:flex;
-    width:45%;
+    width:38%;
     height:100%;
     flex-direction: column;
+
 }
 
 /* 로고div */
@@ -42,22 +39,22 @@ main{
 
 form{
     display:flex;
-    flex-basis:90%;
+    height: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-/*     border: 8px solid lightgray; */
-    border-radius:5px;
+     border: 20px solid #ddd;
+    border-radius:30px;
 }
 
 /* 아이디,비번,비번확인,이메일 인증 */
 #firstbox{
     display:flex;
-    width:60%;
-    height:28%;
+    width:80%;
+    height:30%;
     flex-direction: column;
-    border:5px solid lightgray;
-    border-radius:5px;
+    border:5px dashed lightgray;
+    border-radius:35px;
 }
 
 
@@ -70,15 +67,15 @@ form{
     align-items: center;
 }
 
-.firstArticles{
+.Articles{
     margin-top:5px;
-    margin-left:10px;
+    margin-left:20px;
 }
 
 #innerTextSpan1{
     display:flex;
     height:12%;
-    margin-left:65px;
+    margin-left:70px;
     margin-bottom: 4px;
     justify-content: flex-start;
     align-items: center;
@@ -89,75 +86,33 @@ form{
 }
 
 /* 닉네임, 이름, 생년월일, 주 활동지역, 통신사, 폰번호, 남/녀, 내/외국인 */
-#height{
-    display:flex;
-    height:1.5%;    
+.height{
+    height:3%;   
+}
+
+.height2{
+    height:1.5%;
 }
 
 #secondBox{
     display:flex;
-    width:60%;
-    height: 60%;
+    width:80%;
+    height: 61%;
     flex-direction: column;
-    border:5px solid lightgray;
-    border-radius:5px;
+    border:5px dashed lightgray;
+    border-radius:35px;
 }
 
 #secondBox:hover{
-    border:5px solid lightcoral;
+    border:5px dashed lightcoral;
 }
-
-
 
 /* secondBox에 대한 height*/
 #secondBox > article{
     display:flex;
-    height:11.5%;
+    height:11%;
     justify-content: flex-start;
     align-items: center;
-}
-
-articleAgree{
-    display:flex;
-    height:11.5%;
-    justify-content: center;
-    align-items: center;
-}
-
-/* 통신사 */
-article > agency{
-    display:flex;
-    width:80%;
-    justify-content: s;
-}
-
-/* 통신사 div */
-
-.agencyLabels{
-    display:Flex;
-    flex-basis:33.3%;
-    border:1px solid lightgray;
-    border-radius: 5px;
-    height:35px;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    
-}
-
-.agency{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.agency > span{
-    margin-left:5px;
-   margin-top:4px;
-}
-
-#agencyMargin{
-    margin-left: 10px;
 }
 
 /* 남/여 , 내/외국인 */
@@ -259,11 +214,13 @@ article > agency{
 
 #innerTextSpan2{
     display:flex;
-    height:8%;
-    margin-left:50px;
-
+    height:12%;
     justify-content: flex-start;
     align-items: center;
+    margin-left:70px;
+    font-weight: bold;
+    font-size:16px;
+
 }
 
 #test{
@@ -281,12 +238,12 @@ article > agency{
 
 #btn{
     height:70%;
-    width:60%;
+    width:80%;
     border:0;
     background-color: lightcoral;
     color:white;
     font-size:26px;
-    border-radius: 10px;
+    border-radius: 20px;
     cursor:pointer;
 }
 
@@ -327,15 +284,15 @@ img{
 
 .inputs{
     width:80%;
-    height:32px;
+    height:30px;
     border:0;
-    border-bottom: 2px solid lightgray; /* 입력완료->lightcoral */
+    border-bottom: 2px dashed lightgray; /* 입력완료->lightcoral */
     outline:0;
     
 }
 
 #firstbox:hover{
-    border:5px solid lightcoral;
+    border:5px dashed lightcoral;
 
 }
 
@@ -406,7 +363,7 @@ footer{
 
 .find1{
     display:flex;
-    margin-top:0px;
+    margin-top:20px;
     align-items:center;
 }
 
@@ -420,4 +377,7 @@ footer{
     display:flex;
 }
 
+body.swal2-height-auto {
+    height: 100% !important;
+    }
 

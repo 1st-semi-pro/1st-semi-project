@@ -299,11 +299,15 @@ if(btn1.innerText == ""){
              if(result > 0){
                     
                     btn1.innerText = "내가 찜한 축제";
+                    btn1.style.backgroundColor = "red";
+
     
 
                 }else{
                    
                     btn1.innerText = "찜하기";
+                    btn1.style.backgroundColor = "lightcoral";
+
 
                 }
 
@@ -340,6 +344,8 @@ btn1.addEventListener("click",function t1(){
                         'success'
                       )
                     btn1.innerText = "내가 찜한 축제";
+                    btn1.style.backgroundColor = "red";
+
                     
                 }else{
                     alert("찜 실패");
@@ -376,6 +382,9 @@ btn1.addEventListener("click",function t1(){
                         'error'
                       )
                     btn1.innerText = "찜하기";
+                    btn1.style.backgroundColor = "lightcoral";
+
+
                 } else {
                     alert("찜 취소 실패");
                 }
