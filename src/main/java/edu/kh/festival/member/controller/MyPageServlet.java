@@ -116,6 +116,7 @@ public class MyPageServlet extends HttpServlet {
 			// DB에 삽입될 프로필 이미지 경로
 			// 단, x버튼이 클릭된 상태면 null을 가지게 한다. 
 			String profileImage = folderPath + mpReq.getFilesystemName("memberProfileImage");
+			String profileMessage = mpReq.getParameter("profileMessage");
 			
 			// ** 프로필 이미지 삭제 **
 			// 1) delete input type="hidden" 태그의 값(파라미터) 얻어오기
@@ -123,19 +124,34 @@ public class MyPageServlet extends HttpServlet {
 			// 	 req를 이용해서 파라미터를 얻어올 수 없다!
 			//	 --> mpReq를 이용하면 가능!
 			
-			int delete = Integer.parseInt(mpReq.getParameter("delete"));
+			int deleteImage = Integer.parseInt(mpReq.getParameter("deleteImage"));
 			// 2) delete의 값이 1(눌러진경우)이면 profileImage의 값을 null로 변경
-			if(delete == 1) {
+			if(deleteImage == 1) {
 				profileImage= null;
 			}
 			
+			int result=0;
 			// 새로운 이미지 변경 Service 호출 후 결과 반환 받기
-			
-			int result = new MemberService().updateProfileImage(memberNo, profileImage);
+			int changeImage = Integer.parseInt(mpReq.getParameter("changeImage"));
+			if(changeImage == 1) {
+				int result1 = new MemberService().updateProfileImage(memberNo, profileImage);
+				if(result1 > 0) {
+					loginMember.setMemberProfileImage(profileImage);
+					result++;
+				}
+			}
+			// 새로운 메세지 변경 Service 호출 후 결과 반환 받기
+			int changeMessage = Integer.parseInt(mpReq.getParameter("changeMessage"));
+			if(changeMessage == 1) {
+				int result2 = new MemberService().updateProfileMessage(memberNo, profileMessage);
+				if(result2 > 0) {
+					loginMember.setMemberMessage(profileMessage);
+					result++;
+				}
+			}
 			
 			if(result > 0) {
 				session.setAttribute("message", "프로필이 수정되었습니다.");
-				loginMember.setMemberProfileImage(profileImage); // 세션의 값이 변경됨
 			}else {
 				session.setAttribute("message", "프로필 수정 실패");
 			}

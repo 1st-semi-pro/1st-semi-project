@@ -130,7 +130,7 @@ public class MemberService {
 	}
 
 	/**
-	 * 프로필이미지 변경 service
+	 * 프로필 이미지 변경 service
 	 * @param memberNo
 	 * @param profileImage
 	 * @return result
@@ -140,6 +140,26 @@ public class MemberService {
 		Connection conn = getConnection();
 		
 		int result = dao.updateProfileImage(conn, memberNo, profileImage);
+		
+		if(result>0) commit(conn);
+		else rollback(conn);
+		
+		close(conn);
+		
+		return result;
+	}
+	
+	/**
+	 * 프로필  메세지 변경 service
+	 * @param memberNo
+	 * @param profileMessage
+	 * @return result
+	 * @throws Exception
+	 */
+	public int updateProfileMessage(int memberNo, String profileMessage) throws Exception{
+		Connection conn = getConnection();
+		
+		int result = dao.updateProfileMessage(conn, memberNo, profileMessage);
 		
 		if(result>0) commit(conn);
 		else rollback(conn);
@@ -257,7 +277,7 @@ public class MemberService {
 		return result;
 	}
 
-
-
+	
+	
 	
 }

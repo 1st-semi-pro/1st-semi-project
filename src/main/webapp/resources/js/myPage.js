@@ -1,7 +1,9 @@
 // 회원 프로필 이미지 변경(미리보기)
 const inputImage = document.getElementById("input-image");
 const inputMessage = document.getElementById("profile-message");
-const del = document.getElementById("delete");
+const del = document.getElementById("delete-image");
+const chan = document.getElementById("change-image");
+const chanMsg = document.getElementById("change-message");
 
 if(inputImage != null){ // inputImage 요소가 화면에 존재할 때
     inputImage.addEventListener("change", function(){
@@ -41,13 +43,20 @@ if(inputImage != null){ // inputImage 요소가 화면에 존재할 때
                 profileImage.setAttribute("src", e.target.result);
                 // -> setAttribute()호출 시 중복되는 속성이 본재하면 덮어쓰기
 
-                document.getElementById("delete").value=0;
+                del.value = 0;
+                chan.value = 1;
                 // 새로운 이미지가 선택되어있기 때문에 1 -> 0(안눌러짐 상태) 
             }
         }
 
     });
 }
+
+inputMessage.addEventListener("change", function(){ // 프로필 메세지 내용 변경 시
+    if(inputMessage.value == memberMessage) chanMsg.value = 0; //DB에 저장된 내용과 같으면 0
+    else chanMsg.value = 1; // 기존 내용과 달라졌다면 1
+})
+
 
 function profileValidate(){
     // DB에 저장된 프로필 메세지와 마이페이지 프로필 메세지가 같다 == 변경되지 않음
@@ -61,9 +70,7 @@ function profileValidate(){
 }
 
 // 프로필 이미지 옆 x버튼 클릭 시
-document.getElementById("delete-image").addEventListener("click", function(){
-
-    const del = document.getElementById("delete");
+document.getElementById("delete-image-btn").addEventListener("click", function(){
     
     if(del.value ==0){
         // 1) 프로필 이미지를 기본 이미지로 변경
@@ -73,5 +80,6 @@ document.getElementById("delete-image").addEventListener("click", function(){
         document.getElementById("input-image").value="";
 
         del.value = 1;
+        chan.value = 1;
     }
 })
