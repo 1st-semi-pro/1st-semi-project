@@ -21,7 +21,11 @@ function loginValidate(){
 	
 	if(inputId.value.trim().length == 0){
 		
-		alert("아이디를 입력해주세요.");
+		Swal.fire(
+			'아이디 오류',
+			'아이디를 입력해주세요.',
+			'error'
+		  )
 
 		inputId.value="";
 		inputId.focus();
@@ -32,7 +36,11 @@ function loginValidate(){
 
 	if(inputPw.value.trim() == ""){
 
-		alert("비밀번호를 입력해주세요.");
+		Swal.fire(
+			'비밀번호 오류',
+			'비밀번호를 입력해주세요.',
+			'error'
+		  )
 
 		inputPw.value="";
 		inputPw.focus();
@@ -48,15 +56,26 @@ function loginValidate(){
 // 아이디 저장 
 document.getElementById("idSave").addEventListener("change",function(){
 
-	if(this.checked){
 
-		const str = "개인정보를 위해 개인 PC에서만의 사용을 권장합니다. 저장하시겠습니까?";
+	Swal.fire(
+		festivalTitle ,
+		'축제를 찜하셨습니다.',
+		'success'
+	  )
+
+	/* if(this.checked){
+
+	
+	} */
+
+		
+		/* const str = "개인정보를 위해 개인 PC에서만의 사용을 권장합니다. 저장하시겠습니까?";
 
 		if(!confirm(str)){
 			this.checked = false;
-		}
+		} */
 
-	}
+	
 
 })
 

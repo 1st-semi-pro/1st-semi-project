@@ -29,6 +29,8 @@
     <!-- geocoding -->
     <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=vo8pyrmnk8&submodules=geocoder"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script>
         
         /* ajax에서 쓰기 위함 */
@@ -107,10 +109,9 @@
                 <div id="slogan">${festivalDetail.festivalSlogan}</div>
                 <div id="festivalTitle">${festival.festivalTitle}</div>
                 <div id="festivalDt">${festival.festivalDate}</div>
-                ${festivalDetail.festivalYoutube}
+               
                         <!-- img 1~6 스위퍼 -->
                 
-                <!-- 이미지 없으면 스위퍼 안열기 1개라도 넣으면 6개 다 넣을거임 --> 
                 <c:if test="${!empty img1}">
 
                     <div class="swiper mySwiper">
@@ -245,23 +246,39 @@
             <!-- <img src="이미지경로/<%= 1 + Math.floor(Math.random() * 15.99) %>.jpg"/> -->
             <div id="randomImage">
 
+            <!--            
+            
             <%
                 for(int i = 0; i < 4; i++){
             %>
                 
-                <a href="#">
+                <a href="">
                     <img src="${contextPath}/resources/images/festival_infomation/<%= 1 + (int)(Math.random() * 100) %>.png" class="randomImages">
                 </a>
             
             <%
                 }
+            %> -->
+
+            <%
+                for(int i = 0; i < 4; i++){
+                    int randomNum = 1 + (int)(Math.random() * 100);
             %>
+                <a href="${contextPath}/board/festivalDetail?festivalNo=<%= randomNum %>">
+                    <img src="${contextPath}/resources/images/festival_infomation/<%= randomNum %>.png" class="randomImages">
+                </a>
+            <%
+                }
+            %>   
+
 
             </div>    
         </div>
         
     </div>
     
+    <a href="#">맨 위로</a>
+
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     
     </main>
