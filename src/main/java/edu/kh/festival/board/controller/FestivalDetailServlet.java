@@ -43,6 +43,8 @@ public class FestivalDetailServlet extends HttpServlet  {
 			// service 안에서 detail을 보여주기 전 조회수를 +1 시킨다
 
 			req.setAttribute("map", map);
+
+			System.out.println(map);
 			
 			String path = "/WEB-INF/views/board/festivalDetail.jsp";
 			

@@ -817,13 +817,19 @@ inputEmail.addEventListener("input",function(){
 emailBtn.addEventListener("click", function(){
 
     if(!agreeCbx.checked){
-        alert("인증 약관에 동의해주세요.");
+        Swal.fire(
+            '인증약관에 동의해주세요.',
+            'error'
+          )
         checkInputs.emailBtn = false;
         return;
     }
 
     if(checkInputs.inputEmail != true){
-        alert("유효한 이메일을 입력해주세요.");
+        Swal.fire(
+            '유효한 이메일을 입력해주세요.',
+            'error'
+          )
         checkInputs.emailBtn = false;
         return;
     }
@@ -840,13 +846,18 @@ emailBtn.addEventListener("click", function(){
             
             if(key == ""){
 
-                alert("인증번호 전송 실패");
+                Swal.fire(
+                    '인증번호 전송 실패.',
+                    'error'
+                  )
                 checkInputs.emailBtn = false;
                 return;
 
             }else{
 
-                alert("인증번호를 전송했습니다.");
+                Swal.fire(
+                    '인증번호를 전송했습니다.'
+                  )
                 authenticationInput.setAttribute('type','text');
                 authenticationButton.setAttribute('type','button'); 
                 authenticationButton.value = "인증";  
@@ -855,11 +866,19 @@ emailBtn.addEventListener("click", function(){
 
                     if(key == '"' + authenticationInput.value + '"'){
 
-                        alert("인증 완료!");
+                        Swal.fire(
+                            '인증번호가 일치합니다.',
+                            '성공',
+                            'success'
+                          )
                         checkInputs.emailBtn = true;
 
                     }else{
-                        alert("인증번호가 일치하지 않습니다.");
+                        Swal.fire(
+                            '인증번호가 일치하지 않습니다.',
+                            '실패',
+                            'error'
+                          )
                         checkInputs.emailBtn = false;
                     }
               
@@ -895,7 +914,7 @@ function joinValidate(){
         if(!checkInputs[key]){
 
             switch(key){
-                case "inputId"          : str= "이메일이"; break;
+                case "inputId"          : str= "아이디가"; break;
                 case "inputPw"          : str= "비번이"; break;
                 case "inputPwCheck"     : str= "비밀번호 확인이"; break;
                 case "memberNickname"   : str= "닉네임이"; break;
@@ -908,7 +927,10 @@ function joinValidate(){
             }
 
             str += " 유효하지 않습니다.";
-            alert(str);
+            Swal.fire(
+                str,
+                'error'
+              )
 
             document.getElementById(key).focus();
             
