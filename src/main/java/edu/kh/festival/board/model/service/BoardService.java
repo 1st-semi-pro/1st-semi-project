@@ -283,4 +283,23 @@ public class BoardService {
 		return map;
 	}
 
+	/** 게시판에서 바로삭제service <광민> 제발..
+	 * @param boardNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int deleteCompanion(int boardNo) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int result = dao.deleteCompanion(conn, boardNo);
+
+		if (result > 0) commit(conn);
+		else          rollback(conn);
+		
+		close(conn);
+		
+		return result;
+	}
+
 }

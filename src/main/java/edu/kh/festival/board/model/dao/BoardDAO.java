@@ -596,7 +596,7 @@ public class BoardDAO {
 		List<Board> companionList = new ArrayList<Board>();
 
 		try {
-			String sql = prop.getProperty("selectBoardList");
+			String sql = prop.getProperty("compaionList");
 
 			// BETWEEN 구문에 들어갈 범위 계산
 			int start = (pagination.getCurrentPage() - 1) * pagination.getLimit() + 1;
@@ -619,6 +619,11 @@ public class BoardDAO {
 				board.setMemberNickname(rs.getString("MEMBER_NICKNAME"));
 				board.setCreateDate(rs.getString("CREATE_DT"));
 				board.setReadCount(rs.getInt("READ_COUNT"));
+				board.setMemberNo(rs.getString("MEMBER_NO"));
+				board.setFestivalTitle(rs.getString("FESTIVAL_TITLE"));
+				board.setFestivalArea(rs.getString("FESTIVAL_AREA"));
+				board.setFestivalDate(rs.getString("FESTIVAL_DT"));
+				
 
 				companionList.add(board);
 
@@ -631,6 +636,37 @@ public class BoardDAO {
 
 		return companionList;
 
+	}
+
+	/** 게시판에서 바로삭제DAO <광민> 제발..
+	 * @param conn
+	 * @param boardNo
+	 * @return
+	 * @throws ExceptionJ
+	 */
+	public int deleteCompanion(Connection conn, int boardNo) throws Exception {
+		
+		int result =0;
+		
+		try {
+			
+			String sql = prop.getProperty("deleteCompanion");
+
+			pstmt = conn.prepareStatement(sql);
+
+			pstmt.setInt(1, boardNo);
+
+			result = pstmt.executeUpdate();
+			
+			
+		} finally {
+			close(pstmt);
+			
+			
+		}
+		System.out.println("DAo == " + result);
+
+		return result;
 	}
 
 }

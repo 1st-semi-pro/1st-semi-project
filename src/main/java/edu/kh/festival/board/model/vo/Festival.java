@@ -24,5 +24,6 @@ public class Festival {
 	
 	private List<Festival> festivalList;
 	private List<FestivalImage> festivalImageList;
-
+	
+	
 }

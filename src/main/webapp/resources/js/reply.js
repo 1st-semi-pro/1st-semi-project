@@ -304,7 +304,7 @@ function updateReply(replyNo, btn){
 
 function deleteReply(replyNo){
 
-    if(confirm("정말로 삭제 하시겠습니까?")){
+    if(confirm("정말로 삭제 하시겠습니까~?")){
 
         // DB에서 댓글 삭제 ==> REPLY_ST = 'Y' 변경
 
