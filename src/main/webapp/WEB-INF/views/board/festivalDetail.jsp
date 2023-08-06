@@ -187,6 +187,14 @@
                         <div class="contents">${festivalDetail.festivalRelatedAgencies}</div>
                     </article>   
 
+                    <c:if test="${!empty festivalDetail.festivalHomepage}">
+                    <article class="halfArticle">
+                            <a href="${festivalDetail.festivalHomepage}">
+                                <div><img src = "${contextPath}/resources/images/festival_infomation/homepage.png" id="homepageLink"></div>
+                            </a>    
+                    </article>
+                    </c:if>   
+
                 </div>
 
             </div>
@@ -277,7 +285,7 @@
         
     </div>
     
-    <a href="#">맨 위로</a>
+    <a href="#" id="up">상단으로</a>
 
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     

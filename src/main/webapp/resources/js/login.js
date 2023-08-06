@@ -2,6 +2,7 @@ const inputId = document.getElementById("inputId");
 const inputPw = document.getElementById("inputPw");
 const sec1 = document.getElementById("sec1");
 const sec2 = document.getElementById("sec2");
+const cont = document.getElementById("cont");
 
 // 로그인 유효성 검사
 
@@ -12,6 +13,7 @@ const sec2 = document.getElementById("sec2");
 		sec1.style.border = "2px solid lightcoral";
 	}
 		
+
 })()
 
 
@@ -20,13 +22,13 @@ const sec2 = document.getElementById("sec2");
 function loginValidate(){
 	
 	if(inputId.value.trim().length == 0){
-		
-		Swal.fire(
-			'아이디 오류',
-			'아이디를 입력해주세요.',
-			'error'
-		  )
 
+		Swal.fire(
+			'아이디 확인',
+			'아이디를 입력해주세요.',
+			'error',
+		  ) 
+		
 		inputId.value="";
 		inputId.focus();
 
@@ -37,7 +39,7 @@ function loginValidate(){
 	if(inputPw.value.trim() == ""){
 
 		Swal.fire(
-			'비밀번호 오류',
+			'비밀번호 확인',
 			'비밀번호를 입력해주세요.',
 			'error'
 		  )
@@ -56,32 +58,37 @@ function loginValidate(){
 // 아이디 저장 
 document.getElementById("idSave").addEventListener("change",function(){
 
+		if(this.checked != false ){
 
-	Swal.fire(
-		festivalTitle ,
-		'축제를 찜하셨습니다.',
-		'success'
-	  )
-
-	/* if(this.checked){
-
-	
-	} */
-
+		if(inputId.value.trim().length == 0){
+			
+			Swal.fire(
+				'아이디 입력 후 체크해주세요.'
+			  ) 
 		
-		/* const str = "개인정보를 위해 개인 PC에서만의 사용을 권장합니다. 저장하시겠습니까?";
+		}else{
 
-		if(!confirm(str)){
-			this.checked = false;
-		} */
-
-	
+			Swal.fire({
+			title: '개인정보를 위해 개인 PC에서만의 사용을 권장합니다.',
+			text: "저장하시겠습니까?",
+			icon: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: '저장',
+			cancelButtonText: '취소'
+			}).then((result) => {
+			if (result.value) {
+					this.checked = true;
+				//"저장" 버튼을 눌렀을 때 작업할 내용을 이곳에 넣어주면 된다. 
+			}else{
+				this.checked = false;
+			}
+			})
+		}
+	}	
 
 })
-
-// 아이디가 쿠키에 남아서 저장되어있다면
-
-
 
 // 효과주기
 inputId.addEventListener("focus",function(){

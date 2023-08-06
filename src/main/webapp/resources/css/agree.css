@@ -3,7 +3,6 @@ font-family: 'Hi Melody', cursive; font-size: 16px;
 font-weight: bold;}
 
 html{
-    height:950px;
     display:flex;
     justify-content: center;
     align-content:center;
@@ -15,7 +14,7 @@ body{
     justify-content: center;
     align-items: center;
     width:50%;
-    height:100%;
+    height:950px;
 	flex-direction:column;
 }
 

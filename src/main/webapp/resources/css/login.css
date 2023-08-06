@@ -1,25 +1,13 @@
 *{box-sizing:border-box; font-weight: bold; }
 
-html{
-    height:900px;
-}
+
 
 body{
     display:flex;
-    width:100%;
-    height:100%;
+    height:950px;
     justify-content: center;
     align-items:center;
     flex-direction: column;
-}
-
-#imgSection{
-    width:100%;
-    height:10%;
-    display:flex;
-    justify-content: center;
-    align-items:center;
-    margin-top:50px;
 }
 
 main{
@@ -34,6 +22,16 @@ main{
     align-items: center;
 
 }
+
+#imgSection{
+    width:100%;
+    height:10%;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    margin-top:50px;
+}
+
 
 #img1{
     width:200px;
@@ -58,10 +56,11 @@ main{
 
 form{
     display:flex;
-    flex-basis:80%;
+    height:80%;
     flex-direction: column;
     align-items: center;
     justify-content:center;
+    margin-top:50px;
 }
 
 section.content{
@@ -104,9 +103,8 @@ section.content1>input{
 
 #sel2{
     border:0;
+    margin-bottom: 10px;
 }
-
-
 
 section.content1:hover{
     border:2px solid lightcoral;
@@ -115,15 +113,9 @@ section.content1:hover{
 ::placeholder{
     font-family: 'Hi Melody', cursive;
     font-weight: bold;
-} 
-
-div{
-    font-family: 'Hi Melody', cursive;
-    font-weight:bold;
-    font-size:15px;
-    justify-content: center;
-    align-items: center;
 }
+
+
 
 #btn1{
     display:flex;
@@ -158,12 +150,20 @@ div{
 .find{
     width:150px;
     margin-top:0px;
+
+}
+
+.find a{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    margin-top:5px;
 }
 
 .find1{
     display:flex;
     margin-top:0px;
-    align-items:center;
+
 }
 .find a{
     font-size:16px;

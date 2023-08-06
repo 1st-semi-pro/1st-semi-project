@@ -35,8 +35,11 @@ function agreeCheck(){
 
         return true;
     }else{
-
-        alert("필수 약관에 동의해주세요.");
+        Swal.fire(
+            '필수약관',
+            '개인정보 처리방침, 서비스이용약관에 동의해주세요.',
+            'error'
+          )
         return false;
     }
 
