@@ -46,7 +46,7 @@
                                 <!-- accept="image/* : 이미지 파일 확장자만 섵택 허용" -->
                                 <!-- accept="video/* : 동영상 파일 확장자만 섵택 허용" -->
                                 <!-- accept=".pdf/* :  파일 확장자만 섵택 허용" -->
-                                <span id="delete-image">이미지 삭제</span>
+                                <span id="delete-image-btn">이미지 삭제</span>
                                 <!-- 프로필 이미지 삭제 버튼 -->
                             </div>
                         </div>
@@ -79,7 +79,9 @@
                     
                     <!-- 삭제버튼(x)이 눌러짐을 기록하는 숨겨진 input 태그 -->
                     <!-- 0 : 안눌러짐, 1: 눌러짐 -->
-                    <input type="hidden" name="delete" id="delete" value="0">
+                    <input type="hidden" name="deleteImage" id="delete-image" value="0">
+                    <input type="hidden" name="changeImage" id="change-image" value="0">
+                    <input type="hidden" name="changeMessage" id="change-message" value="0">
                 </form>
 
                 

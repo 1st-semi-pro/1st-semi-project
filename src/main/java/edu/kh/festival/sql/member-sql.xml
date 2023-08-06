@@ -41,9 +41,15 @@
 		VALUES(SEQ_MEMBER_NO.NEXTVAL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, DEFAULT, DEFAULT, DEFAULT, NULL, NULL)
 	</entry>
 
-	<!-- 회원 프로필 변경 -->
+	<!-- 회원 프로필 이미지 변경 -->
    	<entry key="updateProfileImage">
    		UPDATE MEMBER SET  MEMBER_PROFILE = ?
+   		WHERE MEMBER_NO = ?
+   	</entry>
+   	
+   	<!-- 회원 프로필 메세지 변경 -->
+   	<entry key="updateProfileMessage">
+   		UPDATE MEMBER SET  MEMBER_MESSAGE = ?
    		WHERE MEMBER_NO = ?
    	</entry>
    	

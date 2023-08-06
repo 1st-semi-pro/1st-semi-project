@@ -299,6 +299,30 @@ public class MemberDAO {
 		}
 		return result;
 	}
+	
+	/**
+	 * 프로필 메세지 변경 DAO
+	 * @param conn
+	 * @param memberNo
+	 * @param profileMessage
+	 * @return result
+	 * @throws Exception
+	 */
+	public int updateProfileMessage(Connection conn, int memberNo, String profileMessage) throws Exception{
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("updateProfileMessage");
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, profileMessage);
+			pstmt.setInt(2,memberNo);
+			
+			result = pstmt.executeUpdate();
+		}finally {
+			close(pstmt);
+		}
+		return result;
+	}
 
 	/**
 	 * 이름,아이디 일치하는 회원 조회 DAO
