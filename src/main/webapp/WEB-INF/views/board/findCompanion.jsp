@@ -35,50 +35,32 @@
 
                 <section class="main-title"> 동행자구하기</section>
                 <section id="content-box">
-                    <section id="main-content">
-                        <c:forEach var="companionList" items="${companionList}">
-                            <article id="main-content-box">
-                                <div id="ft-content">
-                                    <div class="ft-img">
-                                        <img src="../resources/images/festival_infomation/79.png" alt="">
-                                    </div>
-                                    <div class="ft-text">
-                                        <h1>${companionList.boardTitle}</h1><span>서울특별시</span><span class="margin">|</span><span>2023.03.07 ~ 2023.04.08</span>
-                                    </div>
-                                    <div class="my-img">
-                                        <img src="../resources/images/festival_infomation/181.gif">
-                                        <div class="my-text"><span>안녕하세요 저는 ESFJ이고 혈액형은 B형 거주지역은 서울입니다. <br>좋은추억만들어봐요 ^~^</span>
-                                        <button type="button">채팅하기</button><button type="button">게시글수정</button></div>
-                                    </div>
-                                </div>
-                            </article>
-                          </c:forEach>
-                          <section id="page-area">
+                    <section id="pagebox">
+                        <jsp:include page="/WEB-INF/views/board/CompanionList.jsp"/>
 
-                            <c:set var="url" value="festivalInfo?type=${param.type}&pop=${param.pop}&cp="/>
-                            <ul class="pagination">
-                                <li><a href="${url}1${sURL}">&lt;&lt;</a></li>
-                                <li><a href="${url}${pagination.prevPage}${sURL}">&lt;</a></li>
-                                
-                                <!-- 범위가 정해진 일반 for문 사용 -->
-                                <c:forEach var="i" begin="${pagination.startPage}" end="${pagination.endPage}" step="1">
-                                    <c:choose>
-                                        <c:when test="${i == pagination.currentPage}">
-                                            <li><a class="current">${i}</a></li>
-                                        </c:when>
-                                        <c:otherwise>
-                                            <li><a href="${url}${i}${sURL}">${i}</a></li>
-                                        </c:otherwise>
-                                    </c:choose>
-                                </c:forEach>
-                    
-                                <li><a href="${url}${pagination.nextPage}${sURL}">&gt;</a></li>
-                                <li><a href="${url}${pagination.maxPage}${sURL}">&gt;&gt;</a></li>
-                                
-                            </ul>
+                        <section id="page-area">
+                            <c:set var="url" value="companion?type=${param.type}&cp="/>
+                                <ul class="pagination">
+                                    <li><a href="${url}1${sURL}">&lt;&lt;</a></li>
+                                    <li><a href="${url}${pagination.prevPage}${sURL}">&lt;</a></li>
+                                    
+                                    <!-- 범위가 정해진 일반 for문 사용 -->
+                                    <c:forEach var="i" begin="${pagination.startPage}" end="${pagination.endPage}" step="1">
+                                        <c:choose>
+                                            <c:when test="${i == pagination.currentPage}">
+                                                <li><a class="current">${i}</a></li>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <li><a href="${url}${i}${sURL}">${i}</a></li>
+                                            </c:otherwise>
+                                        </c:choose>
+                                    </c:forEach>
+                                    <li><a href="${url}${pagination.nextPage}${sURL}">&gt;</a></li>
+                                    <li><a href="${url}${pagination.maxPage}${sURL}">&gt;&gt;</a></li>
+                                </ul>
+                            </section>
                         </section>
                     </section>
-                </section>
             </c:otherwise>
         </c:choose>
 
@@ -86,8 +68,19 @@
                 
         <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     </main>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 
+    <script>
+        const contextPath = "${contextPath}";
+
+        const companionList = "${companionList}"; 
+
+        const loginMemberNo = "${loginMember.memberNo}";
+
+    </script>
     
+    
+    <script src="${contextPath}/resources/js/findCompanion.js"></script>
     
 
 </body>
