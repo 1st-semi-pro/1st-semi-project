@@ -94,12 +94,19 @@
         <!-- 썸네일 -->
         <div id="thumbNailDiv">
             <img src="${img0}">
-            <div>
+
+            <div id="toMain">
+                <a href="${contextPath}" id="Nav1" class="navs">
                 <img src="${contextPath}/resources/images/festival_infomation/home.png">
-                <a href="${contextPath}" id="Nav1" class="navs">메인페이지로</a>
+                메인페이지로</a>
             </div>
-            <a href="${contextPath}/board/festivalInfo?type=1&pop=0" id="Nav2" class="navs">축제 검색 페이지로</a>
-            
+
+            <div id="toSearch">
+                <a href="${contextPath}/board/festivalInfo?type=1&pop=0" id="Nav2" class="navs">
+                <img src="${contextPath}/resources/images/festival_infomation/search.png">
+                축제 검색 페이지로</a>
+            </div>
+
             <!-- ${header.referer} -->
 
         </div>
@@ -290,7 +297,12 @@
         
     </div>
     
-    <a href="#" id="up">상단으로</a>
+    <div id="toTheTop">
+        <a href="#" id="up" class="navs">
+        <img src="${contextPath}/resources/images/festival_infomation/up.png">
+        상단으로</a>
+    </div>
+
 
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     

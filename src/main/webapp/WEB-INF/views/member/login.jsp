@@ -53,7 +53,7 @@
 
 
 				<section class="content1" id="sec2">
-					<img src="${contextPath}/resources/images/password.jpg" id="img3">
+					<img src="${contextPath}/resources/images/password.png" id="img3">
 					<input type="password" size="40" maxlength="10" placeholder="비밀번호"
 						id="inputPw" name="inputPw">
 				</section>
