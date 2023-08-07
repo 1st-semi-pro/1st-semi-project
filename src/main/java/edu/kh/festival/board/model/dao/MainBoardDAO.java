@@ -322,6 +322,41 @@ public class MainBoardDAO {
 		List<Board> companionList = new ArrayList<Board>();
 		
 		try {
+			String sql = "SELECT * FROM(\r\n"
+					+ "		   SELECT ROWNUM RNUM, A.* FROM(\r\n"
+					+ "		   		SELECT BOARD_NO, BOARD_TITLE,BOARD_CONTENT, MEMBER_NO, MEMBER_NICKNAME, MEMBER_PROFILE, FESTIVAL_TITLE,FESTIVAL_AREA,FESTIVAL_DT,FESTIVAL_NO,\r\n"
+					+ "		 		TO_CHAR(CREATE_DT, 'YYYY-MM-DD')AS CREATE_DT \r\n"
+					+ "		 FROM BOARD B\r\n"
+					+ "             JOIN INFO_BOARD USING (FESTIVAL_NO)\r\n"
+					+ "             JOIN MEMBER USING(MEMBER_NO)\r\n"
+					+ "			 WHERE B.BOARD_CD = 5\r\n"
+					+ "		 	AND BOARD_ST = 'N'\r\n"
+					+ "			ORDER BY FESTIVAL_NO DESC"
+					+ "		 	\r\n"
+					+ "		 	) A\r\n"
+					+ "		 )\r\n"
+					+ "		 	WHERE RNUM BETWEEN 1 AND 10";
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+			
+			while(rs.next()) {
+				Board board = new Board();
+				
+				board.setBoardNo(rs.getInt("BOARD_NO"));
+				board.setBoardTitle(rs.getString("BOARD_TITLE"));
+				board.setCreateDate(rs.getString("CREATE_DT"));
+				board.setMemberNo(rs.getInt("MEMBER_NO"));
+				board.setFestivalTitle(rs.getString("FESTIVAL_TITLE"));
+				board.setFestivalArea(rs.getString("FESTIVAL_AREA"));
+				board.setFestivalDate(rs.getNString("FESTIVAL_DT"));
+				board.setFestivalNo(rs.getInt("FESTIVAL_NO"));
+				board.setMemberNickname(rs.getString("MEMBER_NICKNAME"));
+				board.setMemberProfile(rs.getString("MEMBER_PROFILE"));
+				
+
+				companionList.add(board);
+			}
+			
 			
 		}finally {
 			close(rs);

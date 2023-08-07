@@ -94,9 +94,13 @@ public class MainController extends HttpServlet {
 			
 			if(command.equals("companionList")) {
 				
+				List<Board> companionList = new ArrayList<>();
+				
 				MainBoardService mainboardService = new MainBoardService();
 				
-				Map<String,Object> map = mainboardService.companionList();
+				companionList = mainboardService.companionList();
+				
+				new Gson().toJson(companionList , resp.getWriter());
 				
 			}
 			
