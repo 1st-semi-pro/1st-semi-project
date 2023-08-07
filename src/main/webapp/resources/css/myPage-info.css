@@ -5,7 +5,7 @@
 /* 마이페이지 영역 */
 .myPage-content{
     width: 1000px;   
-    height: 800px;
+    height: 880px;
     margin: 50px auto;
 
     display: flex;
@@ -17,11 +17,12 @@
     border-right: 2px solid #ddd;
 
 
+
 }
 
 .list-group{
     width: 100%;
-    padding: 0 20px 0 0;
+    padding: 20px 20px 0 0;
          /*  상 우 하 좌 */
 }
 
@@ -29,7 +30,7 @@
     list-style: none;
     height: 50px;
     font-size: 18px;
-    background-color: lightcoral;
+    background-color: white;
 
 }
 
@@ -47,7 +48,7 @@
 }
 
 .list-group > li:hover{
-    background-color: white;
+    background-color: lightcoral;
 }
 
 .dis{

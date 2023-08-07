@@ -15,15 +15,15 @@ import edu.kh.festival.common.EmailSender;
 import edu.kh.festival.member.model.service.MemberService;
 import edu.kh.festival.member.model.vo.Member;
 
-@WebServlet("/member/myPage/emailAuthentication/*")
+@WebServlet("/member/myPage/emailcheck")
 public class SendInfoEmailServlet extends HttpServlet {
 	
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String uri = req.getRequestURI(); // /semiworkspace/member/join
-		String contextPath = req.getContextPath(); // /semiworkspace
-		String command = uri.substring(  (contextPath + "/member/myPage/////").length()  );// /member/ 뒤
+		String uri = req.getRequestURI(); 
+		String contextPath = req.getContextPath(); 
+		String command = uri.substring(  (contextPath + "/member/myPage/").length()  );
 		
 		MemberService service = new MemberService();
 		
@@ -31,7 +31,7 @@ public class SendInfoEmailServlet extends HttpServlet {
 			
 			
 			// 이메일 인증하기	
-			if(command.equals("emailAuthentication")) {
+			if(command.equals("emailcheck")) {
 				
 				String Email = req.getParameter("Email");
 				
