@@ -62,6 +62,7 @@
                                 </ul>
                             </section>
                         </section>
+                                    <a class="w-a" href="${contextPath}/board/findCompanionWrite?mode=insert&type=5&cp="><button id="w-button" type="button">글쓰기</button></a>
                     </section>
             </c:otherwise>
         </c:choose>

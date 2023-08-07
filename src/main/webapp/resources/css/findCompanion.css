@@ -9,6 +9,7 @@ li{list-style: none;}
     height: auto;
     border: 5px solid #dedede;
     box-shadow: 10px 10px 10px 5px gray;
+    position: relative;
 }
 /* ------------------------------------------------------------------------ */
 .main-title{
@@ -183,4 +184,17 @@ li{list-style: none;}
   color: white;
   font-weight: bold;
   border-radius: 50%;
+}
+#w-button{
+  width: 100px;
+  height: 40px;
+  line-height: 30px;
+  position: absolute;
+  bottom: 30px;
+  right: 85px;
+  background-color: orange;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+
 }

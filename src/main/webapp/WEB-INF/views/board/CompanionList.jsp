@@ -23,7 +23,7 @@
 
                 <c:if test="${sessionScope.loginMember.memberNo == companionList.memberNo}">
                     <div id="update-box">
-                        <button type="insertbutton" class="update">게시글수정</button>
+                        <a href=""><button type="insertbutton" class="update">게시글수정</button></a>
                         <button id="deleteBtn" class="update" onclick="deleteReply(${companionList.boardNo},'${companionList.festivalTitle}')" >게시글삭제</button>
                         
                         
