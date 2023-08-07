@@ -115,6 +115,12 @@ form{
     align-items: center;
 }
 
+#memberNickname{
+    margin-left:10px;
+}
+
+
+
 /* 남/여 , 내/외국인 */
 
 #genderNationality{
@@ -258,9 +264,7 @@ img{
     width:50px;
 }
 
-#img3{
-    height:40px;
-}
+
 
 
 
@@ -354,16 +358,17 @@ label:hover{
 /* 푸터인데 이것도 jsp 따로 만들어서 인클루드 해야할듯 */
 
 footer{
-    margin-top:20px;
     display:flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
+    height:50px;  
+    margin-top:10px;  
 }
 
 .find1{
     display:flex;
-    margin-top:20px;
+    margin-top:5px;
     align-items:center;
 }
 

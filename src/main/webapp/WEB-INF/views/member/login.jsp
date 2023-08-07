@@ -47,7 +47,7 @@
 
 				<section class="content1" id="sec1">
 					<img src="${contextPath}/resources/images/id.png" id="img2">
-					<input type="text" size="40" maxlength="10" placeholder="아이디"
+					<input type="text" size="40" maxlength="20" placeholder="아이디"
 						id="inputId" name="inputId" value="${ cookie.idSave.value }">
 				</section>
 

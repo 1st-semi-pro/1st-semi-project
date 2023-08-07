@@ -45,12 +45,12 @@
                 </article>
 
                 <article class = "Articles">
-                    <img src="${contextPath}/resources/images/password.jpg" id="img2">
+                    <img src="${contextPath}/resources/images/pw1.png" id="img2">
                     <input type="password" class="inputs" id="inputPw" name="inputPw" placeholder="비밀번호를 입력해주세요.">
                 </article>
 
                 <article class = "Articles">
-                    <img src="${contextPath}/resources/images/password2.png" id="img3">
+                    <img src="${contextPath}/resources/images/pw2.png" id="img3">
                     <input type="password" class="inputs" id="inputPwCheck" name="inputPwCheck" placeholder="비밀번호 확인을 입력해주세요.">
                 </article>
 
@@ -63,25 +63,25 @@
             <div id="secondBox">
 
                 <article id="giveMargin" class = "Articles">
-                    <img src="${contextPath}/resources/images/id.png" id="img5">
+                    <img src="${contextPath}/resources/images/nickname.png" id="img5">
                     <input type="text" class="inputs" id="memberNickname" name="memberNickname" placeholder="닉네임을 입력해주세요." autocomplete="off">
                 
                 </article>
 
                 <article class = "Articles">
-                    <img src="${contextPath}/resources/images/id.png" id="img6">
+                    <img src="${contextPath}/resources/images/name.png" id="img6">
                     <input type="text" class="inputs" id="memberName" name="memberName" placeholder="이름을 입력해주세요." autocomplete="off">
 
                 </article >
 
                 <article class = "Articles">
-                    <img src="${contextPath}/resources/images/id.png" id="img7">
+                    <img src="${contextPath}/resources/images/birth.png" id="img7">
                     <input type="text" class="inputs" id="memberBirth" name="memberBirth" placeholder="생년월일을 8자리로 입력해주세요.(- 제외)" autocomplete="off">
                 
                 </article>
 
                 <article class = "Articles">
-                    <img src="${contextPath}/resources/images/id.png" id="img8">
+                    <img src="${contextPath}/resources/images/region.png" id="img8">
                  
                     <div id="selectDiv">
                         <select id="regionSelect" name="regionSelect">
@@ -100,13 +100,13 @@
                 </article>
 
                 <article class = "Articles"> 
-                    <img src="${contextPath}/resources/images/id.png" id="img10">
+                    <img src="${contextPath}/resources/images/phone.png" id="img9">
                     <input type="text" class="inputs" id="memberPhone" name="memberPhone" placeholder="전화번호를 입력해주세요.(- 제외)" autocomplete="off">
 
                 </article>
 
                 <article class = "Articles">
-                    <img src="${contextPath}/resources/images/id.png" id="img11"> 
+                    <img src="${contextPath}/resources/images/gender.png" id="img10"> 
                     <div id="genderNationality">
 
                         <div id="gender">
@@ -146,7 +146,7 @@
                 </article>
                 
                 <article class = "Articles">
-                    <img src="${contextPath}/resources/images/id.png" id="img4">
+                    <img src="${contextPath}/resources/images/email.png" id="img11">
                     <input type="email" class="inputs" id="inputEmail" name="inputEmail" placeholder="이메일을 입력해주세요." autocomplete="off">
                     <button id="emailBtn" type="button">인증하기</button>
                 </article>
