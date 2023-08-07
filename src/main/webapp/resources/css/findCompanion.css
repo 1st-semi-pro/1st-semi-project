@@ -35,11 +35,11 @@ li{list-style: none;}
   grid-template-rows: repeat(2,700px);
   gap: 20px;
 }
-#main-content-box{
+.main-content-box{
   width: 100%;
   height: 100%;
 }
-#ft-content{
+.ft-content{
   width: 100%;
   height: 100%;
 }
@@ -136,7 +136,7 @@ li{list-style: none;}
 .my-text >button:hover{
   background-color: orange;
 }
-#update-box{
+.update-box{
   margin-top: 5px;
   margin-left: 10%;
   width: 80%;
@@ -154,7 +154,11 @@ li{list-style: none;}
   cursor: pointer;
 }
 
+
 /* 페이지 버튼 */
+#page-area{
+  margin-top: 25px;
+}
 .pagination{
   display: flex;
   justify-content: center;
@@ -189,15 +193,15 @@ li{list-style: none;}
   font-weight: bold;
   border-radius: 50%;
 }
-#i-bt{
+.i-bt{
   width: 30%;
   height: 40px;
 }
-#i-bt > button{
+.i-bt > button{
   width: 100%;
 }
 #w-button{
-  width: 100px;
+  width: 200px;
   height: 40px;
   line-height: 30px;
   position: absolute;

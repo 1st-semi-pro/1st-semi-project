@@ -6,8 +6,8 @@
        
 <section id="main-content">
     <c:forEach var="companionList" items="${companionList}">
-        <article id="main-content-box" class="main-content-box">
-            <div id="ft-content" class="ft-content">
+        <article class="main-content-box">
+            <div class="ft-content">
                 <div class="ft-img">
                     <img src="${contextPath}/resources/images/festival_infomation/${companionList.festivalNo}.png" alt="">
                 </div>
@@ -22,9 +22,9 @@
                 </div>
 
                 <c:if test="${sessionScope.loginMember.memberNo == companionList.memberNo}">
-                    <div id="update-box">
-                        <a id="i-bt" href="${contextPath}/board/findCompanionWrite?mode=update&type=5&cp=${pagination.currentPage}&no=${companionList.boardNo}"><button type="insertbutton" class="update">게시글수정</button></a>
-                        <button id="deleteBtn" class="update" onclick="deleteReply(${companionList.boardNo},'${companionList.festivalTitle}')" >게시글삭제</button>
+                    <div class="update-box">
+                        <a class="i-bt" href="${contextPath}/board/findCompanionWrite?mode=update&type=5&cp=${pagination.currentPage}&no=${companionList.boardNo}"><button type="insertbutton" class="update">게시글수정</button></a>
+                        <button id="deleteBtn" class="update" onclick="deleteCompanion(${companionList.boardNo},'${companionList.festivalTitle}')" >게시글삭제</button>
                         
                         
                     </div>

@@ -11,8 +11,8 @@ function com(){
             // rList : 반환 받은 댓글 목록
             
             // 화면에 출력되어 있는 댓글 목록 삭제
-            const companionList = document.getElementById("main-content"); // 첫세션
-            companionList.innerHTML = "";
+            const maincontent = document.getElementById("main-content"); // 첫세션
+            maincontent.innerHTML = "";
 
             // rList에 저장된 요소를 하나씩 접근
             for(let companionList of cList){
@@ -31,28 +31,31 @@ function com(){
                 ftimg.classList.add("ft-img")
 
                 const fimg = document.createElement("img");
-                fimg.setAttribute("src",contextPath + "/resources/images/festival_infomation/79.png" );
+                fimg.setAttribute("src",contextPath + "/resources/images/festival_infomation/"+companionList.festivalNo +".png");
 
             //////////////////////////////////////////////////////////////
 
                 ftimg.append(fimg);
-
+                console.log("테스트 == "+ ftimg)
             //////////////////////////////////////////////////////////////
 
                 const fttext = document.createElement("div");
                 fttext.classList.add("ft-text");
 
                 const h1 = document.createElement("h1");
-                h1.innerText = companionList.boardTitle;
+                h1.innerText = companionList.festivalTitle;
 
                 const span1 = document.createElement("span");
                 span1.classList.add("s1");
+                span1.innerText = companionList.festivalArea;
 
                 const span2 = document.createElement("span");
                 span2.classList.add("margin");
+                span2.innerText = "l";
 
                 const span3 = document.createElement("span");
                 span3.classList.add("s3");
+                span3.innerText = companionList.festivalDate;
 
             //////////////////////////////////////////////////////////////
 
@@ -70,18 +73,21 @@ function com(){
                 mytext.classList.add("my-text");
 
                 const myspan = document.createElement("span")
-                myspan.innerHTML = "안녕하세요<br>광민입니다";
-
-            //////////////////////////////////////////////////////////////
-
-                mytext.append(myspan);
-            
-            //////////////////////////////////////////////////////////////
+                myspan.innerHTML = "안녕하세요.<br>저는 문광민입니다 <br> 나이는 29살이고 요즘에 너무피곤합니다 ㅎㅎ";
 
                 const mbutton = document.createElement("button")
                 mbutton.setAttribute("type","button");
 
-                myimg.append(mimg,mytext,mbutton);
+
+            //////////////////////////////////////////////////////////////
+
+                mytext.append(myspan,mbutton);
+            
+            //////////////////////////////////////////////////////////////
+
+               
+                mbutton.innerText="채팅하기"
+                myimg.append(mimg,mytext);
 
             //////////////////////////////////////////////////////////////
 
@@ -102,13 +108,20 @@ function com(){
                     deletebtn.classList.add("update");
                     deletebtn.innerText="게시글삭제"
 
-                    deletebtn.setAttribute("onclick", "deleteCompanion("+companionList.boardNo+")");
+                    deletebtn.setAttribute("onclick", "deleteCompanion("+companionList.boardNo+",'"+companionList.festivalTitle+"')");
 
                     updatebox.append(insertbutton,deletebtn);
 
-                    maincontentbox.append(ftcontent,updatebox)
+                    ftcontent.append(updatebox);
+
+                    maincontentbox.append(ftcontent)
+
+                    maincontent.append(maincontentbox);
+                    
                 }else{
                     maincontentbox.append(ftcontent);
+
+                    maincontent.append(maincontentbox);
                 }
                 
                
@@ -123,7 +136,7 @@ function com(){
 }
 
 
-function deleteReply(boardNo,festivalTitle){
+function deleteCompanion(boardNo,festivalTitle){
     Swal.fire({
 			title: festivalTitle,
 			text: "삭제하시겠습니까?",
