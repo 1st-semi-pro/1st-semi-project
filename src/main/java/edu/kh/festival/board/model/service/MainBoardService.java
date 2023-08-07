@@ -131,19 +131,16 @@ public class MainBoardService {
 	}
 
 
-	public Map<String, Object> companionList() throws Exception  {
+	public List<Board> companionList() throws Exception  {
 
 		Connection conn = getConnection();
 		
 		List<Board> companionList = dao.companionList(conn);
 		
-		Map<String, Object> map = new HashMap<String, Object>();
-		
-		map.put("companionList", companionList);
 
 		close(conn);
 
-		return map;
+		return companionList;
 	}
 
 	

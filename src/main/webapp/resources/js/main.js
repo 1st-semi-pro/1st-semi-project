@@ -372,29 +372,33 @@ function selectCompanionList(){
 
     success : function(companionList){
 
-      bList3.innerText = "";
+      const bList4 = document.getElementById("bList4");
 
-      for(let item of boardList3){
+      console.log(companionList);
+
+      bList4.innerText = "";
+
+      for(let item of companionList){
         const tr = document.createElement("tr");
 
         const td = document.createElement("td");
         
         const a1 = document.createElement("a");
         a1.innerText = item.boardTitle;
-        a1.setAttribute("href", "board/detail?no=" + item.boardNo + "&type=3");
+        a1.setAttribute("href", "board/detail?no=" + item.boardNo + "&type=5");
 
         tr.append(td);
 
-        bList3.append(tr);
+        bList4.append(tr);
 
-        td.append(a1);
+        td.append(a1); 
       }
 
 
     },
 
     error : function(){
-      console.log("에러 발생");
+      console.log("컴패니언에러 발생");
     }
 
   });

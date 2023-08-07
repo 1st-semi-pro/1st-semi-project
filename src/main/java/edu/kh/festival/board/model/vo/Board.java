@@ -23,5 +23,6 @@ public class Board {
 	private String festivalDate;
 	private String festivalArea;
 	private int festivalNo;
+	private String memberProfile;
 
 }
