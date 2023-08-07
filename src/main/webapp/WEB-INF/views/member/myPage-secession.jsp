@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="${contextPath}/resources/css/header.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/myPage-info.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&family=Moirai+One&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/51fc103959.js" crossorigin="anonymous"></script>
 </head>
 <body>
