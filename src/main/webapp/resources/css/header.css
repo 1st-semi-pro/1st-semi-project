@@ -24,6 +24,7 @@ input:autofill:active {
 
 header{
     width: 100%;
+    height: 140px;
     position: sticky;
     top: 0;
     background-color: white;
@@ -31,7 +32,8 @@ header{
 }
 header > .header{
     width: 100%;
-    margin: 10px auto;
+    height: 100%;
+    margin: 0 auto;
     display: flex;
 }
 header > .header > section:nth-of-type(1){
@@ -54,7 +56,8 @@ header > .header > section:nth-of-type(1), header > .header > section:nth-of-typ
     align-items: center;
 }
 #home-logo{
-    width: 100%;
+    width: 80%;
+    height: 80%;
     object-fit: cover;
 }
 .search-area{
@@ -97,7 +100,7 @@ nav > ul li{
     height: 45px;
     line-height: 45px;
     font-weight: bold;
-    background-color: rgb(80, 78, 78);
+    background-color: lightcoral;
     color: white;
     text-align: center;
 }
@@ -180,6 +183,30 @@ nav > ul li:hover{
     color: orange;
     
 }
+.h-login-area{
+    width: 100%;
+    height: 100%;
+    margin-top: 25px;
+}
+.profile-box{
+    margin-left: 25%;
+    width: 40%;
+    height: 60%;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    background-color: blue;
+}
+.profile-box a{
+    width: 100%;
+    height: 100%;
+}
+.profile-box a > img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
 .h-my-info{
     display: flex;
     justify-content: center;
@@ -188,17 +215,6 @@ nav > ul li:hover{
 }
 .h-my-info > span{
     margin: 0 10px;
-}
-.profile-box{
-    width: 110px;
-    height: 110px;
-    margin-bottom: 10px;
-}
-#profile-images{
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
 }
 
 #key{

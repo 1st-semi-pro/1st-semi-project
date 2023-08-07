@@ -718,7 +718,51 @@ public class BoardDAO {
 		return result;
 	}
 
+	/** ajax <광민>
+	 * @param conn
+	 * @param type
+	 * @param cp
+	 * @return
+	 * @throws Exception
+	 */
+	public List<Board> companionList1(Connection conn, int type, int cp) throws Exception{
+		
+		List<Board> companionList = new ArrayList<Board>();
 
+		try {
+			String sql = prop.getProperty("GcompaionList");
+
+			pstmt = conn.prepareStatement(sql);
+
+			pstmt.setInt(1, type);
+				
+			rs = pstmt.executeQuery();
+			
+			while (rs.next()) {
+				Board board = new Board();
+
+				board.setBoardNo(rs.getInt("BOARD_NO"));
+				board.setBoardTitle(rs.getString("BOARD_TITLE"));
+				board.setCreateDate(rs.getString("CREATE_DT"));
+				board.setMemberNo(rs.getInt("MEMBER_NO"));
+				board.setFestivalTitle(rs.getString("FESTIVAL_TITLE"));
+				board.setFestivalArea(rs.getString("FESTIVAL_AREA"));
+				board.setFestivalDate(rs.getNString("FESTIVAL_DT"));
+				board.setFestivalNo(rs.getInt("FESTIVAL_NO"));
+
+				companionList.add(board);
+
+			}
+		
+		} finally {
+
+			close(rs);
+			close(pstmt);
+		}
+
+		return companionList;
+
+	}
 }
 	
 	

@@ -321,5 +321,27 @@ public class BoardService {
 		return result;
 	}
 
+	/** ajax <광민>
+	 * @param type
+	 * @param cp
+	 * @return
+	 * @throws Exception
+	 */
+	public Map<String, Object> companionList1(int type, int cp) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		List<Board> companionList = dao.companionList1(conn, type, cp);
+		
+		Map<String, Object> companionList1 = new HashMap<String, Object>();
+		
+		companionList1.put("companionList", companionList);
+		
+		close(conn);
+		
+		return companionList1;
+		
+	}
+
 
 }

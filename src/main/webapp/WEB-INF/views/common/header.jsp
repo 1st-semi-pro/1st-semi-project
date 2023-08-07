@@ -53,10 +53,10 @@
                         <!-- 회원 프로필 이미지 -->
                     <div class="profile-box">
                     <c:if test="${empty loginMember.memberProfileImage}"> <!-- 프로필 이미지 없는 경우-->
-                        <img src="${contextPath}/resources/images/id.png" id="member-profile">
+                        <img src="${contextPath}/resources/images/id.png">
                     </c:if>
                     <c:if test="${!empty loginMember.memberProfileImage}">  <!-- 프로필 이미지 있는 경우-->
-                        <img src="${contextPath}${loginMember.memberProfileImage}" id="profile-images">
+                        <a href="${contextPath}/member/myPage?memberNo=${loginMember.memberNo}"><img src="${contextPath}${loginMember.memberProfileImage}"></a>
                     </c:if>
                     </div>
                         <!-- 회원 정보 + 로그아웃 버튼 -->
