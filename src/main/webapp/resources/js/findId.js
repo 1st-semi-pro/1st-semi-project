@@ -8,7 +8,7 @@ const inputKey = document.getElementById("inputKey");
 
 sendEmail.addEventListener("click", function(){
     if(inputEmail.value.trim().length == 0){
-        alert("이메일을 입력해주세요.");
+        Swal.fire("이메일을 입력해주세요.");
     }else{
         $.ajax({
             url : "findId/sendEmail",
@@ -19,18 +19,18 @@ sendEmail.addEventListener("click", function(){
             
             success : function(key1){
                 if(key1 == ""){
-                    alert("회원정보를 확인해주세요.");
+                    Swal.fire("회원정보를 확인해주세요.");
                 } else{
-                    alert("이메일 전송 완료!");
+                    Swal.fire("이메일 전송 완료!");
                     
                     checkKey.addEventListener("click", function(){
 
                         if(key1.substring(1,11)==inputKey.value){
-                            alert("아이디 찾기완료. 아이디는 " + key1.substring(12) + "입니다.");
+                            Swal.fire("아이디 찾기완료. 아이디는 " + key1.substring(12) + "입니다.");
                             inputKey.value = "";
 
                         } else{
-                            alert("인증번호가 일치하지 않습니다,");
+                            Swal.fire("인증번호가 일치하지 않습니다,");
                             inputKey.value = "";
                         }
                     })

@@ -235,15 +235,19 @@ public class MainBoardDAO {
 		
 		try {
 			
-			String sql = "SELECT * FROM (SELECT * FROM INFO_BOARD WHERE FESTIVAL_AREA = '서울특별시' ORDER BY READ_COUNT DESC) WHERE ROWNUM BETWEEN 1 AND 4";
+			String sql = "SELECT * FROM(\r\n"
+					+ "SELECT * FROM FESTIVAL_IMG JOIN INFO_BOARD ON (FESTIVAL_NO = IMG_NO)\r\n"
+					+ "WHERE FESTIVAL_AREA = '서울특별시' AND IMG_LEVEL = 0 ORDER BY READ_COUNT DESC)\r\n"
+					+ "WHERE ROWNUM BETWEEN 1 AND 4";
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
 			
 			while(rs.next()) {
 				Festival festival = new Festival();
 				
-				festival.setFestivalNo(rs.getInt(1));
-				festival.setFestivalTitle(rs.getString(2));
+				festival.setFestivalNo(rs.getInt("FESTIVAL_NO"));
+				festival.setFestivalTitle(rs.getString("FESTIVAL_TITLE"));
+				festival.setFestivalImage(rs.getString("IMG_RENAME"));
 				
 				festivalList1.add(festival);
 			}
@@ -253,6 +257,64 @@ public class MainBoardDAO {
 			close(stmt);
 		}
 		return festivalList1;
+	}
+
+	public List<Festival> selectFestival2(Connection conn) throws Exception {
+		List<Festival> festivalList2 = new ArrayList<Festival>();
+		
+		try {
+			
+			String sql = "SELECT * FROM(\r\n"
+					+ "SELECT * FROM FESTIVAL_IMG JOIN INFO_BOARD ON (FESTIVAL_NO = IMG_NO)\r\n"
+					+ "WHERE FESTIVAL_AREA = '경기도' AND IMG_LEVEL = 0 ORDER BY READ_COUNT DESC)\r\n"
+					+ "WHERE ROWNUM BETWEEN 1 AND 4";
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+			
+			while(rs.next()) {
+				Festival festival = new Festival();
+				
+				festival.setFestivalNo(rs.getInt("FESTIVAL_NO"));
+				festival.setFestivalTitle(rs.getString("FESTIVAL_TITLE"));
+				festival.setFestivalImage(rs.getString("IMG_RENAME"));
+				
+				festivalList2.add(festival);
+			}
+			
+		}finally {
+			close(rs);
+			close(stmt);
+		}
+		return festivalList2;
+	}
+
+	public List<Festival> selectFestival3(Connection conn) throws Exception {
+		List<Festival> festivalList3 = new ArrayList<Festival>();
+		
+		try {
+			
+			String sql = "SELECT * FROM(\r\n"
+					+ "SELECT * FROM FESTIVAL_IMG JOIN INFO_BOARD ON (FESTIVAL_NO = IMG_NO)\r\n"
+					+ "WHERE FESTIVAL_AREA = '인천' AND IMG_LEVEL = 0 ORDER BY READ_COUNT DESC)\r\n"
+					+ "WHERE ROWNUM BETWEEN 1 AND 4";
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+			
+			while(rs.next()) {
+				Festival festival = new Festival();
+				
+				festival.setFestivalNo(rs.getInt("FESTIVAL_NO"));
+				festival.setFestivalTitle(rs.getString("FESTIVAL_TITLE"));
+				festival.setFestivalImage(rs.getString("IMG_RENAME"));
+				
+				festivalList3.add(festival);
+			}
+			
+		}finally {
+			close(rs);
+			close(stmt);
+		}
+		return festivalList3;
 	}
 
 }

@@ -73,6 +73,24 @@ public class MainController extends HttpServlet {
 				new Gson().toJson( festivalList1, resp.getWriter());
 			}
 			
+			if(command.equals("festival2")) {
+				
+				List<Festival> festivalList2 = new ArrayList<Festival>();
+				
+				festivalList2 = service.selectFestival2();
+				
+				new Gson().toJson( festivalList2, resp.getWriter());
+			}
+			
+			if(command.equals("festival3")) {
+				
+				List<Festival> festivalList3 = new ArrayList<Festival>();
+				
+				festivalList3 = service.selectFestival3();
+				
+				new Gson().toJson( festivalList3, resp.getWriter());
+			}
+			
 			
 			
 			

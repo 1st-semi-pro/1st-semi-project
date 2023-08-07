@@ -177,6 +177,7 @@ public class ManageDAO {
 				member.setMemberPhone(rs.getString("MEMBER_PHONE"));
 				member.setEnrollDate(rs.getDate("ENROLL_DT"));
 				member.setSecessionFl(rs.getString("SECESSION_FL"));
+				member.setMemberReport(rs.getInt("MEMBER_REPORT"));
 				
 				mList.add(member);
 			}	

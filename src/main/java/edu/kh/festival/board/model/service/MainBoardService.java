@@ -110,5 +110,25 @@ public class MainBoardService {
 		return festivalList1;
 	}
 
+
+	public List<Festival> selectFestival2() throws Exception {
+		Connection conn =  getConnection();
+		
+		List<Festival> festivalList2 = dao.selectFestival2(conn);
+		
+		
+		return festivalList2;
+	}
+
+
+	public List<Festival> selectFestival3() throws Exception {
+		Connection conn =  getConnection();
+		
+		List<Festival> festivalList3 = dao.selectFestival3(conn);
+		
+		
+		return festivalList3;
+	}
+
 	
 }

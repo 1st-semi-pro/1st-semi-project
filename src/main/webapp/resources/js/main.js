@@ -157,6 +157,9 @@ const bList3 = document.getElementById("bList3");
 
 
 const seoul = document.getElementById("seoul");
+const gyeonggi = document.getElementById("gyeonggi");
+const incheon = document.getElementById("incheon");
+
 const div1 = document.getElementById("divide1");
 
 seoul.addEventListener("mouseover", function(){
@@ -177,17 +180,173 @@ seoul.addEventListener("mouseover", function(){
       const img2 = document.createElement("img")
       const img3 = document.createElement("img")
       const img4 = document.createElement("img")
+
+      const a1 = document.createElement("a");
+      const a2 = document.createElement("a");
+      const a3 = document.createElement("a");
+      const a4 = document.createElement("a");
+
+      const name1 = document.createElement("a");
+      
+      div.classList.add("flex");
+      div2.classList.add("flex");
+
+      a1.append(img1);
+      a1.append(name1);
+      a2.append(img2);
+      a3.append(img3);
+      a4.append(img4);
+
       div1.append(div);
       div1.append(div2);
-      div.append(img1);
-      div.append(img2);
-      div2.append(img3);
-      div2.append(img4);
+      div.append(a1);
+      div.append(a2);
+      div2.append(a3);
+      div2.append(a4);
 
-      img1.setAttribute("src", "resources/images/festival_infomation/122.png");
-      img2.setAttribute("src", "resources/images/festival_infomation/22.png");
-      img3.setAttribute("src", "resources/images/festival_infomation/22.png");
-      img4.setAttribute("src", "resources/images/festival_infomation/22.png");
+
+      img1.setAttribute("src", festivalList1[0].festivalImage.substring(1));
+      a1.setAttribute("href", "board/festivalDetail?festivalNo=" + festivalList1[0].festivalNo);
+      img2.setAttribute("src", festivalList1[1].festivalImage.substring(1));
+      a2.setAttribute("href", "board/festivalDetail?festivalNo=" + festivalList1[1].festivalNo);
+      img3.setAttribute("src", festivalList1[2].festivalImage.substring(1));
+      a3.setAttribute("href", "board/festivalDetail?festivalNo=" + festivalList1[2].festivalNo);
+      img4.setAttribute("src", festivalList1[3].festivalImage.substring(1));
+      a4.setAttribute("href", "board/festivalDetail?festivalNo=" + festivalList1[3].festivalNo);
+
+
+      
+
+      
+      
+    },
+    error : function(){
+      console.log("에러 발생");
+    }
+
+  })
+})
+
+
+gyeonggi.addEventListener("mouseover", function(){
+
+  $.ajax({
+    url : "board/mainList/festival2",
+    dataType : "json",
+    success : function(festivalList2){
+      console.log("성공");
+      console.log(festivalList2);
+      
+
+      
+      div1.innerText="";
+
+      const div = document.createElement("div");
+      const div2 = document.createElement("div");
+      const img1 = document.createElement("img")
+      const img2 = document.createElement("img")
+      const img3 = document.createElement("img")
+      const img4 = document.createElement("img")
+
+      const a1 = document.createElement("a");
+      const a2 = document.createElement("a");
+      const a3 = document.createElement("a");
+      const a4 = document.createElement("a");
+
+      const name1 = document.createElement("a");
+      
+      div.classList.add("flex");
+      div2.classList.add("flex");
+
+      a1.append(img1);
+      a1.append(name1);
+      a2.append(img2);
+      a3.append(img3);
+      a4.append(img4);
+
+      div1.append(div);
+      div1.append(div2);
+      div.append(a1);
+      div.append(a2);
+      div2.append(a3);
+      div2.append(a4);
+
+
+      img1.setAttribute("src", festivalList2[0].festivalImage.substring(1));
+      a1.setAttribute("href", "board/festivalDetail?festivalNo=" + festivalList2[0].festivalNo);
+      img2.setAttribute("src", festivalList2[1].festivalImage.substring(1));
+      a2.setAttribute("href", "board/festivalDetail?festivalNo=" + festivalList2[1].festivalNo);
+      img3.setAttribute("src", festivalList2[2].festivalImage.substring(1));
+      a3.setAttribute("href", "board/festivalDetail?festivalNo=" + festivalList2[2].festivalNo);
+      img4.setAttribute("src", festivalList2[3].festivalImage.substring(1));
+      a4.setAttribute("href", "board/festivalDetail?festivalNo=" + festivalList2[3].festivalNo);
+
+
+      
+
+      
+      
+    },
+    error : function(){
+      console.log("에러 발생");
+    }
+
+  })
+})
+
+
+incheon.addEventListener("mouseover", function(){
+
+  $.ajax({
+    url : "board/mainList/festival3",
+    dataType : "json",
+    success : function(festivalList3){
+      console.log(festivalList3[0].festivalImage.substring(1));
+      console.log(festivalList3);
+      
+
+      
+      div1.innerText="";
+
+      const div = document.createElement("div");
+      const div2 = document.createElement("div");
+      const img1 = document.createElement("img")
+      const img2 = document.createElement("img")
+      const img3 = document.createElement("img")
+      const img4 = document.createElement("img")
+
+      const a1 = document.createElement("a");
+      const a2 = document.createElement("a");
+      const a3 = document.createElement("a");
+      const a4 = document.createElement("a");
+
+      const name1 = document.createElement("a");
+      
+      div.classList.add("flex");
+      div2.classList.add("flex");
+
+      a1.append(img1);
+      a1.append(name1);
+      a2.append(img2);
+      a3.append(img3);
+      a4.append(img4);
+
+      div1.append(div);
+      div1.append(div2);
+      div.append(a1);
+      div.append(a2);
+      div2.append(a3);
+      div2.append(a4);
+
+
+      img1.setAttribute("src", festivalList3[0].festivalImage.substring(1));
+      a1.setAttribute("href", "board/festivalDetail?festivalNo=" + festivalList3[0].festivalNo);
+      img2.setAttribute("src", festivalList3[1].festivalImage.substring(1));
+      a2.setAttribute("href", "board/festivalDetail?festivalNo=" + festivalList3[1].festivalNo);
+      img3.setAttribute("src", festivalList3[2].festivalImage.substring(1));
+      a3.setAttribute("href", "board/festivalDetail?festivalNo=" + festivalList3[2].festivalNo);
+      img4.setAttribute("src", festivalList3[3].festivalImage.substring(1));
+      a4.setAttribute("href", "board/festivalDetail?festivalNo=" + festivalList3[3].festivalNo);
 
 
       

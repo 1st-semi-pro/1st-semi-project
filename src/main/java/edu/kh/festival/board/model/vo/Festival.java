@@ -21,6 +21,7 @@ public class Festival {
 	private String festivalArea;
 	private int readCount;
 	private int boardCode;
+	private String festivalImage;
 	
 	private List<Festival> festivalList;
 	private List<FestivalImage> festivalImageList;
