@@ -1,7 +1,5 @@
 *{box-sizing: border-box; margin: 0; padding: 0; font-family: 'Hi Melody', cursive;}
 
-
-
 .container1{
     width: 600px;
     height: 600px;
@@ -67,7 +65,10 @@
     width: 100%;
     padding-left: 20px;
     outline-style: none;
+    background-color: white;
+    background-origin: inherit;
 }
+
 
 .divide2 > div:first-child{
     display: flex;
@@ -125,7 +126,7 @@ footer{
     align-items: center;
 }
 
-.footer a{
+footer a{
     display:flex;
 }
 
@@ -133,4 +134,14 @@ footer *{
     color: rgb(117, 115, 115);
 }
 
-
+.right{
+    flex-basis: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    border: 0;
+    padding-right: 25px;
+    
+    font-size: 20px;
+    font-weight: bold;
+}

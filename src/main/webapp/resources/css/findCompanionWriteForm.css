@@ -1,0 +1,230 @@
+*{
+    box-sizing: border-box; 
+    font-family: 'Hi Melody', cursive;
+    font-size:16px;
+    font-weight: bold;
+    
+}
+
+/* main{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */
+
+form{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+} 
+
+#formInDivs{
+    display:flex;
+    width:60%;
+    flex-direction: column;
+    min-height:500px;
+    border:3px solid lightcoral;
+    border-radius: 5px;
+    margin:30px 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+#update > div{
+    font-size:35px;
+    font-weight:2em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color:lightcoral;
+}
+
+
+
+.board-title{
+
+    width:90%;
+    padding:20px 0;
+    border-top: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    font-size:30px;
+}
+
+.board-title > input{
+    width:60%;
+    height:80%;
+    border:0;
+    outline:0;
+    font-size:30px;
+}
+
+.board-content{
+    width:90%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    min-height: 500px;
+    flex-direction: column;
+}
+
+[name = boardContent]{
+    width:100%;
+    resize:none;
+    min-height:450px;
+    border:2px solid lightcoral;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+[name = boardContent]:focus{
+    outline:0;
+    border:5px solid lightcoral;
+
+}
+
+/* 파일선택 가리기 */
+.inputImage{display:none;}
+
+#imageArea{
+    margin-top:30px;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:center;
+}
+
+.img-box{
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+}
+
+.boardImg{
+    width: 200px;
+    height: 180px;
+    display:inline-block;
+    text-align: center;
+    margin-bottom : 20px;
+    position: relative; /* &times 감쌈 */
+}
+
+.labels{
+    width:100%;
+    height:100%;
+    border:2px solid lightcoral;
+    border-radius: 5px;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    cursor : pointer;
+
+}
+
+.delete-image{
+
+    position:absolute;
+    
+    top:7px;
+    right:7px;
+    font-size:20px;
+    cursor:pointer;
+
+}
+
+.imageInfo{
+
+    position : absolute;
+
+    top:7px;
+    left:7px;
+    font-size:20px;
+    color:lightcoral;
+
+}
+
+span{
+    cursor:pointer;
+    text-align: end;
+}
+
+.preview{
+    max-width: 100%;
+    max-height: 100%; /* 한 방향으로 100%를 맞추면 다른방향으로 100% 안맞춤 */
+                      /* 가로 100%되면 세로 100% 안맞춰짐 깨질까봐 */
+}
+
+.buttons{
+    margin-bottom:10px;
+    border:0;
+    border-radius: 5px;
+    width:80px;
+    height:50px;
+    color:white;
+    background-color: lightcoral;
+    cursor:pointer;
+
+}
+
+.buttons:hover{
+    color:black;
+    transition-duration: 1s;
+}
+
+/* 축제 옵션 선택 영역 */
+
+.select-box-wrap{
+    display: flex;
+    justify-content:space-evenly;
+}
+.select-date >label , .select-area >label , .select-cat >label, .select-fest >label{
+    display: block;
+    overflow: hidden;
+    position: relative;
+    z-index: -1;
+    height: 1px;
+    width: 1px;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    word-break: initial;
+    word-wrap: initial;
+}
+.select-box{
+    width: 40%;
+    height: 40px;
+    background-color: #eee;
+    display: flex;
+}
+.select-box select{
+    width: 100%;
+    height: 40px;
+    padding-left: 50px;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    z-index: -1;
+    outline: 0;
+    color: rgb(136, 136, 136);
+}
+#festivalDate{
+    background: url(../images/festival_infomation/date.png) no-repeat;
+    background-size: 30px 30px;
+    background-position: 10px;
+}
+#festivalArea{
+    background: url(../images/festival_infomation/area.png) no-repeat;
+    background-size: 30px 30px;
+    background-position: 10px;
+}
+#festivalCat{
+    background: url(../images/festival_infomation/cat.png) no-repeat;
+    background-size: 30px 30px;
+    background-position: 10px;
+}
+
+select:focus{
+    border: 3px solid orange;
+}
