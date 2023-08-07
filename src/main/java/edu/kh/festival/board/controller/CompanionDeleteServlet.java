@@ -23,7 +23,10 @@ public class CompanionDeleteServlet extends HttpServlet {
 		
 		try {
 			if(command.equals("companionList")) {
-
+				
+				int type = Integer.parseInt(req.getParameter("type"));
+				
+				int cp = Integer.parseInt(req.getParameter("cp"));
 				
 			}
 			

@@ -82,7 +82,12 @@
 
         const loginMemberNo = "${loginMember.memberNo}";
 
+        const type = "${param.type}"
+
+        const cp = "${param.cp}"
+
     </script>
+    
     
     
     <script src="${contextPath}/resources/js/findCompanion.js"></script>
