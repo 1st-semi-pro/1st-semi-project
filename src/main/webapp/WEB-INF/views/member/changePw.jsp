@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>비밀번호 변경</title>
 
-    <link rel="stylesheet" href="${contextPath}/resources/css/index.css">
+    <!-- <link rel="stylesheet" href="${contextPath}/resources/css/index.css"> -->
     <link rel="stylesheet" href="${contextPath}/resources/css/changePw.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/header.css">
     <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&family=Moirai+One&display=swap" rel="stylesheet">
@@ -29,6 +29,7 @@
                 <div class="divide4">비밀번호 변경</div>
                 <div class="divide4"><input type="password" name="newPw" placeholder="새 비밀번호 입력" size="35"></div>
                 <div class="divide4"><input type="password" name="newPwCheck" placeholder="새 비밀번호 확인" size="35"></div>
+                <div class="divide4"><span id="password-span"></span></div>
                 
                 <div class="divide3">
                     <a href="${contextPath}/member/findPw"><button type="button" id="goToBack-btn">뒤로가기</button></a>

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>비밀번호 찾기</title>
 
-    <link rel="stylesheet" href="${contextPath}/resources/css/index.css">
+    <!-- <link rel="stylesheet" href="${contextPath}/resources/css/index.css"> -->
     <link rel="stylesheet" href="${contextPath}/resources/css/findPw.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/header.css">
     <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&family=Moirai+One&display=swap" rel="stylesheet">
@@ -40,6 +40,8 @@
                 <div class="divide4">
                     <input type="text" name="authenticationKey" placeholder="인증번호 입력" size="35">
                     <button type="submit" id="email-authentication-btn">인증번호 확인</button>
+                </div>
+                <div class="right">
                     <span id="timer"></span>
                 </div>
                 <div class="divide3">
