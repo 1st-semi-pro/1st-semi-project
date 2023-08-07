@@ -1,9 +1,9 @@
-/* function companionList(){
+function companionList(){
    
     // contextPath, boardNo, memberNo 전역 변수 사용
     $.ajax({
         url : contextPath + "/companionList/companionList",
-        data : {"companionList" : companionList},
+        data : {"type" : type, "cp" : cp },
         type : "get",
         dataType : "JSON", // JSON 형태의 문자열 응답 데이터를 JS 객체로 자동 변환
         success : function(cList){
@@ -96,10 +96,10 @@
         }
 
     });
-} */
+}
+
 
 function deleteReply(boardNo,festivalTitle){
-
 
     Swal.fire({
 			title: festivalTitle,
@@ -130,12 +130,8 @@ function deleteReply(boardNo,festivalTitle){
                     festivalTitle,"삭제되었습니다!",
                     'success'
                 )
-                
+                companionList();
             
-        
-                
-
-
             }else{
                 alert("삭제를 실패했습니다.");
             }
@@ -150,5 +146,4 @@ function deleteReply(boardNo,festivalTitle){
            })
 
     } })
-
 }
