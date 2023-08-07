@@ -267,7 +267,7 @@ public class BoardService {
 		Connection conn = getConnection();
 		
 		int listCount = dao.getListCount(conn, type);
-
+		
 		Pagination4 pagination = new Pagination4(cp, listCount);
 
 		List<Board> companionList = dao.selectBoardList(conn, pagination, type);
@@ -327,23 +327,20 @@ public class BoardService {
 	 * @return
 	 * @throws Exception
 	 */
-	public Map<String, Object> companionList1(int type, int cp) throws Exception {
+	public List<Board> companionList1(int type, int cp) throws Exception {
 		
 		Connection conn = getConnection();
 		
 		int listCount = dao.getListCount(conn, type);
 		
+		System.out.println("listCount ==" + listCount);
 		Pagination4 pagination = new Pagination4(cp, listCount);
 		
 		List<Board> companionList = dao.companionList1(conn, type, pagination);
 		
-		Map<String, Object> companionList1 = new HashMap<String, Object>();
-		
-		companionList1.put("companionList", companionList);
-		
 		close(conn);
 		
-		return companionList1;
+		return companionList;
 		
 	}
 
