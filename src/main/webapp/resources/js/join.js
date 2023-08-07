@@ -395,7 +395,9 @@ memberName.addEventListener("input",function(){
     if(checkInputs.memberNickname != true){
         alert("닉네임을 올바르게 입력해주세요.");
         this.value = "";
+        this.style.borderBottom = "2px dashed lightgray";
         memberNickname.focus();
+        
         return;
     }
 
@@ -457,6 +459,7 @@ memberBirth.addEventListener("input", function(){
        
         alert("이름을 올바르게 입력해주세요.");
         this.value = "";
+        this.style.borderBottom = "2px dashed lightgray";
         memberName.focus();
         return;
     }
@@ -564,6 +567,7 @@ memberPhone.addEventListener("input",function(){
         
         alert("지역을 올바르게 선택해주세요.");
         this.value = "";
+        this.style.borderBottom = "2px dashed lightgray";
         regionSelect.focus();
         return;
         
@@ -965,6 +969,3 @@ function joinValidate(){
     return true;
     
 }
-
-/////////////////////////////////////////////////////////////////////////////////
-// radio alert 2번뜨는 거 고치기 , 인증약관 박스펼치기, 인증구현하기

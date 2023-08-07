@@ -94,7 +94,10 @@
         <!-- 썸네일 -->
         <div id="thumbNailDiv">
             <img src="${img0}">
-            <a href="${contextPath}" id="Nav1" class="navs">메인페이지로</a>
+            <div>
+                <img src="${contextPath}/resources/images/festival_infomation/home.png">
+                <a href="${contextPath}" id="Nav1" class="navs">메인페이지로</a>
+            </div>
             <a href="${contextPath}/board/festivalInfo?type=1&pop=0" id="Nav2" class="navs">축제 검색 페이지로</a>
             
             <!-- ${header.referer} -->
@@ -110,7 +113,7 @@
                 <div id="festivalTitle">${festival.festivalTitle}</div>
                 <div id="festivalDt">${festival.festivalDate}</div>
                
-                        <!-- img 1~6 스위퍼 -->
+                <!-- img 1~6 스위퍼 -->
                 
                 <c:if test="${!empty img1}">
 
@@ -234,7 +237,7 @@
 
             <div id="youtube">
 
-            <iframe width="1100" height="580" 
+            <iframe width="1000" height="580" 
                 src="${festivalDetail.festivalYoutube}"
                 frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 

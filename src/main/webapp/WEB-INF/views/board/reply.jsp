@@ -13,7 +13,6 @@
         
             <!--  -->
             <li class="replyRow">
-
                 <!--  -->
                 <div class="replyWriter">
                     
@@ -29,6 +28,7 @@
                         <a href="${contextPath}/member/myPage2?memberNo=${reply.memberNo}" class="as">
                             <img src="${contextPath}${reply.profileImage}">
                         </a>
+                        
                     </c:if>
 
                     <div class="nickDate">${reply.memberNickname}</div>
