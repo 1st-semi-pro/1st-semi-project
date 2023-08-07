@@ -12,7 +12,7 @@
             <section>
                 <article class="search-area">
                     
-                    <form action="${contextPath}/board/search" id="resultSearch"  onsubmit="return searchValidate()">
+                    <form action="${contextPath}/board/search" id="resultSearch"  onsubmit="return searchResultValidate()">
                         <select type="hidden" name="key" id="key" >
                             <option value="tc">제목+내용</option>
                         </select>

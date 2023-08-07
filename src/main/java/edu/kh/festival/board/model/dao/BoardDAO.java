@@ -570,6 +570,7 @@ public class BoardDAO {
 				board.setBoardNo(rs.getInt("BOARD_NO"));
 				board.setBoardTitle(rs.getString("BOARD_TITLE"));
 				board.setMemberNickname(rs.getString("MEMBER_NICKNAME"));
+				board.setMemberNo(rs.getInt("MEMBER_NO"));
 				board.setCreateDate(rs.getString("CREATE_DT"));
 				board.setReadCount(rs.getInt("READ_COUNT"));
 				
@@ -619,7 +620,7 @@ public class BoardDAO {
 				board.setMemberNickname(rs.getString("MEMBER_NICKNAME"));
 				board.setCreateDate(rs.getString("CREATE_DT"));
 				board.setReadCount(rs.getInt("READ_COUNT"));
-				board.setMemberNo(rs.getString("MEMBER_NO"));
+				board.setMemberNo(rs.getInt("MEMBER_NO"));
 				board.setFestivalTitle(rs.getString("FESTIVAL_TITLE"));
 				board.setFestivalArea(rs.getString("FESTIVAL_AREA"));
 				board.setFestivalDate(rs.getString("FESTIVAL_DT"));

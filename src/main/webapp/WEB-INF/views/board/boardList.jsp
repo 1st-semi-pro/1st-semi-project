@@ -83,7 +83,7 @@
                                             <td>
                                                 <a href="detail?no=${board.boardNo}&cp=${pagination.currentPage}&type=${param.type}${sURL}">${board.boardTitle}</a>
                                             </td>
-                                            <td><a href="${contextPath}/member/myPage2?memberNo=${detail.memberNo}">${board.memberNickname}</a></td>
+                                            <td><a href="${contextPath}/member/myPage2?memberNo=${board.memberNo}">${board.memberNickname}</a></td>
                                             <td>${board.createDate}</td>
                                             <td>${board.readCount}</td>
                                         </tr>
