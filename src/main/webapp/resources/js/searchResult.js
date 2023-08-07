@@ -25,7 +25,7 @@
         }
     })()
 
-function searchResultValidate(){
+function searchValidate(){
 
 const input= document.getElementById("h-search");
 

@@ -18,7 +18,7 @@ public class Board {
 	private String createDate;
 	private int readCount;
 	private String thumbnail;
-	private int memberNo;
+	private String memberNo;
 	private String festivalTitle;
 	private String festivalDate;
 	private String festivalArea;
