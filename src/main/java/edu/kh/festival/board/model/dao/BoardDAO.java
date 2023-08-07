@@ -637,6 +637,55 @@ public class BoardDAO {
 		return companionList;
 
 	}
+	
+	
+	/** 지민 동행자 검색
+	 * @param conn
+	 * @param query
+	 * @return
+	 */
+	public List<Board> companionList(Connection conn, String query) throws Exception {
+		List<Board> companionList = new ArrayList<Board>();
+
+		try {
+			String sql = prop.getProperty("compaionList1")  + " AND (BOARD_CONTENT LIKE '%" + query + "%' OR BOARD_TITLE LIKE '%" + query + "%') " + prop.getProperty("compaionList2");
+
+			// BETWEEN 구문에 들어갈 범위 계산
+
+			pstmt = conn.prepareStatement(sql);
+
+			pstmt.setInt(1, 5);
+			pstmt.setInt(2, 1);
+			pstmt.setInt(3, 5);
+			
+			rs = pstmt.executeQuery();
+			
+			while (rs.next()) {
+				Board board = new Board();
+
+				board.setBoardNo(rs.getInt("BOARD_NO"));
+				board.setBoardTitle(rs.getString("BOARD_TITLE"));
+				board.setBoardContent(rs.getString("BOARD_CONTENT"));
+				board.setCreateDate(rs.getString("CREATE_DT"));
+				board.setMemberNo(rs.getInt("MEMBER_NO"));
+				board.setMemberNickname(rs.getString("MEMBER_NICKNAME"));
+				board.setFestivalTitle(rs.getString("FESTIVAL_TITLE"));
+				board.setFestivalArea(rs.getString("FESTIVAL_AREA"));
+				board.setFestivalDate(rs.getNString("FESTIVAL_DT"));
+				board.setFestivalNo(rs.getInt("FESTIVAL_NO"));
+
+				companionList.add(board);
+
+			}
+		
+		} finally {
+
+			close(rs);
+			close(pstmt);
+		}
+
+		return companionList;
+	}
 
 	/** 게시판에서 바로삭제DAO <광민> 제발..
 	 * @param conn
@@ -668,6 +717,7 @@ public class BoardDAO {
 
 		return result;
 	}
+
 
 }
 	
