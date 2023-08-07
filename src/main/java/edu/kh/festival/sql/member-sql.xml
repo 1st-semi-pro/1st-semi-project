@@ -59,6 +59,16 @@
    		WHERE MEMBER_NAME = ?
    		AND MEMBER_ID = ?
    	</entry>
+   	
+   	<!-- 회원 찜목록 불러오기 -->
+   	<entry key="getDipList">
+   		SELECT FESTIVAL_NO, FESTIVAL_TITLE, FESTIVAL_AREA, FESTIVAL_DT, IMG_RENAME
+		FROM MEMBER
+		JOIN DIB USING (MEMBER_NO)
+		JOIN INFO_BOARD USING(FESTIVAL_NO)
+		JOIN FESTIVAL_IMG ON(FESTIVAL_NO = IMG_NO)
+		WHERE MEMBER_NO = ? AND IMG_LEVEL = 0
+   	</entry>
 
 	<!-- 비밀번호 수정-->
 	<entry key="changePw">

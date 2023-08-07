@@ -8,8 +8,11 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
+import edu.kh.festival.member.model.vo.Dip;
 import edu.kh.festival.member.model.vo.Member;
 
 public class MemberDAO {
@@ -509,6 +512,47 @@ public class MemberDAO {
 		}
 		
 		return result;
+	}
+
+	/**
+	 * 회원 찜목록 불러오기 DAO
+	 * @param conn
+	 * @param memberNo
+	 * @return dipList
+	 * @throws Exception
+	 */
+	public List<Dip> getDipList(Connection conn, int memberNo) throws Exception{
+
+		int result = 0;
+		List<Dip> dipList = new ArrayList<>();
+		
+		try {
+			String sql = prop.getProperty("getDipList");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, memberNo);
+			
+			rs= pstmt.executeQuery();
+			
+			while(rs.next()) {
+				Dip dip = new Dip();
+				dip.setFestivalNo(rs.getInt(1));
+				dip.setFestivalTitle(rs.getString(2));
+				dip.setFestivalArea(rs.getString(3));
+				dip.setFestivalDate(rs.getString(4));
+				dip.setFestivalImage(rs.getString(5));
+				dipList.add(dip);
+			}
+			
+		} finally {
+			
+			close(rs);
+			close(pstmt);
+			
+		}
+		
+		return dipList;
 	}
 
 }

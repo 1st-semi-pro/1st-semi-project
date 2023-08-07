@@ -4,6 +4,7 @@ const inputMessage = document.getElementById("profile-message");
 const del = document.getElementById("delete-image");
 const chan = document.getElementById("change-image");
 const chanMsg = document.getElementById("change-message");
+const maxStrLength = 200; // 프로필 메세지 최대 작성길이
 
 if(inputImage != null){ // inputImage 요소가 화면에 존재할 때
     inputImage.addEventListener("change", function(){
@@ -52,9 +53,15 @@ if(inputImage != null){ // inputImage 요소가 화면에 존재할 때
     });
 }
 
-inputMessage.addEventListener("change", function(){ // 프로필 메세지 내용 변경 시
-    if(inputMessage.value == memberMessage) chanMsg.value = 0; //DB에 저장된 내용과 같으면 0
-    else chanMsg.value = 1; // 기존 내용과 달라졌다면 1
+inputMessage.addEventListener("input", function(){ // 프로필 메세지 내용 변경 시
+    
+    chanMsg.value = 1;
+
+    if(inputMessage.value.length > maxStrLength){
+        alert(maxStrLength+"자 이상 작성할 수 없습니다.");
+        inputMessage.value = inputMessage.value.substr(0,maxStrLength);
+        inputMessage.focus();
+    }
 })
 
 
