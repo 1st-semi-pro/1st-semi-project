@@ -1,6 +1,7 @@
 function com(){
 
     // contextPath, boardNo, memberNo 전역 변수 사용
+    console.log("씨발")
     $.ajax({
         url : contextPath + "/companionList/companionList",
         data : {"type" : type, "cp" : cp },
@@ -20,17 +21,24 @@ function com(){
                 const maincontentbox = document.createElement("article");
                 maincontentbox.classList.add("main-content-box");
 
+            //////////////////////////////////////////////////////////////
+
                 const ftcontent = document.createElement("div");
                 ftcontent.classList.add("ft-content");
 
-                maincontentbox.append(ftcontent)
+            //////////////////////////////////////////////////////////////
+
                 const ftimg = document.createElement("div")
                 ftimg.classList.add("ft-img")
 
                 const fimg = document.createElement("img");
                 fimg.setAttribute("src",contextPath + "/resources/images/festival_infomation/79.png" );
 
+            //////////////////////////////////////////////////////////////
+
                 ftimg.append(fimg);
+
+            //////////////////////////////////////////////////////////////
 
                 const fttext = document.createElement("div");
                 fttext.classList.add("ft-text");
@@ -47,7 +55,11 @@ function com(){
                 const span3 = document.createElement("span");
                 span3.classList.add("s3");
 
+            //////////////////////////////////////////////////////////////
+
                 fttext.append(h1,span1,span2,span3);
+
+            //////////////////////////////////////////////////////////////
 
                 const myimg = document.createElement("div");
                 myimg.classList.add("my-img");
@@ -61,13 +73,23 @@ function com(){
                 const myspan = document.createElement("span")
                 myspan.innerHTML = 안녕하세요 <br> 광민입니다;
 
+            //////////////////////////////////////////////////////////////
+
                 mytext.append(myspan);
+            
+            //////////////////////////////////////////////////////////////
 
                 const mbutton = document.createElement("button")
                 mbutton.setAttribute("type","button");
 
                 myimg.append(mimg,mytext,mbutton);
 
+            //////////////////////////////////////////////////////////////
+
+                ftcontent.append(ftimg,fttext,myimg);
+
+
+            //////////////////////////////////////////////////////////////
                 if(loginMemberNo == companionList.memberNo){
 
                     const updatebox = document.createElement("div");
@@ -87,7 +109,7 @@ function com(){
 
                 }
                 
-                maincontentbox.append(ftcontent,ftimg,fttext,myimg,updatebox)
+                maincontentbox.append(ftcontent,updatebox)
             }
 
         },

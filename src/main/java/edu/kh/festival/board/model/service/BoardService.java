@@ -331,7 +331,11 @@ public class BoardService {
 		
 		Connection conn = getConnection();
 		
-		List<Board> companionList = dao.companionList1(conn, type, cp);
+		int listCount = dao.getListCount(conn, type);
+		
+		Pagination4 pagination = new Pagination4(cp, listCount);
+		
+		List<Board> companionList = dao.companionList1(conn, type, pagination);
 		
 		Map<String, Object> companionList1 = new HashMap<String, Object>();
 		
