@@ -13,13 +13,15 @@ li{list-style: none;}
 }
 /* ------------------------------------------------------------------------ */
 .main-title{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 90px;
     height: 70px;
     line-height: 70px;
     text-align: center;
-    background-color: #222;
-    color: white;
+    color: lightcoral;
     font-weight: bold;
-    font-size: 28px;
+    font-size: 2.5em;
 }
 /* ------------------------------------------------------------------------- */
 #pagebox{
@@ -52,10 +54,9 @@ li{list-style: none;}
   height: 700px;
   text-align: center;
   line-height: 600px;
-  background-color: black;
-  color: red;
+  color: lightcoral;
   font-weight: bold;
-  font-size: 36px;
+  font-size: 42px;
 }
 /*---------------------------------------------------------------------------------------------*/
 .ft-img{

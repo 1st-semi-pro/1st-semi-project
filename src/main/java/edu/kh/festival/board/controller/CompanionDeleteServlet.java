@@ -1,6 +1,8 @@
 package edu.kh.festival.board.controller;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import edu.kh.festival.board.model.service.BoardService;
+import edu.kh.festival.board.model.vo.Board;
 
 @WebServlet("/companionList/*")
 public class CompanionDeleteServlet extends HttpServlet {
@@ -28,6 +31,9 @@ public class CompanionDeleteServlet extends HttpServlet {
 				
 				int cp = Integer.parseInt(req.getParameter("cp"));
 				
+				Map<String, Object> companionList = service.companionList1(type,cp);
+				
+				resp.getWriter().print(companionList);
 			}
 			
 			if (command.equals("delete")) {

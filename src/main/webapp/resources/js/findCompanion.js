@@ -1,5 +1,5 @@
-function companionList(){
-   
+function com(){
+
     // contextPath, boardNo, memberNo 전역 변수 사용
     $.ajax({
         url : contextPath + "/companionList/companionList",
@@ -8,7 +8,7 @@ function companionList(){
         dataType : "JSON", // JSON 형태의 문자열 응답 데이터를 JS 객체로 자동 변환
         success : function(cList){
             // rList : 반환 받은 댓글 목록
-            console.log(cList);
+            console.log("성공일까?");
 
             // 화면에 출력되어 있는 댓글 목록 삭제
             const companionList = document.getElementById("main-content"); // 첫세션
@@ -100,7 +100,6 @@ function companionList(){
 
 
 function deleteReply(boardNo,festivalTitle){
-
     Swal.fire({
 			title: festivalTitle,
 			text: "삭제하시겠습니까?",
@@ -130,7 +129,7 @@ function deleteReply(boardNo,festivalTitle){
                     festivalTitle,"삭제되었습니다!",
                     'success'
                 )
-                companionList();
+               com();
             
             }else{
                 alert("삭제를 실패했습니다.");
