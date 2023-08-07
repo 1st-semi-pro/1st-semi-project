@@ -150,9 +150,13 @@ function changePwValidate(){
 }    
 const memberEmail = document.getElementById("memberEmail");
 const emailBtn = document.getElementById("emailBtn");
-
+const in1 = document.getElementById("innerTextSpan");
 var authenticationInput = document.getElementById("authenticationInput");
 var authenticationButton = document.getElementById("authenticationButton");
+
+const display = document.getElementById("timer");
+let timer;
+let isRunning = false;
 // ----------------------------------------------------------------------------- //
 // 이메일 인증 
 emailBtn.addEventListener("click", function(){
@@ -192,7 +196,8 @@ emailBtn.addEventListener("click", function(){
                 console.log("에이짺쓰 성공");
                 Swal.fire(
                     '인증번호를 전송했습니다.'
-                  )
+                    )
+                    sendAuthNum();
                 authenticationInput.setAttribute('type','text');
                 authenticationButton.setAttribute('type','button'); 
                 authenticationButton.value = "인증";  
@@ -200,7 +205,7 @@ emailBtn.addEventListener("click", function(){
             
                 authenticationButton.addEventListener("click",function(){
 
-                    if(key == '"' + authenticationInput.value + '"'){
+                    if(key == authenticationInput.value){
 
                         console.log("에이짺쓰 성공");
                         Swal.fire(
@@ -208,6 +213,7 @@ emailBtn.addEventListener("click", function(){
                             '성공',
                             'success'
                           )
+                          in2.innerText = "사용 가능한 이메일 입니다.";
                         checkInputs.emailBtn = true;
                         
 
@@ -217,6 +223,7 @@ emailBtn.addEventListener("click", function(){
                             '실패',
                             'error'
                           )
+                          in2.innerText = "이메일 인증 에러 발생";
                         checkInputs.emailBtn = false;
                     }
               
@@ -229,10 +236,38 @@ emailBtn.addEventListener("click", function(){
         error : function(){
 
         }
+        
 
     })
 
+    // 타이머 함수 실행
+    
+    function sendAuthNum(){
+       // 이미 타이머가 작동중이면 초기화
+       if (isRunning) clearInterval(timer);
+       startTimer(60*3, display);
+    }
+    
+    function startTimer(count, display) {
+       let minutes, seconds;
+       timer = setInterval(function () {
+           minutes = parseInt(count / 60, 10);
+           seconds = parseInt(count % 60, 10);
+           minutes = minutes < 10 ? "0" + minutes : minutes;
+           seconds = seconds < 10 ? "0" + seconds : seconds;
+           display.innerText ="남은 시간 : " + minutes + "분 " + seconds +"초";
+           // 타이머 종료
+           if (--count < 0) {
+               clearInterval(timer);
+               display.innerText = "";
+               isRunning = false;
+           }
+       }, 1000);
+       isRunning = true;
+    }
 })
+
+
 
 
 
@@ -317,4 +352,6 @@ function secessionValidate() {
   } 
   return true;
 }
+
+
 

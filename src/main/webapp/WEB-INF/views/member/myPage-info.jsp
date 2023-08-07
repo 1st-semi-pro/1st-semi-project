@@ -70,6 +70,7 @@
                         <input type="text" name="memberNationality" value="${loginMember.memberNationality }" maxlength="30" disabled>
                     </div>
                 </div>
+                
                     <div class="myPage-row">
                         <label>사는 지역</label>
                         <select name="memberRegion" id="memberRegion" value="${loginMember.memberRegion }">
@@ -84,16 +85,6 @@
                           </select>
                     </div>
                     <div class="myPage-row">
-                        <label>이메일</label>
-                        <input type="email" name="memberEmail" id="memberEmail" value="${loginMember.memberEmail}" maxlength="30">
-                        
-                        <button id="emailBtn" type="button">인증하기</button>
-                    </div>
-                        <article class = "myPage-row" id="">
-                            <input type="hidden" class="inputs" id="authenticationInput" name="authenticationInput" placeholder="인증번호를 입력해주세요.">
-                            <input type="hidden" id="authenticationButton" name="authenticationButton">
-                        </article>
-                    <div class="myPage-row">
                         <label>닉네임</label>
                         <input type="text" name="memberNickname" id="memberNickname" value="${loginMember.memberNickname}" maxlength="10">
                     </div>
@@ -102,7 +93,20 @@
                         <label>전화번호</label>
                         <input type="text" name="memberPhone" value="${loginMember.memberPhone}" maxlength="11">
                     </div>
-
+                    <div class="myPage-row">
+                        <label>이메일</label>
+                        <input type="email" name="memberEmail" id="memberEmail" value="${loginMember.memberEmail}" maxlength="30">
+                        
+                        <button id="emailBtn" type="button" style="margin-bottom: 18px;">인증하기</button>
+                    </div>
+                        <span class = "myPage-row" id="innerTextSpan" > 
+                            <input type="hidden"  id="authenticationInput" name="authenticationInput" placeholder="인증번호를 입력해주세요." style="margin: 0;">
+                            <input type="hidden" id="authenticationButton" name="authenticationButton">
+                        </span>
+                        <div class="right">
+                            <span id="timer"></span>
+                        </div>
+                    
                     <span id="innerTextSpan2">아이디, 이름, 성별, 국가  변경 불가능</span>
                     <button id="info-update-btn" >수정하기</button>
                 </form>
