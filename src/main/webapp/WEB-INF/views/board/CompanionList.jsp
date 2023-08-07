@@ -31,6 +31,3 @@
         </article>
     </c:forEach>
 </section>
-
-</body>
-</html>
