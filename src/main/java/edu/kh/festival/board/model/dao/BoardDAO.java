@@ -609,26 +609,27 @@ public class BoardDAO {
 			pstmt.setInt(1, type);
 			pstmt.setInt(2, start);
 			pstmt.setInt(3, end);
-
+			
 			rs = pstmt.executeQuery();
-
+			
 			while (rs.next()) {
 				Board board = new Board();
 
 				board.setBoardNo(rs.getInt("BOARD_NO"));
 				board.setBoardTitle(rs.getString("BOARD_TITLE"));
-				board.setMemberNickname(rs.getString("MEMBER_NICKNAME"));
 				board.setCreateDate(rs.getString("CREATE_DT"));
-				board.setReadCount(rs.getInt("READ_COUNT"));
 				board.setMemberNo(rs.getInt("MEMBER_NO"));
 				board.setFestivalTitle(rs.getString("FESTIVAL_TITLE"));
 				board.setFestivalArea(rs.getString("FESTIVAL_AREA"));
-				board.setFestivalDate(rs.getString("FESTIVAL_DT"));
-				
+				board.setFestivalDate(rs.getNString("FESTIVAL_DT"));
 
 				companionList.add(board);
 
 			}
+			System.out.println("type == " + type);
+			System.out.println("start == " + start);
+			System.out.println("end == " + end);
+			System.out.println("companionList== "  +companionList);
 		} finally {
 
 			close(rs);

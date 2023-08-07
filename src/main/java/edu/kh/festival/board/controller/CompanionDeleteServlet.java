@@ -24,8 +24,6 @@ public class CompanionDeleteServlet extends HttpServlet {
 			if(command.equals("companionList")) {
 
 				
-				
-				
 			}
 			
 			if(command.equals("delete")) {

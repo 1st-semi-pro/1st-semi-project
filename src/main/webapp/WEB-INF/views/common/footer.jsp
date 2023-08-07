@@ -3,7 +3,7 @@
     
 <!-- JSTL은 사용되는 JSP 파일마다 작성되어야 한다 -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -73,8 +73,17 @@
 		<c:if test="${ !empty sessionScope.message }">
 
 		<script>
-			alert("${message}");
+
+			 Swal.fire(
+
+            
+            "${message}" ,"좋은하루되세요~",
+            'success'
+            
+        )
+
 		</script>
+
 
 		<c:remove var="message" scope="session" />
 

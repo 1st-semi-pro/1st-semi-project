@@ -19,8 +19,16 @@ function  searchValidate(){
     const festivalCat = document.getElementById("festivalCat");
 
     if(festivalDate.value == "" && festivalArea.value == "" && festivalCat.value == ""){
+       
         festivalDate.focus()
-        alert("최소 1개이상 선택후 검색해주세요!")
+
+        Swal.fire(
+
+            
+            "최소1개이상 선택해주세요!" ,"( 날짜, 지역 , 카테고리 )",
+            'error'
+            
+        )
         return false;
     }
     return true;
