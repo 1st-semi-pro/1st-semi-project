@@ -20,7 +20,8 @@
 		    SELECT  ROWNUM RNUM, A.* FROM (
 		        SELECT MEMBER_NO, MEMBER_ID, MEMBER_NICKNAME, MEMBER_EMAIL, MEMBER_PHONE,
 		                    TO_CHAR(ENROLL_DT, 'YYYY-MM-DD') AS ENROLL_DT, 
-		                    SECESSION_FL
+		                    SECESSION_FL, (SELECT COUNT(*) FROM BAD_ASSESS                        
+                            WHERE BAD_MEMBER_NO = MEMBER_NO) AS MEMBER_REPORT
 		        FROM MEMBER
 		        WHERE SECESSION_FL = 'N'
 		        ORDER BY MEMBER_NO DESC

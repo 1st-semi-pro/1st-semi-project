@@ -93,7 +93,7 @@
 											<td>${member.memberEmail}</td>
 											<td>${member.memberPhone}</td>
 											<td>${member.enrollDate}</td>
-											<td>${member.secessionFl}</td>
+											<td>${member.memberReport}</td>
 										</tr>
 									</tbody>
 									
