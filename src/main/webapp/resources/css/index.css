@@ -40,36 +40,44 @@ li{list-style: none; cursor: pointer;}
 .divide3{
     flex-basis: 50%;
     
-    padding: 10px;
     padding-right: 10px;
 }
 .divide4{
     flex-basis: 50%;
-    padding: 10px;
     padding-right: 10px;
 }
 .divide6{
     flex-basis: 50%;
-    padding: 10px;
     padding-right: 10px;
 }
 .divide7{
     flex-basis: 50%;
-    padding: 10px;
     padding-right: 10px;
 }
 
 .board-name1{
     text-align: center;
     background-color: antiquewhite;
+    border: 3px solid lightgray;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 0;
 }
 .board-name2{
     text-align: center;
     background-color: antiquewhite;
+    border: 3px solid lightgray;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 0;
 }
 .board-name3{
     text-align: center;
     background-color: antiquewhite;
+    border: 3px solid lightgray;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 0;
 }
 .board-name4{
     text-align: center;
@@ -78,12 +86,28 @@ li{list-style: none; cursor: pointer;}
 
 .board-content1{
     background-color: aliceblue;
+    border: 3px solid lightgray;
+    border-top: 0;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding-left: 10px;
 }
 .board-content2{
     background-color: aliceblue;
+    border: 3px solid lightgray;
+    border-top: 0;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding-left: 10px;
 }
 .board-content3{
     background-color: aliceblue;
+    background-color: aliceblue;
+    border: 3px solid lightgray;
+    border-top: 0;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding-left: 10px;
 }
 
 
@@ -96,8 +120,9 @@ li{list-style: none; cursor: pointer;}
 	align-content: center;
     position: relative;
     margin : 0 20px;
-    background-color: lightskyblue;
     margin-left: 50px;
+    border: 3px solid lightgray;
+    border-radius: 10px;
 }
 
 .korea > img{
