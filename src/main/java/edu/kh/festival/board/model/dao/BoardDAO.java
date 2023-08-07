@@ -622,14 +622,12 @@ public class BoardDAO {
 				board.setFestivalTitle(rs.getString("FESTIVAL_TITLE"));
 				board.setFestivalArea(rs.getString("FESTIVAL_AREA"));
 				board.setFestivalDate(rs.getNString("FESTIVAL_DT"));
+				board.setFestivalNo(rs.getInt("FESTIVAL_NO"));
 
 				companionList.add(board);
 
 			}
-			System.out.println("type == " + type);
-			System.out.println("start == " + start);
-			System.out.println("end == " + end);
-			System.out.println("companionList== "  +companionList);
+		
 		} finally {
 
 			close(rs);

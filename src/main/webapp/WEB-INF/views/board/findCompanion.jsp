@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>동행자구하기</title>
     <script src="https://kit.fontawesome.com/51fc103959.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
     
     <link rel="stylesheet" href="${contextPath}/resources/css/header.css">
@@ -23,6 +24,7 @@
 <body>
     <main>
         <jsp:include page="/WEB-INF/views/common/header.jsp"/>
+        
         <c:choose>
 
             <c:when test="${empty sessionScope.loginMember}">
@@ -65,12 +67,14 @@
         </c:choose>
 
        
-                
+      
         <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     </main>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 
     <script>
+
+     
         const contextPath = "${contextPath}";
 
         const companionList = "${companionList}"; 

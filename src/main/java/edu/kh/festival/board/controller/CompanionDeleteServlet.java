@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import edu.kh.festival.board.model.service.BoardService;
 
@@ -26,16 +27,20 @@ public class CompanionDeleteServlet extends HttpServlet {
 				
 			}
 			
-			if(command.equals("delete")) {
+			if (command.equals("delete")) {
+				
+				HttpSession session = req.getSession();
 				
 				int boardNo = Integer.parseInt(req.getParameter("boardNo"));
 				
 				int result = service.deleteCompanion(boardNo);
 				
+		
 				resp.getWriter().print(result);
 				
+
 			}
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
