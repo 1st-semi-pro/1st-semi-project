@@ -26,7 +26,7 @@ function loginValidate(){
 		Swal.fire(
 			'아이디 확인',
 			'아이디를 입력해주세요.',
-			'error',
+			'error'
 		  ) 
 		
 		inputId.value="";
