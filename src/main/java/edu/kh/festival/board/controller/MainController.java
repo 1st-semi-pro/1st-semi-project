@@ -3,6 +3,7 @@ package edu.kh.festival.board.controller;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -89,6 +90,14 @@ public class MainController extends HttpServlet {
 				festivalList3 = service.selectFestival3();
 				
 				new Gson().toJson( festivalList3, resp.getWriter());
+			}
+			
+			if(command.equals("companionList")) {
+				
+				MainBoardService mainboardService = new MainBoardService();
+				
+				Map<String,Object> map = mainboardService.companionList();
+				
 			}
 			
 			

@@ -82,6 +82,10 @@ li{list-style: none; cursor: pointer;}
 .board-name4{
     text-align: center;
     background-color: antiquewhite;
+    border: 3px solid lightgray;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 0;
 }
 
 .board-content1{
@@ -101,6 +105,15 @@ li{list-style: none; cursor: pointer;}
     padding-left: 10px;
 }
 .board-content3{
+    background-color: aliceblue;
+    background-color: aliceblue;
+    border: 3px solid lightgray;
+    border-top: 0;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding-left: 10px;
+}
+.board-content4{
     background-color: aliceblue;
     background-color: aliceblue;
     border: 3px solid lightgray;
