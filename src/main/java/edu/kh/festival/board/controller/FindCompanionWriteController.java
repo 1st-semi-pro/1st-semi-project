@@ -160,7 +160,7 @@ public class FindCompanionWriteController extends HttpServlet {
 		        	
 		        }
 		        
-		        if(mode.equals("update")) {
+		        if(mode.equals("update")) { // board/findCompanionWrite?mode=update&type=5&cp=1&no=1521
 		        	
 		        	int boardNo = Integer.parseInt(mpReq.getParameter("no"));
 		        	

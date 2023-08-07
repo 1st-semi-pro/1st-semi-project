@@ -58,7 +58,10 @@
                             </article>
                             <article>
                                 <span>축제 히스토리</span>
-                                <div id="history" name="memberHistory">${loginMember.enrollDate}</div>
+                                <div id="history" name="memberHistory">
+                                    <span>2023.07.26 서울거리공연 [버스커페스티벌]</span>
+                                    <span>2023.06.23 세종파크뮤직페스티벌</span>
+                                </div>
     
                                 <div id="info-btn-area">
                                     <div>
@@ -91,20 +94,24 @@
                 </section>
                 <section id="festival-box">
                     <article>
-                        <h1>축제이름</h1>
+                        <h1>서울세계 불꽃축제</h1>
                         <a href="#"><img src="${contextPath}/resources/images/con1.jpg" alt="축제사진"></a>
+                        <span>서울특별시 2023.10.08 ~ 2023.10.08</span>
                     </article>
                     <article>
-                        <h1>축제이름</h1>
+                        <h1>이월드 트로피컬 아쿠아 빌리지</h1>
                         <a href="#"><img src="${contextPath}/resources/images/con2.jpg" alt="축제사진"></a>
+                        <span>대구 2023.06.10 ~ 2023.08.27</span>
                     </article>
                     <article>
-                        <h1>축제이름</h1>
+                        <h1>베어트리파크 철쭉제 "봄과 철쭉"</h1>
                         <a href="#"><img src="${contextPath}/resources/images/con3.jpg" alt="축제사진"></a>
+                        <span>세종특별자치시 2023.04.15 ~ 2023.05.07</span>
                     </article>
                     <article>
-                        <h1>축제이름</h1>
+                        <h1>청도 프로방스 빛축제</h1>
                         <a href="#"><img src="${contextPath}/resources/images/con4.jpg" alt="축제사진"></a>
+                        <span>경상북도 2023.02.01 ~ 2023.11.30</span>
                     </article>
                 </section>
             </section>

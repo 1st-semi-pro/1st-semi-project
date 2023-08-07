@@ -225,7 +225,7 @@ span{
     background: url(../images/festival_infomation/festi.png) no-repeat;
     background-size: 30px 30px;
     background-position: 10px;
-    width: 300px;
+    width: 280px;
 }
 #recruit{
     background-color: #EEEEEE;
@@ -242,7 +242,7 @@ span{
 }
 
 #inputDate{
-    width: 150px;
+    width: 110px;
     text-align: center;
     outline: none;
     background-color: #eee;
@@ -279,11 +279,15 @@ select:focus{
 }
 
 .date-area{
-    width: 350px;
+    width: 150px;
     justify-content: right;
-    padding-right: 50px;
 }
 
 .recruit-area{
     width: 150px;
+}
+
+#recruit{
+    width: 100%;
+    padding-left: 20px;
 }
