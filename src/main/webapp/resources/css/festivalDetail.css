@@ -25,38 +25,76 @@
     
 }
 
-#Nav1{
-    text-decoration: none;
+#toMain{
     font-size:25px;
     color:black;
     position:fixed;
     top:7px;
     left:7px;
-    color:lightcoral;
-/*     background-color: lightcoral;
-    border-radius: 10px; */
+    width:200px;
+    cursor:pointer;
+    display:flex;
+}
+
+#toMain img{
+    width:50px;
+    height:50px;
+
+}
+
+#Nav1{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color:black;
+}
+
+#toSearch{
+    font-size:25px;
+    color:black;
+    position:fixed;
+    top:50px;
+    left:7px;
+    width:200px;
+    cursor:pointer;
+    display:flex;
+}
+
+#toSearch img{
+    width:50px;
+    height:50px;
 }
 
 #Nav2{
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
     text-decoration: none;
-    font-size:25px;
     color:black;
-    position:fixed;
-    top:7px;
-    left:150px;
-    color:lightcoral;
-/*     background-color: lightcoral;
-    border-radius: 10px; */
+
 }
 
-#up{
-    text-decoration: none;
-    font-size:25px;
-    color:black;
+#toTheTop{
     position:fixed;
     bottom:50px;
     right:100px;
-    color:lightcoral;
+    font-size:25px;
+}
+
+#toTheTop img{
+    width:50px;
+    height:50px;
+}
+
+#up{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+ 
+    color:black;
 }
 
 .navs:hover{
