@@ -1,7 +1,7 @@
 function com(){
 
     // contextPath, boardNo, memberNo 전역 변수 사용
-    console.log("씨발")
+   
     $.ajax({
         url : contextPath + "/companionList/companionList",
         data : {"type" : type, "cp" : cp },
@@ -9,15 +9,14 @@ function com(){
         dataType : "JSON", // JSON 형태의 문자열 응답 데이터를 JS 객체로 자동 변환
         success : function(cList){
             // rList : 반환 받은 댓글 목록
-            console.log("성공일까?");
-
+            
             // 화면에 출력되어 있는 댓글 목록 삭제
             const companionList = document.getElementById("main-content"); // 첫세션
             companionList.innerHTML = "";
 
             // rList에 저장된 요소를 하나씩 접근
             for(let companionList of cList){
-
+                
                 const maincontentbox = document.createElement("article");
                 maincontentbox.classList.add("main-content-box");
 
@@ -71,7 +70,7 @@ function com(){
                 mytext.classList.add("my-text");
 
                 const myspan = document.createElement("span")
-                myspan.innerHTML = 안녕하세요 <br> 광민입니다;
+                myspan.innerHTML = "안녕하세요<br>광민입니다";
 
             //////////////////////////////////////////////////////////////
 
@@ -107,9 +106,12 @@ function com(){
 
                     updatebox.append(insertbutton,deletebtn);
 
+                    maincontentbox.append(ftcontent,updatebox)
+                }else{
+                    maincontentbox.append(ftcontent);
                 }
                 
-                maincontentbox.append(ftcontent,updatebox)
+               
             }
 
         },

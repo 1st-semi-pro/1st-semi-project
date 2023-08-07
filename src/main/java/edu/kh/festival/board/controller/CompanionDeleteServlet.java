@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.google.gson.Gson;
+
 import edu.kh.festival.board.model.service.BoardService;
 import edu.kh.festival.board.model.vo.Board;
 
@@ -26,17 +28,19 @@ public class CompanionDeleteServlet extends HttpServlet {
 		
 		try {
 			if(command.equals("companionList")) {
-				System.out.println("여기까지는옴?");
 				
 				int type = Integer.parseInt(req.getParameter("type"));
 				
-				int cp = Integer.parseInt(req.getParameter("cp"));
+				int cp = 1;
 				
-				Map<String, Object> companionList = service.companionList1(type,cp);
+				if (req.getParameter("cp") != null) {
+					cp = Integer.parseInt(req.getParameter("cp"));
+				}
 				
-				resp.getWriter().print(companionList);
+				List<Board> companionList = service.companionList1(type,cp);
 				
-				System.out.println("companionList == "+ companionList);
+				 new Gson().toJson(companionList, resp.getWriter());
+				
 			}
 			
 			if (command.equals("delete")) {
