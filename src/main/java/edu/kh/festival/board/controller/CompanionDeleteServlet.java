@@ -26,6 +26,7 @@ public class CompanionDeleteServlet extends HttpServlet {
 		
 		try {
 			if(command.equals("companionList")) {
+				System.out.println("여기까지는옴?");
 				
 				int type = Integer.parseInt(req.getParameter("type"));
 				
@@ -34,6 +35,8 @@ public class CompanionDeleteServlet extends HttpServlet {
 				Map<String, Object> companionList = service.companionList1(type,cp);
 				
 				resp.getWriter().print(companionList);
+				
+				System.out.println("companionList == "+ companionList);
 			}
 			
 			if (command.equals("delete")) {

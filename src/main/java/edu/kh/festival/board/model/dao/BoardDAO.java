@@ -725,7 +725,7 @@ public class BoardDAO {
 	 * @return
 	 * @throws Exception
 	 */
-	public List<Board> companionList1(Connection conn, int type, int cp) throws Exception{
+	public List<Board> companionList1(Connection conn, int type, Pagination4 pagination) throws Exception{
 		
 		List<Board> companionList = new ArrayList<Board>();
 
@@ -734,7 +734,15 @@ public class BoardDAO {
 
 			pstmt = conn.prepareStatement(sql);
 
+			int start = (pagination.getCurrentPage() - 1) * pagination.getLimit() + 1;
+
+			int end = start + pagination.getLimit() - 1;
+
+			pstmt = conn.prepareStatement(sql);
+
 			pstmt.setInt(1, type);
+			pstmt.setInt(2, start);
+			pstmt.setInt(3, end);
 				
 			rs = pstmt.executeQuery();
 			
