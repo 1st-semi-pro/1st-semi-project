@@ -46,7 +46,7 @@
             <div class="korea"> <!-- 한반도 -->
                <a href="board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=서울특별시&festivalCat="><img src="resources/images/korea/seoul.png" id="seoul"></a>
                <a href="board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=경기도&festivalCat="><img src="resources/images/korea/Gyeonggi.png" id="gyeonggi"></a>
-               <a href="board/festivalInfo?type=1&ft=0&pop=0&festuvalDate=&festivalArea=인천광역시&festivalCat="><img src="resources/images/korea/incheon.png" id="incheon"></a>
+               <a href="board/festivalInfo?type=1&ft=0&pop=0&festuvalDate=&festivalArea=인천&festivalCat="><img src="resources/images/korea/incheon.png" id="incheon"></a>
                <a href="board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=강원도&festivalCat="><img src="resources/images/korea/gangwon.png" id="gangwon"></a>
                <a href="board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=충청남도&festivalCat="><img src="resources/images/korea/chungnam.png" id="chungnam"></a>
                <a href="board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=대전&festivalCat="><img src="resources/images/korea/daejeon.png" id="daejeon"></a>
@@ -67,7 +67,7 @@
             <div class="divide1" id="divide1">
                <div class="divide2">
                   <div class="divide3">
-                     <div class="board-name1">공지게시판</div>
+                     <div class="board-name1"><a href="board/list?type=2">공지게시판</a></div>
                      <div class="board-content1">
                         <table>
                            <tbody id="bList1"></tbody>
@@ -75,7 +75,7 @@
                      </div>
                   </div>
                   <div class="divide4">
-                     <div class="board-name2">자유게시판</div>
+                     <div class="board-name2"><a href="board/list?type=3">자유게시판</a></div>
                      <div class="board-content2">
                         <table>
                            <tbody id="bList2"></tbody>
@@ -85,7 +85,7 @@
                </div>
                <div class="divide5">
                   <div class="divide6">
-                     <div class="board-name3">축제 후기</div>
+                     <div class="board-name3"><a href="board/list?type=4">축제 후기</a></div>
                      <div  class="board-content3">
                         <table>
                            <tbody id="bList3"></tbody>
@@ -93,7 +93,7 @@
                      </div>
                   </div>
                   <div class="divide7">
-                     <div class="board-name4">동행자 구하기</div>
+                     <div class="board-name4"><a href="board/companion?type=5">동행자 구하기</a></div>
                      <div class="board-content4">
                         <table>
                            <tbody id="bList4">
