@@ -61,6 +61,8 @@ public class Member {
 	
 	public String memberMessage; // 회원 프로필 메세지
 	
+	public int memberReport; // 회원 신고 횟수
+	
 }
 
 
