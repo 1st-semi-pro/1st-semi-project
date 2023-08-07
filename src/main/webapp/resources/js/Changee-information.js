@@ -158,7 +158,7 @@ var authenticationButton = document.getElementById("authenticationButton");
 emailBtn.addEventListener("click", function(){
 
 
-    if(checkInputs.inputEmail != true){
+    if(checkInputs.memberEmail != true){
         Swal.fire(
             '이메일',
             '유효한 이메일을 입력해주세요.',
@@ -169,7 +169,6 @@ emailBtn.addEventListener("click", function(){
     }
 
     $.ajax({
-
         url : "emailcheck",
 
         data : {"Email" : memberEmail.value},
@@ -179,8 +178,8 @@ emailBtn.addEventListener("click", function(){
         dataType : "JSON",
 
         success : function(key){
-            
             if(key == ""){
+                console.log("에이짺쓰 실패");
 
                 Swal.fire(
                     '인증번호 전송 실패.',
@@ -190,7 +189,7 @@ emailBtn.addEventListener("click", function(){
                 return;
 
             }else{
-
+                console.log("에이짺쓰 성공");
                 Swal.fire(
                     '인증번호를 전송했습니다.'
                   )
@@ -203,6 +202,7 @@ emailBtn.addEventListener("click", function(){
 
                     if(key == '"' + authenticationInput.value + '"'){
 
+                        console.log("에이짺쓰 성공");
                         Swal.fire(
                             '인증번호가 일치합니다.',
                             '성공',

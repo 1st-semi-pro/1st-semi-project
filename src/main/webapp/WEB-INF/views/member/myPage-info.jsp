@@ -27,7 +27,7 @@
 
             <!-- 왼쪽 사이드 메뉴 -->
             <section class="left-side">
-                사이드 메뉴
+                <h2>사이드 메뉴</h2>
 
                 <ul class="list-group">
 
@@ -36,6 +36,9 @@
                     
                     <!-- /communty/member/myPage/changePw-->
                     <li><a href="${contextPath}/member/myPage/changePw">비밀번호 변경</a></li>
+
+                    <!-- /communty/member/myPage/changeEmail-->
+                    <li><a href="${contextPath}/member/myPage/changeEmail">이메일 변경</a></li>
 
                     <!-- /communty/member/myPage/secession-->
                     <li><a href="${contextPath}/member/myPage/secession">회원 탈퇴</a></li>
@@ -83,12 +86,13 @@
                     <div class="myPage-row">
                         <label>이메일</label>
                         <input type="email" name="memberEmail" id="memberEmail" value="${loginMember.memberEmail}" maxlength="30">
+                        
                         <button id="emailBtn" type="button">인증하기</button>
-                        <article class = "Articles" id="">
-                            <input type="hidden" class="inputs" id="authenticationInput" placeholder="인증번호를 입력해주세요." class="inputs">
-                            <input type="hidden" id="authenticationButton">
-                        </article>
                     </div>
+                        <article class = "myPage-row" id="">
+                            <input type="hidden" class="inputs" id="authenticationInput" name="authenticationInput" placeholder="인증번호를 입력해주세요.">
+                            <input type="hidden" id="authenticationButton" name="authenticationButton">
+                        </article>
                     <div class="myPage-row">
                         <label>닉네임</label>
                         <input type="text" name="memberNickname" id="memberNickname" value="${loginMember.memberNickname}" maxlength="10">
@@ -102,14 +106,20 @@
                     <span id="innerTextSpan2">아이디, 이름, 성별, 국가  변경 불가능</span>
                     <button id="info-update-btn" >수정하기</button>
                 </form>
+
+
             </section>
+
+
         </section>
 
     </main>
-        
-       <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
-       <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-       <script src="${contextPath}/resources/js/Changee-information.js"></script>
+        <!-- <script>
+            const memberEmail = "${loginMember.memberEmail}";
+        </script> -->
+        <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+        <script src="${contextPath}/resources/js/Changee-information.js"></script>
     
 </body>
 </html>
