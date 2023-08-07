@@ -57,7 +57,6 @@ public class SendEmailServletForId extends HttpServlet {
 				 new Gson().toJson(key1, resp.getWriter());
 				 new Gson().toJson(findedId, resp.getWriter());
 				 
-				
 			}
 			
 			

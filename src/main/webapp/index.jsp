@@ -49,19 +49,21 @@
                <a href="board/festivalInfo?type=1&ft=0&pop=0&festuvalDate=&festivalArea=인천광역시&festivalCat="><img src="resources/images/korea/incheon.png" id="incheon"></a>
                <a href="board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=강원도&festivalCat="><img src="resources/images/korea/gangwon.png" id="gangwon"></a>
                <a href="board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=충청남도&festivalCat="><img src="resources/images/korea/chungnam.png" id="chungnam"></a>
-               <a href="board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=대전광역시&festivalCat="><img src="resources/images/korea/daejeon.png" id="daejeon"></a>
+               <a href="board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=대전&festivalCat="><img src="resources/images/korea/daejeon.png" id="daejeon"></a>
                <a href="board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=충청북도&festivalCat="><img src="resources/images/korea/chungbuk.png" id="chungbuk"></a>
                <a href="board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=경상북도&festivalCat="><img src="resources/images/korea/gyeongsang.png" id="gyeongsang"></a>
-               <a href="board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=대구광역시&festivalCat="><img src="resources/images/korea/daegu.png" id="daegu"></a>
+               <a href="board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=대구&festivalCat="><img src="resources/images/korea/daegu.png" id="daegu"></a>
                <a href="board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=전라북도&festivalCat="><img src="resources/images/korea/jeonbuk.png" id="jeonbuk"></a>
                <a href="board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=전라남도&festivalCat="><img src="resources/images/korea/jeonnam.png" id="jeonnam"></a>
-               <a href="board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=광주광역시&festivalCat="><img src="resources/images/korea/gwangju.png" id="gwangju"></a>
+               <a href="board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=광주&festivalCat="><img src="resources/images/korea/gwangju.png" id="gwangju"></a>
                <a href="board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=경상남도&festivalCat="><img src="resources/images/korea/gyeongnam.png" id="gyeongnam"></a>
-               <a href="board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=제주특별자치도&festivalCat="><img src="resources/images/korea/jeju.png" id="jeju"></a>
-               <a href="board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=부산광역시&festivalCat="><img src="resources/images/korea/busan.png" id="busan"></a>
-               <a href="board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=울산광역시&festivalCat="><img src="resources/images/korea/ulsan.png" id="ulsan"></a>
+               <a href="board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=제주도&festivalCat="><img src="resources/images/korea/jeju.png" id="jeju"></a>
+               <a href="board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=부산&festivalCat="><img src="resources/images/korea/busan.png" id="busan"></a>
+               <a href="board/festivalInfo?type=1&ft=0&pop=0&festivalDate=&festivalArea=울산&festivalCat="><img src="resources/images/korea/ulsan.png" id="ulsan"></a>
             </div>
 
+
+            
             <div class="divide1" id="divide1">
                <div class="divide2">
                   <div class="divide3">
@@ -94,7 +96,25 @@
                      <div class="board-name4">동행자 구하기</div>
                      <div class="board-content4">
                         <table>
-                           <tbody id="bList4"></tbody>
+                           <tbody id="bList4">
+                              <div class="companion">
+                                 <div>
+                                 
+                                 </div>
+
+                                 <div>
+   
+                                 </div>
+                              
+                                 <div>
+                                 
+                                 </div>
+
+                                 <div>
+   
+                                 </div>
+                              </div>
+                           </tbody>
                         </table>
                      </div>
                   </div>
