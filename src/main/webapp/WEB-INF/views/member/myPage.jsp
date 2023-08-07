@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -54,7 +54,7 @@
                         <section>
                             <article id="intro">
                                 <span>프로필 메세지</span>
-                                <textarea name="profileMessage" id="profile-message" cols="80" rows="5">${loginMember.memberMessage}</textarea>
+                                <textarea name="profileMessage" id="profile-message" spellcheck="false" cols="80" rows="5">${loginMember.memberMessage}</textarea>
                             </article>
                             <article>
                                 <span>축제 히스토리</span>
@@ -75,7 +75,6 @@
                                     <a href="${contextPath}/member/pwConfirm"><button type="button" class="mypage-btn" id="update-btn">내 정보 수정</button></a>
                                     <button type="submit" class="mypage-btn" id="save-btn">변경사항 저장</button>
                                 </div>
-    
                             </article>
                         </section>
                     </section>
@@ -86,45 +85,36 @@
                     <input type="hidden" name="changeImage" id="change-image" value="0">
                     <input type="hidden" name="changeMessage" id="change-message" value="0">
                 </form>
-
                 
-
                 <section>
                     <article class="sub-title">관심목록</article>
                 </section>
-                <section id="festival-box">
-                    <article>
-                        <h1>서울세계 불꽃축제</h1>
-                        <a href="#"><img src="${contextPath}/resources/images/con1.jpg" alt="축제사진"></a>
-                        <span>서울특별시 2023.10.08 ~ 2023.10.08</span>
-                    </article>
-                    <article>
-                        <h1>이월드 트로피컬 아쿠아 빌리지</h1>
-                        <a href="#"><img src="${contextPath}/resources/images/con2.jpg" alt="축제사진"></a>
-                        <span>대구 2023.06.10 ~ 2023.08.27</span>
-                    </article>
-                    <article>
-                        <h1>베어트리파크 철쭉제 "봄과 철쭉"</h1>
-                        <a href="#"><img src="${contextPath}/resources/images/con3.jpg" alt="축제사진"></a>
-                        <span>세종특별자치시 2023.04.15 ~ 2023.05.07</span>
-                    </article>
-                    <article>
-                        <h1>청도 프로방스 빛축제</h1>
-                        <a href="#"><img src="${contextPath}/resources/images/con4.jpg" alt="축제사진"></a>
-                        <span>경상북도 2023.02.01 ~ 2023.11.30</span>
-                    </article>
-                </section>
+                <div id="festival-box">
+                    <c:choose>
+                        <c:when test="${empty dipList}">
+                            <div class="empty">
+                                <h1>관심목록이 없습니다, 축제를 둘러보고 찜하기를 눌러보세요~!</h1>
+                            </div>
+                        </c:when>
+                        <c:otherwise>
+                            <c:forEach var="festival" items="${dipList}" varStatus="status">
+                                <article>
+                                    <h1>${festival.festivalTitle}</h1>
+                                    <h5>${festival.festivalArea} ${festival.festivalDate}</h5>
+                                    <a href="${contextPath}/board/festivalDetail?festivalNo=${festival.festivalNo}"><img src="${contextPath}${festival.festivalImage}" alt="축제사진"></a>
+                                </article>
+                            </c:forEach>
+                        </c:otherwise>
+                    </c:choose>
+                </div>
             </section>
         </section>
     </main>
 
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
-
     <script>
         const contextPath = "${contextPath}"; // 최상위 경로를 JS 전역변수로 선언
-        const memberMessage = "${loginMember.memberMessage}"; // 현재 저장되어있는 프로필 메세지
     </script>
-
     <script src="${contextPath}/resources/js/myPage.js"></script>
     
 </body>

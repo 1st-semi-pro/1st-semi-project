@@ -1,6 +1,8 @@
 package edu.kh.festival.member.controller;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.Map;
 
 import javax.mail.Session;
 import javax.servlet.ServletException;
@@ -15,6 +17,7 @@ import com.oreilly.servlet.MultipartRequest;
 import edu.kh.festival.board.model.service.ManageService;
 import edu.kh.festival.common.MyRenamePolicy;
 import edu.kh.festival.member.model.service.MemberService;
+import edu.kh.festival.member.model.vo.Dip;
 import edu.kh.festival.member.model.vo.Member;
 
 @WebServlet("/member/myPage")
@@ -23,6 +26,7 @@ public class MyPageServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		int goodNum = 0;
 		int badNum = 0;
+		List<Dip> dipList = null;
 		
 		try {
 			HttpSession session = req.getSession(); // 세션 얻어오기
@@ -33,11 +37,14 @@ public class MyPageServlet extends HttpServlet {
 			
 			// 신고 갯수 추가
 			badNum = new ManageService().viewBad(member.getMemberNo());
+			
+			// 축제 찜목록 불러오기
+			dipList = new MemberService().getDipList(member.getMemberNo());
+			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		
-		
+		req.setAttribute("dipList", dipList);
 		req.setAttribute("badNum", badNum);
 		req.setAttribute("goodNum", goodNum);
 					

@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 import edu.kh.festival.member.model.dao.MemberDAO;
+import edu.kh.festival.member.model.vo.Dip;
 import edu.kh.festival.member.model.vo.Member;
 
 public class MemberService {
@@ -275,6 +276,23 @@ public class MemberService {
 		close(conn);
 		
 		return result;
+	}
+
+	/**
+	 * 회원 찜목록 불러오기 Service
+	 * @param memberNo
+	 * @return dipList
+	 * @throws Exception
+	 */
+	public List<Dip> getDipList(int memberNo) throws Exception{
+
+		Connection conn = getConnection();
+		
+		List<Dip> dipList = dao.getDipList(conn, memberNo);
+		
+		close(conn);
+		
+		return dipList;
 	}
 
 	

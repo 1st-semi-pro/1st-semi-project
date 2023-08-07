@@ -4,6 +4,10 @@ const inputImage = document.getElementsByClassName("inputImage"); //file
 const preview = document.getElementsByClassName("preview"); //img
 const deleteImage = document.getElementsByClassName("delete-image"); //span
 
+const festivalDate = document.getElementById("festivalDate");
+const festivalArea = document.getElementById("festivalArea");
+const festivalCat = document.getElementById("festivalCat");
+
 // 게시글 수정 시 삭제된 이미지의 레벨(위치)를 저장할 input 요소
 const deleteList = document.getElementById("deleteList");
 
