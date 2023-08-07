@@ -40,7 +40,7 @@
 
             <div id="firstbox">
                 <article class = "Articles">
-                    <img src="${contextPath}/resources/images/id.png" id="img1">
+                    <img src="${contextPath}/resources/images/id2.png" id="img1">
                     <input type="text" class="inputs" id="inputId" name="inputId" placeholder="아이디를 입력해주세요." autocomplete="off">
                 </article>
 
