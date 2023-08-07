@@ -298,15 +298,18 @@
 #youtube{
     margin-top:20px;
     display:flex;
+    width:60%;
     justify-content: center;
     align-items: center;
-    height:600px;
+    height:650px;
+    border-bottom: 2px solid lightgray;
 }
 
 #youtubeLogo{
     display:flex;
     width:60%;
     justify-content: flex-start;
+    margin-left:280px;
 }
 
 #youtubeImage{
@@ -327,7 +330,6 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    border-top:1px solid lightgray;
     margin: 30px 0;
 }
 
@@ -346,7 +348,7 @@
     justify-content: flex-start;
     align-items: center;
     width:100%;
-    margin:30px;
+    margin-bottom: 30px;
 }
 
 #similar a{

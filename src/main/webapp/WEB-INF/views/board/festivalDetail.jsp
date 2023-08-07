@@ -49,9 +49,6 @@
 
     <div id="allDiv">
 
-
-
-
         <!-- 이미지 변수설정으로 쉽게 사용 -->
         <!-- 0 = 썸네일 1~6 = 상세 이미지들 7 = half이미지 -->
         <c:forEach items="${imgList}" var="imgList">
@@ -98,7 +95,10 @@
         <div id="thumbNailDiv">
             <img src="${img0}">
             <a href="${contextPath}" id="Nav1" class="navs">메인페이지로</a>
-            <a href="${header.referer}" id="Nav2" class="navs">축제 검색 페이지로</a>
+            <a href="${contextPath}/board/festivalInfo?type=1&pop=0" id="Nav2" class="navs">축제 검색 페이지로</a>
+            
+            <!-- ${header.referer} -->
+
         </div>
 
         <!-- 기본 정보, 찜하기 -->
@@ -241,6 +241,8 @@
                 allowfullscsreen>
             </iframe>  
 
+
+            <div style=" border-top:1px solid lightgray;"></div>
             </div>
 
         </c:if>
