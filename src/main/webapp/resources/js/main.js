@@ -25,6 +25,8 @@ const bList3 = document.getElementById("bList3");
 
       success : function(boardList1){
 
+        console.log(boardList1.festivalImage.substring(1));
+
         bList1.innerText = "";
 
         for(let item of boardList1){
