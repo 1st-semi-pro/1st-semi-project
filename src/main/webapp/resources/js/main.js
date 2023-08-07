@@ -25,7 +25,7 @@ const bList3 = document.getElementById("bList3");
 
       success : function(boardList1){
 
-        console.log(boardList1.festivalImage.substring(1));
+
 
         bList1.innerText = "";
 
@@ -362,4 +362,47 @@ incheon.addEventListener("mouseover", function(){
 
   })
 })
+
+function selectCompanionList(){
+
+  $.ajax({
+
+    url : "board/mainList/companionList",
+    dataType : "json",
+
+    success : function(companionList){
+
+      bList3.innerText = "";
+
+      for(let item of boardList3){
+        const tr = document.createElement("tr");
+
+        const td = document.createElement("td");
+        
+        const a1 = document.createElement("a");
+        a1.innerText = item.boardTitle;
+        a1.setAttribute("href", "board/detail?no=" + item.boardNo + "&type=3");
+
+        tr.append(td);
+
+        bList3.append(tr);
+
+        td.append(a1);
+      }
+
+
+    },
+
+    error : function(){
+      console.log("에러 발생");
+    }
+
+  });
+}
+
+
+
+(function(){
+  selectCompanionList();
+})();
 

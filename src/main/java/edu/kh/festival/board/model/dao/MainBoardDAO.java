@@ -317,4 +317,18 @@ public class MainBoardDAO {
 		return festivalList3;
 	}
 
+	public List<Board> companionList(Connection conn) throws Exception {
+		
+		List<Board> companionList = new ArrayList<Board>();
+		
+		try {
+			
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return companionList;
+	}
+
 }
