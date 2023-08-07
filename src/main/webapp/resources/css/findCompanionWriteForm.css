@@ -40,10 +40,7 @@ form{
     color:lightcoral;
 }
 
-
-
 .board-title{
-
     width:90%;
     padding:20px 0;
     border-top: 2px solid #ccc;
@@ -178,9 +175,10 @@ span{
 
 .select-box-wrap{
     display: flex;
-    justify-content:space-evenly;
+    justify-content: space-between;
+    align-items: center;
 }
-.select-date >label , .select-area >label , .select-cat >label, .select-fest >label{
+.select-date >label , .select-area >label , .select-cat >label, .select-fest >label, .select-rec >label{
     display: block;
     overflow: hidden;
     position: relative;
@@ -193,10 +191,9 @@ span{
     word-wrap: initial;
 }
 .select-box{
-    width: 40%;
+    width: 30%;
     height: 40px;
     background-color: #eee;
-    display: flex;
 }
 .select-box select{
     width: 100%;
@@ -224,7 +221,69 @@ span{
     background-size: 30px 30px;
     background-position: 10px;
 }
+#festivalList{
+    background: url(../images/festival_infomation/festi.png) no-repeat;
+    background-size: 30px 30px;
+    background-position: 10px;
+    width: 300px;
+}
+#recruit{
+    background-color: #EEEEEE;
+}
+
+#inputDateLabel{
+    display: flex;
+    justify-content:right;
+    align-items: center;
+    width: 130px;
+    color: rgb(136, 136, 136);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#inputDate{
+    width: 150px;
+    text-align: center;
+    outline: none;
+    background-color: #eee;
+    border: none;
+}
+
+#peopleLabel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    margin-left: 20px;
+    color: rgb(136, 136, 136);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#numberOfPeople{
+    width: 30px;
+    text-align: center;
+    outline: none;
+    background-color: #eee;
+    border: none;
+}
 
 select:focus{
-    border: 3px solid orange;
+    border: 3px solid lightcoral;
+}
+
+.flex{
+    display: flex;
+    height: 40px;
+    background-color: #eee;
+}
+
+.date-area{
+    width: 350px;
+    justify-content: right;
+    padding-right: 50px;
+}
+
+.recruit-area{
+    width: 150px;
 }

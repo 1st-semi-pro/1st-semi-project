@@ -88,7 +88,7 @@ document.getElementById("sendEmail-btn").addEventListener("click", function(){
     function sendAuthNum(){
         // 이미 타이머가 작동중이면 초기화
         if (isRunning) clearInterval(timer);
-        startTimer(10, display);
+        startTimer(60*3, display);
     }
 
     function startTimer(count, display) {
