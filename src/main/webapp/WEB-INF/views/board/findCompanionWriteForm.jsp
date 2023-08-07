@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,19 +9,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>동행자 구하기</title>
 
-    
-
     <link rel="stylesheet" href="${contextPath}/resources/css/header.css">
     
     <link rel="stylesheet" href="${contextPath}/resources/css/findCompanionWriteForm.css">
-
-
 
     <script src="https://kit.fontawesome.com/16679b9adf.js" crossorigin="anonymous"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&family=Moirai+One&display=swap" rel="stylesheet">
+    
+    <c:set var="currentDate" value="<%=new java.util.Date()%>" />
+    <fmt:formatDate value="${currentDate}" pattern="yyyy-MM-dd" />
 
 </head>
 
@@ -47,12 +47,13 @@
             </div>
 
             <h1 class="board-title">
+                <input type="text" name="festivalTitle" placeholder="[ 안성맞춤남사당바우덕이축제 ]" autocomplete="off" readonly>
                 <input type="text" name="boardTitle" placeholder="제목을 입력해주세요." value="${detail.boardTitle}" autocomplete="off">
             </h1>
             <h1><!--시기, 지역, 테마 선택시 select option 최신화되고 그 목록에서 축제선택 -->
                 <div class="select-box-wrap">
                     <div class="select-box select-date">
-                        <label for="festivalDate">날짜</label>
+                        <label for="festivalDate" class="labels">날짜</label>
                         <select name="festivalDate" id="festivalDate" title="날짜">
                             <option value="">날짜</option>
                             <option value="01">01월</option>
@@ -71,7 +72,7 @@
                     </div>
             
                     <div class="select-box select-area">
-                        <label for="festivalArea">지역</label>
+                        <label for="festivalArea" class="labels">지역</label>
                         <select name="festivalArea" id="festivalArea" title="지역">
                             <option value="">지역</option>
                             <option value="서울특별시">서울특별시</option>
@@ -94,7 +95,7 @@
                         </select>
                     </div>
                     <div class="select-box select-cat">
-                        <label for="festivalCat">카테고리</label>
+                        <label for="festivalCat" class="labels">카테고리</label>
                         <select name="festivalCat" id="festivalCat" title="카테고리">
                             <option value="">카테고리</option>
                             <option value="가족">가족</option>
@@ -105,13 +106,27 @@
                         </select>
                     </div>
                     <div class="select-box select-fest">
-                        <label for="festivalList">축제선택</label>
+                        <label for="festivalList" id="labels">축제선택</label>
                         <select name="festivalList" id="festivalList" title="축제선택">
-                            <option value="">축제선택</option>
+                            <option value="">안성맞춤남사당바우덕이축제</option>
                         </select>
                     </div>
-                    <label class="" for="numberOfPeople">동행 인원수</label>
-                    <input type="number">
+                    <div class="flex date-area">
+                        <label for="inputDate" id="inputDateLabel">동행일자 :</label>
+                        <input type="date" name="inputDate" id="inputDate" min="${currentDate}">
+                    </div>
+                    <div class="flex recruit-area">
+                        <label for="numberOfPeople" id="peopleLabel">모집인원 :</label>
+                        <input type="number" min="1" max="10" value="1" name="numberOfPeople" id="numberOfPeople">
+                    </div>
+                    <div class="select-box select-rec">
+                        <label for="recruit" id="labels">구인상태 :</label>
+                        <select name="recruit" id="recruit" title="구인상태">
+                            <option value="">구인상태</option>
+                            <option value="모집중">모집 중</option>
+                            <option value="모집마감">모집 마감</option>
+                        </select>
+                    </div>
                 </div>
             </h1>
 
