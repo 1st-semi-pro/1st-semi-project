@@ -72,7 +72,6 @@
     margin-bottom: 30px;
     letter-spacing: -1px;
 }
-
 .myPage-row{
     width: 500px;
     height: 50px;
@@ -82,7 +81,19 @@
     align-items: center;
     border-bottom: 2px solid #ddd;
 }
+.myPage-row1{
+    width: 500px;
+    height: 50px;
 
+    display: flex;
+    align-items: center;
+
+}
+
+.myPage-row1>* {
+    background-color: white;
+    
+}
 .myPage-row > *{
     font-size: 18px;
     font-weight: bold;
@@ -105,6 +116,7 @@
     font-weight: normal;
 }
 
+
 .myPage-row:focus-within{
     border-bottom: 2px solid gray;
 }
@@ -114,6 +126,10 @@ form[name="myPage-form"]{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+#emailBtn{
+    margin-bottom: 18px;
 }
 
 #innerTextSpan2{
@@ -182,4 +198,12 @@ form[name="myPage-form"]{
     /* 내용이 지정한 사이즈를 초과한 경우에 대한 속성 */
     overflow: auto; /* 초과한 방향의 스크롤을 자동 생성 */
 }
+.right{
+    display: flex;
+    justify-content: right;
 
+}
+#timer{
+    font-size: 1.5rem;
+    justify-content: right;
+}
