@@ -1,4 +1,4 @@
-/* function companionList(){
+function companionList(){
    
     // contextPath, boardNo, memberNo 전역 변수 사용
     $.ajax({
@@ -97,7 +97,7 @@
 
     });
 }
- */
+
 function deleteReply(boardNo,festivalTitle){
 
 
@@ -131,7 +131,6 @@ function deleteReply(boardNo,festivalTitle){
                     'success'
                 )
                 
-                document.location.href = document.location.href;
             
         
                 
