@@ -1,4 +1,4 @@
-function companionList(){
+/* function companionList(){
    
     // contextPath, boardNo, memberNo 전역 변수 사용
     $.ajax({
@@ -96,7 +96,7 @@ function companionList(){
         }
 
     });
-}
+} */
 
 function deleteReply(boardNo,festivalTitle){
 

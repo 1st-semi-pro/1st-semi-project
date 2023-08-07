@@ -127,10 +127,13 @@ li{list-style: none;}
   font-size: 20px;
   right: 5px;
   bottom: 5px;
-  background-color: orange;
+  background-color:burlywood;
   color:black;
   font-weight: bold;
   cursor: pointer;
+}
+.my-text >button:hover{
+  background-color: orange;
 }
 #update-box{
   margin-top: 5px;
@@ -185,16 +188,25 @@ li{list-style: none;}
   font-weight: bold;
   border-radius: 50%;
 }
+#i-bt{
+  width: 30%;
+  height: 40px;
+}
+#i-bt > button{
+  width: 100%;
+}
 #w-button{
   width: 100px;
   height: 40px;
   line-height: 30px;
   position: absolute;
   bottom: 30px;
-  right: 85px;
-  background-color: orange;
-  color: white;
+  right: 80px;
+  background-color: palegoldenrod;
   font-size: 20px;
   font-weight: bold;
-
+  cursor: pointer;
+}
+#w-button:hover{
+  background-color: orange;
 }
