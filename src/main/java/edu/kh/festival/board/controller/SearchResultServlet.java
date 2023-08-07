@@ -31,20 +31,23 @@ public class SearchResultServlet extends HttpServlet{
 	
 			MainBoardService mainboardService = new MainBoardService();
 			FestivalService festivalService = new FestivalService();
-			
+			BoardService boardService = new BoardService();
 			// 게시판 이름, 페이지네이션 객체, 게시글 리스트 한번에 반화하는 Service 호출
 			Map<String,Object> map1 = null;
 			Map<String,Object> map2 = null;
+			Map<String,Object> map3 = null;
 			
 				//String key = req.getParameter("key");
 				String query = req.getParameter("query");
 				
 				map1 = mainboardService.searchResultList(query);
 				map2 = festivalService.festivalInfo(query);
+				map3 = boardService.companionList(query);
 				
 			// request 범위로 map을 세팅
 			req.setAttribute("map1", map1);
 			req.setAttribute("map2", map2);
+			req.setAttribute("map3", map3);
 			
 			
 			String path = "/WEB-INF/views/board/searchResult.jsp";

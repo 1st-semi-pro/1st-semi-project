@@ -18,13 +18,13 @@
 .board-list{
     width: 1000px;
     margin: 50px auto;
-    border: 3px solid #ccc;  
+    border: 3px solid lightcoral;  
     border-radius: 10px;
 }
 .board-list1{
     width: 1000px;
     margin: 50px auto;
-    border: 3px solid #ccc;  
+    border: 3px solid lightcoral;  
     border-radius: 10px;
 }
 

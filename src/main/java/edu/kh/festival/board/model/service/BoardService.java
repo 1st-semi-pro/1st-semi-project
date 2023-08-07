@@ -1,6 +1,5 @@
 package edu.kh.festival.board.model.service;
 
-import static edu.kh.festival.common.JDBCTemplate.getConnection;
 import static edu.kh.festival.common.JDBCTemplate.*;
 
 import java.sql.Connection;
@@ -282,6 +281,26 @@ public class BoardService {
 
 		return map;
 	}
+	
+	
+	/** 지민 동행자 검색
+	 * @param query
+	 * @return
+	 * @throws Exception
+	 */
+	public Map<String, Object> companionList(String query) throws Exception {
+		Connection conn = getConnection();
+
+		String boardName = null; 
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		
+		List<Board> companionList = dao.companionList(conn, query);
+		map.put("boardName5", boardName);
+		map.put("companionList", companionList);
+		close(conn);
+		return map;
+	}
 
 	/** 게시판에서 바로삭제service <광민> 제발..
 	 * @param boardNo
@@ -301,5 +320,6 @@ public class BoardService {
 		
 		return result;
 	}
+
 
 }
