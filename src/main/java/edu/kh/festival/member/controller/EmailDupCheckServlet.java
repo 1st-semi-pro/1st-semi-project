@@ -35,7 +35,7 @@ public class EmailDupCheckServlet extends HttpServlet{
 			
 			// *** 비동기 통신 시 응답은 화면이 아닌 데이터(String, XML, JSON, int, ...)
 			// -> 응답용 스트림을 이용해서 단순 데이터 전달만 하면된다.
-			if(result >0) {
+			if(result > 0) {
 				System.out.println("이메일 변경 성공");
 			}else {
 				System.out.println("이메일 변경 실패");

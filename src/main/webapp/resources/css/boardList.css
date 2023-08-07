@@ -2,6 +2,10 @@
     border: 1px solid black;
 } */
 
+*{
+    box-sizing: border-box; 
+    font-family: 'Hi Melody', cursive;
+}
 /* a태그 공통 설정 */
 .board-list a {
     text-decoration: none;
@@ -21,6 +25,7 @@
 .board_name{
     font-size: 2.5em;
     margin-left: 30px;
+    color: lightcoral;
 }
 
 /* 게시글 목록 영역 */
@@ -43,7 +48,7 @@
 }
 
 .list-table > thead{
-    background-color: #ccc;
+    background-color: lightcoral;
     color: white;
 }
 
@@ -84,9 +89,9 @@
     width: 80px;
     height: 40px;
 
-    background-color: white;
+    background-color: lightcoral;
     border: 2px solid #ccc;
-    color: #ccc;
+    color: white;
     font-weight: bold;
     cursor: pointer;
     border-radius: 5px;
@@ -115,7 +120,7 @@
 
 /* 현재 페이지 번호 */
 .pagination .current{
-    background-color: #ccc;
+    background-color:lightcoral;
     color: white;
     font-weight: bold;
     border-radius: 50%;
@@ -129,6 +134,8 @@
     display: flex;
     justify-content: space-between;
     margin: 30px auto;
+    border-color: lightcoral;
+    border-radius: 10px;
 }
 
 /* 검색 영역 공통 스타일 */
@@ -136,6 +143,8 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    border-radius: 10px;
+    border-color: lightcoral;
 }
 #boardSearch select{
     width: 100px;
@@ -147,7 +156,7 @@
 }
 #boardSearch button{
     width: 100px;
-    background-color: #ccc;
+    background-color: lightcoral;
     color: white;
     font-weight: bold;
     cursor: pointer;

@@ -11,6 +11,9 @@
     <title>마이페이지</title>
     <link rel="stylesheet" href="${contextPath}/resources/css/header.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/myPage-info.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&family=Moirai+One&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/51fc103959.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -46,6 +49,7 @@
                 <span class="myPage-explanation">원하는 회원 정보를 수정할 수 있습니다.</span>
                 <form action="info" method="post" onsubmit="return infoValidate()" name="myPage-form">
                     
+                    <div class="dis">
                     <div class="myPage-row" id="disabled">
                         <label>아이디</label>
                         <input type="text" name="memberId" value="${loginMember.memberId }" maxlength="30" disabled>
@@ -62,6 +66,7 @@
                         <label>국가</label>
                         <input type="text" name="memberNationality" value="${loginMember.memberNationality }" maxlength="30" disabled>
                     </div>
+                </div>
                     <div class="myPage-row">
                         <label>사는 지역</label>
                         <select name="memberRegion" id="memberRegion" value="${loginMember.memberRegion }">
@@ -78,6 +83,11 @@
                     <div class="myPage-row">
                         <label>이메일</label>
                         <input type="email" name="memberEmail" id="memberEmail" value="${loginMember.memberEmail}" maxlength="30">
+                        <button id="emailBtn" type="button">인증하기</button>
+                        <article class = "Articles" id="">
+                            <input type="hidden" class="inputs" id="authenticationInput" placeholder="인증번호를 입력해주세요." class="inputs">
+                            <input type="hidden" id="authenticationButton">
+                        </article>
                     </div>
                     <div class="myPage-row">
                         <label>닉네임</label>
@@ -89,7 +99,7 @@
                         <input type="text" name="memberPhone" value="${loginMember.memberPhone}" maxlength="11">
                     </div>
 
-                    <span id="innerTextSpan2">오렌지 변경 불가</span>
+                    <span id="innerTextSpan2">아이디, 이름, 성별, 국가  변경 불가능</span>
                     <button id="info-update-btn" >수정하기</button>
                 </form>
             </section>

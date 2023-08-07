@@ -34,20 +34,6 @@
 .board-list1:nth-of-type(1),.board-list:nth-of-type(2),.board-list:nth-of-type(3),.board-list:nth-of-type(4){
     position: relative;
 }
-.moreBtn{
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    width: 80px;
-    height: 40px;
-
-    background-color: white;
-    border: 2px solid orange;
-    color: orange;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 5px;
-}
 
 
 /* 게시판 이름 */
@@ -83,7 +69,7 @@
         -> 고유 테두리를 지닌 요소와 겹치는 경우
            테두리를 분리할지 상쇄(덮어쓰기)할지 지정한다 
      */
-   /* border-collapse: collapse; */
+    border-collapse: collapse;
 }
 
 
@@ -116,3 +102,45 @@ tr > *:nth-of-type(5){width: 15%;}
     color: #fff;
     background-color: lightgreen;
 }
+
+.sch_result_list{margin:0 0 3px }
+.sch_result_list li:first-child{padding-top:11px}
+.sch_result_list .tit_txt{font-weight:normal;text-decoration:underline;line-height:30px;}
+.sch_result_list .link_dsc_txt{margin-top:6px;line-height:20px;  color: #999;}
+.sch_result_list .link_dsc_txt.dsc_sub{margin-top:4px}
+.sch_result_list .link_dsc_txt.dsc_sub:after{clear:both;display:block;visibility:hidden;content:""}
+/* .sch_result_list .sub_txt{text-decoration:underline; color: #ccc;   } */
+.date_time{ display: inline; float:none;margin-left:10px;margin-top:0}
+.sch_result_list .date_time:first-child{margin-left:0}
+/* .sch_result_list .date_time::before{display:none} */
+
+.integrate_cont.sch_result.result_all{border-bottom:none}
+
+
+.integrate_cont_head{
+    font-size: 1.3rem;
+}
+.sch_result_list.img{  display: grid; 
+  grid-template-columns: 1fr 1fr; font-size: 1.5rem; column-gap: 20px; /* column의 간격을 20px로 */ justify-content: center; margin-left: 10px;}
+.integrate_cont.news_result.news_all{border-bottom:none}
+.sch_result_list.img li{ overflow:hidden;padding-top:15px; justify-content: center; }
+.sch_result_imgbox{float:left;width:152px;height:102px;}
+.sch_result_imgbox > a{width:150px;height:100px;border:1px #ccc solid;overflow:hidden}
+.sch_result_imgbox img{width:150px;min-height:100px}
+.sch_result_txtbox{display: flex; flex-direction: column; justify-content: space-evenly; width:300px; z-index: 30;}
+.sch_result_txtbox:first-child{width:100%;}
+.sch_result_list.img .tit_txt{display:block;font-size: 1.5rem;}
+.sch_result_list.img .link_dsc_txt{height:20px;overflow:hidden; margin: 5px 0;}
+.sch_result_list.img .link_dsc_txt.dsc_sub{height:20px; display: flex;  margin-bottom: 5px;}
+.gall_result_more{position:relative;margin-right:12px;color:#999; float: right; }
+.gall_result_more:after{content:'';display:inline-block;width:5px;height:9px;margin-left:3px;
+background-image:url(https://nstatic.dcinside.com/dc/w/images/sp/sp_img.png);background-position:-110px -58px
+}
+
+.fr {
+    float: right;
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+
+

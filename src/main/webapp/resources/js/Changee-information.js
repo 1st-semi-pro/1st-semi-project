@@ -2,7 +2,8 @@ const checkInputs = {
 
     "memberNickname" : false,
     "memberEmail" : false,
-    /* radio 안넣었음 몰라서 */
+    "emailBtn" : false
+    
 
 }
 
@@ -147,8 +148,94 @@ function changePwValidate(){
   
   return true;
 }    
-
 const memberEmail = document.getElementById("memberEmail");
+const emailBtn = document.getElementById("emailBtn");
+
+var authenticationInput = document.getElementById("authenticationInput");
+var authenticationButton = document.getElementById("authenticationButton");
+// ----------------------------------------------------------------------------- //
+// 이메일 인증 
+emailBtn.addEventListener("click", function(){
+
+
+    if(checkInputs.inputEmail != true){
+        Swal.fire(
+            '이메일',
+            '유효한 이메일을 입력해주세요.',
+            'error'
+          )
+        checkInputs.emailBtn = false;
+        return;
+    }
+
+    $.ajax({
+
+        url : "emailcheck",
+
+        data : {"Email" : memberEmail.value},
+
+        type : "GET",
+
+        dataType : "JSON",
+
+        success : function(key){
+            
+            if(key == ""){
+
+                Swal.fire(
+                    '인증번호 전송 실패.',
+                    'error'
+                  )
+                checkInputs.emailBtn = false;
+                return;
+
+            }else{
+
+                Swal.fire(
+                    '인증번호를 전송했습니다.'
+                  )
+                authenticationInput.setAttribute('type','text');
+                authenticationButton.setAttribute('type','button'); 
+                authenticationButton.value = "인증";  
+                in2.innerText = "";
+            
+                authenticationButton.addEventListener("click",function(){
+
+                    if(key == '"' + authenticationInput.value + '"'){
+
+                        Swal.fire(
+                            '인증번호가 일치합니다.',
+                            '성공',
+                            'success'
+                          )
+                        checkInputs.emailBtn = true;
+                        
+
+                        }else{
+                        Swal.fire(
+                            '인증번호가 일치하지 않습니다.',
+                            '실패',
+                            'error'
+                          )
+                        checkInputs.emailBtn = false;
+                    }
+              
+                })
+
+            }
+
+        },
+
+        error : function(){
+
+        }
+
+    })
+
+})
+
+
+
 //const in2 = document.getElementById("innerTextSpan2");
 memberEmail.addEventListener("input", function(){
 

@@ -57,7 +57,7 @@ a {
     transition-duration: 0.1s;
 }
 .board_title a:hover{
-    background-color: #455ba8;
+    background-color: lightcoral;
     color: white;
 }
 .bt_wrap {

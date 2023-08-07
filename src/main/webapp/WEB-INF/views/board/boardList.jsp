@@ -13,6 +13,9 @@
     <title>${boardName}</title>
     <link rel="stylesheet" href="${contextPath}/resources/css/boardList.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/header.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&family=Moirai+One&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/51fc103959.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -24,7 +27,7 @@
         </c:if>
 
         <section class="board-list">
-            <h1 class="board-name">${boardName}</h1>
+            <h1 class="board_name">${boardName}</h1>
 
                 <!-- /board/list?type=1&key=t&query=검색어 -->
                 <form action="#" method="get" id="boardSearch" onsubmit="return searchValidate()">
