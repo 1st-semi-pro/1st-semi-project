@@ -39,17 +39,18 @@
 
 
 .sch_result_list.img{  display: grid;
-  grid-template-columns: 1fr 1fr;}
+  grid-template-columns: 1fr 1fr; font-size: 1.5rem; row-gap: 10px; /* row의 간격을 10px로 */
+	column-gap: 20px; /* column의 간격을 20px로 */ }
 .integrate_cont.news_result.news_all{border-bottom:none}
-.sch_result_list.img li{display: flex; overflow:hidden;padding-top:15px;padding-left: 10px; align-items: center; justify-content: space-around;}
+.sch_result_list.img li{display: flex; overflow:hidden;padding-top:15px;padding-left: 10px; }
 .sch_result_imgbox{float:left;width:152px;height:102px;}
 .sch_result_imgbox > a{display:flex;width:150px;height:100px;border:1px #ccc solid;overflow:hidden}
 .sch_result_imgbox img{width:150px;min-height:100px}
-.sch_result_txtbox{float:left;width:300px; margin-left: 20px;}
+.sch_result_txtbox{display: flex; flex-direction: column; justify-content: center; width:300px;}
 .sch_result_txtbox:first-child{width:100%;}
 .sch_result_list.img .tit_txt{display:block;font-size: 1.5rem;}
-.sch_result_list.img .link_dsc_txt{height:40px;overflow:hidden}
-.sch_result_list.img .link_dsc_txt.dsc_sub{height:20px; display: flex;}
+.sch_result_list.img .link_dsc_txt{height:20px;overflow:hidden; margin: 5px 0;}
+.sch_result_list.img .link_dsc_txt.dsc_sub{height:20px; display: flex;  margin-bottom: 5px;}
 .gall_result_more{position:relative;margin-right:12px;color:#999; float: right; border-bottom: 1px solid;}
 .gall_result_more:after{content:'';display:inline-block;width:5px;height:9px;margin-left:3px;
 background-image:url(https://nstatic.dcinside.com/dc/w/images/sp/sp_img.png);background-position:-110px -58px
@@ -156,7 +157,7 @@ background-image:url(https://nstatic.dcinside.com/dc/w/images/sp/sp_img.png);bac
                                                 <td>${board.boardNo}</td>
                                                 <td><a href="detail?no=${board.boardNo}&cp=${pagination.currentPage}&type=${param.type}${sURL}">${board.boardTitle}</a></td>
                                                 <td><a href="detail?no=${board.boardNo}&cp=${pagination.currentPage}&type=${param.type}${sURL}">${board.boardContent}</a></td>
-                                                <td><a href="${contextPath}/member/myPage2?memberNo=${detail.memberNo}">${board.memberNickname}</a></td>
+                                                <td><a href="${contextPath}/member/myPage2?memberNo=${board.memberNo}">${board.memberNickname}</a></td>
                                                 <td>${board.createDate}</td>
                                             </tr>
                                         </c:forEach>
@@ -187,7 +188,7 @@ background-image:url(https://nstatic.dcinside.com/dc/w/images/sp/sp_img.png);bac
                                             <li>
                                                 <a href="detail?no=${board.boardNo}&cp=${pagination.currentPage}&type=${param.type}${sURL}" class="tit_txt">${board.boardTitle}</a>
                                                 <p class="link_dsc_txt">${board.boardContent}</p>
-                                                <p class="link_dsc_txt dsc_sub"><a href="${contextPath}/member/myPage2?memberNo=${detail.memberNo}" class="sub_txt">${board.memberNickname}</a><span class="date_time">${board.createDate}</span></p>
+                                                <p class="link_dsc_txt dsc_sub"><a href="${contextPath}/member/myPage2?memberNo=${board.memberNo}" class="sub_txt">${board.memberNickname}</a><span class="date_time">${board.createDate}</span></p>
                                             </li>
                                         </c:forEach>
                                     </ul>
@@ -223,7 +224,7 @@ background-image:url(https://nstatic.dcinside.com/dc/w/images/sp/sp_img.png);bac
                                                 <div class="sch_result_txtbox"> <!-- 게시글 -->
                                                     <a href="detail?no=${board.boardNo}&cp=${pagination.currentPage}&type=${param.type}${sURL}" class="tit_txt">${board.boardTitle}</a>
                                                     <p class="link_dsc_txt">${board.boardContent}</p>
-                                                    <p class="link_dsc_txt dsc_sub"><a href="${contextPath}/member/myPage2?memberNo=${detail.memberNo}"class="sub_txt">${board.memberNickname}</a><span class="date_time">${board.createDate}</span></p>
+                                                    <p class="link_dsc_txt dsc_sub"><a href="${contextPath}/member/myPage2?memberNo=${board.memberNo}"class="sub_txt">${board.memberNickname}</a><span class="date_time">${board.createDate}</span></p>
                                                 </div>
                                             </li>
                                             

@@ -86,19 +86,22 @@
    /* border-collapse: collapse; */
 }
 
-.list-table > *{
+
+.list-table >tbody> tr{
+    display: flex;
+    height: 30px;
+    font-size: 25px;
+    border-bottom: 1px solid black;
+    margin-top: 20px;
+}
+.list-table >tbody> tr>th{
 }
 
-.list-table tr > *{
-    text-align: center;
-    
-}
-
-.list-table tr > *:nth-of-type(1){width: 15%;}
-.list-table tr > *:nth-of-type(2){width: 15%;}
-.list-table tr > td:nth-of-type(3){width: 40%; text-align: left; padding-left: 70px; }
-.list-table tr > *:nth-of-type(4){width: 15%;}
-.list-table tr > *:nth-of-type(5){width: 15%;}
+tbody> tr > *:nth-of-type(1){width: 15%; padding-left: 10px;}
+tr > *:nth-of-type(2){width: 15%;}
+tr > td:nth-of-type(3){width: 40%; text-align: left; padding-left: 70px; }
+tr > *:nth-of-type(4){width: 15%;}
+tr > *:nth-of-type(5){width: 15%;}
 
 /* 버튼 영역 */
 /* .btn-area{
