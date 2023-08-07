@@ -11,6 +11,9 @@ var swiper = new Swiper(".mySwiper", {
     clickable: true,
   },
 });
+const bList1 = document.getElementById("bList1");
+const bList2 = document.getElementById("bList2");
+const bList3 = document.getElementById("bList3");
 
 
   function selectBoard(){
@@ -21,7 +24,6 @@ var swiper = new Swiper(".mySwiper", {
       dataType : "json",
 
       success : function(boardList1){
-        const bList1 = document.getElementById("bList1");
 
         bList1.innerText = "";
 
@@ -70,7 +72,7 @@ var swiper = new Swiper(".mySwiper", {
       dataType : "json",
 
       success : function(boardList2){
-        const bList2 = document.getElementById("bList2");
+        
 
         bList2.innerText = "";
 
@@ -116,7 +118,6 @@ var swiper = new Swiper(".mySwiper", {
       dataType : "json",
 
       success : function(boardList3){
-        const bList3 = document.getElementById("bList3");
 
         bList3.innerText = "";
 
@@ -156,6 +157,7 @@ var swiper = new Swiper(".mySwiper", {
 
 
 const seoul = document.getElementById("seoul");
+const div1 = document.getElementById("divide1");
 
 seoul.addEventListener("mouseover", function(){
 
@@ -164,8 +166,30 @@ seoul.addEventListener("mouseover", function(){
     dataType : "json",
     success : function(festivalList1){
       console.log(festivalList1);
-      console.log(festivalList1[0].festivalTitle);
+      console.log(festivalList1);
+
       
+      div1.innerText="";
+
+      const div = document.createElement("div");
+      const div2 = document.createElement("div");
+      const img1 = document.createElement("img")
+      const img2 = document.createElement("img")
+      const img3 = document.createElement("img")
+      const img4 = document.createElement("img")
+      div1.append(div);
+      div1.append(div2);
+      div.append(img1);
+      div.append(img2);
+      div2.append(img3);
+      div2.append(img4);
+
+      img1.setAttribute("src", "resources/images/festival_infomation/122.png");
+      img2.setAttribute("src", "resources/images/festival_infomation/22.png");
+      img3.setAttribute("src", "resources/images/festival_infomation/22.png");
+      img4.setAttribute("src", "resources/images/festival_infomation/22.png");
+
+
       
 
       
@@ -177,3 +201,4 @@ seoul.addEventListener("mouseover", function(){
 
   })
 })
+
