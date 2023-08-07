@@ -1,4 +1,4 @@
-function companionList(){
+/* function companionList(){
    
     // contextPath, boardNo, memberNo 전역 변수 사용
     $.ajax({
@@ -97,24 +97,45 @@ function companionList(){
 
     });
 }
+ */
+function deleteReply(boardNo,festivalTitle){
 
-function deleteReply(boardNo){
-    console.log(boardNo);
-    if(confirm("정말로 삭제 하시겠습니까~?")){
+
+    Swal.fire({
+			title: festivalTitle,
+			text: "삭제하시겠습니까?",
+			icon: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: '삭제',
+			cancelButtonText: '취소'
+			}).then((results) => {
+
+    if(results.value !=null){
 
         $.ajax({
 
            url : contextPath + "/companionList/delete",
            
-           data : {"boardNo" : boardNo},
+           data : {"boardNo" : boardNo , "festivalTitle" : festivalTitle},
 
            type : "GET",
-
+        
            success : function(result){
+            console.log("aaa=== "+ result);
             if(result > 0 ){
-                alert("삭제되었습니다.");
+                
+                Swal.fire(
+                    festivalTitle,"삭제되었습니다!",
+                    'success'
+                )
+                
+                document.location.href = document.location.href;
+            
+        
+                
 
-                selectReplyList(); 
 
             }else{
                 alert("삭제를 실패했습니다.");
@@ -125,10 +146,10 @@ function deleteReply(boardNo){
            error : function(req, status, error){
             console.log("게시글삭제 실패");
             console.log(req.responseText);
-        }
+          }   
 
-        })
+           })
 
-    }
+    } })
 
 }

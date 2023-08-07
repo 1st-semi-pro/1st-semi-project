@@ -22,5 +22,6 @@ public class Board {
 	private String festivalTitle;
 	private String festivalDate;
 	private String festivalArea;
+	private int festivalNo;
 
 }
