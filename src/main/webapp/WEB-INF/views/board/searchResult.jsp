@@ -56,6 +56,7 @@
                                         <tr>
                                             <th colspan="5">게시글이 존재하지않습니다.</th>
                                         </tr>
+                                        <tr><th><br></th></tr>
                                     </c:when>
 
                                     <c:otherwise>
@@ -98,6 +99,7 @@
                                     <tr>
                                         <th colspan="5">게시글이 존재하지않습니다.</th>
                                     </tr>
+                                    <tr><th><br></th></tr>
                                 </c:when>
 
                                 <c:otherwise>
@@ -140,6 +142,7 @@
                                     <tr>
                                         <th colspan="5">게시글이 존재하지않습니다.</th>
                                     </tr>
+                                    <tr><th><br></th></tr>
                                 </c:when>
 
                                 <c:otherwise>
@@ -182,6 +185,7 @@
                                     <tr>
                                         <th colspan="5">게시글이 존재하지않습니다.</th>
                                     </tr>
+                                    <tr><th><br></th></tr>
                                 </c:when>
 
                                 <c:otherwise>
@@ -219,33 +223,47 @@
                             </div>
 
                             <tbody>
+                              
                                 <c:choose>
-                                    <c:when test="${empty companionList}">
-                                        <!-- 게시글 목록 조회 결과가 비어있다면 -->
+
+                                    <c:when  test="${empty sessionScope.loginMember}">
                                         <tr>
-                                            <th colspan="5">게시글이 존재하지않습니다.</th>
+                                            <th colspan="5">회원 전용 페이지 입니다.<br> 로그인 후 이용 가능합니다!</th>
                                         </tr>
+                                        <tr><th><br></th></tr>
                                     </c:when>
 
                                     <c:otherwise>
-                                    <!-- 게시글 목록 조회 결과가 비어있지 않다면 -->
-                                    <!-- 향상된 for문 처럼사용 -->
-                                    <ul class="sch_result_list img">
-                                        <c:forEach var="companion" items="${companionList}">
-                                            <li> <!-- 이미지 -->
-                                                <div class="sch_result_imgbox"><a href="festivalDetail?festivalNo=${companion.festivalNo}&type=${param.type}${sURL}" >
-                                                    <img src="${contextPath}/resources/images/festival_infomation/${companion.festivalNo}.png" alt=""></a>
-                                                </div>			
-                                                <div class="sch_result_txtbox"> <!-- 게시글 -->
-                                                    <a href="detail?no=${companion.boardNo}&cp=${pagination.currentPage}&type=${param.type}${sURL}" class="tit_txt">${companion.boardTitle}</a>
-                                                    <p class="link_dsc_txt">${companion.boardContent}</p>
-                                                    <p class="link_dsc_txt dsc_sub"><a href="${contextPath}/member/myPage2?memberNo=${companion.memberNo}"class="sub_txt">${companion.memberNickname}</a><span class="date_time">${companion.createDate}</span></p>
-                                                </div>
-                                            </li>
-                                        </c:forEach>
-                                    </ul>
-                                    <!-- 더보기 -->
-                                    <a href="${contextPath}/board/companion?type=5&key=${param.key}&query=${param.query}" class="gall_result_more fr">더보기</a>        
+                                        <c:choose>
+                                        <c:when test="${empty companionList}">
+                                            <!-- 게시글 목록 조회 결과가 비어있다면 -->
+                                            <tr>
+                                                <th colspan="5">게시글이 존재하지않습니다.</th>
+                                            </tr>
+                                            <tr><th><br></th></tr>
+                                        </c:when>
+
+                                        <c:otherwise>
+                                            <!-- 게시글 목록 조회 결과가 비어있지 않다면 -->
+                                            <!-- 향상된 for문 처럼사용 -->
+                                            <ul class="sch_result_list img">
+                                                <c:forEach var="companion" items="${companionList}">
+                                                    <li> <!-- 이미지 -->
+                                                        <div class="sch_result_imgbox"><a href="festivalDetail?festivalNo=${companion.festivalNo}&type=${param.type}${sURL}" >
+                                                            <img src="${contextPath}/resources/images/festival_infomation/${companion.festivalNo}.png" alt=""></a>
+                                                        </div>			
+                                                        <div class="sch_result_txtbox"> <!-- 게시글 -->
+                                                            <a href="detail?no=${companion.boardNo}&cp=${pagination.currentPage}&type=${param.type}${sURL}" class="tit_txt">${companion.boardTitle}</a>
+                                                            <p class="link_dsc_txt">${companion.boardContent}</p>
+                                                            <p class="link_dsc_txt dsc_sub"><a href="${contextPath}/member/myPage2?memberNo=${companion.memberNo}"class="sub_txt">${companion.memberNickname}</a><span class="date_time">${companion.createDate}</span></p>
+                                                        </div>
+                                                    </li>
+                                                </c:forEach>
+                                            </ul>
+                                            <!-- 더보기 -->
+                                            <a href="${contextPath}/board/companion?type=5&key=${param.key}&query=${param.query}" class="gall_result_more fr">더보기</a>        
+                                        </c:otherwise>
+                                    </c:choose>
                                     </c:otherwise>
                                 </c:choose>
                             </tbody>
