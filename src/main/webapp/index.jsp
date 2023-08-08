@@ -30,13 +30,13 @@
              <div class="swiper-slide"><a href="#"><img src="resources/images/festival_infomation/22.png"></a></div>
              <div class="swiper-slide"><a href="#"><img src="resources/images/festival_infomation/42.png"></a></div>
              <div class="swiper-slide"><a href="#"><img src="resources/images/festival_infomation/69.png"></a></div>
-             <div class="swiper-slide"><a href="#"><img src="resources/images/festival_infomation/105.png"></a></div>
-             <div class="swiper-slide"><a href="#"><img src="resources/images/festival_infomation/106.png"></a></div>
-             <div class="swiper-slide"><a href="#"><img src="resources/images/festival_infomation/109.png"></a></div>
-             <div class="swiper-slide"><a href="#"><img src="resources/images/festival_infomation/111.png"></a></div>
-             <div class="swiper-slide"><a href="#"><img src="resources/images/festival_infomation/113.png"></a></div>
-             <div class="swiper-slide"><a href="#"><img src="resources/images/festival_infomation/115.png"></a></div>
-             <div class="swiper-slide"><a href="#"><img src="resources/images/festival_infomation/122.png"></a></div>
+             <div class="swiper-slide"><a href="#"><img src="resources/images/festival_infomation/72.png"></a></div>
+             <div class="swiper-slide"><a href="#"><img src="resources/images/festival_infomation/73.png"></a></div>
+             <div class="swiper-slide"><a href="#"><img src="resources/images/festival_infomation/77.png"></a></div>
+             <div class="swiper-slide"><a href="#"><img src="resources/images/festival_infomation/79.png"></a></div>
+             <div class="swiper-slide"><a href="#"><img src="resources/images/festival_infomation/86.png"></a></div>
+             <div class="swiper-slide"><a href="#"><img src="resources/images/festival_infomation/93.png"></a></div>
+             <div class="swiper-slide"><a href="#"><img src="resources/images/festival_infomation/58.png"></a></div>
          </div>
              <div class="swiper-pagination"></div>
       </div>
