@@ -303,7 +303,7 @@ incheon.addEventListener("mouseover", function(){
     url : "board/mainList/festival3",
     dataType : "json",
     success : function(festivalList3){
-      console.log(festivalList3[0].festivalImage.substring(1));
+      console.log(festivalList3[0].festivalImage.substr(1));
       console.log(festivalList3);
       
 
@@ -373,10 +373,11 @@ function selectCompanionList(){
     success : function(companionList){
 
       const bList4 = document.getElementById("bList4");
+      const div4 = document.getElementsByClassName("board-content4")[0];
 
       console.log(companionList);
 
-      bList4.innerText = "";
+      div4.innerText = "";
 
       for(let item of companionList){
         const ul = document.createElement("ul");
@@ -395,7 +396,7 @@ function selectCompanionList(){
         const p1 = document.createElement("p")
         const p2 = document.createElement("p")
 
-        bList4.append(ul);
+        div4.append(ul);
         ul.append(li);
 
         li.append(div1);
@@ -408,6 +409,7 @@ function selectCompanionList(){
         div2.append(p1);
         div2.append(p2);
 
+        li.classList.add("li")
         ul.classList.add("list");
         ul.classList.add("img");
         div1.classList.add("imgbox");
@@ -425,6 +427,72 @@ function selectCompanionList(){
 
       }
 
+     /*  const container = document.createElement("div");
+for(let i = 0; i < companionList.length; i += 2){
+  const row = document.createElement("div");
+  row.classList.add("row");
+
+  const item1 = companionList[i];
+  const item2 = companionList[i + 1];
+
+  const col1 = createCol(item1);
+  const col2 = createCol(item2);
+
+  row.append(col1);
+  row.append(col2);
+
+  container.append(row);
+}
+
+function createCol(item){
+  const col = document.createElement("div");
+  col.classList.add("col");
+
+  const ul = document.createElement("ul");
+  ul.classList.add("list");
+
+  const li = document.createElement("li");
+
+  const div1 = document.createElement("div");
+  const div2 = document.createElement("div");
+
+  const a1 = document.createElement("a")
+  const a2 = document.createElement("a")
+  const a3 = document.createElement("a")
+
+  const img = document.createElement("img");
+  img.setAttribute("src", item.memberProfile.substring(1));
+
+  const p1 = document.createElement("p")
+  const p2 = document.createElement("p")
+
+  ul.append(li);
+
+  li.append(div1);
+  li.append(div2);
+
+  div1.append(a1);
+  a1.append(img);
+
+  div2.append(a2);
+  div2.append(p1);
+  div2.append(p2);
+
+  a1.setAttribute("href", "member/myPage2?memberNo=" + item.memberNo);
+  a2.setAttribute("href", "board/companion?type=5&cp=1");
+  a2.innerText = item.festivalTitle;
+  p1.classList.add("dsctxt");
+  p1.innerText = item.createDate;
+  p2.classList.add("dsctxt-sub");
+  p2.innerText = item.festivalDate;
+
+  col.append(ul);
+
+  return col;
+}
+
+bList4.append(container);
+ */
 
     },
 

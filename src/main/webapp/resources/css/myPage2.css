@@ -11,7 +11,7 @@ li{list-style: none; cursor: pointer;}
     font-size: 50px;
     font-weight: bold;
     /*background-color: rgb(80, 78, 78);*/
-    color: black;
+    color: lightcoral;
     border: 0;
 }
 
@@ -34,7 +34,7 @@ li{list-style: none; cursor: pointer;}
     justify-content: center;
     align-items: center;
     margin-bottom: 30px;
-    border: 1px solid gray;
+    border: 1px solid lightcoral;
     padding: 10px 0;
 }
 
@@ -64,7 +64,7 @@ li{list-style: none; cursor: pointer;}
     width: 400px;
     margin-right: 50px;
     margin-bottom: 10px;
-    border: 1px solid gray;
+    border: 2px solid lightcoral;
 }
 
 #input-image{
@@ -89,7 +89,7 @@ li{list-style: none; cursor: pointer;}
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
-    border: 1px solid gray;
+    border: 1px solid lightcoral;
 }
 
 #info-btn-area{
