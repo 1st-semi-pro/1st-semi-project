@@ -14,7 +14,7 @@ import com.google.gson.Gson;
 import edu.kh.festival.board.model.service.FestivalService;
 import edu.kh.festival.board.model.vo.Festival;
 
-@WebServlet("/SearchFestivalListServlet")
+@WebServlet("/board/SearchFestivalListServlet")
 public class SearchFestivalListServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -26,9 +26,10 @@ public class SearchFestivalListServlet extends HttpServlet {
 		try {
 			festList = new FestivalService().festivalInfo(festivalDatd, festivalArea, festivalCat);
 			
+			new Gson().toJson(festList, resp.getWriter());
+			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		new Gson().toJson(festList, resp.getWriter());
 	}
 }
