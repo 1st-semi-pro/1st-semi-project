@@ -33,16 +33,13 @@ const bList3 = document.getElementById("bList3");
           const tr = document.createElement("tr");
 
           const td = document.createElement("td");
-          const td2 = document.createElement("td");
           
           const a1 = document.createElement("a");
           a1.innerText = item.boardTitle;
           a1.setAttribute("href", "board/detail?no=" + item.boardNo + "&type=2");
 
           tr.append(td);
-          tr.append(td2);
 
-          td2.innerText = item.createDate;
 
           bList1.append(tr);
 
@@ -433,7 +430,7 @@ function selectCompanionList(){
         a2.setAttribute("href", "board/companion?type=5&cp=1");
         a2.innerText = item.festivalTitle;
         p1.classList.add("dsctxt");
-        p1.innerText = item.createDate;
+        p1.innerText = item.festivalArea;
         p2.classList.add("dsctxt-sub");
         p2.innerText = item.festivalDate;
 
