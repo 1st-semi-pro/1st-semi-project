@@ -37,9 +37,6 @@
                     <!-- /communty/member/myPage/changePw-->
                     <li><a href="${contextPath}/member/myPage/changePw">비밀번호 변경</a></li>
 
-                    <!-- /communty/member/myPage/changeEmail-->
-                    <li><a href="${contextPath}/member/myPage/changeEmail">이메일 변경</a></li>
-
                     <!-- /communty/member/myPage/secession-->
                     <li><a href="${contextPath}/member/myPage/secession">회원 탈퇴</a></li>
                 </ul>
@@ -107,7 +104,7 @@
                             <span id="timer"></span>
                         </div>
                     
-                    <span id="innerTextSpan2">아이디, 이름, 성별, 국가  변경 불가능</span>
+                    <span id="innerTextSpan2" style="font-weight: bold;">아이디, 이름, 성별, 국가  변경 불가능</span>
                     <button id="info-update-btn" >수정하기</button>
                 </form>
 
