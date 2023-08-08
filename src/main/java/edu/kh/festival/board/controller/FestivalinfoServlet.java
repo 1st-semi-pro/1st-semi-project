@@ -26,7 +26,6 @@ public class FestivalinfoServlet extends HttpServlet {
 			
 			String query = req.getParameter("query");
 			
-			String festivalDate = req.getParameter("festivalDate");
 			
 			int cp = 1;
 
@@ -45,7 +44,6 @@ public class FestivalinfoServlet extends HttpServlet {
 			}
 
 			
-		
 			req.setAttribute("map", map);
 
 			String path = "/WEB-INF/views/board/festivalInformation.jsp";
