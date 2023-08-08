@@ -412,9 +412,10 @@ function selectCompanionList(){
         div2.append(p1);
         div2.append(p2);
 
-        li.classList.add("li")
+        li.classList.add("li");
         ul.classList.add("list");
         ul.classList.add("img");
+        ul.classList.add("ul");
         div1.classList.add("imgbox");
         a1.setAttribute("href", "member/myPage2?memberNo=" + item.memberNo);
         if(item.memberProfile != null){

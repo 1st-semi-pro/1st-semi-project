@@ -5,7 +5,7 @@ li{list-style: none; cursor: pointer;}
 
 
 .content{
-    width: 80%;
+    width: 70%;
     margin: auto;
     height: 550px;
     display: flex;
@@ -109,6 +109,7 @@ li{list-style: none; cursor: pointer;}
     background-color: aliceblue;
     background-color: aliceblue;
     border: 3px solid lightgray;
+    height: 100%;
     border-top: 0;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -133,7 +134,7 @@ li{list-style: none; cursor: pointer;}
 .korea{
 	display: flex;
     width: 30%;
-    height: 100%;
+    height: 104%;
 	align-content: center;
     position: relative;
     margin : 0 20px;
@@ -468,7 +469,7 @@ table a{
     display: block;
     padding-top: 15px;
     padding-right: 5px;
-    
+    height: 100%;
 }
 .img img{
     width: 100%;
@@ -479,11 +480,14 @@ table a{
     width: 100%;
 }
 .li{
+  
 }
 .txtbox{
 }
 
 .dsctxt{
+}
+.ul{
 }
 
 .dsctxt-sub{
