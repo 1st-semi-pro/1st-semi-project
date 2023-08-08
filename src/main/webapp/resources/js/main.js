@@ -207,13 +207,13 @@ seoul.addEventListener("mouseover", function(){
       div2.append(a4);
 
 
-      img1.setAttribute("src", festivalList1[0].festivalImage.substring(1));
+      img1.setAttribute("src", festivalList1[0].festivalImage.substring(2));
       a1.setAttribute("href", "board/festivalDetail?festivalNo=" + festivalList1[0].festivalNo);
-      img2.setAttribute("src", festivalList1[1].festivalImage.substring(1));
+      img2.setAttribute("src", festivalList1[1].festivalImage.substring(2));
       a2.setAttribute("href", "board/festivalDetail?festivalNo=" + festivalList1[1].festivalNo);
-      img3.setAttribute("src", festivalList1[2].festivalImage.substring(1));
+      img3.setAttribute("src", festivalList1[2].festivalImage.substring(2));
       a3.setAttribute("href", "board/festivalDetail?festivalNo=" + festivalList1[2].festivalNo);
-      img4.setAttribute("src", festivalList1[3].festivalImage.substring(1));
+      img4.setAttribute("src", festivalList1[3].festivalImage.substring(2));
       a4.setAttribute("href", "board/festivalDetail?festivalNo=" + festivalList1[3].festivalNo);
 
 
@@ -274,13 +274,13 @@ gyeonggi.addEventListener("mouseover", function(){
       div2.append(a4);
 
 
-      img1.setAttribute("src", festivalList2[0].festivalImage.substring(1));
+      img1.setAttribute("src", festivalList2[0].festivalImage.substring(2));
       a1.setAttribute("href", "board/festivalDetail?festivalNo=" + festivalList2[0].festivalNo);
-      img2.setAttribute("src", festivalList2[1].festivalImage.substring(1));
+      img2.setAttribute("src", festivalList2[1].festivalImage.substring(2));
       a2.setAttribute("href", "board/festivalDetail?festivalNo=" + festivalList2[1].festivalNo);
-      img3.setAttribute("src", festivalList2[2].festivalImage.substring(1));
+      img3.setAttribute("src", festivalList2[2].festivalImage.substring(2));
       a3.setAttribute("href", "board/festivalDetail?festivalNo=" + festivalList2[2].festivalNo);
-      img4.setAttribute("src", festivalList2[3].festivalImage.substring(1));
+      img4.setAttribute("src", festivalList2[3].festivalImage.substring(2));
       a4.setAttribute("href", "board/festivalDetail?festivalNo=" + festivalList2[3].festivalNo);
 
 
@@ -341,13 +341,13 @@ incheon.addEventListener("mouseover", function(){
       div2.append(a4);
 
 
-      img1.setAttribute("src", festivalList3[0].festivalImage.substring(1));
+      img1.setAttribute("src", festivalList3[0].festivalImage.substring(2));
       a1.setAttribute("href", "board/festivalDetail?festivalNo=" + festivalList3[0].festivalNo);
-      img2.setAttribute("src", festivalList3[1].festivalImage.substring(1));
+      img2.setAttribute("src", festivalList3[1].festivalImage.substring(2));
       a2.setAttribute("href", "board/festivalDetail?festivalNo=" + festivalList3[1].festivalNo);
-      img3.setAttribute("src", festivalList3[2].festivalImage.substring(1));
+      img3.setAttribute("src", festivalList3[2].festivalImage.substring(2));
       a3.setAttribute("href", "board/festivalDetail?festivalNo=" + festivalList3[2].festivalNo);
-      img4.setAttribute("src", festivalList3[3].festivalImage.substring(1));
+      img4.setAttribute("src", festivalList3[3].festivalImage.substring(2));
       a4.setAttribute("href", "board/festivalDetail?festivalNo=" + festivalList3[3].festivalNo);
 
 
@@ -414,7 +414,7 @@ function selectCompanionList(){
         ul.classList.add("img");
         div1.classList.add("imgbox");
         a1.setAttribute("href", "member/myPage2?memberNo=" + item.memberNo);
-        img.setAttribute("src", item.memberProfile.substring(1));
+        img.setAttribute("src", item.memberProfile.substring(2));
         
         div2.classList.add("txtbox")
         a2.setAttribute("href", "board/companion?type=5&cp=1");
