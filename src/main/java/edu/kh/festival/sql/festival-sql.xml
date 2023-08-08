@@ -26,6 +26,11 @@
 )
 		WHERE RNUM BETWEEN ? AND ?
 	</entry>
+	<entry key="festivalList4">
+	 ORDER BY FESTIVAL_TITLE
+	) A
+)
+	</entry>
 	
 	<!-- 축제일순조회
 	<entry key="festivalDt">

@@ -7,12 +7,15 @@ const deleteImage = document.getElementsByClassName("delete-image"); //span
 const festivalDate = document.getElementById("festivalDate");
 const festivalArea = document.getElementById("festivalArea");
 const festivalCat = document.getElementById("festivalCat");
+const festivalList = document.getElementById("festivalList");
 
 // 게시글 수정 시 삭제된 이미지의 레벨(위치)를 저장할 input 요소
 const deleteList = document.getElementById("deleteList");
 
 // 게시글 수정 시 삭제된 이미지의 레벨(위치)를 기록해 둘 Set 생성
 const deleteSet = new Set(); // 순서 X, 중복 X; -> x를 여러번 누를 경우 중복값 저장 방지
+
+const festivalSearch = document.getElementById("festivalSearch");
 
 
 for(let i = 0; i < inputImage.length; i++){
@@ -71,6 +74,53 @@ for(let i = 0; i < inputImage.length; i++){
     // 게시글이라 이미지 삭제, 삽입만 하면 끝
 
 }
+
+festivalDate.addEventListener("input", function(){
+    festivalSearch.value=1;
+})
+festivalArea.addEventListener("input", function(){
+    festivalSearch.value=1;
+})
+festivalCat.addEventListener("input", function(){
+    festivalSearch.value=1;
+})
+
+festivalSearch.addEventListener("change",function(){
+    if(this.value==1){
+        // 축제 select option 최신화 ajax 코드
+        $.ajax({
+            url : "SearchFestivalListServlet",
+            data : {
+                "festivalDate" : festivalDate.value,
+                "festivalArea" : festivalArea.value,
+                "festivalCat" : festivalCat.value
+            },
+            dataType : "JSON",
+            type : "GET",
+            success : function(festList){
+                festivalList.innerHTML= "";
+                
+                const default_option = festivalList.document.createElement("option");
+                default_option.innerHTML = "축제선택";
+                default_option.value = "";
+
+                festivalSearch.value = 0;
+                for(let festival of festlist){
+                    const option = festivalList.document.createElement("option");
+                    option.innerHTML = festival.festivalTitle;
+                    option.value = festival.festivalTitle;
+                }
+            },
+
+            error : function(){
+                console.log("에러 발생");
+            }
+
+        })
+    }
+})
+
+
 
 
 

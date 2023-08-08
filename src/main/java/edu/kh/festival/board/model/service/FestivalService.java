@@ -77,6 +77,23 @@ public class FestivalService {
 		
 		return map;
 	}
+	/**
+	 * 축제 리스트 종수ver
+	 * @param type
+	 * @param req
+	 * @return 
+	 * @throws Exception
+	 */
+	public List<Festival> festivalInfo( String festivalDatd, String festivalArea, String festivalCat ) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		List<Festival> festivalList = dao.festivalList(conn, festivalDatd, festivalArea, festivalCat);	
+		
+		close(conn);
+		
+		return festivalList;
+	}
 
 
 	

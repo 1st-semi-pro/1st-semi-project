@@ -257,6 +257,75 @@ public class FestivalDAO {
 		
 		return festivalList;
 	}
+	
+	/**
+	 *  종수버전
+	 *  축제 검색어 후 조회
+	 * @param conn
+	 * @param type
+	 * @param req
+	 * @return festivalList
+	 * @throws Exception
+	 */
+	public List<Festival> festivalList(Connection conn, String festivalDate, String festivalArea, String festivalCat) throws Exception { 
+		List<Festival> festivalList = new ArrayList<Festival>();
+
+		try {
+			
+			String sql1 = prop.getProperty("festivalList1");
+			String sql2 = prop.getProperty("festivalList2");
+			String sql4 = prop.getProperty("festivalList4");	
+		
+			if(festivalDate != null && festivalDate !="") {
+				   sql2 += "AND FESTIVAL_DT LIKE '_____" + festivalDate + "%' ";
+			}
+			if(festivalArea != null && festivalArea !="") {
+				   sql2 += "AND FESTIVAL_AREA LIKE '%" + festivalArea + "%' ";
+			}
+			if(festivalCat != null && festivalCat !=""){
+				   sql2 += "AND FESTIVAL_CAT LIKE '%" + festivalCat + "%' ";
+			}
+			
+			
+			String sql= sql1+sql2+sql4;
+		
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, 1);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				Festival festival = new Festival();
+				
+				festival.setFestivalNo(rs.getInt("FESTIVAL_NO"));
+				festival.setFestivalTitle(rs.getString("FESTIVAL_TITLE"));
+				
+				String preStr = rs.getString("FESTIVAL_CT");
+				if (preStr.length() > 50) {
+					preStr = preStr.substring(0, 40) + "..."; // 자르고 ... 붙이기
+				}
+				festival.setFestivalContent(preStr);
+				
+				festival.setFestivalDate(rs.getString("FESTIVAL_DT"));
+				festival.setReadCount(rs.getInt("READ_COUNT"));
+				festival.setFestivalArea(rs.getString("FESTIVAL_AREA"));
+				festival.setFestivalCat(rs.getString("FESTIVAL_CAT"));
+				
+				
+				festivalList.add(festival);
+				
+			}
+		} finally {
+			
+			close(rs);
+			close(pstmt);
+		}
+		
+		return festivalList;
+	}
+	
 
 	/** 인기순 조회 DAO
 	 * @param conn
