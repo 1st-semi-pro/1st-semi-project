@@ -166,7 +166,7 @@ table a{
 
 .swiper {
     width: 100%;
-    height: 400px;
+    height: 700px;
     background-color: black;
   }
   .swiper-slide {
@@ -465,8 +465,10 @@ table a{
 }
 
 .list{
-    border: 1px solid black;
-    display: block
+    display: block;
+    padding-top: 20px;
+    padding-right: 5px;
+    
 }
 .img img{
     width: 100%;
@@ -474,24 +476,20 @@ table a{
 }
 
 .imgbox{
-    border: 1px solid black;
+    width: 100%;
 }
 .li{
-    display: flex;
 }
 .txtbox{
-    border: 1px solid black;
 }
 
 .dsctxt{
-    border: 1px solid black;
 }
 
 .dsctxt-sub{
-    border: 1px solid black;
 }
 
 .divide7 img {
     width: 100%;
-    height: 100px;
+    height: 100%;
 }
