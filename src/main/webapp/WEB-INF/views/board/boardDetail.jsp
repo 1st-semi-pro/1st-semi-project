@@ -152,7 +152,7 @@
         <!-- 버튼 -->
         <div class="boardBtn">
 
-            <c:if test="${loginMember.memberNo == detail.memberNo}">  <!-- loginMember는 sessionscope -->
+            <c:if test="${loginMember.memberNo == detail.memberNo || loginMember.adminFl == 'Y'}">  <!-- loginMember는 sessionscope -->
 
             <!-- 현재 위치 : detail?no=500&cp=15&type=2 -->
             <!-- 글 작성 직후 페이지 : detail?no=500&type=2 -> cp가 주소에 아예 없음 -->
