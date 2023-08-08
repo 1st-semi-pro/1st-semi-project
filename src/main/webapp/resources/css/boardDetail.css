@@ -19,7 +19,7 @@ main{
     flex-direction: column;
     border:5px solid lightcoral;
     border-radius: 5px;
-    margin:30px auto; 
+    margin:100px auto 30px; 
     justify-content: center;
     align-items: center;
 }
