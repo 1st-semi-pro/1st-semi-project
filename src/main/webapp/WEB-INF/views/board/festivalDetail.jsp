@@ -107,6 +107,12 @@
                 축제 검색 페이지로</a>
             </div>
 
+            <div id="toLogin">
+                <a href="${contextPath}/member/login" id="Nav3" class="navs">
+                <img src=" ${contextPath}/resources/images/id.png">
+                로그인 페이지로</a>
+            </div>
+
             <!-- ${header.referer} -->
 
         </div>
