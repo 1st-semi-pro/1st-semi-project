@@ -128,10 +128,9 @@ li{list-style: none; cursor: pointer;}
     display: flex;
 }
 
-tr>td:first-child{
-    padding: 0 40px;
+p:first-child{
+    text-align: center;
 }
-
 
 .korea{
 	display: flex;
