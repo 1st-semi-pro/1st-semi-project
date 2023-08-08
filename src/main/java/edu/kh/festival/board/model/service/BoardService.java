@@ -232,7 +232,7 @@ public class BoardService {
 		case "t":condition=" AND BOARD_TITLE LIKE '%"+query+"%' "; break; // "AND BOARD_TITLE LIKE '%"+query+"%'" <- 이거 안됨!! "랑 AND랑 꼭 띄어쓰기!!!
 		case "c":condition=" AND BOARD_CONTENT LIKE '%"+query+"%' "; break;
 		case "tc":condition=" AND (BOARD_CONTENT LIKE '%"+query+"%' OR BOARD_TITLE LIKE '%"+query+"%') "; break;
-		case "w":condition=" AND MEMBER_NICK LIKE '%"+query+"%' "; break;
+		case "w":condition=" AND MEMBER_NICKNAME LIKE '%"+query+"%' "; break;
 		}
 		
 		// 3-1 특정 게시판에서 조건을 만족하는 게시글 수 조회
