@@ -30,7 +30,7 @@
 <body>
     <main>
         <jsp:include page="/WEB-INF/views/common/header.jsp"/>
-        <c:if test="${!empty param.key}">
+        <c:if test="${!empty param.festivalDate}">
             <c:set var="sURL" value="&key=${param.key}&query=${param.query}"/>
         </c:if>
 

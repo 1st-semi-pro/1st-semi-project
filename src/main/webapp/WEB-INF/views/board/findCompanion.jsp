@@ -29,7 +29,7 @@
 
             <c:when test="${empty sessionScope.loginMember}">
                 <article id="empty-login">
-                    <h1>로그인회원전용 페이지입니다. 로그인후 이용해주세요!</h1>
+                    <h1>회원전용 페이지입니다. 로그인후 이용해주세요!</h1>
                 </article>
              </c:when>
 

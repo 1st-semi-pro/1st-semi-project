@@ -36,7 +36,7 @@ function com(){
             //////////////////////////////////////////////////////////////
 
                 ftimg.append(fimg);
-                console.log("테스트 == "+ ftimg)
+                
             //////////////////////////////////////////////////////////////
 
                 const fttext = document.createElement("div");
