@@ -33,12 +33,16 @@ const bList3 = document.getElementById("bList3");
           const tr = document.createElement("tr");
 
           const td = document.createElement("td");
+          const td2 = document.createElement("td");
           
           const a1 = document.createElement("a");
           a1.innerText = item.boardTitle;
           a1.setAttribute("href", "board/detail?no=" + item.boardNo + "&type=2");
 
           tr.append(td);
+          tr.append(td2);
+
+          td2.innerText = item.createDate;
 
           bList1.append(tr);
 
@@ -408,9 +412,9 @@ function selectCompanionList(){
         div1.append(a1);
         a1.append(img);
 
-        div2.append(a2);
         div2.append(p1);
         div2.append(p2);
+        div2.append(a2);
 
         li.classList.add("li");
         ul.classList.add("list");
