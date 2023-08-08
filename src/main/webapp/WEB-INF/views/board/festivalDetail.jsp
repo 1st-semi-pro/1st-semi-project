@@ -48,7 +48,7 @@
     <main>
 
     <div id="allDiv">
-
+       
         <!-- 이미지 변수설정으로 쉽게 사용 -->
         <!-- 0 = 썸네일 1~6 = 상세 이미지들 7 = half이미지 -->
         <c:forEach items="${imgList}" var="imgList">
@@ -107,11 +107,15 @@
                 축제 검색 페이지로</a>
             </div>
 
-            <div id="toLogin">
-                <a href="${contextPath}/member/login" id="Nav3" class="navs">
-                <img src=" ${contextPath}/resources/images/id.png">
-                로그인 페이지로</a>
-            </div>
+            <c:if test="${empty loginMember.memberNo}">
+
+                <div id="toLogin">
+                    <a href="${contextPath}/member/login" id="Nav3" class="navs">
+                    <img src=" ${contextPath}/resources/images/id.png">
+                    로그인 페이지로</a>
+                </div>
+
+            </c:if>
 
             <!-- ${header.referer} -->
 

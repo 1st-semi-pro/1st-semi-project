@@ -14,7 +14,7 @@ main{
 
 .boardDetail{
     width:1000px;
-    min-height:750px;
+    min-height:550px;
     display:flex;
     flex-direction: column;
     border:5px solid lightcoral;
