@@ -53,7 +53,7 @@
                         <!-- 회원 프로필 이미지 -->
                     <div class="profile-box">
                     <c:if test="${empty loginMember.memberProfileImage}"> <!-- 프로필 이미지 없는 경우-->
-                        <img src="${contextPath}/resources/images/id.png">
+                        <img src="${contextPath}/resources/images/id.png" class="empty-box">
                     </c:if>
                     <c:if test="${!empty loginMember.memberProfileImage}">  <!-- 프로필 이미지 있는 경우-->
                         <a href="${contextPath}/member/myPage?memberNo=${loginMember.memberNo}"><img src="${contextPath}${loginMember.memberProfileImage}"></a>
@@ -62,7 +62,7 @@
                         <!-- 회원 정보 + 로그아웃 버튼 -->
                     <div class="h-my-info">
                         <a href="${contextPath}/member/logout" id="logout-btn">로그아웃</a><span>/</span><a href="${contextPath}/member/myPage?memberNo=${loginMember.memberNo}">마이페이지</a>
-                        <c:if test="${loginMember.memberNo == 2}">
+                        <c:if test="${loginMember.adminFl == 'Y'}">
                             <span>/</span><a href="${contextPath}/board/memberList">회원관리</a>
                         </c:if>
                     </div>
