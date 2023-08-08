@@ -417,7 +417,12 @@ function selectCompanionList(){
         ul.classList.add("img");
         div1.classList.add("imgbox");
         a1.setAttribute("href", "member/myPage2?memberNo=" + item.memberNo);
-        img.setAttribute("src", item.memberProfile.substring(1));
+        if(item.memberProfile != null){
+
+          img.setAttribute("src", item.memberProfile.substring(1));
+        } else{
+          img.setAttribute("src", "resources/images/id.png");
+        }
         
         div2.classList.add("txtbox")
         a2.setAttribute("href", "board/companion?type=5&cp=1");
