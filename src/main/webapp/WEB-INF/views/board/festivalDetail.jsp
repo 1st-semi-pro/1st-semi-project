@@ -227,9 +227,15 @@
                         border:0 !important; border-radius:10px !important; 
                         background-color: lightcoral !important; 
                         font-size:20px !important; cursor:pointer !important;">
-                        <!-- api떄문에 css에서의 style이 안먹는듯 -->
+                        <!-- api떄문에 css에서의 style이 안먹음 -->
 
             </div>    
+
+            <div id="findWay">
+                <a href="https://map.naver.com/v5/search/${festival.festivalTitle}?c=15,0,0,0,dh" id="findWayA">
+                    ${festival.festivalTitle} 상세 길찾기
+                </a>
+            </div>
 
         </div>
 
@@ -263,22 +269,7 @@
            <!-- 랜덤 축제 4개 뽑기 임시 -->
            <div id="similarTell">이런 축제는 어떠세요?</div>
 
-            <!-- <img src="이미지경로/<%= 1 + Math.floor(Math.random() * 15.99) %>.jpg"/> -->
             <div id="randomImage">
-
-            <!--            
-            
-            <%
-                for(int i = 0; i < 4; i++){
-            %>
-                
-                <a href="">
-                    <img src="${contextPath}/resources/images/festival_infomation/<%= 1 + (int)(Math.random() * 100) %>.png" class="randomImages">
-                </a>
-            
-            <%
-                }
-            %> -->
 
             <%
                 for(int i = 0; i < 4; i++){
@@ -290,7 +281,6 @@
             <%
                 }
             %>   
-
 
             </div>    
         </div>
