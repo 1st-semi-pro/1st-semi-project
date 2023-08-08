@@ -303,7 +303,10 @@ incheon.addEventListener("mouseover", function(){
     url : "board/mainList/festival3",
     dataType : "json",
     success : function(festivalList3){
+
+      console.log(festivalList3[0].festivalImage);
       console.log(festivalList3[0].festivalImage.substr(1));
+      console.log(festivalList3[0].festivalImage.substr(2));
       console.log(festivalList3);
       
 
@@ -414,7 +417,7 @@ function selectCompanionList(){
         ul.classList.add("img");
         div1.classList.add("imgbox");
         a1.setAttribute("href", "member/myPage2?memberNo=" + item.memberNo);
-        img.setAttribute("src", item.memberProfile.substring(2));
+        img.setAttribute("src", item.memberProfile.substring(1));
         
         div2.classList.add("txtbox")
         a2.setAttribute("href", "board/companion?type=5&cp=1");
