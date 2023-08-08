@@ -331,7 +331,7 @@ public class MainBoardDAO {
 					+ "             JOIN MEMBER USING(MEMBER_NO)\r\n"
 					+ "			 WHERE B.BOARD_CD = 5\r\n"
 					+ "		 	AND BOARD_ST = 'N'\r\n"
-					+ "			ORDER BY FESTIVAL_NO DESC"
+					+ "			ORDER BY CREATE_DT DESC"
 					+ "		 	\r\n"
 					+ "		 	) A\r\n"
 					+ "		 )\r\n"
