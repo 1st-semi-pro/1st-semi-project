@@ -459,3 +459,27 @@ table a{
     height: 80%;
     margin: 5px;
 }
+
+.list{
+    border: 1px solid black;
+}
+.img img{
+    width: 10%;
+    height: 10%;
+}
+
+.imgbox{
+    border: 1px solid black;
+}
+
+.txtbox{
+    border: 1px solid black;
+}
+
+.dsctxt{
+    border: 1px solid black;
+}
+
+.dsctxt-sub{
+    border: 1px solid black;
+}
