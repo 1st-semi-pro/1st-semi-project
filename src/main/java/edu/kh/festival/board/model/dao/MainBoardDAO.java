@@ -211,7 +211,7 @@ public class MainBoardDAO {
 						preStr = preStr.substring(0, 15) + "..."; // 자르고 ... 붙이기
 					}
 					board.setBoardContent(preStr);
-					
+					board.setMemberNo(rs.getInt("MEMBER_NO"));
 					board.setMemberNickname(rs.getString("MEMBER_NICKNAME"));
 					board.setCreateDate(rs.getString("CREATE_DT"));
 					board.setReadCount(rs.getInt("READ_COUNT"));
