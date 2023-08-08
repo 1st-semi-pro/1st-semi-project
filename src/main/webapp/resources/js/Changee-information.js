@@ -183,7 +183,6 @@ emailBtn.addEventListener("click", function(){
 
         success : function(key){
             if(key == ""){
-                console.log("에이짺쓰 실패");
 
                 Swal.fire(
                     '인증번호 전송 실패.',
@@ -193,7 +192,6 @@ emailBtn.addEventListener("click", function(){
                 return;
 
             }else{
-                console.log("에이짺쓰 성공");
                 Swal.fire(
                     '인증번호를 전송했습니다.'
                     )
@@ -215,6 +213,8 @@ emailBtn.addEventListener("click", function(){
                           )
                           in2.innerText = "사용 가능한 이메일 입니다.";
                         checkInputs.emailBtn = true;
+                        clearInterval(timer);
+                        display.innerText = "";
                         
 
                         }else{
@@ -314,7 +314,7 @@ memberEmail.addEventListener("input", function(){
 
             } else{ // 중복 x
 
-                in2.innerText = "사용 가능한 이메일 입니다.";
+                in2.innerText = "이메일 인증 가능합니다.";
                 in2.classList.add("confirm");
                 in2.classList.remove("error");
                 in2.style.color="blue";
