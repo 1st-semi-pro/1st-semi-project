@@ -335,7 +335,7 @@ public class MainBoardDAO {
 					+ "		 	\r\n"
 					+ "		 	) A\r\n"
 					+ "		 )\r\n"
-					+ "		 	WHERE RNUM BETWEEN 1 AND 10";
+					+ "		 	WHERE RNUM BETWEEN 1 AND 4";
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
 			

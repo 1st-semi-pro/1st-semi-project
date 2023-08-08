@@ -379,19 +379,50 @@ function selectCompanionList(){
       bList4.innerText = "";
 
       for(let item of companionList){
-        const tr = document.createElement("tr");
+        const ul = document.createElement("ul");
 
-        const td = document.createElement("td");
+        const li = document.createElement("li");
+
+        const img = document.createElement("img");
         
-        const a1 = document.createElement("a");
-        a1.innerText = item.boardTitle;
-        a1.setAttribute("href", "board/detail?no=" + item.boardNo + "&type=5");
+        const div1 = document.createElement("div");
+        const div2 = document.createElement("div");
 
-        tr.append(td);
+        const a1 = document.createElement("a")
+        const a2 = document.createElement("a")
+        const a3 = document.createElement("a")
 
-        bList4.append(tr);
+        const p1 = document.createElement("p")
+        const p2 = document.createElement("p")
 
-        td.append(a1); 
+        bList4.append(ul);
+        ul.append(li);
+
+        li.append(div1);
+        li.append(div2);
+
+        div1.append(a1);
+        a1.append(img);
+
+        div2.append(a2);
+        div2.append(p1);
+        div2.append(p2);
+
+        ul.classList.add("list");
+        ul.classList.add("img");
+        div1.classList.add("imgbox");
+        a1.setAttribute("href", "member/myPage2?memberNo=" + item.memberNo);
+        img.setAttribute("src", item.memberProfile.substring(1));
+        
+        div2.classList.add("txtbox")
+        a2.setAttribute("href", "board/companion?type=5&cp=1");
+        a2.innerText = item.festivalTitle;
+        p1.classList.add("dsctxt");
+        p1.innerText = item.createDate;
+        p2.classList.add("dsctxt-sub");
+        p2.innerText = item.festivalDate;
+
+
       }
 
 
