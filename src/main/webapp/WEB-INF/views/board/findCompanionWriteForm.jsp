@@ -109,6 +109,7 @@
                         <select name="festivalList" id="festivalList" title="축제선택">
                             <option value="">축제선택</option>
                         </select>
+                        <input type="hidden" id="festivalSearch" value="0">
                     </div>
                     <div class="flex date-area">
                         <label for="inputDate" id="inputDateLabel">동행일자 :</label>
