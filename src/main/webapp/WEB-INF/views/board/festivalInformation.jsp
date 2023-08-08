@@ -30,8 +30,8 @@
 <body>
     <main>
         <jsp:include page="/WEB-INF/views/common/header.jsp"/>
-        <c:if test="${!empty param.festivalDate}">
-            <c:set var="sURL" value="&key=${param.key}&query=${param.query}"/>
+        <c:if test="${!empty param.festivalDate || !empty param.festivalArea || !empty param.festivalCat}">
+            <c:set var="sURL" value="&festivalDate=${param.festivalDate}&festivalArea=${param.festivalArea}&festivalCat=${param.festivalCat}"/>
         </c:if>
 
         <div class="swiper mySwiper">
