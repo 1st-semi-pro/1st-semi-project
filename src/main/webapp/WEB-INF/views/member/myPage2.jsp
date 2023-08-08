@@ -86,19 +86,19 @@
                 </section>
                 <section id="festival-box">
                     <article>
-                        <h1>축제이름</h1>
+                        <h1>불꽃 축제</h1>
                         <a href="#"><img src="${contextPath}/resources/images/con1.jpg" alt="축제사진"></a>
                     </article>
                     <article>
-                        <h1>축제이름</h1>
+                        <h1>서울 워터밤 페스티벌</h1>
                         <a href="#"><img src="${contextPath}/resources/images/con2.jpg" alt="축제사진"></a>
                     </article>
                     <article>
-                        <h1>축제이름</h1>
+                        <h1>연등 축제</h1>
                         <a href="#"><img src="${contextPath}/resources/images/con3.jpg" alt="축제사진"></a>
                     </article>
                     <article>
-                        <h1>축제이름</h1>
+                        <h1>꽃 축제</h1>
                         <a href="#"><img src="${contextPath}/resources/images/con4.jpg" alt="축제사진"></a>
                     </article>
                 </section>
