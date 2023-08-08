@@ -95,27 +95,6 @@
                   <div class="divide7">
                      <div class="board-name4"><a href="board/companion?type=5">동행자 구하기</a></div>
                      <div class="board-content4">
-                        <table>
-                           <tbody id="bList4">
-                              <div class="companion">
-                                 <div>
-                                 
-                                 </div>
-
-                                 <div>
-   
-                                 </div>
-                              
-                                 <div>
-                                 
-                                 </div>
-
-                                 <div>
-   
-                                 </div>
-                              </div>
-                           </tbody>
-                        </table>
                      </div>
                   </div>
                </div>

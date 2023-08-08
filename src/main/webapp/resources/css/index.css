@@ -95,6 +95,7 @@ li{list-style: none; cursor: pointer;}
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
     padding-left: 10px;
+    margin-bottom: 10px;
 }
 .board-content2{
     background-color: aliceblue;
@@ -114,6 +115,8 @@ li{list-style: none; cursor: pointer;}
     padding-left: 10px;
 }
 .board-content4{
+    width: 100%;
+    height: 100%;
     background-color: aliceblue;
     background-color: aliceblue;
     border: 3px solid lightgray;
@@ -121,6 +124,7 @@ li{list-style: none; cursor: pointer;}
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
     padding-left: 10px;
+    display: flex;
 }
 
 
@@ -455,23 +459,26 @@ table a{
 }
 
 .divide1 > a {
-    width: 80%;
-    height: 80%;
+    width: 100%;
+    height: 50%;
     margin: 5px;
 }
 
 .list{
     border: 1px solid black;
+    display: block
 }
 .img img{
-    width: 10%;
-    height: 10%;
+    width: 100%;
+    height: 100%;
 }
 
 .imgbox{
     border: 1px solid black;
 }
-
+.li{
+    display: flex;
+}
 .txtbox{
     border: 1px solid black;
 }
@@ -482,4 +489,9 @@ table a{
 
 .dsctxt-sub{
     border: 1px solid black;
+}
+
+.divide7 img {
+    width: 100%;
+    height: 100px;
 }
