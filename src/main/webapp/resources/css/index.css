@@ -128,7 +128,9 @@ li{list-style: none; cursor: pointer;}
     display: flex;
 }
 
-
+tr>td:first-child{
+    padding: 0 40px;
+}
 
 
 .korea{
@@ -479,8 +481,8 @@ table a{
 .imgbox{
     width: 100%;
 }
-.li{
-  
+.li p{
+  margin-bottom: 10px;
 }
 .txtbox{
 }

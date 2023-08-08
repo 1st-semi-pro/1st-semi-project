@@ -6,7 +6,7 @@ li{list-style: none; cursor: pointer;}
 /*  마이페이지 컨탠츠 부분 */
 
 .title{
-    padding: 20px 0;
+    padding: 50px 0;
     text-align: center;
     font-size: 50px;
     font-weight: bold;
@@ -20,6 +20,10 @@ li{list-style: none; cursor: pointer;}
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+textarea{
+    border: 1px solid lightcoral;
+    resize: none;
 }
 
 #content{
