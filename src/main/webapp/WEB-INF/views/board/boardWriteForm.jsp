@@ -30,7 +30,7 @@
         
         <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
-        <form action="write" enctype="multipart/form-data" method="POST" class="board-write"
+        <form class="form" action="write" enctype="multipart/form-data" method="POST" class="board-write"
             onsubmit="return writeValidate()">
         <div id="formInDivs">
             <!-- 제목 -->

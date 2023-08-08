@@ -121,6 +121,9 @@ li{list-style: none;}
   width: 35%;
   font-weight: bold;
 }
+.my-text span{
+  font-size: 22px;
+}
 .my-text >button{
   position: absolute;
   width: 35%;
