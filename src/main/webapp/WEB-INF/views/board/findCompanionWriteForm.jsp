@@ -112,7 +112,7 @@
                         <input type="hidden" id="festivalSearch" value="0">
                     </div>
                     <div class="flex date-area">
-                        <label for="inputDate" id="inputDateLabel">동행일자 :</label>
+                        <label for="inputDate" id="inputDateLabel">날짜 :</label>
                         <input type="date" name="inputDate" id="inputDate" min="<fmt:formatDate value="${currentDate}" pattern="yyyy-MM-dd" />">
                     </div>
                     <div class="flex recruit-area">
@@ -279,8 +279,12 @@
 
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
-        <script src="${contextPath}/resources/js/board.js"></script>
-        <script src="${contextPath}/resources/js/findCompanionWriteForm.js"></script>
+    <script>
+        const contextPath = "${contextPath}"; // 최상위 경로를 JS 전역변수로 선언
+    </script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="${contextPath}/resources/js/board.js"></script>
+    <script src="${contextPath}/resources/js/findCompanionWriteForm.js"></script>
 </body>
 
 </html>
