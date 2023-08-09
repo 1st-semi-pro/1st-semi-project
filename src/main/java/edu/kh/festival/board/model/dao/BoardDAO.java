@@ -140,6 +140,7 @@ public class BoardDAO {
 				
 				board.setBoardNo(rs.getInt("BOARD_NO"));
 				board.setBoardTitle(rs.getString("BOARD_TITLE"));
+				board.setMemberNo(rs.getInt("MEMBER_NO"));
 				board.setMemberNickname(rs.getString("MEMBER_NICKNAME"));
 				board.setCreateDate(rs.getString("CREATE_DT"));
 				board.setReadCount(rs.getInt("READ_COUNT"));
