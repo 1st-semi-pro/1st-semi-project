@@ -43,6 +43,7 @@ public class CompanionDeleteServlet extends HttpServlet {
 				
 			}
 			
+			
 			if (command.equals("delete")) {
 				
 				HttpSession session = req.getSession();

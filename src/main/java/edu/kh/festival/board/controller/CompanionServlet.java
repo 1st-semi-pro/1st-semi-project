@@ -22,6 +22,7 @@ public class CompanionServlet extends HttpServlet{
 			
 			int type = Integer.parseInt(req.getParameter("type"));
 			
+			
 			int cp = 1;
 			
 
