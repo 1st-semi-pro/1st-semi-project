@@ -65,6 +65,7 @@ public class FestivalDAO {
 				boardName = rs.getString(1);
 			}
 
+			
 		} finally {
 			close(rs);
 			close(stmt);
@@ -152,6 +153,7 @@ public class FestivalDAO {
 			if(festivalCat != null && festivalCat !=""){
 				   sql2 += "AND FESTIVAL_CAT LIKE '%" + festivalCat + "%' ";
 			}
+			
 			
 			if(query != null) {
 				sql2 += " AND (FESTIVAL_CT LIKE '%" + query + "%' OR FESTIVAL_TITLE LIKE '%" + query + "%') ";

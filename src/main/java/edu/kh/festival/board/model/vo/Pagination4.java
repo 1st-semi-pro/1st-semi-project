@@ -16,6 +16,7 @@ public class Pagination4 {
 	private int prevPage;		// 목록 하단에 노출된 번호의 이전 목록 끝 번호
 	private int nextPage;		// 목록 하단에 노출된 번호의 다음 목록 시작 번호
 	
+	
 	// 생성자
 	
 	public Pagination4(int currentPage, int listCount) {
