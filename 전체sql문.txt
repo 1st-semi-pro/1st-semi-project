@@ -65,7 +65,7 @@ COMMENT ON COLUMN "MEMBER"."MEMBER_MESSAGE" IS '프로필 메시지';
 
 CREATE SEQUENCE SEQ_MEMBER_NO INCREMENT BY 1;
 
-INSERT INTO MEMBER VALUES(SEQ_MEMBER_NO.NEXTVAL, '1', '1', 'testemail', 'testnick', 'testname', '19971030', '서울', '남', DEFAULT, '01033339999', DEFAULT, DEFAULT, DEFAULT, NULL, NULL);
+INSERT INTO MEMBER VALUES(SEQ_MEMBER_NO.NEXTVAL, 'testid', '1', 'testemail', 'testnick', 'testname', '19971030', '서울', '남', DEFAULT, '01033339999', DEFAULT, DEFAULT, DEFAULT, NULL, NULL);
 -- INSERT INTO MEMBER VALUES(SEQ_MEMBER_NO.NEXTVAL, ?, ?, ?, ?, ?, TO_DATE(?, 'YYYYMMDD'), ?, ?, ?, ?, DEFAULT, DEFAULT, DEFAULT, NULL, NULL);
 ------------------------------------------------BOARD-TYPE 테이블-----------------------------------------------------------
 
