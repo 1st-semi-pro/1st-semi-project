@@ -110,7 +110,6 @@ public class BoardService {
 	 * @param boardCode
 	 * @return boardNo
 	 */
-
 	public int insertBoard(BoardDetail detail, List<BoardImage> imageList, int boardCode) throws Exception {
 		Connection conn = getConnection();
 		
@@ -123,6 +122,56 @@ public class BoardService {
 		detail.setBoardContent(Util.newLineHandling( detail.getBoardContent() ) );
 		
 		int result = dao.insertBoard(conn, detail, boardCode);
+		
+		if (result > 0 ) {
+			// 게시글 삽입 성공하면 이미지 삽입
+			for(BoardImage image : imageList) { // 하나씩 꺼내서 DAO 수행
+				image.setBoardNo(boardNo); 
+				
+				result = dao.insertBoardImage(conn, image); 
+			
+				if(result == 0) { 
+					break;
+				}
+				
+			}
+			
+		}
+		
+		if(result > 0) { 
+			commit(conn);
+		
+		}else { // 2, 3 번에서 한 번이라도 실패한 경우 // 위에서 result == 0 일떄 break;
+			rollback(conn);
+			boardNo = 0; // 게시글 번호를 0으로 바꿔서 실패했음을 컨트롤러로 전달해준다.
+		}
+		
+		close(conn);
+		
+		return boardNo;
+	}
+	
+	/** 동행자 게시글 삽입 DAO
+	 * @param detail
+	 * @param imageList
+	 * @param boardCode
+	 * @return boardNo
+	 */
+	public int insertCompanionBoard(BoardDetail detail, List<BoardImage> imageList, int boardCode) throws Exception {
+		Connection conn = getConnection();
+		
+		int boardNo = dao.nextBoardNo(conn);
+		
+		detail.setBoardNo(boardNo);
+		
+		detail.setBoardTitle(Util.XSSHandling( detail.getBoardTitle() ) );
+		detail.setBoardContent(Util.XSSHandling( detail.getBoardContent() ) );
+		detail.setBoardContent(Util.newLineHandling( detail.getBoardContent() ) );
+		
+        detail.setFestivalTitle(Util.XSSHandling( detail.getFestivalTitle() ));
+
+		
+		int result = dao.insertCompanionBoard(conn, detail, boardCode);
 		
 		if (result > 0 ) {
 			// 게시글 삽입 성공하면 이미지 삽입
@@ -171,6 +220,63 @@ public class BoardService {
 		detail.setBoardContent(Util.newLineHandling(detail.getBoardContent()));
 		
 		int result = dao.updateBoard(conn, detail);
+		
+		if(result == 1) {//이미지부분
+			
+		// 2. 이미지 부분 수정 -- 있는건 수정하고 없는건 삽입한다.
+			for(BoardImage img : imageList) {
+				
+				img.setBoardNo(detail.getBoardNo()); // 게시글 번호 세팅
+				
+				// 이미지 1개씩 수정 (for문 안임)
+				result = dao.updateBoardImage(conn, img);
+				
+				if(result == 1) {
+				
+				}
+				
+				if(result == 0){ // dao 실행 안됨 -> 원래 사진이 안들어가있었음 -> 삽입을 해버린다.
+					result =  dao.insertBoardImage(conn, img);
+					
+				}
+				
+			} //for
+			
+			// x 누를 시 삭제
+			if(!deleteList.equals("")){ // 삭제된3. 이미지 레벨이 기록되어 있을 때만 삭제를 하겠다.
+				
+				result = dao.deleteBoardImage(conn, deleteList, detail.getBoardNo());
+				
+			}
+			
+		}
+		
+		if(result > 0) commit(conn);
+		else rollback(conn);
+		
+		close(conn);
+		
+		return result;
+		
+		
+	}
+	
+	/** 동행자 게시글 수정 Service
+	 * @param detail
+	 * @param imageList
+	 * @param deleteList
+	 * @return result
+	 * @throws Exception
+	 */
+	public int updateCompanionBoard(BoardDetail detail, List<BoardImage> imageList, String deleteList) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		detail.setBoardTitle(Util.XSSHandling(detail.getBoardTitle()));
+		detail.setBoardContent(Util.XSSHandling(detail.getBoardContent()));
+		detail.setBoardContent(Util.newLineHandling(detail.getBoardContent()));
+		
+		int result = dao.updateCompanionBoard(conn, detail);
 		
 		if(result == 1) {//이미지부분
 			
@@ -342,6 +448,23 @@ public class BoardService {
 		
 		return companionList;
 		
+	}
+
+	/**
+	 * 축제이름으로 축제번호 가져오기 Service
+	 * @param festivalTitle
+	 * @return festivalNo
+	 * @throws Exception
+	 */
+	public int selectFestivalNo(String festivalTitle) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		int festivalNo = dao.selectFestivalNo(conn, festivalTitle);
+		
+		close(conn);
+		
+		return festivalNo;
 	}
 
 

@@ -345,6 +345,44 @@ public class BoardDAO {
 		
 		return result;
 	}
+	
+	/** 동행자 게시글 삽입 DAO
+	 * @param conn
+	 * @param detail
+	 * @param boardCode
+	 * @return result
+	 * @throws Exception
+	 */
+	public int insertCompanionBoard(Connection conn, BoardDetail detail, int boardCode) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("insertCompanionBoard");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, detail.getBoardNo());
+	        pstmt.setString(2, detail.getBoardTitle());
+	        pstmt.setString(3, detail.getBoardContent());
+	        pstmt.setInt(4, detail.getMemberNo());
+	        pstmt.setInt(5, boardCode);
+	        
+	        pstmt.setInt(6, detail.getFestivalNo());
+	        pstmt.setString(7, detail.getFestivalTitle());
+	        pstmt.setString(8, detail.getAppointmentDate());
+	        pstmt.setInt(9, detail.getNumberOfPeople());
+	        pstmt.setString(10, detail.getRecruit());
+	        
+	        result = pstmt.executeUpdate();
+			
+		}finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
 
 	
 	
@@ -367,6 +405,44 @@ public class BoardDAO {
 			pstmt.setString(1, detail.getBoardTitle());
 			pstmt.setString(2, detail.getBoardContent());
 			pstmt.setInt(3, detail.getBoardNo());
+			
+			result = pstmt.executeUpdate();
+			
+		}finally {
+
+			close(pstmt);
+			
+		}
+		
+		return result;
+	}
+	
+	/** 동행자 게시글 수정 DAO
+	 * @param conn
+	 * @param detail
+	 * @return result
+	 * @throws Exception
+	 */
+	public int updateCompanionBoard(Connection conn, BoardDetail detail) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("updateCompanionBoard");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, detail.getBoardTitle());
+			pstmt.setString(2, detail.getBoardContent());
+			pstmt.setInt(3, detail.getFestivalNo());
+		
+	        pstmt.setString(4, detail.getFestivalTitle());
+	        pstmt.setString(5, detail.getAppointmentDate());
+	        pstmt.setInt(6, detail.getNumberOfPeople());
+	        pstmt.setString(7, detail.getRecruit());
+	        
+	        pstmt.setInt(8, detail.getBoardNo());
 			
 			result = pstmt.executeUpdate();
 			
@@ -770,6 +846,28 @@ public class BoardDAO {
 
 		return companionList;
 
+	}
+
+	public int selectFestivalNo(Connection conn, String festivalTitle) throws Exception{
+		int festivalNo=0;
+		
+		try {
+			String sql = prop.getProperty("selectFestivalNo");
+
+			pstmt = conn.prepareStatement(sql);
+
+			pstmt.setString(1, festivalTitle);
+
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) festivalNo = rs.getInt(1);
+			
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return festivalNo;
 	}
 }
 	

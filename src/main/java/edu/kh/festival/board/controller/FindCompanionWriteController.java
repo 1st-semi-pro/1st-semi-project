@@ -76,7 +76,7 @@ public class FindCompanionWriteController extends HttpServlet {
 		        MultipartRequest mpReq = new MultipartRequest(req, filePath, maxSize, encoding, new MyRenamePolicy());
 				// 객체가 생성됨과 동시에 파라미터로 전달된 파일이 지정된 경로에 저장됨 그냥 이 객체는 그렇게 해줌
 
-				System.out.println(mpReq);
+				//System.out.println(mpReq);
 		        Enumeration<String> files = mpReq.getFileNames();
 		        
 		        List<BoardImage> imageList = new ArrayList<BoardImage>();
@@ -108,7 +108,18 @@ public class FindCompanionWriteController extends HttpServlet {
 		        	
 		        } // while문 끝
 		        
-		        // boardList에서 map에 세팅된거 쓰나
+		        BoardService service = new BoardService();
+		        
+		        // 동행자구하기 게시글에서 추가된 파라미터들
+		    	String festivalTitle = mpReq.getParameter("festivalTitle"); // 축제이름
+		    	
+		    	int festivalNo = service.selectFestivalNo(festivalTitle) ; // 축제번호 
+		    	
+		    	String appointmentDate = mpReq.getParameter("inputDate"); // 약속날짜
+		    	int numberOfPeople = Integer.parseInt(mpReq.getParameter("numberOfPeople")); // 모집인원
+		    	String recruit = mpReq.getParameter("recruit"); // 구인 상태
+		    	// 
+		        
 		        String boardTitle = mpReq.getParameter("boardTitle");  
 				
 		        String boardContent = mpReq.getParameter("boardContent");
@@ -126,7 +137,12 @@ public class FindCompanionWriteController extends HttpServlet {
 		        detail.setBoardContent(boardContent);
 		        detail.setMemberNo(memberNo);
 		        
-		        BoardService service = new BoardService();
+		        detail.setFestivalNo(festivalNo);
+		        detail.setFestivalTitle(festivalTitle);
+		        detail.setAppointmentDate(appointmentDate);
+		        detail.setNumberOfPeople(numberOfPeople);
+		        detail.setRecruit(recruit);
+		        
 		        
 		        String mode = mpReq.getParameter("mode"); // <input type="hidden" name="mode" value="${param.mode}">
 		        
@@ -135,24 +151,23 @@ public class FindCompanionWriteController extends HttpServlet {
 		        	
 		        	// 게시글 삽입 서비스 호출 후 결과 반환 받기
 		        	// -> 반환된 게시글 번호를 이용해서 상세조회로 redirect 예정
-		        	int boardNo = service.insertBoard(detail, imageList, boardCode);
+		        	int boardNo = service.insertCompanionBoard(detail, imageList, boardCode);
 		        	
 		        	String path = null;
 		        	
 		        	if(boardNo > 0 ) { // 성공
 		        		session.setAttribute("message", "게시글이 등록되었습니다.");
-		        		
-		        		// detail?no=2000&type=2
-		        		path = "detail?no=" + boardNo + "&type=" + boardCode;
+		        		// http://localhost:9000/1st-semi-pro/board/companion?type=5&cp=1
+		        		path = "companion?type="+boardCode+"&cp=1";
 		        		
 		        		//http://localhost:8080/community/board/detail?no=1000 까지만 있으면 해당 게시글 가지고 뒤는 쿼리스트링이라 상관 x
 		        		// 그냥 게시글 들어갈 땐 cp가 있는데 만들었을 때의 주소는 cp가 없음. 그차이밖에 업슴
 		        		
 		        	}else { // 실패
 		        		session.setAttribute("message", "게시글 등록 실패");
-		        		
-		        		// write?mode=insert&type=2 실패했을 때 이 위치로 돌아가야함
-		        		path = "write?mode=" + mode + "&type=" + boardCode;
+		        		// http://localhost:9000/1st-semi-pro/board/findCompanionWrite?mode=insert&type=5&cp=
+		        		// 실패했을 때 작성했던 위치로 돌아가야함
+		        		path = "findCompanionWrite?mode=" + mode + "insert&type=" + boardCode + "&cp=";
 		        		
 		        	}
 		        	
@@ -170,16 +185,17 @@ public class FindCompanionWriteController extends HttpServlet {
 		        	
 		        	detail.setBoardNo(boardNo);
 		        	
-		        	int result = service.updateBoard(detail, imageList, deleteList);
+		        	int result = service.updateCompanionBoard(detail, imageList, deleteList);
 		        	
 		        	String path = null;
 		        	String message = null;
 		        	
 		        	if(result > 0 ) { // 성공
-		        		
+		        		// http://localhost:9000/1st-semi-pro/board/findCompanionWrite?mode=update&type=5&cp=1&no=1640
 		        		// detail?no=1000&type=1&cp=20
-		        		path = "detail?no=" + boardNo + "&type=" + boardCode + "&cp=" + cp; // 상세조회 페이지 요청 주소
 		        		
+		        		//path = "findCompanionWrite?mode=update&type=" + boardCode + "&cp=" + cp + "&no="+boardNo;
+		        		path = "companion?type="+boardCode+"&cp=1";
 		        		message = "게시글이 수정되었습니다.";
 		        	
 		        	}else { 
