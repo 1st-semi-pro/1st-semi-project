@@ -16,6 +16,9 @@ const deleteList = document.getElementById("deleteList");
 // 게시글 수정 시 삭제된 이미지의 레벨(위치)를 기록해 둘 Set 생성
 const deleteSet = new Set(); // 순서 X, 중복 X; -> x를 여러번 누를 경우 중복값 저장 방지
 
+// 페이지 로딩 시 축제목록 설정
+ListUp(); 
+
 
 for(let i = 0; i < inputImage.length; i++){
 
@@ -101,7 +104,6 @@ function ListUp(){
         dataType : "JSON",
         type : "GET",
         success : function(festList){
-            console.log("안에 들어옴")
 
             festivalList.innerHTML= "";
 
@@ -111,7 +113,6 @@ function ListUp(){
             festivalList.append(default_option);
 
             for(let festival of festList){
-                console.log(festival.festivalTitle);
                 const option = document.createElement("option");
                 option.innerHTML = festival.festivalTitle;
                 option.value = festival.festivalTitle;

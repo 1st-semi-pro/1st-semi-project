@@ -19,7 +19,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&family=Moirai+One&display=swap" rel="stylesheet">
     
-    <c:set var="currentDate" value="<%=new java.util.Date()%>" />
+    <c:set var="currentDate" value="<%=new java.util.Date()%>"/>
 
 </head>
 
@@ -29,7 +29,7 @@
         
         <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
-        <form action="write" enctype="multipart/form-data" method="POST" class="board-write"
+        <form class="form" action="findCompanionWrite" enctype="multipart/form-data" method="POST" class="board-write"
             onsubmit="return writeValidate()">
         <div id="formInDivs">
             <!-- 제목 -->
@@ -46,7 +46,7 @@
             </div>
 
             <h1 class="board-title">
-                <input type="text" name="festivalTitle" placeholder="[ 축제 이름 ]" autocomplete="off" readonly>
+                <input type="text" name="festivalTitle" placeholder="[ 축제 이름 ]" value="${detail.festivalTitle}"  autocomplete="off" readonly>
                 <input type="text" name="boardTitle" placeholder="제목을 입력해주세요." value="${detail.boardTitle}" autocomplete="off">
             </h1>
             <h1><!--시기, 지역, 테마 선택시 select option 최신화되고 그 목록에서 축제선택 -->
@@ -93,6 +93,7 @@
                             <option value="세종특별자치시">세종특별자치시</option>
                         </select>
                     </div>
+
                     <div class="select-box select-cat">
                         <label for="festivalCat" class="labels">카테고리</label>
                         <select name="festivalCat" id="festivalCat" title="카테고리">
@@ -104,6 +105,7 @@
                             <option value="도심">도심</option>
                         </select>
                     </div>
+
                     <div class="select-box select-fest">
                         <label for="festivalList" id="labels">축제선택</label>
                         <select name="festivalList" id="festivalList" title="축제선택">
@@ -111,14 +113,17 @@
                         </select>
                         <input type="hidden" id="festivalSearch" value="0">
                     </div>
+
                     <div class="flex date-area">
                         <label for="inputDate" id="inputDateLabel">날짜 :</label>
                         <input type="date" name="inputDate" id="inputDate" min="<fmt:formatDate value="${currentDate}" pattern="yyyy-MM-dd" />">
                     </div>
+
                     <div class="flex recruit-area">
                         <label for="numberOfPeople" id="peopleLabel">모집인원 :</label>
                         <input type="number" min="1" max="10" value="1" name="numberOfPeople" id="numberOfPeople">
                     </div>
+
                     <div class="select-box select-rec">
                         <label for="recruit" id="labels">구인상태 :</label>
                         <select name="recruit" id="recruit" title="구인상태">

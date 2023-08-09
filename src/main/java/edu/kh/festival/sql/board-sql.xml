@@ -136,6 +136,12 @@
 		INSERT INTO BOARD
 		VALUES(?, ?, ?, DEFAULT, DEFAULT, DEFAULT, DEFAULT, ?, ?, DEFAULT)
 	</entry> 
+	
+	<!-- 동행자 게시글 삽입 -->
+	<entry key="insertCompanionBoard">
+		INSERT INTO COMPANION_BOARD
+		VALUES(?, ?, ?, DEFAULT, DEFAULT, DEFAULT, DEFAULT, ?, ?, ?, ?, ?, ?, ?)
+	</entry> 
 	 
 	<!-- 게시글 이미지 삽입 -->
 	<entry key="insertBoardImage">
@@ -148,6 +154,20 @@
 	<entry key="updateBoard">
 		UPDATE BOARD SET BOARD_TITLE = ?, BOARD_CONTENT = ?, UPDATE_DT = SYSDATE
 		WHERE BOARD_NO =?
+	</entry> 
+	
+	<!-- 동행자 게시글 수정 -->
+	<entry key="updateCompanionBoard">
+		UPDATE COMPANION_BOARD SET 
+		BOARD_TITLE = ?,
+		BOARD_CONTENT = ?, 
+		UPDATE_DT = SYSDATE, 
+		FESTIVAL_NO = ?,
+		FESTIVAL_TITLE = ?,
+		APPOINTMENT_DATE = ?,
+		NUMBER_OF_PEOPLE = ?,
+		RECRUIT = ?
+		WHERE C_BOARD_NO =?
 	</entry> 
 	 
 	 <!-- 게시글 이미지 수정 -->
@@ -219,5 +239,9 @@
 		 )
 		 	WHERE RNUM BETWEEN ? AND ?
 	 </entry>
-	
+	 
+	<!-- 축제이름으로 축젭번호 가져오기 -->
+	<entry key="selectFestivalNo">
+		SELECT FESTIVAL_NO FROM INFO_BOARD WHERE FESTIVAL_TITLE = ?
+	</entry>
 </properties>

@@ -314,7 +314,7 @@ public class FestivalDAO {
 				festival.setReadCount(rs.getInt("READ_COUNT"));
 				festival.setFestivalArea(rs.getString("FESTIVAL_AREA"));
 				festival.setFestivalCat(rs.getString("FESTIVAL_CAT"));
-				
+				festival.setFestivalNo(rs.getInt("FESTIVAL_NO"));
 				
 				festivalList.add(festival);
 				
