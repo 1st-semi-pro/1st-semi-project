@@ -1,6 +1,6 @@
 -- 관리자 계정으로 festival 계정 생성
 
-ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
+ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;;
 
 CREATE USER semi_festival IDENTIFIED BY festival1234;
 
